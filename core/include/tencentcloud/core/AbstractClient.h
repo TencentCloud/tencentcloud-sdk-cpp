@@ -144,7 +144,7 @@ void TencentCloud::AbstractClient::DoRequestAsync(
     m_httpClient->SetReqTimeout(http_profile.GetReqTimeout() * 1000);
     m_httpClient->SetConnectTimeout(http_profile.GetConnectTimeout() * 1000);
 
-    m_httpClient->SendRequestAsync(http_req, [ req, handler](HttpClient::HttpResponseOutcome http_resp)
+    m_httpClient->SendRequestAsync(http_req, [req, handler](HttpClient::HttpResponseOutcome http_resp)
     {
         if (!http_resp.IsSuccess())
         {
