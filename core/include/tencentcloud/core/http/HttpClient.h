@@ -18,6 +18,8 @@
 #define TENCENTCLOUD_CORE_HTTP_HTTPCLIENT_H_
 
 #include <curl/curl.h>
+#include <functional>
+#include <thread>
 #include <tencentcloud/core/Outcome.h>
 #include <tencentcloud/core/Error.h>
 #include <tencentcloud/core/NetworkProxy.h>
@@ -42,6 +44,9 @@ namespace TencentCloud
 
         HttpResponseOutcome SendRequest(const HttpRequest &request);
 
+        using CompletionHandler = std::function<void(HttpResponseOutcome)>;
+        void SendRequestAsync(HttpRequest request, CompletionHandler handler);
+
         void SetProxy(const NetworkProxy &proxy);
 
         static void InitGlobalState();
@@ -58,6 +63,29 @@ namespace TencentCloud
         int GzipDecompress(const char *src, int srcLen, const char *dst, int* dstLen);
         bool TryDecompress(const char *src, int srcLen, std::string &decompressData);
 #endif // ENABLE_COMPRESS_MODULE
+
+        void AsyncReqHandler();
+
+        static size_t CurlReadHeader(char* ptr, size_t size, size_t nmemb, void* userp);
+        static size_t CurlReadBody(char* ptr, size_t size, size_t nmemb, void* userp);
+
+        struct AsyncReqContext
+        {
+            HttpRequest request;
+            HttpResponse response;
+
+            CompletionHandler completion_handler;
+
+            CURL* curl_handle;
+            curl_slist* curl_header_buffer;
+            char curl_err_buffer[CURL_ERROR_SIZE];
+        };
+
+        bool m_asyncRunning;
+        std::vector<AsyncReqContext*> m_pendingReqs;
+        std::mutex m_pendingReqsMu;
+        std::thread m_asyncReqHandler;
+        CURLM* m_curlm;
     };
 }
 
