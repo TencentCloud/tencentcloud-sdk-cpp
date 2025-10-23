@@ -40,6 +40,8 @@ namespace TencentCloud
         void SetCaInfo(std::string caInfo);
         void SetCaPath(std::string caPath);
 
+        void SetResolveIp(std::string resolveIp);
+
         HttpResponseOutcome SendRequest(const HttpRequest &request);
 
         void SetProxy(const NetworkProxy &proxy);
@@ -54,6 +56,7 @@ namespace TencentCloud
         NetworkProxy m_proxy;
         std::string m_caInfo;
         std::string m_caPath;
+        std::string m_resolveIp;
 #ifdef ENABLE_COMPRESS_MODULE
         int GzipDecompress(const char *src, int srcLen, const char *dst, int* dstLen);
         bool TryDecompress(const char *src, int srcLen, std::string &decompressData);
