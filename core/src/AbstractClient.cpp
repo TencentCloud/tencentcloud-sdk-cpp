@@ -169,6 +169,8 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
     m_httpClient->SetCaInfo(httpProfile.GetCaInfo());
     m_httpClient->SetCaPath(httpProfile.GetCaPath());
 
+    m_httpClient->SetResolveIp(httpProfile.GetResolveIp());
+
     return m_httpClient->SendRequest(httpRequest);
 }
 
@@ -212,4 +214,3 @@ void AbstractClient::GenerateSignature(HttpRequest &request)
                            + ", SignedHeaders=content-type;host" + ", Signature=" + signature;
     request.AddHeader("Authorization", authorization);
 }
-
