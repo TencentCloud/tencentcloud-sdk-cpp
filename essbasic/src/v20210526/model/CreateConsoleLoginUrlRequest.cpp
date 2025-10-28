@@ -44,7 +44,8 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_powerOfAttorneysHasBeenSet(false),
     m_organizationAuthorizationOptionsHasBeenSet(false),
     m_bankAccountNumberHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_jumpEventsHasBeenSet(false)
 {
 }
 
@@ -242,6 +243,21 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_jumpEventsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JumpEvents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_jumpEvents.begin(); itr != m_jumpEvents.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -602,6 +618,22 @@ void CreateConsoleLoginUrlRequest::SetOperator(const UserInfo& _operator)
 bool CreateConsoleLoginUrlRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+vector<JumpEvent> CreateConsoleLoginUrlRequest::GetJumpEvents() const
+{
+    return m_jumpEvents;
+}
+
+void CreateConsoleLoginUrlRequest::SetJumpEvents(const vector<JumpEvent>& _jumpEvents)
+{
+    m_jumpEvents = _jumpEvents;
+    m_jumpEventsHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::JumpEventsHasBeenSet() const
+{
+    return m_jumpEventsHasBeenSet;
 }
 
 

@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取购买实例数量，取值范围：[1-10]。一次性购买支持最大数量10个，若超过该数量，可进行多次调用进行购买。
-                     * @return InstanceCount 购买实例数量，取值范围：[1-10]。一次性购买支持最大数量10个，若超过该数量，可进行多次调用进行购买。
+                     * 获取购买实例数量，取值范围：[1-6]。购买支持最大数量6个。
+                     * @return InstanceCount 购买实例数量，取值范围：[1-6]。购买支持最大数量6个。
                      * 
                      */
                     uint64_t GetInstanceCount() const;
 
                     /**
-                     * 设置购买实例数量，取值范围：[1-10]。一次性购买支持最大数量10个，若超过该数量，可进行多次调用进行购买。
-                     * @param _instanceCount 购买实例数量，取值范围：[1-10]。一次性购买支持最大数量10个，若超过该数量，可进行多次调用进行购买。
+                     * 设置购买实例数量，取值范围：[1-6]。购买支持最大数量6个。
+                     * @param _instanceCount 购买实例数量，取值范围：[1-6]。购买支持最大数量6个。
                      * 
                      */
                     void SetInstanceCount(const uint64_t& _instanceCount);
@@ -548,6 +548,27 @@ namespace TencentCloud
                      */
                     bool DedicatedClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例是否开启删除保护: true-开启删除保护；false-关闭删除保护。
+                     * @return DeletionProtection 实例是否开启删除保护: true-开启删除保护；false-关闭删除保护。
+                     * 
+                     */
+                    bool GetDeletionProtection() const;
+
+                    /**
+                     * 设置实例是否开启删除保护: true-开启删除保护；false-关闭删除保护。
+                     * @param _deletionProtection 实例是否开启删除保护: true-开启删除保护；false-关闭删除保护。
+                     * 
+                     */
+                    void SetDeletionProtection(const bool& _deletionProtection);
+
+                    /**
+                     * 判断参数 DeletionProtection 是否已赋值
+                     * @return DeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -576,7 +597,7 @@ namespace TencentCloud
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 购买实例数量，取值范围：[1-10]。一次性购买支持最大数量10个，若超过该数量，可进行多次调用进行购买。
+                     * 购买实例数量，取值范围：[1-6]。购买支持最大数量6个。
                      */
                     uint64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
@@ -691,6 +712,12 @@ namespace TencentCloud
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
+                     * 实例是否开启删除保护: true-开启删除保护；false-关闭删除保护。
+                     */
+                    bool m_deletionProtection;
+                    bool m_deletionProtectionHasBeenSet;
 
                 };
             }

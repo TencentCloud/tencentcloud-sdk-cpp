@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取当前集群类型支持tke、eks
-                     * @return ClusterType 当前集群类型支持tke、eks
+                     * 获取当前集群类型支持tke（标准集群）、eks（serverless集群）
+                     * @return ClusterType 当前集群类型支持tke（标准集群）、eks（serverless集群）
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置当前集群类型支持tke、eks
-                     * @param _clusterType 当前集群类型支持tke、eks
+                     * 设置当前集群类型支持tke（标准集群）、eks（serverless集群）
+                     * @param _clusterType 当前集群类型支持tke（标准集群）、eks（serverless集群）
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * 当前集群类型支持tke、eks
+                     * 当前集群类型支持tke（标准集群）、eks（serverless集群）
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;

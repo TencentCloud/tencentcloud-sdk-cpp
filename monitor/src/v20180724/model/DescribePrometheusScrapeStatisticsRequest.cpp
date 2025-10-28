@@ -24,7 +24,9 @@ using namespace std;
 
 DescribePrometheusScrapeStatisticsRequest::DescribePrometheusScrapeStatisticsRequest() :
     m_instanceIdsHasBeenSet(false),
-    m_jobTypeHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_jobHasBeenSet(false)
 {
 }
 
@@ -48,12 +50,28 @@ string DescribePrometheusScrapeStatisticsRequest::ToJsonString() const
         }
     }
 
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_jobTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Job";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_job.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -80,6 +98,22 @@ bool DescribePrometheusScrapeStatisticsRequest::InstanceIdsHasBeenSet() const
     return m_instanceIdsHasBeenSet;
 }
 
+string DescribePrometheusScrapeStatisticsRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribePrometheusScrapeStatisticsRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribePrometheusScrapeStatisticsRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
 string DescribePrometheusScrapeStatisticsRequest::GetJobType() const
 {
     return m_jobType;
@@ -94,6 +128,22 @@ void DescribePrometheusScrapeStatisticsRequest::SetJobType(const string& _jobTyp
 bool DescribePrometheusScrapeStatisticsRequest::JobTypeHasBeenSet() const
 {
     return m_jobTypeHasBeenSet;
+}
+
+string DescribePrometheusScrapeStatisticsRequest::GetJob() const
+{
+    return m_job;
+}
+
+void DescribePrometheusScrapeStatisticsRequest::SetJob(const string& _job)
+{
+    m_job = _job;
+    m_jobHasBeenSet = true;
+}
+
+bool DescribePrometheusScrapeStatisticsRequest::JobHasBeenSet() const
+{
+    return m_jobHasBeenSet;
 }
 
 

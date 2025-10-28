@@ -463,6 +463,34 @@ namespace TencentCloud
                      */
                     bool IsAuthorizedHasBeenSet() const;
 
+                    /**
+                     * 获取解决方案
+                     * @return Solution 解决方案
+                     * 
+                     */
+                    std::string GetSolution() const;
+
+                    /**
+                     * 判断参数 Solution 是否已赋值
+                     * @return Solution 是否已赋值
+                     * 
+                     */
+                    bool SolutionHasBeenSet() const;
+
+                    /**
+                     * 获取原因
+                     * @return Reason 原因
+                     * 
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     * 
+                     */
+                    bool ReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -644,6 +672,18 @@ namespace TencentCloud
                      */
                     int64_t m_isAuthorized;
                     bool m_isAuthorizedHasBeenSet;
+
+                    /**
+                     * 解决方案
+                     */
+                    std::string m_solution;
+                    bool m_solutionHasBeenSet;
+
+                    /**
+                     * 原因
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

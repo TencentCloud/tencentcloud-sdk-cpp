@@ -24,7 +24,9 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 DescribeNativeSparkSessionsResponse::DescribeNativeSparkSessionsResponse() :
-    m_sparkSessionsListHasBeenSet(false)
+    m_sparkSessionsListHasBeenSet(false),
+    m_totalSpecHasBeenSet(false),
+    m_totalAvailableHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,26 @@ CoreInternalOutcome DescribeNativeSparkSessionsResponse::Deserialize(const strin
         m_sparkSessionsListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalSpec") && !rsp["TotalSpec"].IsNull())
+    {
+        if (!rsp["TotalSpec"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalSpec` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalSpec = rsp["TotalSpec"].GetInt64();
+        m_totalSpecHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalAvailable") && !rsp["TotalAvailable"].IsNull())
+    {
+        if (!rsp["TotalAvailable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalAvailable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalAvailable = rsp["TotalAvailable"].GetInt64();
+        m_totalAvailableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string DescribeNativeSparkSessionsResponse::ToJsonString() const
         }
     }
 
+    if (m_totalSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalSpec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalSpec, allocator);
+    }
+
+    if (m_totalAvailableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalAvailable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalAvailable, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +165,26 @@ vector<SparkSessionInfo> DescribeNativeSparkSessionsResponse::GetSparkSessionsLi
 bool DescribeNativeSparkSessionsResponse::SparkSessionsListHasBeenSet() const
 {
     return m_sparkSessionsListHasBeenSet;
+}
+
+int64_t DescribeNativeSparkSessionsResponse::GetTotalSpec() const
+{
+    return m_totalSpec;
+}
+
+bool DescribeNativeSparkSessionsResponse::TotalSpecHasBeenSet() const
+{
+    return m_totalSpecHasBeenSet;
+}
+
+int64_t DescribeNativeSparkSessionsResponse::GetTotalAvailable() const
+{
+    return m_totalAvailable;
+}
+
+bool DescribeNativeSparkSessionsResponse::TotalAvailableHasBeenSet() const
+{
+    return m_totalAvailableHasBeenSet;
 }
 
 

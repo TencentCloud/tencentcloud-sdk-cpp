@@ -53,7 +53,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_dBEngineHasBeenSet(false),
     m_dBEngineConfigHasBeenSet(false),
     m_syncModeHasBeenSet(false),
-    m_needSupportIpv6HasBeenSet(false)
+    m_needSupportIpv6HasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -334,6 +335,14 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "NeedSupportIpv6";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needSupportIpv6, allocator);
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 
@@ -838,6 +847,22 @@ void CreateInstancesRequest::SetNeedSupportIpv6(const uint64_t& _needSupportIpv6
 bool CreateInstancesRequest::NeedSupportIpv6HasBeenSet() const
 {
     return m_needSupportIpv6HasBeenSet;
+}
+
+bool CreateInstancesRequest::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void CreateInstancesRequest::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 
 

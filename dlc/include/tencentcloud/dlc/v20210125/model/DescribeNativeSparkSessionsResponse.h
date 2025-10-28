@@ -58,6 +58,34 @@ namespace TencentCloud
                      */
                     bool SparkSessionsListHasBeenSet() const;
 
+                    /**
+                     * 获取资源组总规格
+                     * @return TotalSpec 资源组总规格
+                     * 
+                     */
+                    int64_t GetTotalSpec() const;
+
+                    /**
+                     * 判断参数 TotalSpec 是否已赋值
+                     * @return TotalSpec 是否已赋值
+                     * 
+                     */
+                    bool TotalSpecHasBeenSet() const;
+
+                    /**
+                     * 获取资源组当前可用规格
+                     * @return TotalAvailable 资源组当前可用规格
+                     * 
+                     */
+                    int64_t GetTotalAvailable() const;
+
+                    /**
+                     * 判断参数 TotalAvailable 是否已赋值
+                     * @return TotalAvailable 是否已赋值
+                     * 
+                     */
+                    bool TotalAvailableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +93,18 @@ namespace TencentCloud
                      */
                     std::vector<SparkSessionInfo> m_sparkSessionsList;
                     bool m_sparkSessionsListHasBeenSet;
+
+                    /**
+                     * 资源组总规格
+                     */
+                    int64_t m_totalSpec;
+                    bool m_totalSpecHasBeenSet;
+
+                    /**
+                     * 资源组当前可用规格
+                     */
+                    int64_t m_totalAvailable;
+                    bool m_totalAvailableHasBeenSet;
 
                 };
             }

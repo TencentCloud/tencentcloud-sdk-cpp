@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志集ID
-                     * @return LogsetId CLS日志集ID
+                     * 获取CLS日志集ID，可以通过cls接口或者控制台获取
+                     * @return LogsetId CLS日志集ID，可以通过cls接口或者控制台获取
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置CLS日志集ID
-                     * @param _logsetId CLS日志集ID
+                     * 设置CLS日志集ID，可以通过cls接口或者控制台获取
+                     * @param _logsetId CLS日志集ID，可以通过cls接口或者控制台获取
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志主题ID
-                     * @return TopicId CLS日志主题ID
+                     * 获取CLS日志主题ID，可以通过cls接口或者控制台获取
+                     * @return TopicId CLS日志主题ID，可以通过cls接口或者控制台获取
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置CLS日志主题ID
-                     * @param _topicId CLS日志主题ID
+                     * 设置CLS日志主题ID，可以通过cls接口或者控制台获取
+                     * @param _topicId CLS日志主题ID，可以通过cls接口或者控制台获取
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -135,13 +135,13 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * CLS日志集ID
+                     * CLS日志集ID，可以通过cls接口或者控制台获取
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * CLS日志主题ID
+                     * CLS日志主题ID，可以通过cls接口或者控制台获取
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

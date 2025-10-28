@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，形如postgres-6fego161
-                     * @return DBInstanceId 实例ID，形如postgres-6fego161
+                     * 获取实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如postgres-6fego161
-                     * @param _dBInstanceId 实例ID，形如postgres-6fego161
+                     * 设置实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -107,14 +107,18 @@ namespace TencentCloud
 
                     /**
                      * 获取返回数据按照创建时间或者用户名排序。取值支持createTime、name、updateTime。createTime-按照创建时间排序；name-按照用户名排序; updateTime-按照更新时间排序。
+默认值：createTime
                      * @return OrderBy 返回数据按照创建时间或者用户名排序。取值支持createTime、name、updateTime。createTime-按照创建时间排序；name-按照用户名排序; updateTime-按照更新时间排序。
+默认值：createTime
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置返回数据按照创建时间或者用户名排序。取值支持createTime、name、updateTime。createTime-按照创建时间排序；name-按照用户名排序; updateTime-按照更新时间排序。
+默认值：createTime
                      * @param _orderBy 返回数据按照创建时间或者用户名排序。取值支持createTime、name、updateTime。createTime-按照创建时间排序；name-按照用户名排序; updateTime-按照更新时间排序。
+默认值：createTime
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -128,14 +132,18 @@ namespace TencentCloud
 
                     /**
                      * 获取返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序
+默认值：desc
                      * @return OrderByType 返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序
+默认值：desc
                      * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
                      * 设置返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序
+默认值：desc
                      * @param _orderByType 返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序
+默认值：desc
                      * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
@@ -150,7 +158,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，形如postgres-6fego161
+                     * 实例ID，形如postgres-6fego161。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
@@ -169,12 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 返回数据按照创建时间或者用户名排序。取值支持createTime、name、updateTime。createTime-按照创建时间排序；name-按照用户名排序; updateTime-按照更新时间排序。
+默认值：createTime
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
                      * 返回结果是升序还是降序。取值只能为desc或者asc。desc-降序；asc-升序
+默认值：desc
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;

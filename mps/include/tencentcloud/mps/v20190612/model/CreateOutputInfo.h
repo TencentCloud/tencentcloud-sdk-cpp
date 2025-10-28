@@ -29,6 +29,7 @@
 #include <tencentcloud/mps/v20190612/model/CreateOutputInfoRTPSettings.h>
 #include <tencentcloud/mps/v20190612/model/CreateOutputRistSettings.h>
 #include <tencentcloud/mps/v20190612/model/PidSelector.h>
+#include <tencentcloud/mps/v20190612/model/StreamSelector.h>
 
 
 namespace TencentCloud
@@ -350,25 +351,46 @@ namespace TencentCloud
                     bool RISTSettingsHasBeenSet() const;
 
                     /**
-                     * 获取对于含有多个音/视频轨的流，可以指定需要使用的轨道
-                     * @return PidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
-                     * 
+                     * 获取对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个
+                     * @return PidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个
+                     * @deprecated
                      */
                     PidSelector GetPidSelector() const;
 
                     /**
-                     * 设置对于含有多个音/视频轨的流，可以指定需要使用的轨道
-                     * @param _pidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
-                     * 
+                     * 设置对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个
+                     * @param _pidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个
+                     * @deprecated
                      */
                     void SetPidSelector(const PidSelector& _pidSelector);
 
                     /**
                      * 判断参数 PidSelector 是否已赋值
                      * @return PidSelector 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PidSelectorHasBeenSet() const;
+
+                    /**
+                     * 获取对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个
+                     * @return StreamSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个
+                     * 
+                     */
+                    StreamSelector GetStreamSelector() const;
+
+                    /**
+                     * 设置对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个
+                     * @param _streamSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个
+                     * 
+                     */
+                    void SetStreamSelector(const StreamSelector& _streamSelector);
+
+                    /**
+                     * 判断参数 StreamSelector 是否已赋值
+                     * @return StreamSelector 是否已赋值
+                     * 
+                     */
+                    bool StreamSelectorHasBeenSet() const;
 
                 private:
 
@@ -458,10 +480,16 @@ namespace TencentCloud
                     bool m_rISTSettingsHasBeenSet;
 
                     /**
-                     * 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个
                      */
                     PidSelector m_pidSelector;
                     bool m_pidSelectorHasBeenSet;
+
+                    /**
+                     * 对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个
+                     */
+                    StreamSelector m_streamSelector;
+                    bool m_streamSelectorHasBeenSet;
 
                 };
             }

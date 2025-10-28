@@ -53,7 +53,9 @@ DescribeAssetImageDetailResponse::DescribeAssetImageDetailResponse() :
     m_virusCntHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_remainScanTimeHasBeenSet(false),
-    m_isAuthorizedHasBeenSet(false)
+    m_isAuthorizedHasBeenSet(false),
+    m_solutionHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -391,6 +393,26 @@ CoreInternalOutcome DescribeAssetImageDetailResponse::Deserialize(const string &
         m_isAuthorizedHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Solution") && !rsp["Solution"].IsNull())
+    {
+        if (!rsp["Solution"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Solution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_solution = string(rsp["Solution"].GetString());
+        m_solutionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Reason") && !rsp["Reason"].IsNull())
+    {
+        if (!rsp["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(rsp["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -639,6 +661,22 @@ string DescribeAssetImageDetailResponse::ToJsonString() const
         string key = "IsAuthorized";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAuthorized, allocator);
+    }
+
+    if (m_solutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Solution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_solution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -951,6 +989,26 @@ int64_t DescribeAssetImageDetailResponse::GetIsAuthorized() const
 bool DescribeAssetImageDetailResponse::IsAuthorizedHasBeenSet() const
 {
     return m_isAuthorizedHasBeenSet;
+}
+
+string DescribeAssetImageDetailResponse::GetSolution() const
+{
+    return m_solution;
+}
+
+bool DescribeAssetImageDetailResponse::SolutionHasBeenSet() const
+{
+    return m_solutionHasBeenSet;
+}
+
+string DescribeAssetImageDetailResponse::GetReason() const
+{
+    return m_reason;
+}
+
+bool DescribeAssetImageDetailResponse::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 
 

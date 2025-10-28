@@ -236,6 +236,20 @@ namespace TencentCloud
                      */
                     bool HitTypeHasBeenSet() const;
 
+                    /**
+                     * 获取流式审核策略维度下的唯一会话ID
+                     * @return SessionId 流式审核策略维度下的唯一会话ID
+                     * 
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     * 
+                     */
+                    bool SessionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,6 +333,12 @@ namespace TencentCloud
                      */
                     std::string m_hitType;
                     bool m_hitTypeHasBeenSet;
+
+                    /**
+                     * 流式审核策略维度下的唯一会话ID
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
 
                 };
             }

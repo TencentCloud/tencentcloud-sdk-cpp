@@ -27,7 +27,9 @@ AccountInfo::AccountInfo() :
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
+    m_passwordUpdateTimeHasBeenSet(false),
+    m_userTypeHasBeenSet(false),
+    m_openCamHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,16 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PasswordUpdateTime") && !value["PasswordUpdateTime"].IsNull())
+    {
+        if (!value["PasswordUpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.PasswordUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_passwordUpdateTime = string(value["PasswordUpdateTime"].GetString());
+        m_passwordUpdateTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("UserType") && !value["UserType"].IsNull())
     {
         if (!value["UserType"].IsString())
@@ -104,6 +116,16 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
         }
         m_userType = string(value["UserType"].GetString());
         m_userTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OpenCam") && !value["OpenCam"].IsNull())
+    {
+        if (!value["OpenCam"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.OpenCam` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_openCam = value["OpenCam"].GetBool();
+        m_openCamHasBeenSet = true;
     }
 
 
@@ -161,12 +183,28 @@ void AccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_passwordUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PasswordUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_passwordUpdateTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_userTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openCamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenCam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_openCam, allocator);
     }
 
 }
@@ -268,6 +306,22 @@ bool AccountInfo::UpdateTimeHasBeenSet() const
     return m_updateTimeHasBeenSet;
 }
 
+string AccountInfo::GetPasswordUpdateTime() const
+{
+    return m_passwordUpdateTime;
+}
+
+void AccountInfo::SetPasswordUpdateTime(const string& _passwordUpdateTime)
+{
+    m_passwordUpdateTime = _passwordUpdateTime;
+    m_passwordUpdateTimeHasBeenSet = true;
+}
+
+bool AccountInfo::PasswordUpdateTimeHasBeenSet() const
+{
+    return m_passwordUpdateTimeHasBeenSet;
+}
+
 string AccountInfo::GetUserType() const
 {
     return m_userType;
@@ -282,5 +336,21 @@ void AccountInfo::SetUserType(const string& _userType)
 bool AccountInfo::UserTypeHasBeenSet() const
 {
     return m_userTypeHasBeenSet;
+}
+
+bool AccountInfo::GetOpenCam() const
+{
+    return m_openCam;
+}
+
+void AccountInfo::SetOpenCam(const bool& _openCam)
+{
+    m_openCam = _openCam;
+    m_openCamHasBeenSet = true;
+}
+
+bool AccountInfo::OpenCamHasBeenSet() const
+{
+    return m_openCamHasBeenSet;
 }
 

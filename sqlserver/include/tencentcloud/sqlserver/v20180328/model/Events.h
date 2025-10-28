@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取事件记录状态，1-成功，2-失败
-                     * @return Status 事件记录状态，1-成功，2-失败
+                     * 获取事件记录状态，1-成功，2-失败，3-文件待删除，4-写入中
+                     * @return Status 事件记录状态，1-成功，2-失败，3-文件待删除，4-写入中
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置事件记录状态，1-成功，2-失败
-                     * @param _status 事件记录状态，1-成功，2-失败
+                     * 设置事件记录状态，1-成功，2-失败，3-文件待删除，4-写入中
+                     * @param _status 事件记录状态，1-成功，2-失败，3-文件待删除，4-写入中
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取扩展文件生成开始时间
-                     * @return EndTime 扩展文件生成开始时间
+                     * 获取扩展文件最后更新时间
+                     * @return EndTime 扩展文件最后更新时间
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置扩展文件生成开始时间
-                     * @param _endTime 扩展文件生成开始时间
+                     * 设置扩展文件最后更新时间
+                     * @param _endTime 扩展文件最后更新时间
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -262,7 +262,7 @@ namespace TencentCloud
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 事件记录状态，1-成功，2-失败
+                     * 事件记录状态，1-成功，2-失败，3-文件待删除，4-写入中
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -274,7 +274,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 扩展文件生成开始时间
+                     * 扩展文件最后更新时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

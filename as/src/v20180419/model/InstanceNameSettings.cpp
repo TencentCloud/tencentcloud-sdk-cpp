@@ -23,7 +23,8 @@ using namespace std;
 InstanceNameSettings::InstanceNameSettings() :
     m_instanceNameHasBeenSet(false),
     m_instanceNameStyleHasBeenSet(false),
-    m_instanceNameSuffixHasBeenSet(false)
+    m_instanceNameSuffixHasBeenSet(false),
+    m_instanceNameDelimiterHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome InstanceNameSettings::Deserialize(const rapidjson::Value &va
         m_instanceNameSuffixHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceNameDelimiter") && !value["InstanceNameDelimiter"].IsNull())
+    {
+        if (!value["InstanceNameDelimiter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNameSettings.InstanceNameDelimiter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceNameDelimiter = string(value["InstanceNameDelimiter"].GetString());
+        m_instanceNameDelimiterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void InstanceNameSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "InstanceNameSuffix";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceNameSuffix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameDelimiterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceNameDelimiter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceNameDelimiter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void InstanceNameSettings::SetInstanceNameSuffix(const string& _instanceNameSuff
 bool InstanceNameSettings::InstanceNameSuffixHasBeenSet() const
 {
     return m_instanceNameSuffixHasBeenSet;
+}
+
+string InstanceNameSettings::GetInstanceNameDelimiter() const
+{
+    return m_instanceNameDelimiter;
+}
+
+void InstanceNameSettings::SetInstanceNameDelimiter(const string& _instanceNameDelimiter)
+{
+    m_instanceNameDelimiter = _instanceNameDelimiter;
+    m_instanceNameDelimiterHasBeenSet = true;
+}
+
+bool InstanceNameSettings::InstanceNameDelimiterHasBeenSet() const
+{
+    return m_instanceNameDelimiterHasBeenSet;
 }
 

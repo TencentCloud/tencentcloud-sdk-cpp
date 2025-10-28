@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取克隆的源实例ID。
-                     * @return DBInstanceId 克隆的源实例ID。
+                     * 获取克隆的源实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @return DBInstanceId 克隆的源实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置克隆的源实例ID。
-                     * @param _dBInstanceId 克隆的源实例ID。
+                     * 设置克隆的源实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * @param _dBInstanceId 克隆的源实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool SpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取实例容量大小，单位：GB。
-                     * @return Storage 实例容量大小，单位：GB。
+                     * 获取实例磁盘容量大小，设置步长限制为10。单位：GB。
+                     * @return Storage 实例磁盘容量大小，设置步长限制为10。单位：GB。
                      * 
                      */
                     int64_t GetStorage() const;
 
                     /**
-                     * 设置实例容量大小，单位：GB。
-                     * @param _storage 实例容量大小，单位：GB。
+                     * 设置实例磁盘容量大小，设置步长限制为10。单位：GB。
+                     * @param _storage 实例磁盘容量大小，设置步长限制为10。单位：GB。
                      * 
                      */
                     void SetStorage(const int64_t& _storage);
@@ -145,13 +145,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取续费标记：
+                     * 获取续费标记。仅当计费模式为预付费时生效。
+枚举值：
 
 - 0：手动续费
 - 1：自动续费
 
 默认值：0
-                     * @return AutoRenewFlag 续费标记：
+                     * @return AutoRenewFlag 续费标记。仅当计费模式为预付费时生效。
+枚举值：
 
 - 0：手动续费
 - 1：自动续费
@@ -162,13 +164,15 @@ namespace TencentCloud
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置续费标记：
+                     * 设置续费标记。仅当计费模式为预付费时生效。
+枚举值：
 
 - 0：手动续费
 - 1：自动续费
 
 默认值：0
-                     * @param _autoRenewFlag 续费标记：
+                     * @param _autoRenewFlag 续费标记。仅当计费模式为预付费时生效。
+枚举值：
 
 - 0：手动续费
 - 1：自动续费
@@ -228,15 +232,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
-                     * @return Name 新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+                     * 获取新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"源实例名-Copy"。
+                     * @return Name 新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"源实例名-Copy"。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
-                     * @param _name 新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+                     * 设置新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"源实例名-Copy"。
+                     * @param _name 新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"源实例名-Copy"。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -290,18 +294,18 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * 获取实例所属安全组。该参数可以通过调用[DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808)的返回值中的SecurityGroupId字段来获取。若不指定该参数，则绑定默认安全组。
 
-                     * @return SecurityGroupIds 实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * @return SecurityGroupIds 实例所属安全组。该参数可以通过调用[DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808)的返回值中的SecurityGroupId字段来获取。若不指定该参数，则绑定默认安全组。
 
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * 设置实例所属安全组。该参数可以通过调用[DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808)的返回值中的SecurityGroupId字段来获取。若不指定该参数，则绑定默认安全组。
 
-                     * @param _securityGroupIds 实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * @param _securityGroupIds 实例所属安全组。该参数可以通过调用[DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808)的返回值中的SecurityGroupId字段来获取。若不指定该参数，则绑定默认安全组。
 
                      * 
                      */
@@ -315,15 +319,15 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取项目ID。
-                     * @return ProjectId 项目ID。
+                     * 获取项目ID。默认值为0，表示所属默认项目。
+                     * @return ProjectId 项目ID。默认值为0，表示所属默认项目。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID。
-                     * @param _projectId 项目ID。
+                     * 设置项目ID。默认值为0，表示所属默认项目。
+                     * @param _projectId 项目ID。默认值为0，表示所属默认项目。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -357,18 +361,18 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取实例节点部署信息，支持多可用区部署时需要指定每个节点的部署可用区信息。
+                     * 获取实例节点部署信息，必须填写主备节点可用区。支持多可用区部署时需要指定每个节点的部署可用区信息。
 可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
-                     * @return DBNodeSet 实例节点部署信息，支持多可用区部署时需要指定每个节点的部署可用区信息。
+                     * @return DBNodeSet 实例节点部署信息，必须填写主备节点可用区。支持多可用区部署时需要指定每个节点的部署可用区信息。
 可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
                      * 
                      */
                     std::vector<DBNode> GetDBNodeSet() const;
 
                     /**
-                     * 设置实例节点部署信息，支持多可用区部署时需要指定每个节点的部署可用区信息。
+                     * 设置实例节点部署信息，必须填写主备节点可用区。支持多可用区部署时需要指定每个节点的部署可用区信息。
 可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
-                     * @param _dBNodeSet 实例节点部署信息，支持多可用区部署时需要指定每个节点的部署可用区信息。
+                     * @param _dBNodeSet 实例节点部署信息，必须填写主备节点可用区。支持多可用区部署时需要指定每个节点的部署可用区信息。
 可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
                      * 
                      */
@@ -465,15 +469,15 @@ namespace TencentCloud
                     bool ActivityIdHasBeenSet() const;
 
                     /**
-                     * 获取基础备份集ID。
-                     * @return BackupSetId 基础备份集ID。
+                     * 获取基础备份集ID。参数BackupSetId、RecoveryTargetTime两者必须填写一项，且不能同时填写。
+                     * @return BackupSetId 基础备份集ID。参数BackupSetId、RecoveryTargetTime两者必须填写一项，且不能同时填写。
                      * 
                      */
                     std::string GetBackupSetId() const;
 
                     /**
-                     * 设置基础备份集ID。
-                     * @param _backupSetId 基础备份集ID。
+                     * 设置基础备份集ID。参数BackupSetId、RecoveryTargetTime两者必须填写一项，且不能同时填写。
+                     * @param _backupSetId 基础备份集ID。参数BackupSetId、RecoveryTargetTime两者必须填写一项，且不能同时填写。
                      * 
                      */
                     void SetBackupSetId(const std::string& _backupSetId);
@@ -486,15 +490,15 @@ namespace TencentCloud
                     bool BackupSetIdHasBeenSet() const;
 
                     /**
-                     * 获取恢复时间点。
-                     * @return RecoveryTargetTime 恢复时间点。
+                     * 获取恢复时间点。参数BackupSetId、RecoveryTargetTime两者必须填写一项，且不能同时填写。
+                     * @return RecoveryTargetTime 恢复时间点。参数BackupSetId、RecoveryTargetTime两者必须填写一项，且不能同时填写。
                      * 
                      */
                     std::string GetRecoveryTargetTime() const;
 
                     /**
-                     * 设置恢复时间点。
-                     * @param _recoveryTargetTime 恢复时间点。
+                     * 设置恢复时间点。参数BackupSetId、RecoveryTargetTime两者必须填写一项，且不能同时填写。
+                     * @param _recoveryTargetTime 恢复时间点。参数BackupSetId、RecoveryTargetTime两者必须填写一项，且不能同时填写。
                      * 
                      */
                     void SetRecoveryTargetTime(const std::string& _recoveryTargetTime);
@@ -543,10 +547,31 @@ namespace TencentCloud
                      */
                     bool SyncModeHasBeenSet() const;
 
+                    /**
+                     * 获取实例是否开启删除保护: true-开启删除保护；false-关闭删除保护。
+                     * @return DeletionProtection 实例是否开启删除保护: true-开启删除保护；false-关闭删除保护。
+                     * 
+                     */
+                    bool GetDeletionProtection() const;
+
+                    /**
+                     * 设置实例是否开启删除保护: true-开启删除保护；false-关闭删除保护。
+                     * @param _deletionProtection 实例是否开启删除保护: true-开启删除保护；false-关闭删除保护。
+                     * 
+                     */
+                    void SetDeletionProtection(const bool& _deletionProtection);
+
+                    /**
+                     * 判断参数 DeletionProtection 是否已赋值
+                     * @return DeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 克隆的源实例ID。
+                     * 克隆的源实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
@@ -558,7 +583,7 @@ namespace TencentCloud
                     bool m_specCodeHasBeenSet;
 
                     /**
-                     * 实例容量大小，单位：GB。
+                     * 实例磁盘容量大小，设置步长限制为10。单位：GB。
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
@@ -574,7 +599,8 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 续费标记：
+                     * 续费标记。仅当计费模式为预付费时生效。
+枚举值：
 
 - 0：手动续费
 - 1：自动续费
@@ -597,7 +623,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"未命名"。
+                     * 新购的实例名称，仅支持长度小于60的中文/英文/数字/"_"/"-"，不指定实例名称则默认显示"源实例名-Copy"。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -614,14 +640,14 @@ namespace TencentCloud
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。
+                     * 实例所属安全组。该参数可以通过调用[DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808)的返回值中的SecurityGroupId字段来获取。若不指定该参数，则绑定默认安全组。
 
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 项目ID。
+                     * 项目ID。默认值为0，表示所属默认项目。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -633,7 +659,7 @@ namespace TencentCloud
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 实例节点部署信息，支持多可用区部署时需要指定每个节点的部署可用区信息。
+                     * 实例节点部署信息，必须填写主备节点可用区。支持多可用区部署时需要指定每个节点的部署可用区信息。
 可用区信息可以通过调用 [DescribeZones](https://cloud.tencent.com/document/api/409/16769) 接口的返回值中的Zone字段来获取。
                      */
                     std::vector<DBNode> m_dBNodeSet;
@@ -663,13 +689,13 @@ namespace TencentCloud
                     bool m_activityIdHasBeenSet;
 
                     /**
-                     * 基础备份集ID。
+                     * 基础备份集ID。参数BackupSetId、RecoveryTargetTime两者必须填写一项，且不能同时填写。
                      */
                     std::string m_backupSetId;
                     bool m_backupSetIdHasBeenSet;
 
                     /**
-                     * 恢复时间点。
+                     * 恢复时间点。参数BackupSetId、RecoveryTargetTime两者必须填写一项，且不能同时填写。
                      */
                     std::string m_recoveryTargetTime;
                     bool m_recoveryTargetTimeHasBeenSet;
@@ -683,6 +709,12 @@ namespace TencentCloud
                      */
                     std::string m_syncMode;
                     bool m_syncModeHasBeenSet;
+
+                    /**
+                     * 实例是否开启删除保护: true-开启删除保护；false-关闭删除保护。
+                     */
+                    bool m_deletionProtection;
+                    bool m_deletionProtectionHasBeenSet;
 
                 };
             }

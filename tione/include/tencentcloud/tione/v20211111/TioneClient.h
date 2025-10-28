@@ -27,6 +27,8 @@
 #include <tencentcloud/tione/v20211111/model/ChatCompletionResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateDatasetRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateDatasetResponse.h>
+#include <tencentcloud/tione/v20211111/model/CreateExportRequest.h>
+#include <tencentcloud/tione/v20211111/model/CreateExportResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateModelServiceResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateModelServiceAuthTokenRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/tione/v20211111/model/CreateTrainingTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteDatasetRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteDatasetResponse.h>
+#include <tencentcloud/tione/v20211111/model/DeleteExportRequest.h>
+#include <tencentcloud/tione/v20211111/model/DeleteExportResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceAuthTokenRequest.h>
@@ -71,6 +75,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeDatasetsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeEventsRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeEventsResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeExportRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeExportResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeInferTemplatesRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeInferTemplatesResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeLogsRequest.h>
@@ -145,6 +151,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDatasetResponse> CreateDatasetOutcome;
                 typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateDatasetRequest&, CreateDatasetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatasetAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExportResponse> CreateExportOutcome;
+                typedef std::future<CreateExportOutcome> CreateExportOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::CreateExportRequest&, CreateExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateModelServiceResponse> CreateModelServiceOutcome;
                 typedef std::future<CreateModelServiceOutcome> CreateModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateModelServiceRequest&, CreateModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelServiceAsyncHandler;
@@ -166,6 +175,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDatasetResponse> DeleteDatasetOutcome;
                 typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteDatasetRequest&, DeleteDatasetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatasetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteExportResponse> DeleteExportOutcome;
+                typedef std::future<DeleteExportOutcome> DeleteExportOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DeleteExportRequest&, DeleteExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteModelServiceResponse> DeleteModelServiceOutcome;
                 typedef std::future<DeleteModelServiceOutcome> DeleteModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteModelServiceRequest&, DeleteModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteModelServiceAsyncHandler;
@@ -211,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEventsResponse> DescribeEventsOutcome;
                 typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeEventsRequest&, DescribeEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExportResponse> DescribeExportOutcome;
+                typedef std::future<DescribeExportOutcome> DescribeExportOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeExportRequest&, DescribeExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInferTemplatesResponse> DescribeInferTemplatesOutcome;
                 typedef std::future<DescribeInferTemplatesOutcome> DescribeInferTemplatesOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeInferTemplatesRequest&, DescribeInferTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferTemplatesAsyncHandler;
@@ -317,6 +332,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 CreateDatasetOutcomeCallable CreateDatasetCallable(const Model::CreateDatasetRequest& request);
 
                 /**
+                 *创建任务式建模训练任务，Notebook，在线服务和批量预测任务日志下载任务API
+                 * @param req CreateExportRequest
+                 * @return CreateExportOutcome
+                 */
+                CreateExportOutcome CreateExport(const Model::CreateExportRequest &request);
+                void CreateExportAsync(const Model::CreateExportRequest& request, const CreateExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExportOutcomeCallable CreateExportCallable(const Model::CreateExportRequest& request);
+
+                /**
                  *用于创建、发布一个新的模型服务
                  * @param req CreateModelServiceRequest
                  * @return CreateModelServiceOutcome
@@ -378,6 +402,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest &request);
                 void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request);
+
+                /**
+                 *删除任务式建模训练任务，Notebook，在线服务和批量预测任务日志导出任务API
+                 * @param req DeleteExportRequest
+                 * @return DeleteExportOutcome
+                 */
+                DeleteExportOutcome DeleteExport(const Model::DeleteExportRequest &request);
+                void DeleteExportAsync(const Model::DeleteExportRequest& request, const DeleteExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteExportOutcomeCallable DeleteExportCallable(const Model::DeleteExportRequest& request);
 
                 /**
                  *根据服务id删除模型服务
@@ -513,6 +546,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest &request);
                 void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request);
+
+                /**
+                 *查看任务式建模训练任务，Notebook，在线服务和批量预测任务日志下载任务状态API
+                 * @param req DescribeExportRequest
+                 * @return DescribeExportOutcome
+                 */
+                DescribeExportOutcome DescribeExport(const Model::DescribeExportRequest &request);
+                void DescribeExportAsync(const Model::DescribeExportRequest& request, const DescribeExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExportOutcomeCallable DescribeExportCallable(const Model::DescribeExportRequest& request);
 
                 /**
                  *已废弃，收敛到统一接口

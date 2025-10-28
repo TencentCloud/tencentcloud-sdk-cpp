@@ -29,7 +29,8 @@ TextModerationRequest::TextModerationRequest() :
     m_userHasBeenSet(false),
     m_deviceHasBeenSet(false),
     m_sourceLanguageHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,14 @@ string TextModerationRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -216,6 +225,22 @@ void TextModerationRequest::SetType(const string& _type)
 bool TextModerationRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string TextModerationRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void TextModerationRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool TextModerationRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
 

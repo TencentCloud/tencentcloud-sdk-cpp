@@ -161,6 +161,43 @@ HostNameSettings的该入参非必选，未选时不设置主机名后缀。
                      */
                     bool HostNameSuffixHasBeenSet() const;
 
+                    /**
+                     * 获取云服务器的主机名分隔符。
+默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为主机名的分隔符。如果不设置，则默认采用点号（.）分隔符。
+通过分割符连接多段。
+
+假设原主机名为“product-as-host”，分隔符HostNameDelimiter为“-”，设置主机名后缀"suffix"，那么最终主机名为“product-as-host-suffix”。
+                     * @return HostNameDelimiter 云服务器的主机名分隔符。
+默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为主机名的分隔符。如果不设置，则默认采用点号（.）分隔符。
+通过分割符连接多段。
+
+假设原主机名为“product-as-host”，分隔符HostNameDelimiter为“-”，设置主机名后缀"suffix"，那么最终主机名为“product-as-host-suffix”。
+                     * 
+                     */
+                    std::string GetHostNameDelimiter() const;
+
+                    /**
+                     * 设置云服务器的主机名分隔符。
+默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为主机名的分隔符。如果不设置，则默认采用点号（.）分隔符。
+通过分割符连接多段。
+
+假设原主机名为“product-as-host”，分隔符HostNameDelimiter为“-”，设置主机名后缀"suffix"，那么最终主机名为“product-as-host-suffix”。
+                     * @param _hostNameDelimiter 云服务器的主机名分隔符。
+默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为主机名的分隔符。如果不设置，则默认采用点号（.）分隔符。
+通过分割符连接多段。
+
+假设原主机名为“product-as-host”，分隔符HostNameDelimiter为“-”，设置主机名后缀"suffix"，那么最终主机名为“product-as-host-suffix”。
+                     * 
+                     */
+                    void SetHostNameDelimiter(const std::string& _hostNameDelimiter);
+
+                    /**
+                     * 判断参数 HostNameDelimiter 是否已赋值
+                     * @return HostNameDelimiter 是否已赋值
+                     * 
+                     */
+                    bool HostNameDelimiterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +230,16 @@ HostNameSettings的该入参非必选，未选时不设置主机名后缀。
                      */
                     std::string m_hostNameSuffix;
                     bool m_hostNameSuffixHasBeenSet;
+
+                    /**
+                     * 云服务器的主机名分隔符。
+默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为主机名的分隔符。如果不设置，则默认采用点号（.）分隔符。
+通过分割符连接多段。
+
+假设原主机名为“product-as-host”，分隔符HostNameDelimiter为“-”，设置主机名后缀"suffix"，那么最终主机名为“product-as-host-suffix”。
+                     */
+                    std::string m_hostNameDelimiter;
+                    bool m_hostNameDelimiterHasBeenSet;
 
                 };
             }

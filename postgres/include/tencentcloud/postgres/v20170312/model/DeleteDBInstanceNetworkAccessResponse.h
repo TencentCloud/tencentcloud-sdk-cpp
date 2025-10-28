@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流程ID。
-                     * @return FlowId 流程ID。
+                     * 获取流程ID，FlowId等同于TaskId
+                     * @return FlowId 流程ID，FlowId等同于TaskId
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -57,13 +57,33 @@ namespace TencentCloud
                      */
                     bool FlowIdHasBeenSet() const;
 
+                    /**
+                     * 获取任务ID
+                     * @return TaskId 任务ID
+                     * 
+                     */
+                    int64_t GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 流程ID。
+                     * 流程ID，FlowId等同于TaskId
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
+
+                    /**
+                     * 任务ID
+                     */
+                    int64_t m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

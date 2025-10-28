@@ -32,7 +32,8 @@ SparkSessionInfo::SparkSessionInfo() :
     m_executorNumMinHasBeenSet(false),
     m_executorNumMaxHasBeenSet(false),
     m_totalSpecMinHasBeenSet(false),
-    m_totalSpecMaxHasBeenSet(false)
+    m_totalSpecMaxHasBeenSet(false),
+    m_stateHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome SparkSessionInfo::Deserialize(const rapidjson::Value &value)
         m_totalSpecMaxHasBeenSet = true;
     }
 
+    if (value.HasMember("State") && !value["State"].IsNull())
+    {
+        if (!value["State"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkSessionInfo.State` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_state = string(value["State"].GetString());
+        m_stateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void SparkSessionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "TotalSpecMax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalSpecMax, allocator);
+    }
+
+    if (m_stateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "State";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void SparkSessionInfo::SetTotalSpecMax(const int64_t& _totalSpecMax)
 bool SparkSessionInfo::TotalSpecMaxHasBeenSet() const
 {
     return m_totalSpecMaxHasBeenSet;
+}
+
+string SparkSessionInfo::GetState() const
+{
+    return m_state;
+}
+
+void SparkSessionInfo::SetState(const string& _state)
+{
+    m_state = _state;
+    m_stateHasBeenSet = true;
+}
+
+bool SparkSessionInfo::StateHasBeenSet() const
+{
+    return m_stateHasBeenSet;
 }
 

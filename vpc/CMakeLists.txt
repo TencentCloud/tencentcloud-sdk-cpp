@@ -118,6 +118,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DeleteNetworkAclEntriesRequest.h
   include/tencentcloud/vpc/v20170312/model/SecurityGroupPolicySet.h
   include/tencentcloud/vpc/v20170312/model/DescribeHighPriorityRoutesRequest.h
+  include/tencentcloud/vpc/v20170312/model/DescribeSecurityGroupExpandedPoliciesResponse.h
   include/tencentcloud/vpc/v20170312/model/ModifyFlowLogAttributeRequest.h
   include/tencentcloud/vpc/v20170312/model/UnassignIpv6SubnetCidrBlockResponse.h
   include/tencentcloud/vpc/v20170312/model/ReplaceHighPriorityRoutesResponse.h
@@ -870,6 +871,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeServiceTemplatesResponse.h
   include/tencentcloud/vpc/v20170312/model/AcceptVpcPeeringConnectionResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeSgSnapshotFileContentRequest.h
+  include/tencentcloud/vpc/v20170312/model/DescribeSecurityGroupExpandedPoliciesRequest.h
   include/tencentcloud/vpc/v20170312/model/CreateBandwidthPackageResponse.h
   include/tencentcloud/vpc/v20170312/model/CreateNetworkAclEntriesResponse.h
   include/tencentcloud/vpc/v20170312/model/ResetVpnConnectionRequest.h
@@ -1158,6 +1160,7 @@ set(vpc_src
   src/v20170312/model/DeleteNetworkAclEntriesRequest.cpp
   src/v20170312/model/SecurityGroupPolicySet.cpp
   src/v20170312/model/DescribeHighPriorityRoutesRequest.cpp
+  src/v20170312/model/DescribeSecurityGroupExpandedPoliciesResponse.cpp
   src/v20170312/model/ModifyFlowLogAttributeRequest.cpp
   src/v20170312/model/UnassignIpv6SubnetCidrBlockResponse.cpp
   src/v20170312/model/ReplaceHighPriorityRoutesResponse.cpp
@@ -1910,6 +1913,7 @@ set(vpc_src
   src/v20170312/model/DescribeServiceTemplatesResponse.cpp
   src/v20170312/model/AcceptVpcPeeringConnectionResponse.cpp
   src/v20170312/model/DescribeSgSnapshotFileContentRequest.cpp
+  src/v20170312/model/DescribeSecurityGroupExpandedPoliciesRequest.cpp
   src/v20170312/model/CreateBandwidthPackageResponse.cpp
   src/v20170312/model/CreateNetworkAclEntriesResponse.cpp
   src/v20170312/model/ResetVpnConnectionRequest.cpp

@@ -64,6 +64,27 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
+                     * 获取集群ID
+                     * @return ClusterId 集群ID
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群ID
+                     * @param _clusterId 集群ID
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取job 类型
                      * @return JobType job 类型
                      * 
@@ -84,6 +105,27 @@ namespace TencentCloud
                      */
                     bool JobTypeHasBeenSet() const;
 
+                    /**
+                     * 获取job 过滤，不写就是全部 job
+                     * @return Job job 过滤，不写就是全部 job
+                     * 
+                     */
+                    std::string GetJob() const;
+
+                    /**
+                     * 设置job 过滤，不写就是全部 job
+                     * @param _job job 过滤，不写就是全部 job
+                     * 
+                     */
+                    void SetJob(const std::string& _job);
+
+                    /**
+                     * 判断参数 Job 是否已赋值
+                     * @return Job 是否已赋值
+                     * 
+                     */
+                    bool JobHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +135,22 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
+                     * 集群ID
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
                      * job 类型
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * job 过滤，不写就是全部 job
+                     */
+                    std::string m_job;
+                    bool m_jobHasBeenSet;
 
                 };
             }

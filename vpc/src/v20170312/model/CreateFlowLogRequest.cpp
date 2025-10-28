@@ -33,7 +33,8 @@ CreateFlowLogRequest::CreateFlowLogRequest() :
     m_tagsHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_flowLogStorageHasBeenSet(false),
-    m_cloudLogRegionHasBeenSet(false)
+    m_cloudLogRegionHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,14 @@ string CreateFlowLogRequest::ToJsonString() const
         string key = "CloudLogRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cloudLogRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
     }
 
 
@@ -322,6 +331,22 @@ void CreateFlowLogRequest::SetCloudLogRegion(const string& _cloudLogRegion)
 bool CreateFlowLogRequest::CloudLogRegionHasBeenSet() const
 {
     return m_cloudLogRegionHasBeenSet;
+}
+
+uint64_t CreateFlowLogRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void CreateFlowLogRequest::SetPeriod(const uint64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool CreateFlowLogRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 

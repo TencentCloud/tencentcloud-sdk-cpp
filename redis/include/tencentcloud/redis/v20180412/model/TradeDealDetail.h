@@ -49,21 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取订单号ID，调用云API时使用此ID
                      * @return DealId 订单号ID，调用云API时使用此ID
-                     * 
+                     * @deprecated
                      */
                     std::string GetDealId() const;
 
                     /**
                      * 设置订单号ID，调用云API时使用此ID
                      * @param _dealId 订单号ID，调用云API时使用此ID
-                     * 
+                     * @deprecated
                      */
                     void SetDealId(const std::string& _dealId);
 
                     /**
                      * 判断参数 DealId 是否已赋值
                      * @return DealId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DealIdHasBeenSet() const;
 

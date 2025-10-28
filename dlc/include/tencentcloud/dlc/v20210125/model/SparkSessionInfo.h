@@ -302,6 +302,27 @@ name
                      */
                     bool TotalSpecMaxHasBeenSet() const;
 
+                    /**
+                     * 获取状态，STARTING、RUNNING、TERMINATED
+                     * @return State 状态，STARTING、RUNNING、TERMINATED
+                     * 
+                     */
+                    std::string GetState() const;
+
+                    /**
+                     * 设置状态，STARTING、RUNNING、TERMINATED
+                     * @param _state 状态，STARTING、RUNNING、TERMINATED
+                     * 
+                     */
+                    void SetState(const std::string& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     * 
+                     */
+                    bool StateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -376,6 +397,12 @@ name
                      */
                     int64_t m_totalSpecMax;
                     bool m_totalSpecMaxHasBeenSet;
+
+                    /**
+                     * 状态，STARTING、RUNNING、TERMINATED
+                     */
+                    std::string m_state;
+                    bool m_stateHasBeenSet;
 
                 };
             }

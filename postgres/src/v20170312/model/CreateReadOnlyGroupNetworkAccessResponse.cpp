@@ -24,7 +24,8 @@ using namespace TencentCloud::Postgres::V20170312::Model;
 using namespace std;
 
 CreateReadOnlyGroupNetworkAccessResponse::CreateReadOnlyGroupNetworkAccessResponse() :
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateReadOnlyGroupNetworkAccessResponse::Deserialize(const 
         m_flowIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = rsp["TaskId"].GetInt64();
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateReadOnlyGroupNetworkAccessResponse::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowId, allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ int64_t CreateReadOnlyGroupNetworkAccessResponse::GetFlowId() const
 bool CreateReadOnlyGroupNetworkAccessResponse::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+int64_t CreateReadOnlyGroupNetworkAccessResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool CreateReadOnlyGroupNetworkAccessResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ Storage::Storage() :
     m_storageNameHasBeenSet(false),
     m_storagePrefixHasBeenSet(false),
     m_storageAccountIdHasBeenSet(false),
-    m_storageAppIdHasBeenSet(false)
+    m_storageAppIdHasBeenSet(false),
+    m_compressHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome Storage::Deserialize(const rapidjson::Value &value)
         m_storageAppIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Compress") && !value["Compress"].IsNull())
+    {
+        if (!value["Compress"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Storage.Compress` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_compress = value["Compress"].GetUint64();
+        m_compressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void Storage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "StorageAppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storageAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_compress, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void Storage::SetStorageAppId(const string& _storageAppId)
 bool Storage::StorageAppIdHasBeenSet() const
 {
     return m_storageAppIdHasBeenSet;
+}
+
+uint64_t Storage::GetCompress() const
+{
+    return m_compress;
+}
+
+void Storage::SetCompress(const uint64_t& _compress)
+{
+    m_compress = _compress;
+    m_compressHasBeenSet = true;
+}
+
+bool Storage::CompressHasBeenSet() const
+{
+    return m_compressHasBeenSet;
 }
 

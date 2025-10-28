@@ -424,6 +424,27 @@ namespace TencentCloud
                     bool ReplicasHasBeenSet() const;
 
                     /**
+                     * 获取是否更新存量节点
+                     * @return UpdateExistedNode 是否更新存量节点
+                     * 
+                     */
+                    bool GetUpdateExistedNode() const;
+
+                    /**
+                     * 设置是否更新存量节点
+                     * @param _updateExistedNode 是否更新存量节点
+                     * 
+                     */
+                    void SetUpdateExistedNode(const bool& _updateExistedNode);
+
+                    /**
+                     * 判断参数 UpdateExistedNode 是否已赋值
+                     * @return UpdateExistedNode 是否已赋值
+                     * 
+                     */
+                    bool UpdateExistedNodeHasBeenSet() const;
+
+                    /**
                      * 获取数据盘列表
                      * @return DataDisks 数据盘列表
                      * 
@@ -592,6 +613,12 @@ namespace TencentCloud
                      */
                     int64_t m_replicas;
                     bool m_replicasHasBeenSet;
+
+                    /**
+                     * 是否更新存量节点
+                     */
+                    bool m_updateExistedNode;
+                    bool m_updateExistedNodeHasBeenSet;
 
                     /**
                      * 数据盘列表

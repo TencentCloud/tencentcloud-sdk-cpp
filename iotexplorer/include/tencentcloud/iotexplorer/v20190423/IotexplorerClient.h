@@ -83,6 +83,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTRTCSignaturesWithRoomIdResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeRecognitionTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeRecognitionTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeServiceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigV2Request.h>
@@ -395,6 +397,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateOtaModuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateOtaModuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateOtaTaskStatusRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateOtaTaskStatusResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UploadFirmwareRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UploadFirmwareResponse.h>
 
@@ -501,6 +505,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTWeSeeRecognitionTaskResponse> CreateTWeSeeRecognitionTaskOutcome;
                 typedef std::future<CreateTWeSeeRecognitionTaskOutcome> CreateTWeSeeRecognitionTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeSeeRecognitionTaskRequest&, CreateTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeSeeRecognitionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTWeSeeServiceResponse> CreateTWeSeeServiceOutcome;
+                typedef std::future<CreateTWeSeeServiceOutcome> CreateTWeSeeServiceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeSeeServiceRequest&, CreateTWeSeeServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeSeeServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTWeTalkProductConfigResponse> CreateTWeTalkProductConfigOutcome;
                 typedef std::future<CreateTWeTalkProductConfigOutcome> CreateTWeTalkProductConfigOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeTalkProductConfigRequest&, CreateTWeTalkProductConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeTalkProductConfigAsyncHandler;
@@ -969,6 +976,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateOtaModuleResponse> UpdateOtaModuleOutcome;
                 typedef std::future<UpdateOtaModuleOutcome> UpdateOtaModuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UpdateOtaModuleRequest&, UpdateOtaModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOtaModuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateOtaTaskStatusResponse> UpdateOtaTaskStatusOutcome;
+                typedef std::future<UpdateOtaTaskStatusOutcome> UpdateOtaTaskStatusOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::UpdateOtaTaskStatusRequest&, UpdateOtaTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOtaTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadFirmwareResponse> UploadFirmwareOutcome;
                 typedef std::future<UploadFirmwareOutcome> UploadFirmwareOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
@@ -1246,6 +1256,15 @@ namespace TencentCloud
                 CreateTWeSeeRecognitionTaskOutcome CreateTWeSeeRecognitionTask(const Model::CreateTWeSeeRecognitionTaskRequest &request);
                 void CreateTWeSeeRecognitionTaskAsync(const Model::CreateTWeSeeRecognitionTaskRequest& request, const CreateTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTWeSeeRecognitionTaskOutcomeCallable CreateTWeSeeRecognitionTaskCallable(const Model::CreateTWeSeeRecognitionTaskRequest& request);
+
+                /**
+                 *开通 TWeSee 后付费服务
+                 * @param req CreateTWeSeeServiceRequest
+                 * @return CreateTWeSeeServiceOutcome
+                 */
+                CreateTWeSeeServiceOutcome CreateTWeSeeService(const Model::CreateTWeSeeServiceRequest &request);
+                void CreateTWeSeeServiceAsync(const Model::CreateTWeSeeServiceRequest& request, const CreateTWeSeeServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTWeSeeServiceOutcomeCallable CreateTWeSeeServiceCallable(const Model::CreateTWeSeeServiceRequest& request);
 
                 /**
                  *用于配置TWeTalk服务连接产品配置信息。
@@ -2656,6 +2675,15 @@ namespace TencentCloud
                 UpdateOtaModuleOutcome UpdateOtaModule(const Model::UpdateOtaModuleRequest &request);
                 void UpdateOtaModuleAsync(const Model::UpdateOtaModuleRequest& request, const UpdateOtaModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateOtaModuleOutcomeCallable UpdateOtaModuleCallable(const Model::UpdateOtaModuleRequest& request);
+
+                /**
+                 *本接口（UpdateOtaTask）当固件升级大任务处于没有在全部成功的状态时，可修改为取消状态，取消部分或全部设备的升级;或其它允许的可修改的状态。
+                 * @param req UpdateOtaTaskStatusRequest
+                 * @return UpdateOtaTaskStatusOutcome
+                 */
+                UpdateOtaTaskStatusOutcome UpdateOtaTaskStatus(const Model::UpdateOtaTaskStatusRequest &request);
+                void UpdateOtaTaskStatusAsync(const Model::UpdateOtaTaskStatusRequest& request, const UpdateOtaTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateOtaTaskStatusOutcomeCallable UpdateOtaTaskStatusCallable(const Model::UpdateOtaTaskStatusRequest& request);
 
                 /**
                  *本接口（UploadFirmware）用于创建设备固件版本信息，在平台用于固件版本升级、固件资源下发等。

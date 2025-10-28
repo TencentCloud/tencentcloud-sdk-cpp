@@ -43,7 +43,8 @@ CreateReadOnlyDBInstanceRequest::CreateReadOnlyDBInstanceRequest() :
     m_needSupportIpv6HasBeenSet(false),
     m_nameHasBeenSet(false),
     m_dBVersionHasBeenSet(false),
-    m_dedicatedClusterIdHasBeenSet(false)
+    m_dedicatedClusterIdHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -231,6 +232,14 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
         string key = "DedicatedClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 
@@ -575,6 +584,22 @@ void CreateReadOnlyDBInstanceRequest::SetDedicatedClusterId(const string& _dedic
 bool CreateReadOnlyDBInstanceRequest::DedicatedClusterIdHasBeenSet() const
 {
     return m_dedicatedClusterIdHasBeenSet;
+}
+
+bool CreateReadOnlyDBInstanceRequest::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void CreateReadOnlyDBInstanceRequest::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstanceRequest::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 
 

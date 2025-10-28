@@ -46,18 +46,18 @@ namespace TencentCloud
                     /**
                      * 获取按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string
-db-instance-name：按照实例名过滤，类型为string
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string
 db-project-id：按照项目ID过滤，类型为integer
-db-pay-mode：按照实例付费模式过滤，类型为string
+db-pay-mode：按照实例付费模式过滤，prepaid - 预付费；postpaid - 后付费。类型为string
 db-tag-key：按照标签键过滤，类型为string
 db-private-ip： 按照实例私有网络IP过滤，类型为string
 db-public-address： 按照实例外网地址过滤，类型为string
 db-dedicated-cluster-id: 按照私有集群Id过滤，类型为string
                      * @return Filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string
-db-instance-name：按照实例名过滤，类型为string
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string
 db-project-id：按照项目ID过滤，类型为integer
-db-pay-mode：按照实例付费模式过滤，类型为string
+db-pay-mode：按照实例付费模式过滤，prepaid - 预付费；postpaid - 后付费。类型为string
 db-tag-key：按照标签键过滤，类型为string
 db-private-ip： 按照实例私有网络IP过滤，类型为string
 db-public-address： 按照实例外网地址过滤，类型为string
@@ -69,18 +69,18 @@ db-dedicated-cluster-id: 按照私有集群Id过滤，类型为string
                     /**
                      * 设置按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string
-db-instance-name：按照实例名过滤，类型为string
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string
 db-project-id：按照项目ID过滤，类型为integer
-db-pay-mode：按照实例付费模式过滤，类型为string
+db-pay-mode：按照实例付费模式过滤，prepaid - 预付费；postpaid - 后付费。类型为string
 db-tag-key：按照标签键过滤，类型为string
 db-private-ip： 按照实例私有网络IP过滤，类型为string
 db-public-address： 按照实例外网地址过滤，类型为string
 db-dedicated-cluster-id: 按照私有集群Id过滤，类型为string
                      * @param _filters 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string
-db-instance-name：按照实例名过滤，类型为string
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string
 db-project-id：按照项目ID过滤，类型为integer
-db-pay-mode：按照实例付费模式过滤，类型为string
+db-pay-mode：按照实例付费模式过滤，prepaid - 预付费；postpaid - 后付费。类型为string
 db-tag-key：按照标签键过滤，类型为string
 db-private-ip： 按照实例私有网络IP过滤，类型为string
 db-public-address： 按照实例外网地址过滤，类型为string
@@ -97,15 +97,15 @@ db-dedicated-cluster-id: 按照私有集群Id过滤，类型为string
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取每页显示数量，取值范围为1-100，默认为返回10条。
-                     * @return Limit 每页显示数量，取值范围为1-100，默认为返回10条。
+                     * 获取每页显示数量，取值范围为0-100，传入0时，取默认配置。默认为返回10条。
+                     * @return Limit 每页显示数量，取值范围为0-100，传入0时，取默认配置。默认为返回10条。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页显示数量，取值范围为1-100，默认为返回10条。
-                     * @param _limit 每页显示数量，取值范围为1-100，默认为返回10条。
+                     * 设置每页显示数量，取值范围为0-100，传入0时，取默认配置。默认为返回10条。
+                     * @param _limit 每页显示数量，取值范围为0-100，传入0时，取默认配置。默认为返回10条。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -139,15 +139,15 @@ db-dedicated-cluster-id: 按照私有集群Id过滤，类型为string
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
-                     * @return OrderBy 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
+                     * 获取排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime。默认值：CreateTime。
+                     * @return OrderBy 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime。默认值：CreateTime。
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
-                     * @param _orderBy 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
+                     * 设置排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime。默认值：CreateTime。
+                     * @param _orderBy 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime。默认值：CreateTime。
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -160,15 +160,15 @@ db-dedicated-cluster-id: 按照私有集群Id过滤，类型为string
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，包括升序：asc、降序：desc。
-                     * @return OrderByType 排序方式，包括升序：asc、降序：desc。
+                     * 获取排序方式，包括升序：asc、降序：desc。默认值：asc。
+                     * @return OrderByType 排序方式，包括升序：asc、降序：desc。默认值：asc。
                      * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置排序方式，包括升序：asc、降序：desc。
-                     * @param _orderByType 排序方式，包括升序：asc、降序：desc。
+                     * 设置排序方式，包括升序：asc、降序：desc。默认值：asc。
+                     * @param _orderByType 排序方式，包括升序：asc、降序：desc。默认值：asc。
                      * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
@@ -185,9 +185,9 @@ db-dedicated-cluster-id: 按照私有集群Id过滤，类型为string
                     /**
                      * 按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：
 db-instance-id：按照实例ID过滤，类型为string
-db-instance-name：按照实例名过滤，类型为string
+db-instance-name：按照实例名过滤，支持模糊匹配，类型为string
 db-project-id：按照项目ID过滤，类型为integer
-db-pay-mode：按照实例付费模式过滤，类型为string
+db-pay-mode：按照实例付费模式过滤，prepaid - 预付费；postpaid - 后付费。类型为string
 db-tag-key：按照标签键过滤，类型为string
 db-private-ip： 按照实例私有网络IP过滤，类型为string
 db-public-address： 按照实例外网地址过滤，类型为string
@@ -197,7 +197,7 @@ db-dedicated-cluster-id: 按照私有集群Id过滤，类型为string
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 每页显示数量，取值范围为1-100，默认为返回10条。
+                     * 每页显示数量，取值范围为0-100，传入0时，取默认配置。默认为返回10条。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -209,13 +209,13 @@ db-dedicated-cluster-id: 按照私有集群Id过滤，类型为string
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime
+                     * 排序指标，如实例名、创建时间等，支持DBInstanceId,CreateTime,Name,EndTime。默认值：CreateTime。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序方式，包括升序：asc、降序：desc。
+                     * 排序方式，包括升序：asc、降序：desc。默认值：asc。
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;

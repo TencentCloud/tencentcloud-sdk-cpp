@@ -29,7 +29,8 @@ SavingPlanOverviewDetail::SavingPlanOverviewDetail() :
     m_savingAmountHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_payTypeHasBeenSet(false),
-    m_buyTimeHasBeenSet(false)
+    m_buyTimeHasBeenSet(false),
+    m_promiseAmountHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,16 @@ CoreInternalOutcome SavingPlanOverviewDetail::Deserialize(const rapidjson::Value
         m_buyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PromiseAmount") && !value["PromiseAmount"].IsNull())
+    {
+        if (!value["PromiseAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SavingPlanOverviewDetail.PromiseAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_promiseAmount = string(value["PromiseAmount"].GetString());
+        m_promiseAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void SavingPlanOverviewDetail::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "BuyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_buyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_promiseAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromiseAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_promiseAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void SavingPlanOverviewDetail::SetBuyTime(const string& _buyTime)
 bool SavingPlanOverviewDetail::BuyTimeHasBeenSet() const
 {
     return m_buyTimeHasBeenSet;
+}
+
+string SavingPlanOverviewDetail::GetPromiseAmount() const
+{
+    return m_promiseAmount;
+}
+
+void SavingPlanOverviewDetail::SetPromiseAmount(const string& _promiseAmount)
+{
+    m_promiseAmount = _promiseAmount;
+    m_promiseAmountHasBeenSet = true;
+}
+
+bool SavingPlanOverviewDetail::PromiseAmountHasBeenSet() const
+{
+    return m_promiseAmountHasBeenSet;
 }
 

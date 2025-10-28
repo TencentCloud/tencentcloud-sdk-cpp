@@ -477,6 +477,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupAssociationStatisticsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupAssociationStatisticsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupExpandedPoliciesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupExpandedPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupLimitsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupPoliciesRequest.h>
@@ -1576,6 +1578,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityGroupAssociationStatisticsResponse> DescribeSecurityGroupAssociationStatisticsOutcome;
                 typedef std::future<DescribeSecurityGroupAssociationStatisticsOutcome> DescribeSecurityGroupAssociationStatisticsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeSecurityGroupAssociationStatisticsRequest&, DescribeSecurityGroupAssociationStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupAssociationStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityGroupExpandedPoliciesResponse> DescribeSecurityGroupExpandedPoliciesOutcome;
+                typedef std::future<DescribeSecurityGroupExpandedPoliciesOutcome> DescribeSecurityGroupExpandedPoliciesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeSecurityGroupExpandedPoliciesRequest&, DescribeSecurityGroupExpandedPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupExpandedPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityGroupLimitsResponse> DescribeSecurityGroupLimitsOutcome;
                 typedef std::future<DescribeSecurityGroupLimitsOutcome> DescribeSecurityGroupLimitsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeSecurityGroupLimitsRequest&, DescribeSecurityGroupLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupLimitsAsyncHandler;
@@ -4416,6 +4421,15 @@ namespace TencentCloud
                 DescribeSecurityGroupAssociationStatisticsOutcome DescribeSecurityGroupAssociationStatistics(const Model::DescribeSecurityGroupAssociationStatisticsRequest &request);
                 void DescribeSecurityGroupAssociationStatisticsAsync(const Model::DescribeSecurityGroupAssociationStatisticsRequest& request, const DescribeSecurityGroupAssociationStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityGroupAssociationStatisticsOutcomeCallable DescribeSecurityGroupAssociationStatisticsCallable(const Model::DescribeSecurityGroupAssociationStatisticsRequest& request);
+
+                /**
+                 *本接口（DescribeSecurityGroupExpandedPolicies）用于查看参数模板展开后的安全组规则。本接口会通过缓存降低请求后端服务的调用次数，因此拉取结果会存在延迟（缓存超时时间为1分钟）。
+                 * @param req DescribeSecurityGroupExpandedPoliciesRequest
+                 * @return DescribeSecurityGroupExpandedPoliciesOutcome
+                 */
+                DescribeSecurityGroupExpandedPoliciesOutcome DescribeSecurityGroupExpandedPolicies(const Model::DescribeSecurityGroupExpandedPoliciesRequest &request);
+                void DescribeSecurityGroupExpandedPoliciesAsync(const Model::DescribeSecurityGroupExpandedPoliciesRequest& request, const DescribeSecurityGroupExpandedPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityGroupExpandedPoliciesOutcomeCallable DescribeSecurityGroupExpandedPoliciesCallable(const Model::DescribeSecurityGroupExpandedPoliciesRequest& request);
 
                 /**
                  *本接口(DescribeSecurityGroupLimits)用于查询用户安全组配额。

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
+#include <tencentcloud/ess/v20201111/model/JumpEvent.h>
 
 
 namespace TencentCloud
@@ -197,15 +198,23 @@ namespace TencentCloud
                     bool LegalNameHasBeenSet() const;
 
                     /**
-                     * 获取认证完成跳回的链接，最长500个字符
-                     * @return AutoJumpUrl 认证完成跳回的链接，最长500个字符
+                     * 获取<font color="red">即将废弃</font>，入参请使用JumpEvents。
+认证完成跳回的链接，最长500个字符。
+
+                     * @return AutoJumpUrl <font color="red">即将废弃</font>，入参请使用JumpEvents。
+认证完成跳回的链接，最长500个字符。
+
                      * 
                      */
                     std::string GetAutoJumpUrl() const;
 
                     /**
-                     * 设置认证完成跳回的链接，最长500个字符
-                     * @param _autoJumpUrl 认证完成跳回的链接，最长500个字符
+                     * 设置<font color="red">即将废弃</font>，入参请使用JumpEvents。
+认证完成跳回的链接，最长500个字符。
+
+                     * @param _autoJumpUrl <font color="red">即将废弃</font>，入参请使用JumpEvents。
+认证完成跳回的链接，最长500个字符。
+
                      * 
                      */
                     void SetAutoJumpUrl(const std::string& _autoJumpUrl);
@@ -767,6 +776,47 @@ p.s. 仅在对公打款不为空时有效
                      */
                     bool BankAccountNumberSameHasBeenSet() const;
 
+                    /**
+                     * 获取跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。
+p.s.
+Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </font>
+如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 
+
+p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     * @return JumpEvents 跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。
+p.s.
+Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </font>
+如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 
+
+p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     * 
+                     */
+                    std::vector<JumpEvent> GetJumpEvents() const;
+
+                    /**
+                     * 设置跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。
+p.s.
+Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </font>
+如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 
+
+p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     * @param _jumpEvents 跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。
+p.s.
+Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </font>
+如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 
+
+p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     * 
+                     */
+                    void SetJumpEvents(const std::vector<JumpEvent>& _jumpEvents);
+
+                    /**
+                     * 判断参数 JumpEvents 是否已赋值
+                     * @return JumpEvents 是否已赋值
+                     * 
+                     */
+                    bool JumpEventsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -812,7 +862,9 @@ p.s. 仅在对公打款不为空时有效
                     bool m_legalNameHasBeenSet;
 
                     /**
-                     * 认证完成跳回的链接，最长500个字符
+                     * <font color="red">即将废弃</font>，入参请使用JumpEvents。
+认证完成跳回的链接，最长500个字符。
+
                      */
                     std::string m_autoJumpUrl;
                     bool m_autoJumpUrlHasBeenSet;
@@ -967,6 +1019,17 @@ p.s. 仅在对公打款不为空时有效
                      */
                     bool m_bankAccountNumberSame;
                     bool m_bankAccountNumberSameHasBeenSet;
+
+                    /**
+                     * 跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。
+p.s.
+Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </font>
+如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 
+
+p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     */
+                    std::vector<JumpEvent> m_jumpEvents;
+                    bool m_jumpEventsHasBeenSet;
 
                 };
             }

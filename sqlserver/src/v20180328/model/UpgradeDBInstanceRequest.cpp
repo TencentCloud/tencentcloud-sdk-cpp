@@ -33,7 +33,8 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_hATypeHasBeenSet(false),
     m_multiZonesHasBeenSet(false),
     m_waitSwitchHasBeenSet(false),
-    m_drZonesHasBeenSet(false)
+    m_drZonesHasBeenSet(false),
+    m_upgradeCompatLevelHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,14 @@ string UpgradeDBInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_upgradeCompatLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeCompatLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_upgradeCompatLevel, allocator);
     }
 
 
@@ -326,6 +335,22 @@ void UpgradeDBInstanceRequest::SetDrZones(const vector<DrZoneInfo>& _drZones)
 bool UpgradeDBInstanceRequest::DrZonesHasBeenSet() const
 {
     return m_drZonesHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceRequest::GetUpgradeCompatLevel() const
+{
+    return m_upgradeCompatLevel;
+}
+
+void UpgradeDBInstanceRequest::SetUpgradeCompatLevel(const int64_t& _upgradeCompatLevel)
+{
+    m_upgradeCompatLevel = _upgradeCompatLevel;
+    m_upgradeCompatLevelHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::UpgradeCompatLevelHasBeenSet() const
+{
+    return m_upgradeCompatLevelHasBeenSet;
 }
 
 

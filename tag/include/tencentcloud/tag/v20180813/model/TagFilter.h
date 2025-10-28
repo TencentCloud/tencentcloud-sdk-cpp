@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * tag过滤数组多个是与的关系
+                * 标签键值过滤条件
                 */
                 class TagFilter : public AbstractModel
                 {

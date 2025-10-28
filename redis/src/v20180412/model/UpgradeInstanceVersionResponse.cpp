@@ -24,7 +24,8 @@ using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
 UpgradeInstanceVersionResponse::UpgradeInstanceVersionResponse() :
-    m_dealIdHasBeenSet(false)
+    m_dealIdHasBeenSet(false),
+    m_dealNameHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome UpgradeInstanceVersionResponse::Deserialize(const string &pa
         m_dealIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
+    {
+        if (!rsp["DealName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealName = string(rsp["DealName"].GetString());
+        m_dealNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string UpgradeInstanceVersionResponse::ToJsonString() const
         string key = "DealId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dealId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dealNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string UpgradeInstanceVersionResponse::GetDealId() const
 bool UpgradeInstanceVersionResponse::DealIdHasBeenSet() const
 {
     return m_dealIdHasBeenSet;
+}
+
+string UpgradeInstanceVersionResponse::GetDealName() const
+{
+    return m_dealName;
+}
+
+bool UpgradeInstanceVersionResponse::DealNameHasBeenSet() const
+{
+    return m_dealNameHasBeenSet;
 }
 
 

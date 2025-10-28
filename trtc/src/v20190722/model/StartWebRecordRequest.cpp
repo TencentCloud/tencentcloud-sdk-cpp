@@ -24,10 +24,10 @@ using namespace std;
 
 StartWebRecordRequest::StartWebRecordRequest() :
     m_recordUrlHasBeenSet(false),
-    m_maxDurationLimitHasBeenSet(false),
     m_storageParamsHasBeenSet(false),
-    m_webRecordVideoParamsHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
+    m_maxDurationLimitHasBeenSet(false),
+    m_webRecordVideoParamsHasBeenSet(false),
     m_recordIdHasBeenSet(false),
     m_publishCdnParamsHasBeenSet(false),
     m_readyTimeoutHasBeenSet(false),
@@ -50,14 +50,6 @@ string StartWebRecordRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_recordUrl.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_maxDurationLimitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MaxDurationLimit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_maxDurationLimit, allocator);
-    }
-
     if (m_storageParamsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -67,6 +59,22 @@ string StartWebRecordRequest::ToJsonString() const
         m_storageParams.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_sdkAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SdkAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sdkAppId, allocator);
+    }
+
+    if (m_maxDurationLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDurationLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxDurationLimit, allocator);
+    }
+
     if (m_webRecordVideoParamsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -74,14 +82,6 @@ string StartWebRecordRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_webRecordVideoParams.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_sdkAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SdkAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sdkAppId, allocator);
     }
 
     if (m_recordIdHasBeenSet)
@@ -148,22 +148,6 @@ bool StartWebRecordRequest::RecordUrlHasBeenSet() const
     return m_recordUrlHasBeenSet;
 }
 
-uint64_t StartWebRecordRequest::GetMaxDurationLimit() const
-{
-    return m_maxDurationLimit;
-}
-
-void StartWebRecordRequest::SetMaxDurationLimit(const uint64_t& _maxDurationLimit)
-{
-    m_maxDurationLimit = _maxDurationLimit;
-    m_maxDurationLimitHasBeenSet = true;
-}
-
-bool StartWebRecordRequest::MaxDurationLimitHasBeenSet() const
-{
-    return m_maxDurationLimitHasBeenSet;
-}
-
 StorageParams StartWebRecordRequest::GetStorageParams() const
 {
     return m_storageParams;
@@ -180,22 +164,6 @@ bool StartWebRecordRequest::StorageParamsHasBeenSet() const
     return m_storageParamsHasBeenSet;
 }
 
-WebRecordVideoParams StartWebRecordRequest::GetWebRecordVideoParams() const
-{
-    return m_webRecordVideoParams;
-}
-
-void StartWebRecordRequest::SetWebRecordVideoParams(const WebRecordVideoParams& _webRecordVideoParams)
-{
-    m_webRecordVideoParams = _webRecordVideoParams;
-    m_webRecordVideoParamsHasBeenSet = true;
-}
-
-bool StartWebRecordRequest::WebRecordVideoParamsHasBeenSet() const
-{
-    return m_webRecordVideoParamsHasBeenSet;
-}
-
 int64_t StartWebRecordRequest::GetSdkAppId() const
 {
     return m_sdkAppId;
@@ -210,6 +178,38 @@ void StartWebRecordRequest::SetSdkAppId(const int64_t& _sdkAppId)
 bool StartWebRecordRequest::SdkAppIdHasBeenSet() const
 {
     return m_sdkAppIdHasBeenSet;
+}
+
+uint64_t StartWebRecordRequest::GetMaxDurationLimit() const
+{
+    return m_maxDurationLimit;
+}
+
+void StartWebRecordRequest::SetMaxDurationLimit(const uint64_t& _maxDurationLimit)
+{
+    m_maxDurationLimit = _maxDurationLimit;
+    m_maxDurationLimitHasBeenSet = true;
+}
+
+bool StartWebRecordRequest::MaxDurationLimitHasBeenSet() const
+{
+    return m_maxDurationLimitHasBeenSet;
+}
+
+WebRecordVideoParams StartWebRecordRequest::GetWebRecordVideoParams() const
+{
+    return m_webRecordVideoParams;
+}
+
+void StartWebRecordRequest::SetWebRecordVideoParams(const WebRecordVideoParams& _webRecordVideoParams)
+{
+    m_webRecordVideoParams = _webRecordVideoParams;
+    m_webRecordVideoParamsHasBeenSet = true;
+}
+
+bool StartWebRecordRequest::WebRecordVideoParamsHasBeenSet() const
+{
+    return m_webRecordVideoParamsHasBeenSet;
 }
 
 string StartWebRecordRequest::GetRecordId() const

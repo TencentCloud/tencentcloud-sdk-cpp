@@ -85,6 +85,20 @@ namespace TencentCloud
                      */
                     bool DBInstanceIdSetHasBeenSet() const;
 
+                    /**
+                     * 获取入参有BillingParameters值时，出参才有值，值为商品下单的参数。
+                     * @return BillingParameters 入参有BillingParameters值时，出参才有值，值为商品下单的参数。
+                     * 
+                     */
+                    std::string GetBillingParameters() const;
+
+                    /**
+                     * 判断参数 BillingParameters 是否已赋值
+                     * @return BillingParameters 是否已赋值
+                     * 
+                     */
+                    bool BillingParametersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +118,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_dBInstanceIdSet;
                     bool m_dBInstanceIdSetHasBeenSet;
+
+                    /**
+                     * 入参有BillingParameters值时，出参才有值，值为商品下单的参数。
+                     */
+                    std::string m_billingParameters;
+                    bool m_billingParametersHasBeenSet;
 
                 };
             }

@@ -1010,6 +1010,35 @@ mssql_compatible引擎：
                      */
                     bool ExpandedCpuHasBeenSet() const;
 
+                    /**
+                     * 获取实例是否开启删除保护，取值如下：
+- true：开启删除保护
+- false：关闭删除保护
+                     * @return DeletionProtection 实例是否开启删除保护，取值如下：
+- true：开启删除保护
+- false：关闭删除保护
+                     * 
+                     */
+                    bool GetDeletionProtection() const;
+
+                    /**
+                     * 设置实例是否开启删除保护，取值如下：
+- true：开启删除保护
+- false：关闭删除保护
+                     * @param _deletionProtection 实例是否开启删除保护，取值如下：
+- true：开启删除保护
+- false：关闭删除保护
+                     * 
+                     */
+                    void SetDeletionProtection(const bool& _deletionProtection);
+
+                    /**
+                     * 判断参数 DeletionProtection 是否已赋值
+                     * @return DeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1281,6 +1310,14 @@ mssql_compatible引擎：
                      */
                     uint64_t m_expandedCpu;
                     bool m_expandedCpuHasBeenSet;
+
+                    /**
+                     * 实例是否开启删除保护，取值如下：
+- true：开启删除保护
+- false：关闭删除保护
+                     */
+                    bool m_deletionProtection;
+                    bool m_deletionProtectionHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
 #include <tencentcloud/essbasic/v20210526/model/OrganizationAuthorizationOptions.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/JumpEvent.h>
 
 
 namespace TencentCloud
@@ -411,18 +412,22 @@ namespace TencentCloud
                     bool EndpointHasBeenSet() const;
 
                     /**
-                     * 获取触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：
+                     * 获取<font color="red">已废弃</font> 请使用 JumpEvents 参数，进行替换。
+触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：
 <ul><li> **VERIFIED** :企业认证完成/员工认证完成后跳回原App/小程序</li></ul>
-                     * @return AutoJumpBackEvent 触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：
+                     * @return AutoJumpBackEvent <font color="red">已废弃</font> 请使用 JumpEvents 参数，进行替换。
+触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：
 <ul><li> **VERIFIED** :企业认证完成/员工认证完成后跳回原App/小程序</li></ul>
                      * 
                      */
                     std::string GetAutoJumpBackEvent() const;
 
                     /**
-                     * 设置触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：
+                     * 设置<font color="red">已废弃</font> 请使用 JumpEvents 参数，进行替换。
+触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：
 <ul><li> **VERIFIED** :企业认证完成/员工认证完成后跳回原App/小程序</li></ul>
-                     * @param _autoJumpBackEvent 触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：
+                     * @param _autoJumpBackEvent <font color="red">已废弃</font> 请使用 JumpEvents 参数，进行替换。
+触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：
 <ul><li> **VERIFIED** :企业认证完成/员工认证完成后跳回原App/小程序</li></ul>
                      * 
                      */
@@ -498,18 +503,22 @@ namespace TencentCloud
                     bool ProxyOperatorIdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取认证完成跳转链接。
+                     * 获取<font color="red">已废弃</font> 请使用 JumpEvents 参数，进行替换。
+认证完成跳转链接。
 注意：`此功能仅在Endpoint参数设置成 H5 或 PC时才有效`。
-                     * @return AutoJumpUrl 认证完成跳转链接。
+                     * @return AutoJumpUrl <font color="red">已废弃</font> 请使用 JumpEvents 参数，进行替换。
+认证完成跳转链接。
 注意：`此功能仅在Endpoint参数设置成 H5 或 PC时才有效`。
                      * 
                      */
                     std::string GetAutoJumpUrl() const;
 
                     /**
-                     * 设置认证完成跳转链接。
+                     * 设置<font color="red">已废弃</font> 请使用 JumpEvents 参数，进行替换。
+认证完成跳转链接。
 注意：`此功能仅在Endpoint参数设置成 H5 或 PC时才有效`。
-                     * @param _autoJumpUrl 认证完成跳转链接。
+                     * @param _autoJumpUrl <font color="red">已废弃</font> 请使用 JumpEvents 参数，进行替换。
+认证完成跳转链接。
 注意：`此功能仅在Endpoint参数设置成 H5 或 PC时才有效`。
                      * 
                      */
@@ -771,6 +780,35 @@ p.s.
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。
+p.s.Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </font>
+如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     * @return JumpEvents 跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。
+p.s.Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </font>
+如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     * 
+                     */
+                    std::vector<JumpEvent> GetJumpEvents() const;
+
+                    /**
+                     * 设置跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。
+p.s.Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </font>
+如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     * @param _jumpEvents 跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。
+p.s.Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </font>
+如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     * 
+                     */
+                    void SetJumpEvents(const std::vector<JumpEvent>& _jumpEvents);
+
+                    /**
+                     * 判断参数 JumpEvents 是否已赋值
+                     * @return JumpEvents 是否已赋值
+                     * 
+                     */
+                    bool JumpEventsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -872,7 +910,8 @@ p.s.
                     bool m_endpointHasBeenSet;
 
                     /**
-                     * 触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：
+                     * <font color="red">已废弃</font> 请使用 JumpEvents 参数，进行替换。
+触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：
 <ul><li> **VERIFIED** :企业认证完成/员工认证完成后跳回原App/小程序</li></ul>
                      */
                     std::string m_autoJumpBackEvent;
@@ -896,7 +935,8 @@ p.s.
                     bool m_proxyOperatorIdCardNumberHasBeenSet;
 
                     /**
-                     * 认证完成跳转链接。
+                     * <font color="red">已废弃</font> 请使用 JumpEvents 参数，进行替换。
+认证完成跳转链接。
 注意：`此功能仅在Endpoint参数设置成 H5 或 PC时才有效`。
                      */
                     std::string m_autoJumpUrl;
@@ -970,6 +1010,14 @@ p.s.
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。
+p.s.Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </font>
+如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。
+                     */
+                    std::vector<JumpEvent> m_jumpEvents;
+                    bool m_jumpEventsHasBeenSet;
 
                 };
             }

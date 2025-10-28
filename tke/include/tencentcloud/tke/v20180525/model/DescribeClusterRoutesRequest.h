@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取路由表名称。
-                     * @return RouteTableName 路由表名称。
+                     * 获取路由表名称。与集群 ID 一致，可以到[集群控制台](https://console.cloud.tencent.com/tke2)进行复制。
+                     * @return RouteTableName 路由表名称。与集群 ID 一致，可以到[集群控制台](https://console.cloud.tencent.com/tke2)进行复制。
                      * 
                      */
                     std::string GetRouteTableName() const;
 
                     /**
-                     * 设置路由表名称。
-                     * @param _routeTableName 路由表名称。
+                     * 设置路由表名称。与集群 ID 一致，可以到[集群控制台](https://console.cloud.tencent.com/tke2)进行复制。
+                     * @param _routeTableName 路由表名称。与集群 ID 一致，可以到[集群控制台](https://console.cloud.tencent.com/tke2)进行复制。
                      * 
                      */
                     void SetRouteTableName(const std::string& _routeTableName);
@@ -88,7 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 路由表名称。
+                     * 路由表名称。与集群 ID 一致，可以到[集群控制台](https://console.cloud.tencent.com/tke2)进行复制。
                      */
                     std::string m_routeTableName;
                     bool m_routeTableNameHasBeenSet;

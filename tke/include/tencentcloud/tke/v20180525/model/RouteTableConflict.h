@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取路由表类型。
+枚举值：CcsCluster、Vpc、VpcRouteTable、CcsClusterRouteTable
                      * @return RouteTableType 路由表类型。
+枚举值：CcsCluster、Vpc、VpcRouteTable、CcsClusterRouteTable
                      * 
                      */
                     std::string GetRouteTableType() const;
 
                     /**
                      * 设置路由表类型。
+枚举值：CcsCluster、Vpc、VpcRouteTable、CcsClusterRouteTable
                      * @param _routeTableType 路由表类型。
+枚举值：CcsCluster、Vpc、VpcRouteTable、CcsClusterRouteTable
                      * 
                      */
                     void SetRouteTableType(const std::string& _routeTableType);
@@ -134,6 +138,7 @@ namespace TencentCloud
 
                     /**
                      * 路由表类型。
+枚举值：CcsCluster、Vpc、VpcRouteTable、CcsClusterRouteTable
                      */
                     std::string m_routeTableType;
                     bool m_routeTableTypeHasBeenSet;

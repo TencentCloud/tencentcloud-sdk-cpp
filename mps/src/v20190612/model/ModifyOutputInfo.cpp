@@ -35,7 +35,8 @@ ModifyOutputInfo::ModifyOutputInfo() :
     m_zonesHasBeenSet(false),
     m_rISTSettingsHasBeenSet(false),
     m_outputTypeHasBeenSet(false),
-    m_pidSelectorHasBeenSet(false)
+    m_pidSelectorHasBeenSet(false),
+    m_streamSelectorHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,23 @@ CoreInternalOutcome ModifyOutputInfo::Deserialize(const rapidjson::Value &value)
         m_pidSelectorHasBeenSet = true;
     }
 
+    if (value.HasMember("StreamSelector") && !value["StreamSelector"].IsNull())
+    {
+        if (!value["StreamSelector"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyOutputInfo.StreamSelector` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_streamSelector.Deserialize(value["StreamSelector"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_streamSelectorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -383,6 +401,15 @@ void ModifyOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pidSelector.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_streamSelectorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamSelector";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_streamSelector.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -626,5 +653,21 @@ void ModifyOutputInfo::SetPidSelector(const PidSelector& _pidSelector)
 bool ModifyOutputInfo::PidSelectorHasBeenSet() const
 {
     return m_pidSelectorHasBeenSet;
+}
+
+StreamSelector ModifyOutputInfo::GetStreamSelector() const
+{
+    return m_streamSelector;
+}
+
+void ModifyOutputInfo::SetStreamSelector(const StreamSelector& _streamSelector)
+{
+    m_streamSelector = _streamSelector;
+    m_streamSelectorHasBeenSet = true;
+}
+
+bool ModifyOutputInfo::StreamSelectorHasBeenSet() const
+{
+    return m_streamSelectorHasBeenSet;
 }
 

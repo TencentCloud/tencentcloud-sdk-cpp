@@ -29,7 +29,8 @@ RedisKeySpaceData::RedisKeySpaceData() :
     m_itemCountHasBeenSet(false),
     m_maxElementSizeHasBeenSet(false),
     m_aveElementSizeHasBeenSet(false),
-    m_shardIdHasBeenSet(false)
+    m_shardIdHasBeenSet(false),
+    m_dbHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome RedisKeySpaceData::Deserialize(const rapidjson::Value &value
         m_shardIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Db") && !value["Db"].IsNull())
+    {
+        if (!value["Db"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RedisKeySpaceData.Db` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_db = value["Db"].GetInt64();
+        m_dbHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void RedisKeySpaceData::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ShardId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_shardId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Db";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_db, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void RedisKeySpaceData::SetShardId(const string& _shardId)
 bool RedisKeySpaceData::ShardIdHasBeenSet() const
 {
     return m_shardIdHasBeenSet;
+}
+
+int64_t RedisKeySpaceData::GetDb() const
+{
+    return m_db;
+}
+
+void RedisKeySpaceData::SetDb(const int64_t& _db)
+{
+    m_db = _db;
+    m_dbHasBeenSet = true;
+}
+
+bool RedisKeySpaceData::DbHasBeenSet() const
+{
+    return m_dbHasBeenSet;
 }
 

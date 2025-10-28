@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * redis key空间信息。
+                * redis key的内存占用等信息。
                 */
                 class RedisKeySpaceData : public AbstractModel
                 {
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取key编码方式。
-                     * @return Encoding key编码方式。
+                     * 获取key编码方式。包括 int、string、linkedlist、hashtable、skiplist、zipmap、ziplist、intset、quicklist、listpack。
+                     * @return Encoding key编码方式。包括 int、string、linkedlist、hashtable、skiplist、zipmap、ziplist、intset、quicklist、listpack。
                      * 
                      */
                     std::string GetEncoding() const;
 
                     /**
-                     * 设置key编码方式。
-                     * @param _encoding key编码方式。
+                     * 设置key编码方式。包括 int、string、linkedlist、hashtable、skiplist、zipmap、ziplist、intset、quicklist、listpack。
+                     * @param _encoding key编码方式。包括 int、string、linkedlist、hashtable、skiplist、zipmap、ziplist、intset、quicklist、listpack。
                      * 
                      */
                     void SetEncoding(const std::string& _encoding);
@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool ShardIdHasBeenSet() const;
 
+                    /**
+                     * 获取key所属数据库编号。
+                     * @return Db key所属数据库编号。
+                     * 
+                     */
+                    int64_t GetDb() const;
+
+                    /**
+                     * 设置key所属数据库编号。
+                     * @param _db key所属数据库编号。
+                     * 
+                     */
+                    void SetDb(const int64_t& _db);
+
+                    /**
+                     * 判断参数 Db 是否已赋值
+                     * @return Db 是否已赋值
+                     * 
+                     */
+                    bool DbHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,7 +271,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * key编码方式。
+                     * key编码方式。包括 int、string、linkedlist、hashtable、skiplist、zipmap、ziplist、intset、quicklist、listpack。
                      */
                     std::string m_encoding;
                     bool m_encodingHasBeenSet;
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_shardId;
                     bool m_shardIdHasBeenSet;
+
+                    /**
+                     * key所属数据库编号。
+                     */
+                    int64_t m_db;
+                    bool m_dbHasBeenSet;
 
                 };
             }

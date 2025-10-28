@@ -535,6 +535,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ComposeImageOperation.h
   include/tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/CreateLiveRecordTemplateResponse.h
+  include/tencentcloud/mps/v20190612/model/TrackSelector.h
   include/tencentcloud/mps/v20190612/model/ActivityResult.h
   include/tencentcloud/mps/v20190612/model/DescribeAsrHotwordsResponse.h
   include/tencentcloud/mps/v20190612/model/DescribeInputHLSPullSettings.h
@@ -775,6 +776,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskDescriptionInput.h
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskCoverInput.h
   include/tencentcloud/mps/v20190612/model/RegionInfo.h
+  include/tencentcloud/mps/v20190612/model/StreamSelector.h
   include/tencentcloud/mps/v20190612/model/CreateStreamLinkInputResponse.h
   include/tencentcloud/mps/v20190612/model/ComposeAudioOperation.h
   include/tencentcloud/mps/v20190612/model/CreateSmartSubtitleTemplateResponse.h
@@ -1317,6 +1319,7 @@ set(mps_src
   src/v20190612/model/ComposeImageOperation.cpp
   src/v20190612/model/CreateSampleSnapshotTemplateResponse.cpp
   src/v20190612/model/CreateLiveRecordTemplateResponse.cpp
+  src/v20190612/model/TrackSelector.cpp
   src/v20190612/model/ActivityResult.cpp
   src/v20190612/model/DescribeAsrHotwordsResponse.cpp
   src/v20190612/model/DescribeInputHLSPullSettings.cpp
@@ -1557,6 +1560,7 @@ set(mps_src
   src/v20190612/model/AiAnalysisTaskDescriptionInput.cpp
   src/v20190612/model/AiAnalysisTaskCoverInput.cpp
   src/v20190612/model/RegionInfo.cpp
+  src/v20190612/model/StreamSelector.cpp
   src/v20190612/model/CreateStreamLinkInputResponse.cpp
   src/v20190612/model/ComposeAudioOperation.cpp
   src/v20190612/model/CreateSmartSubtitleTemplateResponse.cpp

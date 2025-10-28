@@ -57,7 +57,9 @@ DescribeAssetImageRegistryDetailResponse::DescribeAssetImageRegistryDetailRespon
     m_registryRegionHasBeenSet(false),
     m_imageCreateTimeHasBeenSet(false),
     m_sensitiveInfoCntHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_solutionHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -435,6 +437,26 @@ CoreInternalOutcome DescribeAssetImageRegistryDetailResponse::Deserialize(const 
         m_idHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Solution") && !rsp["Solution"].IsNull())
+    {
+        if (!rsp["Solution"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Solution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_solution = string(rsp["Solution"].GetString());
+        m_solutionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Reason") && !rsp["Reason"].IsNull())
+    {
+        if (!rsp["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(rsp["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -715,6 +737,22 @@ string DescribeAssetImageRegistryDetailResponse::ToJsonString() const
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_solutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Solution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_solution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1067,6 +1105,26 @@ uint64_t DescribeAssetImageRegistryDetailResponse::GetId() const
 bool DescribeAssetImageRegistryDetailResponse::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string DescribeAssetImageRegistryDetailResponse::GetSolution() const
+{
+    return m_solution;
+}
+
+bool DescribeAssetImageRegistryDetailResponse::SolutionHasBeenSet() const
+{
+    return m_solutionHasBeenSet;
+}
+
+string DescribeAssetImageRegistryDetailResponse::GetReason() const
+{
+    return m_reason;
+}
+
+bool DescribeAssetImageRegistryDetailResponse::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 
 

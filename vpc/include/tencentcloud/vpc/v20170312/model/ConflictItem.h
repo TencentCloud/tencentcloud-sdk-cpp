@@ -49,21 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取冲突资源的ID。已废弃
                      * @return ConfilctId 冲突资源的ID。已废弃
-                     * 
+                     * @deprecated
                      */
                     std::string GetConfilctId() const;
 
                     /**
                      * 设置冲突资源的ID。已废弃
                      * @param _confilctId 冲突资源的ID。已废弃
-                     * 
+                     * @deprecated
                      */
                     void SetConfilctId(const std::string& _confilctId);
 
                     /**
                      * 判断参数 ConfilctId 是否已赋值
                      * @return ConfilctId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ConfilctIdHasBeenSet() const;
 

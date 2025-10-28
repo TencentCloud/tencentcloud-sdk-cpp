@@ -126,6 +126,49 @@ TioneClient::CreateDatasetOutcomeCallable TioneClient::CreateDatasetCallable(con
     return task->get_future();
 }
 
+TioneClient::CreateExportOutcome TioneClient::CreateExport(const CreateExportRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExportResponse rsp = CreateExportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExportOutcome(rsp);
+        else
+            return CreateExportOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExportOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::CreateExportAsync(const CreateExportRequest& request, const CreateExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::CreateExportOutcomeCallable TioneClient::CreateExportCallable(const CreateExportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExportOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::CreateModelServiceOutcome TioneClient::CreateModelService(const CreateModelServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateModelService");
@@ -420,6 +463,49 @@ TioneClient::DeleteDatasetOutcomeCallable TioneClient::DeleteDatasetCallable(con
         [this, request]()
         {
             return this->DeleteDataset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DeleteExportOutcome TioneClient::DeleteExport(const DeleteExportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteExport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteExportResponse rsp = DeleteExportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteExportOutcome(rsp);
+        else
+            return DeleteExportOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteExportOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DeleteExportAsync(const DeleteExportRequest& request, const DeleteExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteExport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DeleteExportOutcomeCallable TioneClient::DeleteExportCallable(const DeleteExportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteExportOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteExport(request);
         }
     );
 
@@ -1065,6 +1151,49 @@ TioneClient::DescribeEventsOutcomeCallable TioneClient::DescribeEventsCallable(c
         [this, request]()
         {
             return this->DescribeEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeExportOutcome TioneClient::DescribeExport(const DescribeExportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExportResponse rsp = DescribeExportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExportOutcome(rsp);
+        else
+            return DescribeExportOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExportOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeExportAsync(const DescribeExportRequest& request, const DescribeExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeExportOutcomeCallable TioneClient::DescribeExportCallable(const DescribeExportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExportOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExport(request);
         }
     );
 

@@ -26,7 +26,8 @@ CreateExportComplianceStatusListJobRequest::CreateExportComplianceStatusListJobR
     m_assetTypeHasBeenSet(false),
     m_exportByAssetHasBeenSet(false),
     m_exportAllHasBeenSet(false),
-    m_idListHasBeenSet(false)
+    m_idListHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,21 @@ string CreateExportComplianceStatusListJobRequest::ToJsonString() const
         for (auto itr = m_idList.begin(); itr != m_idList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -144,6 +160,22 @@ void CreateExportComplianceStatusListJobRequest::SetIdList(const vector<uint64_t
 bool CreateExportComplianceStatusListJobRequest::IdListHasBeenSet() const
 {
     return m_idListHasBeenSet;
+}
+
+vector<RunTimeFilters> CreateExportComplianceStatusListJobRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void CreateExportComplianceStatusListJobRequest::SetFilters(const vector<RunTimeFilters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool CreateExportComplianceStatusListJobRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

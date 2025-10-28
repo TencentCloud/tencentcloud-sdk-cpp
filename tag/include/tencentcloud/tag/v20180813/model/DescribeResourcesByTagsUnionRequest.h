@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签过滤数组
-                     * @return TagFilters 标签过滤数组
+                     * 获取标签过滤数组，数量最多六个
+                     * @return TagFilters 标签过滤数组，数量最多六个
                      * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
-                     * 设置标签过滤数组
-                     * @param _tagFilters 标签过滤数组
+                     * 设置标签过滤数组，数量最多六个
+                     * @param _tagFilters 标签过滤数组，数量最多六个
                      * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
@@ -214,7 +214,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签过滤数组
+                     * 标签过滤数组，数量最多六个
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;

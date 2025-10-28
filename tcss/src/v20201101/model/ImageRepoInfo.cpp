@@ -64,7 +64,9 @@ ImageRepoInfo::ImageRepoInfo() :
     m_isRunningHasBeenSet(false),
     m_hasNeedFixVulHasBeenSet(false),
     m_sensitiveInfoCntHasBeenSet(false),
-    m_recommendedFixHasBeenSet(false)
+    m_recommendedFixHasBeenSet(false),
+    m_solutionHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -513,6 +515,26 @@ CoreInternalOutcome ImageRepoInfo::Deserialize(const rapidjson::Value &value)
         m_recommendedFixHasBeenSet = true;
     }
 
+    if (value.HasMember("Solution") && !value["Solution"].IsNull())
+    {
+        if (!value["Solution"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.Solution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_solution = string(value["Solution"].GetString());
+        m_solutionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Reason") && !value["Reason"].IsNull())
+    {
+        if (!value["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoInfo.Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(value["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -870,6 +892,22 @@ void ImageRepoInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "RecommendedFix";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recommendedFix, allocator);
+    }
+
+    if (m_solutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Solution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_solution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1577,5 +1615,37 @@ void ImageRepoInfo::SetRecommendedFix(const bool& _recommendedFix)
 bool ImageRepoInfo::RecommendedFixHasBeenSet() const
 {
     return m_recommendedFixHasBeenSet;
+}
+
+string ImageRepoInfo::GetSolution() const
+{
+    return m_solution;
+}
+
+void ImageRepoInfo::SetSolution(const string& _solution)
+{
+    m_solution = _solution;
+    m_solutionHasBeenSet = true;
+}
+
+bool ImageRepoInfo::SolutionHasBeenSet() const
+{
+    return m_solutionHasBeenSet;
+}
+
+string ImageRepoInfo::GetReason() const
+{
+    return m_reason;
+}
+
+void ImageRepoInfo::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool ImageRepoInfo::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 

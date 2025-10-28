@@ -47,11 +47,9 @@ namespace TencentCloud
                     /**
                      * 获取任务类型，目前取值有：
 <li>WorkflowTask：工作流处理任务。</li>
-
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskType 任务类型，目前取值有：
 <li>WorkflowTask：工作流处理任务。</li>
-
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -85,6 +83,48 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取任务失败时的错误码。
+                     * @return ErrCode 任务失败时的错误码。
+                     * 
+                     */
+                    int64_t GetErrCode() const;
+
+                    /**
+                     * 判断参数 ErrCode 是否已赋值
+                     * @return ErrCode 是否已赋值
+                     * 
+                     */
+                    bool ErrCodeHasBeenSet() const;
+
+                    /**
+                     * 获取错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
+                     * @return ErrMsg 错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
+                     * 
+                     */
+                    std::string GetErrMsg() const;
+
+                    /**
+                     * 判断参数 ErrMsg 是否已赋值
+                     * @return ErrMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrMsgHasBeenSet() const;
+
+                    /**
+                     * 获取任务异常Message。
+                     * @return Message 任务异常Message。
+                     * 
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     * 
+                     */
+                    bool MessageHasBeenSet() const;
 
                     /**
                      * 获取图片处理任务的执行状态与结果。
@@ -139,7 +179,6 @@ namespace TencentCloud
                     /**
                      * 任务类型，目前取值有：
 <li>WorkflowTask：工作流处理任务。</li>
-
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskType;
@@ -154,6 +193,24 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 任务失败时的错误码。
+                     */
+                    int64_t m_errCode;
+                    bool m_errCodeHasBeenSet;
+
+                    /**
+                     * 错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
+                     */
+                    std::string m_errMsg;
+                    bool m_errMsgHasBeenSet;
+
+                    /**
+                     * 任务异常Message。
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                     /**
                      * 图片处理任务的执行状态与结果。

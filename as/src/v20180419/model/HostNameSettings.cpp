@@ -23,7 +23,8 @@ using namespace std;
 HostNameSettings::HostNameSettings() :
     m_hostNameHasBeenSet(false),
     m_hostNameStyleHasBeenSet(false),
-    m_hostNameSuffixHasBeenSet(false)
+    m_hostNameSuffixHasBeenSet(false),
+    m_hostNameDelimiterHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome HostNameSettings::Deserialize(const rapidjson::Value &value)
         m_hostNameSuffixHasBeenSet = true;
     }
 
+    if (value.HasMember("HostNameDelimiter") && !value["HostNameDelimiter"].IsNull())
+    {
+        if (!value["HostNameDelimiter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostNameSettings.HostNameDelimiter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostNameDelimiter = string(value["HostNameDelimiter"].GetString());
+        m_hostNameDelimiterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void HostNameSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "HostNameSuffix";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostNameSuffix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostNameDelimiterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostNameDelimiter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostNameDelimiter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void HostNameSettings::SetHostNameSuffix(const string& _hostNameSuffix)
 bool HostNameSettings::HostNameSuffixHasBeenSet() const
 {
     return m_hostNameSuffixHasBeenSet;
+}
+
+string HostNameSettings::GetHostNameDelimiter() const
+{
+    return m_hostNameDelimiter;
+}
+
+void HostNameSettings::SetHostNameDelimiter(const string& _hostNameDelimiter)
+{
+    m_hostNameDelimiter = _hostNameDelimiter;
+    m_hostNameDelimiterHasBeenSet = true;
+}
+
+bool HostNameSettings::HostNameDelimiterHasBeenSet() const
+{
+    return m_hostNameDelimiterHasBeenSet;
 }
 

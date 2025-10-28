@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取cls服务的logsetID
-                     * @return LogsetId cls服务的logsetID
+                     * 获取cls服务的logsetID，通过cls接口或者控制台获取
+                     * @return LogsetId cls服务的logsetID，通过cls接口或者控制台获取
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置cls服务的logsetID
-                     * @param _logsetId cls服务的logsetID
+                     * 设置cls服务的logsetID，通过cls接口或者控制台获取
+                     * @param _logsetId cls服务的logsetID，通过cls接口或者控制台获取
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取cls服务的topicID
-                     * @return TopicId cls服务的topicID
+                     * 获取cls服务的topicID，通过cls接口或者控制台获取
+                     * @return TopicId cls服务的topicID，通过cls接口或者控制台获取
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置cls服务的topicID
-                     * @param _topicId cls服务的topicID
+                     * 设置cls服务的topicID，通过cls接口或者控制台获取
+                     * @param _topicId cls服务的topicID，通过cls接口或者控制台获取
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -135,13 +135,13 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * cls服务的logsetID
+                     * cls服务的logsetID，通过cls接口或者控制台获取
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * cls服务的topicID
+                     * cls服务的topicID，通过cls接口或者控制台获取
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

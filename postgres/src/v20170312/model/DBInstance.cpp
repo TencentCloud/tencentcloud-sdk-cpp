@@ -60,7 +60,8 @@ DBInstance::DBInstance() :
     m_dBEngineConfigHasBeenSet(false),
     m_networkAccessListHasBeenSet(false),
     m_supportIpv6HasBeenSet(false),
-    m_expandedCpuHasBeenSet(false)
+    m_expandedCpuHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -509,6 +510,16 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_expandedCpuHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletionProtection") && !value["DeletionProtection"].IsNull())
+    {
+        if (!value["DeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionProtection = value["DeletionProtection"].GetBool();
+        m_deletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -862,6 +873,14 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ExpandedCpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expandedCpu, allocator);
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 }
@@ -1505,5 +1524,21 @@ void DBInstance::SetExpandedCpu(const uint64_t& _expandedCpu)
 bool DBInstance::ExpandedCpuHasBeenSet() const
 {
     return m_expandedCpuHasBeenSet;
+}
+
+bool DBInstance::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void DBInstance::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool DBInstance::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 

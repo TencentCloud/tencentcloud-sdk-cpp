@@ -9801,6 +9801,49 @@ VpcClient::DescribeSecurityGroupAssociationStatisticsOutcomeCallable VpcClient::
     return task->get_future();
 }
 
+VpcClient::DescribeSecurityGroupExpandedPoliciesOutcome VpcClient::DescribeSecurityGroupExpandedPolicies(const DescribeSecurityGroupExpandedPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityGroupExpandedPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityGroupExpandedPoliciesResponse rsp = DescribeSecurityGroupExpandedPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityGroupExpandedPoliciesOutcome(rsp);
+        else
+            return DescribeSecurityGroupExpandedPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityGroupExpandedPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeSecurityGroupExpandedPoliciesAsync(const DescribeSecurityGroupExpandedPoliciesRequest& request, const DescribeSecurityGroupExpandedPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityGroupExpandedPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeSecurityGroupExpandedPoliciesOutcomeCallable VpcClient::DescribeSecurityGroupExpandedPoliciesCallable(const DescribeSecurityGroupExpandedPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityGroupExpandedPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityGroupExpandedPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeSecurityGroupLimitsOutcome VpcClient::DescribeSecurityGroupLimits(const DescribeSecurityGroupLimitsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityGroupLimits");

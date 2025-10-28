@@ -137,6 +137,35 @@ UNIQUE，入参所填的 InstanceName 相当于实例名前缀，AS 和 CVM 会�
                      */
                     bool InstanceNameSuffixHasBeenSet() const;
 
+                    /**
+                     * 获取云服务器实例名分隔符。 默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为实例名的分隔符。如果不设置，则默认采用点号（.）分隔符。 通过分割符连接多段。
+
+假设原实例名为“product-as-instance”，分隔符InstanceNameDelimiter为“-”，设置实例名后缀"suffix"，那么最终实例名为“product-as-instance-suffix”。
+                     * @return InstanceNameDelimiter 云服务器实例名分隔符。 默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为实例名的分隔符。如果不设置，则默认采用点号（.）分隔符。 通过分割符连接多段。
+
+假设原实例名为“product-as-instance”，分隔符InstanceNameDelimiter为“-”，设置实例名后缀"suffix"，那么最终实例名为“product-as-instance-suffix”。
+                     * 
+                     */
+                    std::string GetInstanceNameDelimiter() const;
+
+                    /**
+                     * 设置云服务器实例名分隔符。 默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为实例名的分隔符。如果不设置，则默认采用点号（.）分隔符。 通过分割符连接多段。
+
+假设原实例名为“product-as-instance”，分隔符InstanceNameDelimiter为“-”，设置实例名后缀"suffix"，那么最终实例名为“product-as-instance-suffix”。
+                     * @param _instanceNameDelimiter 云服务器实例名分隔符。 默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为实例名的分隔符。如果不设置，则默认采用点号（.）分隔符。 通过分割符连接多段。
+
+假设原实例名为“product-as-instance”，分隔符InstanceNameDelimiter为“-”，设置实例名后缀"suffix"，那么最终实例名为“product-as-instance-suffix”。
+                     * 
+                     */
+                    void SetInstanceNameDelimiter(const std::string& _instanceNameDelimiter);
+
+                    /**
+                     * 判断参数 InstanceNameDelimiter 是否已赋值
+                     * @return InstanceNameDelimiter 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameDelimiterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +192,14 @@ UNIQUE，入参所填的 InstanceName 相当于实例名前缀，AS 和 CVM 会�
                      */
                     std::string m_instanceNameSuffix;
                     bool m_instanceNameSuffixHasBeenSet;
+
+                    /**
+                     * 云服务器实例名分隔符。 默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为实例名的分隔符。如果不设置，则默认采用点号（.）分隔符。 通过分割符连接多段。
+
+假设原实例名为“product-as-instance”，分隔符InstanceNameDelimiter为“-”，设置实例名后缀"suffix"，那么最终实例名为“product-as-instance-suffix”。
+                     */
+                    std::string m_instanceNameDelimiter;
+                    bool m_instanceNameDelimiterHasBeenSet;
 
                 };
             }

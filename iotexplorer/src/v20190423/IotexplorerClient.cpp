@@ -1330,6 +1330,49 @@ IotexplorerClient::CreateTWeSeeRecognitionTaskOutcomeCallable IotexplorerClient:
     return task->get_future();
 }
 
+IotexplorerClient::CreateTWeSeeServiceOutcome IotexplorerClient::CreateTWeSeeService(const CreateTWeSeeServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTWeSeeService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTWeSeeServiceResponse rsp = CreateTWeSeeServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTWeSeeServiceOutcome(rsp);
+        else
+            return CreateTWeSeeServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTWeSeeServiceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTWeSeeServiceAsync(const CreateTWeSeeServiceRequest& request, const CreateTWeSeeServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTWeSeeService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateTWeSeeServiceOutcomeCallable IotexplorerClient::CreateTWeSeeServiceCallable(const CreateTWeSeeServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTWeSeeServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTWeSeeService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateTWeTalkProductConfigOutcome IotexplorerClient::CreateTWeTalkProductConfig(const CreateTWeTalkProductConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTWeTalkProductConfig");
@@ -8031,6 +8074,49 @@ IotexplorerClient::UpdateOtaModuleOutcomeCallable IotexplorerClient::UpdateOtaMo
         [this, request]()
         {
             return this->UpdateOtaModule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::UpdateOtaTaskStatusOutcome IotexplorerClient::UpdateOtaTaskStatus(const UpdateOtaTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateOtaTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateOtaTaskStatusResponse rsp = UpdateOtaTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateOtaTaskStatusOutcome(rsp);
+        else
+            return UpdateOtaTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateOtaTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::UpdateOtaTaskStatusAsync(const UpdateOtaTaskStatusRequest& request, const UpdateOtaTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateOtaTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::UpdateOtaTaskStatusOutcomeCallable IotexplorerClient::UpdateOtaTaskStatusCallable(const UpdateOtaTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateOtaTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateOtaTaskStatus(request);
         }
     );
 

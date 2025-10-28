@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取1 生效 2 失效 3 作废
+                     * @return Status 1 生效 2 失效 3 作废
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置1 生效 2 失效 3 作废
+                     * @param _status 1 生效 2 失效 3 作废
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取支付类型
-                     * @return PayType 支付类型
+                     * 获取1 全预付 2 部分预付 3 全不预付
+                     * @return PayType 1 全预付 2 部分预付 3 全不预付
                      * 
                      */
                     uint64_t GetPayType() const;
 
                     /**
-                     * 设置支付类型
-                     * @param _payType 支付类型
+                     * 设置1 全预付 2 部分预付 3 全不预付
+                     * @param _payType 1 全预付 2 部分预付 3 全不预付
                      * 
                      */
                     void SetPayType(const uint64_t& _payType);
@@ -235,6 +235,31 @@ namespace TencentCloud
                      */
                     bool BuyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取承诺金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PromiseAmount 承诺金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPromiseAmount() const;
+
+                    /**
+                     * 设置承诺金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _promiseAmount 承诺金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPromiseAmount(const std::string& _promiseAmount);
+
+                    /**
+                     * 判断参数 PromiseAmount 是否已赋值
+                     * @return PromiseAmount 是否已赋值
+                     * 
+                     */
+                    bool PromiseAmountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -262,7 +287,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 状态
+                     * 1 生效 2 失效 3 作废
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -280,7 +305,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 支付类型
+                     * 1 全预付 2 部分预付 3 全不预付
                      */
                     uint64_t m_payType;
                     bool m_payTypeHasBeenSet;
@@ -290,6 +315,13 @@ namespace TencentCloud
                      */
                     std::string m_buyTime;
                     bool m_buyTimeHasBeenSet;
+
+                    /**
+                     * 承诺金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_promiseAmount;
+                    bool m_promiseAmountHasBeenSet;
 
                 };
             }

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Uin
-                     * @return PayerUin Uin
+                     * 获取支付者Uin
+                     * @return PayerUin 支付者Uin
                      * 
                      */
                     uint64_t GetPayerUin() const;
 
                     /**
-                     * 设置Uin
-                     * @param _payerUin Uin
+                     * 设置支付者Uin
+                     * @param _payerUin 支付者Uin
                      * 
                      */
                     void SetPayerUin(const uint64_t& _payerUin);
@@ -69,18 +69,18 @@ namespace TencentCloud
                     bool PayerUinHasBeenSet() const;
 
                     /**
-                     * 获取主用户Uin
+                     * 获取使用者Uin
 
-                     * @return OwnerUin 主用户Uin
+                     * @return OwnerUin 使用者Uin
 
                      * 
                      */
                     uint64_t GetOwnerUin() const;
 
                     /**
-                     * 设置主用户Uin
+                     * 设置使用者Uin
 
-                     * @param _ownerUin 主用户Uin
+                     * @param _ownerUin 使用者Uin
 
                      * 
                      */
@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool BillMonthHasBeenSet() const;
 
                     /**
-                     * 获取修改类型：ADD(新增)、UPDATE(更新)
-                     * @return Action 修改类型：ADD(新增)、UPDATE(更新)
+                     * 获取修改类型：ADD(新增)、UPDATE(更新)、DELETE(删除)
+                     * @return Action 修改类型：ADD(新增)、UPDATE(更新)、DELETE(删除)
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置修改类型：ADD(新增)、UPDATE(更新)
-                     * @param _action 修改类型：ADD(新增)、UPDATE(更新)
+                     * 设置修改类型：ADD(新增)、UPDATE(更新)、DELETE(删除)
+                     * @param _action 修改类型：ADD(新增)、UPDATE(更新)、DELETE(删除)
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -241,15 +241,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改渠道：官网修改/API修改
-                     * @return OperationChannel 修改渠道：官网修改/API修改
+                     * 获取修改渠道：CONSOLE/API
+                     * @return OperationChannel 修改渠道：CONSOLE/API
                      * 
                      */
                     std::string GetOperationChannel() const;
 
                     /**
-                     * 设置修改渠道：官网修改/API修改
-                     * @param _operationChannel 修改渠道：官网修改/API修改
+                     * 设置修改渠道：CONSOLE/API
+                     * @param _operationChannel 修改渠道：CONSOLE/API
                      * 
                      */
                     void SetOperationChannel(const std::string& _operationChannel);
@@ -285,13 +285,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Uin
+                     * 支付者Uin
                      */
                     uint64_t m_payerUin;
                     bool m_payerUinHasBeenSet;
 
                     /**
-                     * 主用户Uin
+                     * 使用者Uin
 
                      */
                     uint64_t m_ownerUin;
@@ -316,7 +316,7 @@ namespace TencentCloud
                     bool m_billMonthHasBeenSet;
 
                     /**
-                     * 修改类型：ADD(新增)、UPDATE(更新)
+                     * 修改类型：ADD(新增)、UPDATE(更新)、DELETE(删除)
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
@@ -340,7 +340,7 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 修改渠道：官网修改/API修改
+                     * 修改渠道：CONSOLE/API
                      */
                     std::string m_operationChannel;
                     bool m_operationChannelHasBeenSet;

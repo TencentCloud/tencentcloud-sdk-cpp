@@ -278,6 +278,27 @@ namespace TencentCloud
                      */
                     bool DrZonesHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动升级数据库的兼容性级别，默认0。0-否，1-是
+                     * @return UpgradeCompatLevel 是否自动升级数据库的兼容性级别，默认0。0-否，1-是
+                     * 
+                     */
+                    int64_t GetUpgradeCompatLevel() const;
+
+                    /**
+                     * 设置是否自动升级数据库的兼容性级别，默认0。0-否，1-是
+                     * @param _upgradeCompatLevel 是否自动升级数据库的兼容性级别，默认0。0-否，1-是
+                     * 
+                     */
+                    void SetUpgradeCompatLevel(const int64_t& _upgradeCompatLevel);
+
+                    /**
+                     * 判断参数 UpgradeCompatLevel 是否已赋值
+                     * @return UpgradeCompatLevel 是否已赋值
+                     * 
+                     */
+                    bool UpgradeCompatLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +367,12 @@ namespace TencentCloud
                      */
                     std::vector<DrZoneInfo> m_drZones;
                     bool m_drZonesHasBeenSet;
+
+                    /**
+                     * 是否自动升级数据库的兼容性级别，默认0。0-否，1-是
+                     */
+                    int64_t m_upgradeCompatLevel;
+                    bool m_upgradeCompatLevelHasBeenSet;
 
                 };
             }

@@ -28,7 +28,9 @@ CreatePartnerAutoSignAuthUrlRequest::CreatePartnerAutoSignAuthUrlRequest() :
     m_authorizedOrganizationNameHasBeenSet(false),
     m_platformAppAuthorizationHasBeenSet(false),
     m_sealTypesHasBeenSet(false),
-    m_authToMeHasBeenSet(false)
+    m_authToMeHasBeenSet(false),
+    m_authorizedOrganizationIdsHasBeenSet(false),
+    m_authorizedOrganizationNamesHasBeenSet(false)
 {
 }
 
@@ -91,6 +93,32 @@ string CreatePartnerAutoSignAuthUrlRequest::ToJsonString() const
         string key = "AuthToMe";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_authToMe, allocator);
+    }
+
+    if (m_authorizedOrganizationIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizedOrganizationIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_authorizedOrganizationIds.begin(); itr != m_authorizedOrganizationIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_authorizedOrganizationNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizedOrganizationNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_authorizedOrganizationNames.begin(); itr != m_authorizedOrganizationNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -195,6 +223,38 @@ void CreatePartnerAutoSignAuthUrlRequest::SetAuthToMe(const bool& _authToMe)
 bool CreatePartnerAutoSignAuthUrlRequest::AuthToMeHasBeenSet() const
 {
     return m_authToMeHasBeenSet;
+}
+
+vector<string> CreatePartnerAutoSignAuthUrlRequest::GetAuthorizedOrganizationIds() const
+{
+    return m_authorizedOrganizationIds;
+}
+
+void CreatePartnerAutoSignAuthUrlRequest::SetAuthorizedOrganizationIds(const vector<string>& _authorizedOrganizationIds)
+{
+    m_authorizedOrganizationIds = _authorizedOrganizationIds;
+    m_authorizedOrganizationIdsHasBeenSet = true;
+}
+
+bool CreatePartnerAutoSignAuthUrlRequest::AuthorizedOrganizationIdsHasBeenSet() const
+{
+    return m_authorizedOrganizationIdsHasBeenSet;
+}
+
+vector<string> CreatePartnerAutoSignAuthUrlRequest::GetAuthorizedOrganizationNames() const
+{
+    return m_authorizedOrganizationNames;
+}
+
+void CreatePartnerAutoSignAuthUrlRequest::SetAuthorizedOrganizationNames(const vector<string>& _authorizedOrganizationNames)
+{
+    m_authorizedOrganizationNames = _authorizedOrganizationNames;
+    m_authorizedOrganizationNamesHasBeenSet = true;
+}
+
+bool CreatePartnerAutoSignAuthUrlRequest::AuthorizedOrganizationNamesHasBeenSet() const
+{
+    return m_authorizedOrganizationNamesHasBeenSet;
 }
 
 

@@ -140,11 +140,12 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/MiniAppCreateFlowPageOption.h
   include/tencentcloud/ess/v20201111/model/CreateFlowForwardsRequest.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentResponse.h
+  include/tencentcloud/ess/v20201111/model/JumpEvent.h
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationAuthStatusResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationTasksRequest.h
   include/tencentcloud/ess/v20201111/model/UserThreeFactor.h
-  include/tencentcloud/ess/v20201111/model/FailedUpdateStaffData.h
+  include/tencentcloud/ess/v20201111/model/SignQrCode.h
   include/tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignUrlResponse.h
@@ -155,7 +156,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFlowComponentsRequest.h
   include/tencentcloud/ess/v20201111/model/VerifyDigitFileResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h
-  include/tencentcloud/ess/v20201111/model/SignQrCode.h
+  include/tencentcloud/ess/v20201111/model/FailedUpdateStaffData.h
   include/tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h
   include/tencentcloud/ess/v20201111/model/FlowDetailInfo.h
   include/tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageRequest.h
@@ -517,11 +518,12 @@ set(ess_src
   src/v20201111/model/MiniAppCreateFlowPageOption.cpp
   src/v20201111/model/CreateFlowForwardsRequest.cpp
   src/v20201111/model/CreateIntegrationDepartmentResponse.cpp
+  src/v20201111/model/JumpEvent.cpp
   src/v20201111/model/DeleteSealPoliciesResponse.cpp
   src/v20201111/model/DescribeOrganizationAuthStatusResponse.cpp
   src/v20201111/model/DescribeBatchOrganizationRegistrationTasksRequest.cpp
   src/v20201111/model/UserThreeFactor.cpp
-  src/v20201111/model/FailedUpdateStaffData.cpp
+  src/v20201111/model/SignQrCode.cpp
   src/v20201111/model/CreateSealPolicyResponse.cpp
   src/v20201111/model/CreateSchemeUrlResponse.cpp
   src/v20201111/model/CreateFlowSignUrlResponse.cpp
@@ -532,7 +534,7 @@ set(ess_src
   src/v20201111/model/DescribeFlowComponentsRequest.cpp
   src/v20201111/model/VerifyDigitFileResponse.cpp
   src/v20201111/model/DeleteIntegrationEmployeesRequest.cpp
-  src/v20201111/model/SignQrCode.cpp
+  src/v20201111/model/FailedUpdateStaffData.cpp
   src/v20201111/model/GetTaskResultApiRequest.cpp
   src/v20201111/model/FlowDetailInfo.cpp
   src/v20201111/model/CreatePersonAuthCertificateImageRequest.cpp

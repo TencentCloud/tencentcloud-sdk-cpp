@@ -103,7 +103,7 @@ namespace TencentCloud
                      * @return AuthorizedOrganizationId 被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationName二选一传入。
 
 注：`被授权企业必须和当前企业在同一应用号下`
-                     * 
+                     * @deprecated
                      */
                     std::string GetAuthorizedOrganizationId() const;
 
@@ -114,14 +114,14 @@ namespace TencentCloud
                      * @param _authorizedOrganizationId 被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationName二选一传入。
 
 注：`被授权企业必须和当前企业在同一应用号下`
-                     * 
+                     * @deprecated
                      */
                     void SetAuthorizedOrganizationId(const std::string& _authorizedOrganizationId);
 
                     /**
                      * 判断参数 AuthorizedOrganizationId 是否已赋值
                      * @return AuthorizedOrganizationId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AuthorizedOrganizationIdHasBeenSet() const;
 
@@ -136,7 +136,7 @@ namespace TencentCloud
 注: 
 1. 如果名称中包含英文括号()，请使用中文括号（）代替。
 2. 被授权企业必须和当前企业在同一应用号下
-                     * 
+                     * @deprecated
                      */
                     std::string GetAuthorizedOrganizationName() const;
 
@@ -151,14 +151,14 @@ namespace TencentCloud
 注: 
 1. 如果名称中包含英文括号()，请使用中文括号（）代替。
 2. 被授权企业必须和当前企业在同一应用号下
-                     * 
+                     * @deprecated
                      */
                     void SetAuthorizedOrganizationName(const std::string& _authorizedOrganizationName);
 
                     /**
                      * 判断参数 AuthorizedOrganizationName 是否已赋值
                      * @return AuthorizedOrganizationName 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AuthorizedOrganizationNameHasBeenSet() const;
 
@@ -166,7 +166,7 @@ namespace TencentCloud
                      * 获取是否给平台应用授权
 
 <ul>
-<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li>
+<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationIds</code>和<code>AuthorizedOrganizationNames</code>。</li>
 <li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li>
 </ul>
 
@@ -174,7 +174,7 @@ namespace TencentCloud
                      * @return PlatformAppAuthorization 是否给平台应用授权
 
 <ul>
-<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li>
+<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationIds</code>和<code>AuthorizedOrganizationNames</code>。</li>
 <li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li>
 </ul>
 
@@ -187,7 +187,7 @@ namespace TencentCloud
                      * 设置是否给平台应用授权
 
 <ul>
-<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li>
+<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationIds</code>和<code>AuthorizedOrganizationNames</code>。</li>
 <li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li>
 </ul>
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                      * @param _platformAppAuthorization 是否给平台应用授权
 
 <ul>
-<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li>
+<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationIds</code>和<code>AuthorizedOrganizationNames</code>。</li>
 <li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li>
 </ul>
 
@@ -263,13 +263,13 @@ namespace TencentCloud
                     /**
                      * 获取在处理授权关系时，授权的方向
 <ul>
-<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
-<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>
+<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
+<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【授权方】的企业名称，即提供授权的企业。此场景下不支持批量</li>
 </ul>
                      * @return AuthToMe 在处理授权关系时，授权的方向
 <ul>
-<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
-<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>
+<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
+<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【授权方】的企业名称，即提供授权的企业。此场景下不支持批量</li>
 </ul>
                      * 
                      */
@@ -278,13 +278,13 @@ namespace TencentCloud
                     /**
                      * 设置在处理授权关系时，授权的方向
 <ul>
-<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
-<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>
+<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
+<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【授权方】的企业名称，即提供授权的企业。此场景下不支持批量</li>
 </ul>
                      * @param _authToMe 在处理授权关系时，授权的方向
 <ul>
-<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
-<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>
+<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
+<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【授权方】的企业名称，即提供授权的企业。此场景下不支持批量</li>
 </ul>
                      * 
                      */
@@ -296,6 +296,48 @@ namespace TencentCloud
                      * 
                      */
                     bool AuthToMeHasBeenSet() const;
+
+                    /**
+                     * 获取被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationNames二选一传入，最大支持50个，注：`被授权企业必须和当前企业在同一应用号下`
+                     * @return AuthorizedOrganizationIds 被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationNames二选一传入，最大支持50个，注：`被授权企业必须和当前企业在同一应用号下`
+                     * 
+                     */
+                    std::vector<std::string> GetAuthorizedOrganizationIds() const;
+
+                    /**
+                     * 设置被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationNames二选一传入，最大支持50个，注：`被授权企业必须和当前企业在同一应用号下`
+                     * @param _authorizedOrganizationIds 被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationNames二选一传入，最大支持50个，注：`被授权企业必须和当前企业在同一应用号下`
+                     * 
+                     */
+                    void SetAuthorizedOrganizationIds(const std::vector<std::string>& _authorizedOrganizationIds);
+
+                    /**
+                     * 判断参数 AuthorizedOrganizationIds 是否已赋值
+                     * @return AuthorizedOrganizationIds 是否已赋值
+                     * 
+                     */
+                    bool AuthorizedOrganizationIdsHasBeenSet() const;
+
+                    /**
+                     * 获取被授企业名称/授权方企业的名字，如果是企业之间授权和AuthorizedOrganizationIds二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。注: 1. 如果名称中包含英文括号()，请使用中文括号（）代替。2. 被授权企业必须和当前企业在同一应用号下 3. 数组最大长度50
+                     * @return AuthorizedOrganizationNames 被授企业名称/授权方企业的名字，如果是企业之间授权和AuthorizedOrganizationIds二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。注: 1. 如果名称中包含英文括号()，请使用中文括号（）代替。2. 被授权企业必须和当前企业在同一应用号下 3. 数组最大长度50
+                     * 
+                     */
+                    std::vector<std::string> GetAuthorizedOrganizationNames() const;
+
+                    /**
+                     * 设置被授企业名称/授权方企业的名字，如果是企业之间授权和AuthorizedOrganizationIds二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。注: 1. 如果名称中包含英文括号()，请使用中文括号（）代替。2. 被授权企业必须和当前企业在同一应用号下 3. 数组最大长度50
+                     * @param _authorizedOrganizationNames 被授企业名称/授权方企业的名字，如果是企业之间授权和AuthorizedOrganizationIds二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。注: 1. 如果名称中包含英文括号()，请使用中文括号（）代替。2. 被授权企业必须和当前企业在同一应用号下 3. 数组最大长度50
+                     * 
+                     */
+                    void SetAuthorizedOrganizationNames(const std::vector<std::string>& _authorizedOrganizationNames);
+
+                    /**
+                     * 判断参数 AuthorizedOrganizationNames 是否已赋值
+                     * @return AuthorizedOrganizationNames 是否已赋值
+                     * 
+                     */
+                    bool AuthorizedOrganizationNamesHasBeenSet() const;
 
                 private:
 
@@ -335,7 +377,7 @@ namespace TencentCloud
                      * 是否给平台应用授权
 
 <ul>
-<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationId</code>和<code>AuthorizedOrganizationName</code>。</li>
+<li><strong>true</strong>: 表示是，授权平台应用。在此情况下，无需设置<code>AuthorizedOrganizationIds</code>和<code>AuthorizedOrganizationNames</code>。</li>
 <li><strong>false</strong>: （默认）表示否，不是授权平台应用。</li>
 </ul>
 
@@ -360,12 +402,24 @@ namespace TencentCloud
                     /**
                      * 在处理授权关系时，授权的方向
 <ul>
-<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
-<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>
+<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>
+<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationNames</code> 代表的是【授权方】的企业名称，即提供授权的企业。此场景下不支持批量</li>
 </ul>
                      */
                     bool m_authToMe;
                     bool m_authToMeHasBeenSet;
+
+                    /**
+                     * 被授企业id/授权方企业id（即OrganizationId），如果是企业之间授权和AuthorizedOrganizationNames二选一传入，最大支持50个，注：`被授权企业必须和当前企业在同一应用号下`
+                     */
+                    std::vector<std::string> m_authorizedOrganizationIds;
+                    bool m_authorizedOrganizationIdsHasBeenSet;
+
+                    /**
+                     * 被授企业名称/授权方企业的名字，如果是企业之间授权和AuthorizedOrganizationIds二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。注: 1. 如果名称中包含英文括号()，请使用中文括号（）代替。2. 被授权企业必须和当前企业在同一应用号下 3. 数组最大长度50
+                     */
+                    std::vector<std::string> m_authorizedOrganizationNames;
+                    bool m_authorizedOrganizationNamesHasBeenSet;
 
                 };
             }

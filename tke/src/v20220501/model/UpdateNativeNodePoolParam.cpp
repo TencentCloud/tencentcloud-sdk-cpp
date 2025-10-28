@@ -38,6 +38,7 @@ UpdateNativeNodePoolParam::UpdateNativeNodePoolParam() :
     m_enableAutoscalingHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
     m_replicasHasBeenSet(false),
+    m_updateExistedNodeHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
     m_keyIdsHasBeenSet(false),
     m_gPUConfigsHasBeenSet(false)
@@ -273,6 +274,16 @@ CoreInternalOutcome UpdateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         m_replicasHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateExistedNode") && !value["UpdateExistedNode"].IsNull())
+    {
+        if (!value["UpdateExistedNode"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateNativeNodePoolParam.UpdateExistedNode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateExistedNode = value["UpdateExistedNode"].GetBool();
+        m_updateExistedNodeHasBeenSet = true;
+    }
+
     if (value.HasMember("DataDisks") && !value["DataDisks"].IsNull())
     {
         if (!value["DataDisks"].IsArray())
@@ -493,6 +504,14 @@ void UpdateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "Replicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replicas, allocator);
+    }
+
+    if (m_updateExistedNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateExistedNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateExistedNode, allocator);
     }
 
     if (m_dataDisksHasBeenSet)
@@ -811,6 +830,22 @@ void UpdateNativeNodePoolParam::SetReplicas(const int64_t& _replicas)
 bool UpdateNativeNodePoolParam::ReplicasHasBeenSet() const
 {
     return m_replicasHasBeenSet;
+}
+
+bool UpdateNativeNodePoolParam::GetUpdateExistedNode() const
+{
+    return m_updateExistedNode;
+}
+
+void UpdateNativeNodePoolParam::SetUpdateExistedNode(const bool& _updateExistedNode)
+{
+    m_updateExistedNode = _updateExistedNode;
+    m_updateExistedNodeHasBeenSet = true;
+}
+
+bool UpdateNativeNodePoolParam::UpdateExistedNodeHasBeenSet() const
+{
+    return m_updateExistedNodeHasBeenSet;
 }
 
 vector<DataDisk> UpdateNativeNodePoolParam::GetDataDisks() const

@@ -76,18 +76,18 @@ namespace TencentCloud
                     bool FollowOriginHasBeenSet() const;
 
                     /**
-                     * 获取MaxAge 时间设置，单位秒，最大365天。
+                     * 获取MaxAge 时间设置，单位为秒，取值：0～315360000。
 注意：时间为0，即不缓存。
-                     * @return MaxAgeTime MaxAge 时间设置，单位秒，最大365天。
+                     * @return MaxAgeTime MaxAge 时间设置，单位为秒，取值：0～315360000。
 注意：时间为0，即不缓存。
                      * 
                      */
                     int64_t GetMaxAgeTime() const;
 
                     /**
-                     * 设置MaxAge 时间设置，单位秒，最大365天。
+                     * 设置MaxAge 时间设置，单位为秒，取值：0～315360000。
 注意：时间为0，即不缓存。
-                     * @param _maxAgeTime MaxAge 时间设置，单位秒，最大365天。
+                     * @param _maxAgeTime MaxAge 时间设置，单位为秒，取值：0～315360000。
 注意：时间为0，即不缓存。
                      * 
                      */
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_followOriginHasBeenSet;
 
                     /**
-                     * MaxAge 时间设置，单位秒，最大365天。
+                     * MaxAge 时间设置，单位为秒，取值：0～315360000。
 注意：时间为0，即不缓存。
                      */
                     int64_t m_maxAgeTime;

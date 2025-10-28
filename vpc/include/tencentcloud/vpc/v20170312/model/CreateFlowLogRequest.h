@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC，SUBNET，CCN，DCG时，请通过工单加入白名单。
-                     * @return ResourceType 流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC，SUBNET，CCN，DCG时，请通过工单加入白名单。
+                     * 获取流日志所属资源类型，NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择CCN，DCG时，请通过工单加入白名单。
+                     * @return ResourceType 流日志所属资源类型，NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择CCN，DCG时，请通过工单加入白名单。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC，SUBNET，CCN，DCG时，请通过工单加入白名单。
-                     * @param _resourceType 流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC，SUBNET，CCN，DCG时，请通过工单加入白名单。
+                     * 设置流日志所属资源类型，NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择CCN，DCG时，请通过工单加入白名单。
+                     * @param _resourceType 流日志所属资源类型，NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择CCN，DCG时，请通过工单加入白名单。
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -279,6 +279,27 @@ namespace TencentCloud
                      */
                     bool CloudLogRegionHasBeenSet() const;
 
+                    /**
+                     * 获取流日志采集周期，只支持CCN类型流日志。取值范围（单位s）：60， 300， 600。
+                     * @return Period 流日志采集周期，只支持CCN类型流日志。取值范围（单位s）：60， 300， 600。
+                     * 
+                     */
+                    uint64_t GetPeriod() const;
+
+                    /**
+                     * 设置流日志采集周期，只支持CCN类型流日志。取值范围（单位s）：60， 300， 600。
+                     * @param _period 流日志采集周期，只支持CCN类型流日志。取值范围（单位s）：60， 300， 600。
+                     * 
+                     */
+                    void SetPeriod(const uint64_t& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     * 
+                     */
+                    bool PeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,7 +309,7 @@ namespace TencentCloud
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC，SUBNET，CCN，DCG时，请通过工单加入白名单。
+                     * 流日志所属资源类型，NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择CCN，DCG时，请通过工单加入白名单。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
@@ -347,6 +368,12 @@ namespace TencentCloud
                      */
                     std::string m_cloudLogRegion;
                     bool m_cloudLogRegionHasBeenSet;
+
+                    /**
+                     * 流日志采集周期，只支持CCN类型流日志。取值范围（单位s）：60， 300， 600。
+                     */
+                    uint64_t m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }

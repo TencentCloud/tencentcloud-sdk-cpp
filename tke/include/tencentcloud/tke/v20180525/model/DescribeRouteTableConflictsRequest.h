@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RouteTableCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取路由表绑定的VPC
-                     * @return VpcId 路由表绑定的VPC
+                     * 获取路由表绑定的VPC，请到 [VPC 控制台](https://console.cloud.tencent.com/vpc/vpc)复制 VPC ID
+                     * @return VpcId 路由表绑定的VPC，请到 [VPC 控制台](https://console.cloud.tencent.com/vpc/vpc)复制 VPC ID
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置路由表绑定的VPC
-                     * @param _vpcId 路由表绑定的VPC
+                     * 设置路由表绑定的VPC，请到 [VPC 控制台](https://console.cloud.tencent.com/vpc/vpc)复制 VPC ID
+                     * @param _vpcId 路由表绑定的VPC，请到 [VPC 控制台](https://console.cloud.tencent.com/vpc/vpc)复制 VPC ID
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_routeTableCidrBlockHasBeenSet;
 
                     /**
-                     * 路由表绑定的VPC
+                     * 路由表绑定的VPC，请到 [VPC 控制台](https://console.cloud.tencent.com/vpc/vpc)复制 VPC ID
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

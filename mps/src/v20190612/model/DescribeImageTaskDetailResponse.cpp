@@ -26,6 +26,9 @@ using namespace std;
 DescribeImageTaskDetailResponse::DescribeImageTaskDetailResponse() :
     m_taskTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_errCodeHasBeenSet(false),
+    m_errMsgHasBeenSet(false),
+    m_messageHasBeenSet(false),
     m_imageProcessTaskResultSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_finishTimeHasBeenSet(false)
@@ -84,6 +87,36 @@ CoreInternalOutcome DescribeImageTaskDetailResponse::Deserialize(const string &p
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ErrCode") && !rsp["ErrCode"].IsNull())
+    {
+        if (!rsp["ErrCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_errCode = rsp["ErrCode"].GetInt64();
+        m_errCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ErrMsg") && !rsp["ErrMsg"].IsNull())
+    {
+        if (!rsp["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(rsp["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Message") && !rsp["Message"].IsNull())
+    {
+        if (!rsp["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(rsp["Message"].GetString());
+        m_messageHasBeenSet = true;
     }
 
     if (rsp.HasMember("ImageProcessTaskResultSet") && !rsp["ImageProcessTaskResultSet"].IsNull())
@@ -152,6 +185,30 @@ string DescribeImageTaskDetailResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_errCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_errCode, allocator);
+    }
+
+    if (m_errMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_imageProcessTaskResultSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -213,6 +270,36 @@ string DescribeImageTaskDetailResponse::GetStatus() const
 bool DescribeImageTaskDetailResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t DescribeImageTaskDetailResponse::GetErrCode() const
+{
+    return m_errCode;
+}
+
+bool DescribeImageTaskDetailResponse::ErrCodeHasBeenSet() const
+{
+    return m_errCodeHasBeenSet;
+}
+
+string DescribeImageTaskDetailResponse::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+bool DescribeImageTaskDetailResponse::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
+}
+
+string DescribeImageTaskDetailResponse::GetMessage() const
+{
+    return m_message;
+}
+
+bool DescribeImageTaskDetailResponse::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 
 vector<ImageProcessTaskResult> DescribeImageTaskDetailResponse::GetImageProcessTaskResultSet() const

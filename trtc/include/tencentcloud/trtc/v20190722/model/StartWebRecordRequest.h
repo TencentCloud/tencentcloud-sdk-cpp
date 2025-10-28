@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要录制的网页URL
-
-                     * @return RecordUrl 需要录制的网页URL
-
+                     * 获取【必填】需要录制的网页URL
+                     * @return RecordUrl 【必填】需要录制的网页URL
                      * 
                      */
                     std::string GetRecordUrl() const;
 
                     /**
-                     * 设置需要录制的网页URL
-
-                     * @param _recordUrl 需要录制的网页URL
-
+                     * 设置【必填】需要录制的网页URL
+                     * @param _recordUrl 【必填】需要录制的网页URL
                      * 
                      */
                     void SetRecordUrl(const std::string& _recordUrl);
@@ -70,31 +66,6 @@ namespace TencentCloud
                      * 
                      */
                     bool RecordUrlHasBeenSet() const;
-
-                    /**
-                     * 获取录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)
-
-                     * @return MaxDurationLimit 录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)
-
-                     * 
-                     */
-                    uint64_t GetMaxDurationLimit() const;
-
-                    /**
-                     * 设置录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)
-
-                     * @param _maxDurationLimit 录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)
-
-                     * 
-                     */
-                    void SetMaxDurationLimit(const uint64_t& _maxDurationLimit);
-
-                    /**
-                     * 判断参数 MaxDurationLimit 是否已赋值
-                     * @return MaxDurationLimit 是否已赋值
-                     * 
-                     */
-                    bool MaxDurationLimitHasBeenSet() const;
 
                     /**
                      * 获取【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4
@@ -118,27 +89,6 @@ namespace TencentCloud
                     bool StorageParamsHasBeenSet() const;
 
                     /**
-                     * 获取页面录制视频参数
-                     * @return WebRecordVideoParams 页面录制视频参数
-                     * 
-                     */
-                    WebRecordVideoParams GetWebRecordVideoParams() const;
-
-                    /**
-                     * 设置页面录制视频参数
-                     * @param _webRecordVideoParams 页面录制视频参数
-                     * 
-                     */
-                    void SetWebRecordVideoParams(const WebRecordVideoParams& _webRecordVideoParams);
-
-                    /**
-                     * 判断参数 WebRecordVideoParams 是否已赋值
-                     * @return WebRecordVideoParams 是否已赋值
-                     * 
-                     */
-                    bool WebRecordVideoParamsHasBeenSet() const;
-
-                    /**
                      * 获取【必填】TRTC的SdkAppId
                      * @return SdkAppId 【必填】TRTC的SdkAppId
                      * 
@@ -158,6 +108,48 @@ namespace TencentCloud
                      * 
                      */
                     bool SdkAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)
+                     * @return MaxDurationLimit 录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)
+                     * 
+                     */
+                    uint64_t GetMaxDurationLimit() const;
+
+                    /**
+                     * 设置录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)
+                     * @param _maxDurationLimit 录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)
+                     * 
+                     */
+                    void SetMaxDurationLimit(const uint64_t& _maxDurationLimit);
+
+                    /**
+                     * 判断参数 MaxDurationLimit 是否已赋值
+                     * @return MaxDurationLimit 是否已赋值
+                     * 
+                     */
+                    bool MaxDurationLimitHasBeenSet() const;
+
+                    /**
+                     * 获取页面录制视频参数
+                     * @return WebRecordVideoParams 页面录制视频参数
+                     * 
+                     */
+                    WebRecordVideoParams GetWebRecordVideoParams() const;
+
+                    /**
+                     * 设置页面录制视频参数
+                     * @param _webRecordVideoParams 页面录制视频参数
+                     * 
+                     */
+                    void SetWebRecordVideoParams(const WebRecordVideoParams& _webRecordVideoParams);
+
+                    /**
+                     * 判断参数 WebRecordVideoParams 是否已赋值
+                     * @return WebRecordVideoParams 是否已赋值
+                     * 
+                     */
+                    bool WebRecordVideoParamsHasBeenSet() const;
 
                     /**
                      * 获取当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复
@@ -250,18 +242,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要录制的网页URL
-
+                     * 【必填】需要录制的网页URL
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;
-
-                    /**
-                     * 录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)
-
-                     */
-                    uint64_t m_maxDurationLimit;
-                    bool m_maxDurationLimitHasBeenSet;
 
                     /**
                      * 【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4
@@ -270,16 +254,22 @@ namespace TencentCloud
                     bool m_storageParamsHasBeenSet;
 
                     /**
-                     * 页面录制视频参数
-                     */
-                    WebRecordVideoParams m_webRecordVideoParams;
-                    bool m_webRecordVideoParamsHasBeenSet;
-
-                    /**
                      * 【必填】TRTC的SdkAppId
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
+
+                    /**
+                     * 录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)
+                     */
+                    uint64_t m_maxDurationLimit;
+                    bool m_maxDurationLimitHasBeenSet;
+
+                    /**
+                     * 页面录制视频参数
+                     */
+                    WebRecordVideoParams m_webRecordVideoParams;
+                    bool m_webRecordVideoParamsHasBeenSet;
 
                     /**
                      * 当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复

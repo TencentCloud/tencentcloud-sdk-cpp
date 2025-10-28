@@ -63,10 +63,14 @@
 #include <tencentcloud/trro/v20220325/model/GetDeviceLicenseResponse.h>
 #include <tencentcloud/trro/v20220325/model/GetDevicesRequest.h>
 #include <tencentcloud/trro/v20220325/model/GetDevicesResponse.h>
+#include <tencentcloud/trro/v20220325/model/GetDurationDetailsRequest.h>
+#include <tencentcloud/trro/v20220325/model/GetDurationDetailsResponse.h>
 #include <tencentcloud/trro/v20220325/model/GetLicenseStatRequest.h>
 #include <tencentcloud/trro/v20220325/model/GetLicenseStatResponse.h>
 #include <tencentcloud/trro/v20220325/model/GetLicensesRequest.h>
 #include <tencentcloud/trro/v20220325/model/GetLicensesResponse.h>
+#include <tencentcloud/trro/v20220325/model/GetTotalDurationRequest.h>
+#include <tencentcloud/trro/v20220325/model/GetTotalDurationResponse.h>
 #include <tencentcloud/trro/v20220325/model/ModifyCallbackUrlRequest.h>
 #include <tencentcloud/trro/v20220325/model/ModifyCallbackUrlResponse.h>
 #include <tencentcloud/trro/v20220325/model/ModifyDeviceRequest.h>
@@ -155,12 +159,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDevicesResponse> GetDevicesOutcome;
                 typedef std::future<GetDevicesOutcome> GetDevicesOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::GetDevicesRequest&, GetDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetDurationDetailsResponse> GetDurationDetailsOutcome;
+                typedef std::future<GetDurationDetailsOutcome> GetDurationDetailsOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::GetDurationDetailsRequest&, GetDurationDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDurationDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetLicenseStatResponse> GetLicenseStatOutcome;
                 typedef std::future<GetLicenseStatOutcome> GetLicenseStatOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::GetLicenseStatRequest&, GetLicenseStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLicenseStatAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetLicensesResponse> GetLicensesOutcome;
                 typedef std::future<GetLicensesOutcome> GetLicensesOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::GetLicensesRequest&, GetLicensesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLicensesAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTotalDurationResponse> GetTotalDurationOutcome;
+                typedef std::future<GetTotalDurationOutcome> GetTotalDurationOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::GetTotalDurationRequest&, GetTotalDurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTotalDurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCallbackUrlResponse> ModifyCallbackUrlOutcome;
                 typedef std::future<ModifyCallbackUrlOutcome> ModifyCallbackUrlOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::ModifyCallbackUrlRequest&, ModifyCallbackUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCallbackUrlAsyncHandler;
@@ -366,6 +376,15 @@ namespace TencentCloud
                 GetDevicesOutcomeCallable GetDevicesCallable(const Model::GetDevicesRequest& request);
 
                 /**
+                 *查询该时间段、对应项目、设备的不同分辨率的通话时长流水，流水以日期（天）为单位
+                 * @param req GetDurationDetailsRequest
+                 * @return GetDurationDetailsOutcome
+                 */
+                GetDurationDetailsOutcome GetDurationDetails(const Model::GetDurationDetailsRequest &request);
+                void GetDurationDetailsAsync(const Model::GetDurationDetailsRequest& request, const GetDurationDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDurationDetailsOutcomeCallable GetDurationDetailsCallable(const Model::GetDurationDetailsRequest& request);
+
+                /**
                  *统计license类型数量
                  * @param req GetLicenseStatRequest
                  * @return GetLicenseStatOutcome
@@ -382,6 +401,15 @@ namespace TencentCloud
                 GetLicensesOutcome GetLicenses(const Model::GetLicensesRequest &request);
                 void GetLicensesAsync(const Model::GetLicensesRequest& request, const GetLicensesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetLicensesOutcomeCallable GetLicensesCallable(const Model::GetLicensesRequest& request);
+
+                /**
+                 *查询该时间段、对应项目、设备的不同分辨率的通话时长汇总
+                 * @param req GetTotalDurationRequest
+                 * @return GetTotalDurationOutcome
+                 */
+                GetTotalDurationOutcome GetTotalDuration(const Model::GetTotalDurationRequest &request);
+                void GetTotalDurationAsync(const Model::GetTotalDurationRequest& request, const GetTotalDurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTotalDurationOutcomeCallable GetTotalDurationCallable(const Model::GetTotalDurationRequest& request);
 
                 /**
                  *设置回调URL

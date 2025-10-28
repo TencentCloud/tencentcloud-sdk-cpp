@@ -40,7 +40,9 @@ DbNormalDetail::DbNormalDetail() :
     m_stateDescHasBeenSet(false),
     m_userAccessDescHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_isFullTextEnabledHasBeenSet(false)
+    m_isFullTextEnabledHasBeenSet(false),
+    m_isAvailabilityGroupsHasBeenSet(false),
+    m_aGSyncStateHasBeenSet(false)
 {
 }
 
@@ -249,6 +251,26 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
         m_isFullTextEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAvailabilityGroups") && !value["IsAvailabilityGroups"].IsNull())
+    {
+        if (!value["IsAvailabilityGroups"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.IsAvailabilityGroups` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAvailabilityGroups = string(value["IsAvailabilityGroups"].GetString());
+        m_isAvailabilityGroupsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AGSyncState") && !value["AGSyncState"].IsNull())
+    {
+        if (!value["AGSyncState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.AGSyncState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aGSyncState = string(value["AGSyncState"].GetString());
+        m_aGSyncStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +436,22 @@ void DbNormalDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "IsFullTextEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isFullTextEnabled.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAvailabilityGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAvailabilityGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isAvailabilityGroups.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aGSyncStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AGSyncState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aGSyncState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -737,5 +775,37 @@ void DbNormalDetail::SetIsFullTextEnabled(const string& _isFullTextEnabled)
 bool DbNormalDetail::IsFullTextEnabledHasBeenSet() const
 {
     return m_isFullTextEnabledHasBeenSet;
+}
+
+string DbNormalDetail::GetIsAvailabilityGroups() const
+{
+    return m_isAvailabilityGroups;
+}
+
+void DbNormalDetail::SetIsAvailabilityGroups(const string& _isAvailabilityGroups)
+{
+    m_isAvailabilityGroups = _isAvailabilityGroups;
+    m_isAvailabilityGroupsHasBeenSet = true;
+}
+
+bool DbNormalDetail::IsAvailabilityGroupsHasBeenSet() const
+{
+    return m_isAvailabilityGroupsHasBeenSet;
+}
+
+string DbNormalDetail::GetAGSyncState() const
+{
+    return m_aGSyncState;
+}
+
+void DbNormalDetail::SetAGSyncState(const string& _aGSyncState)
+{
+    m_aGSyncState = _aGSyncState;
+    m_aGSyncStateHasBeenSet = true;
+}
+
+bool DbNormalDetail::AGSyncStateHasBeenSet() const
+{
+    return m_aGSyncStateHasBeenSet;
 }
 

@@ -172,6 +172,31 @@ namespace TencentCloud
                      */
                     bool StorageAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否压缩。
+1:压缩  2:不压缩
+                     * @return Compress 是否压缩。
+1:压缩  2:不压缩
+                     * 
+                     */
+                    uint64_t GetCompress() const;
+
+                    /**
+                     * 设置是否压缩。
+1:压缩  2:不压缩
+                     * @param _compress 是否压缩。
+1:压缩  2:不压缩
+                     * 
+                     */
+                    void SetCompress(const uint64_t& _compress);
+
+                    /**
+                     * 判断参数 Compress 是否已赋值
+                     * @return Compress 是否已赋值
+                     * 
+                     */
+                    bool CompressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +234,13 @@ namespace TencentCloud
                      */
                     std::string m_storageAppId;
                     bool m_storageAppIdHasBeenSet;
+
+                    /**
+                     * 是否压缩。
+1:压缩  2:不压缩
+                     */
+                    uint64_t m_compress;
+                    bool m_compressHasBeenSet;
 
                 };
             }

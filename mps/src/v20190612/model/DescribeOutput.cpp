@@ -41,7 +41,8 @@ DescribeOutput::DescribeOutput() :
     m_zonesHasBeenSet(false),
     m_rISTSettingsHasBeenSet(false),
     m_pidSelectorHasBeenSet(false),
-    m_streamUrlsHasBeenSet(false)
+    m_streamUrlsHasBeenSet(false),
+    m_streamSelectorHasBeenSet(false)
 {
 }
 
@@ -345,6 +346,23 @@ CoreInternalOutcome DescribeOutput::Deserialize(const rapidjson::Value &value)
         m_streamUrlsHasBeenSet = true;
     }
 
+    if (value.HasMember("StreamSelector") && !value["StreamSelector"].IsNull())
+    {
+        if (!value["StreamSelector"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeOutput.StreamSelector` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_streamSelector.Deserialize(value["StreamSelector"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_streamSelectorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -555,6 +573,15 @@ void DescribeOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_streamSelectorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamSelector";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_streamSelector.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -894,5 +921,21 @@ void DescribeOutput::SetStreamUrls(const vector<StreamUrlDetail>& _streamUrls)
 bool DescribeOutput::StreamUrlsHasBeenSet() const
 {
     return m_streamUrlsHasBeenSet;
+}
+
+StreamSelector DescribeOutput::GetStreamSelector() const
+{
+    return m_streamSelector;
+}
+
+void DescribeOutput::SetStreamSelector(const StreamSelector& _streamSelector)
+{
+    m_streamSelector = _streamSelector;
+    m_streamSelectorHasBeenSet = true;
+}
+
+bool DescribeOutput::StreamSelectorHasBeenSet() const
+{
+    return m_streamSelectorHasBeenSet;
 }
 

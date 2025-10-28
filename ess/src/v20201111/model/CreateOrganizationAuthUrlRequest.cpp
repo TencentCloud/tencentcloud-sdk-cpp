@@ -46,7 +46,8 @@ CreateOrganizationAuthUrlRequest::CreateOrganizationAuthUrlRequest() :
     m_powerOfAttorneysHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_bankAccountNumberHasBeenSet(false),
-    m_bankAccountNumberSameHasBeenSet(false)
+    m_bankAccountNumberSameHasBeenSet(false),
+    m_jumpEventsHasBeenSet(false)
 {
 }
 
@@ -263,6 +264,21 @@ string CreateOrganizationAuthUrlRequest::ToJsonString() const
         string key = "BankAccountNumberSame";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bankAccountNumberSame, allocator);
+    }
+
+    if (m_jumpEventsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JumpEvents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_jumpEvents.begin(); itr != m_jumpEvents.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -655,6 +671,22 @@ void CreateOrganizationAuthUrlRequest::SetBankAccountNumberSame(const bool& _ban
 bool CreateOrganizationAuthUrlRequest::BankAccountNumberSameHasBeenSet() const
 {
     return m_bankAccountNumberSameHasBeenSet;
+}
+
+vector<JumpEvent> CreateOrganizationAuthUrlRequest::GetJumpEvents() const
+{
+    return m_jumpEvents;
+}
+
+void CreateOrganizationAuthUrlRequest::SetJumpEvents(const vector<JumpEvent>& _jumpEvents)
+{
+    m_jumpEvents = _jumpEvents;
+    m_jumpEventsHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::JumpEventsHasBeenSet() const
+{
+    return m_jumpEventsHasBeenSet;
 }
 
 

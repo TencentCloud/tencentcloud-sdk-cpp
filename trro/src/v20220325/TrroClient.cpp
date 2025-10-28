@@ -900,6 +900,49 @@ TrroClient::GetDevicesOutcomeCallable TrroClient::GetDevicesCallable(const GetDe
     return task->get_future();
 }
 
+TrroClient::GetDurationDetailsOutcome TrroClient::GetDurationDetails(const GetDurationDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDurationDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDurationDetailsResponse rsp = GetDurationDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDurationDetailsOutcome(rsp);
+        else
+            return GetDurationDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDurationDetailsOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::GetDurationDetailsAsync(const GetDurationDetailsRequest& request, const GetDurationDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDurationDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::GetDurationDetailsOutcomeCallable TrroClient::GetDurationDetailsCallable(const GetDurationDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDurationDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDurationDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrroClient::GetLicenseStatOutcome TrroClient::GetLicenseStat(const GetLicenseStatRequest &request)
 {
     auto outcome = MakeRequest(request, "GetLicenseStat");
@@ -979,6 +1022,49 @@ TrroClient::GetLicensesOutcomeCallable TrroClient::GetLicensesCallable(const Get
         [this, request]()
         {
             return this->GetLicenses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrroClient::GetTotalDurationOutcome TrroClient::GetTotalDuration(const GetTotalDurationRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTotalDuration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTotalDurationResponse rsp = GetTotalDurationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTotalDurationOutcome(rsp);
+        else
+            return GetTotalDurationOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTotalDurationOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::GetTotalDurationAsync(const GetTotalDurationRequest& request, const GetTotalDurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTotalDuration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::GetTotalDurationOutcomeCallable TrroClient::GetTotalDurationCallable(const GetTotalDurationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTotalDurationOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTotalDuration(request);
         }
     );
 

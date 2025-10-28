@@ -466,6 +466,48 @@ namespace TencentCloud
                      */
                     bool IsFullTextEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取是否是可用性组 0：否 1：是
+                     * @return IsAvailabilityGroups 是否是可用性组 0：否 1：是
+                     * 
+                     */
+                    std::string GetIsAvailabilityGroups() const;
+
+                    /**
+                     * 设置是否是可用性组 0：否 1：是
+                     * @param _isAvailabilityGroups 是否是可用性组 0：否 1：是
+                     * 
+                     */
+                    void SetIsAvailabilityGroups(const std::string& _isAvailabilityGroups);
+
+                    /**
+                     * 判断参数 IsAvailabilityGroups 是否已赋值
+                     * @return IsAvailabilityGroups 是否已赋值
+                     * 
+                     */
+                    bool IsAvailabilityGroupsHasBeenSet() const;
+
+                    /**
+                     * 获取AG组数据库同步状态
+                     * @return AGSyncState AG组数据库同步状态
+                     * 
+                     */
+                    std::string GetAGSyncState() const;
+
+                    /**
+                     * 设置AG组数据库同步状态
+                     * @param _aGSyncState AG组数据库同步状态
+                     * 
+                     */
+                    void SetAGSyncState(const std::string& _aGSyncState);
+
+                    /**
+                     * 判断参数 AGSyncState 是否已赋值
+                     * @return AGSyncState 是否已赋值
+                     * 
+                     */
+                    bool AGSyncStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -587,6 +629,18 @@ namespace TencentCloud
                      */
                     std::string m_isFullTextEnabled;
                     bool m_isFullTextEnabledHasBeenSet;
+
+                    /**
+                     * 是否是可用性组 0：否 1：是
+                     */
+                    std::string m_isAvailabilityGroups;
+                    bool m_isAvailabilityGroupsHasBeenSet;
+
+                    /**
+                     * AG组数据库同步状态
+                     */
+                    std::string m_aGSyncState;
+                    bool m_aGSyncStateHasBeenSet;
 
                 };
             }

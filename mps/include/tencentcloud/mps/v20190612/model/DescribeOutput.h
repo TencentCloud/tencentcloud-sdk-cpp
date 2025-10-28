@@ -34,6 +34,7 @@
 #include <tencentcloud/mps/v20190612/model/DescribeOutputRISTSettings.h>
 #include <tencentcloud/mps/v20190612/model/PidSelector.h>
 #include <tencentcloud/mps/v20190612/model/StreamUrlDetail.h>
+#include <tencentcloud/mps/v20190612/model/StreamSelector.h>
 
 
 namespace TencentCloud
@@ -506,21 +507,21 @@ namespace TencentCloud
                     /**
                      * 获取对于含有多个音/视频轨的流，可以指定需要使用的轨道
                      * @return PidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
-                     * 
+                     * @deprecated
                      */
                     PidSelector GetPidSelector() const;
 
                     /**
                      * 设置对于含有多个音/视频轨的流，可以指定需要使用的轨道
                      * @param _pidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
-                     * 
+                     * @deprecated
                      */
                     void SetPidSelector(const PidSelector& _pidSelector);
 
                     /**
                      * 判断参数 PidSelector 是否已赋值
                      * @return PidSelector 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PidSelectorHasBeenSet() const;
 
@@ -544,6 +545,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StreamUrlsHasBeenSet() const;
+
+                    /**
+                     * 获取对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * @return StreamSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 
+                     */
+                    StreamSelector GetStreamSelector() const;
+
+                    /**
+                     * 设置对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * @param _streamSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 
+                     */
+                    void SetStreamSelector(const StreamSelector& _streamSelector);
+
+                    /**
+                     * 判断参数 StreamSelector 是否已赋值
+                     * @return StreamSelector 是否已赋值
+                     * 
+                     */
+                    bool StreamSelectorHasBeenSet() const;
 
                 private:
 
@@ -684,6 +706,12 @@ namespace TencentCloud
                      */
                     std::vector<StreamUrlDetail> m_streamUrls;
                     bool m_streamUrlsHasBeenSet;
+
+                    /**
+                     * 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     */
+                    StreamSelector m_streamSelector;
+                    bool m_streamSelectorHasBeenSet;
 
                 };
             }

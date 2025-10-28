@@ -173,15 +173,48 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取账号类型
-                     * @return UserType 账号类型
+                     * 获取账号密码最近一次修改时间。
+
+此字段只在2025-10-31后才生效，之前无论是否修改密码，该值统一为默认值：0000-00-00 00:00:00
+同时仅通过云API或者管控控制台修改密码，才会更新该字段。
+                     * @return PasswordUpdateTime 账号密码最近一次修改时间。
+
+此字段只在2025-10-31后才生效，之前无论是否修改密码，该值统一为默认值：0000-00-00 00:00:00
+同时仅通过云API或者管控控制台修改密码，才会更新该字段。
+                     * 
+                     */
+                    std::string GetPasswordUpdateTime() const;
+
+                    /**
+                     * 设置账号密码最近一次修改时间。
+
+此字段只在2025-10-31后才生效，之前无论是否修改密码，该值统一为默认值：0000-00-00 00:00:00
+同时仅通过云API或者管控控制台修改密码，才会更新该字段。
+                     * @param _passwordUpdateTime 账号密码最近一次修改时间。
+
+此字段只在2025-10-31后才生效，之前无论是否修改密码，该值统一为默认值：0000-00-00 00:00:00
+同时仅通过云API或者管控控制台修改密码，才会更新该字段。
+                     * 
+                     */
+                    void SetPasswordUpdateTime(const std::string& _passwordUpdateTime);
+
+                    /**
+                     * 判断参数 PasswordUpdateTime 是否已赋值
+                     * @return PasswordUpdateTime 是否已赋值
+                     * 
+                     */
+                    bool PasswordUpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取账号类型。支持normal、tencentDBSuper。normal指代普通用户，tencentDBSuper为拥有pg_tencentdb_superuser角色的账号。
+                     * @return UserType 账号类型。支持normal、tencentDBSuper。normal指代普通用户，tencentDBSuper为拥有pg_tencentdb_superuser角色的账号。
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
-                     * 设置账号类型
-                     * @param _userType 账号类型
+                     * 设置账号类型。支持normal、tencentDBSuper。normal指代普通用户，tencentDBSuper为拥有pg_tencentdb_superuser角色的账号。
+                     * @param _userType 账号类型。支持normal、tencentDBSuper。normal指代普通用户，tencentDBSuper为拥有pg_tencentdb_superuser角色的账号。
                      * 
                      */
                     void SetUserType(const std::string& _userType);
@@ -192,6 +225,27 @@ namespace TencentCloud
                      * 
                      */
                     bool UserTypeHasBeenSet() const;
+
+                    /**
+                     * 获取用户账号是否启用CAM验证
+                     * @return OpenCam 用户账号是否启用CAM验证
+                     * 
+                     */
+                    bool GetOpenCam() const;
+
+                    /**
+                     * 设置用户账号是否启用CAM验证
+                     * @param _openCam 用户账号是否启用CAM验证
+                     * 
+                     */
+                    void SetOpenCam(const bool& _openCam);
+
+                    /**
+                     * 判断参数 OpenCam 是否已赋值
+                     * @return OpenCam 是否已赋值
+                     * 
+                     */
+                    bool OpenCamHasBeenSet() const;
 
                 private:
 
@@ -232,10 +286,25 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 账号类型
+                     * 账号密码最近一次修改时间。
+
+此字段只在2025-10-31后才生效，之前无论是否修改密码，该值统一为默认值：0000-00-00 00:00:00
+同时仅通过云API或者管控控制台修改密码，才会更新该字段。
+                     */
+                    std::string m_passwordUpdateTime;
+                    bool m_passwordUpdateTimeHasBeenSet;
+
+                    /**
+                     * 账号类型。支持normal、tencentDBSuper。normal指代普通用户，tencentDBSuper为拥有pg_tencentdb_superuser角色的账号。
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
+
+                    /**
+                     * 用户账号是否启用CAM验证
+                     */
+                    bool m_openCam;
+                    bool m_openCamHasBeenSet;
 
                 };
             }

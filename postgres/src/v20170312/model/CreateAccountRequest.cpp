@@ -25,9 +25,10 @@ using namespace std;
 CreateAccountRequest::CreateAccountRequest() :
     m_dBInstanceIdHasBeenSet(false),
     m_userNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_openCamHasBeenSet(false)
 {
 }
 
@@ -54,14 +55,6 @@ string CreateAccountRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_passwordHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Password";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -70,12 +63,28 @@ string CreateAccountRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_remarkHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openCamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenCam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_openCam, allocator);
     }
 
 
@@ -118,22 +127,6 @@ bool CreateAccountRequest::UserNameHasBeenSet() const
     return m_userNameHasBeenSet;
 }
 
-string CreateAccountRequest::GetPassword() const
-{
-    return m_password;
-}
-
-void CreateAccountRequest::SetPassword(const string& _password)
-{
-    m_password = _password;
-    m_passwordHasBeenSet = true;
-}
-
-bool CreateAccountRequest::PasswordHasBeenSet() const
-{
-    return m_passwordHasBeenSet;
-}
-
 string CreateAccountRequest::GetType() const
 {
     return m_type;
@@ -150,6 +143,22 @@ bool CreateAccountRequest::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
+string CreateAccountRequest::GetPassword() const
+{
+    return m_password;
+}
+
+void CreateAccountRequest::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool CreateAccountRequest::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
+}
+
 string CreateAccountRequest::GetRemark() const
 {
     return m_remark;
@@ -164,6 +173,22 @@ void CreateAccountRequest::SetRemark(const string& _remark)
 bool CreateAccountRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+bool CreateAccountRequest::GetOpenCam() const
+{
+    return m_openCam;
+}
+
+void CreateAccountRequest::SetOpenCam(const bool& _openCam)
+{
+    m_openCam = _openCam;
+    m_openCamHasBeenSet = true;
+}
+
+bool CreateAccountRequest::OpenCamHasBeenSet() const
+{
+    return m_openCamHasBeenSet;
 }
 
 

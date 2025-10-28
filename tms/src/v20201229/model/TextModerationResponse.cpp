@@ -36,7 +36,8 @@ TextModerationResponse::TextModerationResponse() :
     m_subLabelHasBeenSet(false),
     m_contextTextHasBeenSet(false),
     m_sentimentAnalysisHasBeenSet(false),
-    m_hitTypeHasBeenSet(false)
+    m_hitTypeHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -234,6 +235,16 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
         m_hitTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
+    {
+        if (!rsp["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(rsp["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -366,6 +377,14 @@ string TextModerationResponse::ToJsonString() const
         string key = "HitType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hitType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -508,6 +527,16 @@ string TextModerationResponse::GetHitType() const
 bool TextModerationResponse::HitTypeHasBeenSet() const
 {
     return m_hitTypeHasBeenSet;
+}
+
+string TextModerationResponse::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+bool TextModerationResponse::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
 
