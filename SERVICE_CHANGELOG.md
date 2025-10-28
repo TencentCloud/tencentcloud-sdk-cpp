@@ -1,4 +1,4 @@
-# Release 3.1.100
+# Release 3.2.0
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
