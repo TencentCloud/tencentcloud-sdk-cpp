@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool SignAlgoHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用交叉根证书，默认为true
+                     * @return UseCrossSignRoot 是否使用交叉根证书，默认为true
+                     * 
+                     */
+                    bool GetUseCrossSignRoot() const;
+
+                    /**
+                     * 设置是否使用交叉根证书，默认为true
+                     * @param _useCrossSignRoot 是否使用交叉根证书，默认为true
+                     * 
+                     */
+                    void SetUseCrossSignRoot(const bool& _useCrossSignRoot);
+
+                    /**
+                     * 判断参数 UseCrossSignRoot 是否已赋值
+                     * @return UseCrossSignRoot 是否已赋值
+                     * 
+                     */
+                    bool UseCrossSignRootHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +312,12 @@ namespace TencentCloud
                      */
                     std::string m_signAlgo;
                     bool m_signAlgoHasBeenSet;
+
+                    /**
+                     * 是否使用交叉根证书，默认为true
+                     */
+                    bool m_useCrossSignRoot;
+                    bool m_useCrossSignRootHasBeenSet;
 
                 };
             }

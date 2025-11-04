@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取运行时类型
-                     * @return RuntimeType 运行时类型
+                     * 获取运行时类型，支持的类型有 docker、containerd
+                     * @return RuntimeType 运行时类型，支持的类型有 docker、containerd
                      * 
                      */
                     std::string GetRuntimeType() const;
 
                     /**
-                     * 设置运行时类型
-                     * @param _runtimeType 运行时类型
+                     * 设置运行时类型，支持的类型有 docker、containerd
+                     * @param _runtimeType 运行时类型，支持的类型有 docker、containerd
                      * 
                      */
                     void SetRuntimeType(const std::string& _runtimeType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RuntimeTypeHasBeenSet() const;
 
                     /**
-                     * 获取运行时版本
-                     * @return RuntimeVersion 运行时版本
+                     * 获取运行时版本，参考：https://cloud.tencent.com/document/api/457/105241
+                     * @return RuntimeVersion 运行时版本，参考：https://cloud.tencent.com/document/api/457/105241
                      * 
                      */
                     std::string GetRuntimeVersion() const;
 
                     /**
-                     * 设置运行时版本
-                     * @param _runtimeVersion 运行时版本
+                     * 设置运行时版本，参考：https://cloud.tencent.com/document/api/457/105241
+                     * @param _runtimeVersion 运行时版本，参考：https://cloud.tencent.com/document/api/457/105241
                      * 
                      */
                     void SetRuntimeVersion(const std::string& _runtimeVersion);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 运行时类型
+                     * 运行时类型，支持的类型有 docker、containerd
                      */
                     std::string m_runtimeType;
                     bool m_runtimeTypeHasBeenSet;
 
                     /**
-                     * 运行时版本
+                     * 运行时版本，参考：https://cloud.tencent.com/document/api/457/105241
                      */
                     std::string m_runtimeVersion;
                     bool m_runtimeVersionHasBeenSet;

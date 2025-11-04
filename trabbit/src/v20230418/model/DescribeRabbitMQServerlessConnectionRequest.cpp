@@ -24,7 +24,12 @@ using namespace std;
 
 DescribeRabbitMQServerlessConnectionRequest::DescribeRabbitMQServerlessConnectionRequest() :
     m_instanceIdHasBeenSet(false),
-    m_virtualHostHasBeenSet(false)
+    m_virtualHostHasBeenSet(false),
+    m_sortElementHasBeenSet(false),
+    m_sortTypeHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -49,6 +54,46 @@ string DescribeRabbitMQServerlessConnectionRequest::ToJsonString() const
         string key = "VirtualHost";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_virtualHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortElementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortElement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortElement.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +134,86 @@ void DescribeRabbitMQServerlessConnectionRequest::SetVirtualHost(const string& _
 bool DescribeRabbitMQServerlessConnectionRequest::VirtualHostHasBeenSet() const
 {
     return m_virtualHostHasBeenSet;
+}
+
+string DescribeRabbitMQServerlessConnectionRequest::GetSortElement() const
+{
+    return m_sortElement;
+}
+
+void DescribeRabbitMQServerlessConnectionRequest::SetSortElement(const string& _sortElement)
+{
+    m_sortElement = _sortElement;
+    m_sortElementHasBeenSet = true;
+}
+
+bool DescribeRabbitMQServerlessConnectionRequest::SortElementHasBeenSet() const
+{
+    return m_sortElementHasBeenSet;
+}
+
+string DescribeRabbitMQServerlessConnectionRequest::GetSortType() const
+{
+    return m_sortType;
+}
+
+void DescribeRabbitMQServerlessConnectionRequest::SetSortType(const string& _sortType)
+{
+    m_sortType = _sortType;
+    m_sortTypeHasBeenSet = true;
+}
+
+bool DescribeRabbitMQServerlessConnectionRequest::SortTypeHasBeenSet() const
+{
+    return m_sortTypeHasBeenSet;
+}
+
+int64_t DescribeRabbitMQServerlessConnectionRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeRabbitMQServerlessConnectionRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeRabbitMQServerlessConnectionRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeRabbitMQServerlessConnectionRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeRabbitMQServerlessConnectionRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeRabbitMQServerlessConnectionRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+string DescribeRabbitMQServerlessConnectionRequest::GetName() const
+{
+    return m_name;
+}
+
+void DescribeRabbitMQServerlessConnectionRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool DescribeRabbitMQServerlessConnectionRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 

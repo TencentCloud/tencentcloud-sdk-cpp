@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源类型
-                     * @return Name 资源类型
+                     * 获取资源类型，参考k8s 官方资源
+                     * @return Name 资源类型，参考k8s 官方资源
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置资源类型
-                     * @param _name 资源类型
+                     * 设置资源类型，参考k8s 官方资源
+                     * @param _name 资源类型，参考k8s 官方资源
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取资源使用量
-                     * @return Usage 资源使用量
+                     * 获取资源使用量，单位：个数
+                     * @return Usage 资源使用量，单位：个数
                      * 
                      */
                     uint64_t GetUsage() const;
 
                     /**
-                     * 设置资源使用量
-                     * @param _usage 资源使用量
+                     * 设置资源使用量，单位：个数
+                     * @param _usage 资源使用量，单位：个数
                      * 
                      */
                     void SetUsage(const uint64_t& _usage);
@@ -113,13 +113,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源类型
+                     * 资源类型，参考k8s 官方资源
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 资源使用量
+                     * 资源使用量，单位：个数
                      */
                     uint64_t m_usage;
                     bool m_usageHasBeenSet;

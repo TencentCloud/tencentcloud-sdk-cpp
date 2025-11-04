@@ -44,14 +44,26 @@ namespace TencentCloud
 
                     /**
                      * 获取目标集群ID
+
+取值可参考：
+[查询TKE集群列表](https://cloud.tencent.com/document/api/457/31862)
                      * @return ClusterId 目标集群ID
+
+取值可参考：
+[查询TKE集群列表](https://cloud.tencent.com/document/api/457/31862)
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置目标集群ID
+
+取值可参考：
+[查询TKE集群列表](https://cloud.tencent.com/document/api/457/31862)
                      * @param _clusterId 目标集群ID
+
+取值可参考：
+[查询TKE集群列表](https://cloud.tencent.com/document/api/457/31862)
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -109,6 +121,9 @@ namespace TencentCloud
 
                     /**
                      * 目标集群ID
+
+取值可参考：
+[查询TKE集群列表](https://cloud.tencent.com/document/api/457/31862)
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

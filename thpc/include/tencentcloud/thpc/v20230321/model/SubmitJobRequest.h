@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/thpc/v20230321/model/Job.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,98 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取集群id
+                     * @return ClusterId 集群id
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群id
+                     * @param _clusterId 集群id
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取作业任务参数配置
+                     * @return Job 作业任务参数配置
+                     * 
+                     */
+                    Job GetJob() const;
+
+                    /**
+                     * 设置作业任务参数配置
+                     * @param _job 作业任务参数配置
+                     * 
+                     */
+                    void SetJob(const Job& _job);
+
+                    /**
+                     * 判断参数 Job 是否已赋值
+                     * @return Job 是否已赋值
+                     * 
+                     */
+                    bool JobHasBeenSet() const;
+
+                    /**
+                     * 获取队列名称。不指定则为默认队列：
+SLURM默认队列为：compute。 
+SGE默认队列为：all.q。
+                     * @return QueueName 队列名称。不指定则为默认队列：
+SLURM默认队列为：compute。 
+SGE默认队列为：all.q。
+                     * 
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 设置队列名称。不指定则为默认队列：
+SLURM默认队列为：compute。 
+SGE默认队列为：all.q。
+                     * @param _queueName 队列名称。不指定则为默认队列：
+SLURM默认队列为：compute。 
+SGE默认队列为：all.q。
+                     * 
+                     */
+                    void SetQueueName(const std::string& _queueName);
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     * 
+                     */
+                    bool QueueNameHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 集群id
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 作业任务参数配置
+                     */
+                    Job m_job;
+                    bool m_jobHasBeenSet;
+
+                    /**
+                     * 队列名称。不指定则为默认队列：
+SLURM默认队列为：compute。 
+SGE默认队列为：all.q。
+                     */
+                    std::string m_queueName;
+                    bool m_queueNameHasBeenSet;
 
                 };
             }

@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TranslationDirectionHasBeenSet() const;
 
                     /**
-                     * 获取转发规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。
-                     * @return TranslationType 转发规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。
+                     * 获取转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。分别对应三层、四层。
+                     * @return TranslationType 转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。分别对应三层、四层。
                      * 
                      */
                     std::string GetTranslationType() const;
 
                     /**
-                     * 设置转发规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。
-                     * @param _translationType 转发规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。
+                     * 设置转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。分别对应三层、四层。
+                     * @param _translationType 转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。分别对应三层、四层。
                      * 
                      */
                     void SetTranslationType(const std::string& _translationType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TranslationTypeHasBeenSet() const;
 
                     /**
-                     * 获取转发规则映射`IP`,当转发规则类型为四层时为`IP`池
-                     * @return TranslationIp 转发规则映射`IP`,当转发规则类型为四层时为`IP`池
+                     * 获取转发规则映射后`IP`,当转发规则类型为四层时为`IP`池
+                     * @return TranslationIp 转发规则映射后`IP`,当转发规则类型为四层时为`IP`池
                      * 
                      */
                     std::string GetTranslationIp() const;
 
                     /**
-                     * 设置转发规则映射`IP`,当转发规则类型为四层时为`IP`池
-                     * @param _translationIp 转发规则映射`IP`,当转发规则类型为四层时为`IP`池
+                     * 设置转发规则映射后`IP`,当转发规则类型为四层时为`IP`池
+                     * @param _translationIp 转发规则映射后`IP`,当转发规则类型为四层时为`IP`池
                      * 
                      */
                     void SetTranslationIp(const std::string& _translationIp);
@@ -108,6 +108,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TranslationIpHasBeenSet() const;
+
+                    /**
+                     * 获取旧转发规则映射后`IP`,当转发规则类型为四层时为`IP`池
+                     * @return OldTranslationIp 旧转发规则映射后`IP`,当转发规则类型为四层时为`IP`池
+                     * 
+                     */
+                    std::string GetOldTranslationIp() const;
+
+                    /**
+                     * 设置旧转发规则映射后`IP`,当转发规则类型为四层时为`IP`池
+                     * @param _oldTranslationIp 旧转发规则映射后`IP`,当转发规则类型为四层时为`IP`池
+                     * 
+                     */
+                    void SetOldTranslationIp(const std::string& _oldTranslationIp);
+
+                    /**
+                     * 判断参数 OldTranslationIp 是否已赋值
+                     * @return OldTranslationIp 是否已赋值
+                     * 
+                     */
+                    bool OldTranslationIpHasBeenSet() const;
 
                     /**
                      * 获取转发规则描述。
@@ -131,36 +152,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取旧转发规则映射`IP`,当转发规则类型为四层时为`IP`池
-                     * @return OldTranslationIp 旧转发规则映射`IP`,当转发规则类型为四层时为`IP`池
-                     * 
-                     */
-                    std::string GetOldTranslationIp() const;
-
-                    /**
-                     * 设置旧转发规则映射`IP`,当转发规则类型为四层时为`IP`池
-                     * @param _oldTranslationIp 旧转发规则映射`IP`,当转发规则类型为四层时为`IP`池
-                     * 
-                     */
-                    void SetOldTranslationIp(const std::string& _oldTranslationIp);
-
-                    /**
-                     * 判断参数 OldTranslationIp 是否已赋值
-                     * @return OldTranslationIp 是否已赋值
-                     * 
-                     */
-                    bool OldTranslationIpHasBeenSet() const;
-
-                    /**
-                     * 获取新转发规则源`IP`,当转发规则类型为三层时有效
-                     * @return OriginalIp 新转发规则源`IP`,当转发规则类型为三层时有效
+                     * 获取新转发规则映射前`IP`,当转发规则类型为三层时有效
+                     * @return OriginalIp 新转发规则映射前`IP`,当转发规则类型为三层时有效
                      * 
                      */
                     std::string GetOriginalIp() const;
 
                     /**
-                     * 设置新转发规则源`IP`,当转发规则类型为三层时有效
-                     * @param _originalIp 新转发规则源`IP`,当转发规则类型为三层时有效
+                     * 设置新转发规则映射前`IP`,当转发规则类型为三层时有效
+                     * @param _originalIp 新转发规则映射前`IP`,当转发规则类型为三层时有效
                      * 
                      */
                     void SetOriginalIp(const std::string& _originalIp);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool OriginalIpHasBeenSet() const;
 
                     /**
-                     * 获取旧转发规则源`IP`,当转发规则类型为三层时有效
-                     * @return OldOriginalIp 旧转发规则源`IP`,当转发规则类型为三层时有效
+                     * 获取旧转发规则映射前`IP`,当转发规则类型为三层时有效
+                     * @return OldOriginalIp 旧转发规则映射前`IP`,当转发规则类型为三层时有效
                      * 
                      */
                     std::string GetOldOriginalIp() const;
 
                     /**
-                     * 设置旧转发规则源`IP`,当转发规则类型为三层时有效
-                     * @param _oldOriginalIp 旧转发规则源`IP`,当转发规则类型为三层时有效
+                     * 设置旧转发规则映射前`IP`,当转发规则类型为三层时有效
+                     * @param _oldOriginalIp 旧转发规则映射前`IP`,当转发规则类型为三层时有效
                      * 
                      */
                     void SetOldOriginalIp(const std::string& _oldOriginalIp);
@@ -202,16 +202,22 @@ namespace TencentCloud
                     bool m_translationDirectionHasBeenSet;
 
                     /**
-                     * 转发规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。
+                     * 转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。分别对应三层、四层。
                      */
                     std::string m_translationType;
                     bool m_translationTypeHasBeenSet;
 
                     /**
-                     * 转发规则映射`IP`,当转发规则类型为四层时为`IP`池
+                     * 转发规则映射后`IP`,当转发规则类型为四层时为`IP`池
                      */
                     std::string m_translationIp;
                     bool m_translationIpHasBeenSet;
+
+                    /**
+                     * 旧转发规则映射后`IP`,当转发规则类型为四层时为`IP`池
+                     */
+                    std::string m_oldTranslationIp;
+                    bool m_oldTranslationIpHasBeenSet;
 
                     /**
                      * 转发规则描述。
@@ -220,19 +226,13 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 旧转发规则映射`IP`,当转发规则类型为四层时为`IP`池
-                     */
-                    std::string m_oldTranslationIp;
-                    bool m_oldTranslationIpHasBeenSet;
-
-                    /**
-                     * 新转发规则源`IP`,当转发规则类型为三层时有效
+                     * 新转发规则映射前`IP`,当转发规则类型为三层时有效
                      */
                     std::string m_originalIp;
                     bool m_originalIpHasBeenSet;
 
                     /**
-                     * 旧转发规则源`IP`,当转发规则类型为三层时有效
+                     * 旧转发规则映射前`IP`,当转发规则类型为三层时有效
                      */
                     std::string m_oldOriginalIp;
                     bool m_oldOriginalIpHasBeenSet;

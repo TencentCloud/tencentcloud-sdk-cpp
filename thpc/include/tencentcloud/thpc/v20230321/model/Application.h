@@ -169,7 +169,7 @@ namespace TencentCloud
 - Custom：表示用户自定义作业
 
 默认参数为：Custom
-                     * 
+                     * @deprecated
                      */
                     std::string GetJobType() const;
 
@@ -186,16 +186,57 @@ namespace TencentCloud
 - Custom：表示用户自定义作业
 
 默认参数为：Custom
-                     * 
+                     * @deprecated
                      */
                     void SetJobType(const std::string& _jobType);
 
                     /**
                      * 判断参数 JobType 是否已赋值
                      * @return JobType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool JobTypeHasBeenSet() const;
+
+                    /**
+                     * 获取表示所选训练框架，支持可选参数
+ 
+- PyTorch：表示提交PyTorch训练作业
+- Custom：表示用户自定义作业
+
+默认参数为：Custom
+                     * @return TaskType 表示所选训练框架，支持可选参数
+ 
+- PyTorch：表示提交PyTorch训练作业
+- Custom：表示用户自定义作业
+
+默认参数为：Custom
+                     * 
+                     */
+                    std::string GetTaskType() const;
+
+                    /**
+                     * 设置表示所选训练框架，支持可选参数
+ 
+- PyTorch：表示提交PyTorch训练作业
+- Custom：表示用户自定义作业
+
+默认参数为：Custom
+                     * @param _taskType 表示所选训练框架，支持可选参数
+ 
+- PyTorch：表示提交PyTorch训练作业
+- Custom：表示用户自定义作业
+
+默认参数为：Custom
+                     * 
+                     */
+                    void SetTaskType(const std::string& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
 
                 private:
 
@@ -239,6 +280,17 @@ namespace TencentCloud
                      */
                     std::string m_jobType;
                     bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * 表示所选训练框架，支持可选参数
+ 
+- PyTorch：表示提交PyTorch训练作业
+- Custom：表示用户自定义作业
+
+默认参数为：Custom
+                     */
+                    std::string m_taskType;
+                    bool m_taskTypeHasBeenSet;
 
                 };
             }

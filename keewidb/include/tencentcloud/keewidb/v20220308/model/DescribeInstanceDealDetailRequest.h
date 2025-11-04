@@ -45,23 +45,44 @@ namespace TencentCloud
                     /**
                      * 获取订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。
                      * @return DealIds 订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetDealIds() const;
 
                     /**
                      * 设置订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。
                      * @param _dealIds 订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。
-                     * 
+                     * @deprecated
                      */
                     void SetDealIds(const std::vector<std::string>& _dealIds);
 
                     /**
                      * 判断参数 DealIds 是否已赋值
                      * @return DealIds 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DealIdsHasBeenSet() const;
+
+                    /**
+                     * 获取订单号，订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealName。
+                     * @return DealName 订单号，订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealName。
+                     * 
+                     */
+                    std::string GetDealName() const;
+
+                    /**
+                     * 设置订单号，订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealName。
+                     * @param _dealName 订单号，订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealName。
+                     * 
+                     */
+                    void SetDealName(const std::string& _dealName);
+
+                    /**
+                     * 判断参数 DealName 是否已赋值
+                     * @return DealName 是否已赋值
+                     * 
+                     */
+                    bool DealNameHasBeenSet() const;
 
                 private:
 
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_dealIds;
                     bool m_dealIdsHasBeenSet;
+
+                    /**
+                     * 订单号，订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealName。
+                     */
+                    std::string m_dealName;
+                    bool m_dealNameHasBeenSet;
 
                 };
             }

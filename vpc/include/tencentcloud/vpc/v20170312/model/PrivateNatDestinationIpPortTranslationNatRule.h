@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取原端口
-                     * @return OriginalPort 原端口
+                     * 获取映射前端口
+                     * @return OriginalPort 映射前端口
                      * 
                      */
                     int64_t GetOriginalPort() const;
 
                     /**
-                     * 设置原端口
-                     * @param _originalPort 原端口
+                     * 设置映射前端口
+                     * @param _originalPort 映射前端口
                      * 
                      */
                     void SetOriginalPort(const int64_t& _originalPort);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool OriginalPortHasBeenSet() const;
 
                     /**
-                     * 获取原IP
-                     * @return OriginalIp 原IP
+                     * 获取映射前IP
+                     * @return OriginalIp 映射前IP
                      * 
                      */
                     std::string GetOriginalIp() const;
 
                     /**
-                     * 设置原IP
-                     * @param _originalIp 原IP
+                     * 设置映射前IP
+                     * @param _originalIp 映射前IP
                      * 
                      */
                     void SetOriginalIp(const std::string& _originalIp);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool OriginalIpHasBeenSet() const;
 
                     /**
-                     * 获取映射端口
-                     * @return TranslationPort 映射端口
+                     * 获取映射后端口
+                     * @return TranslationPort 映射后端口
                      * 
                      */
                     int64_t GetTranslationPort() const;
 
                     /**
-                     * 设置映射端口
-                     * @param _translationPort 映射端口
+                     * 设置映射后端口
+                     * @param _translationPort 映射后端口
                      * 
                      */
                     void SetTranslationPort(const int64_t& _translationPort);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool TranslationPortHasBeenSet() const;
 
                     /**
-                     * 获取映射IP
-                     * @return TranslationIp 映射IP
+                     * 获取映射后IP
+                     * @return TranslationIp 映射后IP
                      * 
                      */
                     std::string GetTranslationIp() const;
 
                     /**
-                     * 设置映射IP
-                     * @param _translationIp 映射IP
+                     * 设置映射后IP
+                     * @param _translationIp 映射后IP
                      * 
                      */
                     void SetTranslationIp(const std::string& _translationIp);
@@ -223,25 +223,25 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 原端口
+                     * 映射前端口
                      */
                     int64_t m_originalPort;
                     bool m_originalPortHasBeenSet;
 
                     /**
-                     * 原IP
+                     * 映射前IP
                      */
                     std::string m_originalIp;
                     bool m_originalIpHasBeenSet;
 
                     /**
-                     * 映射端口
+                     * 映射后端口
                      */
                     int64_t m_translationPort;
                     bool m_translationPortHasBeenSet;
 
                     /**
-                     * 映射IP
+                     * 映射后IP
                      */
                     std::string m_translationIp;
                     bool m_translationIpHasBeenSet;

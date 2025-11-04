@@ -95,10 +95,12 @@ namespace TencentCloud
 <li>cls: 推送到腾讯云 CLS；</li>
 <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>
 <li>s3：推送到 AWS S3 兼容存储桶地址；</li>
+<li>log_analysis：推送到 EdgeOne 日志分析，该任务类型仅支持“站点加速日志”这一数据投递类型。</li>
                      * @return TaskType 实时日志投递任务类型，取值有：
 <li>cls: 推送到腾讯云 CLS；</li>
 <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>
 <li>s3：推送到 AWS S3 兼容存储桶地址；</li>
+<li>log_analysis：推送到 EdgeOne 日志分析，该任务类型仅支持“站点加速日志”这一数据投递类型。</li>
                      * 
                      */
                     std::string GetTaskType() const;
@@ -108,10 +110,12 @@ namespace TencentCloud
 <li>cls: 推送到腾讯云 CLS；</li>
 <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>
 <li>s3：推送到 AWS S3 兼容存储桶地址；</li>
+<li>log_analysis：推送到 EdgeOne 日志分析，该任务类型仅支持“站点加速日志”这一数据投递类型。</li>
                      * @param _taskType 实时日志投递任务类型，取值有：
 <li>cls: 推送到腾讯云 CLS；</li>
 <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>
 <li>s3：推送到 AWS S3 兼容存储桶地址；</li>
+<li>log_analysis：推送到 EdgeOne 日志分析，该任务类型仅支持“站点加速日志”这一数据投递类型。</li>
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -333,10 +337,10 @@ namespace TencentCloud
                     /**
                      * 获取日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：
 <li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
-<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
+<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 或 log_analysis 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
                      * @return LogFormat 日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：
 <li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
-<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
+<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 或 log_analysis 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
                      * 
                      */
                     LogFormat GetLogFormat() const;
@@ -344,10 +348,10 @@ namespace TencentCloud
                     /**
                      * 设置日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：
 <li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
-<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
+<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 或 log_analysis 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
                      * @param _logFormat 日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：
 <li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
-<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
+<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 或 log_analysis 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
                      * 
                      */
                     void SetLogFormat(const LogFormat& _logFormat);
@@ -441,6 +445,7 @@ namespace TencentCloud
 <li>cls: 推送到腾讯云 CLS；</li>
 <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>
 <li>s3：推送到 AWS S3 兼容存储桶地址；</li>
+<li>log_analysis：推送到 EdgeOne 日志分析，该任务类型仅支持“站点加速日志”这一数据投递类型。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -505,7 +510,7 @@ namespace TencentCloud
                     /**
                      * 日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：
 <li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
-<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
+<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 或 log_analysis 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
                      */
                     LogFormat m_logFormat;
                     bool m_logFormatHasBeenSet;

@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取作业任务ID
+                     * @return JobId 作业任务ID
+                     * 
+                     */
+                    std::string GetJobId() const;
+
+                    /**
+                     * 判断参数 JobId 是否已赋值
+                     * @return JobId 是否已赋值
+                     * 
+                     */
+                    bool JobIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 作业任务ID
+                     */
+                    std::string m_jobId;
+                    bool m_jobIdHasBeenSet;
 
                 };
             }

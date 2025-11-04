@@ -341,6 +341,49 @@ MongodbClient::CreateDBInstanceParamTplOutcomeCallable MongodbClient::CreateDBIn
     return task->get_future();
 }
 
+MongodbClient::CreateLogDownloadTaskOutcome MongodbClient::CreateLogDownloadTask(const CreateLogDownloadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLogDownloadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLogDownloadTaskResponse rsp = CreateLogDownloadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLogDownloadTaskOutcome(rsp);
+        else
+            return CreateLogDownloadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLogDownloadTaskOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CreateLogDownloadTaskAsync(const CreateLogDownloadTaskRequest& request, const CreateLogDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLogDownloadTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::CreateLogDownloadTaskOutcomeCallable MongodbClient::CreateLogDownloadTaskCallable(const CreateLogDownloadTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLogDownloadTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLogDownloadTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DeleteAccountUserOutcome MongodbClient::DeleteAccountUser(const DeleteAccountUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccountUser");
@@ -377,6 +420,49 @@ MongodbClient::DeleteAccountUserOutcomeCallable MongodbClient::DeleteAccountUser
         [this, request]()
         {
             return this->DeleteAccountUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::DeleteLogDownloadTaskOutcome MongodbClient::DeleteLogDownloadTask(const DeleteLogDownloadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLogDownloadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLogDownloadTaskResponse rsp = DeleteLogDownloadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLogDownloadTaskOutcome(rsp);
+        else
+            return DeleteLogDownloadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLogDownloadTaskOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DeleteLogDownloadTaskAsync(const DeleteLogDownloadTaskRequest& request, const DeleteLogDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLogDownloadTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DeleteLogDownloadTaskOutcomeCallable MongodbClient::DeleteLogDownloadTaskCallable(const DeleteLogDownloadTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLogDownloadTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLogDownloadTask(request);
         }
     );
 
@@ -1065,6 +1151,92 @@ MongodbClient::DescribeInstanceParamsOutcomeCallable MongodbClient::DescribeInst
         [this, request]()
         {
             return this->DescribeInstanceParams(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::DescribeLogDownloadTasksOutcome MongodbClient::DescribeLogDownloadTasks(const DescribeLogDownloadTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogDownloadTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogDownloadTasksResponse rsp = DescribeLogDownloadTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogDownloadTasksOutcome(rsp);
+        else
+            return DescribeLogDownloadTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogDownloadTasksOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeLogDownloadTasksAsync(const DescribeLogDownloadTasksRequest& request, const DescribeLogDownloadTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogDownloadTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeLogDownloadTasksOutcomeCallable MongodbClient::DescribeLogDownloadTasksCallable(const DescribeLogDownloadTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogDownloadTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogDownloadTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::DescribeMongodbLogsOutcome MongodbClient::DescribeMongodbLogs(const DescribeMongodbLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMongodbLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMongodbLogsResponse rsp = DescribeMongodbLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMongodbLogsOutcome(rsp);
+        else
+            return DescribeMongodbLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMongodbLogsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeMongodbLogsAsync(const DescribeMongodbLogsRequest& request, const DescribeMongodbLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMongodbLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeMongodbLogsOutcomeCallable MongodbClient::DescribeMongodbLogsCallable(const DescribeMongodbLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMongodbLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMongodbLogs(request);
         }
     );
 
@@ -2312,6 +2484,92 @@ MongodbClient::TerminateDBInstancesOutcomeCallable MongodbClient::TerminateDBIns
         [this, request]()
         {
             return this->TerminateDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::UpgradeDBInstanceKernelVersionOutcome MongodbClient::UpgradeDBInstanceKernelVersion(const UpgradeDBInstanceKernelVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeDBInstanceKernelVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeDBInstanceKernelVersionResponse rsp = UpgradeDBInstanceKernelVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeDBInstanceKernelVersionOutcome(rsp);
+        else
+            return UpgradeDBInstanceKernelVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeDBInstanceKernelVersionOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::UpgradeDBInstanceKernelVersionAsync(const UpgradeDBInstanceKernelVersionRequest& request, const UpgradeDBInstanceKernelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeDBInstanceKernelVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::UpgradeDBInstanceKernelVersionOutcomeCallable MongodbClient::UpgradeDBInstanceKernelVersionCallable(const UpgradeDBInstanceKernelVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeDBInstanceKernelVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeDBInstanceKernelVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::UpgradeDbInstanceVersionOutcome MongodbClient::UpgradeDbInstanceVersion(const UpgradeDbInstanceVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeDbInstanceVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeDbInstanceVersionResponse rsp = UpgradeDbInstanceVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeDbInstanceVersionOutcome(rsp);
+        else
+            return UpgradeDbInstanceVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeDbInstanceVersionOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::UpgradeDbInstanceVersionAsync(const UpgradeDbInstanceVersionRequest& request, const UpgradeDbInstanceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeDbInstanceVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::UpgradeDbInstanceVersionOutcomeCallable MongodbClient::UpgradeDbInstanceVersionCallable(const UpgradeDbInstanceVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeDbInstanceVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeDbInstanceVersion(request);
         }
     );
 

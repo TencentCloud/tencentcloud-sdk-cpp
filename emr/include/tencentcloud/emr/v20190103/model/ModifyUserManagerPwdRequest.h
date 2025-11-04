@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool PassWordHasBeenSet() const;
 
+                    /**
+                     * 获取是否同步密码
+                     * @return SyncPwd 是否同步密码
+                     * 
+                     */
+                    bool GetSyncPwd() const;
+
+                    /**
+                     * 设置是否同步密码
+                     * @param _syncPwd 是否同步密码
+                     * 
+                     */
+                    void SetSyncPwd(const bool& _syncPwd);
+
+                    /**
+                     * 判断参数 SyncPwd 是否已赋值
+                     * @return SyncPwd 是否已赋值
+                     * 
+                     */
+                    bool SyncPwdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_passWord;
                     bool m_passWordHasBeenSet;
+
+                    /**
+                     * 是否同步密码
+                     */
+                    bool m_syncPwd;
+                    bool m_syncPwdHasBeenSet;
 
                 };
             }

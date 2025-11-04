@@ -386,6 +386,39 @@ namespace TencentCloud
                      */
                     bool ClusterTypeHasBeenSet() const;
 
+                    /**
+                     * 获取集群销毁保护开关状态，当前支持参数：
+
+- ON: 集群销毁保护打开
+- OFF: 集群销毁保护关闭
+                     * @return DeletionProtection 集群销毁保护开关状态，当前支持参数：
+
+- ON: 集群销毁保护打开
+- OFF: 集群销毁保护关闭
+                     * 
+                     */
+                    std::string GetDeletionProtection() const;
+
+                    /**
+                     * 设置集群销毁保护开关状态，当前支持参数：
+
+- ON: 集群销毁保护打开
+- OFF: 集群销毁保护关闭
+                     * @param _deletionProtection 集群销毁保护开关状态，当前支持参数：
+
+- ON: 集群销毁保护打开
+- OFF: 集群销毁保护关闭
+                     * 
+                     */
+                    void SetDeletionProtection(const std::string& _deletionProtection);
+
+                    /**
+                     * 判断参数 DeletionProtection 是否已赋值
+                     * @return DeletionProtection 是否已赋值
+                     * 
+                     */
+                    bool DeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -483,6 +516,15 @@ namespace TencentCloud
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * 集群销毁保护开关状态，当前支持参数：
+
+- ON: 集群销毁保护打开
+- OFF: 集群销毁保护关闭
+                     */
+                    std::string m_deletionProtection;
+                    bool m_deletionProtectionHasBeenSet;
 
                 };
             }

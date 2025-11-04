@@ -31,7 +31,8 @@ UpdateLogstashInstanceRequest::UpdateLogstashInstanceRequest() :
     m_extendedFilesHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
-    m_operationDurationHasBeenSet(false)
+    m_operationDurationHasBeenSet(false),
+    m_multiZoneInfoHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,21 @@ string UpdateLogstashInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operationDuration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_multiZoneInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiZoneInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiZoneInfo.begin(); itr != m_multiZoneInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -273,6 +289,22 @@ void UpdateLogstashInstanceRequest::SetOperationDuration(const OperationDuration
 bool UpdateLogstashInstanceRequest::OperationDurationHasBeenSet() const
 {
     return m_operationDurationHasBeenSet;
+}
+
+vector<ZoneDetail> UpdateLogstashInstanceRequest::GetMultiZoneInfo() const
+{
+    return m_multiZoneInfo;
+}
+
+void UpdateLogstashInstanceRequest::SetMultiZoneInfo(const vector<ZoneDetail>& _multiZoneInfo)
+{
+    m_multiZoneInfo = _multiZoneInfo;
+    m_multiZoneInfoHasBeenSet = true;
+}
+
+bool UpdateLogstashInstanceRequest::MultiZoneInfoHasBeenSet() const
+{
+    return m_multiZoneInfoHasBeenSet;
 }
 
 

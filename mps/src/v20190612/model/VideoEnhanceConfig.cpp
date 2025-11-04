@@ -27,11 +27,12 @@ VideoEnhanceConfig::VideoEnhanceConfig() :
     m_denoiseHasBeenSet(false),
     m_imageQualityEnhanceHasBeenSet(false),
     m_colorEnhanceHasBeenSet(false),
-    m_sharpEnhanceHasBeenSet(false),
-    m_faceEnhanceHasBeenSet(false),
     m_lowLightEnhanceHasBeenSet(false),
     m_scratchRepairHasBeenSet(false),
-    m_artifactRepairHasBeenSet(false)
+    m_artifactRepairHasBeenSet(false),
+    m_enhanceSceneTypeHasBeenSet(false),
+    m_diffusionEnhanceHasBeenSet(false),
+    m_frameRateWithDenHasBeenSet(false)
 {
 }
 
@@ -142,40 +143,6 @@ CoreInternalOutcome VideoEnhanceConfig::Deserialize(const rapidjson::Value &valu
         m_colorEnhanceHasBeenSet = true;
     }
 
-    if (value.HasMember("SharpEnhance") && !value["SharpEnhance"].IsNull())
-    {
-        if (!value["SharpEnhance"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `VideoEnhanceConfig.SharpEnhance` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_sharpEnhance.Deserialize(value["SharpEnhance"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_sharpEnhanceHasBeenSet = true;
-    }
-
-    if (value.HasMember("FaceEnhance") && !value["FaceEnhance"].IsNull())
-    {
-        if (!value["FaceEnhance"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `VideoEnhanceConfig.FaceEnhance` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_faceEnhance.Deserialize(value["FaceEnhance"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_faceEnhanceHasBeenSet = true;
-    }
-
     if (value.HasMember("LowLightEnhance") && !value["LowLightEnhance"].IsNull())
     {
         if (!value["LowLightEnhance"].IsObject())
@@ -225,6 +192,50 @@ CoreInternalOutcome VideoEnhanceConfig::Deserialize(const rapidjson::Value &valu
         }
 
         m_artifactRepairHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnhanceSceneType") && !value["EnhanceSceneType"].IsNull())
+    {
+        if (!value["EnhanceSceneType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoEnhanceConfig.EnhanceSceneType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_enhanceSceneType = string(value["EnhanceSceneType"].GetString());
+        m_enhanceSceneTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiffusionEnhance") && !value["DiffusionEnhance"].IsNull())
+    {
+        if (!value["DiffusionEnhance"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoEnhanceConfig.DiffusionEnhance` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_diffusionEnhance.Deserialize(value["DiffusionEnhance"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_diffusionEnhanceHasBeenSet = true;
+    }
+
+    if (value.HasMember("FrameRateWithDen") && !value["FrameRateWithDen"].IsNull())
+    {
+        if (!value["FrameRateWithDen"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoEnhanceConfig.FrameRateWithDen` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_frameRateWithDen.Deserialize(value["FrameRateWithDen"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_frameRateWithDenHasBeenSet = true;
     }
 
 
@@ -288,24 +299,6 @@ void VideoEnhanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         m_colorEnhance.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_sharpEnhanceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SharpEnhance";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_sharpEnhance.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_faceEnhanceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FaceEnhance";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_faceEnhance.ToJsonObject(value[key.c_str()], allocator);
-    }
-
     if (m_lowLightEnhanceHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -331,6 +324,32 @@ void VideoEnhanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_artifactRepair.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_enhanceSceneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnhanceSceneType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enhanceSceneType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diffusionEnhanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiffusionEnhance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_diffusionEnhance.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_frameRateWithDenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameRateWithDen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_frameRateWithDen.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -432,38 +451,6 @@ bool VideoEnhanceConfig::ColorEnhanceHasBeenSet() const
     return m_colorEnhanceHasBeenSet;
 }
 
-SharpEnhanceConfig VideoEnhanceConfig::GetSharpEnhance() const
-{
-    return m_sharpEnhance;
-}
-
-void VideoEnhanceConfig::SetSharpEnhance(const SharpEnhanceConfig& _sharpEnhance)
-{
-    m_sharpEnhance = _sharpEnhance;
-    m_sharpEnhanceHasBeenSet = true;
-}
-
-bool VideoEnhanceConfig::SharpEnhanceHasBeenSet() const
-{
-    return m_sharpEnhanceHasBeenSet;
-}
-
-FaceEnhanceConfig VideoEnhanceConfig::GetFaceEnhance() const
-{
-    return m_faceEnhance;
-}
-
-void VideoEnhanceConfig::SetFaceEnhance(const FaceEnhanceConfig& _faceEnhance)
-{
-    m_faceEnhance = _faceEnhance;
-    m_faceEnhanceHasBeenSet = true;
-}
-
-bool VideoEnhanceConfig::FaceEnhanceHasBeenSet() const
-{
-    return m_faceEnhanceHasBeenSet;
-}
-
 LowLightEnhanceConfig VideoEnhanceConfig::GetLowLightEnhance() const
 {
     return m_lowLightEnhance;
@@ -510,5 +497,53 @@ void VideoEnhanceConfig::SetArtifactRepair(const ArtifactRepairConfig& _artifact
 bool VideoEnhanceConfig::ArtifactRepairHasBeenSet() const
 {
     return m_artifactRepairHasBeenSet;
+}
+
+string VideoEnhanceConfig::GetEnhanceSceneType() const
+{
+    return m_enhanceSceneType;
+}
+
+void VideoEnhanceConfig::SetEnhanceSceneType(const string& _enhanceSceneType)
+{
+    m_enhanceSceneType = _enhanceSceneType;
+    m_enhanceSceneTypeHasBeenSet = true;
+}
+
+bool VideoEnhanceConfig::EnhanceSceneTypeHasBeenSet() const
+{
+    return m_enhanceSceneTypeHasBeenSet;
+}
+
+DiffusionEnhanceConfig VideoEnhanceConfig::GetDiffusionEnhance() const
+{
+    return m_diffusionEnhance;
+}
+
+void VideoEnhanceConfig::SetDiffusionEnhance(const DiffusionEnhanceConfig& _diffusionEnhance)
+{
+    m_diffusionEnhance = _diffusionEnhance;
+    m_diffusionEnhanceHasBeenSet = true;
+}
+
+bool VideoEnhanceConfig::DiffusionEnhanceHasBeenSet() const
+{
+    return m_diffusionEnhanceHasBeenSet;
+}
+
+FrameRateWithDenConfig VideoEnhanceConfig::GetFrameRateWithDen() const
+{
+    return m_frameRateWithDen;
+}
+
+void VideoEnhanceConfig::SetFrameRateWithDen(const FrameRateWithDenConfig& _frameRateWithDen)
+{
+    m_frameRateWithDen = _frameRateWithDen;
+    m_frameRateWithDenHasBeenSet = true;
+}
+
+bool VideoEnhanceConfig::FrameRateWithDenHasBeenSet() const
+{
+    return m_frameRateWithDenHasBeenSet;
 }
 

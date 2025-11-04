@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskAsrFullTextResult.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskTransTextResult.h>
+#include <tencentcloud/mps/v20190612/model/PureSubtitleTransResult.h>
 
 
 namespace TencentCloud
@@ -49,23 +50,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务的类型，取值范围： 
-<li>AsrFullTextRecognition：语音全文识别，</li> 
-<li>TransTextRecognition：语音翻译。</li>
-                     * @return Type 任务的类型，取值范围： 
-<li>AsrFullTextRecognition：语音全文识别，</li> 
-<li>TransTextRecognition：语音翻译。</li>
+                     * 获取任务的类型，取值范围：
+- AsrFullTextRecognition：语音全文识别
+- TransTextRecognition：语音翻译
+- PureSubtitleTrans:   纯字幕翻译
+                     * @return Type 任务的类型，取值范围：
+- AsrFullTextRecognition：语音全文识别
+- TransTextRecognition：语音翻译
+- PureSubtitleTrans:   纯字幕翻译
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置任务的类型，取值范围： 
-<li>AsrFullTextRecognition：语音全文识别，</li> 
-<li>TransTextRecognition：语音翻译。</li>
-                     * @param _type 任务的类型，取值范围： 
-<li>AsrFullTextRecognition：语音全文识别，</li> 
-<li>TransTextRecognition：语音翻译。</li>
+                     * 设置任务的类型，取值范围：
+- AsrFullTextRecognition：语音全文识别
+- TransTextRecognition：语音翻译
+- PureSubtitleTrans:   纯字幕翻译
+                     * @param _type 任务的类型，取值范围：
+- AsrFullTextRecognition：语音全文识别
+- TransTextRecognition：语音翻译
+- PureSubtitleTrans:   纯字幕翻译
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -139,12 +144,38 @@ TransTextRecognition 时有效。
                      */
                     bool TransTextTaskHasBeenSet() const;
 
+                    /**
+                     * 获取当翻译类型为：PureSubtitleTrans 是返回纯字幕文件翻译结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PureSubtitleTransTask 当翻译类型为：PureSubtitleTrans 是返回纯字幕文件翻译结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    PureSubtitleTransResult GetPureSubtitleTransTask() const;
+
+                    /**
+                     * 设置当翻译类型为：PureSubtitleTrans 是返回纯字幕文件翻译结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pureSubtitleTransTask 当翻译类型为：PureSubtitleTrans 是返回纯字幕文件翻译结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPureSubtitleTransTask(const PureSubtitleTransResult& _pureSubtitleTransTask);
+
+                    /**
+                     * 判断参数 PureSubtitleTransTask 是否已赋值
+                     * @return PureSubtitleTransTask 是否已赋值
+                     * 
+                     */
+                    bool PureSubtitleTransTaskHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务的类型，取值范围： 
-<li>AsrFullTextRecognition：语音全文识别，</li> 
-<li>TransTextRecognition：语音翻译。</li>
+                     * 任务的类型，取值范围：
+- AsrFullTextRecognition：语音全文识别
+- TransTextRecognition：语音翻译
+- PureSubtitleTrans:   纯字幕翻译
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -165,6 +196,13 @@ TransTextRecognition 时有效。
                      */
                     SmartSubtitleTaskTransTextResult m_transTextTask;
                     bool m_transTextTaskHasBeenSet;
+
+                    /**
+                     * 当翻译类型为：PureSubtitleTrans 是返回纯字幕文件翻译结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PureSubtitleTransResult m_pureSubtitleTransTask;
+                    bool m_pureSubtitleTransTaskHasBeenSet;
 
                 };
             }

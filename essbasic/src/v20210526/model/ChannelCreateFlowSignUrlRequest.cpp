@@ -26,6 +26,7 @@ ChannelCreateFlowSignUrlRequest::ChannelCreateFlowSignUrlRequest() :
     m_agentHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_flowApproverInfosHasBeenSet(false),
+    m_videoVerifyTimesLimitHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_organizationHasBeenSet(false),
     m_jumpUrlHasBeenSet(false),
@@ -70,6 +71,14 @@ string ChannelCreateFlowSignUrlRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_videoVerifyTimesLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoVerifyTimesLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_videoVerifyTimesLimit, allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -160,6 +169,22 @@ void ChannelCreateFlowSignUrlRequest::SetFlowApproverInfos(const vector<FlowAppr
 bool ChannelCreateFlowSignUrlRequest::FlowApproverInfosHasBeenSet() const
 {
     return m_flowApproverInfosHasBeenSet;
+}
+
+int64_t ChannelCreateFlowSignUrlRequest::GetVideoVerifyTimesLimit() const
+{
+    return m_videoVerifyTimesLimit;
+}
+
+void ChannelCreateFlowSignUrlRequest::SetVideoVerifyTimesLimit(const int64_t& _videoVerifyTimesLimit)
+{
+    m_videoVerifyTimesLimit = _videoVerifyTimesLimit;
+    m_videoVerifyTimesLimitHasBeenSet = true;
+}
+
+bool ChannelCreateFlowSignUrlRequest::VideoVerifyTimesLimitHasBeenSet() const
+{
+    return m_videoVerifyTimesLimitHasBeenSet;
 }
 
 UserInfo ChannelCreateFlowSignUrlRequest::GetOperator() const

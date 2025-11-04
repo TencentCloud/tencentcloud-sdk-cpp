@@ -88,6 +88,153 @@ namespace TencentCloud
                      */
                     bool ConsumerTagHasBeenSet() const;
 
+                    /**
+                     * 获取消费目标队列
+                     * @return QueueName 消费目标队列
+                     * 
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 设置消费目标队列
+                     * @param _queueName 消费目标队列
+                     * 
+                     */
+                    void SetQueueName(const std::string& _queueName);
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     * 
+                     */
+                    bool QueueNameHasBeenSet() const;
+
+                    /**
+                     * 获取是否需要消费者手动 ack
+                     * @return AckRequired 是否需要消费者手动 ack
+                     * 
+                     */
+                    bool GetAckRequired() const;
+
+                    /**
+                     * 设置是否需要消费者手动 ack
+                     * @param _ackRequired 是否需要消费者手动 ack
+                     * 
+                     */
+                    void SetAckRequired(const bool& _ackRequired);
+
+                    /**
+                     * 判断参数 AckRequired 是否已赋值
+                     * @return AckRequired 是否已赋值
+                     * 
+                     */
+                    bool AckRequiredHasBeenSet() const;
+
+                    /**
+                     * 获取消费者 qos 值
+                     * @return PrefetchCount 消费者 qos 值
+                     * 
+                     */
+                    uint64_t GetPrefetchCount() const;
+
+                    /**
+                     * 设置消费者 qos 值
+                     * @param _prefetchCount 消费者 qos 值
+                     * 
+                     */
+                    void SetPrefetchCount(const uint64_t& _prefetchCount);
+
+                    /**
+                     * 判断参数 PrefetchCount 是否已赋值
+                     * @return PrefetchCount 是否已赋值
+                     * 
+                     */
+                    bool PrefetchCountHasBeenSet() const;
+
+                    /**
+                     * 获取消费者状态
+                     * @return Active 消费者状态
+                     * 
+                     */
+                    std::string GetActive() const;
+
+                    /**
+                     * 设置消费者状态
+                     * @param _active 消费者状态
+                     * 
+                     */
+                    void SetActive(const std::string& _active);
+
+                    /**
+                     * 判断参数 Active 是否已赋值
+                     * @return Active 是否已赋值
+                     * 
+                     */
+                    bool ActiveHasBeenSet() const;
+
+                    /**
+                     * 获取最后一次投递消息时间
+                     * @return LastDeliveredTime 最后一次投递消息时间
+                     * 
+                     */
+                    std::string GetLastDeliveredTime() const;
+
+                    /**
+                     * 设置最后一次投递消息时间
+                     * @param _lastDeliveredTime 最后一次投递消息时间
+                     * 
+                     */
+                    void SetLastDeliveredTime(const std::string& _lastDeliveredTime);
+
+                    /**
+                     * 判断参数 LastDeliveredTime 是否已赋值
+                     * @return LastDeliveredTime 是否已赋值
+                     * 
+                     */
+                    bool LastDeliveredTimeHasBeenSet() const;
+
+                    /**
+                     * 获取消费者未确认消息数
+                     * @return UnAckMsgCount 消费者未确认消息数
+                     * 
+                     */
+                    int64_t GetUnAckMsgCount() const;
+
+                    /**
+                     * 设置消费者未确认消息数
+                     * @param _unAckMsgCount 消费者未确认消息数
+                     * 
+                     */
+                    void SetUnAckMsgCount(const int64_t& _unAckMsgCount);
+
+                    /**
+                     * 判断参数 UnAckMsgCount 是否已赋值
+                     * @return UnAckMsgCount 是否已赋值
+                     * 
+                     */
+                    bool UnAckMsgCountHasBeenSet() const;
+
+                    /**
+                     * 获取consumer 所属的 channel 
+                     * @return ChannelName consumer 所属的 channel 
+                     * 
+                     */
+                    std::string GetChannelName() const;
+
+                    /**
+                     * 设置consumer 所属的 channel 
+                     * @param _channelName consumer 所属的 channel 
+                     * 
+                     */
+                    void SetChannelName(const std::string& _channelName);
+
+                    /**
+                     * 判断参数 ChannelName 是否已赋值
+                     * @return ChannelName 是否已赋值
+                     * 
+                     */
+                    bool ChannelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +248,48 @@ namespace TencentCloud
                      */
                     std::string m_consumerTag;
                     bool m_consumerTagHasBeenSet;
+
+                    /**
+                     * 消费目标队列
+                     */
+                    std::string m_queueName;
+                    bool m_queueNameHasBeenSet;
+
+                    /**
+                     * 是否需要消费者手动 ack
+                     */
+                    bool m_ackRequired;
+                    bool m_ackRequiredHasBeenSet;
+
+                    /**
+                     * 消费者 qos 值
+                     */
+                    uint64_t m_prefetchCount;
+                    bool m_prefetchCountHasBeenSet;
+
+                    /**
+                     * 消费者状态
+                     */
+                    std::string m_active;
+                    bool m_activeHasBeenSet;
+
+                    /**
+                     * 最后一次投递消息时间
+                     */
+                    std::string m_lastDeliveredTime;
+                    bool m_lastDeliveredTimeHasBeenSet;
+
+                    /**
+                     * 消费者未确认消息数
+                     */
+                    int64_t m_unAckMsgCount;
+                    bool m_unAckMsgCountHasBeenSet;
+
+                    /**
+                     * consumer 所属的 channel 
+                     */
+                    std::string m_channelName;
+                    bool m_channelNameHasBeenSet;
 
                 };
             }

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SuperResolutionConfig.h>
+#include <tencentcloud/mps/v20190612/model/AdvancedSuperResolutionConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageDenoiseConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageQualityEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/ColorEnhanceConfig.h>
@@ -77,6 +78,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SuperResolutionHasBeenSet() const;
+
+                    /**
+                     * 获取高级超分配置。
+                     * @return AdvancedSuperResolutionConfig 高级超分配置。
+                     * 
+                     */
+                    AdvancedSuperResolutionConfig GetAdvancedSuperResolutionConfig() const;
+
+                    /**
+                     * 设置高级超分配置。
+                     * @param _advancedSuperResolutionConfig 高级超分配置。
+                     * 
+                     */
+                    void SetAdvancedSuperResolutionConfig(const AdvancedSuperResolutionConfig& _advancedSuperResolutionConfig);
+
+                    /**
+                     * 判断参数 AdvancedSuperResolutionConfig 是否已赋值
+                     * @return AdvancedSuperResolutionConfig 是否已赋值
+                     * 
+                     */
+                    bool AdvancedSuperResolutionConfigHasBeenSet() const;
 
                     /**
                      * 获取降噪配置。
@@ -236,6 +258,12 @@ namespace TencentCloud
                      */
                     SuperResolutionConfig m_superResolution;
                     bool m_superResolutionHasBeenSet;
+
+                    /**
+                     * 高级超分配置。
+                     */
+                    AdvancedSuperResolutionConfig m_advancedSuperResolutionConfig;
+                    bool m_advancedSuperResolutionConfigHasBeenSet;
 
                     /**
                      * 降噪配置。

@@ -39,6 +39,8 @@
 #include <tencentcloud/aiart/v20221229/model/QueryGlamPicJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryMemeJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryMemeJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/QueryTextToImageJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/QueryTextToImageJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/aiart/v20221229/model/SubmitGlamPicJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitMemeJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitMemeJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitTextToImageJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitTextToImageJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobRequest.h>
@@ -103,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryMemeJobResponse> QueryMemeJobOutcome;
                 typedef std::future<QueryMemeJobOutcome> QueryMemeJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryMemeJobRequest&, QueryMemeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemeJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryTextToImageJobResponse> QueryTextToImageJobOutcome;
+                typedef std::future<QueryTextToImageJobOutcome> QueryTextToImageJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::QueryTextToImageJobRequest&, QueryTextToImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTextToImageJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryTextToImageProJobResponse> QueryTextToImageProJobOutcome;
                 typedef std::future<QueryTextToImageProJobOutcome> QueryTextToImageProJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryTextToImageProJobRequest&, QueryTextToImageProJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTextToImageProJobAsyncHandler;
@@ -127,6 +134,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitMemeJobResponse> SubmitMemeJobOutcome;
                 typedef std::future<SubmitMemeJobOutcome> SubmitMemeJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitMemeJobRequest&, SubmitMemeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitMemeJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitTextToImageJobResponse> SubmitTextToImageJobOutcome;
+                typedef std::future<SubmitTextToImageJobOutcome> SubmitTextToImageJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::SubmitTextToImageJobRequest&, SubmitTextToImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextToImageJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitTextToImageProJobResponse> SubmitTextToImageProJobOutcome;
                 typedef std::future<SubmitTextToImageProJobOutcome> SubmitTextToImageProJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitTextToImageProJobRequest&, SubmitTextToImageProJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextToImageProJobAsyncHandler;
@@ -238,6 +248,16 @@ AI 美照默认提供1个并发，代表最多能同时处理1个已提交的任
                 QueryMemeJobOutcomeCallable QueryMemeJobCallable(const Model::QueryMemeJobRequest& request);
 
                 /**
+                 *混元生图接口，基于混元大模型，根据输入的文本描述快速生成图片。
+默认提供0个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req QueryTextToImageJobRequest
+                 * @return QueryTextToImageJobOutcome
+                 */
+                QueryTextToImageJobOutcome QueryTextToImageJob(const Model::QueryTextToImageJobRequest &request);
+                void QueryTextToImageJobAsync(const Model::QueryTextToImageJobRequest& request, const QueryTextToImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryTextToImageJobOutcomeCallable QueryTextToImageJobCallable(const Model::QueryTextToImageJobRequest& request);
+
+                /**
                  *本接口已迁移至腾讯混元大模型-混元生图，即将停止此处维护，可切换至 [混元生图 API](https://cloud.tencent.com/document/product/1729/105970) 继续使用。
 文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。
 提交任务：输入文本等，提交一个文生图（高级版）异步任务，获得任务 ID。
@@ -339,6 +359,16 @@ AI 美照默认提供1个并发，代表最多能同时处理1个已提交的任
                 SubmitMemeJobOutcome SubmitMemeJob(const Model::SubmitMemeJobRequest &request);
                 void SubmitMemeJobAsync(const Model::SubmitMemeJobRequest& request, const SubmitMemeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitMemeJobOutcomeCallable SubmitMemeJobCallable(const Model::SubmitMemeJobRequest& request);
+
+                /**
+                 *混元生图接口，基于混元大模型，根据输入的文本描述快速生成图片。
+默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。
+                 * @param req SubmitTextToImageJobRequest
+                 * @return SubmitTextToImageJobOutcome
+                 */
+                SubmitTextToImageJobOutcome SubmitTextToImageJob(const Model::SubmitTextToImageJobRequest &request);
+                void SubmitTextToImageJobAsync(const Model::SubmitTextToImageJobRequest& request, const SubmitTextToImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitTextToImageJobOutcomeCallable SubmitTextToImageJobCallable(const Model::SubmitTextToImageJobRequest& request);
 
                 /**
                  *本接口已迁移至腾讯混元大模型-混元生图，即将停止此处维护，可切换至 [混元生图 API](https://cloud.tencent.com/document/product/1729/105969) 继续使用。

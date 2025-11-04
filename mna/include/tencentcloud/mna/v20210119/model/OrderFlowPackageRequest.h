@@ -154,15 +154,15 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取区域标识，0：国内，1：国外
-                     * @return PackageRegion 区域标识，0：国内，1：国外
+                     * 获取区域标识，0：中国境内，1：中国境外
+                     * @return PackageRegion 区域标识，0：中国境内，1：中国境外
                      * 
                      */
                     int64_t GetPackageRegion() const;
 
                     /**
-                     * 设置区域标识，0：国内，1：国外
-                     * @param _packageRegion 区域标识，0：国内，1：国外
+                     * 设置区域标识，0：中国境内，1：中国境外
+                     * @param _packageRegion 区域标识，0：中国境内，1：中国境外
                      * 
                      */
                     void SetPackageRegion(const int64_t& _packageRegion);
@@ -278,7 +278,7 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 区域标识，0：国内，1：国外
+                     * 区域标识，0：中国境内，1：中国境外
                      */
                     int64_t m_packageRegion;
                     bool m_packageRegionHasBeenSet;

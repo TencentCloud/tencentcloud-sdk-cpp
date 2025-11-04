@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SmartSubtitleTaskTransTextSegmentItem.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
+#include <tencentcloud/mps/v20190612/model/SubtitleTransResultItem.h>
 
 
 namespace TencentCloud
@@ -115,6 +116,48 @@ namespace TencentCloud
                      */
                     bool OutputStorageHasBeenSet() const;
 
+                    /**
+                     * 获取字幕文件地址
+                     * @return Path 字幕文件地址
+                     * 
+                     */
+                    std::string GetPath() const;
+
+                    /**
+                     * 设置字幕文件地址
+                     * @param _path 字幕文件地址
+                     * 
+                     */
+                    void SetPath(const std::string& _path);
+
+                    /**
+                     * 判断参数 Path 是否已赋值
+                     * @return Path 是否已赋值
+                     * 
+                     */
+                    bool PathHasBeenSet() const;
+
+                    /**
+                     * 获取多语言翻译时返回翻译结果。	
+                     * @return SubtitleResults 多语言翻译时返回翻译结果。	
+                     * 
+                     */
+                    std::vector<SubtitleTransResultItem> GetSubtitleResults() const;
+
+                    /**
+                     * 设置多语言翻译时返回翻译结果。	
+                     * @param _subtitleResults 多语言翻译时返回翻译结果。	
+                     * 
+                     */
+                    void SetSubtitleResults(const std::vector<SubtitleTransResultItem>& _subtitleResults);
+
+                    /**
+                     * 判断参数 SubtitleResults 是否已赋值
+                     * @return SubtitleResults 是否已赋值
+                     * 
+                     */
+                    bool SubtitleResultsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +178,18 @@ namespace TencentCloud
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
+
+                    /**
+                     * 字幕文件地址
+                     */
+                    std::string m_path;
+                    bool m_pathHasBeenSet;
+
+                    /**
+                     * 多语言翻译时返回翻译结果。	
+                     */
+                    std::vector<SubtitleTransResultItem> m_subtitleResults;
+                    bool m_subtitleResultsHasBeenSet;
 
                 };
             }

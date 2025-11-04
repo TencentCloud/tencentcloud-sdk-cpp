@@ -22,6 +22,7 @@ using namespace std;
 
 SmartSubtitleTaskAsrFullTextResultOutput::SmartSubtitleTaskAsrFullTextResultOutput() :
     m_segmentSetHasBeenSet(false),
+    m_pathHasBeenSet(false),
     m_subtitlePathHasBeenSet(false),
     m_outputStorageHasBeenSet(false)
 {
@@ -50,6 +51,16 @@ CoreInternalOutcome SmartSubtitleTaskAsrFullTextResultOutput::Deserialize(const 
             m_segmentSet.push_back(item);
         }
         m_segmentSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("Path") && !value["Path"].IsNull())
+    {
+        if (!value["Path"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitleTaskAsrFullTextResultOutput.Path` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_path = string(value["Path"].GetString());
+        m_pathHasBeenSet = true;
     }
 
     if (value.HasMember("SubtitlePath") && !value["SubtitlePath"].IsNull())
@@ -101,6 +112,14 @@ void SmartSubtitleTaskAsrFullTextResultOutput::ToJsonObject(rapidjson::Value &va
         }
     }
 
+    if (m_pathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Path";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_subtitlePathHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -135,6 +154,22 @@ void SmartSubtitleTaskAsrFullTextResultOutput::SetSegmentSet(const vector<SmartS
 bool SmartSubtitleTaskAsrFullTextResultOutput::SegmentSetHasBeenSet() const
 {
     return m_segmentSetHasBeenSet;
+}
+
+string SmartSubtitleTaskAsrFullTextResultOutput::GetPath() const
+{
+    return m_path;
+}
+
+void SmartSubtitleTaskAsrFullTextResultOutput::SetPath(const string& _path)
+{
+    m_path = _path;
+    m_pathHasBeenSet = true;
+}
+
+bool SmartSubtitleTaskAsrFullTextResultOutput::PathHasBeenSet() const
+{
+    return m_pathHasBeenSet;
 }
 
 string SmartSubtitleTaskAsrFullTextResultOutput::GetSubtitlePath() const

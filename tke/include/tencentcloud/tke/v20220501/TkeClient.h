@@ -35,6 +35,8 @@
 #include <tencentcloud/tke/v20220501/model/DeleteNodePoolResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeClusterInstancesResponse.h>
+#include <tencentcloud/tke/v20220501/model/DescribeClustersRequest.h>
+#include <tencentcloud/tke/v20220501/model/DescribeClustersResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeHealthCheckPoliciesRequest.h>
 #include <tencentcloud/tke/v20220501/model/DescribeHealthCheckPoliciesResponse.h>
 #include <tencentcloud/tke/v20220501/model/DescribeHealthCheckPolicyBindingsRequest.h>
@@ -87,6 +89,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterInstancesResponse> DescribeClusterInstancesOutcome;
                 typedef std::future<DescribeClusterInstancesOutcome> DescribeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterInstancesRequest&, DescribeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
+                typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHealthCheckPoliciesResponse> DescribeHealthCheckPoliciesOutcome;
                 typedef std::future<DescribeHealthCheckPoliciesOutcome> DescribeHealthCheckPoliciesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeHealthCheckPoliciesRequest&, DescribeHealthCheckPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHealthCheckPoliciesAsyncHandler;
@@ -173,6 +178,15 @@ namespace TencentCloud
                 DescribeClusterInstancesOutcome DescribeClusterInstances(const Model::DescribeClusterInstancesRequest &request);
                 void DescribeClusterInstancesAsync(const Model::DescribeClusterInstancesRequest& request, const DescribeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterInstancesOutcomeCallable DescribeClusterInstancesCallable(const Model::DescribeClusterInstancesRequest& request);
+
+                /**
+                 *查询集群列表
+                 * @param req DescribeClustersRequest
+                 * @return DescribeClustersOutcome
+                 */
+                DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest &request);
+                void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
 
                 /**
                  *查询健康检测策略

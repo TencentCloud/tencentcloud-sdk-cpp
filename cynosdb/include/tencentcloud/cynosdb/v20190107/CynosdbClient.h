@@ -61,6 +61,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/CreateClusterDatabaseResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateIntegrateClusterRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateIntegrateClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateParamTemplateRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateParamTemplateResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateProxyRequest.h>
@@ -163,6 +165,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesWithinSameClusterRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesWithinSameClusterResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeIntegrateTaskRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeIntegrateTaskResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeIsolatedInstancesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeIsolatedInstancesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodRequest.h>
@@ -217,6 +221,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceCreateResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceModifyRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceModifyResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/InquirePriceMultiSpecRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/InquirePriceMultiSpecResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceRenewRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceRenewResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateClusterRequest.h>
@@ -426,6 +432,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateClustersResponse> CreateClustersOutcome;
                 typedef std::future<CreateClustersOutcome> CreateClustersOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateClustersRequest&, CreateClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIntegrateClusterResponse> CreateIntegrateClusterOutcome;
+                typedef std::future<CreateIntegrateClusterOutcome> CreateIntegrateClusterOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CreateIntegrateClusterRequest&, CreateIntegrateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrateClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateParamTemplateResponse> CreateParamTemplateOutcome;
                 typedef std::future<CreateParamTemplateOutcome> CreateParamTemplateOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateParamTemplateRequest&, CreateParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateParamTemplateAsyncHandler;
@@ -579,6 +588,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesWithinSameClusterResponse> DescribeInstancesWithinSameClusterOutcome;
                 typedef std::future<DescribeInstancesWithinSameClusterOutcome> DescribeInstancesWithinSameClusterOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstancesWithinSameClusterRequest&, DescribeInstancesWithinSameClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesWithinSameClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIntegrateTaskResponse> DescribeIntegrateTaskOutcome;
+                typedef std::future<DescribeIntegrateTaskOutcome> DescribeIntegrateTaskOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeIntegrateTaskRequest&, DescribeIntegrateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrateTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIsolatedInstancesResponse> DescribeIsolatedInstancesOutcome;
                 typedef std::future<DescribeIsolatedInstancesOutcome> DescribeIsolatedInstancesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeIsolatedInstancesRequest&, DescribeIsolatedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIsolatedInstancesAsyncHandler;
@@ -660,6 +672,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceModifyResponse> InquirePriceModifyOutcome;
                 typedef std::future<InquirePriceModifyOutcome> InquirePriceModifyOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::InquirePriceModifyRequest&, InquirePriceModifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceModifyAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceMultiSpecResponse> InquirePriceMultiSpecOutcome;
+                typedef std::future<InquirePriceMultiSpecOutcome> InquirePriceMultiSpecOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::InquirePriceMultiSpecRequest&, InquirePriceMultiSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceMultiSpecAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceRenewResponse> InquirePriceRenewOutcome;
                 typedef std::future<InquirePriceRenewOutcome> InquirePriceRenewOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::InquirePriceRenewRequest&, InquirePriceRenewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewAsyncHandler;
@@ -1040,6 +1055,15 @@ namespace TencentCloud
                 CreateClustersOutcome CreateClusters(const Model::CreateClustersRequest &request);
                 void CreateClustersAsync(const Model::CreateClustersRequest& request, const CreateClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClustersOutcomeCallable CreateClustersCallable(const Model::CreateClustersRequest& request);
+
+                /**
+                 *本接口（CreateClusters）用于新购集群。
+                 * @param req CreateIntegrateClusterRequest
+                 * @return CreateIntegrateClusterOutcome
+                 */
+                CreateIntegrateClusterOutcome CreateIntegrateCluster(const Model::CreateIntegrateClusterRequest &request);
+                void CreateIntegrateClusterAsync(const Model::CreateIntegrateClusterRequest& request, const CreateIntegrateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIntegrateClusterOutcomeCallable CreateIntegrateClusterCallable(const Model::CreateIntegrateClusterRequest& request);
 
                 /**
                  *本接口（CreateParamTemplate）用于创建参数模板。
@@ -1501,6 +1525,15 @@ namespace TencentCloud
                 DescribeInstancesWithinSameClusterOutcomeCallable DescribeInstancesWithinSameClusterCallable(const Model::DescribeInstancesWithinSameClusterRequest& request);
 
                 /**
+                 *本接口（DescribeIntegrateTask）用于查询集群任务。
+                 * @param req DescribeIntegrateTaskRequest
+                 * @return DescribeIntegrateTaskOutcome
+                 */
+                DescribeIntegrateTaskOutcome DescribeIntegrateTask(const Model::DescribeIntegrateTaskRequest &request);
+                void DescribeIntegrateTaskAsync(const Model::DescribeIntegrateTaskRequest& request, const DescribeIntegrateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIntegrateTaskOutcomeCallable DescribeIntegrateTaskCallable(const Model::DescribeIntegrateTaskRequest& request);
+
+                /**
                  *本接口（DescribeIsolatedInstances）用于查询回收站实例列表。
                  * @param req DescribeIsolatedInstancesRequest
                  * @return DescribeIsolatedInstancesOutcome
@@ -1742,6 +1775,15 @@ namespace TencentCloud
                 InquirePriceModifyOutcome InquirePriceModify(const Model::InquirePriceModifyRequest &request);
                 void InquirePriceModifyAsync(const Model::InquirePriceModifyRequest& request, const InquirePriceModifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquirePriceModifyOutcomeCallable InquirePriceModifyCallable(const Model::InquirePriceModifyRequest& request);
+
+                /**
+                 *此接口（InquirePriceMultiSpec）用于批量询价
+                 * @param req InquirePriceMultiSpecRequest
+                 * @return InquirePriceMultiSpecOutcome
+                 */
+                InquirePriceMultiSpecOutcome InquirePriceMultiSpec(const Model::InquirePriceMultiSpecRequest &request);
+                void InquirePriceMultiSpecAsync(const Model::InquirePriceMultiSpecRequest& request, const InquirePriceMultiSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceMultiSpecOutcomeCallable InquirePriceMultiSpecCallable(const Model::InquirePriceMultiSpecRequest& request);
 
                 /**
                  *本接口（InquirePriceRenew）用于查询续费集群价格。

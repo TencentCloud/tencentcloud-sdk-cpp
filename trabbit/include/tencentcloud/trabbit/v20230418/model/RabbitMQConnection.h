@@ -193,6 +193,111 @@ namespace TencentCloud
                      */
                     bool ChannelsHasBeenSet() const;
 
+                    /**
+                     * 获取入流量大小，单位 bytes
+                     * @return IncomingBytes 入流量大小，单位 bytes
+                     * 
+                     */
+                    double GetIncomingBytes() const;
+
+                    /**
+                     * 设置入流量大小，单位 bytes
+                     * @param _incomingBytes 入流量大小，单位 bytes
+                     * 
+                     */
+                    void SetIncomingBytes(const double& _incomingBytes);
+
+                    /**
+                     * 判断参数 IncomingBytes 是否已赋值
+                     * @return IncomingBytes 是否已赋值
+                     * 
+                     */
+                    bool IncomingBytesHasBeenSet() const;
+
+                    /**
+                     * 获取出流量大小，单位bytes
+                     * @return OutgoingBytes 出流量大小，单位bytes
+                     * 
+                     */
+                    double GetOutgoingBytes() const;
+
+                    /**
+                     * 设置出流量大小，单位bytes
+                     * @param _outgoingBytes 出流量大小，单位bytes
+                     * 
+                     */
+                    void SetOutgoingBytes(const double& _outgoingBytes);
+
+                    /**
+                     * 判断参数 OutgoingBytes 是否已赋值
+                     * @return OutgoingBytes 是否已赋值
+                     * 
+                     */
+                    bool OutgoingBytesHasBeenSet() const;
+
+                    /**
+                     * 获取心跳间隔时间，默认60s
+                     * @return Heartbeat 心跳间隔时间，默认60s
+                     * 
+                     */
+                    uint64_t GetHeartbeat() const;
+
+                    /**
+                     * 设置心跳间隔时间，默认60s
+                     * @param _heartbeat 心跳间隔时间，默认60s
+                     * 
+                     */
+                    void SetHeartbeat(const uint64_t& _heartbeat);
+
+                    /**
+                     * 判断参数 Heartbeat 是否已赋值
+                     * @return Heartbeat 是否已赋值
+                     * 
+                     */
+                    bool HeartbeatHasBeenSet() const;
+
+                    /**
+                     * 获取一个链接最大的channel数，默认1024
+                     * @return MaxChannel 一个链接最大的channel数，默认1024
+                     * 
+                     */
+                    uint64_t GetMaxChannel() const;
+
+                    /**
+                     * 设置一个链接最大的channel数，默认1024
+                     * @param _maxChannel 一个链接最大的channel数，默认1024
+                     * 
+                     */
+                    void SetMaxChannel(const uint64_t& _maxChannel);
+
+                    /**
+                     * 判断参数 MaxChannel 是否已赋值
+                     * @return MaxChannel 是否已赋值
+                     * 
+                     */
+                    bool MaxChannelHasBeenSet() const;
+
+                    /**
+                     * 获取空闲时间点
+                     * @return IdleSince 空闲时间点
+                     * 
+                     */
+                    std::string GetIdleSince() const;
+
+                    /**
+                     * 设置空闲时间点
+                     * @param _idleSince 空闲时间点
+                     * 
+                     */
+                    void SetIdleSince(const std::string& _idleSince);
+
+                    /**
+                     * 判断参数 IdleSince 是否已赋值
+                     * @return IdleSince 是否已赋值
+                     * 
+                     */
+                    bool IdleSinceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +341,36 @@ namespace TencentCloud
                      */
                     int64_t m_channels;
                     bool m_channelsHasBeenSet;
+
+                    /**
+                     * 入流量大小，单位 bytes
+                     */
+                    double m_incomingBytes;
+                    bool m_incomingBytesHasBeenSet;
+
+                    /**
+                     * 出流量大小，单位bytes
+                     */
+                    double m_outgoingBytes;
+                    bool m_outgoingBytesHasBeenSet;
+
+                    /**
+                     * 心跳间隔时间，默认60s
+                     */
+                    uint64_t m_heartbeat;
+                    bool m_heartbeatHasBeenSet;
+
+                    /**
+                     * 一个链接最大的channel数，默认1024
+                     */
+                    uint64_t m_maxChannel;
+                    bool m_maxChannelHasBeenSet;
+
+                    /**
+                     * 空闲时间点
+                     */
+                    std::string m_idleSince;
+                    bool m_idleSinceHasBeenSet;
 
                 };
             }

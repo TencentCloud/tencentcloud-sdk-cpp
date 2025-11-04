@@ -390,6 +390,27 @@ namespace TencentCloud
                     bool IntentionHasBeenSet() const;
 
                     /**
+                     * 获取用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     * @return VideoVerifyTimesLimit 用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     * 
+                     */
+                    int64_t GetVideoVerifyTimesLimit() const;
+
+                    /**
+                     * 设置用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     * @param _videoVerifyTimesLimit 用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     * 
+                     */
+                    void SetVideoVerifyTimesLimit(const int64_t& _videoVerifyTimesLimit);
+
+                    /**
+                     * 判断参数 VideoVerifyTimesLimit 是否已赋值
+                     * @return VideoVerifyTimesLimit 是否已赋值
+                     * 
+                     */
+                    bool VideoVerifyTimesLimitHasBeenSet() const;
+
+                    /**
                      * 获取缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。
 
 注: `若参与方为企业员工时，暂不支持对参与方信息进行缓存`
@@ -554,6 +575,12 @@ namespace TencentCloud
                      */
                     Intention m_intention;
                     bool m_intentionHasBeenSet;
+
+                    /**
+                     * 用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     */
+                    int64_t m_videoVerifyTimesLimit;
+                    bool m_videoVerifyTimesLimitHasBeenSet;
 
                     /**
                      * 缓存签署人信息。在H5签署链接动态领取场景，首次填写后，选择缓存签署人信息，在下次签署人点击领取链接时，会自动将个人信息（姓名、身份证号、手机号）填入，否则需要每次手动填写。

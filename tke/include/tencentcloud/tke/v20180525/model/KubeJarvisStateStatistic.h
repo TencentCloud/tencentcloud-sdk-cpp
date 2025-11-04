@@ -47,15 +47,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取诊断结果的健康水平
-                     * @return HealthyLevel 诊断结果的健康水平
+                     * 获取诊断结果的健康水平，健康水平取值：
+serious：高风险
+risk：中风险
+warn：低风险
+good：健康
+failed：诊断流程异常
+                     * @return HealthyLevel 诊断结果的健康水平，健康水平取值：
+serious：高风险
+risk：中风险
+warn：低风险
+good：健康
+failed：诊断流程异常
                      * 
                      */
                     std::string GetHealthyLevel() const;
 
                     /**
-                     * 设置诊断结果的健康水平
-                     * @param _healthyLevel 诊断结果的健康水平
+                     * 设置诊断结果的健康水平，健康水平取值：
+serious：高风险
+risk：中风险
+warn：低风险
+good：健康
+failed：诊断流程异常
+                     * @param _healthyLevel 诊断结果的健康水平，健康水平取值：
+serious：高风险
+risk：中风险
+warn：低风险
+good：健康
+failed：诊断流程异常
                      * 
                      */
                     void SetHealthyLevel(const std::string& _healthyLevel);
@@ -91,7 +111,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 诊断结果的健康水平
+                     * 诊断结果的健康水平，健康水平取值：
+serious：高风险
+risk：中风险
+warn：低风险
+good：健康
+failed：诊断流程异常
                      */
                     std::string m_healthyLevel;
                     bool m_healthyLevelHasBeenSet;

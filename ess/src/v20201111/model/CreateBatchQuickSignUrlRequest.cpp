@@ -34,6 +34,7 @@ CreateBatchQuickSignUrlRequest::CreateBatchQuickSignUrlRequest() :
     m_signTypeSelectorHasBeenSet(false),
     m_flowBatchUrlInfoHasBeenSet(false),
     m_intentionHasBeenSet(false),
+    m_videoVerifyTimesLimitHasBeenSet(false),
     m_cacheApproverInfoHasBeenSet(false),
     m_canBatchRejectHasBeenSet(false),
     m_presetApproverInfoHasBeenSet(false)
@@ -153,6 +154,14 @@ string CreateBatchQuickSignUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_intention.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_videoVerifyTimesLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoVerifyTimesLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_videoVerifyTimesLimit, allocator);
     }
 
     if (m_cacheApproverInfoHasBeenSet)
@@ -362,6 +371,22 @@ void CreateBatchQuickSignUrlRequest::SetIntention(const Intention& _intention)
 bool CreateBatchQuickSignUrlRequest::IntentionHasBeenSet() const
 {
     return m_intentionHasBeenSet;
+}
+
+int64_t CreateBatchQuickSignUrlRequest::GetVideoVerifyTimesLimit() const
+{
+    return m_videoVerifyTimesLimit;
+}
+
+void CreateBatchQuickSignUrlRequest::SetVideoVerifyTimesLimit(const int64_t& _videoVerifyTimesLimit)
+{
+    m_videoVerifyTimesLimit = _videoVerifyTimesLimit;
+    m_videoVerifyTimesLimitHasBeenSet = true;
+}
+
+bool CreateBatchQuickSignUrlRequest::VideoVerifyTimesLimitHasBeenSet() const
+{
+    return m_videoVerifyTimesLimitHasBeenSet;
 }
 
 bool CreateBatchQuickSignUrlRequest::GetCacheApproverInfo() const

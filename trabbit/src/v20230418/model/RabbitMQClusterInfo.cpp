@@ -47,7 +47,8 @@ RabbitMQClusterInfo::RabbitMQClusterInfo() :
     m_instanceTypeHasBeenSet(false),
     m_messageRetainTimeHasBeenSet(false),
     m_sendReceiveRatioHasBeenSet(false),
-    m_traceTimeHasBeenSet(false)
+    m_traceTimeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -339,6 +340,26 @@ CoreInternalOutcome RabbitMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_traceTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RabbitMQServerlessTag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -572,6 +593,21 @@ void RabbitMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "TraceTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_traceTime, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1007,5 +1043,21 @@ void RabbitMQClusterInfo::SetTraceTime(const uint64_t& _traceTime)
 bool RabbitMQClusterInfo::TraceTimeHasBeenSet() const
 {
     return m_traceTimeHasBeenSet;
+}
+
+vector<RabbitMQServerlessTag> RabbitMQClusterInfo::GetTags() const
+{
+    return m_tags;
+}
+
+void RabbitMQClusterInfo::SetTags(const vector<RabbitMQServerlessTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

@@ -394,6 +394,48 @@ SessionConnectionPool
                      */
                     bool ConnectionPoolTimeOutHasBeenSet() const;
 
+                    /**
+                     * 获取是否将libra节点当作普通RO节点
+                     * @return ApNodeAsRoNode 是否将libra节点当作普通RO节点
+                     * 
+                     */
+                    bool GetApNodeAsRoNode() const;
+
+                    /**
+                     * 设置是否将libra节点当作普通RO节点
+                     * @param _apNodeAsRoNode 是否将libra节点当作普通RO节点
+                     * 
+                     */
+                    void SetApNodeAsRoNode(const bool& _apNodeAsRoNode);
+
+                    /**
+                     * 判断参数 ApNodeAsRoNode 是否已赋值
+                     * @return ApNodeAsRoNode 是否已赋值
+                     * 
+                     */
+                    bool ApNodeAsRoNodeHasBeenSet() const;
+
+                    /**
+                     * 获取libra节点故障，是否转发给其他节点
+                     * @return ApQueryToOtherNode libra节点故障，是否转发给其他节点
+                     * 
+                     */
+                    bool GetApQueryToOtherNode() const;
+
+                    /**
+                     * 设置libra节点故障，是否转发给其他节点
+                     * @param _apQueryToOtherNode libra节点故障，是否转发给其他节点
+                     * 
+                     */
+                    void SetApQueryToOtherNode(const bool& _apQueryToOtherNode);
+
+                    /**
+                     * 判断参数 ApQueryToOtherNode 是否已赋值
+                     * @return ApQueryToOtherNode 是否已赋值
+                     * 
+                     */
+                    bool ApQueryToOtherNodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -494,6 +536,18 @@ SessionConnectionPool
                      */
                     int64_t m_connectionPoolTimeOut;
                     bool m_connectionPoolTimeOutHasBeenSet;
+
+                    /**
+                     * 是否将libra节点当作普通RO节点
+                     */
+                    bool m_apNodeAsRoNode;
+                    bool m_apNodeAsRoNodeHasBeenSet;
+
+                    /**
+                     * libra节点故障，是否转发给其他节点
+                     */
+                    bool m_apQueryToOtherNode;
+                    bool m_apQueryToOtherNodeHasBeenSet;
 
                 };
             }

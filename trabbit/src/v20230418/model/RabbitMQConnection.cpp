@@ -27,7 +27,12 @@ RabbitMQConnection::RabbitMQConnection() :
     m_userHasBeenSet(false),
     m_sSLHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_channelsHasBeenSet(false)
+    m_channelsHasBeenSet(false),
+    m_incomingBytesHasBeenSet(false),
+    m_outgoingBytesHasBeenSet(false),
+    m_heartbeatHasBeenSet(false),
+    m_maxChannelHasBeenSet(false),
+    m_idleSinceHasBeenSet(false)
 {
 }
 
@@ -106,6 +111,56 @@ CoreInternalOutcome RabbitMQConnection::Deserialize(const rapidjson::Value &valu
         m_channelsHasBeenSet = true;
     }
 
+    if (value.HasMember("IncomingBytes") && !value["IncomingBytes"].IsNull())
+    {
+        if (!value["IncomingBytes"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQConnection.IncomingBytes` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_incomingBytes = value["IncomingBytes"].GetDouble();
+        m_incomingBytesHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutgoingBytes") && !value["OutgoingBytes"].IsNull())
+    {
+        if (!value["OutgoingBytes"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQConnection.OutgoingBytes` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_outgoingBytes = value["OutgoingBytes"].GetDouble();
+        m_outgoingBytesHasBeenSet = true;
+    }
+
+    if (value.HasMember("Heartbeat") && !value["Heartbeat"].IsNull())
+    {
+        if (!value["Heartbeat"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQConnection.Heartbeat` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_heartbeat = value["Heartbeat"].GetUint64();
+        m_heartbeatHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxChannel") && !value["MaxChannel"].IsNull())
+    {
+        if (!value["MaxChannel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQConnection.MaxChannel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxChannel = value["MaxChannel"].GetUint64();
+        m_maxChannelHasBeenSet = true;
+    }
+
+    if (value.HasMember("IdleSince") && !value["IdleSince"].IsNull())
+    {
+        if (!value["IdleSince"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQConnection.IdleSince` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idleSince = string(value["IdleSince"].GetString());
+        m_idleSinceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +222,46 @@ void RabbitMQConnection::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Channels";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_channels, allocator);
+    }
+
+    if (m_incomingBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncomingBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_incomingBytes, allocator);
+    }
+
+    if (m_outgoingBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutgoingBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_outgoingBytes, allocator);
+    }
+
+    if (m_heartbeatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Heartbeat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_heartbeat, allocator);
+    }
+
+    if (m_maxChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxChannel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxChannel, allocator);
+    }
+
+    if (m_idleSinceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdleSince";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idleSince.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +377,85 @@ void RabbitMQConnection::SetChannels(const int64_t& _channels)
 bool RabbitMQConnection::ChannelsHasBeenSet() const
 {
     return m_channelsHasBeenSet;
+}
+
+double RabbitMQConnection::GetIncomingBytes() const
+{
+    return m_incomingBytes;
+}
+
+void RabbitMQConnection::SetIncomingBytes(const double& _incomingBytes)
+{
+    m_incomingBytes = _incomingBytes;
+    m_incomingBytesHasBeenSet = true;
+}
+
+bool RabbitMQConnection::IncomingBytesHasBeenSet() const
+{
+    return m_incomingBytesHasBeenSet;
+}
+
+double RabbitMQConnection::GetOutgoingBytes() const
+{
+    return m_outgoingBytes;
+}
+
+void RabbitMQConnection::SetOutgoingBytes(const double& _outgoingBytes)
+{
+    m_outgoingBytes = _outgoingBytes;
+    m_outgoingBytesHasBeenSet = true;
+}
+
+bool RabbitMQConnection::OutgoingBytesHasBeenSet() const
+{
+    return m_outgoingBytesHasBeenSet;
+}
+
+uint64_t RabbitMQConnection::GetHeartbeat() const
+{
+    return m_heartbeat;
+}
+
+void RabbitMQConnection::SetHeartbeat(const uint64_t& _heartbeat)
+{
+    m_heartbeat = _heartbeat;
+    m_heartbeatHasBeenSet = true;
+}
+
+bool RabbitMQConnection::HeartbeatHasBeenSet() const
+{
+    return m_heartbeatHasBeenSet;
+}
+
+uint64_t RabbitMQConnection::GetMaxChannel() const
+{
+    return m_maxChannel;
+}
+
+void RabbitMQConnection::SetMaxChannel(const uint64_t& _maxChannel)
+{
+    m_maxChannel = _maxChannel;
+    m_maxChannelHasBeenSet = true;
+}
+
+bool RabbitMQConnection::MaxChannelHasBeenSet() const
+{
+    return m_maxChannelHasBeenSet;
+}
+
+string RabbitMQConnection::GetIdleSince() const
+{
+    return m_idleSince;
+}
+
+void RabbitMQConnection::SetIdleSince(const string& _idleSince)
+{
+    m_idleSince = _idleSince;
+    m_idleSinceHasBeenSet = true;
+}
+
+bool RabbitMQConnection::IdleSinceHasBeenSet() const
+{
+    return m_idleSinceHasBeenSet;
 }
 

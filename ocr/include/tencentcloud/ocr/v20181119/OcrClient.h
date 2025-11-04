@@ -95,8 +95,6 @@
 #include <tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ImageEnhancementRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ImageEnhancementResponse.h>
-#include <tencentcloud/ocr/v20181119/model/InstitutionOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/InstitutionOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/InsuranceBillOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/InsuranceBillOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/InvoiceGeneralOCRRequest.h>
@@ -113,14 +111,10 @@
 #include <tencentcloud/ocr/v20181119/model/MixedInvoiceDetectResponse.h>
 #include <tencentcloud/ocr/v20181119/model/MixedInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/MixedInvoiceOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/OrgCodeCertOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/OrgCodeCertOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/PassportOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/PassportOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/PermitOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/PermitOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/PropOwnerCertOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/PropOwnerCertOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuestionOCRRequest.h>
@@ -135,16 +129,12 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeEncryptedIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeEncryptedIDCardOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeForeignPermanentResidentIdCardRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeForeignPermanentResidentIdCardResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeFormulaOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeFormulaOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralTextImageWarnRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralTextImageWarnResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRRequest.h>
@@ -327,9 +317,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImageEnhancementResponse> ImageEnhancementOutcome;
                 typedef std::future<ImageEnhancementOutcome> ImageEnhancementOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ImageEnhancementRequest&, ImageEnhancementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageEnhancementAsyncHandler;
-                typedef Outcome<Core::Error, Model::InstitutionOCRResponse> InstitutionOCROutcome;
-                typedef std::future<InstitutionOCROutcome> InstitutionOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::InstitutionOCRRequest&, InstitutionOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstitutionOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::InsuranceBillOCRResponse> InsuranceBillOCROutcome;
                 typedef std::future<InsuranceBillOCROutcome> InsuranceBillOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::InsuranceBillOCRRequest&, InsuranceBillOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> InsuranceBillOCRAsyncHandler;
@@ -354,18 +341,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::MixedInvoiceOCRResponse> MixedInvoiceOCROutcome;
                 typedef std::future<MixedInvoiceOCROutcome> MixedInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::MixedInvoiceOCRRequest&, MixedInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> MixedInvoiceOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::OrgCodeCertOCRResponse> OrgCodeCertOCROutcome;
-                typedef std::future<OrgCodeCertOCROutcome> OrgCodeCertOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::OrgCodeCertOCRRequest&, OrgCodeCertOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> OrgCodeCertOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::PassportOCRResponse> PassportOCROutcome;
                 typedef std::future<PassportOCROutcome> PassportOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::PassportOCRRequest&, PassportOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> PassportOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::PermitOCRResponse> PermitOCROutcome;
                 typedef std::future<PermitOCROutcome> PermitOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::PermitOCRRequest&, PermitOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> PermitOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::PropOwnerCertOCRResponse> PropOwnerCertOCROutcome;
-                typedef std::future<PropOwnerCertOCROutcome> PropOwnerCertOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::PropOwnerCertOCRRequest&, PropOwnerCertOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> PropOwnerCertOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::QrcodeOCRResponse> QrcodeOCROutcome;
                 typedef std::future<QrcodeOCROutcome> QrcodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QrcodeOCRRequest&, QrcodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QrcodeOCRAsyncHandler;
@@ -387,9 +368,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeEncryptedIDCardOCRResponse> RecognizeEncryptedIDCardOCROutcome;
                 typedef std::future<RecognizeEncryptedIDCardOCROutcome> RecognizeEncryptedIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeEncryptedIDCardOCRRequest&, RecognizeEncryptedIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeEncryptedIDCardOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeForeignPermanentResidentIdCardResponse> RecognizeForeignPermanentResidentIdCardOutcome;
-                typedef std::future<RecognizeForeignPermanentResidentIdCardOutcome> RecognizeForeignPermanentResidentIdCardOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeForeignPermanentResidentIdCardRequest&, RecognizeForeignPermanentResidentIdCardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeForeignPermanentResidentIdCardAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeFormulaOCRResponse> RecognizeFormulaOCROutcome;
                 typedef std::future<RecognizeFormulaOCROutcome> RecognizeFormulaOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeFormulaOCRRequest&, RecognizeFormulaOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeFormulaOCRAsyncHandler;
@@ -399,9 +377,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeGeneralInvoiceResponse> RecognizeGeneralInvoiceOutcome;
                 typedef std::future<RecognizeGeneralInvoiceOutcome> RecognizeGeneralInvoiceOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralInvoiceRequest&, RecognizeGeneralInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralInvoiceAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeGeneralTextImageWarnResponse> RecognizeGeneralTextImageWarnOutcome;
-                typedef std::future<RecognizeGeneralTextImageWarnOutcome> RecognizeGeneralTextImageWarnOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralTextImageWarnRequest&, RecognizeGeneralTextImageWarnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralTextImageWarnAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeHealthCodeOCRResponse> RecognizeHealthCodeOCROutcome;
                 typedef std::future<RecognizeHealthCodeOCROutcome> RecognizeHealthCodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeHealthCodeOCRRequest&, RecognizeHealthCodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeHealthCodeOCRAsyncHandler;
@@ -1114,20 +1089,6 @@ namespace TencentCloud
                 ImageEnhancementOutcomeCallable ImageEnhancementCallable(const Model::ImageEnhancementRequest& request);
 
                 /**
-                 *不再维护，功能已切到其它接口
-
-<b>因技术原因，本接口将不再迭代升级。文档抽取(基础版)可支持此类证书的识别抽取，效果、功能更强并将持续迭代优化，建议使用<a href="https://cloud.tencent.com/document/product/866/119452">文档抽取（基础版）</a>。</b>
-本接口支持事业单位法人证书关键字段识别，包括注册号、有效期、住所、名称、法定代表人等。
-
-默认接口请求频率限制：5次/秒。
-                 * @param req InstitutionOCRRequest
-                 * @return InstitutionOCROutcome
-                 */
-                InstitutionOCROutcome InstitutionOCR(const Model::InstitutionOCRRequest &request);
-                void InstitutionOCRAsync(const Model::InstitutionOCRRequest& request, const InstitutionOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                InstitutionOCROutcomeCallable InstitutionOCRCallable(const Model::InstitutionOCRRequest& request);
-
-                /**
                  *本接口支持病案首页、费用清单、结算单、医疗发票四种保险理赔单据的文本识别和结构化输出。
 
 默认接口请求频率限制：1次/秒。
@@ -1216,20 +1177,6 @@ namespace TencentCloud
                 MixedInvoiceOCROutcomeCallable MixedInvoiceOCRCallable(const Model::MixedInvoiceOCRRequest& request);
 
                 /**
-                 *不再维护，功能已切到其它接口
-
-<b>因技术原因，本接口将不再迭代升级。文档抽取(基础版)可支持此类证书的识别抽取，效果、功能更强并将持续迭代优化，建议使用<a href="https://cloud.tencent.com/document/product/866/119452">文档抽取（基础版）</a>。</b>
-本接口支持组织机构代码证关键字段的识别，包括代码、有效期、地址、机构名称等。
-
-默认接口请求频率限制：5次/秒。
-                 * @param req OrgCodeCertOCRRequest
-                 * @return OrgCodeCertOCROutcome
-                 */
-                OrgCodeCertOCROutcome OrgCodeCertOCR(const Model::OrgCodeCertOCRRequest &request);
-                void OrgCodeCertOCRAsync(const Model::OrgCodeCertOCRRequest& request, const OrgCodeCertOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                OrgCodeCertOCROutcomeCallable OrgCodeCertOCRCallable(const Model::OrgCodeCertOCRRequest& request);
-
-                /**
                  *<b>此接口为护照识别（中国大陆地区护照）的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href="https://cloud.tencent.com/document/product/866/37657">护照识别（多国多地区护照）</a>。</b>
 
 本接口支持中国大陆地区护照个人资料页多个字段的检测与识别。已支持字段包括英文姓名、中文姓名、国家码、护照号、出生地、出生日期、国籍英文、性别英文、有效期、签发地点英文、签发日期、持证人签名、护照机读码（MRZ码）等。
@@ -1252,21 +1199,6 @@ namespace TencentCloud
                 PermitOCROutcome PermitOCR(const Model::PermitOCRRequest &request);
                 void PermitOCRAsync(const Model::PermitOCRRequest& request, const PermitOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PermitOCROutcomeCallable PermitOCRCallable(const Model::PermitOCRRequest& request);
-
-                /**
-                 *不再维护，功能已切到其它接口
-
-<b>因技术原因，本接口将不再迭代升级。文档抽取(基础版)可支持此类证书的识别抽取，效果、功能更强并将持续迭代优化，建议使用<a href="https://cloud.tencent.com/document/product/866/119452">文档抽取（基础版）</a>。</b>
-本接口支持房产证关键字段的识别，包括房地产权利人、共有情况、登记时间、规划用途、房屋性质、房屋坐落等。
-目前接口对合肥、成都、佛山三个城市的房产证版式识别较好。
-
-默认接口请求频率限制：5次/秒。
-                 * @param req PropOwnerCertOCRRequest
-                 * @return PropOwnerCertOCROutcome
-                 */
-                PropOwnerCertOCROutcome PropOwnerCertOCR(const Model::PropOwnerCertOCRRequest &request);
-                void PropOwnerCertOCRAsync(const Model::PropOwnerCertOCRRequest& request, const PropOwnerCertOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                PropOwnerCertOCROutcomeCallable PropOwnerCertOCRCallable(const Model::PropOwnerCertOCRRequest& request);
 
                 /**
                  *本接口支持条形码和二维码的识别（包括 DataMatrix 和 PDF417）。
@@ -1393,18 +1325,6 @@ namespace TencentCloud
                 RecognizeEncryptedIDCardOCROutcome RecognizeEncryptedIDCardOCR(const Model::RecognizeEncryptedIDCardOCRRequest &request);
                 void RecognizeEncryptedIDCardOCRAsync(const Model::RecognizeEncryptedIDCardOCRRequest& request, const RecognizeEncryptedIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeEncryptedIDCardOCROutcomeCallable RecognizeEncryptedIDCardOCRCallable(const Model::RecognizeEncryptedIDCardOCRRequest& request);
-
-                /**
-                 *不再维护，功能已切到其它接口
-
-<b>因技术原因，本接口将不再迭代升级。有效身份证件识别（鉴伪版）可支持此类证件的识别，并包含质量和PS告警，效果、功能更强并将持续迭代优化，建议使用<a href="https://cloud.tencent.com/document/product/866/112345">有效身份证件识别（鉴伪版）</a>。</b>
-外国人永久居留身份证识别
-                 * @param req RecognizeForeignPermanentResidentIdCardRequest
-                 * @return RecognizeForeignPermanentResidentIdCardOutcome
-                 */
-                RecognizeForeignPermanentResidentIdCardOutcome RecognizeForeignPermanentResidentIdCard(const Model::RecognizeForeignPermanentResidentIdCardRequest &request);
-                void RecognizeForeignPermanentResidentIdCardAsync(const Model::RecognizeForeignPermanentResidentIdCardRequest& request, const RecognizeForeignPermanentResidentIdCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeForeignPermanentResidentIdCardOutcomeCallable RecognizeForeignPermanentResidentIdCardCallable(const Model::RecognizeForeignPermanentResidentIdCardRequest& request);
 
                 /**
                  *公式识别是教育的基础OCR识别能力，可支持理科（数学、物理、化学、生物）的印刷体和手写体的公式识别。
@@ -1637,18 +1557,6 @@ namespace TencentCloud
                 RecognizeGeneralInvoiceOutcome RecognizeGeneralInvoice(const Model::RecognizeGeneralInvoiceRequest &request);
                 void RecognizeGeneralInvoiceAsync(const Model::RecognizeGeneralInvoiceRequest& request, const RecognizeGeneralInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeGeneralInvoiceOutcomeCallable RecognizeGeneralInvoiceCallable(const Model::RecognizeGeneralInvoiceRequest& request);
-
-                /**
-                 *不再维护，功能已切到其它接口
-
-<b>因技术原因，本接口将不再迭代升级。通用卡证鉴伪可支持更多告警类型，效果、功能更强并将持续迭代优化，建议使用<a href="https://cloud.tencent.com/document/product/866/115916">通用卡证鉴伪</a>。</b>
-本接口支持多种类型证件有效性检测告警，包括卡证复印件告警、卡证翻拍告警等功能。可以应用于各种证件信息有效性校验场景，例如银行开户、用户注册等场景。
-                 * @param req RecognizeGeneralTextImageWarnRequest
-                 * @return RecognizeGeneralTextImageWarnOutcome
-                 */
-                RecognizeGeneralTextImageWarnOutcome RecognizeGeneralTextImageWarn(const Model::RecognizeGeneralTextImageWarnRequest &request);
-                void RecognizeGeneralTextImageWarnAsync(const Model::RecognizeGeneralTextImageWarnRequest& request, const RecognizeGeneralTextImageWarnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeGeneralTextImageWarnOutcomeCallable RecognizeGeneralTextImageWarnCallable(const Model::RecognizeGeneralTextImageWarnRequest& request);
 
                 /**
                  *本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖北、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。

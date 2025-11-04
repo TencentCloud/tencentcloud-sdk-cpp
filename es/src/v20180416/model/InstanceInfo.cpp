@@ -116,7 +116,8 @@ InstanceInfo::InstanceInfo() :
     m_enableScheduleOperationDurationHasBeenSet(false),
     m_enableDestroyProtectionHasBeenSet(false),
     m_showKibanaIpPortHasBeenSet(false),
-    m_isCdzLiteHasBeenSet(false)
+    m_isCdzLiteHasBeenSet(false),
+    m_esPrivateTcpUrlHasBeenSet(false)
 {
 }
 
@@ -1211,6 +1212,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_isCdzLiteHasBeenSet = true;
     }
 
+    if (value.HasMember("EsPrivateTcpUrl") && !value["EsPrivateTcpUrl"].IsNull())
+    {
+        if (!value["EsPrivateTcpUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EsPrivateTcpUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_esPrivateTcpUrl = string(value["EsPrivateTcpUrl"].GetString());
+        m_esPrivateTcpUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2040,6 +2051,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsCdzLite";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCdzLite, allocator);
+    }
+
+    if (m_esPrivateTcpUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsPrivateTcpUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_esPrivateTcpUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3579,5 +3598,21 @@ void InstanceInfo::SetIsCdzLite(const bool& _isCdzLite)
 bool InstanceInfo::IsCdzLiteHasBeenSet() const
 {
     return m_isCdzLiteHasBeenSet;
+}
+
+string InstanceInfo::GetEsPrivateTcpUrl() const
+{
+    return m_esPrivateTcpUrl;
+}
+
+void InstanceInfo::SetEsPrivateTcpUrl(const string& _esPrivateTcpUrl)
+{
+    m_esPrivateTcpUrl = _esPrivateTcpUrl;
+    m_esPrivateTcpUrlHasBeenSet = true;
+}
+
+bool InstanceInfo::EsPrivateTcpUrlHasBeenSet() const
+{
+    return m_esPrivateTcpUrlHasBeenSet;
 }
 

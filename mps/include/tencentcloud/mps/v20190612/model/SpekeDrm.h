@@ -48,18 +48,26 @@ namespace TencentCloud
 
                     /**
                      * 获取资源标记，该字段内容为用户自定义；
-支持1-128个字符的数字、字母、下划线(_)、中划线(-)。
+支持1-128个字符的数字、字母、下划线(`_`)、中划线(-)。
+该字段对应Speke请求中的cid字段。
+注：不同DRM厂商对该字段的限制有所区别（如：华曦达不支持该字段带`_`），具体规则请与DRM厂商进行确认。
                      * @return ResourceId 资源标记，该字段内容为用户自定义；
-支持1-128个字符的数字、字母、下划线(_)、中划线(-)。
+支持1-128个字符的数字、字母、下划线(`_`)、中划线(-)。
+该字段对应Speke请求中的cid字段。
+注：不同DRM厂商对该字段的限制有所区别（如：华曦达不支持该字段带`_`），具体规则请与DRM厂商进行确认。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源标记，该字段内容为用户自定义；
-支持1-128个字符的数字、字母、下划线(_)、中划线(-)。
+支持1-128个字符的数字、字母、下划线(`_`)、中划线(-)。
+该字段对应Speke请求中的cid字段。
+注：不同DRM厂商对该字段的限制有所区别（如：华曦达不支持该字段带`_`），具体规则请与DRM厂商进行确认。
                      * @param _resourceId 资源标记，该字段内容为用户自定义；
-支持1-128个字符的数字、字母、下划线(_)、中划线(-)。
+支持1-128个字符的数字、字母、下划线(`_`)、中划线(-)。
+该字段对应Speke请求中的cid字段。
+注：不同DRM厂商对该字段的限制有所区别（如：华曦达不支持该字段带`_`），具体规则请与DRM厂商进行确认。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -123,12 +131,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc
+加密方式选择WideVine+FairPlay时，仅支持cbcs
 
-cbcs：PlayReady，Widevine，FairPlay 支持；
+cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay 支持；
 cenc：PlayReady，Widevine支持；
                      * @return EncryptionMethod 加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc
+加密方式选择WideVine+FairPlay时，仅支持cbcs
 
-cbcs：PlayReady，Widevine，FairPlay 支持；
+cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay 支持；
 cenc：PlayReady，Widevine支持；
                      * 
                      */
@@ -136,12 +146,14 @@ cenc：PlayReady，Widevine支持；
 
                     /**
                      * 设置加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc
+加密方式选择WideVine+FairPlay时，仅支持cbcs
 
-cbcs：PlayReady，Widevine，FairPlay 支持；
+cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay 支持；
 cenc：PlayReady，Widevine支持；
                      * @param _encryptionMethod 加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc
+加密方式选择WideVine+FairPlay时，仅支持cbcs
 
-cbcs：PlayReady，Widevine，FairPlay 支持；
+cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay 支持；
 cenc：PlayReady，Widevine支持；
                      * 
                      */
@@ -191,7 +203,9 @@ preset1：每个子流使用不同的key加密；
 
                     /**
                      * 资源标记，该字段内容为用户自定义；
-支持1-128个字符的数字、字母、下划线(_)、中划线(-)。
+支持1-128个字符的数字、字母、下划线(`_`)、中划线(-)。
+该字段对应Speke请求中的cid字段。
+注：不同DRM厂商对该字段的限制有所区别（如：华曦达不支持该字段带`_`），具体规则请与DRM厂商进行确认。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
@@ -212,8 +226,9 @@ preset1：每个子流使用不同的key加密；
 
                     /**
                      * 加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc
+加密方式选择WideVine+FairPlay时，仅支持cbcs
 
-cbcs：PlayReady，Widevine，FairPlay 支持；
+cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay 支持；
 cenc：PlayReady，Widevine支持；
                      */
                     std::string m_encryptionMethod;

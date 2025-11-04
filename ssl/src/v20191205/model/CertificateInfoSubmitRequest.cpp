@@ -63,7 +63,8 @@ CertificateInfoSubmitRequest::CertificateInfoSubmitRequest() :
     m_techTitleHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_caTypeHasBeenSet(false),
-    m_signAlgoHasBeenSet(false)
+    m_signAlgoHasBeenSet(false),
+    m_useCrossSignRootHasBeenSet(false)
 {
 }
 
@@ -405,6 +406,14 @@ string CertificateInfoSubmitRequest::ToJsonString() const
         string key = "SignAlgo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_signAlgo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useCrossSignRootHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseCrossSignRoot";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useCrossSignRoot, allocator);
     }
 
 
@@ -1069,6 +1078,22 @@ void CertificateInfoSubmitRequest::SetSignAlgo(const string& _signAlgo)
 bool CertificateInfoSubmitRequest::SignAlgoHasBeenSet() const
 {
     return m_signAlgoHasBeenSet;
+}
+
+bool CertificateInfoSubmitRequest::GetUseCrossSignRoot() const
+{
+    return m_useCrossSignRoot;
+}
+
+void CertificateInfoSubmitRequest::SetUseCrossSignRoot(const bool& _useCrossSignRoot)
+{
+    m_useCrossSignRoot = _useCrossSignRoot;
+    m_useCrossSignRootHasBeenSet = true;
+}
+
+bool CertificateInfoSubmitRequest::UseCrossSignRootHasBeenSet() const
+{
+    return m_useCrossSignRootHasBeenSet;
 }
 
 

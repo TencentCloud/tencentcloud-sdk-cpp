@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取短信请求错误码，具体含义请参考错误码。
-                     * @return Code 短信请求错误码，具体含义请参考错误码。
+                     * 获取短信请求错误码，具体含义请参考 [错误码](https://cloud.tencent.com/document/product/382/59177#.E7.9F.AD.E4.BF.A1-API-3.0-.E5.8F.91.E9.80.81.E9.94.99.E8.AF.AF.E7.A0.81)。
+                     * @return Code 短信请求错误码，具体含义请参考 [错误码](https://cloud.tencent.com/document/product/382/59177#.E7.9F.AD.E4.BF.A1-API-3.0-.E5.8F.91.E9.80.81.E9.94.99.E8.AF.AF.E7.A0.81)。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置短信请求错误码，具体含义请参考错误码。
-                     * @param _code 短信请求错误码，具体含义请参考错误码。
+                     * 设置短信请求错误码，具体含义请参考 [错误码](https://cloud.tencent.com/document/product/382/59177#.E7.9F.AD.E4.BF.A1-API-3.0-.E5.8F.91.E9.80.81.E9.94.99.E8.AF.AF.E7.A0.81)。
+                     * @param _code 短信请求错误码，具体含义请参考 [错误码](https://cloud.tencent.com/document/product/382/59177#.E7.9F.AD.E4.BF.A1-API-3.0-.E5.8F.91.E9.80.81.E9.94.99.E8.AF.AF.E7.A0.81)。
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -220,7 +220,7 @@ namespace TencentCloud
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * 短信请求错误码，具体含义请参考错误码。
+                     * 短信请求错误码，具体含义请参考 [错误码](https://cloud.tencent.com/document/product/382/59177#.E7.9F.AD.E4.BF.A1-API-3.0-.E5.8F.91.E9.80.81.E9.94.99.E8.AF.AF.E7.A0.81)。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;

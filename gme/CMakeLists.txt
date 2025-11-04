@@ -61,6 +61,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DescribeRecordInfoRequest.h
   include/tencentcloud/gme/v20180711/model/AmbientSound.h
   include/tencentcloud/gme/v20180711/model/DescribeRoomInfoRequest.h
+  include/tencentcloud/gme/v20180711/model/DescribeAuditResultExternalRequest.h
   include/tencentcloud/gme/v20180711/model/ModifyCustomizationResponse.h
   include/tencentcloud/gme/v20180711/model/DeleteCustomizationRequest.h
   include/tencentcloud/gme/v20180711/model/CreateAgeDetectTaskRequest.h
@@ -82,6 +83,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/RealtimeSpeechConf.h
   include/tencentcloud/gme/v20180711/model/DescribeAppStatisticsResp.h
   include/tencentcloud/gme/v20180711/model/ScanVoiceResult.h
+  include/tencentcloud/gme/v20180711/model/DescribeAuditResultExternalResponse.h
   include/tencentcloud/gme/v20180711/model/ServiceStatus.h
   include/tencentcloud/gme/v20180711/model/ScanVoiceRequest.h
   include/tencentcloud/gme/v20180711/model/RegisterVoicePrintRequest.h
@@ -184,6 +186,7 @@ set(gme_src
   src/v20180711/model/DescribeRecordInfoRequest.cpp
   src/v20180711/model/AmbientSound.cpp
   src/v20180711/model/DescribeRoomInfoRequest.cpp
+  src/v20180711/model/DescribeAuditResultExternalRequest.cpp
   src/v20180711/model/ModifyCustomizationResponse.cpp
   src/v20180711/model/DeleteCustomizationRequest.cpp
   src/v20180711/model/CreateAgeDetectTaskRequest.cpp
@@ -205,6 +208,7 @@ set(gme_src
   src/v20180711/model/RealtimeSpeechConf.cpp
   src/v20180711/model/DescribeAppStatisticsResp.cpp
   src/v20180711/model/ScanVoiceResult.cpp
+  src/v20180711/model/DescribeAuditResultExternalResponse.cpp
   src/v20180711/model/ServiceStatus.cpp
   src/v20180711/model/ScanVoiceRequest.cpp
   src/v20180711/model/RegisterVoicePrintRequest.cpp

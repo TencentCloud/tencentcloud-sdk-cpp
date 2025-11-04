@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取当需要修改运行时版本是根据另外的K8S版本获取时，需填写。例如升级校验有冲突后修改场景
-                     * @return DstK8SVersion 当需要修改运行时版本是根据另外的K8S版本获取时，需填写。例如升级校验有冲突后修改场景
+                     * 获取运行时版本需依据指定的Kubernetes版本进行设置。典型情况为，在升级过程中因版本冲突而需要调整运行时版本时。
+                     * @return DstK8SVersion 运行时版本需依据指定的Kubernetes版本进行设置。典型情况为，在升级过程中因版本冲突而需要调整运行时版本时。
                      * 
                      */
                     std::string GetDstK8SVersion() const;
 
                     /**
-                     * 设置当需要修改运行时版本是根据另外的K8S版本获取时，需填写。例如升级校验有冲突后修改场景
-                     * @param _dstK8SVersion 当需要修改运行时版本是根据另外的K8S版本获取时，需填写。例如升级校验有冲突后修改场景
+                     * 设置运行时版本需依据指定的Kubernetes版本进行设置。典型情况为，在升级过程中因版本冲突而需要调整运行时版本时。
+                     * @param _dstK8SVersion 运行时版本需依据指定的Kubernetes版本进行设置。典型情况为，在升级过程中因版本冲突而需要调整运行时版本时。
                      * 
                      */
                     void SetDstK8SVersion(const std::string& _dstK8SVersion);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool DstK8SVersionHasBeenSet() const;
 
                     /**
-                     * 获取需要修改集群运行时时填写
-                     * @return ClusterRuntimeConfig 需要修改集群运行时时填写
+                     * 获取需要修改集群运行时填写
+                     * @return ClusterRuntimeConfig 需要修改集群运行时填写
                      * 
                      */
                     RuntimeConfig GetClusterRuntimeConfig() const;
 
                     /**
-                     * 设置需要修改集群运行时时填写
-                     * @param _clusterRuntimeConfig 需要修改集群运行时时填写
+                     * 设置需要修改集群运行时填写
+                     * @param _clusterRuntimeConfig 需要修改集群运行时填写
                      * 
                      */
                     void SetClusterRuntimeConfig(const RuntimeConfig& _clusterRuntimeConfig);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool ClusterRuntimeConfigHasBeenSet() const;
 
                     /**
-                     * 获取需要修改节点池运行时时，填需要修改的部分
-                     * @return NodePoolRuntimeConfig 需要修改节点池运行时时，填需要修改的部分
+                     * 获取需要修改节点池运行时，填需要修改的部分
+                     * @return NodePoolRuntimeConfig 需要修改节点池运行时，填需要修改的部分
                      * 
                      */
                     std::vector<NodePoolRuntime> GetNodePoolRuntimeConfig() const;
 
                     /**
-                     * 设置需要修改节点池运行时时，填需要修改的部分
-                     * @param _nodePoolRuntimeConfig 需要修改节点池运行时时，填需要修改的部分
+                     * 设置需要修改节点池运行时，填需要修改的部分
+                     * @param _nodePoolRuntimeConfig 需要修改节点池运行时，填需要修改的部分
                      * 
                      */
                     void SetNodePoolRuntimeConfig(const std::vector<NodePoolRuntime>& _nodePoolRuntimeConfig);
@@ -137,19 +137,19 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 当需要修改运行时版本是根据另外的K8S版本获取时，需填写。例如升级校验有冲突后修改场景
+                     * 运行时版本需依据指定的Kubernetes版本进行设置。典型情况为，在升级过程中因版本冲突而需要调整运行时版本时。
                      */
                     std::string m_dstK8SVersion;
                     bool m_dstK8SVersionHasBeenSet;
 
                     /**
-                     * 需要修改集群运行时时填写
+                     * 需要修改集群运行时填写
                      */
                     RuntimeConfig m_clusterRuntimeConfig;
                     bool m_clusterRuntimeConfigHasBeenSet;
 
                     /**
-                     * 需要修改节点池运行时时，填需要修改的部分
+                     * 需要修改节点池运行时，填需要修改的部分
                      */
                     std::vector<NodePoolRuntime> m_nodePoolRuntimeConfig;
                     bool m_nodePoolRuntimeConfigHasBeenSet;

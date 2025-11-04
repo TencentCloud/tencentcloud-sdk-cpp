@@ -21,6 +21,7 @@ set(aiart_public_header
 set(aiart_public_header_model
   include/tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobResponse.h
   include/tencentcloud/aiart/v20221229/model/RefineImageRequest.h
+  include/tencentcloud/aiart/v20221229/model/QueryTextToImageJobResponse.h
   include/tencentcloud/aiart/v20221229/model/LogoParam.h
   include/tencentcloud/aiart/v20221229/model/ImageToImageRequest.h
   include/tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobRequest.h
@@ -36,6 +37,7 @@ set(aiart_public_header_model
   include/tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobResponse.h
   include/tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobResponse.h
   include/tencentcloud/aiart/v20221229/model/ChangeClothesResponse.h
+  include/tencentcloud/aiart/v20221229/model/SubmitTextToImageJobRequest.h
   include/tencentcloud/aiart/v20221229/model/SubmitGlamPicJobResponse.h
   include/tencentcloud/aiart/v20221229/model/SubmitMemeJobResponse.h
   include/tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobRequest.h
@@ -49,8 +51,10 @@ set(aiart_public_header_model
   include/tencentcloud/aiart/v20221229/model/TextToImageLiteRequest.h
   include/tencentcloud/aiart/v20221229/model/Filter.h
   include/tencentcloud/aiart/v20221229/model/TextToImageRapidResponse.h
+  include/tencentcloud/aiart/v20221229/model/SubmitTextToImageJobResponse.h
   include/tencentcloud/aiart/v20221229/model/ImageInpaintingRemovalResponse.h
   include/tencentcloud/aiart/v20221229/model/SubmitMemeJobRequest.h
+  include/tencentcloud/aiart/v20221229/model/QueryTextToImageJobRequest.h
   include/tencentcloud/aiart/v20221229/model/ReplaceBackgroundRequest.h
   include/tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h
   include/tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobResponse.h
@@ -74,6 +78,7 @@ set(aiart_src
   src/v20221229/AiartClient.cpp
   src/v20221229/model/SubmitDrawPortraitJobResponse.cpp
   src/v20221229/model/RefineImageRequest.cpp
+  src/v20221229/model/QueryTextToImageJobResponse.cpp
   src/v20221229/model/LogoParam.cpp
   src/v20221229/model/ImageToImageRequest.cpp
   src/v20221229/model/QueryTrainPortraitModelJobRequest.cpp
@@ -89,6 +94,7 @@ set(aiart_src
   src/v20221229/model/QueryDrawPortraitJobResponse.cpp
   src/v20221229/model/QueryTrainPortraitModelJobResponse.cpp
   src/v20221229/model/ChangeClothesResponse.cpp
+  src/v20221229/model/SubmitTextToImageJobRequest.cpp
   src/v20221229/model/SubmitGlamPicJobResponse.cpp
   src/v20221229/model/SubmitMemeJobResponse.cpp
   src/v20221229/model/SubmitTrainPortraitModelJobRequest.cpp
@@ -102,8 +108,10 @@ set(aiart_src
   src/v20221229/model/TextToImageLiteRequest.cpp
   src/v20221229/model/Filter.cpp
   src/v20221229/model/TextToImageRapidResponse.cpp
+  src/v20221229/model/SubmitTextToImageJobResponse.cpp
   src/v20221229/model/ImageInpaintingRemovalResponse.cpp
   src/v20221229/model/SubmitMemeJobRequest.cpp
+  src/v20221229/model/QueryTextToImageJobRequest.cpp
   src/v20221229/model/ReplaceBackgroundRequest.cpp
   src/v20221229/model/SubmitTextToImageProJobRequest.cpp
   src/v20221229/model/SubmitTrainPortraitModelJobResponse.cpp

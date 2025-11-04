@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return ClusterName 集群名称
+                     * 获取集群名称,字符长度50
+                     * @return ClusterName 集群名称,字符长度50
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
-                     * 设置集群名称
-                     * @param _clusterName 集群名称
+                     * 设置集群名称,字符长度50
+                     * @param _clusterName 集群名称,字符长度50
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool ClusterDescHasBeenSet() const;
 
                     /**
-                     * 获取集群等级
-                     * @return ClusterLevel 集群等级
+                     * 获取集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000
+                     * @return ClusterLevel 集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000
                      * 
                      */
                     std::string GetClusterLevel() const;
 
                     /**
-                     * 设置集群等级
-                     * @param _clusterLevel 集群等级
+                     * 设置集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000
+                     * @param _clusterLevel 集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000
                      * 
                      */
                     void SetClusterLevel(const std::string& _clusterLevel);
@@ -227,7 +227,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * 集群名称,字符长度50
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
@@ -239,7 +239,7 @@ namespace TencentCloud
                     bool m_clusterDescHasBeenSet;
 
                     /**
-                     * 集群等级
+                     * 集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000
                      */
                     std::string m_clusterLevel;
                     bool m_clusterLevelHasBeenSet;

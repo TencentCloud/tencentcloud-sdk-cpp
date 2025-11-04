@@ -199,6 +199,27 @@ namespace TencentCloud
                     bool FlowApproverInfosHasBeenSet() const;
 
                     /**
+                     * 获取用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     * @return VideoVerifyTimesLimit 用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     * 
+                     */
+                    int64_t GetVideoVerifyTimesLimit() const;
+
+                    /**
+                     * 设置用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     * @param _videoVerifyTimesLimit 用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     * 
+                     */
+                    void SetVideoVerifyTimesLimit(const int64_t& _videoVerifyTimesLimit);
+
+                    /**
+                     * 判断参数 VideoVerifyTimesLimit 是否已赋值
+                     * @return VideoVerifyTimesLimit 是否已赋值
+                     * 
+                     */
+                    bool VideoVerifyTimesLimitHasBeenSet() const;
+
+                    /**
                      * 获取机构信息，暂未开放
                      * @return Organization 机构信息，暂未开放
                      * @deprecated
@@ -335,6 +356,12 @@ namespace TencentCloud
                      */
                     std::vector<FlowCreateApprover> m_flowApproverInfos;
                     bool m_flowApproverInfosHasBeenSet;
+
+                    /**
+                     * 用于指定进入视频签署的限制次数，次数取值范围：1 - 10，不设置则默认为5次，仅视频签署时生效。
+                     */
+                    int64_t m_videoVerifyTimesLimit;
+                    bool m_videoVerifyTimesLimitHasBeenSet;
 
                     /**
                      * 机构信息，暂未开放

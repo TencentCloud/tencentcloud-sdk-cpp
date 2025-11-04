@@ -2328,6 +2328,27 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool IsCdzLiteHasBeenSet() const;
 
+                    /**
+                     * 获取集群内网tcp地址
+                     * @return EsPrivateTcpUrl 集群内网tcp地址
+                     * 
+                     */
+                    std::string GetEsPrivateTcpUrl() const;
+
+                    /**
+                     * 设置集群内网tcp地址
+                     * @param _esPrivateTcpUrl 集群内网tcp地址
+                     * 
+                     */
+                    void SetEsPrivateTcpUrl(const std::string& _esPrivateTcpUrl);
+
+                    /**
+                     * 判断参数 EsPrivateTcpUrl 是否已赋值
+                     * @return EsPrivateTcpUrl 是否已赋值
+                     * 
+                     */
+                    bool EsPrivateTcpUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2968,6 +2989,12 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool m_isCdzLite;
                     bool m_isCdzLiteHasBeenSet;
+
+                    /**
+                     * 集群内网tcp地址
+                     */
+                    std::string m_esPrivateTcpUrl;
+                    bool m_esPrivateTcpUrlHasBeenSet;
 
                 };
             }

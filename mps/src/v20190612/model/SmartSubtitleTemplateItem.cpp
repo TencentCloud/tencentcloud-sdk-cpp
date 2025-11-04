@@ -34,7 +34,8 @@ SmartSubtitleTemplateItem::SmartSubtitleTemplateItem() :
     m_translateDstLanguageHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_aliasNameHasBeenSet(false)
+    m_aliasNameHasBeenSet(false),
+    m_processTypeHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,16 @@ CoreInternalOutcome SmartSubtitleTemplateItem::Deserialize(const rapidjson::Valu
         m_aliasNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ProcessType") && !value["ProcessType"].IsNull())
+    {
+        if (!value["ProcessType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitleTemplateItem.ProcessType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_processType = value["ProcessType"].GetUint64();
+        m_processTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +319,14 @@ void SmartSubtitleTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "AliasName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aliasName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processType, allocator);
     }
 
 }
@@ -535,5 +554,21 @@ void SmartSubtitleTemplateItem::SetAliasName(const string& _aliasName)
 bool SmartSubtitleTemplateItem::AliasNameHasBeenSet() const
 {
     return m_aliasNameHasBeenSet;
+}
+
+uint64_t SmartSubtitleTemplateItem::GetProcessType() const
+{
+    return m_processType;
+}
+
+void SmartSubtitleTemplateItem::SetProcessType(const uint64_t& _processType)
+{
+    m_processType = _processType;
+    m_processTypeHasBeenSet = true;
+}
+
+bool SmartSubtitleTemplateItem::ProcessTypeHasBeenSet() const
+{
+    return m_processTypeHasBeenSet;
 }
 

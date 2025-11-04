@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取预期呼损率，百分比，5 - 50
-                     * @return ExpectedAbandonRate 预期呼损率，百分比，5 - 50
+                     * 获取预期呼损率，百分比，0 - 50
+                     * @return ExpectedAbandonRate 预期呼损率，百分比，0 - 50
                      * 
                      */
                     int64_t GetExpectedAbandonRate() const;
 
                     /**
-                     * 设置预期呼损率，百分比，5 - 50
-                     * @param _expectedAbandonRate 预期呼损率，百分比，5 - 50
+                     * 设置预期呼损率，百分比，0 - 50
+                     * @param _expectedAbandonRate 预期呼损率，百分比，0 - 50
                      * 
                      */
                     void SetExpectedAbandonRate(const int64_t& _expectedAbandonRate);
@@ -468,7 +468,7 @@ namespace TencentCloud
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * 预期呼损率，百分比，5 - 50
+                     * 预期呼损率，百分比，0 - 50
                      */
                     int64_t m_expectedAbandonRate;
                     bool m_expectedAbandonRateHasBeenSet;

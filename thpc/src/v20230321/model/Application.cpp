@@ -26,7 +26,8 @@ Application::Application() :
     m_envVarsHasBeenSet(false),
     m_dockerHasBeenSet(false),
     m_outputRedirectHasBeenSet(false),
-    m_jobTypeHasBeenSet(false)
+    m_jobTypeHasBeenSet(false),
+    m_taskTypeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome Application::Deserialize(const rapidjson::Value &value)
         m_jobTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskType") && !value["TaskType"].IsNull())
+    {
+        if (!value["TaskType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Application.TaskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskType = string(value["TaskType"].GetString());
+        m_taskTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -215,6 +226,14 @@ void Application::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "JobType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -314,5 +333,21 @@ void Application::SetJobType(const string& _jobType)
 bool Application::JobTypeHasBeenSet() const
 {
     return m_jobTypeHasBeenSet;
+}
+
+string Application::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void Application::SetTaskType(const string& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool Application::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
 }
 

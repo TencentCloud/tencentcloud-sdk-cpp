@@ -24,8 +24,8 @@ TranslationNatRuleDiff::TranslationNatRuleDiff() :
     m_translationDirectionHasBeenSet(false),
     m_translationTypeHasBeenSet(false),
     m_translationIpHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_oldTranslationIpHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_originalIpHasBeenSet(false),
     m_oldOriginalIpHasBeenSet(false)
 {
@@ -66,16 +66,6 @@ CoreInternalOutcome TranslationNatRuleDiff::Deserialize(const rapidjson::Value &
         m_translationIpHasBeenSet = true;
     }
 
-    if (value.HasMember("Description") && !value["Description"].IsNull())
-    {
-        if (!value["Description"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TranslationNatRuleDiff.Description` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_description = string(value["Description"].GetString());
-        m_descriptionHasBeenSet = true;
-    }
-
     if (value.HasMember("OldTranslationIp") && !value["OldTranslationIp"].IsNull())
     {
         if (!value["OldTranslationIp"].IsString())
@@ -84,6 +74,16 @@ CoreInternalOutcome TranslationNatRuleDiff::Deserialize(const rapidjson::Value &
         }
         m_oldTranslationIp = string(value["OldTranslationIp"].GetString());
         m_oldTranslationIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranslationNatRuleDiff.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
     }
 
     if (value.HasMember("OriginalIp") && !value["OriginalIp"].IsNull())
@@ -137,20 +137,20 @@ void TranslationNatRuleDiff::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         value.AddMember(iKey, rapidjson::Value(m_translationIp.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_descriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Description";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_oldTranslationIpHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OldTranslationIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_oldTranslationIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_originalIpHasBeenSet)
@@ -220,22 +220,6 @@ bool TranslationNatRuleDiff::TranslationIpHasBeenSet() const
     return m_translationIpHasBeenSet;
 }
 
-string TranslationNatRuleDiff::GetDescription() const
-{
-    return m_description;
-}
-
-void TranslationNatRuleDiff::SetDescription(const string& _description)
-{
-    m_description = _description;
-    m_descriptionHasBeenSet = true;
-}
-
-bool TranslationNatRuleDiff::DescriptionHasBeenSet() const
-{
-    return m_descriptionHasBeenSet;
-}
-
 string TranslationNatRuleDiff::GetOldTranslationIp() const
 {
     return m_oldTranslationIp;
@@ -250,6 +234,22 @@ void TranslationNatRuleDiff::SetOldTranslationIp(const string& _oldTranslationIp
 bool TranslationNatRuleDiff::OldTranslationIpHasBeenSet() const
 {
     return m_oldTranslationIpHasBeenSet;
+}
+
+string TranslationNatRuleDiff::GetDescription() const
+{
+    return m_description;
+}
+
+void TranslationNatRuleDiff::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool TranslationNatRuleDiff::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 string TranslationNatRuleDiff::GetOriginalIp() const

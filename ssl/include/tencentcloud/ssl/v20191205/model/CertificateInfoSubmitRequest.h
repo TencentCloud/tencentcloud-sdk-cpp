@@ -1003,6 +1003,27 @@ FILE：手动添加域名文件验证。 需要用户手动在域名站点根目
                      */
                     bool SignAlgoHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用交叉根证书
+                     * @return UseCrossSignRoot 是否使用交叉根证书
+                     * 
+                     */
+                    bool GetUseCrossSignRoot() const;
+
+                    /**
+                     * 设置是否使用交叉根证书
+                     * @param _useCrossSignRoot 是否使用交叉根证书
+                     * 
+                     */
+                    void SetUseCrossSignRoot(const bool& _useCrossSignRoot);
+
+                    /**
+                     * 判断参数 UseCrossSignRoot 是否已赋值
+                     * @return UseCrossSignRoot 是否已赋值
+                     * 
+                     */
+                    bool UseCrossSignRootHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1275,6 +1296,12 @@ FILE：手动添加域名文件验证。 需要用户手动在域名站点根目
                      */
                     std::string m_signAlgo;
                     bool m_signAlgoHasBeenSet;
+
+                    /**
+                     * 是否使用交叉根证书
+                     */
+                    bool m_useCrossSignRoot;
+                    bool m_useCrossSignRootHasBeenSet;
 
                 };
             }

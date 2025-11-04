@@ -25,7 +25,9 @@ CompareDetailInfo::CompareDetailInfo() :
     m_skippedHasBeenSet(false),
     m_differenceAdvancedObjectsHasBeenSet(false),
     m_differenceDataHasBeenSet(false),
-    m_differenceRowHasBeenSet(false)
+    m_differenceRowHasBeenSet(false),
+    m_differenceSchemaHasBeenSet(false),
+    m_differenceOwnerHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,40 @@ CoreInternalOutcome CompareDetailInfo::Deserialize(const rapidjson::Value &value
         m_differenceRowHasBeenSet = true;
     }
 
+    if (value.HasMember("DifferenceSchema") && !value["DifferenceSchema"].IsNull())
+    {
+        if (!value["DifferenceSchema"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareDetailInfo.DifferenceSchema` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_differenceSchema.Deserialize(value["DifferenceSchema"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_differenceSchemaHasBeenSet = true;
+    }
+
+    if (value.HasMember("DifferenceOwner") && !value["DifferenceOwner"].IsNull())
+    {
+        if (!value["DifferenceOwner"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareDetailInfo.DifferenceOwner` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_differenceOwner.Deserialize(value["DifferenceOwner"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_differenceOwnerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -169,6 +205,24 @@ void CompareDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_differenceRow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_differenceSchemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DifferenceSchema";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_differenceSchema.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_differenceOwnerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DifferenceOwner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_differenceOwner.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -252,5 +306,37 @@ void CompareDetailInfo::SetDifferenceRow(const DifferenceRowDetail& _differenceR
 bool CompareDetailInfo::DifferenceRowHasBeenSet() const
 {
     return m_differenceRowHasBeenSet;
+}
+
+DifferenceSchemaDetail CompareDetailInfo::GetDifferenceSchema() const
+{
+    return m_differenceSchema;
+}
+
+void CompareDetailInfo::SetDifferenceSchema(const DifferenceSchemaDetail& _differenceSchema)
+{
+    m_differenceSchema = _differenceSchema;
+    m_differenceSchemaHasBeenSet = true;
+}
+
+bool CompareDetailInfo::DifferenceSchemaHasBeenSet() const
+{
+    return m_differenceSchemaHasBeenSet;
+}
+
+DifferenceOwnerDetail CompareDetailInfo::GetDifferenceOwner() const
+{
+    return m_differenceOwner;
+}
+
+void CompareDetailInfo::SetDifferenceOwner(const DifferenceOwnerDetail& _differenceOwner)
+{
+    m_differenceOwner = _differenceOwner;
+    m_differenceOwnerHasBeenSet = true;
+}
+
+bool CompareDetailInfo::DifferenceOwnerHasBeenSet() const
+{
+    return m_differenceOwnerHasBeenSet;
 }
 

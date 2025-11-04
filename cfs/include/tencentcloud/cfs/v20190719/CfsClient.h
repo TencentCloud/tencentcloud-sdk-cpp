@@ -65,8 +65,6 @@
 #include <tencentcloud/cfs/v20190719/model/DeleteLifecyclePolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteMigrationTaskRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteMigrationTaskResponse.h>
-#include <tencentcloud/cfs/v20190719/model/DeleteMountTargetRequest.h>
-#include <tencentcloud/cfs/v20190719/model/DeleteMountTargetResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteUserQuotaRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteUserQuotaResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeAutoSnapshotPoliciesRequest.h>
@@ -216,9 +214,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteMigrationTaskResponse> DeleteMigrationTaskOutcome;
                 typedef std::future<DeleteMigrationTaskOutcome> DeleteMigrationTaskOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DeleteMigrationTaskRequest&, DeleteMigrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMigrationTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteMountTargetResponse> DeleteMountTargetOutcome;
-                typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
-                typedef std::function<void(const CfsClient*, const Model::DeleteMountTargetRequest&, DeleteMountTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMountTargetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUserQuotaResponse> DeleteUserQuotaOutcome;
                 typedef std::future<DeleteUserQuotaOutcome> DeleteUserQuotaOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DeleteUserQuotaRequest&, DeleteUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserQuotaAsyncHandler;
@@ -518,16 +513,6 @@ namespace TencentCloud
                 DeleteMigrationTaskOutcome DeleteMigrationTask(const Model::DeleteMigrationTaskRequest &request);
                 void DeleteMigrationTaskAsync(const Model::DeleteMigrationTaskRequest& request, const DeleteMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteMigrationTaskOutcomeCallable DeleteMigrationTaskCallable(const Model::DeleteMigrationTaskRequest& request);
-
-                /**
-                 *本接口（DeleteMountTarget）用于删除挂载点
-说明：2022年6月1日之后创建的CFS文件系统删除时无需单独调用删除挂载点操作，此API仅适用老版本的CFS实例。
-                 * @param req DeleteMountTargetRequest
-                 * @return DeleteMountTargetOutcome
-                 */
-                DeleteMountTargetOutcome DeleteMountTarget(const Model::DeleteMountTargetRequest &request);
-                void DeleteMountTargetAsync(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteMountTargetOutcomeCallable DeleteMountTargetCallable(const Model::DeleteMountTargetRequest& request);
 
                 /**
                  *指定条件删除文件系统配额（仅部分Turbo实例能使用，若需要调用请提交工单与我们联系）

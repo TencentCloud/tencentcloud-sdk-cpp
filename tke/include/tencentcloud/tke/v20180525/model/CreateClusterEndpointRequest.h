@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)
-                     * @return SubnetId 集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)
+                     * 获取集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)。获取方式：https://cloud.tencent.com/document/product/215/15784
+
+                     * @return SubnetId 集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)。获取方式：https://cloud.tencent.com/document/product/215/15784
+
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)
-                     * @param _subnetId 集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)
+                     * 设置集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)。获取方式：https://cloud.tencent.com/document/product/215/15784
+
+                     * @param _subnetId 集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)。获取方式：https://cloud.tencent.com/document/product/215/15784
+
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -127,15 +131,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
-                     * @return SecurityGroup 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
+                     * 获取使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）。获取方式：https://cloud.tencent.com/document/api/215/15808
+                     * @return SecurityGroup 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）。获取方式：https://cloud.tencent.com/document/api/215/15808
                      * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
-                     * 设置使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
-                     * @param _securityGroup 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
+                     * 设置使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）。获取方式：https://cloud.tencent.com/document/api/215/15808
+                     * @param _securityGroup 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）。获取方式：https://cloud.tencent.com/document/api/215/15808
                      * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
@@ -218,7 +222,8 @@ BandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)
+                     * 集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)。获取方式：https://cloud.tencent.com/document/product/215/15784
+
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -236,7 +241,7 @@ BandwidthPackageId含义：带宽包ID，指定此参数时，网络计费方式
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）
+                     * 使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）。获取方式：https://cloud.tencent.com/document/api/215/15808
                      */
                     std::string m_securityGroup;
                     bool m_securityGroupHasBeenSet;

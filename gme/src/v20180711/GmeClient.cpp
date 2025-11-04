@@ -642,6 +642,49 @@ GmeClient::DescribeApplicationListOutcomeCallable GmeClient::DescribeApplication
     return task->get_future();
 }
 
+GmeClient::DescribeAuditResultExternalOutcome GmeClient::DescribeAuditResultExternal(const DescribeAuditResultExternalRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditResultExternal");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditResultExternalResponse rsp = DescribeAuditResultExternalResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditResultExternalOutcome(rsp);
+        else
+            return DescribeAuditResultExternalOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditResultExternalOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeAuditResultExternalAsync(const DescribeAuditResultExternalRequest& request, const DescribeAuditResultExternalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditResultExternal(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeAuditResultExternalOutcomeCallable GmeClient::DescribeAuditResultExternalCallable(const DescribeAuditResultExternalRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditResultExternalOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditResultExternal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::DescribeRealtimeScanConfigOutcome GmeClient::DescribeRealtimeScanConfig(const DescribeRealtimeScanConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRealtimeScanConfig");

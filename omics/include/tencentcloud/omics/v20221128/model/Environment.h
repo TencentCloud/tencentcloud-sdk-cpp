@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/omics/v20221128/model/ResourceIds.h>
+#include <tencentcloud/omics/v20221128/model/EnvironmentRuntimeConfig.h>
 
 
 namespace TencentCloud
@@ -352,6 +353,27 @@ namespace TencentCloud
                      */
                     bool CreationTimeHasBeenSet() const;
 
+                    /**
+                     * 获取运行时配置。
+                     * @return RuntimeConfig 运行时配置。
+                     * 
+                     */
+                    EnvironmentRuntimeConfig GetRuntimeConfig() const;
+
+                    /**
+                     * 设置运行时配置。
+                     * @param _runtimeConfig 运行时配置。
+                     * 
+                     */
+                    void SetRuntimeConfig(const EnvironmentRuntimeConfig& _runtimeConfig);
+
+                    /**
+                     * 判断参数 RuntimeConfig 是否已赋值
+                     * @return RuntimeConfig 是否已赋值
+                     * 
+                     */
+                    bool RuntimeConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -439,6 +461,12 @@ namespace TencentCloud
                      */
                     std::string m_creationTime;
                     bool m_creationTimeHasBeenSet;
+
+                    /**
+                     * 运行时配置。
+                     */
+                    EnvironmentRuntimeConfig m_runtimeConfig;
+                    bool m_runtimeConfigHasBeenSet;
 
                 };
             }

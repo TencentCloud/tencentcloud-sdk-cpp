@@ -1588,49 +1588,6 @@ OcrClient::ImageEnhancementOutcomeCallable OcrClient::ImageEnhancementCallable(c
     return task->get_future();
 }
 
-OcrClient::InstitutionOCROutcome OcrClient::InstitutionOCR(const InstitutionOCRRequest &request)
-{
-    auto outcome = MakeRequest(request, "InstitutionOCR");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        InstitutionOCRResponse rsp = InstitutionOCRResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return InstitutionOCROutcome(rsp);
-        else
-            return InstitutionOCROutcome(o.GetError());
-    }
-    else
-    {
-        return InstitutionOCROutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::InstitutionOCRAsync(const InstitutionOCRRequest& request, const InstitutionOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->InstitutionOCR(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-OcrClient::InstitutionOCROutcomeCallable OcrClient::InstitutionOCRCallable(const InstitutionOCRRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<InstitutionOCROutcome()>>(
-        [this, request]()
-        {
-            return this->InstitutionOCR(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 OcrClient::InsuranceBillOCROutcome OcrClient::InsuranceBillOCR(const InsuranceBillOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "InsuranceBillOCR");
@@ -1975,49 +1932,6 @@ OcrClient::MixedInvoiceOCROutcomeCallable OcrClient::MixedInvoiceOCRCallable(con
     return task->get_future();
 }
 
-OcrClient::OrgCodeCertOCROutcome OcrClient::OrgCodeCertOCR(const OrgCodeCertOCRRequest &request)
-{
-    auto outcome = MakeRequest(request, "OrgCodeCertOCR");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        OrgCodeCertOCRResponse rsp = OrgCodeCertOCRResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return OrgCodeCertOCROutcome(rsp);
-        else
-            return OrgCodeCertOCROutcome(o.GetError());
-    }
-    else
-    {
-        return OrgCodeCertOCROutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::OrgCodeCertOCRAsync(const OrgCodeCertOCRRequest& request, const OrgCodeCertOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->OrgCodeCertOCR(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-OcrClient::OrgCodeCertOCROutcomeCallable OcrClient::OrgCodeCertOCRCallable(const OrgCodeCertOCRRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<OrgCodeCertOCROutcome()>>(
-        [this, request]()
-        {
-            return this->OrgCodeCertOCR(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 OcrClient::PassportOCROutcome OcrClient::PassportOCR(const PassportOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "PassportOCR");
@@ -2097,49 +2011,6 @@ OcrClient::PermitOCROutcomeCallable OcrClient::PermitOCRCallable(const PermitOCR
         [this, request]()
         {
             return this->PermitOCR(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-OcrClient::PropOwnerCertOCROutcome OcrClient::PropOwnerCertOCR(const PropOwnerCertOCRRequest &request)
-{
-    auto outcome = MakeRequest(request, "PropOwnerCertOCR");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        PropOwnerCertOCRResponse rsp = PropOwnerCertOCRResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return PropOwnerCertOCROutcome(rsp);
-        else
-            return PropOwnerCertOCROutcome(o.GetError());
-    }
-    else
-    {
-        return PropOwnerCertOCROutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::PropOwnerCertOCRAsync(const PropOwnerCertOCRRequest& request, const PropOwnerCertOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PropOwnerCertOCR(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-OcrClient::PropOwnerCertOCROutcomeCallable OcrClient::PropOwnerCertOCRCallable(const PropOwnerCertOCRRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<PropOwnerCertOCROutcome()>>(
-        [this, request]()
-        {
-            return this->PropOwnerCertOCR(request);
         }
     );
 
@@ -2448,49 +2319,6 @@ OcrClient::RecognizeEncryptedIDCardOCROutcomeCallable OcrClient::RecognizeEncryp
     return task->get_future();
 }
 
-OcrClient::RecognizeForeignPermanentResidentIdCardOutcome OcrClient::RecognizeForeignPermanentResidentIdCard(const RecognizeForeignPermanentResidentIdCardRequest &request)
-{
-    auto outcome = MakeRequest(request, "RecognizeForeignPermanentResidentIdCard");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RecognizeForeignPermanentResidentIdCardResponse rsp = RecognizeForeignPermanentResidentIdCardResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RecognizeForeignPermanentResidentIdCardOutcome(rsp);
-        else
-            return RecognizeForeignPermanentResidentIdCardOutcome(o.GetError());
-    }
-    else
-    {
-        return RecognizeForeignPermanentResidentIdCardOutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::RecognizeForeignPermanentResidentIdCardAsync(const RecognizeForeignPermanentResidentIdCardRequest& request, const RecognizeForeignPermanentResidentIdCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecognizeForeignPermanentResidentIdCard(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-OcrClient::RecognizeForeignPermanentResidentIdCardOutcomeCallable OcrClient::RecognizeForeignPermanentResidentIdCardCallable(const RecognizeForeignPermanentResidentIdCardRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<RecognizeForeignPermanentResidentIdCardOutcome()>>(
-        [this, request]()
-        {
-            return this->RecognizeForeignPermanentResidentIdCard(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 OcrClient::RecognizeFormulaOCROutcome OcrClient::RecognizeFormulaOCR(const RecognizeFormulaOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeFormulaOCR");
@@ -2613,49 +2441,6 @@ OcrClient::RecognizeGeneralInvoiceOutcomeCallable OcrClient::RecognizeGeneralInv
         [this, request]()
         {
             return this->RecognizeGeneralInvoice(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-OcrClient::RecognizeGeneralTextImageWarnOutcome OcrClient::RecognizeGeneralTextImageWarn(const RecognizeGeneralTextImageWarnRequest &request)
-{
-    auto outcome = MakeRequest(request, "RecognizeGeneralTextImageWarn");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RecognizeGeneralTextImageWarnResponse rsp = RecognizeGeneralTextImageWarnResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RecognizeGeneralTextImageWarnOutcome(rsp);
-        else
-            return RecognizeGeneralTextImageWarnOutcome(o.GetError());
-    }
-    else
-    {
-        return RecognizeGeneralTextImageWarnOutcome(outcome.GetError());
-    }
-}
-
-void OcrClient::RecognizeGeneralTextImageWarnAsync(const RecognizeGeneralTextImageWarnRequest& request, const RecognizeGeneralTextImageWarnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecognizeGeneralTextImageWarn(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-OcrClient::RecognizeGeneralTextImageWarnOutcomeCallable OcrClient::RecognizeGeneralTextImageWarnCallable(const RecognizeGeneralTextImageWarnRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<RecognizeGeneralTextImageWarnOutcome()>>(
-        [this, request]()
-        {
-            return this->RecognizeGeneralTextImageWarn(request);
         }
     );
 

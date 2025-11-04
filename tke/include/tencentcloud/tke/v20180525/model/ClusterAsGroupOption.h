@@ -318,18 +318,18 @@ namespace TencentCloud
                     bool MaxTotalUnreadyPercentageHasBeenSet() const;
 
                     /**
-                     * 获取表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
+                     * 获取表示未准备就绪的节点在有资格进行缩减之前应该停留多少分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScaleDownUnreadyTime 表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
+                     * @return ScaleDownUnreadyTime 表示未准备就绪的节点在有资格进行缩减之前应该停留多少分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScaleDownUnreadyTime() const;
 
                     /**
-                     * 设置表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
+                     * 设置表示未准备就绪的节点在有资格进行缩减之前应该停留多少分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scaleDownUnreadyTime 表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
+                     * @param _scaleDownUnreadyTime 表示未准备就绪的节点在有资格进行缩减之前应该停留多少分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -343,18 +343,18 @@ namespace TencentCloud
                     bool ScaleDownUnreadyTimeHasBeenSet() const;
 
                     /**
-                     * 获取CA删除未在Kubernetes中注册的节点之前等待的时间
+                     * 获取CA删除未在Kubernetes中注册的节点之前等待的分钟数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UnregisteredNodeRemovalTime CA删除未在Kubernetes中注册的节点之前等待的时间
+                     * @return UnregisteredNodeRemovalTime CA删除未在Kubernetes中注册的节点之前等待的分钟数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUnregisteredNodeRemovalTime() const;
 
                     /**
-                     * 设置CA删除未在Kubernetes中注册的节点之前等待的时间
+                     * 设置CA删除未在Kubernetes中注册的节点之前等待的分钟数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _unregisteredNodeRemovalTime CA删除未在Kubernetes中注册的节点之前等待的时间
+                     * @param _unregisteredNodeRemovalTime CA删除未在Kubernetes中注册的节点之前等待的分钟数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -446,14 +446,14 @@ namespace TencentCloud
                     bool m_maxTotalUnreadyPercentageHasBeenSet;
 
                     /**
-                     * 表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间
+                     * 表示未准备就绪的节点在有资格进行缩减之前应该停留多少分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scaleDownUnreadyTime;
                     bool m_scaleDownUnreadyTimeHasBeenSet;
 
                     /**
-                     * CA删除未在Kubernetes中注册的节点之前等待的时间
+                     * CA删除未在Kubernetes中注册的节点之前等待的分钟数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_unregisteredNodeRemovalTime;

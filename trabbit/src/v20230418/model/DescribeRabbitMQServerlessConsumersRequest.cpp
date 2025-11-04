@@ -28,7 +28,8 @@ DescribeRabbitMQServerlessConsumersRequest::DescribeRabbitMQServerlessConsumersR
     m_queueNameHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_searchWordHasBeenSet(false)
+    m_searchWordHasBeenSet(false),
+    m_channelHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeRabbitMQServerlessConsumersRequest::ToJsonString() const
         string key = "SearchWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_searchWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Channel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeRabbitMQServerlessConsumersRequest::SetSearchWord(const string& _se
 bool DescribeRabbitMQServerlessConsumersRequest::SearchWordHasBeenSet() const
 {
     return m_searchWordHasBeenSet;
+}
+
+string DescribeRabbitMQServerlessConsumersRequest::GetChannel() const
+{
+    return m_channel;
+}
+
+void DescribeRabbitMQServerlessConsumersRequest::SetChannel(const string& _channel)
+{
+    m_channel = _channel;
+    m_channelHasBeenSet = true;
+}
+
+bool DescribeRabbitMQServerlessConsumersRequest::ChannelHasBeenSet() const
+{
+    return m_channelHasBeenSet;
 }
 
 

@@ -24,7 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ocr/v20181119/model/OtherInvoiceItem.h>
+#include <tencentcloud/ocr/v20181119/model/OnlineTaxiItineraryInfo.h>
 
 
 namespace TencentCloud
@@ -69,18 +69,18 @@ namespace TencentCloud
                     bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取识别出的字段名称(关键字)
-                     * @return Content 识别出的字段名称(关键字)
+                     * 获取识别出的字段名称
+                     * @return Content 识别出的字段名称
                      * 
                      */
-                    std::vector<OtherInvoiceItem> GetContent() const;
+                    std::vector<OnlineTaxiItineraryInfo> GetContent() const;
 
                     /**
-                     * 设置识别出的字段名称(关键字)
-                     * @param _content 识别出的字段名称(关键字)
+                     * 设置识别出的字段名称
+                     * @param _content 识别出的字段名称
                      * 
                      */
-                    void SetContent(const std::vector<OtherInvoiceItem>& _content);
+                    void SetContent(const std::vector<OnlineTaxiItineraryInfo>& _content);
 
                     /**
                      * 判断参数 Content 是否已赋值
@@ -98,9 +98,9 @@ namespace TencentCloud
                     bool m_titleHasBeenSet;
 
                     /**
-                     * 识别出的字段名称(关键字)
+                     * 识别出的字段名称
                      */
-                    std::vector<OtherInvoiceItem> m_content;
+                    std::vector<OnlineTaxiItineraryInfo> m_content;
                     bool m_contentHasBeenSet;
 
                 };

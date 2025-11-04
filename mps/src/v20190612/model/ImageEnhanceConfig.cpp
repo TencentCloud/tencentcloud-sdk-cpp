@@ -22,6 +22,7 @@ using namespace std;
 
 ImageEnhanceConfig::ImageEnhanceConfig() :
     m_superResolutionHasBeenSet(false),
+    m_advancedSuperResolutionConfigHasBeenSet(false),
     m_denoiseHasBeenSet(false),
     m_imageQualityEnhanceHasBeenSet(false),
     m_colorEnhanceHasBeenSet(false),
@@ -51,6 +52,23 @@ CoreInternalOutcome ImageEnhanceConfig::Deserialize(const rapidjson::Value &valu
         }
 
         m_superResolutionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdvancedSuperResolutionConfig") && !value["AdvancedSuperResolutionConfig"].IsNull())
+    {
+        if (!value["AdvancedSuperResolutionConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageEnhanceConfig.AdvancedSuperResolutionConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_advancedSuperResolutionConfig.Deserialize(value["AdvancedSuperResolutionConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_advancedSuperResolutionConfigHasBeenSet = true;
     }
 
     if (value.HasMember("Denoise") && !value["Denoise"].IsNull())
@@ -171,6 +189,15 @@ void ImageEnhanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         m_superResolution.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_advancedSuperResolutionConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedSuperResolutionConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_advancedSuperResolutionConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_denoiseHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -242,6 +269,22 @@ void ImageEnhanceConfig::SetSuperResolution(const SuperResolutionConfig& _superR
 bool ImageEnhanceConfig::SuperResolutionHasBeenSet() const
 {
     return m_superResolutionHasBeenSet;
+}
+
+AdvancedSuperResolutionConfig ImageEnhanceConfig::GetAdvancedSuperResolutionConfig() const
+{
+    return m_advancedSuperResolutionConfig;
+}
+
+void ImageEnhanceConfig::SetAdvancedSuperResolutionConfig(const AdvancedSuperResolutionConfig& _advancedSuperResolutionConfig)
+{
+    m_advancedSuperResolutionConfig = _advancedSuperResolutionConfig;
+    m_advancedSuperResolutionConfigHasBeenSet = true;
+}
+
+bool ImageEnhanceConfig::AdvancedSuperResolutionConfigHasBeenSet() const
+{
+    return m_advancedSuperResolutionConfigHasBeenSet;
 }
 
 ImageDenoiseConfig ImageEnhanceConfig::GetDenoise() const

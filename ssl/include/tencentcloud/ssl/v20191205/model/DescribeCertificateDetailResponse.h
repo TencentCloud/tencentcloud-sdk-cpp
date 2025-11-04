@@ -902,6 +902,20 @@ null：用户上传证书（没有套餐类型），
                      */
                     bool CertTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用交叉根
+                     * @return UseCrossSignRoot 是否使用交叉根
+                     * 
+                     */
+                    bool GetUseCrossSignRoot() const;
+
+                    /**
+                     * 判断参数 UseCrossSignRoot 是否已赋值
+                     * @return UseCrossSignRoot 是否已赋值
+                     * 
+                     */
+                    bool UseCrossSignRootHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1285,6 +1299,12 @@ null：用户上传证书（没有套餐类型），
                      */
                     std::string m_certType;
                     bool m_certTypeHasBeenSet;
+
+                    /**
+                     * 是否使用交叉根
+                     */
+                    bool m_useCrossSignRoot;
+                    bool m_useCrossSignRootHasBeenSet;
 
                 };
             }

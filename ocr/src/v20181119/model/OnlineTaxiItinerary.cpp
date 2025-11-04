@@ -49,7 +49,7 @@ CoreInternalOutcome OnlineTaxiItinerary::Deserialize(const rapidjson::Value &val
         const rapidjson::Value &tmpValue = value["Content"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            OtherInvoiceItem item;
+            OnlineTaxiItineraryInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -110,12 +110,12 @@ bool OnlineTaxiItinerary::TitleHasBeenSet() const
     return m_titleHasBeenSet;
 }
 
-vector<OtherInvoiceItem> OnlineTaxiItinerary::GetContent() const
+vector<OnlineTaxiItineraryInfo> OnlineTaxiItinerary::GetContent() const
 {
     return m_content;
 }
 
-void OnlineTaxiItinerary::SetContent(const vector<OtherInvoiceItem>& _content)
+void OnlineTaxiItinerary::SetContent(const vector<OnlineTaxiItineraryInfo>& _content)
 {
     m_content = _content;
     m_contentHasBeenSet = true;

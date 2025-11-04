@@ -23,7 +23,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Thpc::V20230321::Model;
 using namespace std;
 
-DescribeJobsOverviewResponse::DescribeJobsOverviewResponse()
+DescribeJobsOverviewResponse::DescribeJobsOverviewResponse() :
+    m_jobTotalHasBeenSet(false),
+    m_queuingJobTotalHasBeenSet(false),
+    m_runningJobTotalHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,36 @@ CoreInternalOutcome DescribeJobsOverviewResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("JobTotal") && !rsp["JobTotal"].IsNull())
+    {
+        if (!rsp["JobTotal"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobTotal = rsp["JobTotal"].GetUint64();
+        m_jobTotalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("QueuingJobTotal") && !rsp["QueuingJobTotal"].IsNull())
+    {
+        if (!rsp["QueuingJobTotal"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueuingJobTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_queuingJobTotal = rsp["QueuingJobTotal"].GetUint64();
+        m_queuingJobTotalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RunningJobTotal") && !rsp["RunningJobTotal"].IsNull())
+    {
+        if (!rsp["RunningJobTotal"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunningJobTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningJobTotal = rsp["RunningJobTotal"].GetUint64();
+        m_runningJobTotalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +103,30 @@ string DescribeJobsOverviewResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_jobTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobTotal, allocator);
+    }
+
+    if (m_queuingJobTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueuingJobTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_queuingJobTotal, allocator);
+    }
+
+    if (m_runningJobTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningJobTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningJobTotal, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +139,35 @@ string DescribeJobsOverviewResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeJobsOverviewResponse::GetJobTotal() const
+{
+    return m_jobTotal;
+}
+
+bool DescribeJobsOverviewResponse::JobTotalHasBeenSet() const
+{
+    return m_jobTotalHasBeenSet;
+}
+
+uint64_t DescribeJobsOverviewResponse::GetQueuingJobTotal() const
+{
+    return m_queuingJobTotal;
+}
+
+bool DescribeJobsOverviewResponse::QueuingJobTotalHasBeenSet() const
+{
+    return m_queuingJobTotalHasBeenSet;
+}
+
+uint64_t DescribeJobsOverviewResponse::GetRunningJobTotal() const
+{
+    return m_runningJobTotal;
+}
+
+bool DescribeJobsOverviewResponse::RunningJobTotalHasBeenSet() const
+{
+    return m_runningJobTotalHasBeenSet;
+}
 
 

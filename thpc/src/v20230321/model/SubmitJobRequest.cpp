@@ -22,7 +22,10 @@
 using namespace TencentCloud::Thpc::V20230321::Model;
 using namespace std;
 
-SubmitJobRequest::SubmitJobRequest()
+SubmitJobRequest::SubmitJobRequest() :
+    m_clusterIdHasBeenSet(false),
+    m_jobHasBeenSet(false),
+    m_queueNameHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,31 @@ string SubmitJobRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Job";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_job.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +68,53 @@ string SubmitJobRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string SubmitJobRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void SubmitJobRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool SubmitJobRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+Job SubmitJobRequest::GetJob() const
+{
+    return m_job;
+}
+
+void SubmitJobRequest::SetJob(const Job& _job)
+{
+    m_job = _job;
+    m_jobHasBeenSet = true;
+}
+
+bool SubmitJobRequest::JobHasBeenSet() const
+{
+    return m_jobHasBeenSet;
+}
+
+string SubmitJobRequest::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void SubmitJobRequest::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool SubmitJobRequest::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
+}
 
 

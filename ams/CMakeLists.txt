@@ -15,46 +15,11 @@
 #
 
 set(ams_public_header
-  include/tencentcloud/ams/v20201229/AmsClient.h
   include/tencentcloud/ams/v20200608/AmsClient.h
+  include/tencentcloud/ams/v20201229/AmsClient.h
   )
 
 set(ams_public_header_model
-  include/tencentcloud/ams/v20201229/model/TextResult.h
-  include/tencentcloud/ams/v20201229/model/DescribeTasksRequest.h
-  include/tencentcloud/ams/v20201229/model/AudioResultDetailSpeakerResult.h
-  include/tencentcloud/ams/v20201229/model/CreateAudioModerationSyncTaskRequest.h
-  include/tencentcloud/ams/v20201229/model/HitInfo.h
-  include/tencentcloud/ams/v20201229/model/CreateAudioModerationTaskResponse.h
-  include/tencentcloud/ams/v20201229/model/TaskResult.h
-  include/tencentcloud/ams/v20201229/model/CancelTaskRequest.h
-  include/tencentcloud/ams/v20201229/model/DescribeTaskDetailResponse.h
-  include/tencentcloud/ams/v20201229/model/CreateAudioModerationTaskRequest.h
-  include/tencentcloud/ams/v20201229/model/TaskInput.h
-  include/tencentcloud/ams/v20201229/model/LabelResults.h
-  include/tencentcloud/ams/v20201229/model/DescribeTaskDetailRequest.h
-  include/tencentcloud/ams/v20201229/model/CreateAudioModerationSyncTaskResponse.h
-  include/tencentcloud/ams/v20201229/model/User.h
-  include/tencentcloud/ams/v20201229/model/TaskLabel.h
-  include/tencentcloud/ams/v20201229/model/TaskFilter.h
-  include/tencentcloud/ams/v20201229/model/InputInfo.h
-  include/tencentcloud/ams/v20201229/model/StorageInfo.h
-  include/tencentcloud/ams/v20201229/model/DescribeTasksResponse.h
-  include/tencentcloud/ams/v20201229/model/AudioResultDetailLanguageResult.h
-  include/tencentcloud/ams/v20201229/model/RecognitionResult.h
-  include/tencentcloud/ams/v20201229/model/MoanResult.h
-  include/tencentcloud/ams/v20201229/model/Position.h
-  include/tencentcloud/ams/v20201229/model/CancelTaskResponse.h
-  include/tencentcloud/ams/v20201229/model/BucketInfo.h
-  include/tencentcloud/ams/v20201229/model/AudioResultDetailTextResult.h
-  include/tencentcloud/ams/v20201229/model/SpeakerResults.h
-  include/tencentcloud/ams/v20201229/model/TravelResults.h
-  include/tencentcloud/ams/v20201229/model/AudioResult.h
-  include/tencentcloud/ams/v20201229/model/AudioResultDetailMoanResult.h
-  include/tencentcloud/ams/v20201229/model/TaskData.h
-  include/tencentcloud/ams/v20201229/model/MediaInfo.h
-  include/tencentcloud/ams/v20201229/model/Tag.h
-  include/tencentcloud/ams/v20201229/model/AudioSegments.h
   include/tencentcloud/ams/v20200608/model/ImageSegments.h
   include/tencentcloud/ams/v20200608/model/ImageResultResult.h
   include/tencentcloud/ams/v20200608/model/InputInfo.h
@@ -94,46 +59,46 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20200608/model/EvilCount.h
   include/tencentcloud/ams/v20200608/model/ImageResultsResultDetailLocation.h
   include/tencentcloud/ams/v20200608/model/ImageResult.h
+  include/tencentcloud/ams/v20201229/model/TextResult.h
+  include/tencentcloud/ams/v20201229/model/DescribeTasksRequest.h
+  include/tencentcloud/ams/v20201229/model/AudioResultDetailSpeakerResult.h
+  include/tencentcloud/ams/v20201229/model/CreateAudioModerationSyncTaskRequest.h
+  include/tencentcloud/ams/v20201229/model/HitInfo.h
+  include/tencentcloud/ams/v20201229/model/CreateAudioModerationTaskResponse.h
+  include/tencentcloud/ams/v20201229/model/TaskResult.h
+  include/tencentcloud/ams/v20201229/model/CancelTaskRequest.h
+  include/tencentcloud/ams/v20201229/model/DescribeTaskDetailResponse.h
+  include/tencentcloud/ams/v20201229/model/CreateAudioModerationTaskRequest.h
+  include/tencentcloud/ams/v20201229/model/TaskInput.h
+  include/tencentcloud/ams/v20201229/model/LabelResults.h
+  include/tencentcloud/ams/v20201229/model/DescribeTaskDetailRequest.h
+  include/tencentcloud/ams/v20201229/model/CreateAudioModerationSyncTaskResponse.h
+  include/tencentcloud/ams/v20201229/model/User.h
+  include/tencentcloud/ams/v20201229/model/TaskLabel.h
+  include/tencentcloud/ams/v20201229/model/TaskFilter.h
+  include/tencentcloud/ams/v20201229/model/InputInfo.h
+  include/tencentcloud/ams/v20201229/model/StorageInfo.h
+  include/tencentcloud/ams/v20201229/model/DescribeTasksResponse.h
+  include/tencentcloud/ams/v20201229/model/AudioResultDetailLanguageResult.h
+  include/tencentcloud/ams/v20201229/model/RecognitionResult.h
+  include/tencentcloud/ams/v20201229/model/MoanResult.h
+  include/tencentcloud/ams/v20201229/model/Position.h
+  include/tencentcloud/ams/v20201229/model/CancelTaskResponse.h
+  include/tencentcloud/ams/v20201229/model/BucketInfo.h
+  include/tencentcloud/ams/v20201229/model/AudioResultDetailTextResult.h
+  include/tencentcloud/ams/v20201229/model/SpeakerResults.h
+  include/tencentcloud/ams/v20201229/model/TravelResults.h
+  include/tencentcloud/ams/v20201229/model/AudioResult.h
+  include/tencentcloud/ams/v20201229/model/AudioResultDetailMoanResult.h
+  include/tencentcloud/ams/v20201229/model/TaskData.h
+  include/tencentcloud/ams/v20201229/model/MediaInfo.h
+  include/tencentcloud/ams/v20201229/model/Tag.h
+  include/tencentcloud/ams/v20201229/model/AudioSegments.h
   )
 
 set(ams_src
-  src/v20201229/AmsClient.cpp
   src/v20200608/AmsClient.cpp
-  src/v20201229/model/TextResult.cpp
-  src/v20201229/model/DescribeTasksRequest.cpp
-  src/v20201229/model/AudioResultDetailSpeakerResult.cpp
-  src/v20201229/model/CreateAudioModerationSyncTaskRequest.cpp
-  src/v20201229/model/HitInfo.cpp
-  src/v20201229/model/CreateAudioModerationTaskResponse.cpp
-  src/v20201229/model/TaskResult.cpp
-  src/v20201229/model/CancelTaskRequest.cpp
-  src/v20201229/model/DescribeTaskDetailResponse.cpp
-  src/v20201229/model/CreateAudioModerationTaskRequest.cpp
-  src/v20201229/model/TaskInput.cpp
-  src/v20201229/model/LabelResults.cpp
-  src/v20201229/model/DescribeTaskDetailRequest.cpp
-  src/v20201229/model/CreateAudioModerationSyncTaskResponse.cpp
-  src/v20201229/model/User.cpp
-  src/v20201229/model/TaskLabel.cpp
-  src/v20201229/model/TaskFilter.cpp
-  src/v20201229/model/InputInfo.cpp
-  src/v20201229/model/StorageInfo.cpp
-  src/v20201229/model/DescribeTasksResponse.cpp
-  src/v20201229/model/AudioResultDetailLanguageResult.cpp
-  src/v20201229/model/RecognitionResult.cpp
-  src/v20201229/model/MoanResult.cpp
-  src/v20201229/model/Position.cpp
-  src/v20201229/model/CancelTaskResponse.cpp
-  src/v20201229/model/BucketInfo.cpp
-  src/v20201229/model/AudioResultDetailTextResult.cpp
-  src/v20201229/model/SpeakerResults.cpp
-  src/v20201229/model/TravelResults.cpp
-  src/v20201229/model/AudioResult.cpp
-  src/v20201229/model/AudioResultDetailMoanResult.cpp
-  src/v20201229/model/TaskData.cpp
-  src/v20201229/model/MediaInfo.cpp
-  src/v20201229/model/Tag.cpp
-  src/v20201229/model/AudioSegments.cpp
+  src/v20201229/AmsClient.cpp
   src/v20200608/model/ImageSegments.cpp
   src/v20200608/model/ImageResultResult.cpp
   src/v20200608/model/InputInfo.cpp
@@ -173,6 +138,41 @@ set(ams_src
   src/v20200608/model/EvilCount.cpp
   src/v20200608/model/ImageResultsResultDetailLocation.cpp
   src/v20200608/model/ImageResult.cpp
+  src/v20201229/model/TextResult.cpp
+  src/v20201229/model/DescribeTasksRequest.cpp
+  src/v20201229/model/AudioResultDetailSpeakerResult.cpp
+  src/v20201229/model/CreateAudioModerationSyncTaskRequest.cpp
+  src/v20201229/model/HitInfo.cpp
+  src/v20201229/model/CreateAudioModerationTaskResponse.cpp
+  src/v20201229/model/TaskResult.cpp
+  src/v20201229/model/CancelTaskRequest.cpp
+  src/v20201229/model/DescribeTaskDetailResponse.cpp
+  src/v20201229/model/CreateAudioModerationTaskRequest.cpp
+  src/v20201229/model/TaskInput.cpp
+  src/v20201229/model/LabelResults.cpp
+  src/v20201229/model/DescribeTaskDetailRequest.cpp
+  src/v20201229/model/CreateAudioModerationSyncTaskResponse.cpp
+  src/v20201229/model/User.cpp
+  src/v20201229/model/TaskLabel.cpp
+  src/v20201229/model/TaskFilter.cpp
+  src/v20201229/model/InputInfo.cpp
+  src/v20201229/model/StorageInfo.cpp
+  src/v20201229/model/DescribeTasksResponse.cpp
+  src/v20201229/model/AudioResultDetailLanguageResult.cpp
+  src/v20201229/model/RecognitionResult.cpp
+  src/v20201229/model/MoanResult.cpp
+  src/v20201229/model/Position.cpp
+  src/v20201229/model/CancelTaskResponse.cpp
+  src/v20201229/model/BucketInfo.cpp
+  src/v20201229/model/AudioResultDetailTextResult.cpp
+  src/v20201229/model/SpeakerResults.cpp
+  src/v20201229/model/TravelResults.cpp
+  src/v20201229/model/AudioResult.cpp
+  src/v20201229/model/AudioResultDetailMoanResult.cpp
+  src/v20201229/model/TaskData.cpp
+  src/v20201229/model/MediaInfo.cpp
+  src/v20201229/model/Tag.cpp
+  src/v20201229/model/AudioSegments.cpp
   )
 
 set(ams_include
@@ -201,9 +201,9 @@ target_link_libraries(ams
   core)
 
 #install(FILES ${ams_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/ams/v20200608)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/ams/v20201229)
 #install(FILES ${ams_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/ams/v20200608/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/ams/v20201229/model)
 install(DIRECTORY ${ams_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

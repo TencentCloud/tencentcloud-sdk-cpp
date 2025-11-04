@@ -410,15 +410,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取删除保护开关
-                     * @return DeletionProtection 删除保护开关
+                     * 获取集群删除保护开关，打开：true，关闭：false
+                     * @return DeletionProtection 集群删除保护开关，打开：true，关闭：false
                      * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
-                     * 设置删除保护开关
-                     * @param _deletionProtection 删除保护开关
+                     * 设置集群删除保护开关，打开：true，关闭：false
+                     * @param _deletionProtection 集群删除保护开关，打开：true，关闭：false
                      * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
@@ -431,15 +431,15 @@ namespace TencentCloud
                     bool DeletionProtectionHasBeenSet() const;
 
                     /**
-                     * 获取集群是否开启第三方节点支持
-                     * @return EnableExternalNode 集群是否开启第三方节点支持
+                     * 获取集群是否开启第三方节点支持，开启：true，关闭：false
+                     * @return EnableExternalNode 集群是否开启第三方节点支持，开启：true，关闭：false
                      * 
                      */
                     bool GetEnableExternalNode() const;
 
                     /**
-                     * 设置集群是否开启第三方节点支持
-                     * @param _enableExternalNode 集群是否开启第三方节点支持
+                     * 设置集群是否开启第三方节点支持，开启：true，关闭：false
+                     * @param _enableExternalNode 集群是否开启第三方节点支持，开启：true，关闭：false
                      * 
                      */
                     void SetEnableExternalNode(const bool& _enableExternalNode);
@@ -473,15 +473,15 @@ namespace TencentCloud
                     bool ClusterLevelHasBeenSet() const;
 
                     /**
-                     * 获取自动变配集群等级，针对托管集群生效
-                     * @return AutoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效
+                     * 获取自动变配集群等级，针对托管集群生效。开启：true，关闭：false
+                     * @return AutoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效。开启：true，关闭：false
                      * 
                      */
                     bool GetAutoUpgradeClusterLevel() const;
 
                     /**
-                     * 设置自动变配集群等级，针对托管集群生效
-                     * @param _autoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效
+                     * 设置自动变配集群等级，针对托管集群生效。开启：true，关闭：false
+                     * @param _autoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效。开启：true，关闭：false
                      * 
                      */
                     void SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel);
@@ -494,15 +494,15 @@ namespace TencentCloud
                     bool AutoUpgradeClusterLevelHasBeenSet() const;
 
                     /**
-                     * 获取是否开启QGPU共享
-                     * @return QGPUShareEnable 是否开启QGPU共享
+                     * 获取是否开启QGPU共享，开启：true，关闭：false
+                     * @return QGPUShareEnable 是否开启QGPU共享，开启：true，关闭：false
                      * 
                      */
                     bool GetQGPUShareEnable() const;
 
                     /**
-                     * 设置是否开启QGPU共享
-                     * @param _qGPUShareEnable 是否开启QGPU共享
+                     * 设置是否开启QGPU共享，开启：true，关闭：false
+                     * @param _qGPUShareEnable 是否开启QGPU共享，开启：true，关闭：false
                      * 
                      */
                     void SetQGPUShareEnable(const bool& _qGPUShareEnable);
@@ -683,13 +683,13 @@ namespace TencentCloud
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 删除保护开关
+                     * 集群删除保护开关，打开：true，关闭：false
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
 
                     /**
-                     * 集群是否开启第三方节点支持
+                     * 集群是否开启第三方节点支持，开启：true，关闭：false
                      */
                     bool m_enableExternalNode;
                     bool m_enableExternalNodeHasBeenSet;
@@ -701,13 +701,13 @@ namespace TencentCloud
                     bool m_clusterLevelHasBeenSet;
 
                     /**
-                     * 自动变配集群等级，针对托管集群生效
+                     * 自动变配集群等级，针对托管集群生效。开启：true，关闭：false
                      */
                     bool m_autoUpgradeClusterLevel;
                     bool m_autoUpgradeClusterLevelHasBeenSet;
 
                     /**
-                     * 是否开启QGPU共享
+                     * 是否开启QGPU共享，开启：true，关闭：false
                      */
                     bool m_qGPUShareEnable;
                     bool m_qGPUShareEnableHasBeenSet;

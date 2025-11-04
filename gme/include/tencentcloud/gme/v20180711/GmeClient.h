@@ -51,6 +51,8 @@
 #include <tencentcloud/gme/v20180711/model/DescribeApplicationDataResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeApplicationListRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeApplicationListResponse.h>
+#include <tencentcloud/gme/v20180711/model/DescribeAuditResultExternalRequest.h>
+#include <tencentcloud/gme/v20180711/model/DescribeAuditResultExternalResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRecordInfoRequest.h>
@@ -153,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApplicationListResponse> DescribeApplicationListOutcome;
                 typedef std::future<DescribeApplicationListOutcome> DescribeApplicationListOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeApplicationListRequest&, DescribeApplicationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditResultExternalResponse> DescribeAuditResultExternalOutcome;
+                typedef std::future<DescribeAuditResultExternalOutcome> DescribeAuditResultExternalOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DescribeAuditResultExternalRequest&, DescribeAuditResultExternalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditResultExternalAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRealtimeScanConfigResponse> DescribeRealtimeScanConfigOutcome;
                 typedef std::future<DescribeRealtimeScanConfigOutcome> DescribeRealtimeScanConfigOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeRealtimeScanConfigRequest&, DescribeRealtimeScanConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealtimeScanConfigAsyncHandler;
@@ -364,6 +369,15 @@ namespace TencentCloud
                 DescribeApplicationListOutcome DescribeApplicationList(const Model::DescribeApplicationListRequest &request);
                 void DescribeApplicationListAsync(const Model::DescribeApplicationListRequest& request, const DescribeApplicationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationListOutcomeCallable DescribeApplicationListCallable(const Model::DescribeApplicationListRequest& request);
+
+                /**
+                 *获审核结果明细（外部API）
+                 * @param req DescribeAuditResultExternalRequest
+                 * @return DescribeAuditResultExternalOutcome
+                 */
+                DescribeAuditResultExternalOutcome DescribeAuditResultExternal(const Model::DescribeAuditResultExternalRequest &request);
+                void DescribeAuditResultExternalAsync(const Model::DescribeAuditResultExternalRequest& request, const DescribeAuditResultExternalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditResultExternalOutcomeCallable DescribeAuditResultExternalCallable(const Model::DescribeAuditResultExternalRequest& request);
 
                 /**
                  *获取用户自定义送检信息。**接口使用前提**：目前 DescribeRealtimeScanConfig 接口通过白名单开放，如需使用，需要 [提交工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=438&level2_id=445&source=0&data_title=%E6%B8%B8%E6%88%8F%E5%A4%9A%E5%AA%92%E4%BD%93%E5%BC%95%E6%93%8EGME&step=1)。
@@ -641,7 +655,7 @@ namespace TencentCloud
                 /**
                  *启动AI对话任务，AI通道机器人进入GME房间，与房间内指定的成员进行AI对话，适用于智能客服，AI口语教师等场景
 
-GME AI对话功能内置语音转文本能力，同时提供通道服务，即客户可灵活指定第三方AI模型（LLM）服务和文本转音频（TTS)服务，更多[功能说明](https://cloud.tencent.com/document/product/647/108901)。
+GME AI对话功能内置语音转文本能力，同时提供通道服务，即客户可灵活指定第三方AI模型（LLM）服务和文本转音频（TTS）服务，更多[功能说明](https://cloud.tencent.com/document/product/647/108901)。
                  * @param req StartAIConversationRequest
                  * @return StartAIConversationOutcome
                  */

@@ -589,6 +589,111 @@ namespace TencentCloud
                      */
                     bool DataCompressModeHasBeenSet() const;
 
+                    /**
+                     * 获取重新调度功能，权重调为0开关，打开此开关，后端服务器权重调为0时触发重新调度。仅TCP/UDP监听器支持。
+                     * @return RescheduleTargetZeroWeight 重新调度功能，权重调为0开关，打开此开关，后端服务器权重调为0时触发重新调度。仅TCP/UDP监听器支持。
+                     * 
+                     */
+                    bool GetRescheduleTargetZeroWeight() const;
+
+                    /**
+                     * 设置重新调度功能，权重调为0开关，打开此开关，后端服务器权重调为0时触发重新调度。仅TCP/UDP监听器支持。
+                     * @param _rescheduleTargetZeroWeight 重新调度功能，权重调为0开关，打开此开关，后端服务器权重调为0时触发重新调度。仅TCP/UDP监听器支持。
+                     * 
+                     */
+                    void SetRescheduleTargetZeroWeight(const bool& _rescheduleTargetZeroWeight);
+
+                    /**
+                     * 判断参数 RescheduleTargetZeroWeight 是否已赋值
+                     * @return RescheduleTargetZeroWeight 是否已赋值
+                     * 
+                     */
+                    bool RescheduleTargetZeroWeightHasBeenSet() const;
+
+                    /**
+                     * 获取重新调度功能，健康检查异常开关，打开此开关，后端服务器健康检查异常时触发重新调度。仅TCP/UDP监听器支持。
+                     * @return RescheduleUnhealthy 重新调度功能，健康检查异常开关，打开此开关，后端服务器健康检查异常时触发重新调度。仅TCP/UDP监听器支持。
+                     * 
+                     */
+                    bool GetRescheduleUnhealthy() const;
+
+                    /**
+                     * 设置重新调度功能，健康检查异常开关，打开此开关，后端服务器健康检查异常时触发重新调度。仅TCP/UDP监听器支持。
+                     * @param _rescheduleUnhealthy 重新调度功能，健康检查异常开关，打开此开关，后端服务器健康检查异常时触发重新调度。仅TCP/UDP监听器支持。
+                     * 
+                     */
+                    void SetRescheduleUnhealthy(const bool& _rescheduleUnhealthy);
+
+                    /**
+                     * 判断参数 RescheduleUnhealthy 是否已赋值
+                     * @return RescheduleUnhealthy 是否已赋值
+                     * 
+                     */
+                    bool RescheduleUnhealthyHasBeenSet() const;
+
+                    /**
+                     * 获取重新调度功能，扩容后端服务开关，打开此开关，后端服务器增加或者减少时触发重新调度。仅TCP/UDP监听器支持。
+                     * @return RescheduleExpandTarget 重新调度功能，扩容后端服务开关，打开此开关，后端服务器增加或者减少时触发重新调度。仅TCP/UDP监听器支持。
+                     * 
+                     */
+                    bool GetRescheduleExpandTarget() const;
+
+                    /**
+                     * 设置重新调度功能，扩容后端服务开关，打开此开关，后端服务器增加或者减少时触发重新调度。仅TCP/UDP监听器支持。
+                     * @param _rescheduleExpandTarget 重新调度功能，扩容后端服务开关，打开此开关，后端服务器增加或者减少时触发重新调度。仅TCP/UDP监听器支持。
+                     * 
+                     */
+                    void SetRescheduleExpandTarget(const bool& _rescheduleExpandTarget);
+
+                    /**
+                     * 判断参数 RescheduleExpandTarget 是否已赋值
+                     * @return RescheduleExpandTarget 是否已赋值
+                     * 
+                     */
+                    bool RescheduleExpandTargetHasBeenSet() const;
+
+                    /**
+                     * 获取重新调度触发开始时间，取值0~3600s。仅TCP/UDP监听器支持。
+                     * @return RescheduleStartTime 重新调度触发开始时间，取值0~3600s。仅TCP/UDP监听器支持。
+                     * 
+                     */
+                    int64_t GetRescheduleStartTime() const;
+
+                    /**
+                     * 设置重新调度触发开始时间，取值0~3600s。仅TCP/UDP监听器支持。
+                     * @param _rescheduleStartTime 重新调度触发开始时间，取值0~3600s。仅TCP/UDP监听器支持。
+                     * 
+                     */
+                    void SetRescheduleStartTime(const int64_t& _rescheduleStartTime);
+
+                    /**
+                     * 判断参数 RescheduleStartTime 是否已赋值
+                     * @return RescheduleStartTime 是否已赋值
+                     * 
+                     */
+                    bool RescheduleStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。
+                     * @return RescheduleInterval 重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。
+                     * 
+                     */
+                    int64_t GetRescheduleInterval() const;
+
+                    /**
+                     * 设置重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。
+                     * @param _rescheduleInterval 重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。
+                     * 
+                     */
+                    void SetRescheduleInterval(const int64_t& _rescheduleInterval);
+
+                    /**
+                     * 判断参数 RescheduleInterval 是否已赋值
+                     * @return RescheduleInterval 是否已赋值
+                     * 
+                     */
+                    bool RescheduleIntervalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -744,6 +849,36 @@ namespace TencentCloud
                      */
                     std::string m_dataCompressMode;
                     bool m_dataCompressModeHasBeenSet;
+
+                    /**
+                     * 重新调度功能，权重调为0开关，打开此开关，后端服务器权重调为0时触发重新调度。仅TCP/UDP监听器支持。
+                     */
+                    bool m_rescheduleTargetZeroWeight;
+                    bool m_rescheduleTargetZeroWeightHasBeenSet;
+
+                    /**
+                     * 重新调度功能，健康检查异常开关，打开此开关，后端服务器健康检查异常时触发重新调度。仅TCP/UDP监听器支持。
+                     */
+                    bool m_rescheduleUnhealthy;
+                    bool m_rescheduleUnhealthyHasBeenSet;
+
+                    /**
+                     * 重新调度功能，扩容后端服务开关，打开此开关，后端服务器增加或者减少时触发重新调度。仅TCP/UDP监听器支持。
+                     */
+                    bool m_rescheduleExpandTarget;
+                    bool m_rescheduleExpandTargetHasBeenSet;
+
+                    /**
+                     * 重新调度触发开始时间，取值0~3600s。仅TCP/UDP监听器支持。
+                     */
+                    int64_t m_rescheduleStartTime;
+                    bool m_rescheduleStartTimeHasBeenSet;
+
+                    /**
+                     * 重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。
+                     */
+                    int64_t m_rescheduleInterval;
+                    bool m_rescheduleIntervalHasBeenSet;
 
                 };
             }

@@ -202,99 +202,123 @@ namespace TencentCloud
                     bool AsrHotWordsLibraryNameHasBeenSet() const;
 
                     /**
-                     * 获取智能字幕视频源语言
-当前支持以下语言：
-zh：简体中文
-en：英语
-ja：日语
-ko：韩语
-zh-PY：中英粤
-zh-medical：中文医疗
-yue：中文粤语
-vi：越南语
-ms：马来语
-id：印度尼西亚语
-fil：菲律宾语
-th：泰语
-pt：葡萄牙语
-tr：土耳其语
-ar：阿拉伯语
-es：西班牙语
-hi：印地语
-fr：法语
-de：德语
-zh_dialect：中文方言
-                     * @return VideoSrcLanguage 智能字幕视频源语言
-当前支持以下语言：
-zh：简体中文
-en：英语
-ja：日语
-ko：韩语
-zh-PY：中英粤
-zh-medical：中文医疗
-yue：中文粤语
-vi：越南语
-ms：马来语
-id：印度尼西亚语
-fil：菲律宾语
-th：泰语
-pt：葡萄牙语
-tr：土耳其语
-ar：阿拉伯语
-es：西班牙语
-hi：印地语
-fr：法语
-de：德语
-zh_dialect：中文方言
+                     * 获取智能字幕视频源语言列表：
+
+`zh`：简体中文
+`yue`：中文粵语
+`zh-PY`：中英粤
+`zh_medical`：中文医疗
+`zh_dialect`：中文方言
+`prime_zh`：中英方言
+`zh_en`：中英
+`en`：英语
+`ja`：日语
+`ko`：韩语
+`fr`：法语
+`es`：西班牙语
+`it`：意大利语
+`de`：德语
+`tr`：土耳其语
+`ru`：俄语
+`pt`：葡萄牙语（巴西）
+`pt-PT`：葡萄牙语（葡萄牙）
+`vi`：越南语
+`id`：印度尼西亚语
+`ms`：马来语
+`th`：泰语
+`ar`：阿拉伯语
+`hi`：印地语
+`fil`：菲律宾语
+`auto`：自动识别（仅在纯字幕翻译中支持）
+                     * @return VideoSrcLanguage 智能字幕视频源语言列表：
+
+`zh`：简体中文
+`yue`：中文粵语
+`zh-PY`：中英粤
+`zh_medical`：中文医疗
+`zh_dialect`：中文方言
+`prime_zh`：中英方言
+`zh_en`：中英
+`en`：英语
+`ja`：日语
+`ko`：韩语
+`fr`：法语
+`es`：西班牙语
+`it`：意大利语
+`de`：德语
+`tr`：土耳其语
+`ru`：俄语
+`pt`：葡萄牙语（巴西）
+`pt-PT`：葡萄牙语（葡萄牙）
+`vi`：越南语
+`id`：印度尼西亚语
+`ms`：马来语
+`th`：泰语
+`ar`：阿拉伯语
+`hi`：印地语
+`fil`：菲律宾语
+`auto`：自动识别（仅在纯字幕翻译中支持）
                      * 
                      */
                     std::string GetVideoSrcLanguage() const;
 
                     /**
-                     * 设置智能字幕视频源语言
-当前支持以下语言：
-zh：简体中文
-en：英语
-ja：日语
-ko：韩语
-zh-PY：中英粤
-zh-medical：中文医疗
-yue：中文粤语
-vi：越南语
-ms：马来语
-id：印度尼西亚语
-fil：菲律宾语
-th：泰语
-pt：葡萄牙语
-tr：土耳其语
-ar：阿拉伯语
-es：西班牙语
-hi：印地语
-fr：法语
-de：德语
-zh_dialect：中文方言
-                     * @param _videoSrcLanguage 智能字幕视频源语言
-当前支持以下语言：
-zh：简体中文
-en：英语
-ja：日语
-ko：韩语
-zh-PY：中英粤
-zh-medical：中文医疗
-yue：中文粤语
-vi：越南语
-ms：马来语
-id：印度尼西亚语
-fil：菲律宾语
-th：泰语
-pt：葡萄牙语
-tr：土耳其语
-ar：阿拉伯语
-es：西班牙语
-hi：印地语
-fr：法语
-de：德语
-zh_dialect：中文方言
+                     * 设置智能字幕视频源语言列表：
+
+`zh`：简体中文
+`yue`：中文粵语
+`zh-PY`：中英粤
+`zh_medical`：中文医疗
+`zh_dialect`：中文方言
+`prime_zh`：中英方言
+`zh_en`：中英
+`en`：英语
+`ja`：日语
+`ko`：韩语
+`fr`：法语
+`es`：西班牙语
+`it`：意大利语
+`de`：德语
+`tr`：土耳其语
+`ru`：俄语
+`pt`：葡萄牙语（巴西）
+`pt-PT`：葡萄牙语（葡萄牙）
+`vi`：越南语
+`id`：印度尼西亚语
+`ms`：马来语
+`th`：泰语
+`ar`：阿拉伯语
+`hi`：印地语
+`fil`：菲律宾语
+`auto`：自动识别（仅在纯字幕翻译中支持）
+                     * @param _videoSrcLanguage 智能字幕视频源语言列表：
+
+`zh`：简体中文
+`yue`：中文粵语
+`zh-PY`：中英粤
+`zh_medical`：中文医疗
+`zh_dialect`：中文方言
+`prime_zh`：中英方言
+`zh_en`：中英
+`en`：英语
+`ja`：日语
+`ko`：韩语
+`fr`：法语
+`es`：西班牙语
+`it`：意大利语
+`de`：德语
+`tr`：土耳其语
+`ru`：俄语
+`pt`：葡萄牙语（巴西）
+`pt-PT`：葡萄牙语（葡萄牙）
+`vi`：越南语
+`id`：印度尼西亚语
+`ms`：马来语
+`th`：泰语
+`ar`：阿拉伯语
+`hi`：印地语
+`fil`：菲律宾语
+`auto`：自动识别（仅在纯字幕翻译中支持）
                      * 
                      */
                     void SetVideoSrcLanguage(const std::string& _videoSrcLanguage);
@@ -308,12 +332,16 @@ zh_dialect：中文方言
 
                     /**
                      * 获取智能字幕文件格式
- vtt: WebVTT 格式
-不填或填空：不生成字幕文件
+- vtt: WebVTT 格式
+- srt: SRT格式
+- original：与源字幕文件一致（用于纯字幕翻译模版）
+- 不填或填空：不生成字幕文件
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubtitleFormat 智能字幕文件格式
- vtt: WebVTT 格式
-不填或填空：不生成字幕文件
+- vtt: WebVTT 格式
+- srt: SRT格式
+- original：与源字幕文件一致（用于纯字幕翻译模版）
+- 不填或填空：不生成字幕文件
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -321,12 +349,16 @@ zh_dialect：中文方言
 
                     /**
                      * 设置智能字幕文件格式
- vtt: WebVTT 格式
-不填或填空：不生成字幕文件
+- vtt: WebVTT 格式
+- srt: SRT格式
+- original：与源字幕文件一致（用于纯字幕翻译模版）
+- 不填或填空：不生成字幕文件
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subtitleFormat 智能字幕文件格式
- vtt: WebVTT 格式
-不填或填空：不生成字幕文件
+- vtt: WebVTT 格式
+- srt: SRT格式
+- original：与源字幕文件一致（用于纯字幕翻译模版）
+- 不填或填空：不生成字幕文件
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -416,45 +448,57 @@ OFF: 关闭翻译
                     /**
                      * 获取字幕翻译目标语言
 当TranslateSwitch为ON的时候生效
-当前支持以下语言：
-zh：简体中文
-en：英语
-ja：日语
-ko：韩语
-fr：法语
-es：西班牙语
-it：意大利语
-de：德语
-tr：土耳其语
-ru：俄语
-pt：葡萄牙语
-vi：越南语
-id：印度尼西亚语
-ms：马来语
-th：泰语
-ar：阿拉伯语
-hi：印地语
+`zh`：简体中文
+`zh-TW`：繁体中文
+`en`：英语
+`ja`：日语
+`ko`：韩语
+`fr`：法语
+`es`：西班牙语 
+`it`：意大利语
+`de`：德语
+`tr`：土耳其语
+`ru`：俄语
+`pt`：葡萄牙语（巴西）
+`pt-PT`：葡萄牙语（葡萄牙）
+`vi`：越南语
+`id`：印度尼西亚语 
+`ms`：马来语
+`th`：泰语
+`ar`：阿拉伯语
+`hi`：印地语
+`fil`：菲律宾语
+
+
+**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranslateDstLanguage 字幕翻译目标语言
 当TranslateSwitch为ON的时候生效
-当前支持以下语言：
-zh：简体中文
-en：英语
-ja：日语
-ko：韩语
-fr：法语
-es：西班牙语
-it：意大利语
-de：德语
-tr：土耳其语
-ru：俄语
-pt：葡萄牙语
-vi：越南语
-id：印度尼西亚语
-ms：马来语
-th：泰语
-ar：阿拉伯语
-hi：印地语
+`zh`：简体中文
+`zh-TW`：繁体中文
+`en`：英语
+`ja`：日语
+`ko`：韩语
+`fr`：法语
+`es`：西班牙语 
+`it`：意大利语
+`de`：德语
+`tr`：土耳其语
+`ru`：俄语
+`pt`：葡萄牙语（巴西）
+`pt-PT`：葡萄牙语（葡萄牙）
+`vi`：越南语
+`id`：印度尼西亚语 
+`ms`：马来语
+`th`：泰语
+`ar`：阿拉伯语
+`hi`：印地语
+`fil`：菲律宾语
+
+
+**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -463,45 +507,57 @@ hi：印地语
                     /**
                      * 设置字幕翻译目标语言
 当TranslateSwitch为ON的时候生效
-当前支持以下语言：
-zh：简体中文
-en：英语
-ja：日语
-ko：韩语
-fr：法语
-es：西班牙语
-it：意大利语
-de：德语
-tr：土耳其语
-ru：俄语
-pt：葡萄牙语
-vi：越南语
-id：印度尼西亚语
-ms：马来语
-th：泰语
-ar：阿拉伯语
-hi：印地语
+`zh`：简体中文
+`zh-TW`：繁体中文
+`en`：英语
+`ja`：日语
+`ko`：韩语
+`fr`：法语
+`es`：西班牙语 
+`it`：意大利语
+`de`：德语
+`tr`：土耳其语
+`ru`：俄语
+`pt`：葡萄牙语（巴西）
+`pt-PT`：葡萄牙语（葡萄牙）
+`vi`：越南语
+`id`：印度尼西亚语 
+`ms`：马来语
+`th`：泰语
+`ar`：阿拉伯语
+`hi`：印地语
+`fil`：菲律宾语
+
+
+**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _translateDstLanguage 字幕翻译目标语言
 当TranslateSwitch为ON的时候生效
-当前支持以下语言：
-zh：简体中文
-en：英语
-ja：日语
-ko：韩语
-fr：法语
-es：西班牙语
-it：意大利语
-de：德语
-tr：土耳其语
-ru：俄语
-pt：葡萄牙语
-vi：越南语
-id：印度尼西亚语
-ms：马来语
-th：泰语
-ar：阿拉伯语
-hi：印地语
+`zh`：简体中文
+`zh-TW`：繁体中文
+`en`：英语
+`ja`：日语
+`ko`：韩语
+`fr`：法语
+`es`：西班牙语 
+`it`：意大利语
+`de`：德语
+`tr`：土耳其语
+`ru`：俄语
+`pt`：葡萄牙语（巴西）
+`pt-PT`：葡萄牙语（葡萄牙）
+`vi`：越南语
+`id`：印度尼西亚语 
+`ms`：马来语
+`th`：泰语
+`ar`：阿拉伯语
+`hi`：印地语
+`fil`：菲律宾语
+
+
+**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -581,6 +637,35 @@ hi：印地语
                      */
                     bool AliasNameHasBeenSet() const;
 
+                    /**
+                     * 获取字幕处理类型：
+- 0：ASR识别字幕
+- 1：纯字幕翻译
+                     * @return ProcessType 字幕处理类型：
+- 0：ASR识别字幕
+- 1：纯字幕翻译
+                     * 
+                     */
+                    uint64_t GetProcessType() const;
+
+                    /**
+                     * 设置字幕处理类型：
+- 0：ASR识别字幕
+- 1：纯字幕翻译
+                     * @param _processType 字幕处理类型：
+- 0：ASR识别字幕
+- 1：纯字幕翻译
+                     * 
+                     */
+                    void SetProcessType(const uint64_t& _processType);
+
+                    /**
+                     * 判断参数 ProcessType 是否已赋值
+                     * @return ProcessType 是否已赋值
+                     * 
+                     */
+                    bool ProcessTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -627,36 +712,44 @@ hi：印地语
                     bool m_asrHotWordsLibraryNameHasBeenSet;
 
                     /**
-                     * 智能字幕视频源语言
-当前支持以下语言：
-zh：简体中文
-en：英语
-ja：日语
-ko：韩语
-zh-PY：中英粤
-zh-medical：中文医疗
-yue：中文粤语
-vi：越南语
-ms：马来语
-id：印度尼西亚语
-fil：菲律宾语
-th：泰语
-pt：葡萄牙语
-tr：土耳其语
-ar：阿拉伯语
-es：西班牙语
-hi：印地语
-fr：法语
-de：德语
-zh_dialect：中文方言
+                     * 智能字幕视频源语言列表：
+
+`zh`：简体中文
+`yue`：中文粵语
+`zh-PY`：中英粤
+`zh_medical`：中文医疗
+`zh_dialect`：中文方言
+`prime_zh`：中英方言
+`zh_en`：中英
+`en`：英语
+`ja`：日语
+`ko`：韩语
+`fr`：法语
+`es`：西班牙语
+`it`：意大利语
+`de`：德语
+`tr`：土耳其语
+`ru`：俄语
+`pt`：葡萄牙语（巴西）
+`pt-PT`：葡萄牙语（葡萄牙）
+`vi`：越南语
+`id`：印度尼西亚语
+`ms`：马来语
+`th`：泰语
+`ar`：阿拉伯语
+`hi`：印地语
+`fil`：菲律宾语
+`auto`：自动识别（仅在纯字幕翻译中支持）
                      */
                     std::string m_videoSrcLanguage;
                     bool m_videoSrcLanguageHasBeenSet;
 
                     /**
                      * 智能字幕文件格式
- vtt: WebVTT 格式
-不填或填空：不生成字幕文件
+- vtt: WebVTT 格式
+- srt: SRT格式
+- original：与源字幕文件一致（用于纯字幕翻译模版）
+- 不填或填空：不生成字幕文件
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subtitleFormat;
@@ -685,24 +778,30 @@ OFF: 关闭翻译
                     /**
                      * 字幕翻译目标语言
 当TranslateSwitch为ON的时候生效
-当前支持以下语言：
-zh：简体中文
-en：英语
-ja：日语
-ko：韩语
-fr：法语
-es：西班牙语
-it：意大利语
-de：德语
-tr：土耳其语
-ru：俄语
-pt：葡萄牙语
-vi：越南语
-id：印度尼西亚语
-ms：马来语
-th：泰语
-ar：阿拉伯语
-hi：印地语
+`zh`：简体中文
+`zh-TW`：繁体中文
+`en`：英语
+`ja`：日语
+`ko`：韩语
+`fr`：法语
+`es`：西班牙语 
+`it`：意大利语
+`de`：德语
+`tr`：土耳其语
+`ru`：俄语
+`pt`：葡萄牙语（巴西）
+`pt-PT`：葡萄牙语（葡萄牙）
+`vi`：越南语
+`id`：印度尼西亚语 
+`ms`：马来语
+`th`：泰语
+`ar`：阿拉伯语
+`hi`：印地语
+`fil`：菲律宾语
+
+
+**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_translateDstLanguage;
@@ -726,6 +825,14 @@ hi：印地语
                      */
                     std::string m_aliasName;
                     bool m_aliasNameHasBeenSet;
+
+                    /**
+                     * 字幕处理类型：
+- 0：ASR识别字幕
+- 1：纯字幕翻译
+                     */
+                    uint64_t m_processType;
+                    bool m_processTypeHasBeenSet;
 
                 };
             }

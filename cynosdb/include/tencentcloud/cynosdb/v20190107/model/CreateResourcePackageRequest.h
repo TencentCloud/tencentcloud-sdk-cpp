@@ -131,15 +131,15 @@ base-基础版本，common-通用版本，enterprise-企业版本
                     bool PackageVersionHasBeenSet() const;
 
                     /**
-                     * 获取资源包大小，计算资源单位：万个；存储资源：GB
-                     * @return PackageSpec 资源包大小，计算资源单位：万个；存储资源：GB
+                     * 获取资源包大小，计算资源单位：个；存储资源：GB
+                     * @return PackageSpec 资源包大小，计算资源单位：个；存储资源：GB
                      * 
                      */
                     double GetPackageSpec() const;
 
                     /**
-                     * 设置资源包大小，计算资源单位：万个；存储资源：GB
-                     * @param _packageSpec 资源包大小，计算资源单位：万个；存储资源：GB
+                     * 设置资源包大小，计算资源单位：个；存储资源：GB
+                     * @param _packageSpec 资源包大小，计算资源单位：个；存储资源：GB
                      * 
                      */
                     void SetPackageSpec(const double& _packageSpec);
@@ -242,7 +242,7 @@ base-基础版本，common-通用版本，enterprise-企业版本
                     bool m_packageVersionHasBeenSet;
 
                     /**
-                     * 资源包大小，计算资源单位：万个；存储资源：GB
+                     * 资源包大小，计算资源单位：个；存储资源：GB
                      */
                     double m_packageSpec;
                     bool m_packageSpecHasBeenSet;

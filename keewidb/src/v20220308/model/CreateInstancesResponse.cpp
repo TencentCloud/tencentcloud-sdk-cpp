@@ -25,7 +25,8 @@ using namespace std;
 
 CreateInstancesResponse::CreateInstancesResponse() :
     m_dealIdHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_dealNameHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,16 @@ CoreInternalOutcome CreateInstancesResponse::Deserialize(const string &payload)
         m_instanceIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DealName") && !rsp["DealName"].IsNull())
+    {
+        if (!rsp["DealName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DealName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealName = string(rsp["DealName"].GetString());
+        m_dealNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +126,14 @@ string CreateInstancesResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_dealNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +166,16 @@ vector<string> CreateInstancesResponse::GetInstanceIds() const
 bool CreateInstancesResponse::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string CreateInstancesResponse::GetDealName() const
+{
+    return m_dealName;
+}
+
+bool CreateInstancesResponse::DealNameHasBeenSet() const
+{
+    return m_dealNameHasBeenSet;
 }
 
 

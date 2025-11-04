@@ -30,7 +30,8 @@ CreateSmartSubtitleTemplateRequest::CreateSmartSubtitleTemplateRequest() :
     m_subtitleFormatHasBeenSet(false),
     m_asrHotWordsConfigureHasBeenSet(false),
     m_translateSwitchHasBeenSet(false),
-    m_translateDstLanguageHasBeenSet(false)
+    m_translateDstLanguageHasBeenSet(false),
+    m_processTypeHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string CreateSmartSubtitleTemplateRequest::ToJsonString() const
         string key = "TranslateDstLanguage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_translateDstLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_processType, allocator);
     }
 
 
@@ -240,6 +249,22 @@ void CreateSmartSubtitleTemplateRequest::SetTranslateDstLanguage(const string& _
 bool CreateSmartSubtitleTemplateRequest::TranslateDstLanguageHasBeenSet() const
 {
     return m_translateDstLanguageHasBeenSet;
+}
+
+uint64_t CreateSmartSubtitleTemplateRequest::GetProcessType() const
+{
+    return m_processType;
+}
+
+void CreateSmartSubtitleTemplateRequest::SetProcessType(const uint64_t& _processType)
+{
+    m_processType = _processType;
+    m_processTypeHasBeenSet = true;
+}
+
+bool CreateSmartSubtitleTemplateRequest::ProcessTypeHasBeenSet() const
+{
+    return m_processTypeHasBeenSet;
 }
 
 

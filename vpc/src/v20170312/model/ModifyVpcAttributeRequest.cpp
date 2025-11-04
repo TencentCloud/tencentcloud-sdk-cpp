@@ -28,6 +28,7 @@ ModifyVpcAttributeRequest::ModifyVpcAttributeRequest() :
     m_enableMulticastHasBeenSet(false),
     m_dnsServersHasBeenSet(false),
     m_domainNameHasBeenSet(false),
+    m_enableRouteVpcPublishHasBeenSet(false),
     m_enableCdcPublishHasBeenSet(false)
 {
 }
@@ -82,6 +83,14 @@ string ModifyVpcAttributeRequest::ToJsonString() const
         string key = "DomainName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableRouteVpcPublishHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRouteVpcPublish";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableRouteVpcPublish, allocator);
     }
 
     if (m_enableCdcPublishHasBeenSet)
@@ -178,6 +187,22 @@ void ModifyVpcAttributeRequest::SetDomainName(const string& _domainName)
 bool ModifyVpcAttributeRequest::DomainNameHasBeenSet() const
 {
     return m_domainNameHasBeenSet;
+}
+
+bool ModifyVpcAttributeRequest::GetEnableRouteVpcPublish() const
+{
+    return m_enableRouteVpcPublish;
+}
+
+void ModifyVpcAttributeRequest::SetEnableRouteVpcPublish(const bool& _enableRouteVpcPublish)
+{
+    m_enableRouteVpcPublish = _enableRouteVpcPublish;
+    m_enableRouteVpcPublishHasBeenSet = true;
+}
+
+bool ModifyVpcAttributeRequest::EnableRouteVpcPublishHasBeenSet() const
+{
+    return m_enableRouteVpcPublishHasBeenSet;
 }
 
 bool ModifyVpcAttributeRequest::GetEnableCdcPublish() const

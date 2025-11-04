@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾
+                     * @return Name 名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾
+                     * @param _name 名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -483,7 +483,7 @@ namespace TencentCloud
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 名称
+                     * 名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

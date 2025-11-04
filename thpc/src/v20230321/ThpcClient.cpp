@@ -1029,6 +1029,49 @@ ThpcClient::DetachNodesOutcomeCallable ThpcClient::DetachNodesCallable(const Det
     return task->get_future();
 }
 
+ThpcClient::ModifyClusterDeletionProtectionOutcome ThpcClient::ModifyClusterDeletionProtection(const ModifyClusterDeletionProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterDeletionProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterDeletionProtectionResponse rsp = ModifyClusterDeletionProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterDeletionProtectionOutcome(rsp);
+        else
+            return ModifyClusterDeletionProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterDeletionProtectionOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::ModifyClusterDeletionProtectionAsync(const ModifyClusterDeletionProtectionRequest& request, const ModifyClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterDeletionProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::ModifyClusterDeletionProtectionOutcomeCallable ThpcClient::ModifyClusterDeletionProtectionCallable(const ModifyClusterDeletionProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterDeletionProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterDeletionProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::ModifyInitNodeScriptsOutcome ThpcClient::ModifyInitNodeScripts(const ModifyInitNodeScriptsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInitNodeScripts");

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取节点id
-                     * @return InstanceIds 节点id
+                     * 获取节点id，获取参考 https://cloud.tencent.com/document/product/213/15728
+                     * @return InstanceIds 节点id，获取参考 https://cloud.tencent.com/document/product/213/15728
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置节点id
-                     * @param _instanceIds 节点id
+                     * 设置节点id，获取参考 https://cloud.tencent.com/document/product/213/15728
+                     * @param _instanceIds 节点id，获取参考 https://cloud.tencent.com/document/product/213/15728
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 节点id
+                     * 节点id，获取参考 https://cloud.tencent.com/document/product/213/15728
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

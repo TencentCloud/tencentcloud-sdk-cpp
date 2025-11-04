@@ -298,6 +298,49 @@ TkeClient::DescribeClusterInstancesOutcomeCallable TkeClient::DescribeClusterIns
     return task->get_future();
 }
 
+TkeClient::DescribeClustersOutcome TkeClient::DescribeClusters(const DescribeClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClustersResponse rsp = DescribeClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClustersOutcome(rsp);
+        else
+            return DescribeClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClustersOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClustersOutcomeCallable TkeClient::DescribeClustersCallable(const DescribeClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeHealthCheckPoliciesOutcome TkeClient::DescribeHealthCheckPolicies(const DescribeHealthCheckPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHealthCheckPolicies");

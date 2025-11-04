@@ -27,7 +27,8 @@ RawSmartSubtitleParameter::RawSmartSubtitleParameter() :
     m_translateSwitchHasBeenSet(false),
     m_translateDstLanguageHasBeenSet(false),
     m_asrHotWordsConfigureHasBeenSet(false),
-    m_extInfoHasBeenSet(false)
+    m_extInfoHasBeenSet(false),
+    m_processTypeHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,16 @@ CoreInternalOutcome RawSmartSubtitleParameter::Deserialize(const rapidjson::Valu
         m_extInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ProcessType") && !value["ProcessType"].IsNull())
+    {
+        if (!value["ProcessType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RawSmartSubtitleParameter.ProcessType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_processType = value["ProcessType"].GetUint64();
+        m_processTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void RawSmartSubtitleParameter::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "ExtInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processType, allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void RawSmartSubtitleParameter::SetExtInfo(const string& _extInfo)
 bool RawSmartSubtitleParameter::ExtInfoHasBeenSet() const
 {
     return m_extInfoHasBeenSet;
+}
+
+uint64_t RawSmartSubtitleParameter::GetProcessType() const
+{
+    return m_processType;
+}
+
+void RawSmartSubtitleParameter::SetProcessType(const uint64_t& _processType)
+{
+    m_processType = _processType;
+    m_processTypeHasBeenSet = true;
+}
+
+bool RawSmartSubtitleParameter::ProcessTypeHasBeenSet() const
+{
+    return m_processTypeHasBeenSet;
 }
 

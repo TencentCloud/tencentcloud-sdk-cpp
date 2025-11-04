@@ -22,7 +22,8 @@
 using namespace TencentCloud::Thpc::V20230321::Model;
 using namespace std;
 
-DescribeJobsOverviewRequest::DescribeJobsOverviewRequest()
+DescribeJobsOverviewRequest::DescribeJobsOverviewRequest() :
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeJobsOverviewRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeJobsOverviewRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeJobsOverviewRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeJobsOverviewRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeJobsOverviewRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
 
 

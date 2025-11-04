@@ -159,6 +159,31 @@ namespace TencentCloud
                      */
                     bool FullMatchHasBeenSet() const;
 
+                    /**
+                     * 获取pattern是否支持正则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Regex pattern是否支持正则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetRegex() const;
+
+                    /**
+                     * 设置pattern是否支持正则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _regex pattern是否支持正则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegex(const bool& _regex);
+
+                    /**
+                     * 判断参数 Regex 是否已赋值
+                     * @return Regex 是否已赋值
+                     * 
+                     */
+                    bool RegexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +217,13 @@ namespace TencentCloud
                      */
                     bool m_fullMatch;
                     bool m_fullMatchHasBeenSet;
+
+                    /**
+                     * pattern是否支持正则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_regex;
+                    bool m_regexHasBeenSet;
 
                 };
             }

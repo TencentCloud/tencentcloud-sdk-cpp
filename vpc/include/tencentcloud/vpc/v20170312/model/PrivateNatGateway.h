@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool DirectConnectGatewayIdsHasBeenSet() const;
 
                     /**
-                     * 获取私网网关类型
-                     * @return NatType 私网网关类型
+                     * 获取私网网关类型。可选类型："DCG","VPC","CCN"，分别对应专线网关、私有网络、云联网。
+                     * @return NatType 私网网关类型。可选类型："DCG","VPC","CCN"，分别对应专线网关、私有网络、云联网。
                      * 
                      */
                     std::string GetNatType() const;
 
                     /**
-                     * 设置私网网关类型
-                     * @param _natType 私网网关类型
+                     * 设置私网网关类型。可选类型："DCG","VPC","CCN"，分别对应专线网关、私有网络、云联网。
+                     * @param _natType 私网网关类型。可选类型："DCG","VPC","CCN"，分别对应专线网关、私有网络、云联网。
                      * 
                      */
                     void SetNatType(const std::string& _natType);
@@ -372,7 +372,7 @@ namespace TencentCloud
                     bool m_directConnectGatewayIdsHasBeenSet;
 
                     /**
-                     * 私网网关类型
+                     * 私网网关类型。可选类型："DCG","VPC","CCN"，分别对应专线网关、私有网络、云联网。
                      */
                     std::string m_natType;
                     bool m_natTypeHasBeenSet;

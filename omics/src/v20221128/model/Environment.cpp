@@ -33,7 +33,8 @@ Environment::Environment() :
     m_messageHasBeenSet(false),
     m_resourceIdsHasBeenSet(false),
     m_lastWorkflowUuidHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_runtimeConfigHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,23 @@ CoreInternalOutcome Environment::Deserialize(const rapidjson::Value &value)
         m_creationTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RuntimeConfig") && !value["RuntimeConfig"].IsNull())
+    {
+        if (!value["RuntimeConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Environment.RuntimeConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_runtimeConfig.Deserialize(value["RuntimeConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_runtimeConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +307,15 @@ void Environment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CreationTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creationTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runtimeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_runtimeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -500,5 +527,21 @@ void Environment::SetCreationTime(const string& _creationTime)
 bool Environment::CreationTimeHasBeenSet() const
 {
     return m_creationTimeHasBeenSet;
+}
+
+EnvironmentRuntimeConfig Environment::GetRuntimeConfig() const
+{
+    return m_runtimeConfig;
+}
+
+void Environment::SetRuntimeConfig(const EnvironmentRuntimeConfig& _runtimeConfig)
+{
+    m_runtimeConfig = _runtimeConfig;
+    m_runtimeConfigHasBeenSet = true;
+}
+
+bool Environment::RuntimeConfigHasBeenSet() const
+{
+    return m_runtimeConfigHasBeenSet;
 }
 

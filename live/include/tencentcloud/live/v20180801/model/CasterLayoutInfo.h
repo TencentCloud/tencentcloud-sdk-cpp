@@ -71,11 +71,11 @@ namespace TencentCloud
                     /**
                      * 获取布局模板Id。
 有效值[1，20，21，31，32，41]
-当使用布局模版时，无需LayoutParams参数，导播台将使用模版布局参数。
+当使用布局模板时，无需LayoutParams参数，导播台将使用模板布局参数。
 
                      * @return LayoutTemplateId 布局模板Id。
 有效值[1，20，21，31，32，41]
-当使用布局模版时，无需LayoutParams参数，导播台将使用模版布局参数。
+当使用布局模板时，无需LayoutParams参数，导播台将使用模板布局参数。
 
                      * 
                      */
@@ -84,11 +84,11 @@ namespace TencentCloud
                     /**
                      * 设置布局模板Id。
 有效值[1，20，21，31，32，41]
-当使用布局模版时，无需LayoutParams参数，导播台将使用模版布局参数。
+当使用布局模板时，无需LayoutParams参数，导播台将使用模板布局参数。
 
                      * @param _layoutTemplateId 布局模板Id。
 有效值[1，20，21，31，32，41]
-当使用布局模版时，无需LayoutParams参数，导播台将使用模版布局参数。
+当使用布局模板时，无需LayoutParams参数，导播台将使用模板布局参数。
 
                      * 
                      */
@@ -212,7 +212,7 @@ namespace TencentCloud
                     /**
                      * 布局模板Id。
 有效值[1，20，21，31，32，41]
-当使用布局模版时，无需LayoutParams参数，导播台将使用模版布局参数。
+当使用布局模板时，无需LayoutParams参数，导播台将使用模板布局参数。
 
                      */
                     int64_t m_layoutTemplateId;

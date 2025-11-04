@@ -28,7 +28,8 @@ CreateVpcRequest::CreateVpcRequest() :
     m_enableMulticastHasBeenSet(false),
     m_dnsServersHasBeenSet(false),
     m_domainNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableRouteVpcPublishHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string CreateVpcRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableRouteVpcPublishHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRouteVpcPublish";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableRouteVpcPublish, allocator);
     }
 
 
@@ -201,6 +210,22 @@ void CreateVpcRequest::SetTags(const vector<Tag>& _tags)
 bool CreateVpcRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool CreateVpcRequest::GetEnableRouteVpcPublish() const
+{
+    return m_enableRouteVpcPublish;
+}
+
+void CreateVpcRequest::SetEnableRouteVpcPublish(const bool& _enableRouteVpcPublish)
+{
+    m_enableRouteVpcPublish = _enableRouteVpcPublish;
+    m_enableRouteVpcPublishHasBeenSet = true;
+}
+
+bool CreateVpcRequest::EnableRouteVpcPublishHasBeenSet() const
+{
+    return m_enableRouteVpcPublishHasBeenSet;
 }
 
 

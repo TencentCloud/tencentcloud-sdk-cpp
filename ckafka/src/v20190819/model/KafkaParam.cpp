@@ -39,7 +39,9 @@ KafkaParam::KafkaParam() :
     m_msgMultipleHasBeenSet(false),
     m_connectorSyncTypeHasBeenSet(false),
     m_keepPartitionHasBeenSet(false),
-    m_topicRegularExpressionHasBeenSet(false)
+    m_topicRegularExpressionHasBeenSet(false),
+    m_prefixHasBeenSet(false),
+    m_separatorHasBeenSet(false)
 {
 }
 
@@ -248,6 +250,26 @@ CoreInternalOutcome KafkaParam::Deserialize(const rapidjson::Value &value)
         m_topicRegularExpressionHasBeenSet = true;
     }
 
+    if (value.HasMember("Prefix") && !value["Prefix"].IsNull())
+    {
+        if (!value["Prefix"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaParam.Prefix` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_prefix = string(value["Prefix"].GetString());
+        m_prefixHasBeenSet = true;
+    }
+
+    if (value.HasMember("Separator") && !value["Separator"].IsNull())
+    {
+        if (!value["Separator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaParam.Separator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_separator = string(value["Separator"].GetString());
+        m_separatorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +434,22 @@ void KafkaParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "TopicRegularExpression";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_topicRegularExpression.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_prefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Prefix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_prefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_separatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Separator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_separator.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -719,5 +757,37 @@ void KafkaParam::SetTopicRegularExpression(const string& _topicRegularExpression
 bool KafkaParam::TopicRegularExpressionHasBeenSet() const
 {
     return m_topicRegularExpressionHasBeenSet;
+}
+
+string KafkaParam::GetPrefix() const
+{
+    return m_prefix;
+}
+
+void KafkaParam::SetPrefix(const string& _prefix)
+{
+    m_prefix = _prefix;
+    m_prefixHasBeenSet = true;
+}
+
+bool KafkaParam::PrefixHasBeenSet() const
+{
+    return m_prefixHasBeenSet;
+}
+
+string KafkaParam::GetSeparator() const
+{
+    return m_separator;
+}
+
+void KafkaParam::SetSeparator(const string& _separator)
+{
+    m_separator = _separator;
+    m_separatorHasBeenSet = true;
+}
+
+bool KafkaParam::SeparatorHasBeenSet() const
+{
+    return m_separatorHasBeenSet;
 }
 

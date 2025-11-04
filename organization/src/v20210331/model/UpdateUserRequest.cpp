@@ -29,7 +29,8 @@ UpdateUserRequest::UpdateUserRequest() :
     m_newLastNameHasBeenSet(false),
     m_newDisplayNameHasBeenSet(false),
     m_newDescriptionHasBeenSet(false),
-    m_newEmailHasBeenSet(false)
+    m_newEmailHasBeenSet(false),
+    m_needResetPasswordHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string UpdateUserRequest::ToJsonString() const
         string key = "NewEmail";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_newEmail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needResetPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedResetPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needResetPassword, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void UpdateUserRequest::SetNewEmail(const string& _newEmail)
 bool UpdateUserRequest::NewEmailHasBeenSet() const
 {
     return m_newEmailHasBeenSet;
+}
+
+bool UpdateUserRequest::GetNeedResetPassword() const
+{
+    return m_needResetPassword;
+}
+
+void UpdateUserRequest::SetNeedResetPassword(const bool& _needResetPassword)
+{
+    m_needResetPassword = _needResetPassword;
+    m_needResetPasswordHasBeenSet = true;
+}
+
+bool UpdateUserRequest::NeedResetPasswordHasBeenSet() const
+{
+    return m_needResetPasswordHasBeenSet;
 }
 
 

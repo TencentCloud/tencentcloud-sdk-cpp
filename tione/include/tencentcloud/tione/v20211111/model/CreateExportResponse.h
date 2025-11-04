@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取日志下载任务的ID
+                     * @return ExportId 日志下载任务的ID
+                     * 
+                     */
+                    std::string GetExportId() const;
+
+                    /**
+                     * 判断参数 ExportId 是否已赋值
+                     * @return ExportId 是否已赋值
+                     * 
+                     */
+                    bool ExportIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 日志下载任务的ID
+                     */
+                    std::string m_exportId;
+                    bool m_exportIdHasBeenSet;
 
                 };
             }

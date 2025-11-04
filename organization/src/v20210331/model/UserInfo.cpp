@@ -33,7 +33,8 @@ UserInfo::UserInfo() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_isSelectedHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_needResetPasswordHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_passwordHasBeenSet = true;
     }
 
+    if (value.HasMember("NeedResetPassword") && !value["NeedResetPassword"].IsNull())
+    {
+        if (!value["NeedResetPassword"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserInfo.NeedResetPassword` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_needResetPassword = value["NeedResetPassword"].GetBool();
+        m_needResetPasswordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needResetPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedResetPassword";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needResetPassword, allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void UserInfo::SetPassword(const string& _password)
 bool UserInfo::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+bool UserInfo::GetNeedResetPassword() const
+{
+    return m_needResetPassword;
+}
+
+void UserInfo::SetNeedResetPassword(const bool& _needResetPassword)
+{
+    m_needResetPassword = _needResetPassword;
+    m_needResetPasswordHasBeenSet = true;
+}
+
+bool UserInfo::NeedResetPasswordHasBeenSet() const
+{
+    return m_needResetPasswordHasBeenSet;
 }
 

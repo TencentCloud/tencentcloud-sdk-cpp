@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StorageRegionHasBeenSet() const;
 
                     /**
-                     * 获取对象存储桶名称，如果是COS必须是tke-backup前缀开头
-                     * @return Bucket 对象存储桶名称，如果是COS必须是tke-backup前缀开头
+                     * 获取对象存储桶名称，如果是COS必须是tke-backup前缀开头，字符长度是19
+                     * @return Bucket 对象存储桶名称，如果是COS必须是tke-backup前缀开头，字符长度是19
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置对象存储桶名称，如果是COS必须是tke-backup前缀开头
-                     * @param _bucket 对象存储桶名称，如果是COS必须是tke-backup前缀开头
+                     * 设置对象存储桶名称，如果是COS必须是tke-backup前缀开头，字符长度是19
+                     * @param _bucket 对象存储桶名称，如果是COS必须是tke-backup前缀开头，字符长度是19
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取备份仓库名称
-                     * @return Name 备份仓库名称
+                     * 获取备份仓库名称，字符长度为63
+                     * @return Name 备份仓库名称，字符长度为63
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置备份仓库名称
-                     * @param _name 备份仓库名称
+                     * 设置备份仓库名称，字符长度为63
+                     * @param _name 备份仓库名称，字符长度为63
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -156,13 +156,13 @@ namespace TencentCloud
                     bool m_storageRegionHasBeenSet;
 
                     /**
-                     * 对象存储桶名称，如果是COS必须是tke-backup前缀开头
+                     * 对象存储桶名称，如果是COS必须是tke-backup前缀开头，字符长度是19
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * 备份仓库名称
+                     * 备份仓库名称，字符长度为63
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

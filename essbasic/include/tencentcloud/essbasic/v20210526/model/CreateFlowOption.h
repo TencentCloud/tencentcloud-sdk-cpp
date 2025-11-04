@@ -378,6 +378,143 @@ namespace TencentCloud
                      */
                     bool ForbidEditWatermarkHasBeenSet() const;
 
+                    /**
+                     * 获取发起成功后是否预览合同
+<ul><li>（默认） false -否</li> <li> true - 展示预览按钮</li></ul>
+                     * @return PreviewAfterStart 发起成功后是否预览合同
+<ul><li>（默认） false -否</li> <li> true - 展示预览按钮</li></ul>
+                     * 
+                     */
+                    bool GetPreviewAfterStart() const;
+
+                    /**
+                     * 设置发起成功后是否预览合同
+<ul><li>（默认） false -否</li> <li> true - 展示预览按钮</li></ul>
+                     * @param _previewAfterStart 发起成功后是否预览合同
+<ul><li>（默认） false -否</li> <li> true - 展示预览按钮</li></ul>
+                     * 
+                     */
+                    void SetPreviewAfterStart(const bool& _previewAfterStart);
+
+                    /**
+                     * 判断参数 PreviewAfterStart 是否已赋值
+                     * @return PreviewAfterStart 是否已赋值
+                     * 
+                     */
+                    bool PreviewAfterStartHasBeenSet() const;
+
+                    /**
+                     * 获取发起成功之后是否签署合同，仅当前经办人作为签署人时生效
+<ul><li>（默认） false -否</li> <li> true - 展示签署按钮</li></ul>
+                     * @return SignAfterStart 发起成功之后是否签署合同，仅当前经办人作为签署人时生效
+<ul><li>（默认） false -否</li> <li> true - 展示签署按钮</li></ul>
+                     * 
+                     */
+                    bool GetSignAfterStart() const;
+
+                    /**
+                     * 设置发起成功之后是否签署合同，仅当前经办人作为签署人时生效
+<ul><li>（默认） false -否</li> <li> true - 展示签署按钮</li></ul>
+                     * @param _signAfterStart 发起成功之后是否签署合同，仅当前经办人作为签署人时生效
+<ul><li>（默认） false -否</li> <li> true - 展示签署按钮</li></ul>
+                     * 
+                     */
+                    void SetSignAfterStart(const bool& _signAfterStart);
+
+                    /**
+                     * 判断参数 SignAfterStart 是否已赋值
+                     * @return SignAfterStart 是否已赋值
+                     * 
+                     */
+                    bool SignAfterStartHasBeenSet() const;
+
+                    /**
+                     * 获取隐藏操作步骤: 具体的控件类型如下
+
+<ul><li>1 : 选择文件及签署方</li>
+<li>2 : 补充文件内容</li>
+<li>4 : 发起前合同信息与设置确认</li>
+</ul>
+注：仅对新版页面生效
+                     * @return HideOperationSteps 隐藏操作步骤: 具体的控件类型如下
+
+<ul><li>1 : 选择文件及签署方</li>
+<li>2 : 补充文件内容</li>
+<li>4 : 发起前合同信息与设置确认</li>
+</ul>
+注：仅对新版页面生效
+                     * 
+                     */
+                    std::vector<uint64_t> GetHideOperationSteps() const;
+
+                    /**
+                     * 设置隐藏操作步骤: 具体的控件类型如下
+
+<ul><li>1 : 选择文件及签署方</li>
+<li>2 : 补充文件内容</li>
+<li>4 : 发起前合同信息与设置确认</li>
+</ul>
+注：仅对新版页面生效
+                     * @param _hideOperationSteps 隐藏操作步骤: 具体的控件类型如下
+
+<ul><li>1 : 选择文件及签署方</li>
+<li>2 : 补充文件内容</li>
+<li>4 : 发起前合同信息与设置确认</li>
+</ul>
+注：仅对新版页面生效
+                     * 
+                     */
+                    void SetHideOperationSteps(const std::vector<uint64_t>& _hideOperationSteps);
+
+                    /**
+                     * 判断参数 HideOperationSteps 是否已赋值
+                     * @return HideOperationSteps 是否已赋值
+                     * 
+                     */
+                    bool HideOperationStepsHasBeenSet() const;
+
+                    /**
+                     * 获取本企业简称，注：仅对新版页面生效
+                     * @return SelfName 本企业简称，注：仅对新版页面生效
+                     * 
+                     */
+                    std::string GetSelfName() const;
+
+                    /**
+                     * 设置本企业简称，注：仅对新版页面生效
+                     * @param _selfName 本企业简称，注：仅对新版页面生效
+                     * 
+                     */
+                    void SetSelfName(const std::string& _selfName);
+
+                    /**
+                     * 判断参数 SelfName 是否已赋值
+                     * @return SelfName 是否已赋值
+                     * 
+                     */
+                    bool SelfNameHasBeenSet() const;
+
+                    /**
+                     * 获取发起后签署码隐藏，默认false，注：仅对新版页面生效
+                     * @return HideSignCodeAfterStart 发起后签署码隐藏，默认false，注：仅对新版页面生效
+                     * 
+                     */
+                    bool GetHideSignCodeAfterStart() const;
+
+                    /**
+                     * 设置发起后签署码隐藏，默认false，注：仅对新版页面生效
+                     * @param _hideSignCodeAfterStart 发起后签署码隐藏，默认false，注：仅对新版页面生效
+                     * 
+                     */
+                    void SetHideSignCodeAfterStart(const bool& _hideSignCodeAfterStart);
+
+                    /**
+                     * 判断参数 HideSignCodeAfterStart 是否已赋值
+                     * @return HideSignCodeAfterStart 是否已赋值
+                     * 
+                     */
+                    bool HideSignCodeAfterStartHasBeenSet() const;
+
                 private:
 
                     /**
@@ -470,6 +607,44 @@ namespace TencentCloud
                      */
                     bool m_forbidEditWatermark;
                     bool m_forbidEditWatermarkHasBeenSet;
+
+                    /**
+                     * 发起成功后是否预览合同
+<ul><li>（默认） false -否</li> <li> true - 展示预览按钮</li></ul>
+                     */
+                    bool m_previewAfterStart;
+                    bool m_previewAfterStartHasBeenSet;
+
+                    /**
+                     * 发起成功之后是否签署合同，仅当前经办人作为签署人时生效
+<ul><li>（默认） false -否</li> <li> true - 展示签署按钮</li></ul>
+                     */
+                    bool m_signAfterStart;
+                    bool m_signAfterStartHasBeenSet;
+
+                    /**
+                     * 隐藏操作步骤: 具体的控件类型如下
+
+<ul><li>1 : 选择文件及签署方</li>
+<li>2 : 补充文件内容</li>
+<li>4 : 发起前合同信息与设置确认</li>
+</ul>
+注：仅对新版页面生效
+                     */
+                    std::vector<uint64_t> m_hideOperationSteps;
+                    bool m_hideOperationStepsHasBeenSet;
+
+                    /**
+                     * 本企业简称，注：仅对新版页面生效
+                     */
+                    std::string m_selfName;
+                    bool m_selfNameHasBeenSet;
+
+                    /**
+                     * 发起后签署码隐藏，默认false，注：仅对新版页面生效
+                     */
+                    bool m_hideSignCodeAfterStart;
+                    bool m_hideSignCodeAfterStartHasBeenSet;
 
                 };
             }

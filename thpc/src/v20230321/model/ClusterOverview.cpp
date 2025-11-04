@@ -36,7 +36,8 @@ ClusterOverview::ClusterOverview() :
     m_loginNodeCountHasBeenSet(false),
     m_autoScalingTypeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false)
+    m_clusterTypeHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -242,6 +243,16 @@ CoreInternalOutcome ClusterOverview::Deserialize(const rapidjson::Value &value)
         m_clusterTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletionProtection") && !value["DeletionProtection"].IsNull())
+    {
+        if (!value["DeletionProtection"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOverview.DeletionProtection` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionProtection = string(value["DeletionProtection"].GetString());
+        m_deletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -397,6 +408,14 @@ void ClusterOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deletionProtection.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -656,5 +675,21 @@ void ClusterOverview::SetClusterType(const string& _clusterType)
 bool ClusterOverview::ClusterTypeHasBeenSet() const
 {
     return m_clusterTypeHasBeenSet;
+}
+
+string ClusterOverview::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void ClusterOverview::SetDeletionProtection(const string& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool ClusterOverview::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 

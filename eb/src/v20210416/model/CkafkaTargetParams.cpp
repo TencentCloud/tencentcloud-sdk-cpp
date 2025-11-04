@@ -22,7 +22,8 @@ using namespace std;
 
 CkafkaTargetParams::CkafkaTargetParams() :
     m_topicNameHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
+    m_retryPolicyHasBeenSet(false),
+    m_eventDeliveryFormatHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome CkafkaTargetParams::Deserialize(const rapidjson::Value &valu
         m_retryPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("EventDeliveryFormat") && !value["EventDeliveryFormat"].IsNull())
+    {
+        if (!value["EventDeliveryFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CkafkaTargetParams.EventDeliveryFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventDeliveryFormat = string(value["EventDeliveryFormat"].GetString());
+        m_eventDeliveryFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void CkafkaTargetParams::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_retryPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_eventDeliveryFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventDeliveryFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventDeliveryFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void CkafkaTargetParams::SetRetryPolicy(const RetryPolicy& _retryPolicy)
 bool CkafkaTargetParams::RetryPolicyHasBeenSet() const
 {
     return m_retryPolicyHasBeenSet;
+}
+
+string CkafkaTargetParams::GetEventDeliveryFormat() const
+{
+    return m_eventDeliveryFormat;
+}
+
+void CkafkaTargetParams::SetEventDeliveryFormat(const string& _eventDeliveryFormat)
+{
+    m_eventDeliveryFormat = _eventDeliveryFormat;
+    m_eventDeliveryFormatHasBeenSet = true;
+}
+
+bool CkafkaTargetParams::EventDeliveryFormatHasBeenSet() const
+{
+    return m_eventDeliveryFormatHasBeenSet;
 }
 

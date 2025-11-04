@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群规格，托管集群询价
-                     * @return ClusterLevel 集群规格，托管集群询价
+                     * 获取集群规格，托管集群询价，集群等级：L20、L50、L100、L200、L500、L1000、L3000、L5000
+                     * @return ClusterLevel 集群规格，托管集群询价，集群等级：L20、L50、L100、L200、L500、L1000、L3000、L5000
                      * 
                      */
                     std::string GetClusterLevel() const;
 
                     /**
-                     * 设置集群规格，托管集群询价
-                     * @param _clusterLevel 集群规格，托管集群询价
+                     * 设置集群规格，托管集群询价，集群等级：L20、L50、L100、L200、L500、L1000、L3000、L5000
+                     * @param _clusterLevel 集群规格，托管集群询价，集群等级：L20、L50、L100、L200、L500、L1000、L3000、L5000
                      * 
                      */
                     void SetClusterLevel(const std::string& _clusterLevel);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群规格，托管集群询价
+                     * 集群规格，托管集群询价，集群等级：L20、L50、L100、L200、L500、L1000、L3000、L5000
                      */
                     std::string m_clusterLevel;
                     bool m_clusterLevelHasBeenSet;

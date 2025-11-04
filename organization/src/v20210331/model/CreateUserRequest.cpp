@@ -31,7 +31,8 @@ CreateUserRequest::CreateUserRequest() :
     m_descriptionHasBeenSet(false),
     m_emailHasBeenSet(false),
     m_userStatusHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
+    m_userTypeHasBeenSet(false),
+    m_needResetPasswordHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string CreateUserRequest::ToJsonString() const
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needResetPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedResetPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needResetPassword, allocator);
     }
 
 
@@ -264,6 +273,22 @@ void CreateUserRequest::SetUserType(const string& _userType)
 bool CreateUserRequest::UserTypeHasBeenSet() const
 {
     return m_userTypeHasBeenSet;
+}
+
+bool CreateUserRequest::GetNeedResetPassword() const
+{
+    return m_needResetPassword;
+}
+
+void CreateUserRequest::SetNeedResetPassword(const bool& _needResetPassword)
+{
+    m_needResetPassword = _needResetPassword;
+    m_needResetPasswordHasBeenSet = true;
+}
+
+bool CreateUserRequest::NeedResetPasswordHasBeenSet() const
+{
+    return m_needResetPasswordHasBeenSet;
 }
 
 

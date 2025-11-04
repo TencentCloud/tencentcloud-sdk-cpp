@@ -22,6 +22,7 @@ using namespace std;
 
 ImageProcessTaskResult::ImageProcessTaskResult() :
     m_statusHasBeenSet(false),
+    m_errMsgHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_progressHasBeenSet(false)
@@ -41,6 +42,16 @@ CoreInternalOutcome ImageProcessTaskResult::Deserialize(const rapidjson::Value &
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrMsg") && !value["ErrMsg"].IsNull())
+    {
+        if (!value["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageProcessTaskResult.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(value["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
     }
 
     if (value.HasMember("Message") && !value["Message"].IsNull())
@@ -95,6 +106,14 @@ void ImageProcessTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_errMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_messageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -137,6 +156,22 @@ void ImageProcessTaskResult::SetStatus(const string& _status)
 bool ImageProcessTaskResult::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string ImageProcessTaskResult::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+void ImageProcessTaskResult::SetErrMsg(const string& _errMsg)
+{
+    m_errMsg = _errMsg;
+    m_errMsgHasBeenSet = true;
+}
+
+bool ImageProcessTaskResult::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
 }
 
 string ImageProcessTaskResult::GetMessage() const

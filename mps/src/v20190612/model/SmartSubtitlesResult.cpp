@@ -23,7 +23,8 @@ using namespace std;
 SmartSubtitlesResult::SmartSubtitlesResult() :
     m_typeHasBeenSet(false),
     m_asrFullTextTaskHasBeenSet(false),
-    m_transTextTaskHasBeenSet(false)
+    m_transTextTaskHasBeenSet(false),
+    m_pureSubtitleTransTaskHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,23 @@ CoreInternalOutcome SmartSubtitlesResult::Deserialize(const rapidjson::Value &va
         m_transTextTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("PureSubtitleTransTask") && !value["PureSubtitleTransTask"].IsNull())
+    {
+        if (!value["PureSubtitleTransTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartSubtitlesResult.PureSubtitleTransTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_pureSubtitleTransTask.Deserialize(value["PureSubtitleTransTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_pureSubtitleTransTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ void SmartSubtitlesResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_transTextTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_pureSubtitleTransTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PureSubtitleTransTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_pureSubtitleTransTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -158,5 +185,21 @@ void SmartSubtitlesResult::SetTransTextTask(const SmartSubtitleTaskTransTextResu
 bool SmartSubtitlesResult::TransTextTaskHasBeenSet() const
 {
     return m_transTextTaskHasBeenSet;
+}
+
+PureSubtitleTransResult SmartSubtitlesResult::GetPureSubtitleTransTask() const
+{
+    return m_pureSubtitleTransTask;
+}
+
+void SmartSubtitlesResult::SetPureSubtitleTransTask(const PureSubtitleTransResult& _pureSubtitleTransTask)
+{
+    m_pureSubtitleTransTask = _pureSubtitleTransTask;
+    m_pureSubtitleTransTaskHasBeenSet = true;
+}
+
+bool SmartSubtitlesResult::PureSubtitleTransTaskHasBeenSet() const
+{
+    return m_pureSubtitleTransTaskHasBeenSet;
 }
 

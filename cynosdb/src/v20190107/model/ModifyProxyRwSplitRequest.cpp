@@ -37,7 +37,9 @@ ModifyProxyRwSplitRequest::ModifyProxyRwSplitRequest() :
     m_accessModeHasBeenSet(false),
     m_openConnectionPoolHasBeenSet(false),
     m_connectionPoolTypeHasBeenSet(false),
-    m_connectionPoolTimeOutHasBeenSet(false)
+    m_connectionPoolTimeOutHasBeenSet(false),
+    m_apNodeAsRoNodeHasBeenSet(false),
+    m_apQueryToOtherNodeHasBeenSet(false)
 {
 }
 
@@ -173,6 +175,22 @@ string ModifyProxyRwSplitRequest::ToJsonString() const
         string key = "ConnectionPoolTimeOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_connectionPoolTimeOut, allocator);
+    }
+
+    if (m_apNodeAsRoNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApNodeAsRoNode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_apNodeAsRoNode, allocator);
+    }
+
+    if (m_apQueryToOtherNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApQueryToOtherNode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_apQueryToOtherNode, allocator);
     }
 
 
@@ -421,6 +439,38 @@ void ModifyProxyRwSplitRequest::SetConnectionPoolTimeOut(const int64_t& _connect
 bool ModifyProxyRwSplitRequest::ConnectionPoolTimeOutHasBeenSet() const
 {
     return m_connectionPoolTimeOutHasBeenSet;
+}
+
+bool ModifyProxyRwSplitRequest::GetApNodeAsRoNode() const
+{
+    return m_apNodeAsRoNode;
+}
+
+void ModifyProxyRwSplitRequest::SetApNodeAsRoNode(const bool& _apNodeAsRoNode)
+{
+    m_apNodeAsRoNode = _apNodeAsRoNode;
+    m_apNodeAsRoNodeHasBeenSet = true;
+}
+
+bool ModifyProxyRwSplitRequest::ApNodeAsRoNodeHasBeenSet() const
+{
+    return m_apNodeAsRoNodeHasBeenSet;
+}
+
+bool ModifyProxyRwSplitRequest::GetApQueryToOtherNode() const
+{
+    return m_apQueryToOtherNode;
+}
+
+void ModifyProxyRwSplitRequest::SetApQueryToOtherNode(const bool& _apQueryToOtherNode)
+{
+    m_apQueryToOtherNode = _apQueryToOtherNode;
+    m_apQueryToOtherNodeHasBeenSet = true;
+}
+
+bool ModifyProxyRwSplitRequest::ApQueryToOtherNodeHasBeenSet() const
+{
+    return m_apQueryToOtherNodeHasBeenSet;
 }
 
 

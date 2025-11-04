@@ -126,6 +126,69 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取MessageTTL参数单位ms,classic类型专用	
+                     * @return MessageTTL MessageTTL参数单位ms,classic类型专用	
+                     * 
+                     */
+                    int64_t GetMessageTTL() const;
+
+                    /**
+                     * 设置MessageTTL参数单位ms,classic类型专用	
+                     * @param _messageTTL MessageTTL参数单位ms,classic类型专用	
+                     * 
+                     */
+                    void SetMessageTTL(const int64_t& _messageTTL);
+
+                    /**
+                     * 判断参数 MessageTTL 是否已赋值
+                     * @return MessageTTL 是否已赋值
+                     * 
+                     */
+                    bool MessageTTLHasBeenSet() const;
+
+                    /**
+                     * 获取DeadLetterExchange参数。可将过期或被拒绝的消息投往指定的死信 exchange。
+                     * @return DeadLetterExchange DeadLetterExchange参数。可将过期或被拒绝的消息投往指定的死信 exchange。
+                     * 
+                     */
+                    std::string GetDeadLetterExchange() const;
+
+                    /**
+                     * 设置DeadLetterExchange参数。可将过期或被拒绝的消息投往指定的死信 exchange。
+                     * @param _deadLetterExchange DeadLetterExchange参数。可将过期或被拒绝的消息投往指定的死信 exchange。
+                     * 
+                     */
+                    void SetDeadLetterExchange(const std::string& _deadLetterExchange);
+
+                    /**
+                     * 判断参数 DeadLetterExchange 是否已赋值
+                     * @return DeadLetterExchange 是否已赋值
+                     * 
+                     */
+                    bool DeadLetterExchangeHasBeenSet() const;
+
+                    /**
+                     * 获取DeadLetterRoutingKey参数。只能包含字母、数字、"."、"-"，"@"，"_"
+                     * @return DeadLetterRoutingKey DeadLetterRoutingKey参数。只能包含字母、数字、"."、"-"，"@"，"_"
+                     * 
+                     */
+                    std::string GetDeadLetterRoutingKey() const;
+
+                    /**
+                     * 设置DeadLetterRoutingKey参数。只能包含字母、数字、"."、"-"，"@"，"_"
+                     * @param _deadLetterRoutingKey DeadLetterRoutingKey参数。只能包含字母、数字、"."、"-"，"@"，"_"
+                     * 
+                     */
+                    void SetDeadLetterRoutingKey(const std::string& _deadLetterRoutingKey);
+
+                    /**
+                     * 判断参数 DeadLetterRoutingKey 是否已赋值
+                     * @return DeadLetterRoutingKey 是否已赋值
+                     * 
+                     */
+                    bool DeadLetterRoutingKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +214,24 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * MessageTTL参数单位ms,classic类型专用	
+                     */
+                    int64_t m_messageTTL;
+                    bool m_messageTTLHasBeenSet;
+
+                    /**
+                     * DeadLetterExchange参数。可将过期或被拒绝的消息投往指定的死信 exchange。
+                     */
+                    std::string m_deadLetterExchange;
+                    bool m_deadLetterExchangeHasBeenSet;
+
+                    /**
+                     * DeadLetterRoutingKey参数。只能包含字母、数字、"."、"-"，"@"，"_"
+                     */
+                    std::string m_deadLetterRoutingKey;
+                    bool m_deadLetterRoutingKeyHasBeenSet;
 
                 };
             }

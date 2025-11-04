@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取集群类型，例如：MANAGED_CLUSTER
-                     * @return ClusterType 集群类型，例如：MANAGED_CLUSTER
+                     * 获取集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
+                     * @return ClusterType 集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型，例如：MANAGED_CLUSTER
-                     * @param _clusterType 集群类型，例如：MANAGED_CLUSTER
+                     * 设置集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
+                     * @param _clusterType 集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -180,7 +180,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 集群类型，例如：MANAGED_CLUSTER
+                     * 集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;

@@ -29,6 +29,8 @@
 #include <tencentcloud/dts/v20211206/model/DifferenceAdvancedObjectsDetail.h>
 #include <tencentcloud/dts/v20211206/model/DifferenceDataDetail.h>
 #include <tencentcloud/dts/v20211206/model/DifferenceRowDetail.h>
+#include <tencentcloud/dts/v20211206/model/DifferenceSchemaDetail.h>
+#include <tencentcloud/dts/v20211206/model/DifferenceOwnerDetail.h>
 
 
 namespace TencentCloud
@@ -156,6 +158,48 @@ namespace TencentCloud
                      */
                     bool DifferenceRowHasBeenSet() const;
 
+                    /**
+                     * 获取表结构不一致详情，pg用
+                     * @return DifferenceSchema 表结构不一致详情，pg用
+                     * 
+                     */
+                    DifferenceSchemaDetail GetDifferenceSchema() const;
+
+                    /**
+                     * 设置表结构不一致详情，pg用
+                     * @param _differenceSchema 表结构不一致详情，pg用
+                     * 
+                     */
+                    void SetDifferenceSchema(const DifferenceSchemaDetail& _differenceSchema);
+
+                    /**
+                     * 判断参数 DifferenceSchema 是否已赋值
+                     * @return DifferenceSchema 是否已赋值
+                     * 
+                     */
+                    bool DifferenceSchemaHasBeenSet() const;
+
+                    /**
+                     * 获取对象owner不一致详情，pg用
+                     * @return DifferenceOwner 对象owner不一致详情，pg用
+                     * 
+                     */
+                    DifferenceOwnerDetail GetDifferenceOwner() const;
+
+                    /**
+                     * 设置对象owner不一致详情，pg用
+                     * @param _differenceOwner 对象owner不一致详情，pg用
+                     * 
+                     */
+                    void SetDifferenceOwner(const DifferenceOwnerDetail& _differenceOwner);
+
+                    /**
+                     * 判断参数 DifferenceOwner 是否已赋值
+                     * @return DifferenceOwner 是否已赋值
+                     * 
+                     */
+                    bool DifferenceOwnerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +231,18 @@ namespace TencentCloud
                      */
                     DifferenceRowDetail m_differenceRow;
                     bool m_differenceRowHasBeenSet;
+
+                    /**
+                     * 表结构不一致详情，pg用
+                     */
+                    DifferenceSchemaDetail m_differenceSchema;
+                    bool m_differenceSchemaHasBeenSet;
+
+                    /**
+                     * 对象owner不一致详情，pg用
+                     */
+                    DifferenceOwnerDetail m_differenceOwner;
+                    bool m_differenceOwnerHasBeenSet;
 
                 };
             }

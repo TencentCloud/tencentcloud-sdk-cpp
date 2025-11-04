@@ -42,7 +42,179 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。填写实例id或者规格，两者必选其一。
+                     * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。填写实例id或者规格，两者必选其一。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。填写实例id或者规格，两者必选其一。
+                     * @param _instanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。填写实例id或者规格，两者必选其一。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取分片大小，单位：MB
+                     * @return ShardSize 分片大小，单位：MB
+                     * 
+                     */
+                    int64_t GetShardSize() const;
+
+                    /**
+                     * 设置分片大小，单位：MB
+                     * @param _shardSize 分片大小，单位：MB
+                     * 
+                     */
+                    void SetShardSize(const int64_t& _shardSize);
+
+                    /**
+                     * 判断参数 ShardSize 是否已赋值
+                     * @return ShardSize 是否已赋值
+                     * 
+                     */
+                    bool ShardSizeHasBeenSet() const;
+
+                    /**
+                     * 获取分片数量。
+                     * @return ShardNum 分片数量。
+                     * 
+                     */
+                    int64_t GetShardNum() const;
+
+                    /**
+                     * 设置分片数量。
+                     * @param _shardNum 分片数量。
+                     * 
+                     */
+                    void SetShardNum(const int64_t& _shardNum);
+
+                    /**
+                     * 判断参数 ShardNum 是否已赋值
+                     * @return ShardNum 是否已赋值
+                     * 
+                     */
+                    bool ShardNumHasBeenSet() const;
+
+                    /**
+                     * 获取复制组数量。
+                     * @return ReplicateNum 复制组数量。
+                     * 
+                     */
+                    int64_t GetReplicateNum() const;
+
+                    /**
+                     * 设置复制组数量。
+                     * @param _replicateNum 复制组数量。
+                     * 
+                     */
+                    void SetReplicateNum(const int64_t& _replicateNum);
+
+                    /**
+                     * 判断参数 ReplicateNum 是否已赋值
+                     * @return ReplicateNum 是否已赋值
+                     * 
+                     */
+                    bool ReplicateNumHasBeenSet() const;
+
+                    /**
+                     * 获取只读权重。
+- 100：开启从只读。
+- 0：关闭从只读。
+                     * @return ReadOnlyWeight 只读权重。
+- 100：开启从只读。
+- 0：关闭从只读。
+                     * 
+                     */
+                    int64_t GetReadOnlyWeight() const;
+
+                    /**
+                     * 设置只读权重。
+- 100：开启从只读。
+- 0：关闭从只读。
+                     * @param _readOnlyWeight 只读权重。
+- 100：开启从只读。
+- 0：关闭从只读。
+                     * 
+                     */
+                    void SetReadOnlyWeight(const int64_t& _readOnlyWeight);
+
+                    /**
+                     * 判断参数 ReadOnlyWeight 是否已赋值
+                     * @return ReadOnlyWeight 是否已赋值
+                     * 
+                     */
+                    bool ReadOnlyWeightHasBeenSet() const;
+
+                    /**
+                     * 获取实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type。
+                     * @return Type 实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type。
+                     * 
+                     */
+                    int64_t GetType() const;
+
+                    /**
+                     * 设置实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type。
+                     * @param _type 实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type。
+                     * 
+                     */
+                    void SetType(const int64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。填写实例id或者规格，两者必选其一。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 分片大小，单位：MB
+                     */
+                    int64_t m_shardSize;
+                    bool m_shardSizeHasBeenSet;
+
+                    /**
+                     * 分片数量。
+                     */
+                    int64_t m_shardNum;
+                    bool m_shardNumHasBeenSet;
+
+                    /**
+                     * 复制组数量。
+                     */
+                    int64_t m_replicateNum;
+                    bool m_replicateNumHasBeenSet;
+
+                    /**
+                     * 只读权重。
+- 100：开启从只读。
+- 0：关闭从只读。
+                     */
+                    int64_t m_readOnlyWeight;
+                    bool m_readOnlyWeightHasBeenSet;
+
+                    /**
+                     * 实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type。
+                     */
+                    int64_t m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

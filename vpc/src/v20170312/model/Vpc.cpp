@@ -34,6 +34,7 @@ Vpc::Vpc() :
     m_ipv6CidrBlockHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_assistantCidrSetHasBeenSet(false),
+    m_enableRouteVpcPublishHasBeenSet(false),
     m_ipv6CidrBlockSetHasBeenSet(false)
 {
 }
@@ -196,6 +197,16 @@ CoreInternalOutcome Vpc::Deserialize(const rapidjson::Value &value)
         m_assistantCidrSetHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableRouteVpcPublish") && !value["EnableRouteVpcPublish"].IsNull())
+    {
+        if (!value["EnableRouteVpcPublish"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Vpc.EnableRouteVpcPublish` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableRouteVpcPublish = value["EnableRouteVpcPublish"].GetBool();
+        m_enableRouteVpcPublishHasBeenSet = true;
+    }
+
     if (value.HasMember("Ipv6CidrBlockSet") && !value["Ipv6CidrBlockSet"].IsNull())
     {
         if (!value["Ipv6CidrBlockSet"].IsArray())
@@ -344,6 +355,14 @@ void Vpc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableRouteVpcPublishHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRouteVpcPublish";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableRouteVpcPublish, allocator);
     }
 
     if (m_ipv6CidrBlockSetHasBeenSet)
@@ -570,6 +589,22 @@ void Vpc::SetAssistantCidrSet(const vector<AssistantCidr>& _assistantCidrSet)
 bool Vpc::AssistantCidrSetHasBeenSet() const
 {
     return m_assistantCidrSetHasBeenSet;
+}
+
+bool Vpc::GetEnableRouteVpcPublish() const
+{
+    return m_enableRouteVpcPublish;
+}
+
+void Vpc::SetEnableRouteVpcPublish(const bool& _enableRouteVpcPublish)
+{
+    m_enableRouteVpcPublish = _enableRouteVpcPublish;
+    m_enableRouteVpcPublishHasBeenSet = true;
+}
+
+bool Vpc::EnableRouteVpcPublishHasBeenSet() const
+{
+    return m_enableRouteVpcPublishHasBeenSet;
 }
 
 vector<ISPIPv6CidrBlock> Vpc::GetIpv6CidrBlockSet() const

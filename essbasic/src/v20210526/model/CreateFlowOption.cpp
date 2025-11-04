@@ -31,7 +31,12 @@ CreateFlowOption::CreateFlowOption() :
     m_forbidEditFillComponentHasBeenSet(false),
     m_skipUploadFileHasBeenSet(false),
     m_signComponentConfigHasBeenSet(false),
-    m_forbidEditWatermarkHasBeenSet(false)
+    m_forbidEditWatermarkHasBeenSet(false),
+    m_previewAfterStartHasBeenSet(false),
+    m_signAfterStartHasBeenSet(false),
+    m_hideOperationStepsHasBeenSet(false),
+    m_selfNameHasBeenSet(false),
+    m_hideSignCodeAfterStartHasBeenSet(false)
 {
 }
 
@@ -157,6 +162,59 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         m_forbidEditWatermarkHasBeenSet = true;
     }
 
+    if (value.HasMember("PreviewAfterStart") && !value["PreviewAfterStart"].IsNull())
+    {
+        if (!value["PreviewAfterStart"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.PreviewAfterStart` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewAfterStart = value["PreviewAfterStart"].GetBool();
+        m_previewAfterStartHasBeenSet = true;
+    }
+
+    if (value.HasMember("SignAfterStart") && !value["SignAfterStart"].IsNull())
+    {
+        if (!value["SignAfterStart"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.SignAfterStart` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_signAfterStart = value["SignAfterStart"].GetBool();
+        m_signAfterStartHasBeenSet = true;
+    }
+
+    if (value.HasMember("HideOperationSteps") && !value["HideOperationSteps"].IsNull())
+    {
+        if (!value["HideOperationSteps"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.HideOperationSteps` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HideOperationSteps"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_hideOperationSteps.push_back((*itr).GetUint64());
+        }
+        m_hideOperationStepsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SelfName") && !value["SelfName"].IsNull())
+    {
+        if (!value["SelfName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.SelfName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_selfName = string(value["SelfName"].GetString());
+        m_selfNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("HideSignCodeAfterStart") && !value["HideSignCodeAfterStart"].IsNull())
+    {
+        if (!value["HideSignCodeAfterStart"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.HideSignCodeAfterStart` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hideSignCodeAfterStart = value["HideSignCodeAfterStart"].GetBool();
+        m_hideSignCodeAfterStartHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +309,51 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ForbidEditWatermark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forbidEditWatermark, allocator);
+    }
+
+    if (m_previewAfterStartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewAfterStart";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_previewAfterStart, allocator);
+    }
+
+    if (m_signAfterStartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignAfterStart";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_signAfterStart, allocator);
+    }
+
+    if (m_hideOperationStepsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HideOperationSteps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_hideOperationSteps.begin(); itr != m_hideOperationSteps.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_selfNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_selfName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hideSignCodeAfterStartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HideSignCodeAfterStart";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hideSignCodeAfterStart, allocator);
     }
 
 }
@@ -430,5 +533,85 @@ void CreateFlowOption::SetForbidEditWatermark(const bool& _forbidEditWatermark)
 bool CreateFlowOption::ForbidEditWatermarkHasBeenSet() const
 {
     return m_forbidEditWatermarkHasBeenSet;
+}
+
+bool CreateFlowOption::GetPreviewAfterStart() const
+{
+    return m_previewAfterStart;
+}
+
+void CreateFlowOption::SetPreviewAfterStart(const bool& _previewAfterStart)
+{
+    m_previewAfterStart = _previewAfterStart;
+    m_previewAfterStartHasBeenSet = true;
+}
+
+bool CreateFlowOption::PreviewAfterStartHasBeenSet() const
+{
+    return m_previewAfterStartHasBeenSet;
+}
+
+bool CreateFlowOption::GetSignAfterStart() const
+{
+    return m_signAfterStart;
+}
+
+void CreateFlowOption::SetSignAfterStart(const bool& _signAfterStart)
+{
+    m_signAfterStart = _signAfterStart;
+    m_signAfterStartHasBeenSet = true;
+}
+
+bool CreateFlowOption::SignAfterStartHasBeenSet() const
+{
+    return m_signAfterStartHasBeenSet;
+}
+
+vector<uint64_t> CreateFlowOption::GetHideOperationSteps() const
+{
+    return m_hideOperationSteps;
+}
+
+void CreateFlowOption::SetHideOperationSteps(const vector<uint64_t>& _hideOperationSteps)
+{
+    m_hideOperationSteps = _hideOperationSteps;
+    m_hideOperationStepsHasBeenSet = true;
+}
+
+bool CreateFlowOption::HideOperationStepsHasBeenSet() const
+{
+    return m_hideOperationStepsHasBeenSet;
+}
+
+string CreateFlowOption::GetSelfName() const
+{
+    return m_selfName;
+}
+
+void CreateFlowOption::SetSelfName(const string& _selfName)
+{
+    m_selfName = _selfName;
+    m_selfNameHasBeenSet = true;
+}
+
+bool CreateFlowOption::SelfNameHasBeenSet() const
+{
+    return m_selfNameHasBeenSet;
+}
+
+bool CreateFlowOption::GetHideSignCodeAfterStart() const
+{
+    return m_hideSignCodeAfterStart;
+}
+
+void CreateFlowOption::SetHideSignCodeAfterStart(const bool& _hideSignCodeAfterStart)
+{
+    m_hideSignCodeAfterStart = _hideSignCodeAfterStart;
+    m_hideSignCodeAfterStartHasBeenSet = true;
+}
+
+bool CreateFlowOption::HideSignCodeAfterStartHasBeenSet() const
+{
+    return m_hideSignCodeAfterStartHasBeenSet;
 }
 

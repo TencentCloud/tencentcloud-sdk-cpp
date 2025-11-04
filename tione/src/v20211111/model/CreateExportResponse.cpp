@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-CreateExportResponse::CreateExportResponse()
+CreateExportResponse::CreateExportResponse() :
+    m_exportIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateExportResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ExportId") && !rsp["ExportId"].IsNull())
+    {
+        if (!rsp["ExportId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_exportId = string(rsp["ExportId"].GetString());
+        m_exportIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateExportResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_exportIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExportId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exportId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateExportResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateExportResponse::GetExportId() const
+{
+    return m_exportId;
+}
+
+bool CreateExportResponse::ExportIdHasBeenSet() const
+{
+    return m_exportIdHasBeenSet;
+}
 
 

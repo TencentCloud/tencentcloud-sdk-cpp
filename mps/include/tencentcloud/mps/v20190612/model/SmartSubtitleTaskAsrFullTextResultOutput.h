@@ -74,6 +74,27 @@ namespace TencentCloud
                     bool SegmentSetHasBeenSet() const;
 
                     /**
+                     * 获取字幕文件路径
+                     * @return Path 字幕文件路径
+                     * 
+                     */
+                    std::string GetPath() const;
+
+                    /**
+                     * 设置字幕文件路径
+                     * @param _path 字幕文件路径
+                     * 
+                     */
+                    void SetPath(const std::string& _path);
+
+                    /**
+                     * 判断参数 Path 是否已赋值
+                     * @return Path 是否已赋值
+                     * 
+                     */
+                    bool PathHasBeenSet() const;
+
+                    /**
                      * 获取字幕文件地址。
                      * @return SubtitlePath 字幕文件地址。
                      * 
@@ -123,6 +144,12 @@ namespace TencentCloud
                      */
                     std::vector<SmartSubtitleTaskAsrFullTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
+
+                    /**
+                     * 字幕文件路径
+                     */
+                    std::string m_path;
+                    bool m_pathHasBeenSet;
 
                     /**
                      * 字幕文件地址。

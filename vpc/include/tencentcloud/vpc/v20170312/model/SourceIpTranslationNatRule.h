@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
-                     * @return ResourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
+                     * 获取资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED，分别表示子网、网卡、自定义网段
+                     * @return ResourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED，分别表示子网、网卡、自定义网段
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
-                     * @param _resourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
+                     * 设置资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED，分别表示子网、网卡、自定义网段
+                     * @param _resourceType 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED，分别表示子网、网卡、自定义网段
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -244,7 +244,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED
+                     * 资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED，分别表示子网、网卡、自定义网段
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

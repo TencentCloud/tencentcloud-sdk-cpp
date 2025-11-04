@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-DescribeExportRequest::DescribeExportRequest()
+DescribeExportRequest::DescribeExportRequest() :
+    m_exportIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeExportRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_exportIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExportId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_exportId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeExportRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeExportRequest::GetExportId() const
+{
+    return m_exportId;
+}
+
+void DescribeExportRequest::SetExportId(const string& _exportId)
+{
+    m_exportId = _exportId;
+    m_exportIdHasBeenSet = true;
+}
+
+bool DescribeExportRequest::ExportIdHasBeenSet() const
+{
+    return m_exportIdHasBeenSet;
+}
 
 

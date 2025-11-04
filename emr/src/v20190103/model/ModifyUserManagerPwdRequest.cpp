@@ -25,7 +25,8 @@ using namespace std;
 ModifyUserManagerPwdRequest::ModifyUserManagerPwdRequest() :
     m_instanceIdHasBeenSet(false),
     m_userNameHasBeenSet(false),
-    m_passWordHasBeenSet(false)
+    m_passWordHasBeenSet(false),
+    m_syncPwdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyUserManagerPwdRequest::ToJsonString() const
         string key = "PassWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_passWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncPwdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncPwd";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_syncPwd, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyUserManagerPwdRequest::SetPassWord(const string& _passWord)
 bool ModifyUserManagerPwdRequest::PassWordHasBeenSet() const
 {
     return m_passWordHasBeenSet;
+}
+
+bool ModifyUserManagerPwdRequest::GetSyncPwd() const
+{
+    return m_syncPwd;
+}
+
+void ModifyUserManagerPwdRequest::SetSyncPwd(const bool& _syncPwd)
+{
+    m_syncPwd = _syncPwd;
+    m_syncPwdHasBeenSet = true;
+}
+
+bool ModifyUserManagerPwdRequest::SyncPwdHasBeenSet() const
+{
+    return m_syncPwdHasBeenSet;
 }
 
 

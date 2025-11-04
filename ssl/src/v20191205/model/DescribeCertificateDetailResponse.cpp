@@ -67,7 +67,8 @@ DescribeCertificateDetailResponse::DescribeCertificateDetailResponse() :
     m_dvRevokeAuthDetailHasBeenSet(false),
     m_certChainInfoHasBeenSet(false),
     m_domainTypeHasBeenSet(false),
-    m_certTypeHasBeenSet(false)
+    m_certTypeHasBeenSet(false),
+    m_useCrossSignRootHasBeenSet(false)
 {
 }
 
@@ -606,6 +607,16 @@ CoreInternalOutcome DescribeCertificateDetailResponse::Deserialize(const string 
         m_certTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UseCrossSignRoot") && !rsp["UseCrossSignRoot"].IsNull())
+    {
+        if (!rsp["UseCrossSignRoot"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UseCrossSignRoot` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useCrossSignRoot = rsp["UseCrossSignRoot"].GetBool();
+        m_useCrossSignRootHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -996,6 +1007,14 @@ string DescribeCertificateDetailResponse::ToJsonString() const
         string key = "CertType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_certType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useCrossSignRootHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseCrossSignRoot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useCrossSignRoot, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1448,6 +1467,16 @@ string DescribeCertificateDetailResponse::GetCertType() const
 bool DescribeCertificateDetailResponse::CertTypeHasBeenSet() const
 {
     return m_certTypeHasBeenSet;
+}
+
+bool DescribeCertificateDetailResponse::GetUseCrossSignRoot() const
+{
+    return m_useCrossSignRoot;
+}
+
+bool DescribeCertificateDetailResponse::UseCrossSignRootHasBeenSet() const
+{
+    return m_useCrossSignRootHasBeenSet;
 }
 
 

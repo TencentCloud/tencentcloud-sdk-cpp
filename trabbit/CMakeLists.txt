@@ -25,6 +25,7 @@ set(trabbit_public_header_model
   include/tencentcloud/trabbit/v20230418/model/ModifyRabbitMQServerlessUserResponse.h
   include/tencentcloud/trabbit/v20230418/model/CreateRabbitMQServerlessVirtualHostRequest.h
   include/tencentcloud/trabbit/v20230418/model/DescribeRabbitMQServerlessUserResponse.h
+  include/tencentcloud/trabbit/v20230418/model/RabbitMQServerlessTag.h
   include/tencentcloud/trabbit/v20230418/model/ModifyRabbitMQServerlessExchangeResponse.h
   include/tencentcloud/trabbit/v20230418/model/DescribeRabbitMQServerlessConsumersResponse.h
   include/tencentcloud/trabbit/v20230418/model/DescribeRabbitMQServerlessQueueDetailResponse.h
@@ -109,6 +110,7 @@ set(trabbit_src
   src/v20230418/model/ModifyRabbitMQServerlessUserResponse.cpp
   src/v20230418/model/CreateRabbitMQServerlessVirtualHostRequest.cpp
   src/v20230418/model/DescribeRabbitMQServerlessUserResponse.cpp
+  src/v20230418/model/RabbitMQServerlessTag.cpp
   src/v20230418/model/ModifyRabbitMQServerlessExchangeResponse.cpp
   src/v20230418/model/DescribeRabbitMQServerlessConsumersResponse.cpp
   src/v20230418/model/DescribeRabbitMQServerlessQueueDetailResponse.cpp

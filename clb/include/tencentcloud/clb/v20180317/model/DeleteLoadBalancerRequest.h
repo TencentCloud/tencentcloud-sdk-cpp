@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LoadBalancerIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否强制删除clb。True表示强制删除，False表示不是强制删除，需要做拦截校验。
-默认为 False。
-以下几种情况会默认拦截删除操作，如果确认强制删除则需要传强制校验参数ForceDelete为True。
+                     * 获取是否强制删除clb。true表示强制删除，false表示不是强制删除，需要做拦截校验。
+默认为false。
+以下几种情况会默认拦截删除操作，如果触发情况1、2但确认强制删除则需要传强制校验参数ForceDelete为true。
 1、删除后端绑定大于等于 20 个 RS 的实例时。
 2、删除后端有 RS 且 5 分钟 内“出/入带宽”峰值取大 > 10Mbps 的实例时。
 3、单地域内 5 分钟 内删除大于等于 30 个实例时。
-                     * @return ForceDelete 是否强制删除clb。True表示强制删除，False表示不是强制删除，需要做拦截校验。
-默认为 False。
-以下几种情况会默认拦截删除操作，如果确认强制删除则需要传强制校验参数ForceDelete为True。
+                     * @return ForceDelete 是否强制删除clb。true表示强制删除，false表示不是强制删除，需要做拦截校验。
+默认为false。
+以下几种情况会默认拦截删除操作，如果触发情况1、2但确认强制删除则需要传强制校验参数ForceDelete为true。
 1、删除后端绑定大于等于 20 个 RS 的实例时。
 2、删除后端有 RS 且 5 分钟 内“出/入带宽”峰值取大 > 10Mbps 的实例时。
 3、单地域内 5 分钟 内删除大于等于 30 个实例时。
@@ -81,15 +81,15 @@ namespace TencentCloud
                     bool GetForceDelete() const;
 
                     /**
-                     * 设置是否强制删除clb。True表示强制删除，False表示不是强制删除，需要做拦截校验。
-默认为 False。
-以下几种情况会默认拦截删除操作，如果确认强制删除则需要传强制校验参数ForceDelete为True。
+                     * 设置是否强制删除clb。true表示强制删除，false表示不是强制删除，需要做拦截校验。
+默认为false。
+以下几种情况会默认拦截删除操作，如果触发情况1、2但确认强制删除则需要传强制校验参数ForceDelete为true。
 1、删除后端绑定大于等于 20 个 RS 的实例时。
 2、删除后端有 RS 且 5 分钟 内“出/入带宽”峰值取大 > 10Mbps 的实例时。
 3、单地域内 5 分钟 内删除大于等于 30 个实例时。
-                     * @param _forceDelete 是否强制删除clb。True表示强制删除，False表示不是强制删除，需要做拦截校验。
-默认为 False。
-以下几种情况会默认拦截删除操作，如果确认强制删除则需要传强制校验参数ForceDelete为True。
+                     * @param _forceDelete 是否强制删除clb。true表示强制删除，false表示不是强制删除，需要做拦截校验。
+默认为false。
+以下几种情况会默认拦截删除操作，如果触发情况1、2但确认强制删除则需要传强制校验参数ForceDelete为true。
 1、删除后端绑定大于等于 20 个 RS 的实例时。
 2、删除后端有 RS 且 5 分钟 内“出/入带宽”峰值取大 > 10Mbps 的实例时。
 3、单地域内 5 分钟 内删除大于等于 30 个实例时。
@@ -113,9 +113,9 @@ namespace TencentCloud
                     bool m_loadBalancerIdsHasBeenSet;
 
                     /**
-                     * 是否强制删除clb。True表示强制删除，False表示不是强制删除，需要做拦截校验。
-默认为 False。
-以下几种情况会默认拦截删除操作，如果确认强制删除则需要传强制校验参数ForceDelete为True。
+                     * 是否强制删除clb。true表示强制删除，false表示不是强制删除，需要做拦截校验。
+默认为false。
+以下几种情况会默认拦截删除操作，如果触发情况1、2但确认强制删除则需要传强制校验参数ForceDelete为true。
 1、删除后端绑定大于等于 20 个 RS 的实例时。
 2、删除后端有 RS 且 5 分钟 内“出/入带宽”峰值取大 > 10Mbps 的实例时。
 3、单地域内 5 分钟 内删除大于等于 30 个实例时。

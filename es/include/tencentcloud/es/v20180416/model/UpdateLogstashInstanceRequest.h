@@ -24,6 +24,7 @@
 #include <tencentcloud/es/v20180416/model/LogstashBindedES.h>
 #include <tencentcloud/es/v20180416/model/LogstashExtendedFile.h>
 #include <tencentcloud/es/v20180416/model/OperationDurationUpdated.h>
+#include <tencentcloud/es/v20180416/model/ZoneDetail.h>
 
 
 namespace TencentCloud
@@ -234,6 +235,27 @@ namespace TencentCloud
                      */
                     bool OperationDurationHasBeenSet() const;
 
+                    /**
+                     * 获取多可用区部署
+                     * @return MultiZoneInfo 多可用区部署
+                     * 
+                     */
+                    std::vector<ZoneDetail> GetMultiZoneInfo() const;
+
+                    /**
+                     * 设置多可用区部署
+                     * @param _multiZoneInfo 多可用区部署
+                     * 
+                     */
+                    void SetMultiZoneInfo(const std::vector<ZoneDetail>& _multiZoneInfo);
+
+                    /**
+                     * 判断参数 MultiZoneInfo 是否已赋值
+                     * @return MultiZoneInfo 是否已赋值
+                     * 
+                     */
+                    bool MultiZoneInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +311,12 @@ namespace TencentCloud
                      */
                     OperationDurationUpdated m_operationDuration;
                     bool m_operationDurationHasBeenSet;
+
+                    /**
+                     * 多可用区部署
+                     */
+                    std::vector<ZoneDetail> m_multiZoneInfo;
+                    bool m_multiZoneInfoHasBeenSet;
 
                 };
             }

@@ -43,7 +43,67 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取作业任务数量
+                     * @return JobTotal 作业任务数量
+                     * 
+                     */
+                    uint64_t GetJobTotal() const;
+
+                    /**
+                     * 判断参数 JobTotal 是否已赋值
+                     * @return JobTotal 是否已赋值
+                     * 
+                     */
+                    bool JobTotalHasBeenSet() const;
+
+                    /**
+                     * 获取排队中的作业任务数量
+                     * @return QueuingJobTotal 排队中的作业任务数量
+                     * 
+                     */
+                    uint64_t GetQueuingJobTotal() const;
+
+                    /**
+                     * 判断参数 QueuingJobTotal 是否已赋值
+                     * @return QueuingJobTotal 是否已赋值
+                     * 
+                     */
+                    bool QueuingJobTotalHasBeenSet() const;
+
+                    /**
+                     * 获取运行中的作业数量
+                     * @return RunningJobTotal 运行中的作业数量
+                     * 
+                     */
+                    uint64_t GetRunningJobTotal() const;
+
+                    /**
+                     * 判断参数 RunningJobTotal 是否已赋值
+                     * @return RunningJobTotal 是否已赋值
+                     * 
+                     */
+                    bool RunningJobTotalHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 作业任务数量
+                     */
+                    uint64_t m_jobTotal;
+                    bool m_jobTotalHasBeenSet;
+
+                    /**
+                     * 排队中的作业任务数量
+                     */
+                    uint64_t m_queuingJobTotal;
+                    bool m_queuingJobTotalHasBeenSet;
+
+                    /**
+                     * 运行中的作业数量
+                     */
+                    uint64_t m_runningJobTotal;
+                    bool m_runningJobTotalHasBeenSet;
 
                 };
             }

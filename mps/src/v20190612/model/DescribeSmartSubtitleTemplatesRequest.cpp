@@ -27,7 +27,8 @@ DescribeSmartSubtitleTemplatesRequest::DescribeSmartSubtitleTemplatesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_processTypeHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string DescribeSmartSubtitleTemplatesRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_processType, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void DescribeSmartSubtitleTemplatesRequest::SetName(const string& _name)
 bool DescribeSmartSubtitleTemplatesRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+uint64_t DescribeSmartSubtitleTemplatesRequest::GetProcessType() const
+{
+    return m_processType;
+}
+
+void DescribeSmartSubtitleTemplatesRequest::SetProcessType(const uint64_t& _processType)
+{
+    m_processType = _processType;
+    m_processTypeHasBeenSet = true;
+}
+
+bool DescribeSmartSubtitleTemplatesRequest::ProcessTypeHasBeenSet() const
+{
+    return m_processTypeHasBeenSet;
 }
 
 

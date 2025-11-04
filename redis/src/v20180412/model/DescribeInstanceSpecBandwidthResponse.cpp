@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
-DescribeInstanceSpecBandwidthResponse::DescribeInstanceSpecBandwidthResponse()
+DescribeInstanceSpecBandwidthResponse::DescribeInstanceSpecBandwidthResponse() :
+    m_bandwidthHasBeenSet(false),
+    m_clientLimitHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome DescribeInstanceSpecBandwidthResponse::Deserialize(const str
     }
 
 
+    if (rsp.HasMember("Bandwidth") && !rsp["Bandwidth"].IsNull())
+    {
+        if (!rsp["Bandwidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Bandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidth = rsp["Bandwidth"].GetInt64();
+        m_bandwidthHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClientLimit") && !rsp["ClientLimit"].IsNull())
+    {
+        if (!rsp["ClientLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientLimit = rsp["ClientLimit"].GetInt64();
+        m_clientLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string DescribeInstanceSpecBandwidthResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_bandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_clientLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientLimit, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string DescribeInstanceSpecBandwidthResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeInstanceSpecBandwidthResponse::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+bool DescribeInstanceSpecBandwidthResponse::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
+}
+
+int64_t DescribeInstanceSpecBandwidthResponse::GetClientLimit() const
+{
+    return m_clientLimit;
+}
+
+bool DescribeInstanceSpecBandwidthResponse::ClientLimitHasBeenSet() const
+{
+    return m_clientLimitHasBeenSet;
+}
 
 

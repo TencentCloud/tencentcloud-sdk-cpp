@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool SearchWordHasBeenSet() const;
 
+                    /**
+                     * 获取channelId
+                     * @return Channel channelId
+                     * 
+                     */
+                    std::string GetChannel() const;
+
+                    /**
+                     * 设置channelId
+                     * @param _channel channelId
+                     * 
+                     */
+                    void SetChannel(const std::string& _channel);
+
+                    /**
+                     * 判断参数 Channel 是否已赋值
+                     * @return Channel 是否已赋值
+                     * 
+                     */
+                    bool ChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
+
+                    /**
+                     * channelId
+                     */
+                    std::string m_channel;
+                    bool m_channelHasBeenSet;
 
                 };
             }

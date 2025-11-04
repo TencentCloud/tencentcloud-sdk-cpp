@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ExtraArgsHasBeenSet() const;
 
                     /**
-                     * 获取可容忍的最大不可用pod数目
-                     * @return MaxNotReadyPercent 可容忍的最大不可用pod数目
+                     * 获取可容忍的最大不可用pod数目。默认0
+                     * @return MaxNotReadyPercent 可容忍的最大不可用pod数目。默认0
                      * 
                      */
                     double GetMaxNotReadyPercent() const;
 
                     /**
-                     * 设置可容忍的最大不可用pod数目
-                     * @param _maxNotReadyPercent 可容忍的最大不可用pod数目
+                     * 设置可容忍的最大不可用pod数目。默认0
+                     * @param _maxNotReadyPercent 可容忍的最大不可用pod数目。默认0
                      * 
                      */
                     void SetMaxNotReadyPercent(const double& _maxNotReadyPercent);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool MaxNotReadyPercentHasBeenSet() const;
 
                     /**
-                     * 获取是否跳过预检查阶段
-                     * @return SkipPreCheck 是否跳过预检查阶段
+                     * 获取是否跳过预检查阶段，默认false
+                     * @return SkipPreCheck 是否跳过预检查阶段，默认false
                      * 
                      */
                     bool GetSkipPreCheck() const;
 
                     /**
-                     * 设置是否跳过预检查阶段
-                     * @param _skipPreCheck 是否跳过预检查阶段
+                     * 设置是否跳过预检查阶段，默认false
+                     * @param _skipPreCheck 是否跳过预检查阶段，默认false
                      * 
                      */
                     void SetSkipPreCheck(const bool& _skipPreCheck);
@@ -169,13 +169,13 @@ namespace TencentCloud
                     bool m_extraArgsHasBeenSet;
 
                     /**
-                     * 可容忍的最大不可用pod数目
+                     * 可容忍的最大不可用pod数目。默认0
                      */
                     double m_maxNotReadyPercent;
                     bool m_maxNotReadyPercentHasBeenSet;
 
                     /**
-                     * 是否跳过预检查阶段
+                     * 是否跳过预检查阶段，默认false
                      */
                     bool m_skipPreCheck;
                     bool m_skipPreCheckHasBeenSet;

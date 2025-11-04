@@ -3695,6 +3695,49 @@ CkafkaClient::ModifyTopicAttributesOutcomeCallable CkafkaClient::ModifyTopicAttr
     return task->get_future();
 }
 
+CkafkaClient::PauseDatahubTaskOutcome CkafkaClient::PauseDatahubTask(const PauseDatahubTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "PauseDatahubTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PauseDatahubTaskResponse rsp = PauseDatahubTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PauseDatahubTaskOutcome(rsp);
+        else
+            return PauseDatahubTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return PauseDatahubTaskOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::PauseDatahubTaskAsync(const PauseDatahubTaskRequest& request, const PauseDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PauseDatahubTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::PauseDatahubTaskOutcomeCallable CkafkaClient::PauseDatahubTaskCallable(const PauseDatahubTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PauseDatahubTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->PauseDatahubTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::RenewCkafkaInstanceOutcome CkafkaClient::RenewCkafkaInstance(const RenewCkafkaInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "RenewCkafkaInstance");
@@ -3731,6 +3774,92 @@ CkafkaClient::RenewCkafkaInstanceOutcomeCallable CkafkaClient::RenewCkafkaInstan
         [this, request]()
         {
             return this->RenewCkafkaInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::RestartDatahubTaskOutcome CkafkaClient::RestartDatahubTask(const RestartDatahubTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartDatahubTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartDatahubTaskResponse rsp = RestartDatahubTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartDatahubTaskOutcome(rsp);
+        else
+            return RestartDatahubTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartDatahubTaskOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::RestartDatahubTaskAsync(const RestartDatahubTaskRequest& request, const RestartDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartDatahubTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::RestartDatahubTaskOutcomeCallable CkafkaClient::RestartDatahubTaskCallable(const RestartDatahubTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartDatahubTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartDatahubTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::ResumeDatahubTaskOutcome CkafkaClient::ResumeDatahubTask(const ResumeDatahubTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeDatahubTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeDatahubTaskResponse rsp = ResumeDatahubTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeDatahubTaskOutcome(rsp);
+        else
+            return ResumeDatahubTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeDatahubTaskOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::ResumeDatahubTaskAsync(const ResumeDatahubTaskRequest& request, const ResumeDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResumeDatahubTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::ResumeDatahubTaskOutcomeCallable CkafkaClient::ResumeDatahubTaskCallable(const ResumeDatahubTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResumeDatahubTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ResumeDatahubTask(request);
         }
     );
 

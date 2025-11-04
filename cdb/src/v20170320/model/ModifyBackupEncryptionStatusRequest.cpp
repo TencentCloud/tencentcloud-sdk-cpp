@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyBackupEncryptionStatusRequest::ModifyBackupEncryptionStatusRequest() :
     m_instanceIdHasBeenSet(false),
-    m_encryptionStatusHasBeenSet(false)
+    m_encryptionStatusHasBeenSet(false),
+    m_binlogEncryptionStatusHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyBackupEncryptionStatusRequest::ToJsonString() const
         string key = "EncryptionStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_encryptionStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_binlogEncryptionStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BinlogEncryptionStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_binlogEncryptionStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyBackupEncryptionStatusRequest::SetEncryptionStatus(const string& _enc
 bool ModifyBackupEncryptionStatusRequest::EncryptionStatusHasBeenSet() const
 {
     return m_encryptionStatusHasBeenSet;
+}
+
+string ModifyBackupEncryptionStatusRequest::GetBinlogEncryptionStatus() const
+{
+    return m_binlogEncryptionStatus;
+}
+
+void ModifyBackupEncryptionStatusRequest::SetBinlogEncryptionStatus(const string& _binlogEncryptionStatus)
+{
+    m_binlogEncryptionStatus = _binlogEncryptionStatus;
+    m_binlogEncryptionStatusHasBeenSet = true;
+}
+
+bool ModifyBackupEncryptionStatusRequest::BinlogEncryptionStatusHasBeenSet() const
+{
+    return m_binlogEncryptionStatusHasBeenSet;
 }
 
 

@@ -478,6 +478,48 @@ namespace TencentCloud
                      */
                     bool TopicRegularExpressionHasBeenSet() const;
 
+                    /**
+                     * 获取Topic 前缀
+                     * @return Prefix Topic 前缀
+                     * 
+                     */
+                    std::string GetPrefix() const;
+
+                    /**
+                     * 设置Topic 前缀
+                     * @param _prefix Topic 前缀
+                     * 
+                     */
+                    void SetPrefix(const std::string& _prefix);
+
+                    /**
+                     * 判断参数 Prefix 是否已赋值
+                     * @return Prefix 是否已赋值
+                     * 
+                     */
+                    bool PrefixHasBeenSet() const;
+
+                    /**
+                     * 获取Topic前缀分隔符
+                     * @return Separator Topic前缀分隔符
+                     * 
+                     */
+                    std::string GetSeparator() const;
+
+                    /**
+                     * 设置Topic前缀分隔符
+                     * @param _separator Topic前缀分隔符
+                     * 
+                     */
+                    void SetSeparator(const std::string& _separator);
+
+                    /**
+                     * 判断参数 Separator 是否已赋值
+                     * @return Separator 是否已赋值
+                     * 
+                     */
+                    bool SeparatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -601,6 +643,18 @@ namespace TencentCloud
                      */
                     std::string m_topicRegularExpression;
                     bool m_topicRegularExpressionHasBeenSet;
+
+                    /**
+                     * Topic 前缀
+                     */
+                    std::string m_prefix;
+                    bool m_prefixHasBeenSet;
+
+                    /**
+                     * Topic前缀分隔符
+                     */
+                    std::string m_separator;
+                    bool m_separatorHasBeenSet;
 
                 };
             }

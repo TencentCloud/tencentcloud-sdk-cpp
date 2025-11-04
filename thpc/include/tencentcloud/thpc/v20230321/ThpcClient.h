@@ -69,6 +69,8 @@
 #include <tencentcloud/thpc/v20230321/model/DescribeWorkspacesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DetachNodesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DetachNodesResponse.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyClusterDeletionProtectionRequest.h>
+#include <tencentcloud/thpc/v20230321/model/ModifyClusterDeletionProtectionResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsRequest.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyWorkspacesAttributeRequest.h>
@@ -166,6 +168,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetachNodesResponse> DetachNodesOutcome;
                 typedef std::future<DetachNodesOutcome> DetachNodesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DetachNodesRequest&, DetachNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterDeletionProtectionResponse> ModifyClusterDeletionProtectionOutcome;
+                typedef std::future<ModifyClusterDeletionProtectionOutcome> ModifyClusterDeletionProtectionOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::ModifyClusterDeletionProtectionRequest&, ModifyClusterDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterDeletionProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInitNodeScriptsResponse> ModifyInitNodeScriptsOutcome;
                 typedef std::future<ModifyInitNodeScriptsOutcome> ModifyInitNodeScriptsOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::ModifyInitNodeScriptsRequest&, ModifyInitNodeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInitNodeScriptsAsyncHandler;
@@ -403,6 +408,15 @@ namespace TencentCloud
                 DetachNodesOutcome DetachNodes(const Model::DetachNodesRequest &request);
                 void DetachNodesAsync(const Model::DetachNodesRequest& request, const DetachNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetachNodesOutcomeCallable DetachNodesCallable(const Model::DetachNodesRequest& request);
+
+                /**
+                 *修改集群删除保护状态
+                 * @param req ModifyClusterDeletionProtectionRequest
+                 * @return ModifyClusterDeletionProtectionOutcome
+                 */
+                ModifyClusterDeletionProtectionOutcome ModifyClusterDeletionProtection(const Model::ModifyClusterDeletionProtectionRequest &request);
+                void ModifyClusterDeletionProtectionAsync(const Model::ModifyClusterDeletionProtectionRequest& request, const ModifyClusterDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterDeletionProtectionOutcomeCallable ModifyClusterDeletionProtectionCallable(const Model::ModifyClusterDeletionProtectionRequest& request);
 
                 /**
                  *本接口 (ModifyInitNodeScripts) 用于修改节点初始化脚本。

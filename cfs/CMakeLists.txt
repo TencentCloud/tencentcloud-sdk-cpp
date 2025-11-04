@@ -64,7 +64,6 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/DeleteCfsSnapshotResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemClientsResponse.h
   include/tencentcloud/cfs/v20190719/model/DoDirectoryOperationResponse.h
-  include/tencentcloud/cfs/v20190719/model/DeleteMountTargetResponse.h
   include/tencentcloud/cfs/v20190719/model/ModifyLifecyclePolicyResponse.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsSnapshotRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeBucketListRequest.h
@@ -92,7 +91,6 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/CreateCfsSnapshotResponse.h
   include/tencentcloud/cfs/v20190719/model/LifecycleRule.h
   include/tencentcloud/cfs/v20190719/model/UserQuota.h
-  include/tencentcloud/cfs/v20190719/model/DeleteMountTargetRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsRuleRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsFileSystemResponse.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsFileSystemResponse.h
@@ -213,7 +211,6 @@ set(cfs_src
   src/v20190719/model/DeleteCfsSnapshotResponse.cpp
   src/v20190719/model/DescribeCfsFileSystemClientsResponse.cpp
   src/v20190719/model/DoDirectoryOperationResponse.cpp
-  src/v20190719/model/DeleteMountTargetResponse.cpp
   src/v20190719/model/ModifyLifecyclePolicyResponse.cpp
   src/v20190719/model/CreateCfsSnapshotRequest.cpp
   src/v20190719/model/DescribeBucketListRequest.cpp
@@ -241,7 +238,6 @@ set(cfs_src
   src/v20190719/model/CreateCfsSnapshotResponse.cpp
   src/v20190719/model/LifecycleRule.cpp
   src/v20190719/model/UserQuota.cpp
-  src/v20190719/model/DeleteMountTargetRequest.cpp
   src/v20190719/model/CreateCfsRuleRequest.cpp
   src/v20190719/model/DeleteCfsFileSystemResponse.cpp
   src/v20190719/model/CreateCfsFileSystemResponse.cpp

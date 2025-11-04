@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trabbit/v20230418/model/RabbitMQServerlessTag.h>
 
 
 namespace TencentCloud
@@ -147,6 +148,48 @@ namespace TencentCloud
                      */
                     bool SendReceiveRatioHasBeenSet() const;
 
+                    /**
+                     * 获取是否删除所有标签，默认为false
+                     * @return DeleteAllTags 是否删除所有标签，默认为false
+                     * 
+                     */
+                    bool GetDeleteAllTags() const;
+
+                    /**
+                     * 设置是否删除所有标签，默认为false
+                     * @param _deleteAllTags 是否删除所有标签，默认为false
+                     * 
+                     */
+                    void SetDeleteAllTags(const bool& _deleteAllTags);
+
+                    /**
+                     * 判断参数 DeleteAllTags 是否已赋值
+                     * @return DeleteAllTags 是否已赋值
+                     * 
+                     */
+                    bool DeleteAllTagsHasBeenSet() const;
+
+                    /**
+                     * 获取修改的实例标签列表
+                     * @return InstanceTags 修改的实例标签列表
+                     * 
+                     */
+                    std::vector<RabbitMQServerlessTag> GetInstanceTags() const;
+
+                    /**
+                     * 设置修改的实例标签列表
+                     * @param _instanceTags 修改的实例标签列表
+                     * 
+                     */
+                    void SetInstanceTags(const std::vector<RabbitMQServerlessTag>& _instanceTags);
+
+                    /**
+                     * 判断参数 InstanceTags 是否已赋值
+                     * @return InstanceTags 是否已赋值
+                     * 
+                     */
+                    bool InstanceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +221,18 @@ namespace TencentCloud
                      */
                     double m_sendReceiveRatio;
                     bool m_sendReceiveRatioHasBeenSet;
+
+                    /**
+                     * 是否删除所有标签，默认为false
+                     */
+                    bool m_deleteAllTags;
+                    bool m_deleteAllTagsHasBeenSet;
+
+                    /**
+                     * 修改的实例标签列表
+                     */
+                    std::vector<RabbitMQServerlessTag> m_instanceTags;
+                    bool m_instanceTagsHasBeenSet;
 
                 };
             }

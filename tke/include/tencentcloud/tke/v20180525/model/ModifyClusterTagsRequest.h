@@ -65,15 +65,19 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群标签
-                     * @return Tags 集群标签
+                     * 获取集群标签:
+[{"TagKey":"env","TagValue":"dev"}]}]
+                     * @return Tags 集群标签:
+[{"TagKey":"env","TagValue":"dev"}]}]
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置集群标签
-                     * @param _tags 集群标签
+                     * 设置集群标签:
+[{"TagKey":"env","TagValue":"dev"}]}]
+                     * @param _tags 集群标签:
+[{"TagKey":"env","TagValue":"dev"}]}]
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -115,7 +119,8 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群标签
+                     * 集群标签:
+[{"TagKey":"env","TagValue":"dev"}]}]
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

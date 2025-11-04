@@ -323,6 +323,27 @@ namespace TencentCloud
                     bool AssistantCidrSetHasBeenSet() const;
 
                     /**
+                     * 获取vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单
+                     * @return EnableRouteVpcPublish vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单
+                     * 
+                     */
+                    bool GetEnableRouteVpcPublish() const;
+
+                    /**
+                     * 设置vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单
+                     * @param _enableRouteVpcPublish vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单
+                     * 
+                     */
+                    void SetEnableRouteVpcPublish(const bool& _enableRouteVpcPublish);
+
+                    /**
+                     * 判断参数 EnableRouteVpcPublish 是否已赋值
+                     * @return EnableRouteVpcPublish 是否已赋值
+                     * 
+                     */
+                    bool EnableRouteVpcPublishHasBeenSet() const;
+
+                    /**
                      * 获取返回多运营商IPv6 Cidr Block
                      * @return Ipv6CidrBlockSet 返回多运营商IPv6 Cidr Block
                      * 
@@ -422,6 +443,12 @@ namespace TencentCloud
                      */
                     std::vector<AssistantCidr> m_assistantCidrSet;
                     bool m_assistantCidrSetHasBeenSet;
+
+                    /**
+                     * vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单
+                     */
+                    bool m_enableRouteVpcPublish;
+                    bool m_enableRouteVpcPublishHasBeenSet;
 
                     /**
                      * 返回多运营商IPv6 Cidr Block

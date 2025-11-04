@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trabbit/v20230418/model/RabbitMQServerlessEndpoint.h>
+#include <tencentcloud/trabbit/v20230418/model/RabbitMQServerlessTag.h>
 
 
 namespace TencentCloud
@@ -492,6 +493,27 @@ namespace TencentCloud
                      */
                     bool ServerlessExtHasBeenSet() const;
 
+                    /**
+                     * 获取实例标签列表
+                     * @return Tags 实例标签列表
+                     * 
+                     */
+                    std::vector<RabbitMQServerlessTag> GetTags() const;
+
+                    /**
+                     * 设置实例标签列表
+                     * @param _tags 实例标签列表
+                     * 
+                     */
+                    void SetTags(const std::vector<RabbitMQServerlessTag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -620,6 +642,12 @@ namespace TencentCloud
                      */
                     std::string m_serverlessExt;
                     bool m_serverlessExtHasBeenSet;
+
+                    /**
+                     * 实例标签列表
+                     */
+                    std::vector<RabbitMQServerlessTag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

@@ -193,8 +193,14 @@
 #include <tencentcloud/ckafka/v20190819/model/ModifyRoutineMaintenanceTaskResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/PauseDatahubTaskRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/PauseDatahubTaskResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/RestartDatahubTaskRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/RestartDatahubTaskResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/ResumeDatahubTaskRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/ResumeDatahubTaskResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/SendMessageRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/SendMessageResponse.h>
 
@@ -466,9 +472,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicAttributesResponse> ModifyTopicAttributesOutcome;
                 typedef std::future<ModifyTopicAttributesOutcome> ModifyTopicAttributesOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyTopicAttributesRequest&, ModifyTopicAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::PauseDatahubTaskResponse> PauseDatahubTaskOutcome;
+                typedef std::future<PauseDatahubTaskOutcome> PauseDatahubTaskOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::PauseDatahubTaskRequest&, PauseDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseDatahubTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewCkafkaInstanceResponse> RenewCkafkaInstanceOutcome;
                 typedef std::future<RenewCkafkaInstanceOutcome> RenewCkafkaInstanceOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::RenewCkafkaInstanceRequest&, RenewCkafkaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewCkafkaInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartDatahubTaskResponse> RestartDatahubTaskOutcome;
+                typedef std::future<RestartDatahubTaskOutcome> RestartDatahubTaskOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::RestartDatahubTaskRequest&, RestartDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartDatahubTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeDatahubTaskResponse> ResumeDatahubTaskOutcome;
+                typedef std::future<ResumeDatahubTaskOutcome> ResumeDatahubTaskOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::ResumeDatahubTaskRequest&, ResumeDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeDatahubTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::SendMessageResponse> SendMessageOutcome;
                 typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::SendMessageRequest&, SendMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMessageAsyncHandler;
@@ -1242,6 +1257,15 @@ namespace TencentCloud
                 ModifyTopicAttributesOutcomeCallable ModifyTopicAttributesCallable(const Model::ModifyTopicAttributesRequest& request);
 
                 /**
+                 *暂停Dip任务
+                 * @param req PauseDatahubTaskRequest
+                 * @return PauseDatahubTaskOutcome
+                 */
+                PauseDatahubTaskOutcome PauseDatahubTask(const Model::PauseDatahubTaskRequest &request);
+                void PauseDatahubTaskAsync(const Model::PauseDatahubTaskRequest& request, const PauseDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PauseDatahubTaskOutcomeCallable PauseDatahubTaskCallable(const Model::PauseDatahubTaskRequest& request);
+
+                /**
                  *续费Ckafka实例, 目前只支持国内站包年包月实例续费
                  * @param req RenewCkafkaInstanceRequest
                  * @return RenewCkafkaInstanceOutcome
@@ -1249,6 +1273,24 @@ namespace TencentCloud
                 RenewCkafkaInstanceOutcome RenewCkafkaInstance(const Model::RenewCkafkaInstanceRequest &request);
                 void RenewCkafkaInstanceAsync(const Model::RenewCkafkaInstanceRequest& request, const RenewCkafkaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewCkafkaInstanceOutcomeCallable RenewCkafkaInstanceCallable(const Model::RenewCkafkaInstanceRequest& request);
+
+                /**
+                 *Datahub任务异常时，重启Datahub任务
+                 * @param req RestartDatahubTaskRequest
+                 * @return RestartDatahubTaskOutcome
+                 */
+                RestartDatahubTaskOutcome RestartDatahubTask(const Model::RestartDatahubTaskRequest &request);
+                void RestartDatahubTaskAsync(const Model::RestartDatahubTaskRequest& request, const RestartDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartDatahubTaskOutcomeCallable RestartDatahubTaskCallable(const Model::RestartDatahubTaskRequest& request);
+
+                /**
+                 *恢复Dip任务
+                 * @param req ResumeDatahubTaskRequest
+                 * @return ResumeDatahubTaskOutcome
+                 */
+                ResumeDatahubTaskOutcome ResumeDatahubTask(const Model::ResumeDatahubTaskRequest &request);
+                void ResumeDatahubTaskAsync(const Model::ResumeDatahubTaskRequest& request, const ResumeDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeDatahubTaskOutcomeCallable ResumeDatahubTaskCallable(const Model::ResumeDatahubTaskRequest& request);
 
                 /**
                  *通过HTTP接入层发送消息

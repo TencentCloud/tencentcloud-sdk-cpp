@@ -76,15 +76,15 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取最大限制，取值在1MB和500MB之间。单位字节。
-                     * @return MaxSize 最大限制，取值在1MB和500MB之间。单位字节。
+                     * 获取最大限制，该字段仅在 Switch 为 on 时生效，取值在 1MB 和 800MB 之间，单位字节。
+                     * @return MaxSize 最大限制，该字段仅在 Switch 为 on 时生效，取值在 1MB 和 800MB 之间，单位字节。
                      * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
-                     * 设置最大限制，取值在1MB和500MB之间。单位字节。
-                     * @param _maxSize 最大限制，取值在1MB和500MB之间。单位字节。
+                     * 设置最大限制，该字段仅在 Switch 为 on 时生效，取值在 1MB 和 800MB 之间，单位字节。
+                     * @param _maxSize 最大限制，该字段仅在 Switch 为 on 时生效，取值在 1MB 和 800MB 之间，单位字节。
                      * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
@@ -107,7 +107,7 @@ namespace TencentCloud
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 最大限制，取值在1MB和500MB之间。单位字节。
+                     * 最大限制，该字段仅在 Switch 为 on 时生效，取值在 1MB 和 800MB 之间，单位字节。
                      */
                     int64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;

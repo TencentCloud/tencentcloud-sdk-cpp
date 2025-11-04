@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TranslationDirectionHasBeenSet() const;
 
                     /**
-                     * 获取转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。
-                     * @return TranslationType 转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。
+                     * 获取转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。分别对应三层、四层。
+                     * @return TranslationType 转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。分别对应三层、四层。
                      * 
                      */
                     std::string GetTranslationType() const;
 
                     /**
-                     * 设置转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。
-                     * @param _translationType 转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。
+                     * 设置转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。分别对应三层、四层。
+                     * @param _translationType 转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。分别对应三层、四层。
                      * 
                      */
                     void SetTranslationType(const std::string& _translationType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TranslationTypeHasBeenSet() const;
 
                     /**
-                     * 获取转换`IP`,当转换规则类型为四层时为`IP`池。
-                     * @return TranslationIp 转换`IP`,当转换规则类型为四层时为`IP`池。
+                     * 获取映射后`IP`,当转换规则类型为四层时为`IP`池。
+                     * @return TranslationIp 映射后`IP`,当转换规则类型为四层时为`IP`池。
                      * 
                      */
                     std::string GetTranslationIp() const;
 
                     /**
-                     * 设置转换`IP`,当转换规则类型为四层时为`IP`池。
-                     * @param _translationIp 转换`IP`,当转换规则类型为四层时为`IP`池。
+                     * 设置映射后`IP`,当转换规则类型为四层时为`IP`池。
+                     * @param _translationIp 映射后`IP`,当转换规则类型为四层时为`IP`池。
                      * 
                      */
                     void SetTranslationIp(const std::string& _translationIp);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取源`IP`,当转换规则类型为三层时有效。
-                     * @return OriginalIp 源`IP`,当转换规则类型为三层时有效。
+                     * 获取映射前`IP`,当转换规则类型为三层时有效。
+                     * @return OriginalIp 映射前`IP`,当转换规则类型为三层时有效。
                      * 
                      */
                     std::string GetOriginalIp() const;
 
                     /**
-                     * 设置源`IP`,当转换规则类型为三层时有效。
-                     * @param _originalIp 源`IP`,当转换规则类型为三层时有效。
+                     * 设置映射前`IP`,当转换规则类型为三层时有效。
+                     * @param _originalIp 映射前`IP`,当转换规则类型为三层时有效。
                      * 
                      */
                     void SetOriginalIp(const std::string& _originalIp);
@@ -160,13 +160,13 @@ namespace TencentCloud
                     bool m_translationDirectionHasBeenSet;
 
                     /**
-                     * 转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。
+                     * 转换规则类型，可选值"NETWORK_LAYER","TRANSPORT_LAYER"。分别对应三层、四层。
                      */
                     std::string m_translationType;
                     bool m_translationTypeHasBeenSet;
 
                     /**
-                     * 转换`IP`,当转换规则类型为四层时为`IP`池。
+                     * 映射后`IP`,当转换规则类型为四层时为`IP`池。
                      */
                     std::string m_translationIp;
                     bool m_translationIpHasBeenSet;
@@ -178,7 +178,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 源`IP`,当转换规则类型为三层时有效。
+                     * 映射前`IP`,当转换规则类型为三层时有效。
                      */
                     std::string m_originalIp;
                     bool m_originalIpHasBeenSet;

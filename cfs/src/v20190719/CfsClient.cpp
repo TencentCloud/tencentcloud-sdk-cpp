@@ -943,49 +943,6 @@ CfsClient::DeleteMigrationTaskOutcomeCallable CfsClient::DeleteMigrationTaskCall
     return task->get_future();
 }
 
-CfsClient::DeleteMountTargetOutcome CfsClient::DeleteMountTarget(const DeleteMountTargetRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteMountTarget");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteMountTargetResponse rsp = DeleteMountTargetResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteMountTargetOutcome(rsp);
-        else
-            return DeleteMountTargetOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteMountTargetOutcome(outcome.GetError());
-    }
-}
-
-void CfsClient::DeleteMountTargetAsync(const DeleteMountTargetRequest& request, const DeleteMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteMountTarget(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfsClient::DeleteMountTargetOutcomeCallable CfsClient::DeleteMountTargetCallable(const DeleteMountTargetRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteMountTargetOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteMountTarget(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfsClient::DeleteUserQuotaOutcome CfsClient::DeleteUserQuota(const DeleteUserQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteUserQuota");

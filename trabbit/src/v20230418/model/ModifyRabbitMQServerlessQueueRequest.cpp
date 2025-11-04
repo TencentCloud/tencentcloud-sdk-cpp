@@ -26,7 +26,10 @@ ModifyRabbitMQServerlessQueueRequest::ModifyRabbitMQServerlessQueueRequest() :
     m_instanceIdHasBeenSet(false),
     m_virtualHostHasBeenSet(false),
     m_queueNameHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_messageTTLHasBeenSet(false),
+    m_deadLetterExchangeHasBeenSet(false),
+    m_deadLetterRoutingKeyHasBeenSet(false)
 {
 }
 
@@ -67,6 +70,30 @@ string ModifyRabbitMQServerlessQueueRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageTTL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_messageTTL, allocator);
+    }
+
+    if (m_deadLetterExchangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeadLetterExchange";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deadLetterExchange.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deadLetterRoutingKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeadLetterRoutingKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deadLetterRoutingKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +166,54 @@ void ModifyRabbitMQServerlessQueueRequest::SetRemark(const string& _remark)
 bool ModifyRabbitMQServerlessQueueRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+int64_t ModifyRabbitMQServerlessQueueRequest::GetMessageTTL() const
+{
+    return m_messageTTL;
+}
+
+void ModifyRabbitMQServerlessQueueRequest::SetMessageTTL(const int64_t& _messageTTL)
+{
+    m_messageTTL = _messageTTL;
+    m_messageTTLHasBeenSet = true;
+}
+
+bool ModifyRabbitMQServerlessQueueRequest::MessageTTLHasBeenSet() const
+{
+    return m_messageTTLHasBeenSet;
+}
+
+string ModifyRabbitMQServerlessQueueRequest::GetDeadLetterExchange() const
+{
+    return m_deadLetterExchange;
+}
+
+void ModifyRabbitMQServerlessQueueRequest::SetDeadLetterExchange(const string& _deadLetterExchange)
+{
+    m_deadLetterExchange = _deadLetterExchange;
+    m_deadLetterExchangeHasBeenSet = true;
+}
+
+bool ModifyRabbitMQServerlessQueueRequest::DeadLetterExchangeHasBeenSet() const
+{
+    return m_deadLetterExchangeHasBeenSet;
+}
+
+string ModifyRabbitMQServerlessQueueRequest::GetDeadLetterRoutingKey() const
+{
+    return m_deadLetterRoutingKey;
+}
+
+void ModifyRabbitMQServerlessQueueRequest::SetDeadLetterRoutingKey(const string& _deadLetterRoutingKey)
+{
+    m_deadLetterRoutingKey = _deadLetterRoutingKey;
+    m_deadLetterRoutingKeyHasBeenSet = true;
+}
+
+bool ModifyRabbitMQServerlessQueueRequest::DeadLetterRoutingKeyHasBeenSet() const
+{
+    return m_deadLetterRoutingKeyHasBeenSet;
 }
 
 

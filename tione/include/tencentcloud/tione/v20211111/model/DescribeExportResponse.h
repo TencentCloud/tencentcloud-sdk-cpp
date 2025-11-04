@@ -44,6 +44,62 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取日志下载任务的ID
+                     * @return ExportId 日志下载任务的ID
+                     * 
+                     */
+                    std::string GetExportId() const;
+
+                    /**
+                     * 判断参数 ExportId 是否已赋值
+                     * @return ExportId 是否已赋值
+                     * 
+                     */
+                    bool ExportIdHasBeenSet() const;
+
+                    /**
+                     * 获取日志下载文件名
+                     * @return FileName 日志下载文件名
+                     * 
+                     */
+                    std::string GetFileName() const;
+
+                    /**
+                     * 判断参数 FileName 是否已赋值
+                     * @return FileName 是否已赋值
+                     * 
+                     */
+                    bool FileNameHasBeenSet() const;
+
+                    /**
+                     * 获取日志导出路径,有效期一个小时，请尽快使用该路径下载。
+                     * @return CosPath 日志导出路径,有效期一个小时，请尽快使用该路径下载。
+                     * 
+                     */
+                    std::string GetCosPath() const;
+
+                    /**
+                     * 判断参数 CosPath 是否已赋值
+                     * @return CosPath 是否已赋值
+                     * 
+                     */
+                    bool CosPathHasBeenSet() const;
+
+                    /**
+                     * 获取下载任务创建时间
+                     * @return CreateTime 下载任务创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
                      * 获取日志文件大小
                      * @return FileSize 日志文件大小
                      * 
@@ -72,6 +128,30 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 日志下载任务的ID
+                     */
+                    std::string m_exportId;
+                    bool m_exportIdHasBeenSet;
+
+                    /**
+                     * 日志下载文件名
+                     */
+                    std::string m_fileName;
+                    bool m_fileNameHasBeenSet;
+
+                    /**
+                     * 日志导出路径,有效期一个小时，请尽快使用该路径下载。
+                     */
+                    std::string m_cosPath;
+                    bool m_cosPathHasBeenSet;
+
+                    /**
+                     * 下载任务创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                     /**
                      * 日志文件大小

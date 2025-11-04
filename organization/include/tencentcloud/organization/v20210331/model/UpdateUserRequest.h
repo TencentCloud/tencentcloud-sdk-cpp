@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool NewEmailHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要重置密码
+                     * @return NeedResetPassword 是否需要重置密码
+                     * 
+                     */
+                    bool GetNeedResetPassword() const;
+
+                    /**
+                     * 设置是否需要重置密码
+                     * @param _needResetPassword 是否需要重置密码
+                     * 
+                     */
+                    void SetNeedResetPassword(const bool& _needResetPassword);
+
+                    /**
+                     * 判断参数 NeedResetPassword 是否已赋值
+                     * @return NeedResetPassword 是否已赋值
+                     * 
+                     */
+                    bool NeedResetPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_newEmail;
                     bool m_newEmailHasBeenSet;
+
+                    /**
+                     * 是否需要重置密码
+                     */
+                    bool m_needResetPassword;
+                    bool m_needResetPasswordHasBeenSet;
 
                 };
             }

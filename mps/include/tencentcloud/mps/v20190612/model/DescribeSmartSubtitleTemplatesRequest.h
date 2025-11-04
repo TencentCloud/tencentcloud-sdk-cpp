@@ -155,6 +155,35 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取字幕处理类型：
+- 0：ASR识别字幕
+- 1：纯字幕翻译
+                     * @return ProcessType 字幕处理类型：
+- 0：ASR识别字幕
+- 1：纯字幕翻译
+                     * 
+                     */
+                    uint64_t GetProcessType() const;
+
+                    /**
+                     * 设置字幕处理类型：
+- 0：ASR识别字幕
+- 1：纯字幕翻译
+                     * @param _processType 字幕处理类型：
+- 0：ASR识别字幕
+- 1：纯字幕翻译
+                     * 
+                     */
+                    void SetProcessType(const uint64_t& _processType);
+
+                    /**
+                     * 判断参数 ProcessType 是否已赋值
+                     * @return ProcessType 是否已赋值
+                     * 
+                     */
+                    bool ProcessTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +217,14 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 字幕处理类型：
+- 0：ASR识别字幕
+- 1：纯字幕翻译
+                     */
+                    uint64_t m_processType;
+                    bool m_processTypeHasBeenSet;
 
                 };
             }

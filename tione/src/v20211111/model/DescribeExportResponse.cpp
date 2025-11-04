@@ -24,6 +24,10 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DescribeExportResponse::DescribeExportResponse() :
+    m_exportIdHasBeenSet(false),
+    m_fileNameHasBeenSet(false),
+    m_cosPathHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_fileSizeHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
@@ -63,6 +67,46 @@ CoreInternalOutcome DescribeExportResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ExportId") && !rsp["ExportId"].IsNull())
+    {
+        if (!rsp["ExportId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_exportId = string(rsp["ExportId"].GetString());
+        m_exportIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileName") && !rsp["FileName"].IsNull())
+    {
+        if (!rsp["FileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileName = string(rsp["FileName"].GetString());
+        m_fileNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CosPath") && !rsp["CosPath"].IsNull())
+    {
+        if (!rsp["CosPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosPath = string(rsp["CosPath"].GetString());
+        m_cosPathHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
+    {
+        if (!rsp["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(rsp["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
     if (rsp.HasMember("FileSize") && !rsp["FileSize"].IsNull())
     {
         if (!rsp["FileSize"].IsString())
@@ -93,6 +137,38 @@ string DescribeExportResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_exportIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExportId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exportId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_fileSizeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -120,6 +196,46 @@ string DescribeExportResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeExportResponse::GetExportId() const
+{
+    return m_exportId;
+}
+
+bool DescribeExportResponse::ExportIdHasBeenSet() const
+{
+    return m_exportIdHasBeenSet;
+}
+
+string DescribeExportResponse::GetFileName() const
+{
+    return m_fileName;
+}
+
+bool DescribeExportResponse::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
+}
+
+string DescribeExportResponse::GetCosPath() const
+{
+    return m_cosPath;
+}
+
+bool DescribeExportResponse::CosPathHasBeenSet() const
+{
+    return m_cosPathHasBeenSet;
+}
+
+string DescribeExportResponse::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+bool DescribeExportResponse::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
 
 string DescribeExportResponse::GetFileSize() const
 {

@@ -26,6 +26,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/ResetConsumerGroupOffsetResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrateRateLimitResponse.h
   include/tencentcloud/dts/v20211206/model/IsolateMigrateJobResponse.h
+  include/tencentcloud/dts/v20211206/model/SubscribeInfo.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrateJobSpecRequest.h
   include/tencentcloud/dts/v20211206/model/IsolateSubscribeResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyConsumerGroupPasswordRequest.h
@@ -38,6 +39,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/ResumeSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/PartitionAssignment.h
   include/tencentcloud/dts/v20211206/model/RowsCountDifference.h
+  include/tencentcloud/dts/v20211206/model/DifferenceOwnerDetail.h
   include/tencentcloud/dts/v20211206/model/ResizeSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/CreateSubscribeCheckJobRequest.h
   include/tencentcloud/dts/v20211206/model/ResumeMigrateJobResponse.h
@@ -51,11 +53,12 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/DescribeCheckSyncJobResultRequest.h
   include/tencentcloud/dts/v20211206/model/ModifySubscribeAutoRenewFlagResponse.h
   include/tencentcloud/dts/v20211206/model/DestroySyncJobResponse.h
+  include/tencentcloud/dts/v20211206/model/SchemaDifference.h
   include/tencentcloud/dts/v20211206/model/ErrorInfoItem.h
   include/tencentcloud/dts/v20211206/model/IsolateMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/StopMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/TableItem.h
-  include/tencentcloud/dts/v20211206/model/SubscribeInfo.h
+  include/tencentcloud/dts/v20211206/model/DifferenceSchemaDetail.h
   include/tencentcloud/dts/v20211206/model/ModifyCompareTaskNameRequest.h
   include/tencentcloud/dts/v20211206/model/CompleteMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrateDBInstancesResponse.h
@@ -63,7 +66,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/DifferenceData.h
   include/tencentcloud/dts/v20211206/model/CreateCheckSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeModifyCheckSyncJobResultResponse.h
-  include/tencentcloud/dts/v20211206/model/StartSubscribeResponse.h
+  include/tencentcloud/dts/v20211206/model/StartModifySyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/DescribeSubscribeReturnableRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrationDetailRequest.h
   include/tencentcloud/dts/v20211206/model/CreateConsumerGroupRequest.h
@@ -152,7 +155,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/Options.h
   include/tencentcloud/dts/v20211206/model/CompareObjectItem.h
   include/tencentcloud/dts/v20211206/model/ConfigureSyncJobRequest.h
-  include/tencentcloud/dts/v20211206/model/StartModifySyncJobResponse.h
+  include/tencentcloud/dts/v20211206/model/OwnerDifference.h
   include/tencentcloud/dts/v20211206/model/SubscribeCheckStepInfo.h
   include/tencentcloud/dts/v20211206/model/MigrateDBItem.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrateDBInstancesRequest.h
@@ -208,6 +211,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/CreateSubscribeRequest.h
   include/tencentcloud/dts/v20211206/model/StartSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/StartMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/StartSubscribeResponse.h
   include/tencentcloud/dts/v20211206/model/DistributeRule.h
   include/tencentcloud/dts/v20211206/model/Objects.h
   include/tencentcloud/dts/v20211206/model/DeleteConsumerGroupResponse.h
@@ -310,6 +314,7 @@ set(dts_src
   src/v20211206/model/ResetConsumerGroupOffsetResponse.cpp
   src/v20211206/model/ModifyMigrateRateLimitResponse.cpp
   src/v20211206/model/IsolateMigrateJobResponse.cpp
+  src/v20211206/model/SubscribeInfo.cpp
   src/v20211206/model/ModifyMigrateJobSpecRequest.cpp
   src/v20211206/model/IsolateSubscribeResponse.cpp
   src/v20211206/model/ModifyConsumerGroupPasswordRequest.cpp
@@ -322,6 +327,7 @@ set(dts_src
   src/v20211206/model/ResumeSyncJobRequest.cpp
   src/v20211206/model/PartitionAssignment.cpp
   src/v20211206/model/RowsCountDifference.cpp
+  src/v20211206/model/DifferenceOwnerDetail.cpp
   src/v20211206/model/ResizeSyncJobResponse.cpp
   src/v20211206/model/CreateSubscribeCheckJobRequest.cpp
   src/v20211206/model/ResumeMigrateJobResponse.cpp
@@ -335,11 +341,12 @@ set(dts_src
   src/v20211206/model/DescribeCheckSyncJobResultRequest.cpp
   src/v20211206/model/ModifySubscribeAutoRenewFlagResponse.cpp
   src/v20211206/model/DestroySyncJobResponse.cpp
+  src/v20211206/model/SchemaDifference.cpp
   src/v20211206/model/ErrorInfoItem.cpp
   src/v20211206/model/IsolateMigrateJobRequest.cpp
   src/v20211206/model/StopMigrateJobResponse.cpp
   src/v20211206/model/TableItem.cpp
-  src/v20211206/model/SubscribeInfo.cpp
+  src/v20211206/model/DifferenceSchemaDetail.cpp
   src/v20211206/model/ModifyCompareTaskNameRequest.cpp
   src/v20211206/model/CompleteMigrateJobResponse.cpp
   src/v20211206/model/DescribeMigrateDBInstancesResponse.cpp
@@ -347,7 +354,7 @@ set(dts_src
   src/v20211206/model/DifferenceData.cpp
   src/v20211206/model/CreateCheckSyncJobRequest.cpp
   src/v20211206/model/DescribeModifyCheckSyncJobResultResponse.cpp
-  src/v20211206/model/StartSubscribeResponse.cpp
+  src/v20211206/model/StartModifySyncJobResponse.cpp
   src/v20211206/model/DescribeSubscribeReturnableRequest.cpp
   src/v20211206/model/DescribeMigrationDetailRequest.cpp
   src/v20211206/model/CreateConsumerGroupRequest.cpp
@@ -436,7 +443,7 @@ set(dts_src
   src/v20211206/model/Options.cpp
   src/v20211206/model/CompareObjectItem.cpp
   src/v20211206/model/ConfigureSyncJobRequest.cpp
-  src/v20211206/model/StartModifySyncJobResponse.cpp
+  src/v20211206/model/OwnerDifference.cpp
   src/v20211206/model/SubscribeCheckStepInfo.cpp
   src/v20211206/model/MigrateDBItem.cpp
   src/v20211206/model/DescribeMigrateDBInstancesRequest.cpp
@@ -492,6 +499,7 @@ set(dts_src
   src/v20211206/model/CreateSubscribeRequest.cpp
   src/v20211206/model/StartSyncJobResponse.cpp
   src/v20211206/model/StartMigrateJobRequest.cpp
+  src/v20211206/model/StartSubscribeResponse.cpp
   src/v20211206/model/DistributeRule.cpp
   src/v20211206/model/Objects.cpp
   src/v20211206/model/DeleteConsumerGroupResponse.cpp

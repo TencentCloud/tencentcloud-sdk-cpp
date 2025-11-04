@@ -69,6 +69,10 @@ namespace TencentCloud
 输出HLS：可以使用切片模式或singlefile模式
 输出DASH：只能singlefile模式
 
+- widevine+fairplay:
+ 只能用于HLS，切片格式只能是mp4
+ 可以使用切片模式或singfile模式
+
                      * @return Type 加密类型：
 
 - simpleaes
@@ -88,6 +92,10 @@ namespace TencentCloud
 可以用于HLS和DASH，切片格式只能是mp4
 输出HLS：可以使用切片模式或singlefile模式
 输出DASH：只能singlefile模式
+
+- widevine+fairplay:
+ 只能用于HLS，切片格式只能是mp4
+ 可以使用切片模式或singfile模式
 
                      * 
                      */
@@ -114,6 +122,10 @@ namespace TencentCloud
 输出HLS：可以使用切片模式或singlefile模式
 输出DASH：只能singlefile模式
 
+- widevine+fairplay:
+ 只能用于HLS，切片格式只能是mp4
+ 可以使用切片模式或singfile模式
+
                      * @param _type 加密类型：
 
 - simpleaes
@@ -133,6 +145,10 @@ namespace TencentCloud
 可以用于HLS和DASH，切片格式只能是mp4
 输出HLS：可以使用切片模式或singlefile模式
 输出DASH：只能singlefile模式
+
+- widevine+fairplay:
+ 只能用于HLS，切片格式只能是mp4
+ 可以使用切片模式或singfile模式
 
                      * 
                      */
@@ -213,6 +229,10 @@ namespace TencentCloud
 可以用于HLS和DASH，切片格式只能是mp4
 输出HLS：可以使用切片模式或singlefile模式
 输出DASH：只能singlefile模式
+
+- widevine+fairplay:
+ 只能用于HLS，切片格式只能是mp4
+ 可以使用切片模式或singfile模式
 
                      */
                     std::string m_type;

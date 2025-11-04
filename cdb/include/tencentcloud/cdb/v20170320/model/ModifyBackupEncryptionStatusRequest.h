@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool EncryptionStatusHasBeenSet() const;
 
+                    /**
+                     * 获取设置实例新增的自动日志备份文件默认加密状态。可选值为 on或者off。
+                     * @return BinlogEncryptionStatus 设置实例新增的自动日志备份文件默认加密状态。可选值为 on或者off。
+                     * 
+                     */
+                    std::string GetBinlogEncryptionStatus() const;
+
+                    /**
+                     * 设置设置实例新增的自动日志备份文件默认加密状态。可选值为 on或者off。
+                     * @param _binlogEncryptionStatus 设置实例新增的自动日志备份文件默认加密状态。可选值为 on或者off。
+                     * 
+                     */
+                    void SetBinlogEncryptionStatus(const std::string& _binlogEncryptionStatus);
+
+                    /**
+                     * 判断参数 BinlogEncryptionStatus 是否已赋值
+                     * @return BinlogEncryptionStatus 是否已赋值
+                     * 
+                     */
+                    bool BinlogEncryptionStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_encryptionStatus;
                     bool m_encryptionStatusHasBeenSet;
+
+                    /**
+                     * 设置实例新增的自动日志备份文件默认加密状态。可选值为 on或者off。
+                     */
+                    std::string m_binlogEncryptionStatus;
+                    bool m_binlogEncryptionStatusHasBeenSet;
 
                 };
             }
