@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取云主机 ID 列表
-                     * @return InstanceIdList 云主机 ID 列表
+                     * 获取云主机 ID 列表，调用[DescribeInstances](https://cloud.tencent.com/document/api/649/72342)查询已有的云主机列表
+                     * @return InstanceIdList 云主机 ID 列表，调用[DescribeInstances](https://cloud.tencent.com/document/api/649/72342)查询已有的云主机列表
                      * 
                      */
                     std::vector<std::string> GetInstanceIdList() const;
 
                     /**
-                     * 设置云主机 ID 列表
-                     * @param _instanceIdList 云主机 ID 列表
+                     * 设置云主机 ID 列表，调用[DescribeInstances](https://cloud.tencent.com/document/api/649/72342)查询已有的云主机列表
+                     * @param _instanceIdList 云主机 ID 列表，调用[DescribeInstances](https://cloud.tencent.com/document/api/649/72342)查询已有的云主机列表
                      * 
                      */
                     void SetInstanceIdList(const std::vector<std::string>& _instanceIdList);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 云主机 ID 列表
+                     * 云主机 ID 列表，调用[DescribeInstances](https://cloud.tencent.com/document/api/649/72342)查询已有的云主机列表
                      */
                     std::vector<std::string> m_instanceIdList;
                     bool m_instanceIdListHasBeenSet;

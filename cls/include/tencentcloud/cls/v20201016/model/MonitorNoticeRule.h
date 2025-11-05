@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 云监控通知渠道组信息
+                * 腾讯云可观测平台通知渠道组信息
                 */
                 class MonitorNoticeRule : public AbstractModel
                 {

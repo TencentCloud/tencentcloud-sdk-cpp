@@ -44,7 +44,8 @@ RuleOutput::RuleOutput() :
     m_quicStatusHasBeenSet(false),
     m_domainsHasBeenSet(false),
     m_targetGroupListHasBeenSet(false),
-    m_oAuthHasBeenSet(false)
+    m_oAuthHasBeenSet(false),
+    m_cookieNameHasBeenSet(false)
 {
 }
 
@@ -341,6 +342,16 @@ CoreInternalOutcome RuleOutput::Deserialize(const rapidjson::Value &value)
         m_oAuthHasBeenSet = true;
     }
 
+    if (value.HasMember("CookieName") && !value["CookieName"].IsNull())
+    {
+        if (!value["CookieName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleOutput.CookieName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cookieName = string(value["CookieName"].GetString());
+        m_cookieNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -555,6 +566,14 @@ void RuleOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_oAuth.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cookieNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CookieName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cookieName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -942,5 +961,21 @@ void RuleOutput::SetOAuth(const OAuth& _oAuth)
 bool RuleOutput::OAuthHasBeenSet() const
 {
     return m_oAuthHasBeenSet;
+}
+
+string RuleOutput::GetCookieName() const
+{
+    return m_cookieName;
+}
+
+void RuleOutput::SetCookieName(const string& _cookieName)
+{
+    m_cookieName = _cookieName;
+    m_cookieNameHasBeenSet = true;
+}
+
+bool RuleOutput::CookieNameHasBeenSet() const
+{
+    return m_cookieNameHasBeenSet;
 }
 

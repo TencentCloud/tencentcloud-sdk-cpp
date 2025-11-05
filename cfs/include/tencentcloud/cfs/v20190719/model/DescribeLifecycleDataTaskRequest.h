@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间。须早于 EndTime ，仅支持查询最近3个月内的任务数据。
+                     * @return StartTime 开始时间。须早于 EndTime ，仅支持查询最近3个月内的任务数据。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置开始时间。须早于 EndTime ，仅支持查询最近3个月内的任务数据。
+                     * @param _startTime 开始时间。须早于 EndTime ，仅支持查询最近3个月内的任务数据。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。须晚于 StartTime ，仅支持查询最近3个月内的任务数据。
+                     * @return EndTime 结束时间。须晚于 StartTime ，仅支持查询最近3个月内的任务数据。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置结束时间。须晚于 StartTime ，仅支持查询最近3个月内的任务数据。
+                     * @param _endTime 结束时间。须晚于 StartTime ，仅支持查询最近3个月内的任务数据。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取	任务ID
-                     * @return TaskId 	任务ID
+                     * 获取任务ID
+                     * @return TaskId 任务ID
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置	任务ID
-                     * @param _taskId 	任务ID
+                     * 设置任务ID
+                     * @param _taskId 任务ID
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -169,22 +169,43 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统版本；v3.1: pcfs/hifs v4.0:Turbo
+                     * @return CfsVersion 文件系统版本；v3.1: pcfs/hifs v4.0:Turbo
+                     * 
+                     */
+                    std::string GetCfsVersion() const;
+
+                    /**
+                     * 设置文件系统版本；v3.1: pcfs/hifs v4.0:Turbo
+                     * @param _cfsVersion 文件系统版本；v3.1: pcfs/hifs v4.0:Turbo
+                     * 
+                     */
+                    void SetCfsVersion(const std::string& _cfsVersion);
+
+                    /**
+                     * 判断参数 CfsVersion 是否已赋值
+                     * @return CfsVersion 是否已赋值
+                     * 
+                     */
+                    bool CfsVersionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 开始时间
+                     * 开始时间。须早于 EndTime ，仅支持查询最近3个月内的任务数据。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。须晚于 StartTime ，仅支持查询最近3个月内的任务数据。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 	任务ID
+                     * 任务ID
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 文件系统版本；v3.1: pcfs/hifs v4.0:Turbo
+                     */
+                    std::string m_cfsVersion;
+                    bool m_cfsVersionHasBeenSet;
 
                 };
             }

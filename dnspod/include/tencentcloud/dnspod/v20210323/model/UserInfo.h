@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取账号状态：”enabled”: 正常；”disabled”: 被封禁
-                     * @return Status 账号状态：”enabled”: 正常；”disabled”: 被封禁
+                     * 获取账号状态: "enabled": 正常; "disabled": 被封禁
+                     * @return Status 账号状态: "enabled": 正常; "disabled": 被封禁
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置账号状态：”enabled”: 正常；”disabled”: 被封禁
-                     * @param _status 账号状态：”enabled”: 正常；”disabled”: 被封禁
+                     * 设置账号状态: "enabled": 正常; "disabled": 被封禁
+                     * @param _status 账号状态: "enabled": 正常; "disabled": 被封禁
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TelephoneHasBeenSet() const;
 
                     /**
-                     * 获取邮箱是否通过验证：”yes”: 通过；”no”: 未通过
-                     * @return EmailVerified 邮箱是否通过验证：”yes”: 通过；”no”: 未通过
+                     * 获取邮箱是否通过验证："yes": 通过; "no": 未通过
+                     * @return EmailVerified 邮箱是否通过验证："yes": 通过; "no": 未通过
                      * 
                      */
                     std::string GetEmailVerified() const;
 
                     /**
-                     * 设置邮箱是否通过验证：”yes”: 通过；”no”: 未通过
-                     * @param _emailVerified 邮箱是否通过验证：”yes”: 通过；”no”: 未通过
+                     * 设置邮箱是否通过验证："yes": 通过; "no": 未通过
+                     * @param _emailVerified 邮箱是否通过验证："yes": 通过; "no": 未通过
                      * 
                      */
                     void SetEmailVerified(const std::string& _emailVerified);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool EmailVerifiedHasBeenSet() const;
 
                     /**
-                     * 获取手机是否通过验证：”yes”: 通过；”no”: 未通过
-                     * @return TelephoneVerified 手机是否通过验证：”yes”: 通过；”no”: 未通过
+                     * 获取手机是否通过验证："yes": 通过； "no": 未通过
+                     * @return TelephoneVerified 手机是否通过验证："yes": 通过； "no": 未通过
                      * 
                      */
                     std::string GetTelephoneVerified() const;
 
                     /**
-                     * 设置手机是否通过验证：”yes”: 通过；”no”: 未通过
-                     * @param _telephoneVerified 手机是否通过验证：”yes”: 通过；”no”: 未通过
+                     * 设置手机是否通过验证："yes": 通过； "no": 未通过
+                     * @param _telephoneVerified 手机是否通过验证："yes": 通过； "no": 未通过
                      * 
                      */
                     void SetTelephoneVerified(const std::string& _telephoneVerified);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool RealNameHasBeenSet() const;
 
                     /**
-                     * 获取是否绑定微信：”yes”: 通过；”no”: 未通过
-                     * @return WechatBinded 是否绑定微信：”yes”: 通过；”no”: 未通过
+                     * 获取是否绑定微信： "yes": 通过； "no": 未通过
+                     * @return WechatBinded 是否绑定微信： "yes": 通过； "no": 未通过
                      * 
                      */
                     std::string GetWechatBinded() const;
 
                     /**
-                     * 设置是否绑定微信：”yes”: 通过；”no”: 未通过
-                     * @param _wechatBinded 是否绑定微信：”yes”: 通过；”no”: 未通过
+                     * 设置是否绑定微信： "yes": 通过； "no": 未通过
+                     * @param _wechatBinded 是否绑定微信： "yes": 通过； "no": 未通过
                      * 
                      */
                     void SetWechatBinded(const std::string& _wechatBinded);
@@ -340,7 +340,7 @@ namespace TencentCloud
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 账号状态：”enabled”: 正常；”disabled”: 被封禁
+                     * 账号状态: "enabled": 正常; "disabled": 被封禁
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -352,13 +352,13 @@ namespace TencentCloud
                     bool m_telephoneHasBeenSet;
 
                     /**
-                     * 邮箱是否通过验证：”yes”: 通过；”no”: 未通过
+                     * 邮箱是否通过验证："yes": 通过; "no": 未通过
                      */
                     std::string m_emailVerified;
                     bool m_emailVerifiedHasBeenSet;
 
                     /**
-                     * 手机是否通过验证：”yes”: 通过；”no”: 未通过
+                     * 手机是否通过验证："yes": 通过； "no": 未通过
                      */
                     std::string m_telephoneVerified;
                     bool m_telephoneVerifiedHasBeenSet;
@@ -376,7 +376,7 @@ namespace TencentCloud
                     bool m_realNameHasBeenSet;
 
                     /**
-                     * 是否绑定微信：”yes”: 通过；”no”: 未通过
+                     * 是否绑定微信： "yes": 通过； "no": 未通过
                      */
                     std::string m_wechatBinded;
                     bool m_wechatBindedHasBeenSet;

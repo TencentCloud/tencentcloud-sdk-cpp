@@ -2921,6 +2921,49 @@ DnspodClient::DownloadSnapshotOutcomeCallable DnspodClient::DownloadSnapshotCall
     return task->get_future();
 }
 
+DnspodClient::ModifyDomainCNAMESpeedupStatusBatchOutcome DnspodClient::ModifyDomainCNAMESpeedupStatusBatch(const ModifyDomainCNAMESpeedupStatusBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDomainCNAMESpeedupStatusBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDomainCNAMESpeedupStatusBatchResponse rsp = ModifyDomainCNAMESpeedupStatusBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDomainCNAMESpeedupStatusBatchOutcome(rsp);
+        else
+            return ModifyDomainCNAMESpeedupStatusBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDomainCNAMESpeedupStatusBatchOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyDomainCNAMESpeedupStatusBatchAsync(const ModifyDomainCNAMESpeedupStatusBatchRequest& request, const ModifyDomainCNAMESpeedupStatusBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDomainCNAMESpeedupStatusBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifyDomainCNAMESpeedupStatusBatchOutcomeCallable DnspodClient::ModifyDomainCNAMESpeedupStatusBatchCallable(const ModifyDomainCNAMESpeedupStatusBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDomainCNAMESpeedupStatusBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDomainCNAMESpeedupStatusBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::ModifyDomainCustomLineOutcome DnspodClient::ModifyDomainCustomLine(const ModifyDomainCustomLineRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDomainCustomLine");
@@ -3043,6 +3086,49 @@ DnspodClient::ModifyDomainOwnerOutcomeCallable DnspodClient::ModifyDomainOwnerCa
         [this, request]()
         {
             return this->ModifyDomainOwner(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::ModifyDomainRecursiveStatusBatchOutcome DnspodClient::ModifyDomainRecursiveStatusBatch(const ModifyDomainRecursiveStatusBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDomainRecursiveStatusBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDomainRecursiveStatusBatchResponse rsp = ModifyDomainRecursiveStatusBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDomainRecursiveStatusBatchOutcome(rsp);
+        else
+            return ModifyDomainRecursiveStatusBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDomainRecursiveStatusBatchOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyDomainRecursiveStatusBatchAsync(const ModifyDomainRecursiveStatusBatchRequest& request, const ModifyDomainRecursiveStatusBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDomainRecursiveStatusBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifyDomainRecursiveStatusBatchOutcomeCallable DnspodClient::ModifyDomainRecursiveStatusBatchCallable(const ModifyDomainRecursiveStatusBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDomainRecursiveStatusBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDomainRecursiveStatusBatch(request);
         }
     );
 

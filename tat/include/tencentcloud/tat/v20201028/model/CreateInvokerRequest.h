@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tat/v20201028/model/ScheduleSettings.h>
+#include <tencentcloud/tat/v20201028/model/Tag.h>
 
 
 namespace TencentCloud
@@ -246,6 +247,27 @@ namespace TencentCloud
                      */
                     bool ScheduleSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取为命令关联的标签，列表长度不超过10
+                     * @return Tags 为命令关联的标签，列表长度不超过10
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置为命令关联的标签，列表长度不超过10
+                     * @param _tags 为命令关联的标签，列表长度不超过10
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +325,12 @@ namespace TencentCloud
                      */
                     ScheduleSettings m_scheduleSettings;
                     bool m_scheduleSettingsHasBeenSet;
+
+                    /**
+                     * 为命令关联的标签，列表长度不超过10
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

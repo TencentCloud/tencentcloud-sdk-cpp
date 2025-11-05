@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取扩容的机器实例ID列表，调用[DescribeClusters](https://console.cloud.tencent.com/tsf/resource?rid=1)接口，选定一个虚拟机集群，选择部署组，选择应用扩容可获取实例列表
-                     * @return InstanceIdList 扩容的机器实例ID列表，调用[DescribeClusters](https://console.cloud.tencent.com/tsf/resource?rid=1)接口，选定一个虚拟机集群，选择部署组，选择应用扩容可获取实例列表
+                     * 获取扩容的机器实例ID列表，调用[DescribeGroupInstances](https://cloud.tencent.com/document/api/649/36066)查询虚拟机部署组云主机列表
+                     * @return InstanceIdList 扩容的机器实例ID列表，调用[DescribeGroupInstances](https://cloud.tencent.com/document/api/649/36066)查询虚拟机部署组云主机列表
                      * 
                      */
                     std::vector<std::string> GetInstanceIdList() const;
 
                     /**
-                     * 设置扩容的机器实例ID列表，调用[DescribeClusters](https://console.cloud.tencent.com/tsf/resource?rid=1)接口，选定一个虚拟机集群，选择部署组，选择应用扩容可获取实例列表
-                     * @param _instanceIdList 扩容的机器实例ID列表，调用[DescribeClusters](https://console.cloud.tencent.com/tsf/resource?rid=1)接口，选定一个虚拟机集群，选择部署组，选择应用扩容可获取实例列表
+                     * 设置扩容的机器实例ID列表，调用[DescribeGroupInstances](https://cloud.tencent.com/document/api/649/36066)查询虚拟机部署组云主机列表
+                     * @param _instanceIdList 扩容的机器实例ID列表，调用[DescribeGroupInstances](https://cloud.tencent.com/document/api/649/36066)查询虚拟机部署组云主机列表
                      * 
                      */
                     void SetInstanceIdList(const std::vector<std::string>& _instanceIdList);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 扩容的机器实例ID列表，调用[DescribeClusters](https://console.cloud.tencent.com/tsf/resource?rid=1)接口，选定一个虚拟机集群，选择部署组，选择应用扩容可获取实例列表
+                     * 扩容的机器实例ID列表，调用[DescribeGroupInstances](https://cloud.tencent.com/document/api/649/36066)查询虚拟机部署组云主机列表
                      */
                     std::vector<std::string> m_instanceIdList;
                     bool m_instanceIdListHasBeenSet;

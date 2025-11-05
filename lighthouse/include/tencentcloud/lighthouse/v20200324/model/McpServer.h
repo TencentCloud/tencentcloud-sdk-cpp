@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取MCP Server ID。
-                     * @return McpServerId MCP Server ID。
+                     * 获取MCP Server ID
+                     * @return McpServerId MCP Server ID
                      * 
                      */
                     std::string GetMcpServerId() const;
 
                     /**
-                     * 设置MCP Server ID。
-                     * @param _mcpServerId MCP Server ID。
+                     * 设置MCP Server ID
+                     * @param _mcpServerId MCP Server ID
                      * 
                      */
                     void SetMcpServerId(const std::string& _mcpServerId);
@@ -90,15 +90,27 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取MCP Server类型。枚举值：PUBLIC_PACKAGE，公共包安装；AGENT_GENERATED，AI生成。
-                     * @return McpServerType MCP Server类型。枚举值：PUBLIC_PACKAGE，公共包安装；AGENT_GENERATED，AI生成。
+                     * 获取MCP Server类型。枚举值如下：
+
+<li>PUBLIC_PACKAGE：公共包安装</li>
+<li>AGENT_GENERATED：AI生成</li>
+                     * @return McpServerType MCP Server类型。枚举值如下：
+
+<li>PUBLIC_PACKAGE：公共包安装</li>
+<li>AGENT_GENERATED：AI生成</li>
                      * 
                      */
                     std::string GetMcpServerType() const;
 
                     /**
-                     * 设置MCP Server类型。枚举值：PUBLIC_PACKAGE，公共包安装；AGENT_GENERATED，AI生成。
-                     * @param _mcpServerType MCP Server类型。枚举值：PUBLIC_PACKAGE，公共包安装；AGENT_GENERATED，AI生成。
+                     * 设置MCP Server类型。枚举值如下：
+
+<li>PUBLIC_PACKAGE：公共包安装</li>
+<li>AGENT_GENERATED：AI生成</li>
+                     * @param _mcpServerType MCP Server类型。枚举值如下：
+
+<li>PUBLIC_PACKAGE：公共包安装</li>
+<li>AGENT_GENERATED：AI生成</li>
                      * 
                      */
                     void SetMcpServerType(const std::string& _mcpServerType);
@@ -155,28 +167,28 @@ namespace TencentCloud
                     /**
                      * 获取MCP Server状态。枚举值如下：
 
-PENDING：表示创建中
-LAUNCH_FAILED：表示创建失败
-RUNNING：表示运行中
-STOPPED：表示关闭
-STARTING：表示开启中
-STOPPING：表示关闭中
-RESTARTING：表示重启中
-REMOVING：表示删除中
-UNKNOWN：表示未知
-ENV_ERROR：表示环境错误
+<li>PENDING：表示创建中</li>
+<li>LAUNCH_FAILED：表示创建失败</li>
+<li>RUNNING：表示运行中</li>
+<li>STOPPED：表示关闭</li>
+<li>STARTING：表示开启中</li>
+<li>STOPPING：表示关闭中</li>
+<li>RESTARTING：表示重启中</li>
+<li>REMOVING：表示删除中</li>
+<li>UNKNOWN：表示未知</li>
+<li>ENV_ERROR：表示环境错误</li>
                      * @return State MCP Server状态。枚举值如下：
 
-PENDING：表示创建中
-LAUNCH_FAILED：表示创建失败
-RUNNING：表示运行中
-STOPPED：表示关闭
-STARTING：表示开启中
-STOPPING：表示关闭中
-RESTARTING：表示重启中
-REMOVING：表示删除中
-UNKNOWN：表示未知
-ENV_ERROR：表示环境错误
+<li>PENDING：表示创建中</li>
+<li>LAUNCH_FAILED：表示创建失败</li>
+<li>RUNNING：表示运行中</li>
+<li>STOPPED：表示关闭</li>
+<li>STARTING：表示开启中</li>
+<li>STOPPING：表示关闭中</li>
+<li>RESTARTING：表示重启中</li>
+<li>REMOVING：表示删除中</li>
+<li>UNKNOWN：表示未知</li>
+<li>ENV_ERROR：表示环境错误</li>
                      * 
                      */
                     std::string GetState() const;
@@ -184,28 +196,28 @@ ENV_ERROR：表示环境错误
                     /**
                      * 设置MCP Server状态。枚举值如下：
 
-PENDING：表示创建中
-LAUNCH_FAILED：表示创建失败
-RUNNING：表示运行中
-STOPPED：表示关闭
-STARTING：表示开启中
-STOPPING：表示关闭中
-RESTARTING：表示重启中
-REMOVING：表示删除中
-UNKNOWN：表示未知
-ENV_ERROR：表示环境错误
+<li>PENDING：表示创建中</li>
+<li>LAUNCH_FAILED：表示创建失败</li>
+<li>RUNNING：表示运行中</li>
+<li>STOPPED：表示关闭</li>
+<li>STARTING：表示开启中</li>
+<li>STOPPING：表示关闭中</li>
+<li>RESTARTING：表示重启中</li>
+<li>REMOVING：表示删除中</li>
+<li>UNKNOWN：表示未知</li>
+<li>ENV_ERROR：表示环境错误</li>
                      * @param _state MCP Server状态。枚举值如下：
 
-PENDING：表示创建中
-LAUNCH_FAILED：表示创建失败
-RUNNING：表示运行中
-STOPPED：表示关闭
-STARTING：表示开启中
-STOPPING：表示关闭中
-RESTARTING：表示重启中
-REMOVING：表示删除中
-UNKNOWN：表示未知
-ENV_ERROR：表示环境错误
+<li>PENDING：表示创建中</li>
+<li>LAUNCH_FAILED：表示创建失败</li>
+<li>RUNNING：表示运行中</li>
+<li>STOPPED：表示关闭</li>
+<li>STARTING：表示开启中</li>
+<li>STOPPING：表示关闭中</li>
+<li>RESTARTING：表示重启中</li>
+<li>REMOVING：表示删除中</li>
+<li>UNKNOWN：表示未知</li>
+<li>ENV_ERROR：表示环境错误</li>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -218,15 +230,15 @@ ENV_ERROR：表示环境错误
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取MCP Server访问地址。
-                     * @return ServerUrl MCP Server访问地址。
+                     * 获取MCP Server访问地址。传输类型 TransportType 为 STREAMABLE_HTTP 时以 /mcp结尾，为 SSE 时以 /sse结尾。
+                     * @return ServerUrl MCP Server访问地址。传输类型 TransportType 为 STREAMABLE_HTTP 时以 /mcp结尾，为 SSE 时以 /sse结尾。
                      * 
                      */
                     std::string GetServerUrl() const;
 
                     /**
-                     * 设置MCP Server访问地址。
-                     * @param _serverUrl MCP Server访问地址。
+                     * 设置MCP Server访问地址。传输类型 TransportType 为 STREAMABLE_HTTP 时以 /mcp结尾，为 SSE 时以 /sse结尾。
+                     * @param _serverUrl MCP Server访问地址。传输类型 TransportType 为 STREAMABLE_HTTP 时以 /mcp结尾，为 SSE 时以 /sse结尾。
                      * 
                      */
                     void SetServerUrl(const std::string& _serverUrl);
@@ -351,10 +363,43 @@ ENV_ERROR：表示环境错误
                      */
                     bool EnvSetHasBeenSet() const;
 
+                    /**
+                     * 获取传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * @return TransportType 传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * 
+                     */
+                    std::string GetTransportType() const;
+
+                    /**
+                     * 设置传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * @param _transportType 传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * 
+                     */
+                    void SetTransportType(const std::string& _transportType);
+
+                    /**
+                     * 判断参数 TransportType 是否已赋值
+                     * @return TransportType 是否已赋值
+                     * 
+                     */
+                    bool TransportTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * MCP Server ID。
+                     * MCP Server ID
                      */
                     std::string m_mcpServerId;
                     bool m_mcpServerIdHasBeenSet;
@@ -366,7 +411,10 @@ ENV_ERROR：表示环境错误
                     bool m_nameHasBeenSet;
 
                     /**
-                     * MCP Server类型。枚举值：PUBLIC_PACKAGE，公共包安装；AGENT_GENERATED，AI生成。
+                     * MCP Server类型。枚举值如下：
+
+<li>PUBLIC_PACKAGE：公共包安装</li>
+<li>AGENT_GENERATED：AI生成</li>
                      */
                     std::string m_mcpServerType;
                     bool m_mcpServerTypeHasBeenSet;
@@ -386,22 +434,22 @@ ENV_ERROR：表示环境错误
                     /**
                      * MCP Server状态。枚举值如下：
 
-PENDING：表示创建中
-LAUNCH_FAILED：表示创建失败
-RUNNING：表示运行中
-STOPPED：表示关闭
-STARTING：表示开启中
-STOPPING：表示关闭中
-RESTARTING：表示重启中
-REMOVING：表示删除中
-UNKNOWN：表示未知
-ENV_ERROR：表示环境错误
+<li>PENDING：表示创建中</li>
+<li>LAUNCH_FAILED：表示创建失败</li>
+<li>RUNNING：表示运行中</li>
+<li>STOPPED：表示关闭</li>
+<li>STARTING：表示开启中</li>
+<li>STOPPING：表示关闭中</li>
+<li>RESTARTING：表示重启中</li>
+<li>REMOVING：表示删除中</li>
+<li>UNKNOWN：表示未知</li>
+<li>ENV_ERROR：表示环境错误</li>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * MCP Server访问地址。
+                     * MCP Server访问地址。传输类型 TransportType 为 STREAMABLE_HTTP 时以 /mcp结尾，为 SSE 时以 /sse结尾。
                      */
                     std::string m_serverUrl;
                     bool m_serverUrlHasBeenSet;
@@ -437,6 +485,15 @@ ENV_ERROR：表示环境错误
                      */
                     std::vector<McpServerEnv> m_envSet;
                     bool m_envSetHasBeenSet;
+
+                    /**
+                     * 传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     */
+                    std::string m_transportType;
+                    bool m_transportTypeHasBeenSet;
 
                 };
             }

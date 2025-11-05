@@ -618,6 +618,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageScanTaskResponse.h
   include/tencentcloud/tcss/v20201101/model/AddEditAccessControlRuleRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeVulTopRankingRequest.h
+  include/tencentcloud/tcss/v20201101/model/UninstallClusterContainerSecurityResponse.h
   include/tencentcloud/tcss/v20201101/model/ConfirmNetworkFirewallPolicyRequest.h
   include/tencentcloud/tcss/v20201101/model/ContainerMount.h
   include/tencentcloud/tcss/v20201101/model/DeleteSearchTemplateResponse.h
@@ -726,6 +727,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/DeleteRiskSyscallWhiteListsResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageVirusListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageScanSettingResponse.h
+  include/tencentcloud/tcss/v20201101/model/UninstallClusterContainerSecurityRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeReverseShellDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeClusterSummaryRequest.h
   include/tencentcloud/tcss/v20201101/model/AddIgnoreVulRequest.h
@@ -1471,6 +1473,7 @@ set(tcss_src
   src/v20201101/model/DescribeAssetImageScanTaskResponse.cpp
   src/v20201101/model/AddEditAccessControlRuleRequest.cpp
   src/v20201101/model/DescribeVulTopRankingRequest.cpp
+  src/v20201101/model/UninstallClusterContainerSecurityResponse.cpp
   src/v20201101/model/ConfirmNetworkFirewallPolicyRequest.cpp
   src/v20201101/model/ContainerMount.cpp
   src/v20201101/model/DeleteSearchTemplateResponse.cpp
@@ -1579,6 +1582,7 @@ set(tcss_src
   src/v20201101/model/DeleteRiskSyscallWhiteListsResponse.cpp
   src/v20201101/model/DescribeAssetImageVirusListRequest.cpp
   src/v20201101/model/DescribeAssetImageScanSettingResponse.cpp
+  src/v20201101/model/UninstallClusterContainerSecurityRequest.cpp
   src/v20201101/model/DescribeReverseShellDetailResponse.cpp
   src/v20201101/model/DescribeClusterSummaryRequest.cpp
   src/v20201101/model/AddIgnoreVulRequest.cpp

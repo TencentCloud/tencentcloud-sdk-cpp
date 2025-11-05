@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
-                     * @return EndTime 查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
+                     * 获取查询的结束时间，默认为当前时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
+                     * @return EndTime 查询的结束时间，默认为当前时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
-                     * @param _endTime 查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
+                     * 设置查询的结束时间，默认为当前时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
+                     * @param _endTime 查询的结束时间，默认为当前时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页入参
-                     * @return Limit 分页入参
+                     * 获取分页入参，默认20
+                     * @return Limit 分页入参，默认20
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页入参
-                     * @param _limit 分页入参
+                     * 设置分页入参，默认20
+                     * @param _limit 分页入参，默认20
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -216,7 +216,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
+                     * 查询的结束时间，默认为当前时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页入参
+                     * 分页入参，默认20
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

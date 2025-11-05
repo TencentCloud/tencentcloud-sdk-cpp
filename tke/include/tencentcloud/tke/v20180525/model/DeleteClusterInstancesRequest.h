@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/ResourceDeleteOption.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
+                     * @return ClusterId 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
+                     * @param _clusterId 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取主机InstanceId列表
-                     * @return InstanceIds 主机InstanceId列表
+                     * 获取主机 InstanceId 列表
+                     * @return InstanceIds 主机 InstanceId 列表
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置主机InstanceId列表
-                     * @param _instanceIds 主机InstanceId列表
+                     * 设置主机 InstanceId 列表
+                     * @param _instanceIds 主机 InstanceId 列表
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -126,16 +127,37 @@ namespace TencentCloud
                      */
                     bool ForceDeleteHasBeenSet() const;
 
+                    /**
+                     * 获取集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     * @return ResourceDeleteOptions 集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     * 
+                     */
+                    std::vector<ResourceDeleteOption> GetResourceDeleteOptions() const;
+
+                    /**
+                     * 设置集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     * @param _resourceDeleteOptions 集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     * 
+                     */
+                    void SetResourceDeleteOptions(const std::vector<ResourceDeleteOption>& _resourceDeleteOptions);
+
+                    /**
+                     * 判断参数 ResourceDeleteOptions 是否已赋值
+                     * @return ResourceDeleteOptions 是否已赋值
+                     * 
+                     */
+                    bool ResourceDeleteOptionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 主机InstanceId列表
+                     * 主机 InstanceId 列表
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -151,6 +173,12 @@ namespace TencentCloud
                      */
                     bool m_forceDelete;
                     bool m_forceDeleteHasBeenSet;
+
+                    /**
+                     * 集群删除时资源的删除策略，目前支持CBS（默认保留CBS）
+                     */
+                    std::vector<ResourceDeleteOption> m_resourceDeleteOptions;
+                    bool m_resourceDeleteOptionsHasBeenSet;
 
                 };
             }

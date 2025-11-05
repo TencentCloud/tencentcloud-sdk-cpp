@@ -283,6 +283,27 @@ namespace TencentCloud
                      */
                     bool OAuthHasBeenSet() const;
 
+                    /**
+                     * 获取自定义cookie名
+                     * @return CookieName 自定义cookie名
+                     * 
+                     */
+                    std::string GetCookieName() const;
+
+                    /**
+                     * 设置自定义cookie名
+                     * @param _cookieName 自定义cookie名
+                     * 
+                     */
+                    void SetCookieName(const std::string& _cookieName);
+
+                    /**
+                     * 判断参数 CookieName 是否已赋值
+                     * @return CookieName 是否已赋值
+                     * 
+                     */
+                    bool CookieNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -352,6 +373,12 @@ namespace TencentCloud
                      */
                     OAuth m_oAuth;
                     bool m_oAuthHasBeenSet;
+
+                    /**
+                     * 自定义cookie名
+                     */
+                    std::string m_cookieName;
+                    bool m_cookieNameHasBeenSet;
 
                 };
             }

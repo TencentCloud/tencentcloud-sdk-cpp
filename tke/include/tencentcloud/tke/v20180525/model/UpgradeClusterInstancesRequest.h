@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
+                     * @return ClusterId 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
+                     * @param _clusterId 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -131,15 +131,19 @@ major 大版本原地升级
                     bool UpgradeTypeHasBeenSet() const;
 
                     /**
-                     * 获取需要升级的节点列表
-                     * @return InstanceIds 需要升级的节点列表
+                     * 获取需要升级的节点列表，可以通过控制台或 [查询待升级节点接口
+](https://cloud.tencent.com/document/api/457/50366) 获取
+                     * @return InstanceIds 需要升级的节点列表，可以通过控制台或 [查询待升级节点接口
+](https://cloud.tencent.com/document/api/457/50366) 获取
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置需要升级的节点列表
-                     * @param _instanceIds 需要升级的节点列表
+                     * 设置需要升级的节点列表，可以通过控制台或 [查询待升级节点接口
+](https://cloud.tencent.com/document/api/457/50366) 获取
+                     * @param _instanceIds 需要升级的节点列表，可以通过控制台或 [查询待升级节点接口
+](https://cloud.tencent.com/document/api/457/50366) 获取
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -173,15 +177,15 @@ major 大版本原地升级
                     bool ResetParamHasBeenSet() const;
 
                     /**
-                     * 获取是否忽略节点升级前检查
-                     * @return SkipPreCheck 是否忽略节点升级前检查
+                     * 获取是否忽略节点升级前检查，默认值 false
+                     * @return SkipPreCheck 是否忽略节点升级前检查，默认值 false
                      * 
                      */
                     bool GetSkipPreCheck() const;
 
                     /**
-                     * 设置是否忽略节点升级前检查
-                     * @param _skipPreCheck 是否忽略节点升级前检查
+                     * 设置是否忽略节点升级前检查，默认值 false
+                     * @param _skipPreCheck 是否忽略节点升级前检查，默认值 false
                      * 
                      */
                     void SetSkipPreCheck(const bool& _skipPreCheck);
@@ -238,7 +242,7 @@ major 大版本原地升级
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -262,7 +266,8 @@ major 大版本原地升级
                     bool m_upgradeTypeHasBeenSet;
 
                     /**
-                     * 需要升级的节点列表
+                     * 需要升级的节点列表，可以通过控制台或 [查询待升级节点接口
+](https://cloud.tencent.com/document/api/457/50366) 获取
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -274,7 +279,7 @@ major 大版本原地升级
                     bool m_resetParamHasBeenSet;
 
                     /**
-                     * 是否忽略节点升级前检查
+                     * 是否忽略节点升级前检查，默认值 false
                      */
                     bool m_skipPreCheck;
                     bool m_skipPreCheckHasBeenSet;

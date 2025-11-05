@@ -157,12 +157,16 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeVasListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyDomainCNAMESpeedupStatusBatchRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyDomainCNAMESpeedupStatusBatchResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainCustomLineRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainCustomLineResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainLockRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainLockResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainOwnerRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainOwnerResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyDomainRecursiveStatusBatchRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyDomainRecursiveStatusBatchResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainRemarkRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainRemarkResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainStatusRequest.h>
@@ -420,6 +424,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadSnapshotResponse> DownloadSnapshotOutcome;
                 typedef std::future<DownloadSnapshotOutcome> DownloadSnapshotOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DownloadSnapshotRequest&, DownloadSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDomainCNAMESpeedupStatusBatchResponse> ModifyDomainCNAMESpeedupStatusBatchOutcome;
+                typedef std::future<ModifyDomainCNAMESpeedupStatusBatchOutcome> ModifyDomainCNAMESpeedupStatusBatchOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyDomainCNAMESpeedupStatusBatchRequest&, ModifyDomainCNAMESpeedupStatusBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainCNAMESpeedupStatusBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDomainCustomLineResponse> ModifyDomainCustomLineOutcome;
                 typedef std::future<ModifyDomainCustomLineOutcome> ModifyDomainCustomLineOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyDomainCustomLineRequest&, ModifyDomainCustomLineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainCustomLineAsyncHandler;
@@ -429,6 +436,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDomainOwnerResponse> ModifyDomainOwnerOutcome;
                 typedef std::future<ModifyDomainOwnerOutcome> ModifyDomainOwnerOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyDomainOwnerRequest&, ModifyDomainOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainOwnerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDomainRecursiveStatusBatchResponse> ModifyDomainRecursiveStatusBatchOutcome;
+                typedef std::future<ModifyDomainRecursiveStatusBatchOutcome> ModifyDomainRecursiveStatusBatchOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyDomainRecursiveStatusBatchRequest&, ModifyDomainRecursiveStatusBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainRecursiveStatusBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDomainRemarkResponse> ModifyDomainRemarkOutcome;
                 typedef std::future<ModifyDomainRemarkOutcome> ModifyDomainRemarkOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyDomainRemarkRequest&, ModifyDomainRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainRemarkAsyncHandler;
@@ -524,8 +534,6 @@ namespace TencentCloud
 
                 /**
                  *添加域名
-
-备注：该接口不支持添加子域名。
                  * @param req CreateDomainRequest
                  * @return CreateDomainOutcome
                  */
@@ -1111,6 +1119,15 @@ namespace TencentCloud
                 DownloadSnapshotOutcomeCallable DownloadSnapshotCallable(const Model::DownloadSnapshotRequest& request);
 
                 /**
+                 *批量修改域名CNAME加速状态
+                 * @param req ModifyDomainCNAMESpeedupStatusBatchRequest
+                 * @return ModifyDomainCNAMESpeedupStatusBatchOutcome
+                 */
+                ModifyDomainCNAMESpeedupStatusBatchOutcome ModifyDomainCNAMESpeedupStatusBatch(const Model::ModifyDomainCNAMESpeedupStatusBatchRequest &request);
+                void ModifyDomainCNAMESpeedupStatusBatchAsync(const Model::ModifyDomainCNAMESpeedupStatusBatchRequest& request, const ModifyDomainCNAMESpeedupStatusBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDomainCNAMESpeedupStatusBatchOutcomeCallable ModifyDomainCNAMESpeedupStatusBatchCallable(const Model::ModifyDomainCNAMESpeedupStatusBatchRequest& request);
+
+                /**
                  *修改域名的自定义线路
                  * @param req ModifyDomainCustomLineRequest
                  * @return ModifyDomainCustomLineOutcome
@@ -1136,6 +1153,15 @@ namespace TencentCloud
                 ModifyDomainOwnerOutcome ModifyDomainOwner(const Model::ModifyDomainOwnerRequest &request);
                 void ModifyDomainOwnerAsync(const Model::ModifyDomainOwnerRequest& request, const ModifyDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDomainOwnerOutcomeCallable ModifyDomainOwnerCallable(const Model::ModifyDomainOwnerRequest& request);
+
+                /**
+                 *批量修改域名递归解析加速状态
+                 * @param req ModifyDomainRecursiveStatusBatchRequest
+                 * @return ModifyDomainRecursiveStatusBatchOutcome
+                 */
+                ModifyDomainRecursiveStatusBatchOutcome ModifyDomainRecursiveStatusBatch(const Model::ModifyDomainRecursiveStatusBatchRequest &request);
+                void ModifyDomainRecursiveStatusBatchAsync(const Model::ModifyDomainRecursiveStatusBatchRequest& request, const ModifyDomainRecursiveStatusBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDomainRecursiveStatusBatchOutcomeCallable ModifyDomainRecursiveStatusBatchCallable(const Model::ModifyDomainRecursiveStatusBatchRequest& request);
 
                 /**
                  *设置域名备注

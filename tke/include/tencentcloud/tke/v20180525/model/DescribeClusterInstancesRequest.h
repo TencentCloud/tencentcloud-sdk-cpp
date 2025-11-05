@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
+                     * @return ClusterId 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
+                     * @param _clusterId 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。
-                     * @return InstanceIds 需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。
+                     * 获取需要获取的节点实例 ID 列表。如果为空，表示拉取集群下所有节点实例。普通节点用 CVM ID（如 ins-1cghhuuu ），原生节点用节点池内机器 ID （如 np-1ade4uid-0a2dc ）。
+                     * @return InstanceIds 需要获取的节点实例 ID 列表。如果为空，表示拉取集群下所有节点实例。普通节点用 CVM ID（如 ins-1cghhuuu ），原生节点用节点池内机器 ID （如 np-1ade4uid-0a2dc ）。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。
-                     * @param _instanceIds 需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。
+                     * 设置需要获取的节点实例 ID 列表。如果为空，表示拉取集群下所有节点实例。普通节点用 CVM ID（如 ins-1cghhuuu ），原生节点用节点池内机器 ID （如 np-1ade4uid-0a2dc ）。
+                     * @param _instanceIds 需要获取的节点实例 ID 列表。如果为空，表示拉取集群下所有节点实例。普通节点用 CVM ID（如 ins-1cghhuuu ），原生节点用节点池内机器 ID （如 np-1ade4uid-0a2dc ）。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -128,15 +128,39 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。
-                     * @return InstanceRole 节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。
+                     * 获取节点角色，默认为WORKER类型
+
+- WOKRER 集群内常规计算节点
+- MASTER 独立集群控制面组件节点
+- ETCD 独立集群 etcd 存储节点
+- MASTER_ETCD 独立集群控制面、etcd 共同部署的 master 节点
+
+                     * @return InstanceRole 节点角色，默认为WORKER类型
+
+- WOKRER 集群内常规计算节点
+- MASTER 独立集群控制面组件节点
+- ETCD 独立集群 etcd 存储节点
+- MASTER_ETCD 独立集群控制面、etcd 共同部署的 master 节点
+
                      * 
                      */
                     std::string GetInstanceRole() const;
 
                     /**
-                     * 设置节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。
-                     * @param _instanceRole 节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。
+                     * 设置节点角色，默认为WORKER类型
+
+- WOKRER 集群内常规计算节点
+- MASTER 独立集群控制面组件节点
+- ETCD 独立集群 etcd 存储节点
+- MASTER_ETCD 独立集群控制面、etcd 共同部署的 master 节点
+
+                     * @param _instanceRole 节点角色，默认为WORKER类型
+
+- WOKRER 集群内常规计算节点
+- MASTER 独立集群控制面组件节点
+- ETCD 独立集群 etcd 存储节点
+- MASTER_ETCD 独立集群控制面、etcd 共同部署的 master 节点
+
                      * 
                      */
                     void SetInstanceRole(const std::string& _instanceRole);
@@ -172,7 +196,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -190,13 +214,19 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。
+                     * 需要获取的节点实例 ID 列表。如果为空，表示拉取集群下所有节点实例。普通节点用 CVM ID（如 ins-1cghhuuu ），原生节点用节点池内机器 ID （如 np-1ade4uid-0a2dc ）。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。
+                     * 节点角色，默认为WORKER类型
+
+- WOKRER 集群内常规计算节点
+- MASTER 独立集群控制面组件节点
+- ETCD 独立集群 etcd 存储节点
+- MASTER_ETCD 独立集群控制面、etcd 共同部署的 master 节点
+
                      */
                     std::string m_instanceRole;
                     bool m_instanceRoleHasBeenSet;

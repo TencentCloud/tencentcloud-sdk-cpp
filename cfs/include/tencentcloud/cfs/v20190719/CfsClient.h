@@ -623,7 +623,7 @@ namespace TencentCloud
                 DescribeDataFlowOutcomeCallable DescribeDataFlowCallable(const Model::DescribeDataFlowRequest& request);
 
                 /**
-                 *查询生命周期任务的接口
+                 *查询生命周期任务的接口。仅支持查询最近三个月内的任务数据。
                  * @param req DescribeLifecycleDataTaskRequest
                  * @return DescribeLifecycleDataTaskOutcome
                  */

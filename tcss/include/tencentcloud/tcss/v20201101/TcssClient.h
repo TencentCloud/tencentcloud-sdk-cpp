@@ -691,6 +691,8 @@
 #include <tencentcloud/tcss/v20201101/model/SwitchImageAutoAuthorizedRuleResponse.h>
 #include <tencentcloud/tcss/v20201101/model/SyncAssetImageRegistryAssetRequest.h>
 #include <tencentcloud/tcss/v20201101/model/SyncAssetImageRegistryAssetResponse.h>
+#include <tencentcloud/tcss/v20201101/model/UninstallClusterContainerSecurityRequest.h>
+#include <tencentcloud/tcss/v20201101/model/UninstallClusterContainerSecurityResponse.h>
 #include <tencentcloud/tcss/v20201101/model/UpdateAndPublishNetworkFirewallPolicyDetailRequest.h>
 #include <tencentcloud/tcss/v20201101/model/UpdateAndPublishNetworkFirewallPolicyDetailResponse.h>
 #include <tencentcloud/tcss/v20201101/model/UpdateAndPublishNetworkFirewallPolicyYamlDetailRequest.h>
@@ -1719,6 +1721,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SyncAssetImageRegistryAssetResponse> SyncAssetImageRegistryAssetOutcome;
                 typedef std::future<SyncAssetImageRegistryAssetOutcome> SyncAssetImageRegistryAssetOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::SyncAssetImageRegistryAssetRequest&, SyncAssetImageRegistryAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncAssetImageRegistryAssetAsyncHandler;
+                typedef Outcome<Core::Error, Model::UninstallClusterContainerSecurityResponse> UninstallClusterContainerSecurityOutcome;
+                typedef std::future<UninstallClusterContainerSecurityOutcome> UninstallClusterContainerSecurityOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::UninstallClusterContainerSecurityRequest&, UninstallClusterContainerSecurityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallClusterContainerSecurityAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAndPublishNetworkFirewallPolicyDetailResponse> UpdateAndPublishNetworkFirewallPolicyDetailOutcome;
                 typedef std::future<UpdateAndPublishNetworkFirewallPolicyDetailOutcome> UpdateAndPublishNetworkFirewallPolicyDetailOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::UpdateAndPublishNetworkFirewallPolicyDetailRequest&, UpdateAndPublishNetworkFirewallPolicyDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAndPublishNetworkFirewallPolicyDetailAsyncHandler;
@@ -4750,6 +4755,15 @@ namespace TencentCloud
                 SyncAssetImageRegistryAssetOutcome SyncAssetImageRegistryAsset(const Model::SyncAssetImageRegistryAssetRequest &request);
                 void SyncAssetImageRegistryAssetAsync(const Model::SyncAssetImageRegistryAssetRequest& request, const SyncAssetImageRegistryAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncAssetImageRegistryAssetOutcomeCallable SyncAssetImageRegistryAssetCallable(const Model::SyncAssetImageRegistryAssetRequest& request);
+
+                /**
+                 *卸载集群容器安全
+                 * @param req UninstallClusterContainerSecurityRequest
+                 * @return UninstallClusterContainerSecurityOutcome
+                 */
+                UninstallClusterContainerSecurityOutcome UninstallClusterContainerSecurity(const Model::UninstallClusterContainerSecurityRequest &request);
+                void UninstallClusterContainerSecurityAsync(const Model::UninstallClusterContainerSecurityRequest& request, const UninstallClusterContainerSecurityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UninstallClusterContainerSecurityOutcomeCallable UninstallClusterContainerSecurityCallable(const Model::UninstallClusterContainerSecurityRequest& request);
 
                 /**
                  *容器网络创建网络策略更新并发布任务

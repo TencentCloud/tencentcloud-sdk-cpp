@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
+                     * @return ClusterId 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
+                     * @param _clusterId 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool UpgradeTypeHasBeenSet() const;
 
                     /**
-                     * 获取分页Offset
-                     * @return Offset 分页Offset
+                     * 获取偏移量，默认为0。关于 Offset 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @return Offset 偏移量，默认为0。关于 Offset 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页Offset
-                     * @param _offset 分页Offset
+                     * 设置偏移量，默认为0。关于 Offset 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @param _offset 偏移量，默认为0。关于 Offset 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页Limit
-                     * @return Limit 分页Limit
+                     * 获取返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @return Limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页Limit
-                     * @param _limit 分页Limit
+                     * 设置返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+                     * @param _limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -149,15 +149,35 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤
-                     * @return Filter 过滤
+                     * 获取过滤条件列表，Name 可选值为ip、instanceId、hostname、label
+
+- Name 为 ip 时，Value 为待查询节点 ip
+- Name 为 hostname 时，Value 为待查询节点名称
+- Name 为 label 时，Value 为待查询 K8S 节点 label
+- Name 为 instanceId 时，Value 为 待查询节点 id
+                     * @return Filter 过滤条件列表，Name 可选值为ip、instanceId、hostname、label
+
+- Name 为 ip 时，Value 为待查询节点 ip
+- Name 为 hostname 时，Value 为待查询节点名称
+- Name 为 label 时，Value 为待查询 K8S 节点 label
+- Name 为 instanceId 时，Value 为 待查询节点 id
                      * 
                      */
                     std::vector<Filter> GetFilter() const;
 
                     /**
-                     * 设置过滤
-                     * @param _filter 过滤
+                     * 设置过滤条件列表，Name 可选值为ip、instanceId、hostname、label
+
+- Name 为 ip 时，Value 为待查询节点 ip
+- Name 为 hostname 时，Value 为待查询节点名称
+- Name 为 label 时，Value 为待查询 K8S 节点 label
+- Name 为 instanceId 时，Value 为 待查询节点 id
+                     * @param _filter 过滤条件列表，Name 可选值为ip、instanceId、hostname、label
+
+- Name 为 ip 时，Value 为待查询节点 ip
+- Name 为 hostname 时，Value 为待查询节点名称
+- Name 为 label 时，Value 为待查询 K8S 节点 label
+- Name 为 instanceId 时，Value 为 待查询节点 id
                      * 
                      */
                     void SetFilter(const std::vector<Filter>& _filter);
@@ -172,7 +192,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -190,19 +210,24 @@ namespace TencentCloud
                     bool m_upgradeTypeHasBeenSet;
 
                     /**
-                     * 分页Offset
+                     * 偏移量，默认为0。关于 Offset 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页Limit
+                     * 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤
+                     * 过滤条件列表，Name 可选值为ip、instanceId、hostname、label
+
+- Name 为 ip 时，Value 为待查询节点 ip
+- Name 为 hostname 时，Value 为待查询节点名称
+- Name 为 label 时，Value 为待查询 K8S 节点 label
+- Name 为 instanceId 时，Value 为 待查询节点 id
                      */
                     std::vector<Filter> m_filter;
                     bool m_filterHasBeenSet;

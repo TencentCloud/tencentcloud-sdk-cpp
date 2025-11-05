@@ -33,7 +33,8 @@ ModifyRuleRequest::ModifyRuleRequest() :
     m_forwardTypeHasBeenSet(false),
     m_trpcCalleeHasBeenSet(false),
     m_trpcFuncHasBeenSet(false),
-    m_oAuthHasBeenSet(false)
+    m_oAuthHasBeenSet(false),
+    m_cookieNameHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,14 @@ string ModifyRuleRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_oAuth.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_cookieNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CookieName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cookieName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -316,6 +325,22 @@ void ModifyRuleRequest::SetOAuth(const OAuth& _oAuth)
 bool ModifyRuleRequest::OAuthHasBeenSet() const
 {
     return m_oAuthHasBeenSet;
+}
+
+string ModifyRuleRequest::GetCookieName() const
+{
+    return m_cookieName;
+}
+
+void ModifyRuleRequest::SetCookieName(const string& _cookieName)
+{
+    m_cookieName = _cookieName;
+    m_cookieNameHasBeenSet = true;
+}
+
+bool ModifyRuleRequest::CookieNameHasBeenSet() const
+{
+    return m_cookieNameHasBeenSet;
 }
 
 

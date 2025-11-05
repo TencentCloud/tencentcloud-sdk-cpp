@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取域名状态
-                     * @return Status 域名状态
+                     * 获取域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM
+                     * @return Status 域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置域名状态
-                     * @param _status 域名状态
+                     * 设置域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM
+                     * @param _status 域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool IsMarkHasBeenSet() const;
 
                     /**
-                     * 获取TTL(DNS记录缓存时间)
-                     * @return TTL TTL(DNS记录缓存时间)
+                     * 获取TTL(DNS记录缓存时间)，单位：秒
+                     * @return TTL TTL(DNS记录缓存时间)，单位：秒
                      * 
                      */
                     uint64_t GetTTL() const;
 
                     /**
-                     * 设置TTL(DNS记录缓存时间)
-                     * @param _tTL TTL(DNS记录缓存时间)
+                     * 设置TTL(DNS记录缓存时间)，单位：秒
+                     * @param _tTL TTL(DNS记录缓存时间)，单位：秒
                      * 
                      */
                     void SetTTL(const uint64_t& _tTL);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool PunycodeHasBeenSet() const;
 
                     /**
-                     * 获取域名DNS状态
-                     * @return DnsStatus 域名DNS状态
+                     * 获取域名DNS状态，错误：dnserror，正常：空字符串
+                     * @return DnsStatus 域名DNS状态，错误：dnserror，正常：空字符串
                      * 
                      */
                     std::string GetDnsStatus() const;
 
                     /**
-                     * 设置域名DNS状态
-                     * @param _dnsStatus 域名DNS状态
+                     * 设置域名DNS状态，错误：dnserror，正常：空字符串
+                     * @param _dnsStatus 域名DNS状态，错误：dnserror，正常：空字符串
                      * 
                      */
                     void SetDnsStatus(const std::string& _dnsStatus);
@@ -765,7 +765,7 @@ namespace TencentCloud
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 域名状态
+                     * 域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -789,7 +789,7 @@ namespace TencentCloud
                     bool m_isMarkHasBeenSet;
 
                     /**
-                     * TTL(DNS记录缓存时间)
+                     * TTL(DNS记录缓存时间)，单位：秒
                      */
                     uint64_t m_tTL;
                     bool m_tTLHasBeenSet;
@@ -813,7 +813,7 @@ namespace TencentCloud
                     bool m_punycodeHasBeenSet;
 
                     /**
-                     * 域名DNS状态
+                     * 域名DNS状态，错误：dnserror，正常：空字符串
                      */
                     std::string m_dnsStatus;
                     bool m_dnsStatusHasBeenSet;

@@ -32,7 +32,8 @@ McpServer::McpServer() :
     m_descriptionHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_envSetHasBeenSet(false)
+    m_envSetHasBeenSet(false),
+    m_transportTypeHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome McpServer::Deserialize(const rapidjson::Value &value)
         m_envSetHasBeenSet = true;
     }
 
+    if (value.HasMember("TransportType") && !value["TransportType"].IsNull())
+    {
+        if (!value["TransportType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `McpServer.TransportType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transportType = string(value["TransportType"].GetString());
+        m_transportTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +290,14 @@ void McpServer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_transportTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransportType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transportType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -474,5 +493,21 @@ void McpServer::SetEnvSet(const vector<McpServerEnv>& _envSet)
 bool McpServer::EnvSetHasBeenSet() const
 {
     return m_envSetHasBeenSet;
+}
+
+string McpServer::GetTransportType() const
+{
+    return m_transportType;
+}
+
+void McpServer::SetTransportType(const string& _transportType)
+{
+    m_transportType = _transportType;
+    m_transportTypeHasBeenSet = true;
+}
+
+bool McpServer::TransportTypeHasBeenSet() const
+{
+    return m_transportTypeHasBeenSet;
 }
 

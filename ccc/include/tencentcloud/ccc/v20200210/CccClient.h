@@ -75,6 +75,8 @@
 #include <tencentcloud/ccc/v20200210/model/DeletePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAIAgentInfoListRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAIAgentInfoListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAIAnalysisResultRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAIAnalysisResultResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAICallExtractResultRequest.h>
@@ -269,6 +271,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteStaffResponse> DeleteStaffOutcome;
                 typedef std::future<DeleteStaffOutcome> DeleteStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DeleteStaffRequest&, DeleteStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStaffAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIAgentInfoListResponse> DescribeAIAgentInfoListOutcome;
+                typedef std::future<DescribeAIAgentInfoListOutcome> DescribeAIAgentInfoListOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeAIAgentInfoListRequest&, DescribeAIAgentInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAgentInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAIAnalysisResultResponse> DescribeAIAnalysisResultOutcome;
                 typedef std::future<DescribeAIAnalysisResultOutcome> DescribeAIAnalysisResultOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeAIAnalysisResultRequest&, DescribeAIAnalysisResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIAnalysisResultAsyncHandler;
@@ -666,6 +671,15 @@ namespace TencentCloud
                 DeleteStaffOutcome DeleteStaff(const Model::DeleteStaffRequest &request);
                 void DeleteStaffAsync(const Model::DeleteStaffRequest& request, const DeleteStaffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteStaffOutcomeCallable DeleteStaffCallable(const Model::DeleteStaffRequest& request);
+
+                /**
+                 *获取智能体列表
+                 * @param req DescribeAIAgentInfoListRequest
+                 * @return DescribeAIAgentInfoListOutcome
+                 */
+                DescribeAIAgentInfoListOutcome DescribeAIAgentInfoList(const Model::DescribeAIAgentInfoListRequest &request);
+                void DescribeAIAgentInfoListAsync(const Model::DescribeAIAgentInfoListRequest& request, const DescribeAIAgentInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIAgentInfoListOutcomeCallable DescribeAIAgentInfoListCallable(const Model::DescribeAIAgentInfoListRequest& request);
 
                 /**
                  *获取 AI 会话分析结果

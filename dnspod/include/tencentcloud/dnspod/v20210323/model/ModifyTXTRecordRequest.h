@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool SubDomainHasBeenSet() const;
 
                     /**
-                     * 获取线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
-                     * @return RecordLineId 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 获取线路的 ID，通过 API 记录线路获得，字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * @return RecordLineId 线路的 ID，通过 API 记录线路获得，字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      * 
                      */
                     std::string GetRecordLineId() const;
 
                     /**
-                     * 设置线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
-                     * @param _recordLineId 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 设置线路的 ID，通过 API 记录线路获得，字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * @param _recordLineId 线路的 ID，通过 API 记录线路获得，字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      * 
                      */
                     void SetRecordLineId(const std::string& _recordLineId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool RecordLineIdHasBeenSet() const;
 
                     /**
-                     * 获取TTL，范围1-604800，不同等级域名最小值不同。
-                     * @return TTL TTL，范围1-604800，不同等级域名最小值不同。
+                     * 获取TTL，范围1-604800，不同等级域名最小值不同。单位：秒
+                     * @return TTL TTL，范围1-604800，不同等级域名最小值不同。单位：秒
                      * 
                      */
                     uint64_t GetTTL() const;
 
                     /**
-                     * 设置TTL，范围1-604800，不同等级域名最小值不同。
-                     * @param _tTL TTL，范围1-604800，不同等级域名最小值不同。
+                     * 设置TTL，范围1-604800，不同等级域名最小值不同。单位：秒
+                     * @param _tTL TTL，范围1-604800，不同等级域名最小值不同。单位：秒
                      * 
                      */
                     void SetTTL(const uint64_t& _tTL);
@@ -291,13 +291,13 @@ namespace TencentCloud
                     bool m_subDomainHasBeenSet;
 
                     /**
-                     * 线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
+                     * 线路的 ID，通过 API 记录线路获得，字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。
                      */
                     std::string m_recordLineId;
                     bool m_recordLineIdHasBeenSet;
 
                     /**
-                     * TTL，范围1-604800，不同等级域名最小值不同。
+                     * TTL，范围1-604800，不同等级域名最小值不同。单位：秒
                      */
                     uint64_t m_tTL;
                     bool m_tTLHasBeenSet;

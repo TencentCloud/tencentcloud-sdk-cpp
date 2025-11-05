@@ -26,7 +26,8 @@ DeleteClusterInstancesRequest::DeleteClusterInstancesRequest() :
     m_clusterIdHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
     m_instanceDeleteModeHasBeenSet(false),
-    m_forceDeleteHasBeenSet(false)
+    m_forceDeleteHasBeenSet(false),
+    m_resourceDeleteOptionsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,21 @@ string DeleteClusterInstancesRequest::ToJsonString() const
         string key = "ForceDelete";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceDelete, allocator);
+    }
+
+    if (m_resourceDeleteOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceDeleteOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceDeleteOptions.begin(); itr != m_resourceDeleteOptions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -144,6 +160,22 @@ void DeleteClusterInstancesRequest::SetForceDelete(const bool& _forceDelete)
 bool DeleteClusterInstancesRequest::ForceDeleteHasBeenSet() const
 {
     return m_forceDeleteHasBeenSet;
+}
+
+vector<ResourceDeleteOption> DeleteClusterInstancesRequest::GetResourceDeleteOptions() const
+{
+    return m_resourceDeleteOptions;
+}
+
+void DeleteClusterInstancesRequest::SetResourceDeleteOptions(const vector<ResourceDeleteOption>& _resourceDeleteOptions)
+{
+    m_resourceDeleteOptions = _resourceDeleteOptions;
+    m_resourceDeleteOptionsHasBeenSet = true;
+}
+
+bool DeleteClusterInstancesRequest::ResourceDeleteOptionsHasBeenSet() const
+{
+    return m_resourceDeleteOptionsHasBeenSet;
 }
 
 

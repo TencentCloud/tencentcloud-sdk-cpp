@@ -147,6 +147,111 @@ namespace TencentCloud
                      */
                     bool SecretKeyHasBeenSet() const;
 
+                    /**
+                     * 获取KafkaConsumer 消费时使用的Topic参数
+                     * @return UserKafkaTopic KafkaConsumer 消费时使用的Topic参数
+                     * 
+                     */
+                    std::string GetUserKafkaTopic() const;
+
+                    /**
+                     * 设置KafkaConsumer 消费时使用的Topic参数
+                     * @param _userKafkaTopic KafkaConsumer 消费时使用的Topic参数
+                     * 
+                     */
+                    void SetUserKafkaTopic(const std::string& _userKafkaTopic);
+
+                    /**
+                     * 判断参数 UserKafkaTopic 是否已赋值
+                     * @return UserKafkaTopic 是否已赋值
+                     * 
+                     */
+                    bool UserKafkaTopicHasBeenSet() const;
+
+                    /**
+                     * 获取服务地址
+                     * @return ServerAddr 服务地址
+                     * 
+                     */
+                    std::string GetServerAddr() const;
+
+                    /**
+                     * 设置服务地址
+                     * @param _serverAddr 服务地址
+                     * 
+                     */
+                    void SetServerAddr(const std::string& _serverAddr);
+
+                    /**
+                     * 判断参数 ServerAddr 是否已赋值
+                     * @return ServerAddr 是否已赋值
+                     * 
+                     */
+                    bool ServerAddrHasBeenSet() const;
+
+                    /**
+                     * 获取name
+                     * @return UserName name
+                     * 
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置name
+                     * @param _userName name
+                     * 
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     * 
+                     */
+                    bool UserNameHasBeenSet() const;
+
+                    /**
+                     * 获取Kafka消费用户密码
+                     * @return Password Kafka消费用户密码
+                     * 
+                     */
+                    std::string GetPassword() const;
+
+                    /**
+                     * 设置Kafka消费用户密码
+                     * @param _password Kafka消费用户密码
+                     * 
+                     */
+                    void SetPassword(const std::string& _password);
+
+                    /**
+                     * 判断参数 Password 是否已赋值
+                     * @return Password 是否已赋值
+                     * 
+                     */
+                    bool PasswordHasBeenSet() const;
+
+                    /**
+                     * 获取元数据增量更新开关；1开启，0关闭
+                     * @return AutoRefresh 元数据增量更新开关；1开启，0关闭
+                     * 
+                     */
+                    uint64_t GetAutoRefresh() const;
+
+                    /**
+                     * 设置元数据增量更新开关；1开启，0关闭
+                     * @param _autoRefresh 元数据增量更新开关；1开启，0关闭
+                     * 
+                     */
+                    void SetAutoRefresh(const uint64_t& _autoRefresh);
+
+                    /**
+                     * 判断参数 AutoRefresh 是否已赋值
+                     * @return AutoRefresh 是否已赋值
+                     * 
+                     */
+                    bool AutoRefreshHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +283,36 @@ namespace TencentCloud
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;
+
+                    /**
+                     * KafkaConsumer 消费时使用的Topic参数
+                     */
+                    std::string m_userKafkaTopic;
+                    bool m_userKafkaTopicHasBeenSet;
+
+                    /**
+                     * 服务地址
+                     */
+                    std::string m_serverAddr;
+                    bool m_serverAddrHasBeenSet;
+
+                    /**
+                     * name
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
+
+                    /**
+                     * Kafka消费用户密码
+                     */
+                    std::string m_password;
+                    bool m_passwordHasBeenSet;
+
+                    /**
+                     * 元数据增量更新开关；1开启，0关闭
+                     */
+                    uint64_t m_autoRefresh;
+                    bool m_autoRefreshHasBeenSet;
 
                 };
             }

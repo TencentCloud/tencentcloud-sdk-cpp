@@ -303,15 +303,15 @@ namespace TencentCloud
                     bool TTLHasBeenSet() const;
 
                     /**
-                     * 获取MX值，只有MX记录有
-                     * @return MX MX值，只有MX记录有
+                     * 获取MX值
+                     * @return MX MX值
                      * 
                      */
                     uint64_t GetMX() const;
 
                     /**
-                     * 设置MX值，只有MX记录有
-                     * @param _mX MX值，只有MX记录有
+                     * 设置MX值
+                     * @param _mX MX值
                      * 
                      */
                     void SetMX(const uint64_t& _mX);
@@ -420,7 +420,7 @@ namespace TencentCloud
                     bool m_tTLHasBeenSet;
 
                     /**
-                     * MX值，只有MX记录有
+                     * MX值
                      */
                     uint64_t m_mX;
                     bool m_mXHasBeenSet;

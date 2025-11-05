@@ -389,15 +389,15 @@ namespace TencentCloud
                     bool MonitorObjectTypeHasBeenSet() const;
 
                     /**
-                     * 获取通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道
-                     * @return SendType 通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道
+                     * 获取通知渠道类型，0默认代表cls内部通知渠道，1代表腾讯云可观测平台通知渠道
+                     * @return SendType 通知渠道类型，0默认代表cls内部通知渠道，1代表腾讯云可观测平台通知渠道
                      * 
                      */
                     uint64_t GetSendType() const;
 
                     /**
-                     * 设置通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道
-                     * @param _sendType 通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道
+                     * 设置通知渠道类型，0默认代表cls内部通知渠道，1代表腾讯云可观测平台通知渠道
+                     * @param _sendType 通知渠道类型，0默认代表cls内部通知渠道，1代表腾讯云可观测平台通知渠道
                      * 
                      */
                     void SetSendType(const uint64_t& _sendType);
@@ -509,7 +509,7 @@ namespace TencentCloud
                     bool m_monitorObjectTypeHasBeenSet;
 
                     /**
-                     * 通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道
+                     * 通知渠道类型，0默认代表cls内部通知渠道，1代表腾讯云可观测平台通知渠道
                      */
                     uint64_t m_sendType;
                     bool m_sendTypeHasBeenSet;

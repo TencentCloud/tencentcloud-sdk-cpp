@@ -148,6 +148,39 @@ namespace TencentCloud
                      */
                     bool EnvsHasBeenSet() const;
 
+                    /**
+                     * 获取传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式。未传传输类型字段时，默认创建此类型的MCP Server</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * @return TransportType 传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式。未传传输类型字段时，默认创建此类型的MCP Server</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * 
+                     */
+                    std::string GetTransportType() const;
+
+                    /**
+                     * 设置传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式。未传传输类型字段时，默认创建此类型的MCP Server</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * @param _transportType 传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式。未传传输类型字段时，默认创建此类型的MCP Server</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * 
+                     */
+                    void SetTransportType(const std::string& _transportType);
+
+                    /**
+                     * 判断参数 TransportType 是否已赋值
+                     * @return TransportType 是否已赋值
+                     * 
+                     */
+                    bool TransportTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +212,15 @@ namespace TencentCloud
                      */
                     std::vector<McpServerEnv> m_envs;
                     bool m_envsHasBeenSet;
+
+                    /**
+                     * 传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式。未传传输类型字段时，默认创建此类型的MCP Server</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     */
+                    std::string m_transportType;
+                    bool m_transportTypeHasBeenSet;
 
                 };
             }

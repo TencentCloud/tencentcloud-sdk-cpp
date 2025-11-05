@@ -842,15 +842,15 @@ HYBRID_PAID:
                     bool ResourceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
-                     * @return VolumeMounts 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     * 获取数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。
+                     * @return VolumeMounts 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。
                      * 
                      */
                     std::vector<VolumeMount> GetVolumeMounts() const;
 
                     /**
-                     * 设置数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
-                     * @param _volumeMounts 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     * 设置数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。
+                     * @param _volumeMounts 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。
                      * 
                      */
                     void SetVolumeMounts(const std::vector<VolumeMount>& _volumeMounts);
@@ -1086,7 +1086,7 @@ HYBRID_PAID:
                     bool m_resourceGroupIdHasBeenSet;
 
                     /**
-                     * 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。
+                     * 数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。
                      */
                     std::vector<VolumeMount> m_volumeMounts;
                     bool m_volumeMountsHasBeenSet;

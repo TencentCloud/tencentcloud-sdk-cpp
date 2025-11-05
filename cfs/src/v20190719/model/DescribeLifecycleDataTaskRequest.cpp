@@ -28,7 +28,8 @@ DescribeLifecycleDataTaskRequest::DescribeLifecycleDataTaskRequest() :
     m_taskIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_cfsVersionHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string DescribeLifecycleDataTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cfsVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfsVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cfsVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +205,22 @@ void DescribeLifecycleDataTaskRequest::SetFilters(const vector<Filter>& _filters
 bool DescribeLifecycleDataTaskRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeLifecycleDataTaskRequest::GetCfsVersion() const
+{
+    return m_cfsVersion;
+}
+
+void DescribeLifecycleDataTaskRequest::SetCfsVersion(const string& _cfsVersion)
+{
+    m_cfsVersion = _cfsVersion;
+    m_cfsVersionHasBeenSet = true;
+}
+
+bool DescribeLifecycleDataTaskRequest::CfsVersionHasBeenSet() const
+{
+    return m_cfsVersionHasBeenSet;
 }
 
 

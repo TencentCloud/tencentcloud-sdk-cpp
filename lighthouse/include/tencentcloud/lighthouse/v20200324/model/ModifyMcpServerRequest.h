@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取MCP Server ID。可以通过DescribeMcpServers接口返回值中的McpServerId获取。
-                     * @return McpServerId MCP Server ID。可以通过DescribeMcpServers接口返回值中的McpServerId获取。
+                     * 获取MCP Server ID。可以通[DescribeMcpServers](https://cloud.tencent.com/document/product/1207/122837)接口返回值中的McpServerId获取。
+                     * @return McpServerId MCP Server ID。可以通[DescribeMcpServers](https://cloud.tencent.com/document/product/1207/122837)接口返回值中的McpServerId获取。
                      * 
                      */
                     std::string GetMcpServerId() const;
 
                     /**
-                     * 设置MCP Server ID。可以通过DescribeMcpServers接口返回值中的McpServerId获取。
-                     * @param _mcpServerId MCP Server ID。可以通过DescribeMcpServers接口返回值中的McpServerId获取。
+                     * 设置MCP Server ID。可以通[DescribeMcpServers](https://cloud.tencent.com/document/product/1207/122837)接口返回值中的McpServerId获取。
+                     * @param _mcpServerId MCP Server ID。可以通[DescribeMcpServers](https://cloud.tencent.com/document/product/1207/122837)接口返回值中的McpServerId获取。
                      * 
                      */
                     void SetMcpServerId(const std::string& _mcpServerId);
@@ -169,6 +169,39 @@ namespace TencentCloud
                      */
                     bool EnvsHasBeenSet() const;
 
+                    /**
+                     * 获取传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * @return TransportType 传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * 
+                     */
+                    std::string GetTransportType() const;
+
+                    /**
+                     * 设置传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * @param _transportType 传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     * 
+                     */
+                    void SetTransportType(const std::string& _transportType);
+
+                    /**
+                     * 判断参数 TransportType 是否已赋值
+                     * @return TransportType 是否已赋值
+                     * 
+                     */
+                    bool TransportTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,7 +211,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * MCP Server ID。可以通过DescribeMcpServers接口返回值中的McpServerId获取。
+                     * MCP Server ID。可以通[DescribeMcpServers](https://cloud.tencent.com/document/product/1207/122837)接口返回值中的McpServerId获取。
                      */
                     std::string m_mcpServerId;
                     bool m_mcpServerIdHasBeenSet;
@@ -206,6 +239,15 @@ namespace TencentCloud
                      */
                     std::vector<McpServerEnv> m_envs;
                     bool m_envsHasBeenSet;
+
+                    /**
+                     * 传输类型。枚举值如下：
+
+<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>
+<li>SSE：Server-Sent Events，服务器发送事件</li>
+                     */
+                    std::string m_transportType;
+                    bool m_transportTypeHasBeenSet;
 
                 };
             }

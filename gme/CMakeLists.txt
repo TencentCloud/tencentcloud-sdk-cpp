@@ -47,7 +47,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/GetCustomizationListRequest.h
   include/tencentcloud/gme/v20180711/model/RegisterVoicePrintResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeRecordInfoResponse.h
-  include/tencentcloud/gme/v20180711/model/DescribeApplicationListResponse.h
+  include/tencentcloud/gme/v20180711/model/CreateAppResponse.h
   include/tencentcloud/gme/v20180711/model/StopRecordResponse.h
   include/tencentcloud/gme/v20180711/model/ScanPiece.h
   include/tencentcloud/gme/v20180711/model/Tag.h
@@ -57,7 +57,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/StartRecordResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeScanResultListResponse.h
   include/tencentcloud/gme/v20180711/model/UserMicStatus.h
-  include/tencentcloud/gme/v20180711/model/CreateAppResponse.h
+  include/tencentcloud/gme/v20180711/model/DescribeApplicationListResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeRecordInfoRequest.h
   include/tencentcloud/gme/v20180711/model/AmbientSound.h
   include/tencentcloud/gme/v20180711/model/DescribeRoomInfoRequest.h
@@ -84,6 +84,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DescribeAppStatisticsResp.h
   include/tencentcloud/gme/v20180711/model/ScanVoiceResult.h
   include/tencentcloud/gme/v20180711/model/DescribeAuditResultExternalResponse.h
+  include/tencentcloud/gme/v20180711/model/AuditResultDetailExternal.h
   include/tencentcloud/gme/v20180711/model/ServiceStatus.h
   include/tencentcloud/gme/v20180711/model/ScanVoiceRequest.h
   include/tencentcloud/gme/v20180711/model/RegisterVoicePrintRequest.h
@@ -172,7 +173,7 @@ set(gme_src
   src/v20180711/model/GetCustomizationListRequest.cpp
   src/v20180711/model/RegisterVoicePrintResponse.cpp
   src/v20180711/model/DescribeRecordInfoResponse.cpp
-  src/v20180711/model/DescribeApplicationListResponse.cpp
+  src/v20180711/model/CreateAppResponse.cpp
   src/v20180711/model/StopRecordResponse.cpp
   src/v20180711/model/ScanPiece.cpp
   src/v20180711/model/Tag.cpp
@@ -182,7 +183,7 @@ set(gme_src
   src/v20180711/model/StartRecordResponse.cpp
   src/v20180711/model/DescribeScanResultListResponse.cpp
   src/v20180711/model/UserMicStatus.cpp
-  src/v20180711/model/CreateAppResponse.cpp
+  src/v20180711/model/DescribeApplicationListResponse.cpp
   src/v20180711/model/DescribeRecordInfoRequest.cpp
   src/v20180711/model/AmbientSound.cpp
   src/v20180711/model/DescribeRoomInfoRequest.cpp
@@ -209,6 +210,7 @@ set(gme_src
   src/v20180711/model/DescribeAppStatisticsResp.cpp
   src/v20180711/model/ScanVoiceResult.cpp
   src/v20180711/model/DescribeAuditResultExternalResponse.cpp
+  src/v20180711/model/AuditResultDetailExternal.cpp
   src/v20180711/model/ServiceStatus.cpp
   src/v20180711/model/ScanVoiceRequest.cpp
   src/v20180711/model/RegisterVoicePrintRequest.cpp

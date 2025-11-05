@@ -272,6 +272,48 @@ namespace TencentCloud
                      */
                     bool ConnectedHasBeenSet() const;
 
+                    /**
+                     * 获取可用区信息。
+                     * @return ZoneId 可用区信息。
+                     * 
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置可用区信息。
+                     * @param _zoneId 可用区信息。
+                     * 
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取节点组 ID。
+                     * @return ReplicasNodeId 节点组 ID。
+                     * 
+                     */
+                    int64_t GetReplicasNodeId() const;
+
+                    /**
+                     * 设置节点组 ID。
+                     * @param _replicasNodeId 节点组 ID。
+                     * 
+                     */
+                    void SetReplicasNodeId(const int64_t& _replicasNodeId);
+
+                    /**
+                     * 判断参数 ReplicasNodeId 是否已赋值
+                     * @return ReplicasNodeId 是否已赋值
+                     * 
+                     */
+                    bool ReplicasNodeIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +379,18 @@ namespace TencentCloud
                      */
                     int64_t m_connected;
                     bool m_connectedHasBeenSet;
+
+                    /**
+                     * 可用区信息。
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 节点组 ID。
+                     */
+                    int64_t m_replicasNodeId;
+                    bool m_replicasNodeIdHasBeenSet;
 
                 };
             }

@@ -14402,6 +14402,49 @@ TcssClient::SyncAssetImageRegistryAssetOutcomeCallable TcssClient::SyncAssetImag
     return task->get_future();
 }
 
+TcssClient::UninstallClusterContainerSecurityOutcome TcssClient::UninstallClusterContainerSecurity(const UninstallClusterContainerSecurityRequest &request)
+{
+    auto outcome = MakeRequest(request, "UninstallClusterContainerSecurity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UninstallClusterContainerSecurityResponse rsp = UninstallClusterContainerSecurityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UninstallClusterContainerSecurityOutcome(rsp);
+        else
+            return UninstallClusterContainerSecurityOutcome(o.GetError());
+    }
+    else
+    {
+        return UninstallClusterContainerSecurityOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::UninstallClusterContainerSecurityAsync(const UninstallClusterContainerSecurityRequest& request, const UninstallClusterContainerSecurityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UninstallClusterContainerSecurity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::UninstallClusterContainerSecurityOutcomeCallable TcssClient::UninstallClusterContainerSecurityCallable(const UninstallClusterContainerSecurityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UninstallClusterContainerSecurityOutcome()>>(
+        [this, request]()
+        {
+            return this->UninstallClusterContainerSecurity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::UpdateAndPublishNetworkFirewallPolicyDetailOutcome TcssClient::UpdateAndPublishNetworkFirewallPolicyDetail(const UpdateAndPublishNetworkFirewallPolicyDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateAndPublishNetworkFirewallPolicyDetail");

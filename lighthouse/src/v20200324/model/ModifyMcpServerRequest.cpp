@@ -28,7 +28,8 @@ ModifyMcpServerRequest::ModifyMcpServerRequest() :
     m_nameHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_envsHasBeenSet(false)
+    m_envsHasBeenSet(false),
+    m_transportTypeHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string ModifyMcpServerRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_transportTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransportType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_transportType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +205,22 @@ void ModifyMcpServerRequest::SetEnvs(const vector<McpServerEnv>& _envs)
 bool ModifyMcpServerRequest::EnvsHasBeenSet() const
 {
     return m_envsHasBeenSet;
+}
+
+string ModifyMcpServerRequest::GetTransportType() const
+{
+    return m_transportType;
+}
+
+void ModifyMcpServerRequest::SetTransportType(const string& _transportType)
+{
+    m_transportType = _transportType;
+    m_transportTypeHasBeenSet = true;
+}
+
+bool ModifyMcpServerRequest::TransportTypeHasBeenSet() const
+{
+    return m_transportTypeHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署组ID，部署组唯一标识，调用[DescribeClusters](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)接口，选定一个容器集群，选择部署组，查看DescribeSingleContainerGroups接口返回的GroupId
-                     * @return GroupId 部署组ID，部署组唯一标识，调用[DescribeClusters](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)接口，选定一个容器集群，选择部署组，查看DescribeSingleContainerGroups接口返回的GroupId
+                     * 获取部署组ID，部署组唯一标识，可以通过[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的容器部署组列表；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的容器部署组
+                     * @return GroupId 部署组ID，部署组唯一标识，可以通过[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的容器部署组列表；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的容器部署组
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID，部署组唯一标识，调用[DescribeClusters](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)接口，选定一个容器集群，选择部署组，查看DescribeSingleContainerGroups接口返回的GroupId
-                     * @param _groupId 部署组ID，部署组唯一标识，调用[DescribeClusters](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)接口，选定一个容器集群，选择部署组，查看DescribeSingleContainerGroups接口返回的GroupId
+                     * 设置部署组ID，部署组唯一标识，可以通过[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的容器部署组列表；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的容器部署组
+                     * @param _groupId 部署组ID，部署组唯一标识，可以通过[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的容器部署组列表；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的容器部署组
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部署组ID，部署组唯一标识，调用[DescribeClusters](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)接口，选定一个容器集群，选择部署组，查看DescribeSingleContainerGroups接口返回的GroupId
+                     * 部署组ID，部署组唯一标识，可以通过[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的容器部署组列表；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的容器部署组
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

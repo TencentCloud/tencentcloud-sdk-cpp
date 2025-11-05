@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取是否星标域名，”yes”、”no” 分别代表是和否。
-                     * @return IsMark 是否星标域名，”yes”、”no” 分别代表是和否。
+                     * 获取是否星标域名，"yes"、"no" 分别代表是和否。
+                     * @return IsMark 是否星标域名，"yes"、"no" 分别代表是和否。
                      * 
                      */
                     std::string GetIsMark() const;
 
                     /**
-                     * 设置是否星标域名，”yes”、”no” 分别代表是和否。
-                     * @param _isMark 是否星标域名，”yes”、”no” 分别代表是和否。
+                     * 设置是否星标域名，"yes"、"no" 分别代表是和否。
+                     * @param _isMark 是否星标域名，"yes"、"no" 分别代表是和否。
                      * 
                      */
                     void SetIsMark(const std::string& _isMark);
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 是否星标域名，”yes”、”no” 分别代表是和否。
+                     * 是否星标域名，"yes"、"no" 分别代表是和否。
                      */
                     std::string m_isMark;
                     bool m_isMarkHasBeenSet;

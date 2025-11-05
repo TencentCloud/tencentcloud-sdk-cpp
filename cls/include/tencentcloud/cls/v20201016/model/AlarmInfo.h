@@ -504,15 +504,15 @@ Condition互斥。
                     bool MultiConditionsHasBeenSet() const;
 
                     /**
-                     * 获取云监控通知渠道相关信息，和AlarmNoticeIds互斥
-                     * @return MonitorNotice 云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     * 获取腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥
+                     * @return MonitorNotice 腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥
                      * 
                      */
                     MonitorNotice GetMonitorNotice() const;
 
                     /**
-                     * 设置云监控通知渠道相关信息，和AlarmNoticeIds互斥
-                     * @param _monitorNotice 云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     * 设置腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥
+                     * @param _monitorNotice 腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥
                      * 
                      */
                     void SetMonitorNotice(const MonitorNotice& _monitorNotice);
@@ -655,7 +655,7 @@ Condition互斥。
                     bool m_multiConditionsHasBeenSet;
 
                     /**
-                     * 云监控通知渠道相关信息，和AlarmNoticeIds互斥
+                     * 腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥
                      */
                     MonitorNotice m_monitorNotice;
                     bool m_monitorNoticeHasBeenSet;

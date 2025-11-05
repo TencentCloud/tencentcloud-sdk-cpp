@@ -27,7 +27,12 @@ ModifyDataFlowRequest::ModifyDataFlowRequest() :
     m_fileSystemIdHasBeenSet(false),
     m_dataFlowNameHasBeenSet(false),
     m_secretIdHasBeenSet(false),
-    m_secretKeyHasBeenSet(false)
+    m_secretKeyHasBeenSet(false),
+    m_userKafkaTopicHasBeenSet(false),
+    m_serverAddrHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_passwordHasBeenSet(false),
+    m_autoRefreshHasBeenSet(false)
 {
 }
 
@@ -76,6 +81,46 @@ string ModifyDataFlowRequest::ToJsonString() const
         string key = "SecretKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_secretKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userKafkaTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserKafkaTopic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userKafkaTopic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverAddrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerAddr";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverAddr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRefreshHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRefresh";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRefresh, allocator);
     }
 
 
@@ -164,6 +209,86 @@ void ModifyDataFlowRequest::SetSecretKey(const string& _secretKey)
 bool ModifyDataFlowRequest::SecretKeyHasBeenSet() const
 {
     return m_secretKeyHasBeenSet;
+}
+
+string ModifyDataFlowRequest::GetUserKafkaTopic() const
+{
+    return m_userKafkaTopic;
+}
+
+void ModifyDataFlowRequest::SetUserKafkaTopic(const string& _userKafkaTopic)
+{
+    m_userKafkaTopic = _userKafkaTopic;
+    m_userKafkaTopicHasBeenSet = true;
+}
+
+bool ModifyDataFlowRequest::UserKafkaTopicHasBeenSet() const
+{
+    return m_userKafkaTopicHasBeenSet;
+}
+
+string ModifyDataFlowRequest::GetServerAddr() const
+{
+    return m_serverAddr;
+}
+
+void ModifyDataFlowRequest::SetServerAddr(const string& _serverAddr)
+{
+    m_serverAddr = _serverAddr;
+    m_serverAddrHasBeenSet = true;
+}
+
+bool ModifyDataFlowRequest::ServerAddrHasBeenSet() const
+{
+    return m_serverAddrHasBeenSet;
+}
+
+string ModifyDataFlowRequest::GetUserName() const
+{
+    return m_userName;
+}
+
+void ModifyDataFlowRequest::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool ModifyDataFlowRequest::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
+}
+
+string ModifyDataFlowRequest::GetPassword() const
+{
+    return m_password;
+}
+
+void ModifyDataFlowRequest::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool ModifyDataFlowRequest::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
+}
+
+uint64_t ModifyDataFlowRequest::GetAutoRefresh() const
+{
+    return m_autoRefresh;
+}
+
+void ModifyDataFlowRequest::SetAutoRefresh(const uint64_t& _autoRefresh)
+{
+    m_autoRefresh = _autoRefresh;
+    m_autoRefreshHasBeenSet = true;
+}
+
+bool ModifyDataFlowRequest::AutoRefreshHasBeenSet() const
+{
+    return m_autoRefreshHasBeenSet;
 }
 
 
