@@ -36,7 +36,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_bizTypeHasBeenSet(false),
     m_topicIdHasBeenSet(false),
     m_isWebTrackingHasBeenSet(false),
-    m_extendsHasBeenSet(false)
+    m_extendsHasBeenSet(false),
+    m_isSourceFromHasBeenSet(false)
 {
 }
 
@@ -165,6 +166,14 @@ string CreateTopicRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extends.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_isSourceFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSourceFrom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSourceFrom, allocator);
     }
 
 
@@ -397,6 +406,22 @@ void CreateTopicRequest::SetExtends(const TopicExtendInfo& _extends)
 bool CreateTopicRequest::ExtendsHasBeenSet() const
 {
     return m_extendsHasBeenSet;
+}
+
+bool CreateTopicRequest::GetIsSourceFrom() const
+{
+    return m_isSourceFrom;
+}
+
+void CreateTopicRequest::SetIsSourceFrom(const bool& _isSourceFrom)
+{
+    m_isSourceFrom = _isSourceFrom;
+    m_isSourceFromHasBeenSet = true;
+}
+
+bool CreateTopicRequest::IsSourceFromHasBeenSet() const
+{
+    return m_isSourceFromHasBeenSet;
 }
 
 

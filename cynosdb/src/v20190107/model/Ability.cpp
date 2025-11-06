@@ -28,7 +28,11 @@ Ability::Ability() :
     m_isSupportManualSnapshotHasBeenSet(false),
     m_isSupportTransparentDataEncryptionHasBeenSet(false),
     m_noSupportTransparentDataEncryptionReasonHasBeenSet(false),
-    m_isSupportManualLogicHasBeenSet(false)
+    m_isSupportManualLogicHasBeenSet(false),
+    m_isSupportGlobalEncryptionHasBeenSet(false),
+    m_noSupportGlobalEncryptionReasonHasBeenSet(false),
+    m_noSupportTransparentDataEncryptionReasonCodeHasBeenSet(false),
+    m_noSupportGlobalEncryptionReasonCodeHasBeenSet(false)
 {
 }
 
@@ -117,6 +121,46 @@ CoreInternalOutcome Ability::Deserialize(const rapidjson::Value &value)
         m_isSupportManualLogicHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportGlobalEncryption") && !value["IsSupportGlobalEncryption"].IsNull())
+    {
+        if (!value["IsSupportGlobalEncryption"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ability.IsSupportGlobalEncryption` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportGlobalEncryption = string(value["IsSupportGlobalEncryption"].GetString());
+        m_isSupportGlobalEncryptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("NoSupportGlobalEncryptionReason") && !value["NoSupportGlobalEncryptionReason"].IsNull())
+    {
+        if (!value["NoSupportGlobalEncryptionReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ability.NoSupportGlobalEncryptionReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_noSupportGlobalEncryptionReason = string(value["NoSupportGlobalEncryptionReason"].GetString());
+        m_noSupportGlobalEncryptionReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("NoSupportTransparentDataEncryptionReasonCode") && !value["NoSupportTransparentDataEncryptionReasonCode"].IsNull())
+    {
+        if (!value["NoSupportTransparentDataEncryptionReasonCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ability.NoSupportTransparentDataEncryptionReasonCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_noSupportTransparentDataEncryptionReasonCode = string(value["NoSupportTransparentDataEncryptionReasonCode"].GetString());
+        m_noSupportTransparentDataEncryptionReasonCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NoSupportGlobalEncryptionReasonCode") && !value["NoSupportGlobalEncryptionReasonCode"].IsNull())
+    {
+        if (!value["NoSupportGlobalEncryptionReasonCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ability.NoSupportGlobalEncryptionReasonCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_noSupportGlobalEncryptionReasonCode = string(value["NoSupportGlobalEncryptionReasonCode"].GetString());
+        m_noSupportGlobalEncryptionReasonCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +230,38 @@ void Ability::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "IsSupportManualLogic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isSupportManualLogic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSupportGlobalEncryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportGlobalEncryption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isSupportGlobalEncryption.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noSupportGlobalEncryptionReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoSupportGlobalEncryptionReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_noSupportGlobalEncryptionReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noSupportTransparentDataEncryptionReasonCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoSupportTransparentDataEncryptionReasonCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_noSupportTransparentDataEncryptionReasonCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noSupportGlobalEncryptionReasonCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoSupportGlobalEncryptionReasonCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_noSupportGlobalEncryptionReasonCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +393,69 @@ void Ability::SetIsSupportManualLogic(const string& _isSupportManualLogic)
 bool Ability::IsSupportManualLogicHasBeenSet() const
 {
     return m_isSupportManualLogicHasBeenSet;
+}
+
+string Ability::GetIsSupportGlobalEncryption() const
+{
+    return m_isSupportGlobalEncryption;
+}
+
+void Ability::SetIsSupportGlobalEncryption(const string& _isSupportGlobalEncryption)
+{
+    m_isSupportGlobalEncryption = _isSupportGlobalEncryption;
+    m_isSupportGlobalEncryptionHasBeenSet = true;
+}
+
+bool Ability::IsSupportGlobalEncryptionHasBeenSet() const
+{
+    return m_isSupportGlobalEncryptionHasBeenSet;
+}
+
+string Ability::GetNoSupportGlobalEncryptionReason() const
+{
+    return m_noSupportGlobalEncryptionReason;
+}
+
+void Ability::SetNoSupportGlobalEncryptionReason(const string& _noSupportGlobalEncryptionReason)
+{
+    m_noSupportGlobalEncryptionReason = _noSupportGlobalEncryptionReason;
+    m_noSupportGlobalEncryptionReasonHasBeenSet = true;
+}
+
+bool Ability::NoSupportGlobalEncryptionReasonHasBeenSet() const
+{
+    return m_noSupportGlobalEncryptionReasonHasBeenSet;
+}
+
+string Ability::GetNoSupportTransparentDataEncryptionReasonCode() const
+{
+    return m_noSupportTransparentDataEncryptionReasonCode;
+}
+
+void Ability::SetNoSupportTransparentDataEncryptionReasonCode(const string& _noSupportTransparentDataEncryptionReasonCode)
+{
+    m_noSupportTransparentDataEncryptionReasonCode = _noSupportTransparentDataEncryptionReasonCode;
+    m_noSupportTransparentDataEncryptionReasonCodeHasBeenSet = true;
+}
+
+bool Ability::NoSupportTransparentDataEncryptionReasonCodeHasBeenSet() const
+{
+    return m_noSupportTransparentDataEncryptionReasonCodeHasBeenSet;
+}
+
+string Ability::GetNoSupportGlobalEncryptionReasonCode() const
+{
+    return m_noSupportGlobalEncryptionReasonCode;
+}
+
+void Ability::SetNoSupportGlobalEncryptionReasonCode(const string& _noSupportGlobalEncryptionReasonCode)
+{
+    m_noSupportGlobalEncryptionReasonCode = _noSupportGlobalEncryptionReasonCode;
+    m_noSupportGlobalEncryptionReasonCodeHasBeenSet = true;
+}
+
+bool Ability::NoSupportGlobalEncryptionReasonCodeHasBeenSet() const
+{
+    return m_noSupportGlobalEncryptionReasonCodeHasBeenSet;
 }
 

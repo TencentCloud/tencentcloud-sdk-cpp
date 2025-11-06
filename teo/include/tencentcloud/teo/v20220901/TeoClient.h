@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/teo/v20220901/model/ApplyFreeCertificateRequest.h>
+#include <tencentcloud/teo/v20220901/model/ApplyFreeCertificateResponse.h>
 #include <tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityRequest.h>
 #include <tencentcloud/teo/v20220901/model/BindSecurityTemplateToEntityResponse.h>
 #include <tencentcloud/teo/v20220901/model/BindSharedCNAMERequest.h>
@@ -31,6 +33,8 @@
 #include <tencentcloud/teo/v20220901/model/BindZoneToPlanResponse.h>
 #include <tencentcloud/teo/v20220901/model/CheckCnameStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/CheckCnameStatusResponse.h>
+#include <tencentcloud/teo/v20220901/model/CheckFreeCertificateVerificationRequest.h>
+#include <tencentcloud/teo/v20220901/model/CheckFreeCertificateVerificationResponse.h>
 #include <tencentcloud/teo/v20220901/model/ConfirmMultiPathGatewayOriginACLRequest.h>
 #include <tencentcloud/teo/v20220901/model/ConfirmMultiPathGatewayOriginACLResponse.h>
 #include <tencentcloud/teo/v20220901/model/ConfirmOriginACLUpdateRequest.h>
@@ -423,6 +427,9 @@ namespace TencentCloud
                 TeoClient(const Credential &credential, const std::string &region);
                 TeoClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ApplyFreeCertificateResponse> ApplyFreeCertificateOutcome;
+                typedef std::future<ApplyFreeCertificateOutcome> ApplyFreeCertificateOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ApplyFreeCertificateRequest&, ApplyFreeCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyFreeCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindSecurityTemplateToEntityResponse> BindSecurityTemplateToEntityOutcome;
                 typedef std::future<BindSecurityTemplateToEntityOutcome> BindSecurityTemplateToEntityOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::BindSecurityTemplateToEntityRequest&, BindSecurityTemplateToEntityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindSecurityTemplateToEntityAsyncHandler;
@@ -435,6 +442,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckCnameStatusResponse> CheckCnameStatusOutcome;
                 typedef std::future<CheckCnameStatusOutcome> CheckCnameStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CheckCnameStatusRequest&, CheckCnameStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCnameStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckFreeCertificateVerificationResponse> CheckFreeCertificateVerificationOutcome;
+                typedef std::future<CheckFreeCertificateVerificationOutcome> CheckFreeCertificateVerificationOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CheckFreeCertificateVerificationRequest&, CheckFreeCertificateVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckFreeCertificateVerificationAsyncHandler;
                 typedef Outcome<Core::Error, Model::ConfirmMultiPathGatewayOriginACLResponse> ConfirmMultiPathGatewayOriginACLOutcome;
                 typedef std::future<ConfirmMultiPathGatewayOriginACLOutcome> ConfirmMultiPathGatewayOriginACLOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ConfirmMultiPathGatewayOriginACLRequest&, ConfirmMultiPathGatewayOriginACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmMultiPathGatewayOriginACLAsyncHandler;
@@ -1006,6 +1016,25 @@ namespace TencentCloud
 
 
                 /**
+                 *申请免费证书时，如果您需要通过使用 DNS 委派验证或者文件验证进行申请，您可以调用该接口来进行发起证书申请并根据申请方式来获取对应的验证内容。调用接口的顺序如下：
+第一步：调用 ApplyFreeCertificate，指定申请免费证书的校验方式，获取验证内容；
+第二步：为相应域名按照验证内容配置；
+第三步：调用CheckFreeCertificateVerification 验证，验证通过后即完成免费证书申请；
+第四步：调用ModifyHostsCertificate，下发域名证书为使用 EdgeOne 免费证书配置。
+
+申请方式的介绍可参考文档：[免费证书申请说明](https://cloud.tencent.com/document/product/1552/90437) 
+说明：
+- 仅 CNAME 接入模式可调用该接口来指定免费证书申请方式。NS/DNSPod 托管接入模式都是使用自动验证来申请免费证书，无需调用该接口。
+- 如果您需要切换免费证书验证方式，您可以重新调用本接口通过修改 VerificationMethod 字段来进行变更。
+- 同个域名只能申请一本免费证书，在调用本接口后，后台会触发申请免费证书相关任务，您需要在2 天内，完成域名验证信息的相关配置，然后完成证书验证。
+                 * @param req ApplyFreeCertificateRequest
+                 * @return ApplyFreeCertificateOutcome
+                 */
+                ApplyFreeCertificateOutcome ApplyFreeCertificate(const Model::ApplyFreeCertificateRequest &request);
+                void ApplyFreeCertificateAsync(const Model::ApplyFreeCertificateRequest& request, const ApplyFreeCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyFreeCertificateOutcomeCallable ApplyFreeCertificateCallable(const Model::ApplyFreeCertificateRequest& request);
+
+                /**
                  *操作安全策略模板，支持将域名绑定或换绑到指定的策略模板，或者从指定的策略模板解绑。
                  * @param req BindSecurityTemplateToEntityRequest
                  * @return BindSecurityTemplateToEntityOutcome
@@ -1040,6 +1069,16 @@ namespace TencentCloud
                 CheckCnameStatusOutcome CheckCnameStatus(const Model::CheckCnameStatusRequest &request);
                 void CheckCnameStatusAsync(const Model::CheckCnameStatusRequest& request, const CheckCnameStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckCnameStatusOutcomeCallable CheckCnameStatusCallable(const Model::CheckCnameStatusRequest& request);
+
+                /**
+                 *该接口用于验证免费证书并获取免费证书申请结果。如果验证通过，可通过该接口查询到对应域名申请的免费证书信息，如果申请失败，该接口将返回对应的验证失败信息。
+在触发[申请免费证书接口](https://cloud.tencent.com/document/product/1552/90437)后，您可以通过本接口检查免费证书申请结果。在免费证书申请成功后， 还需要通过[配置域名证书](https://tcloud4api.woa.com/document/product/1657/80723?!preview)接口配置，才能将免费证书部署至加速域上。
+                 * @param req CheckFreeCertificateVerificationRequest
+                 * @return CheckFreeCertificateVerificationOutcome
+                 */
+                CheckFreeCertificateVerificationOutcome CheckFreeCertificateVerification(const Model::CheckFreeCertificateVerificationRequest &request);
+                void CheckFreeCertificateVerificationAsync(const Model::CheckFreeCertificateVerificationRequest& request, const CheckFreeCertificateVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckFreeCertificateVerificationOutcomeCallable CheckFreeCertificateVerificationCallable(const Model::CheckFreeCertificateVerificationRequest& request);
 
                 /**
                  *本接口用于多通道安全加速网关回源 IP 网段发生变更时，确认已将最新回源 IP 网段更新至源站防火墙。

@@ -21,7 +21,8 @@ using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
 TTSConfig::TTSConfig() :
-    m_voiceIdHasBeenSet(false)
+    m_voiceIdHasBeenSet(false),
+    m_modelHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome TTSConfig::Deserialize(const rapidjson::Value &value)
         m_voiceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Model") && !value["Model"].IsNull())
+    {
+        if (!value["Model"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TTSConfig.Model` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_model = string(value["Model"].GetString());
+        m_modelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void TTSConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "VoiceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_voiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void TTSConfig::SetVoiceId(const string& _voiceId)
 bool TTSConfig::VoiceIdHasBeenSet() const
 {
     return m_voiceIdHasBeenSet;
+}
+
+string TTSConfig::GetModel() const
+{
+    return m_model;
+}
+
+void TTSConfig::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool TTSConfig::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
 }
 

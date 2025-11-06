@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ClusterCIDRsHasBeenSet() const;
 
                     /**
-                     * 获取是否忽略ClusterCIDR与VPC路由表的冲突
-                     * @return IgnoreClusterCIDRConflict 是否忽略ClusterCIDR与VPC路由表的冲突
+                     * 获取是否忽略ClusterCIDR与VPC路由表的冲突，默认false，为true时忽略冲突
+                     * @return IgnoreClusterCIDRConflict 是否忽略ClusterCIDR与VPC路由表的冲突，默认false，为true时忽略冲突
                      * 
                      */
                     bool GetIgnoreClusterCIDRConflict() const;
 
                     /**
-                     * 设置是否忽略ClusterCIDR与VPC路由表的冲突
-                     * @param _ignoreClusterCIDRConflict 是否忽略ClusterCIDR与VPC路由表的冲突
+                     * 设置是否忽略ClusterCIDR与VPC路由表的冲突，默认false，为true时忽略冲突
+                     * @param _ignoreClusterCIDRConflict 是否忽略ClusterCIDR与VPC路由表的冲突，默认false，为true时忽略冲突
                      * 
                      */
                     void SetIgnoreClusterCIDRConflict(const bool& _ignoreClusterCIDRConflict);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_clusterCIDRsHasBeenSet;
 
                     /**
-                     * 是否忽略ClusterCIDR与VPC路由表的冲突
+                     * 是否忽略ClusterCIDR与VPC路由表的冲突，默认false，为true时忽略冲突
                      */
                     bool m_ignoreClusterCIDRConflict;
                     bool m_ignoreClusterCIDRConflictHasBeenSet;

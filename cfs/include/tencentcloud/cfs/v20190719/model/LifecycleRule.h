@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据转储后的存储类型
-                     * @return StorageType 数据转储后的存储类型
+                     * 获取数据转储后的存储类型。其中：InfrequentAccess：低频介质存储；ColdStorage：冷存储。
+                     * @return StorageType 数据转储后的存储类型。其中：InfrequentAccess：低频介质存储；ColdStorage：冷存储。
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置数据转储后的存储类型
-                     * @param _storageType 数据转储后的存储类型
+                     * 设置数据转储后的存储类型。其中：InfrequentAccess：低频介质存储；ColdStorage：冷存储。
+                     * @param _storageType 数据转储后的存储类型。其中：InfrequentAccess：低频介质存储；ColdStorage：冷存储。
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据转储文件类型
-                     * @return FileType 数据转储文件类型
+                     * 获取数据转储文件类型。其中，BIG_FILE：超大文件；STD_FILE：普通文件；SMALL_FILE：小文件；ALL：所有文件。
+                     * @return FileType 数据转储文件类型。其中，BIG_FILE：超大文件；STD_FILE：普通文件；SMALL_FILE：小文件；ALL：所有文件。
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置数据转储文件类型
-                     * @param _fileType 数据转储文件类型
+                     * 设置数据转储文件类型。其中，BIG_FILE：超大文件；STD_FILE：普通文件；SMALL_FILE：小文件；ALL：所有文件。
+                     * @param _fileType 数据转储文件类型。其中，BIG_FILE：超大文件；STD_FILE：普通文件；SMALL_FILE：小文件；ALL：所有文件。
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据转储行为
-                     * @return Action 数据转储行为
+                     * 获取数据转储行为。其中，Archive：沉降；Noarchive：不沉降。
+                     * @return Action 数据转储行为。其中，Archive：沉降；Noarchive：不沉降。
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置数据转储行为
-                     * @param _action 数据转储行为
+                     * 设置数据转储行为。其中，Archive：沉降；Noarchive：不沉降。
+                     * @param _action 数据转储行为。其中，Archive：沉降；Noarchive：不沉降。
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -110,18 +110,18 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取数据转储触发时间
+                     * 获取数据转储触发时间。由“DEFAULT_ATIME_”与“数字”组成，单位为天。当 Action 为 Noarchive，请保持为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Interval 数据转储触发时间
+                     * @return Interval 数据转储触发时间。由“DEFAULT_ATIME_”与“数字”组成，单位为天。当 Action 为 Noarchive，请保持为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInterval() const;
 
                     /**
-                     * 设置数据转储触发时间
+                     * 设置数据转储触发时间。由“DEFAULT_ATIME_”与“数字”组成，单位为天。当 Action 为 Noarchive，请保持为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _interval 数据转储触发时间
+                     * @param _interval 数据转储触发时间。由“DEFAULT_ATIME_”与“数字”组成，单位为天。当 Action 为 Noarchive，请保持为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -135,18 +135,18 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取数据转储文件最大规格
+                     * 获取数据转储文件最大规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileMaxSize 数据转储文件最大规格
+                     * @return FileMaxSize 数据转储文件最大规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileMaxSize() const;
 
                     /**
-                     * 设置数据转储文件最大规格
+                     * 设置数据转储文件最大规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileMaxSize 数据转储文件最大规格
+                     * @param _fileMaxSize 数据转储文件最大规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -160,18 +160,18 @@ namespace TencentCloud
                     bool FileMaxSizeHasBeenSet() const;
 
                     /**
-                     * 获取数据转储文件最小规格
+                     * 获取数据转储文件最小规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileMinSize 数据转储文件最小规格
+                     * @return FileMinSize 数据转储文件最小规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileMinSize() const;
 
                     /**
-                     * 设置数据转储文件最小规格
+                     * 设置数据转储文件最小规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileMinSize 数据转储文件最小规格
+                     * @param _fileMinSize 数据转储文件最小规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -187,39 +187,39 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据转储后的存储类型
+                     * 数据转储后的存储类型。其中：InfrequentAccess：低频介质存储；ColdStorage：冷存储。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 数据转储文件类型
+                     * 数据转储文件类型。其中，BIG_FILE：超大文件；STD_FILE：普通文件；SMALL_FILE：小文件；ALL：所有文件。
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * 数据转储行为
+                     * 数据转储行为。其中，Archive：沉降；Noarchive：不沉降。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 数据转储触发时间
+                     * 数据转储触发时间。由“DEFAULT_ATIME_”与“数字”组成，单位为天。当 Action 为 Noarchive，请保持为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 数据转储文件最大规格
+                     * 数据转储文件最大规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileMaxSize;
                     bool m_fileMaxSizeHasBeenSet;
 
                     /**
-                     * 数据转储文件最小规格
+                     * 数据转储文件最小规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileMinSize;

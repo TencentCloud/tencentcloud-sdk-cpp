@@ -25,7 +25,9 @@ using namespace std;
 
 DescribeClusterTransparentEncryptInfoResponse::DescribeClusterTransparentEncryptInfoResponse() :
     m_keyIdHasBeenSet(false),
-    m_keyRegionHasBeenSet(false)
+    m_keyRegionHasBeenSet(false),
+    m_keyTypeHasBeenSet(false),
+    m_isOpenGlobalEncryptionHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,26 @@ CoreInternalOutcome DescribeClusterTransparentEncryptInfoResponse::Deserialize(c
         m_keyRegionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("KeyType") && !rsp["KeyType"].IsNull())
+    {
+        if (!rsp["KeyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyType = string(rsp["KeyType"].GetString());
+        m_keyTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsOpenGlobalEncryption") && !rsp["IsOpenGlobalEncryption"].IsNull())
+    {
+        if (!rsp["IsOpenGlobalEncryption"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsOpenGlobalEncryption` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOpenGlobalEncryption = rsp["IsOpenGlobalEncryption"].GetBool();
+        m_isOpenGlobalEncryptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string DescribeClusterTransparentEncryptInfoResponse::ToJsonString() const
         string key = "KeyRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_keyRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOpenGlobalEncryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOpenGlobalEncryption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOpenGlobalEncryption, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +177,26 @@ string DescribeClusterTransparentEncryptInfoResponse::GetKeyRegion() const
 bool DescribeClusterTransparentEncryptInfoResponse::KeyRegionHasBeenSet() const
 {
     return m_keyRegionHasBeenSet;
+}
+
+string DescribeClusterTransparentEncryptInfoResponse::GetKeyType() const
+{
+    return m_keyType;
+}
+
+bool DescribeClusterTransparentEncryptInfoResponse::KeyTypeHasBeenSet() const
+{
+    return m_keyTypeHasBeenSet;
+}
+
+bool DescribeClusterTransparentEncryptInfoResponse::GetIsOpenGlobalEncryption() const
+{
+    return m_isOpenGlobalEncryption;
+}
+
+bool DescribeClusterTransparentEncryptInfoResponse::IsOpenGlobalEncryptionHasBeenSet() const
+{
+    return m_isOpenGlobalEncryptionHasBeenSet;
 }
 
 

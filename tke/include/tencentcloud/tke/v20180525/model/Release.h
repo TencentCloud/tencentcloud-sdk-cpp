@@ -110,15 +110,55 @@ namespace TencentCloud
                     bool RevisionHasBeenSet() const;
 
                     /**
-                     * 获取应用状态
-                     * @return Status 应用状态
+                     * 获取应用状态，参考 Helm 发布状态。
+可选值及其释义如下：
+• ​​unknown​​: 状态未知
+• ​​deployed​​: 已成功部署
+• ​​uninstalled​​: 已卸载
+• ​​superseded​​: 已被新版本替代
+• ​​failed​​: 部署失败
+• ​​uninstalling​​: 正在卸载中
+• ​​pending-install​​: 等待安装/安装进行中
+• ​​pending-upgrade​​: 等待升级/升级进行中
+• ​​pending-rollback​​: 等待回滚/回滚进行中
+                     * @return Status 应用状态，参考 Helm 发布状态。
+可选值及其释义如下：
+• ​​unknown​​: 状态未知
+• ​​deployed​​: 已成功部署
+• ​​uninstalled​​: 已卸载
+• ​​superseded​​: 已被新版本替代
+• ​​failed​​: 部署失败
+• ​​uninstalling​​: 正在卸载中
+• ​​pending-install​​: 等待安装/安装进行中
+• ​​pending-upgrade​​: 等待升级/升级进行中
+• ​​pending-rollback​​: 等待回滚/回滚进行中
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置应用状态
-                     * @param _status 应用状态
+                     * 设置应用状态，参考 Helm 发布状态。
+可选值及其释义如下：
+• ​​unknown​​: 状态未知
+• ​​deployed​​: 已成功部署
+• ​​uninstalled​​: 已卸载
+• ​​superseded​​: 已被新版本替代
+• ​​failed​​: 部署失败
+• ​​uninstalling​​: 正在卸载中
+• ​​pending-install​​: 等待安装/安装进行中
+• ​​pending-upgrade​​: 等待升级/升级进行中
+• ​​pending-rollback​​: 等待回滚/回滚进行中
+                     * @param _status 应用状态，参考 Helm 发布状态。
+可选值及其释义如下：
+• ​​unknown​​: 状态未知
+• ​​deployed​​: 已成功部署
+• ​​uninstalled​​: 已卸载
+• ​​superseded​​: 已被新版本替代
+• ​​failed​​: 部署失败
+• ​​uninstalling​​: 正在卸载中
+• ​​pending-install​​: 等待安装/安装进行中
+• ​​pending-upgrade​​: 等待升级/升级进行中
+• ​​pending-rollback​​: 等待回滚/回滚进行中
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -256,7 +296,17 @@ namespace TencentCloud
                     bool m_revisionHasBeenSet;
 
                     /**
-                     * 应用状态
+                     * 应用状态，参考 Helm 发布状态。
+可选值及其释义如下：
+• ​​unknown​​: 状态未知
+• ​​deployed​​: 已成功部署
+• ​​uninstalled​​: 已卸载
+• ​​superseded​​: 已被新版本替代
+• ​​failed​​: 部署失败
+• ​​uninstalling​​: 正在卸载中
+• ​​pending-install​​: 等待安装/安装进行中
+• ​​pending-upgrade​​: 等待升级/升级进行中
+• ​​pending-rollback​​: 等待回滚/回滚进行中
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

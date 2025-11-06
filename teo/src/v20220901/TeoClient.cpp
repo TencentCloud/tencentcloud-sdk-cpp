@@ -40,6 +40,49 @@ TeoClient::TeoClient(const Credential &credential, const string &region, const C
 }
 
 
+TeoClient::ApplyFreeCertificateOutcome TeoClient::ApplyFreeCertificate(const ApplyFreeCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyFreeCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyFreeCertificateResponse rsp = ApplyFreeCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyFreeCertificateOutcome(rsp);
+        else
+            return ApplyFreeCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyFreeCertificateOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ApplyFreeCertificateAsync(const ApplyFreeCertificateRequest& request, const ApplyFreeCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyFreeCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ApplyFreeCertificateOutcomeCallable TeoClient::ApplyFreeCertificateCallable(const ApplyFreeCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyFreeCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyFreeCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::BindSecurityTemplateToEntityOutcome TeoClient::BindSecurityTemplateToEntity(const BindSecurityTemplateToEntityRequest &request)
 {
     auto outcome = MakeRequest(request, "BindSecurityTemplateToEntity");
@@ -205,6 +248,49 @@ TeoClient::CheckCnameStatusOutcomeCallable TeoClient::CheckCnameStatusCallable(c
         [this, request]()
         {
             return this->CheckCnameStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::CheckFreeCertificateVerificationOutcome TeoClient::CheckFreeCertificateVerification(const CheckFreeCertificateVerificationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckFreeCertificateVerification");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckFreeCertificateVerificationResponse rsp = CheckFreeCertificateVerificationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckFreeCertificateVerificationOutcome(rsp);
+        else
+            return CheckFreeCertificateVerificationOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckFreeCertificateVerificationOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CheckFreeCertificateVerificationAsync(const CheckFreeCertificateVerificationRequest& request, const CheckFreeCertificateVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckFreeCertificateVerification(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CheckFreeCertificateVerificationOutcomeCallable TeoClient::CheckFreeCertificateVerificationCallable(const CheckFreeCertificateVerificationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckFreeCertificateVerificationOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckFreeCertificateVerification(request);
         }
     );
 

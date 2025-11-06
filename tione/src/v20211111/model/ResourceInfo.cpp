@@ -26,7 +26,8 @@ ResourceInfo::ResourceInfo() :
     m_gpuHasBeenSet(false),
     m_gpuTypeHasBeenSet(false),
     m_realGpuHasBeenSet(false),
-    m_realGpuDetailSetHasBeenSet(false)
+    m_realGpuDetailSetHasBeenSet(false),
+    m_enableRDMAHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
         m_realGpuDetailSetHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableRDMA") && !value["EnableRDMA"].IsNull())
+    {
+        if (!value["EnableRDMA"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.EnableRDMA` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableRDMA = value["EnableRDMA"].GetBool();
+        m_enableRDMAHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void ResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableRDMAHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRDMA";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableRDMA, allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void ResourceInfo::SetRealGpuDetailSet(const vector<GpuDetail>& _realGpuDetailSe
 bool ResourceInfo::RealGpuDetailSetHasBeenSet() const
 {
     return m_realGpuDetailSetHasBeenSet;
+}
+
+bool ResourceInfo::GetEnableRDMA() const
+{
+    return m_enableRDMA;
+}
+
+void ResourceInfo::SetEnableRDMA(const bool& _enableRDMA)
+{
+    m_enableRDMA = _enableRDMA;
+    m_enableRDMAHasBeenSet = true;
+}
+
+bool ResourceInfo::EnableRDMAHasBeenSet() const
+{
+    return m_enableRDMAHasBeenSet;
 }
 

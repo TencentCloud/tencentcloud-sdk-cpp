@@ -1631,6 +1631,49 @@ EsClient::GetDiagnoseSettingsOutcomeCallable EsClient::GetDiagnoseSettingsCallab
     return task->get_future();
 }
 
+EsClient::GetIpTraceStatusOutcome EsClient::GetIpTraceStatus(const GetIpTraceStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetIpTraceStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetIpTraceStatusResponse rsp = GetIpTraceStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetIpTraceStatusOutcome(rsp);
+        else
+            return GetIpTraceStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return GetIpTraceStatusOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::GetIpTraceStatusAsync(const GetIpTraceStatusRequest& request, const GetIpTraceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetIpTraceStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::GetIpTraceStatusOutcomeCallable EsClient::GetIpTraceStatusCallable(const GetIpTraceStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetIpTraceStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->GetIpTraceStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::GetRequestTargetNodeTypesOutcome EsClient::GetRequestTargetNodeTypes(const GetRequestTargetNodeTypesRequest &request)
 {
     auto outcome = MakeRequest(request, "GetRequestTargetNodeTypes");
@@ -1796,6 +1839,49 @@ EsClient::ModifyEsVipSecurityGroupOutcomeCallable EsClient::ModifyEsVipSecurityG
         [this, request]()
         {
             return this->ModifyEsVipSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::QueryIpTraceLogOutcome EsClient::QueryIpTraceLog(const QueryIpTraceLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryIpTraceLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryIpTraceLogResponse rsp = QueryIpTraceLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryIpTraceLogOutcome(rsp);
+        else
+            return QueryIpTraceLogOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryIpTraceLogOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::QueryIpTraceLogAsync(const QueryIpTraceLogRequest& request, const QueryIpTraceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryIpTraceLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::QueryIpTraceLogOutcomeCallable EsClient::QueryIpTraceLogCallable(const QueryIpTraceLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryIpTraceLogOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryIpTraceLog(request);
         }
     );
 
@@ -2312,6 +2398,49 @@ EsClient::UpdateInstanceOutcomeCallable EsClient::UpdateInstanceCallable(const U
         [this, request]()
         {
             return this->UpdateInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::UpdateIpTraceStatusOutcome EsClient::UpdateIpTraceStatus(const UpdateIpTraceStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateIpTraceStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateIpTraceStatusResponse rsp = UpdateIpTraceStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateIpTraceStatusOutcome(rsp);
+        else
+            return UpdateIpTraceStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateIpTraceStatusOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::UpdateIpTraceStatusAsync(const UpdateIpTraceStatusRequest& request, const UpdateIpTraceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateIpTraceStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::UpdateIpTraceStatusOutcomeCallable EsClient::UpdateIpTraceStatusCallable(const UpdateIpTraceStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateIpTraceStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateIpTraceStatus(request);
         }
     );
 

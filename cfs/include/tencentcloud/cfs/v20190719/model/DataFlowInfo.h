@@ -247,6 +247,148 @@ deleting：删除中
                      */
                     bool FileSystemIdHasBeenSet() const;
 
+                    /**
+                     * 获取0：不开启自动更新
+
+1：开启自动更新
+                     * @return AutoRefresh 0：不开启自动更新
+
+1：开启自动更新
+                     * 
+                     */
+                    uint64_t GetAutoRefresh() const;
+
+                    /**
+                     * 设置0：不开启自动更新
+
+1：开启自动更新
+                     * @param _autoRefresh 0：不开启自动更新
+
+1：开启自动更新
+                     * 
+                     */
+                    void SetAutoRefresh(const uint64_t& _autoRefresh);
+
+                    /**
+                     * 判断参数 AutoRefresh 是否已赋值
+                     * @return AutoRefresh 是否已赋值
+                     * 
+                     */
+                    bool AutoRefreshHasBeenSet() const;
+
+                    /**
+                     * 获取KafkaConsumer 消费时使用的Topic参数
+                     * @return UserKafkaTopic KafkaConsumer 消费时使用的Topic参数
+                     * 
+                     */
+                    std::string GetUserKafkaTopic() const;
+
+                    /**
+                     * 设置KafkaConsumer 消费时使用的Topic参数
+                     * @param _userKafkaTopic KafkaConsumer 消费时使用的Topic参数
+                     * 
+                     */
+                    void SetUserKafkaTopic(const std::string& _userKafkaTopic);
+
+                    /**
+                     * 判断参数 UserKafkaTopic 是否已赋值
+                     * @return UserKafkaTopic 是否已赋值
+                     * 
+                     */
+                    bool UserKafkaTopicHasBeenSet() const;
+
+                    /**
+                     * 获取服务地址
+                     * @return ServerAddr 服务地址
+                     * 
+                     */
+                    std::string GetServerAddr() const;
+
+                    /**
+                     * 设置服务地址
+                     * @param _serverAddr 服务地址
+                     * 
+                     */
+                    void SetServerAddr(const std::string& _serverAddr);
+
+                    /**
+                     * 判断参数 ServerAddr 是否已赋值
+                     * @return ServerAddr 是否已赋值
+                     * 
+                     */
+                    bool ServerAddrHasBeenSet() const;
+
+                    /**
+                     * 获取Kafka消费用户名
+                     * @return UserName Kafka消费用户名
+                     * 
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置Kafka消费用户名
+                     * @param _userName Kafka消费用户名
+                     * 
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     * 
+                     */
+                    bool UserNameHasBeenSet() const;
+
+                    /**
+                     * 获取自动刷新的状态，available：已生效
+pending：配置中
+unavailable：失效
+                     * @return AutoRefreshStatus 自动刷新的状态，available：已生效
+pending：配置中
+unavailable：失效
+                     * 
+                     */
+                    std::string GetAutoRefreshStatus() const;
+
+                    /**
+                     * 设置自动刷新的状态，available：已生效
+pending：配置中
+unavailable：失效
+                     * @param _autoRefreshStatus 自动刷新的状态，available：已生效
+pending：配置中
+unavailable：失效
+                     * 
+                     */
+                    void SetAutoRefreshStatus(const std::string& _autoRefreshStatus);
+
+                    /**
+                     * 判断参数 AutoRefreshStatus 是否已赋值
+                     * @return AutoRefreshStatus 是否已赋值
+                     * 
+                     */
+                    bool AutoRefreshStatusHasBeenSet() const;
+
+                    /**
+                     * 获取自动刷新开启时间
+                     * @return AutoRefreshTime 自动刷新开启时间
+                     * 
+                     */
+                    std::string GetAutoRefreshTime() const;
+
+                    /**
+                     * 设置自动刷新开启时间
+                     * @param _autoRefreshTime 自动刷新开启时间
+                     * 
+                     */
+                    void SetAutoRefreshTime(const std::string& _autoRefreshTime);
+
+                    /**
+                     * 判断参数 AutoRefreshTime 是否已赋值
+                     * @return AutoRefreshTime 是否已赋值
+                     * 
+                     */
+                    bool AutoRefreshTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -305,6 +447,46 @@ deleting：删除中
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
+
+                    /**
+                     * 0：不开启自动更新
+
+1：开启自动更新
+                     */
+                    uint64_t m_autoRefresh;
+                    bool m_autoRefreshHasBeenSet;
+
+                    /**
+                     * KafkaConsumer 消费时使用的Topic参数
+                     */
+                    std::string m_userKafkaTopic;
+                    bool m_userKafkaTopicHasBeenSet;
+
+                    /**
+                     * 服务地址
+                     */
+                    std::string m_serverAddr;
+                    bool m_serverAddrHasBeenSet;
+
+                    /**
+                     * Kafka消费用户名
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
+
+                    /**
+                     * 自动刷新的状态，available：已生效
+pending：配置中
+unavailable：失效
+                     */
+                    std::string m_autoRefreshStatus;
+                    bool m_autoRefreshStatusHasBeenSet;
+
+                    /**
+                     * 自动刷新开启时间
+                     */
+                    std::string m_autoRefreshTime;
+                    bool m_autoRefreshTimeHasBeenSet;
 
                 };
             }

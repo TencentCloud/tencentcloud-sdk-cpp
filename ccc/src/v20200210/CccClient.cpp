@@ -3093,6 +3093,49 @@ CccClient::ResumePredictiveDialingCampaignOutcomeCallable CccClient::ResumePredi
     return task->get_future();
 }
 
+CccClient::SetStaffStatusOutcome CccClient::SetStaffStatus(const SetStaffStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetStaffStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetStaffStatusResponse rsp = SetStaffStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetStaffStatusOutcome(rsp);
+        else
+            return SetStaffStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return SetStaffStatusOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::SetStaffStatusAsync(const SetStaffStatusRequest& request, const SetStaffStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetStaffStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::SetStaffStatusOutcomeCallable CccClient::SetStaffStatusCallable(const SetStaffStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetStaffStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->SetStaffStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::StopAutoCalloutTaskOutcome CccClient::StopAutoCalloutTask(const StopAutoCalloutTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "StopAutoCalloutTask");

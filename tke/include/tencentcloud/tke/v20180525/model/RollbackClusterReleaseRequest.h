@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RevisionHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
-                     * @return ClusterType 集群类型
+                     * 获取集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）
+                     * @return ClusterType 集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型
-                     * @param _clusterType 集群类型
+                     * 设置集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）
+                     * @param _clusterType 集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_revisionHasBeenSet;
 
                     /**
-                     * 集群类型
+                     * 集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;

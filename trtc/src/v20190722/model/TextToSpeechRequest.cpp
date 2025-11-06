@@ -27,7 +27,9 @@ TextToSpeechRequest::TextToSpeechRequest() :
     m_voiceHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
     m_audioFormatHasBeenSet(false),
-    m_aPIKeyHasBeenSet(false)
+    m_aPIKeyHasBeenSet(false),
+    m_modelHasBeenSet(false),
+    m_languageHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,22 @@ string TextToSpeechRequest::ToJsonString() const
         string key = "APIKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_aPIKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_languageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Language";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_language.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -166,6 +184,38 @@ void TextToSpeechRequest::SetAPIKey(const string& _aPIKey)
 bool TextToSpeechRequest::APIKeyHasBeenSet() const
 {
     return m_aPIKeyHasBeenSet;
+}
+
+string TextToSpeechRequest::GetModel() const
+{
+    return m_model;
+}
+
+void TextToSpeechRequest::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool TextToSpeechRequest::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
+}
+
+string TextToSpeechRequest::GetLanguage() const
+{
+    return m_language;
+}
+
+void TextToSpeechRequest::SetLanguage(const string& _language)
+{
+    m_language = _language;
+    m_languageHasBeenSet = true;
+}
+
+bool TextToSpeechRequest::LanguageHasBeenSet() const
+{
+    return m_languageHasBeenSet;
 }
 
 

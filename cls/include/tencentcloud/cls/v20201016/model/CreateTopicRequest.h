@@ -406,6 +406,27 @@ namespace TencentCloud
                      */
                     bool ExtendsHasBeenSet() const;
 
+                    /**
+                     * 获取开启记录公网来源ip和服务端接收时间
+                     * @return IsSourceFrom 开启记录公网来源ip和服务端接收时间
+                     * 
+                     */
+                    bool GetIsSourceFrom() const;
+
+                    /**
+                     * 设置开启记录公网来源ip和服务端接收时间
+                     * @param _isSourceFrom 开启记录公网来源ip和服务端接收时间
+                     * 
+                     */
+                    void SetIsSourceFrom(const bool& _isSourceFrom);
+
+                    /**
+                     * 判断参数 IsSourceFrom 是否已赋值
+                     * @return IsSourceFrom 是否已赋值
+                     * 
+                     */
+                    bool IsSourceFromHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,6 +529,12 @@ namespace TencentCloud
                      */
                     TopicExtendInfo m_extends;
                     bool m_extendsHasBeenSet;
+
+                    /**
+                     * 开启记录公网来源ip和服务端接收时间
+                     */
+                    bool m_isSourceFrom;
+                    bool m_isSourceFromHasBeenSet;
 
                 };
             }

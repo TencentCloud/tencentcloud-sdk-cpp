@@ -209,6 +209,31 @@ RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有�
                      */
                     bool RealGpuDetailSetHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启rdma
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableRDMA 是否开启rdma
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnableRDMA() const;
+
+                    /**
+                     * 设置是否开启rdma
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableRDMA 是否开启rdma
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableRDMA(const bool& _enableRDMA);
+
+                    /**
+                     * 判断参数 EnableRDMA 是否已赋值
+                     * @return EnableRDMA 是否已赋值
+                     * 
+                     */
+                    bool EnableRDMAHasBeenSet() const;
+
                 private:
 
                     /**
@@ -255,6 +280,13 @@ RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有�
                      */
                     std::vector<GpuDetail> m_realGpuDetailSet;
                     bool m_realGpuDetailSetHasBeenSet;
+
+                    /**
+                     * 是否开启rdma
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableRDMA;
+                    bool m_enableRDMAHasBeenSet;
 
                 };
             }

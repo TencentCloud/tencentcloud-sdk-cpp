@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取应用名称
-                     * @return Name 应用名称
+                     * 获取应用名称，最长63个字符，只能包含小写字母、数字及分隔符“-”，且必须以小写字母开头，数字或小写字母结尾
+                     * @return Name 应用名称，最长63个字符，只能包含小写字母、数字及分隔符“-”，且必须以小写字母开头，数字或小写字母结尾
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置应用名称
-                     * @param _name 应用名称
+                     * 设置应用名称，最长63个字符，只能包含小写字母、数字及分隔符“-”，且必须以小写字母开头，数字或小写字母结尾
+                     * @param _name 应用名称，最长63个字符，只能包含小写字母、数字及分隔符“-”，且必须以小写字母开头，数字或小写字母结尾
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取应用命名空间
-                     * @return Namespace 应用命名空间
+                     * 获取应用命名空间，从集群详情命名空间获取
+                     * @return Namespace 应用命名空间，从集群详情命名空间获取
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置应用命名空间
-                     * @param _namespace 应用命名空间
+                     * 设置应用命名空间，从集群详情命名空间获取
+                     * @param _namespace 应用命名空间，从集群详情命名空间获取
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取制品名称或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz
-                     * @return Chart 制品名称或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz
+                     * 获取制品名称(从应用市场获取)或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz
+                     * @return Chart 制品名称(从应用市场获取)或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz
                      * 
                      */
                     std::string GetChart() const;
 
                     /**
-                     * 设置制品名称或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz
-                     * @param _chart 制品名称或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz
+                     * 设置制品名称(从应用市场获取)或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz
+                     * @param _chart 制品名称(从应用市场获取)或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz
                      * 
                      */
                     void SetChart(const std::string& _chart);
@@ -304,19 +304,19 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 应用名称
+                     * 应用名称，最长63个字符，只能包含小写字母、数字及分隔符“-”，且必须以小写字母开头，数字或小写字母结尾
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 应用命名空间
+                     * 应用命名空间，从集群详情命名空间获取
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 制品名称或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz
+                     * 制品名称(从应用市场获取)或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz
                      */
                     std::string m_chart;
                     bool m_chartHasBeenSet;

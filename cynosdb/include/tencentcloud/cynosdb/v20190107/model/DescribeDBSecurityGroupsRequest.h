@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例组ID（InstanceId与InstanceGroupId必须任选一个传入）
-                     * @return InstanceGroupId 实例组ID（InstanceId与InstanceGroupId必须任选一个传入）
+                     * 获取实例组 ID，可通过 [DescribeClusterInstanceGroups](https://cloud.tencent.com/document/product/1003/103934) 接口查询。
+                     * @return InstanceGroupId 实例组 ID，可通过 [DescribeClusterInstanceGroups](https://cloud.tencent.com/document/product/1003/103934) 接口查询。
                      * 
                      */
                     std::string GetInstanceGroupId() const;
 
                     /**
-                     * 设置实例组ID（InstanceId与InstanceGroupId必须任选一个传入）
-                     * @param _instanceGroupId 实例组ID（InstanceId与InstanceGroupId必须任选一个传入）
+                     * 设置实例组 ID，可通过 [DescribeClusterInstanceGroups](https://cloud.tencent.com/document/product/1003/103934) 接口查询。
+                     * @param _instanceGroupId 实例组 ID，可通过 [DescribeClusterInstanceGroups](https://cloud.tencent.com/document/product/1003/103934) 接口查询。
                      * 
                      */
                     void SetInstanceGroupId(const std::string& _instanceGroupId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例组ID（InstanceId与InstanceGroupId必须任选一个传入）
+                     * 实例组 ID，可通过 [DescribeClusterInstanceGroups](https://cloud.tencent.com/document/product/1003/103934) 接口查询。
                      */
                     std::string m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;

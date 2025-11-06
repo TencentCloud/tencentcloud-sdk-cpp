@@ -27,7 +27,9 @@ VoiceCloneRequest::VoiceCloneRequest() :
     m_voiceNameHasBeenSet(false),
     m_promptAudioHasBeenSet(false),
     m_aPIKeyHasBeenSet(false),
-    m_promptTextHasBeenSet(false)
+    m_promptTextHasBeenSet(false),
+    m_modelHasBeenSet(false),
+    m_languageHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string VoiceCloneRequest::ToJsonString() const
         string key = "PromptText";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_promptText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_languageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Language";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_language.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +182,38 @@ void VoiceCloneRequest::SetPromptText(const string& _promptText)
 bool VoiceCloneRequest::PromptTextHasBeenSet() const
 {
     return m_promptTextHasBeenSet;
+}
+
+string VoiceCloneRequest::GetModel() const
+{
+    return m_model;
+}
+
+void VoiceCloneRequest::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool VoiceCloneRequest::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
+}
+
+string VoiceCloneRequest::GetLanguage() const
+{
+    return m_language;
+}
+
+void VoiceCloneRequest::SetLanguage(const string& _language)
+{
+    m_language = _language;
+    m_languageHasBeenSet = true;
+}
+
+bool VoiceCloneRequest::LanguageHasBeenSet() const
+{
+    return m_languageHasBeenSet;
 }
 
 

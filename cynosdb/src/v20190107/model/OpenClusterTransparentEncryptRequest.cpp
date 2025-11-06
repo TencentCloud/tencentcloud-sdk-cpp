@@ -26,7 +26,8 @@ OpenClusterTransparentEncryptRequest::OpenClusterTransparentEncryptRequest() :
     m_clusterIdHasBeenSet(false),
     m_keyTypeHasBeenSet(false),
     m_keyIdHasBeenSet(false),
-    m_keyRegionHasBeenSet(false)
+    m_keyRegionHasBeenSet(false),
+    m_isOpenGlobalEncryptionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string OpenClusterTransparentEncryptRequest::ToJsonString() const
         string key = "KeyRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOpenGlobalEncryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOpenGlobalEncryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isOpenGlobalEncryption, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void OpenClusterTransparentEncryptRequest::SetKeyRegion(const string& _keyRegion
 bool OpenClusterTransparentEncryptRequest::KeyRegionHasBeenSet() const
 {
     return m_keyRegionHasBeenSet;
+}
+
+bool OpenClusterTransparentEncryptRequest::GetIsOpenGlobalEncryption() const
+{
+    return m_isOpenGlobalEncryption;
+}
+
+void OpenClusterTransparentEncryptRequest::SetIsOpenGlobalEncryption(const bool& _isOpenGlobalEncryption)
+{
+    m_isOpenGlobalEncryption = _isOpenGlobalEncryption;
+    m_isOpenGlobalEncryptionHasBeenSet = true;
+}
+
+bool OpenClusterTransparentEncryptRequest::IsOpenGlobalEncryptionHasBeenSet() const
+{
+    return m_isOpenGlobalEncryptionHasBeenSet;
 }
 
 

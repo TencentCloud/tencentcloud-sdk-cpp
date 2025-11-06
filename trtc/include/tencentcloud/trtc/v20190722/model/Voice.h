@@ -67,6 +67,69 @@ namespace TencentCloud
                      */
                     bool VoiceIdHasBeenSet() const;
 
+                    /**
+                     * 获取语速，范围 0.5-2.0，默认 1.0
+                     * @return Speed 语速，范围 0.5-2.0，默认 1.0
+                     * 
+                     */
+                    double GetSpeed() const;
+
+                    /**
+                     * 设置语速，范围 0.5-2.0，默认 1.0
+                     * @param _speed 语速，范围 0.5-2.0，默认 1.0
+                     * 
+                     */
+                    void SetSpeed(const double& _speed);
+
+                    /**
+                     * 判断参数 Speed 是否已赋值
+                     * @return Speed 是否已赋值
+                     * 
+                     */
+                    bool SpeedHasBeenSet() const;
+
+                    /**
+                     * 获取(0, 10]   默认值1.0 
+                     * @return Volume (0, 10]   默认值1.0 
+                     * 
+                     */
+                    double GetVolume() const;
+
+                    /**
+                     * 设置(0, 10]   默认值1.0 
+                     * @param _volume (0, 10]   默认值1.0 
+                     * 
+                     */
+                    void SetVolume(const double& _volume);
+
+                    /**
+                     * 判断参数 Volume 是否已赋值
+                     * @return Volume 是否已赋值
+                     * 
+                     */
+                    bool VolumeHasBeenSet() const;
+
+                    /**
+                     * 获取取值[-12,12],默认0
+                     * @return Pitch 取值[-12,12],默认0
+                     * 
+                     */
+                    int64_t GetPitch() const;
+
+                    /**
+                     * 设置取值[-12,12],默认0
+                     * @param _pitch 取值[-12,12],默认0
+                     * 
+                     */
+                    void SetPitch(const int64_t& _pitch);
+
+                    /**
+                     * 判断参数 Pitch 是否已赋值
+                     * @return Pitch 是否已赋值
+                     * 
+                     */
+                    bool PitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +137,24 @@ namespace TencentCloud
                      */
                     std::string m_voiceId;
                     bool m_voiceIdHasBeenSet;
+
+                    /**
+                     * 语速，范围 0.5-2.0，默认 1.0
+                     */
+                    double m_speed;
+                    bool m_speedHasBeenSet;
+
+                    /**
+                     * (0, 10]   默认值1.0 
+                     */
+                    double m_volume;
+                    bool m_volumeHasBeenSet;
+
+                    /**
+                     * 取值[-12,12],默认0
+                     */
+                    int64_t m_pitch;
+                    bool m_pitchHasBeenSet;
 
                 };
             }

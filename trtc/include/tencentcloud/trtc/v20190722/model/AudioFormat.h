@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生成的音频格式，默认pcm，目前支持的格式列表：[pcm]。
-                     * @return Format 生成的音频格式，默认pcm，目前支持的格式列表：[pcm]。
+                     * 获取生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]
+                     * @return Format 生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置生成的音频格式，默认pcm，目前支持的格式列表：[pcm]。
-                     * @param _format 生成的音频格式，默认pcm，目前支持的格式列表：[pcm]。
+                     * 设置生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]
+                     * @param _format 生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -67,13 +67,40 @@ namespace TencentCloud
                      */
                     bool FormatHasBeenSet() const;
 
+                    /**
+                     * 获取采样率，默认24000， 可选16000, 24000 
+                     * @return SampleRate 采样率，默认24000， 可选16000, 24000 
+                     * 
+                     */
+                    uint64_t GetSampleRate() const;
+
+                    /**
+                     * 设置采样率，默认24000， 可选16000, 24000 
+                     * @param _sampleRate 采样率，默认24000， 可选16000, 24000 
+                     * 
+                     */
+                    void SetSampleRate(const uint64_t& _sampleRate);
+
+                    /**
+                     * 判断参数 SampleRate 是否已赋值
+                     * @return SampleRate 是否已赋值
+                     * 
+                     */
+                    bool SampleRateHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 生成的音频格式，默认pcm，目前支持的格式列表：[pcm]。
+                     * 生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
+
+                    /**
+                     * 采样率，默认24000， 可选16000, 24000 
+                     */
+                    uint64_t m_sampleRate;
+                    bool m_sampleRateHasBeenSet;
 
                 };
             }

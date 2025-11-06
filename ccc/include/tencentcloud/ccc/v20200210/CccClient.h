@@ -165,6 +165,8 @@
 #include <tencentcloud/ccc/v20200210/model/RestoreMemberOnlineResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignResponse.h>
+#include <tencentcloud/ccc/v20200210/model/SetStaffStatusRequest.h>
+#include <tencentcloud/ccc/v20200210/model/SetStaffStatusResponse.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskRequest.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/TransferToManualRequest.h>
@@ -406,6 +408,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResumePredictiveDialingCampaignResponse> ResumePredictiveDialingCampaignOutcome;
                 typedef std::future<ResumePredictiveDialingCampaignOutcome> ResumePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ResumePredictiveDialingCampaignRequest&, ResumePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumePredictiveDialingCampaignAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetStaffStatusResponse> SetStaffStatusOutcome;
+                typedef std::future<SetStaffStatusOutcome> SetStaffStatusOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::SetStaffStatusRequest&, SetStaffStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetStaffStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopAutoCalloutTaskResponse> StopAutoCalloutTaskOutcome;
                 typedef std::future<StopAutoCalloutTaskOutcome> StopAutoCalloutTaskOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::StopAutoCalloutTaskRequest&, StopAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAutoCalloutTaskAsyncHandler;
@@ -1078,6 +1083,15 @@ namespace TencentCloud
                 ResumePredictiveDialingCampaignOutcome ResumePredictiveDialingCampaign(const Model::ResumePredictiveDialingCampaignRequest &request);
                 void ResumePredictiveDialingCampaignAsync(const Model::ResumePredictiveDialingCampaignRequest& request, const ResumePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResumePredictiveDialingCampaignOutcomeCallable ResumePredictiveDialingCampaignCallable(const Model::ResumePredictiveDialingCampaignRequest& request);
+
+                /**
+                 *设置 staff 状态
+                 * @param req SetStaffStatusRequest
+                 * @return SetStaffStatusOutcome
+                 */
+                SetStaffStatusOutcome SetStaffStatus(const Model::SetStaffStatusRequest &request);
+                void SetStaffStatusAsync(const Model::SetStaffStatusRequest& request, const SetStaffStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetStaffStatusOutcomeCallable SetStaffStatusCallable(const Model::SetStaffStatusRequest& request);
 
                 /**
                  *停止自动外呼任务

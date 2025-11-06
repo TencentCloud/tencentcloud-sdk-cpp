@@ -131,23 +131,65 @@ namespace TencentCloud
                     /**
                      * 获取TTS的API密钥
                      * @return APIKey TTS的API密钥
-                     * 
+                     * @deprecated
                      */
                     std::string GetAPIKey() const;
 
                     /**
                      * 设置TTS的API密钥
                      * @param _aPIKey TTS的API密钥
-                     * 
+                     * @deprecated
                      */
                     void SetAPIKey(const std::string& _aPIKey);
 
                     /**
                      * 判断参数 APIKey 是否已赋值
                      * @return APIKey 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool APIKeyHasBeenSet() const;
+
+                    /**
+                     * 获取TTS的模型：flow_01_turbo，flow_01_ex
+                     * @return Model TTS的模型：flow_01_turbo，flow_01_ex
+                     * 
+                     */
+                    std::string GetModel() const;
+
+                    /**
+                     * 设置TTS的模型：flow_01_turbo，flow_01_ex
+                     * @param _model TTS的模型：flow_01_turbo，flow_01_ex
+                     * 
+                     */
+                    void SetModel(const std::string& _model);
+
+                    /**
+                     * 判断参数 Model 是否已赋值
+                     * @return Model 是否已赋值
+                     * 
+                     */
+                    bool ModelHasBeenSet() const;
+
+                    /**
+                     * 获取语言参数，默认为空， 参考： (ISO 639-1) 
+                     * @return Language 语言参数，默认为空， 参考： (ISO 639-1) 
+                     * 
+                     */
+                    std::string GetLanguage() const;
+
+                    /**
+                     * 设置语言参数，默认为空， 参考： (ISO 639-1) 
+                     * @param _language 语言参数，默认为空， 参考： (ISO 639-1) 
+                     * 
+                     */
+                    void SetLanguage(const std::string& _language);
+
+                    /**
+                     * 判断参数 Language 是否已赋值
+                     * @return Language 是否已赋值
+                     * 
+                     */
+                    bool LanguageHasBeenSet() const;
 
                 private:
 
@@ -180,6 +222,18 @@ namespace TencentCloud
                      */
                     std::string m_aPIKey;
                     bool m_aPIKeyHasBeenSet;
+
+                    /**
+                     * TTS的模型：flow_01_turbo，flow_01_ex
+                     */
+                    std::string m_model;
+                    bool m_modelHasBeenSet;
+
+                    /**
+                     * 语言参数，默认为空， 参考： (ISO 639-1) 
+                     */
+                    std::string m_language;
+                    bool m_languageHasBeenSet;
 
                 };
             }

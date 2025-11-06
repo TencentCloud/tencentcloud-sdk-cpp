@@ -75,19 +75,25 @@ namespace TencentCloud
 
                     /**
                      * 获取升级任务生命周期
+
+pending 还未开始
 process 运行中
 paused 已停止
 pauing 正在停止
 done  已完成
 timeout 已超时
 aborted 已取消
+
                      * @return LifeState 升级任务生命周期
+
+pending 还未开始
 process 运行中
 paused 已停止
 pauing 正在停止
 done  已完成
 timeout 已超时
 aborted 已取消
+
                      * 
                      */
                     std::string GetLifeState() const;
@@ -143,12 +149,15 @@ aborted 已取消
 
                     /**
                      * 升级任务生命周期
+
+pending 还未开始
 process 运行中
 paused 已停止
 pauing 正在停止
 done  已完成
 timeout 已超时
 aborted 已取消
+
                      */
                     std::string m_lifeState;
                     bool m_lifeStateHasBeenSet;

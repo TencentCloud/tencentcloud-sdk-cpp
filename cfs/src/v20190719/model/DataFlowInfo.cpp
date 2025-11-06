@@ -29,7 +29,13 @@ DataFlowInfo::DataFlowInfo() :
     m_targetPathHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false)
+    m_fileSystemIdHasBeenSet(false),
+    m_autoRefreshHasBeenSet(false),
+    m_userKafkaTopicHasBeenSet(false),
+    m_serverAddrHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_autoRefreshStatusHasBeenSet(false),
+    m_autoRefreshTimeHasBeenSet(false)
 {
 }
 
@@ -128,6 +134,66 @@ CoreInternalOutcome DataFlowInfo::Deserialize(const rapidjson::Value &value)
         m_fileSystemIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoRefresh") && !value["AutoRefresh"].IsNull())
+    {
+        if (!value["AutoRefresh"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataFlowInfo.AutoRefresh` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRefresh = value["AutoRefresh"].GetUint64();
+        m_autoRefreshHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserKafkaTopic") && !value["UserKafkaTopic"].IsNull())
+    {
+        if (!value["UserKafkaTopic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataFlowInfo.UserKafkaTopic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userKafkaTopic = string(value["UserKafkaTopic"].GetString());
+        m_userKafkaTopicHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServerAddr") && !value["ServerAddr"].IsNull())
+    {
+        if (!value["ServerAddr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataFlowInfo.ServerAddr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverAddr = string(value["ServerAddr"].GetString());
+        m_serverAddrHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserName") && !value["UserName"].IsNull())
+    {
+        if (!value["UserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataFlowInfo.UserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userName = string(value["UserName"].GetString());
+        m_userNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRefreshStatus") && !value["AutoRefreshStatus"].IsNull())
+    {
+        if (!value["AutoRefreshStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataFlowInfo.AutoRefreshStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRefreshStatus = string(value["AutoRefreshStatus"].GetString());
+        m_autoRefreshStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRefreshTime") && !value["AutoRefreshTime"].IsNull())
+    {
+        if (!value["AutoRefreshTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataFlowInfo.AutoRefreshTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRefreshTime = string(value["AutoRefreshTime"].GetString());
+        m_autoRefreshTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +271,54 @@ void DataFlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "FileSystemId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRefreshHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRefresh";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRefresh, allocator);
+    }
+
+    if (m_userKafkaTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserKafkaTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userKafkaTopic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverAddrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerAddr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverAddr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRefreshStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRefreshStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoRefreshStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRefreshTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRefreshTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoRefreshTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +466,101 @@ void DataFlowInfo::SetFileSystemId(const string& _fileSystemId)
 bool DataFlowInfo::FileSystemIdHasBeenSet() const
 {
     return m_fileSystemIdHasBeenSet;
+}
+
+uint64_t DataFlowInfo::GetAutoRefresh() const
+{
+    return m_autoRefresh;
+}
+
+void DataFlowInfo::SetAutoRefresh(const uint64_t& _autoRefresh)
+{
+    m_autoRefresh = _autoRefresh;
+    m_autoRefreshHasBeenSet = true;
+}
+
+bool DataFlowInfo::AutoRefreshHasBeenSet() const
+{
+    return m_autoRefreshHasBeenSet;
+}
+
+string DataFlowInfo::GetUserKafkaTopic() const
+{
+    return m_userKafkaTopic;
+}
+
+void DataFlowInfo::SetUserKafkaTopic(const string& _userKafkaTopic)
+{
+    m_userKafkaTopic = _userKafkaTopic;
+    m_userKafkaTopicHasBeenSet = true;
+}
+
+bool DataFlowInfo::UserKafkaTopicHasBeenSet() const
+{
+    return m_userKafkaTopicHasBeenSet;
+}
+
+string DataFlowInfo::GetServerAddr() const
+{
+    return m_serverAddr;
+}
+
+void DataFlowInfo::SetServerAddr(const string& _serverAddr)
+{
+    m_serverAddr = _serverAddr;
+    m_serverAddrHasBeenSet = true;
+}
+
+bool DataFlowInfo::ServerAddrHasBeenSet() const
+{
+    return m_serverAddrHasBeenSet;
+}
+
+string DataFlowInfo::GetUserName() const
+{
+    return m_userName;
+}
+
+void DataFlowInfo::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool DataFlowInfo::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
+}
+
+string DataFlowInfo::GetAutoRefreshStatus() const
+{
+    return m_autoRefreshStatus;
+}
+
+void DataFlowInfo::SetAutoRefreshStatus(const string& _autoRefreshStatus)
+{
+    m_autoRefreshStatus = _autoRefreshStatus;
+    m_autoRefreshStatusHasBeenSet = true;
+}
+
+bool DataFlowInfo::AutoRefreshStatusHasBeenSet() const
+{
+    return m_autoRefreshStatusHasBeenSet;
+}
+
+string DataFlowInfo::GetAutoRefreshTime() const
+{
+    return m_autoRefreshTime;
+}
+
+void DataFlowInfo::SetAutoRefreshTime(const string& _autoRefreshTime)
+{
+    m_autoRefreshTime = _autoRefreshTime;
+    m_autoRefreshTimeHasBeenSet = true;
+}
+
+bool DataFlowInfo::AutoRefreshTimeHasBeenSet() const
+{
+    return m_autoRefreshTimeHasBeenSet;
 }
 

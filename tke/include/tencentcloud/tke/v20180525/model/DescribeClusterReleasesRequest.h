@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取每页数量限制
-                     * @return Limit 每页数量限制
+                     * 获取每页数量限制，默认值为20
+                     * @return Limit 每页数量限制，默认值为20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页数量限制
-                     * @param _limit 每页数量限制
+                     * 设置每页数量限制，默认值为20
+                     * @param _limit 每页数量限制，默认值为20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取页偏移量
-                     * @return Offset 页偏移量
+                     * 获取页偏移量，默认值为0
+                     * @return Offset 页偏移量，默认值为0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置页偏移量
-                     * @param _offset 页偏移量
+                     * 设置页偏移量，默认值为0
+                     * @param _offset 页偏移量，默认值为0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取集群类型, 目前支持传入 tke, eks, tkeedge, external 
-                     * @return ClusterType 集群类型, 目前支持传入 tke, eks, tkeedge, external 
+                     * 获取集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）
+                     * @return ClusterType 集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型, 目前支持传入 tke, eks, tkeedge, external 
-                     * @param _clusterType 集群类型, 目前支持传入 tke, eks, tkeedge, external 
+                     * 设置集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）
+                     * @param _clusterType 集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -198,19 +198,19 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 每页数量限制
+                     * 每页数量限制，默认值为20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 页偏移量
+                     * 页偏移量，默认值为0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 集群类型, 目前支持传入 tke, eks, tkeedge, external 
+                     * 集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;

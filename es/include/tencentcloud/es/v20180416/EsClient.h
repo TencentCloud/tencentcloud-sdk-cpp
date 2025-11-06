@@ -97,6 +97,8 @@
 #include <tencentcloud/es/v20180416/model/ExportIpTraceLogResponse.h>
 #include <tencentcloud/es/v20180416/model/GetDiagnoseSettingsRequest.h>
 #include <tencentcloud/es/v20180416/model/GetDiagnoseSettingsResponse.h>
+#include <tencentcloud/es/v20180416/model/GetIpTraceStatusRequest.h>
+#include <tencentcloud/es/v20180416/model/GetIpTraceStatusResponse.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h>
 #include <tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesResponse.h>
 #include <tencentcloud/es/v20180416/model/InquirePriceRenewInstanceRequest.h>
@@ -105,6 +107,8 @@
 #include <tencentcloud/es/v20180416/model/InstallInstanceModelResponse.h>
 #include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupRequest.h>
 #include <tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupResponse.h>
+#include <tencentcloud/es/v20180416/model/QueryIpTraceLogRequest.h>
+#include <tencentcloud/es/v20180416/model/QueryIpTraceLogResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/RestartInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartKibanaRequest.h>
@@ -129,6 +133,8 @@
 #include <tencentcloud/es/v20180416/model/UpdateIndexResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateIpTraceStatusRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdateIpTraceStatusResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateJdkRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateJdkResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateLogstashInstanceRequest.h>
@@ -272,6 +278,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDiagnoseSettingsResponse> GetDiagnoseSettingsOutcome;
                 typedef std::future<GetDiagnoseSettingsOutcome> GetDiagnoseSettingsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::GetDiagnoseSettingsRequest&, GetDiagnoseSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDiagnoseSettingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetIpTraceStatusResponse> GetIpTraceStatusOutcome;
+                typedef std::future<GetIpTraceStatusOutcome> GetIpTraceStatusOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::GetIpTraceStatusRequest&, GetIpTraceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetIpTraceStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRequestTargetNodeTypesResponse> GetRequestTargetNodeTypesOutcome;
                 typedef std::future<GetRequestTargetNodeTypesOutcome> GetRequestTargetNodeTypesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::GetRequestTargetNodeTypesRequest&, GetRequestTargetNodeTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRequestTargetNodeTypesAsyncHandler;
@@ -284,6 +293,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEsVipSecurityGroupResponse> ModifyEsVipSecurityGroupOutcome;
                 typedef std::future<ModifyEsVipSecurityGroupOutcome> ModifyEsVipSecurityGroupOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::ModifyEsVipSecurityGroupRequest&, ModifyEsVipSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEsVipSecurityGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryIpTraceLogResponse> QueryIpTraceLogOutcome;
+                typedef std::future<QueryIpTraceLogOutcome> QueryIpTraceLogOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::QueryIpTraceLogRequest&, QueryIpTraceLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryIpTraceLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestartInstanceResponse> RestartInstanceOutcome;
                 typedef std::future<RestartInstanceOutcome> RestartInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RestartInstanceRequest&, RestartInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartInstanceAsyncHandler;
@@ -320,6 +332,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateInstanceResponse> UpdateInstanceOutcome;
                 typedef std::future<UpdateInstanceOutcome> UpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateInstanceRequest&, UpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateIpTraceStatusResponse> UpdateIpTraceStatusOutcome;
+                typedef std::future<UpdateIpTraceStatusOutcome> UpdateIpTraceStatusOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdateIpTraceStatusRequest&, UpdateIpTraceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIpTraceStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateJdkResponse> UpdateJdkOutcome;
                 typedef std::future<UpdateJdkOutcome> UpdateJdkOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateJdkRequest&, UpdateJdkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateJdkAsyncHandler;
@@ -685,6 +700,15 @@ namespace TencentCloud
                 GetDiagnoseSettingsOutcomeCallable GetDiagnoseSettingsCallable(const Model::GetDiagnoseSettingsRequest& request);
 
                 /**
+                 *查询IP溯源状态
+                 * @param req GetIpTraceStatusRequest
+                 * @return GetIpTraceStatusOutcome
+                 */
+                GetIpTraceStatusOutcome GetIpTraceStatus(const Model::GetIpTraceStatusRequest &request);
+                void GetIpTraceStatusAsync(const Model::GetIpTraceStatusRequest& request, const GetIpTraceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetIpTraceStatusOutcomeCallable GetIpTraceStatusCallable(const Model::GetIpTraceStatusRequest& request);
+
+                /**
                  *获取接收客户端请求的节点类型
                  * @param req GetRequestTargetNodeTypesRequest
                  * @return GetRequestTargetNodeTypesOutcome
@@ -719,6 +743,15 @@ namespace TencentCloud
                 ModifyEsVipSecurityGroupOutcome ModifyEsVipSecurityGroup(const Model::ModifyEsVipSecurityGroupRequest &request);
                 void ModifyEsVipSecurityGroupAsync(const Model::ModifyEsVipSecurityGroupRequest& request, const ModifyEsVipSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEsVipSecurityGroupOutcomeCallable ModifyEsVipSecurityGroupCallable(const Model::ModifyEsVipSecurityGroupRequest& request);
+
+                /**
+                 *查询IP溯源日志
+                 * @param req QueryIpTraceLogRequest
+                 * @return QueryIpTraceLogOutcome
+                 */
+                QueryIpTraceLogOutcome QueryIpTraceLog(const Model::QueryIpTraceLogRequest &request);
+                void QueryIpTraceLogAsync(const Model::QueryIpTraceLogRequest& request, const QueryIpTraceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryIpTraceLogOutcomeCallable QueryIpTraceLogCallable(const Model::QueryIpTraceLogRequest& request);
 
                 /**
                  *重启ES集群实例(用于系统版本更新等操作)
@@ -834,6 +867,15 @@ namespace TencentCloud
                 UpdateInstanceOutcome UpdateInstance(const Model::UpdateInstanceRequest &request);
                 void UpdateInstanceAsync(const Model::UpdateInstanceRequest& request, const UpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateInstanceOutcomeCallable UpdateInstanceCallable(const Model::UpdateInstanceRequest& request);
+
+                /**
+                 *更新ES集群IP溯源状态
+                 * @param req UpdateIpTraceStatusRequest
+                 * @return UpdateIpTraceStatusOutcome
+                 */
+                UpdateIpTraceStatusOutcome UpdateIpTraceStatus(const Model::UpdateIpTraceStatusRequest &request);
+                void UpdateIpTraceStatusAsync(const Model::UpdateIpTraceStatusRequest& request, const UpdateIpTraceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateIpTraceStatusOutcomeCallable UpdateIpTraceStatusCallable(const Model::UpdateIpTraceStatusRequest& request);
 
                 /**
                  *更新实例Jdk配置
