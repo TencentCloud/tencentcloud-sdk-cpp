@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * @return Names 搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
+                     * 获取搜索字段，目前支持：ProxyGroupId
+                     * @return Names 搜索字段，目前支持：ProxyGroupId
                      * 
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
-                     * 设置搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
-                     * @param _names 搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
+                     * 设置搜索字段，目前支持：ProxyGroupId
+                     * @param _names 搜索字段，目前支持：ProxyGroupId
                      * 
                      */
                     void SetNames(const std::vector<std::string>& _names);
@@ -112,7 +112,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 搜索字段，目前支持："InstanceId", "ProjectId", "InstanceName", "Vip"
+                     * 搜索字段，目前支持：ProxyGroupId
                      */
                     std::vector<std::string> m_names;
                     bool m_namesHasBeenSet;

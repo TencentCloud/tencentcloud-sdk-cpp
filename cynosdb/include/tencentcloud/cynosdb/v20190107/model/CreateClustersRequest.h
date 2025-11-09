@@ -340,15 +340,23 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取计费模式，按量计费：0，包年包月：1。默认按量计费。
-                     * @return PayMode 计费模式，按量计费：0，包年包月：1。默认按量计费。
+                     * 获取计费模式，支持值为0和1，默认值为0。
+取值为0，表示按量计费。
+取值为1，表示包年包月。
+                     * @return PayMode 计费模式，支持值为0和1，默认值为0。
+取值为0，表示按量计费。
+取值为1，表示包年包月。
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置计费模式，按量计费：0，包年包月：1。默认按量计费。
-                     * @param _payMode 计费模式，按量计费：0，包年包月：1。默认按量计费。
+                     * 设置计费模式，支持值为0和1，默认值为0。
+取值为0，表示按量计费。
+取值为1，表示包年包月。
+                     * @param _payMode 计费模式，支持值为0和1，默认值为0。
+取值为0，表示按量计费。
+取值为1，表示包年包月。
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -1165,7 +1173,9 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_portHasBeenSet;
 
                     /**
-                     * 计费模式，按量计费：0，包年包月：1。默认按量计费。
+                     * 计费模式，支持值为0和1，默认值为0。
+取值为0，表示按量计费。
+取值为1，表示包年包月。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
