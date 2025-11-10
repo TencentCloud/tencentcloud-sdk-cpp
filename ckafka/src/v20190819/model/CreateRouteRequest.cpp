@@ -32,7 +32,8 @@ CreateRouteRequest::CreateRouteRequest() :
     m_callerAppidHasBeenSet(false),
     m_publicNetworkHasBeenSet(false),
     m_ipHasBeenSet(false),
-    m_noteHasBeenSet(false)
+    m_noteHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,19 @@ string CreateRouteRequest::ToJsonString() const
         string key = "Note";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -289,6 +303,22 @@ void CreateRouteRequest::SetNote(const string& _note)
 bool CreateRouteRequest::NoteHasBeenSet() const
 {
     return m_noteHasBeenSet;
+}
+
+vector<string> CreateRouteRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CreateRouteRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CreateRouteRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 

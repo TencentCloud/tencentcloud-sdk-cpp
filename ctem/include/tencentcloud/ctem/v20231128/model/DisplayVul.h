@@ -320,6 +320,69 @@ namespace TencentCloud
                      */
                     bool LastCheckTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为云资产：0-非云资产 1-是云资产
+                     * @return IsCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 
+                     */
+                    int64_t GetIsCloudAsset() const;
+
+                    /**
+                     * 设置是否为云资产：0-非云资产 1-是云资产
+                     * @param _isCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 
+                     */
+                    void SetIsCloudAsset(const int64_t& _isCloudAsset);
+
+                    /**
+                     * 判断参数 IsCloudAsset 是否已赋值
+                     * @return IsCloudAsset 是否已赋值
+                     * 
+                     */
+                    bool IsCloudAssetHasBeenSet() const;
+
+                    /**
+                     * 获取云资产是否下线：-1-已下线 0-正常
+                     * @return CloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 
+                     */
+                    int64_t GetCloudAssetStatus() const;
+
+                    /**
+                     * 设置云资产是否下线：-1-已下线 0-正常
+                     * @param _cloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 
+                     */
+                    void SetCloudAssetStatus(const int64_t& _cloudAssetStatus);
+
+                    /**
+                     * 判断参数 CloudAssetStatus 是否已赋值
+                     * @return CloudAssetStatus 是否已赋值
+                     * 
+                     */
+                    bool CloudAssetStatusHasBeenSet() const;
+
+                    /**
+                     * 获取域名解析状态 1:异常 0:正常
+                     * @return AnalysisState 域名解析状态 1:异常 0:正常
+                     * 
+                     */
+                    int64_t GetAnalysisState() const;
+
+                    /**
+                     * 设置域名解析状态 1:异常 0:正常
+                     * @param _analysisState 域名解析状态 1:异常 0:正常
+                     * 
+                     */
+                    void SetAnalysisState(const int64_t& _analysisState);
+
+                    /**
+                     * 判断参数 AnalysisState 是否已赋值
+                     * @return AnalysisState 是否已赋值
+                     * 
+                     */
+                    bool AnalysisStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +462,24 @@ namespace TencentCloud
                      */
                     std::string m_lastCheckTime;
                     bool m_lastCheckTimeHasBeenSet;
+
+                    /**
+                     * 是否为云资产：0-非云资产 1-是云资产
+                     */
+                    int64_t m_isCloudAsset;
+                    bool m_isCloudAssetHasBeenSet;
+
+                    /**
+                     * 云资产是否下线：-1-已下线 0-正常
+                     */
+                    int64_t m_cloudAssetStatus;
+                    bool m_cloudAssetStatusHasBeenSet;
+
+                    /**
+                     * 域名解析状态 1:异常 0:正常
+                     */
+                    int64_t m_analysisState;
+                    bool m_analysisStateHasBeenSet;
 
                 };
             }

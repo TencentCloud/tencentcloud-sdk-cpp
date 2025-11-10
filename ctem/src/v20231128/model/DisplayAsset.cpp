@@ -32,7 +32,9 @@ DisplayAsset::DisplayAsset() :
     m_portsHasBeenSet(false),
     m_servicesHasBeenSet(false),
     m_domainsHasBeenSet(false),
-    m_lastModifyHasBeenSet(false)
+    m_lastModifyHasBeenSet(false),
+    m_isCloudAssetHasBeenSet(false),
+    m_cloudAssetStatusHasBeenSet(false)
 {
 }
 
@@ -168,6 +170,26 @@ CoreInternalOutcome DisplayAsset::Deserialize(const rapidjson::Value &value)
         m_lastModifyHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCloudAsset") && !value["IsCloudAsset"].IsNull())
+    {
+        if (!value["IsCloudAsset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayAsset.IsCloudAsset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCloudAsset = value["IsCloudAsset"].GetInt64();
+        m_isCloudAssetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudAssetStatus") && !value["CloudAssetStatus"].IsNull())
+    {
+        if (!value["CloudAssetStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayAsset.CloudAssetStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudAssetStatus = value["CloudAssetStatus"].GetInt64();
+        m_cloudAssetStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +292,22 @@ void DisplayAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LastModify";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastModify.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCloudAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCloudAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCloudAsset, allocator);
+    }
+
+    if (m_cloudAssetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudAssetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudAssetStatus, allocator);
     }
 
 }
@@ -465,5 +503,37 @@ void DisplayAsset::SetLastModify(const string& _lastModify)
 bool DisplayAsset::LastModifyHasBeenSet() const
 {
     return m_lastModifyHasBeenSet;
+}
+
+int64_t DisplayAsset::GetIsCloudAsset() const
+{
+    return m_isCloudAsset;
+}
+
+void DisplayAsset::SetIsCloudAsset(const int64_t& _isCloudAsset)
+{
+    m_isCloudAsset = _isCloudAsset;
+    m_isCloudAssetHasBeenSet = true;
+}
+
+bool DisplayAsset::IsCloudAssetHasBeenSet() const
+{
+    return m_isCloudAssetHasBeenSet;
+}
+
+int64_t DisplayAsset::GetCloudAssetStatus() const
+{
+    return m_cloudAssetStatus;
+}
+
+void DisplayAsset::SetCloudAssetStatus(const int64_t& _cloudAssetStatus)
+{
+    m_cloudAssetStatus = _cloudAssetStatus;
+    m_cloudAssetStatusHasBeenSet = true;
+}
+
+bool DisplayAsset::CloudAssetStatusHasBeenSet() const
+{
+    return m_cloudAssetStatusHasBeenSet;
 }
 

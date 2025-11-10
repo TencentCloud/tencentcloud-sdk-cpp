@@ -32,7 +32,9 @@ DisplayWeakPassword::DisplayWeakPassword() :
     m_isHoneypotHasBeenSet(false),
     m_screenshotUrlHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastCheckTimeHasBeenSet(false)
+    m_lastCheckTimeHasBeenSet(false),
+    m_isCloudAssetHasBeenSet(false),
+    m_cloudAssetStatusHasBeenSet(false)
 {
 }
 
@@ -168,6 +170,26 @@ CoreInternalOutcome DisplayWeakPassword::Deserialize(const rapidjson::Value &val
         m_lastCheckTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCloudAsset") && !value["IsCloudAsset"].IsNull())
+    {
+        if (!value["IsCloudAsset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayWeakPassword.IsCloudAsset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCloudAsset = value["IsCloudAsset"].GetInt64();
+        m_isCloudAssetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudAssetStatus") && !value["CloudAssetStatus"].IsNull())
+    {
+        if (!value["CloudAssetStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayWeakPassword.CloudAssetStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudAssetStatus = value["CloudAssetStatus"].GetInt64();
+        m_cloudAssetStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +292,22 @@ void DisplayWeakPassword::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "LastCheckTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastCheckTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCloudAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCloudAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCloudAsset, allocator);
+    }
+
+    if (m_cloudAssetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudAssetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudAssetStatus, allocator);
     }
 
 }
@@ -465,5 +503,37 @@ void DisplayWeakPassword::SetLastCheckTime(const string& _lastCheckTime)
 bool DisplayWeakPassword::LastCheckTimeHasBeenSet() const
 {
     return m_lastCheckTimeHasBeenSet;
+}
+
+int64_t DisplayWeakPassword::GetIsCloudAsset() const
+{
+    return m_isCloudAsset;
+}
+
+void DisplayWeakPassword::SetIsCloudAsset(const int64_t& _isCloudAsset)
+{
+    m_isCloudAsset = _isCloudAsset;
+    m_isCloudAssetHasBeenSet = true;
+}
+
+bool DisplayWeakPassword::IsCloudAssetHasBeenSet() const
+{
+    return m_isCloudAssetHasBeenSet;
+}
+
+int64_t DisplayWeakPassword::GetCloudAssetStatus() const
+{
+    return m_cloudAssetStatus;
+}
+
+void DisplayWeakPassword::SetCloudAssetStatus(const int64_t& _cloudAssetStatus)
+{
+    m_cloudAssetStatus = _cloudAssetStatus;
+    m_cloudAssetStatusHasBeenSet = true;
+}
+
+bool DisplayWeakPassword::CloudAssetStatusHasBeenSet() const
+{
+    return m_cloudAssetStatusHasBeenSet;
 }
 

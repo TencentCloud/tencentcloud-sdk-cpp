@@ -36,7 +36,8 @@ DescribeSubDomainsRequest::DescribeSubDomainsRequest() :
     m_updateAtStartHasBeenSet(false),
     m_updateAtEndHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_ignoredHasBeenSet(false)
+    m_ignoredHasBeenSet(false),
+    m_onlyOfflineHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,14 @@ string DescribeSubDomainsRequest::ToJsonString() const
         string key = "Ignored";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ignored, allocator);
+    }
+
+    if (m_onlyOfflineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlyOffline";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_onlyOffline, allocator);
     }
 
 
@@ -406,6 +415,22 @@ void DescribeSubDomainsRequest::SetIgnored(const bool& _ignored)
 bool DescribeSubDomainsRequest::IgnoredHasBeenSet() const
 {
     return m_ignoredHasBeenSet;
+}
+
+bool DescribeSubDomainsRequest::GetOnlyOffline() const
+{
+    return m_onlyOffline;
+}
+
+void DescribeSubDomainsRequest::SetOnlyOffline(const bool& _onlyOffline)
+{
+    m_onlyOffline = _onlyOffline;
+    m_onlyOfflineHasBeenSet = true;
+}
+
+bool DescribeSubDomainsRequest::OnlyOfflineHasBeenSet() const
+{
+    return m_onlyOfflineHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@ EmbedUrlOption::EmbedUrlOption() :
     m_showFlowDetailComponentHasBeenSet(false),
     m_showTemplateComponentHasBeenSet(false),
     m_skipUploadFileHasBeenSet(false),
+    m_skipDownloadFileHasBeenSet(false),
     m_forbidEditWatermarkHasBeenSet(false),
     m_sealDescriptionHasBeenSet(false),
     m_forbidEditSealDescriptionHasBeenSet(false)
@@ -63,6 +64,16 @@ CoreInternalOutcome EmbedUrlOption::Deserialize(const rapidjson::Value &value)
         }
         m_skipUploadFile = value["SkipUploadFile"].GetBool();
         m_skipUploadFileHasBeenSet = true;
+    }
+
+    if (value.HasMember("SkipDownloadFile") && !value["SkipDownloadFile"].IsNull())
+    {
+        if (!value["SkipDownloadFile"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedUrlOption.SkipDownloadFile` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_skipDownloadFile = value["SkipDownloadFile"].GetBool();
+        m_skipDownloadFileHasBeenSet = true;
     }
 
     if (value.HasMember("ForbidEditWatermark") && !value["ForbidEditWatermark"].IsNull())
@@ -124,6 +135,14 @@ void EmbedUrlOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SkipUploadFile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_skipUploadFile, allocator);
+    }
+
+    if (m_skipDownloadFileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipDownloadFile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_skipDownloadFile, allocator);
     }
 
     if (m_forbidEditWatermarkHasBeenSet)
@@ -199,6 +218,22 @@ void EmbedUrlOption::SetSkipUploadFile(const bool& _skipUploadFile)
 bool EmbedUrlOption::SkipUploadFileHasBeenSet() const
 {
     return m_skipUploadFileHasBeenSet;
+}
+
+bool EmbedUrlOption::GetSkipDownloadFile() const
+{
+    return m_skipDownloadFile;
+}
+
+void EmbedUrlOption::SetSkipDownloadFile(const bool& _skipDownloadFile)
+{
+    m_skipDownloadFile = _skipDownloadFile;
+    m_skipDownloadFileHasBeenSet = true;
+}
+
+bool EmbedUrlOption::SkipDownloadFileHasBeenSet() const
+{
+    return m_skipDownloadFileHasBeenSet;
 }
 
 bool EmbedUrlOption::GetForbidEditWatermark() const

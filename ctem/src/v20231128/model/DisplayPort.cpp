@@ -31,7 +31,10 @@ DisplayPort::DisplayPort() :
     m_serviceHasBeenSet(false),
     m_bannerHasBeenSet(false),
     m_lastCheckTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_isCloudAssetHasBeenSet(false),
+    m_cloudAssetStatusHasBeenSet(false),
+    m_analysisStateHasBeenSet(false)
 {
 }
 
@@ -157,6 +160,36 @@ CoreInternalOutcome DisplayPort::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCloudAsset") && !value["IsCloudAsset"].IsNull())
+    {
+        if (!value["IsCloudAsset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayPort.IsCloudAsset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCloudAsset = value["IsCloudAsset"].GetInt64();
+        m_isCloudAssetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudAssetStatus") && !value["CloudAssetStatus"].IsNull())
+    {
+        if (!value["CloudAssetStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayPort.CloudAssetStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudAssetStatus = value["CloudAssetStatus"].GetInt64();
+        m_cloudAssetStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnalysisState") && !value["AnalysisState"].IsNull())
+    {
+        if (!value["AnalysisState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayPort.AnalysisState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_analysisState = value["AnalysisState"].GetInt64();
+        m_analysisStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +284,30 @@ void DisplayPort::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCloudAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCloudAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCloudAsset, allocator);
+    }
+
+    if (m_cloudAssetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudAssetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudAssetStatus, allocator);
+    }
+
+    if (m_analysisStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_analysisState, allocator);
     }
 
 }
@@ -430,5 +487,53 @@ void DisplayPort::SetStatus(const string& _status)
 bool DisplayPort::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t DisplayPort::GetIsCloudAsset() const
+{
+    return m_isCloudAsset;
+}
+
+void DisplayPort::SetIsCloudAsset(const int64_t& _isCloudAsset)
+{
+    m_isCloudAsset = _isCloudAsset;
+    m_isCloudAssetHasBeenSet = true;
+}
+
+bool DisplayPort::IsCloudAssetHasBeenSet() const
+{
+    return m_isCloudAssetHasBeenSet;
+}
+
+int64_t DisplayPort::GetCloudAssetStatus() const
+{
+    return m_cloudAssetStatus;
+}
+
+void DisplayPort::SetCloudAssetStatus(const int64_t& _cloudAssetStatus)
+{
+    m_cloudAssetStatus = _cloudAssetStatus;
+    m_cloudAssetStatusHasBeenSet = true;
+}
+
+bool DisplayPort::CloudAssetStatusHasBeenSet() const
+{
+    return m_cloudAssetStatusHasBeenSet;
+}
+
+int64_t DisplayPort::GetAnalysisState() const
+{
+    return m_analysisState;
+}
+
+void DisplayPort::SetAnalysisState(const int64_t& _analysisState)
+{
+    m_analysisState = _analysisState;
+    m_analysisStateHasBeenSet = true;
+}
+
+bool DisplayPort::AnalysisStateHasBeenSet() const
+{
+    return m_analysisStateHasBeenSet;
 }
 

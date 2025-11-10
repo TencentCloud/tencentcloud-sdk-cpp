@@ -31,7 +31,9 @@ CreateDataTransformRequest::CreateDataTransformRequest() :
     m_dstResourcesHasBeenSet(false),
     m_enableFlagHasBeenSet(false),
     m_previewLogStatisticsHasBeenSet(false),
-    m_dataTransformTypeHasBeenSet(false)
+    m_dataTransformTypeHasBeenSet(false),
+    m_keepFailureLogHasBeenSet(false),
+    m_failureLogKeyHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,22 @@ string CreateDataTransformRequest::ToJsonString() const
         string key = "DataTransformType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dataTransformType, allocator);
+    }
+
+    if (m_keepFailureLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepFailureLog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_keepFailureLog, allocator);
+    }
+
+    if (m_failureLogKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailureLogKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_failureLogKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -278,6 +296,38 @@ void CreateDataTransformRequest::SetDataTransformType(const uint64_t& _dataTrans
 bool CreateDataTransformRequest::DataTransformTypeHasBeenSet() const
 {
     return m_dataTransformTypeHasBeenSet;
+}
+
+uint64_t CreateDataTransformRequest::GetKeepFailureLog() const
+{
+    return m_keepFailureLog;
+}
+
+void CreateDataTransformRequest::SetKeepFailureLog(const uint64_t& _keepFailureLog)
+{
+    m_keepFailureLog = _keepFailureLog;
+    m_keepFailureLogHasBeenSet = true;
+}
+
+bool CreateDataTransformRequest::KeepFailureLogHasBeenSet() const
+{
+    return m_keepFailureLogHasBeenSet;
+}
+
+string CreateDataTransformRequest::GetFailureLogKey() const
+{
+    return m_failureLogKey;
+}
+
+void CreateDataTransformRequest::SetFailureLogKey(const string& _failureLogKey)
+{
+    m_failureLogKey = _failureLogKey;
+    m_failureLogKeyHasBeenSet = true;
+}
+
+bool CreateDataTransformRequest::FailureLogKeyHasBeenSet() const
+{
+    return m_failureLogKeyHasBeenSet;
 }
 
 

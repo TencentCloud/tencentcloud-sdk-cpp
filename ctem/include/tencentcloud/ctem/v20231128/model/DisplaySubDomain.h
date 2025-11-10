@@ -215,6 +215,153 @@ namespace TencentCloud
                      */
                     bool DisplayToolCommonHasBeenSet() const;
 
+                    /**
+                     * 获取是否为云资产：0-非云资产 1-是云资产
+                     * @return IsCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 
+                     */
+                    int64_t GetIsCloudAsset() const;
+
+                    /**
+                     * 设置是否为云资产：0-非云资产 1-是云资产
+                     * @param _isCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 
+                     */
+                    void SetIsCloudAsset(const int64_t& _isCloudAsset);
+
+                    /**
+                     * 判断参数 IsCloudAsset 是否已赋值
+                     * @return IsCloudAsset 是否已赋值
+                     * 
+                     */
+                    bool IsCloudAssetHasBeenSet() const;
+
+                    /**
+                     * 获取云资产是否下线：-1-已下线 0-正常
+                     * @return CloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 
+                     */
+                    int64_t GetCloudAssetStatus() const;
+
+                    /**
+                     * 设置云资产是否下线：-1-已下线 0-正常
+                     * @param _cloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 
+                     */
+                    void SetCloudAssetStatus(const int64_t& _cloudAssetStatus);
+
+                    /**
+                     * 判断参数 CloudAssetStatus 是否已赋值
+                     * @return CloudAssetStatus 是否已赋值
+                     * 
+                     */
+                    bool CloudAssetStatusHasBeenSet() const;
+
+                    /**
+                     * 获取可用率（百分比）
+                     * @return AvailabilityRate 可用率（百分比）
+                     * 
+                     */
+                    int64_t GetAvailabilityRate() const;
+
+                    /**
+                     * 设置可用率（百分比）
+                     * @param _availabilityRate 可用率（百分比）
+                     * 
+                     */
+                    void SetAvailabilityRate(const int64_t& _availabilityRate);
+
+                    /**
+                     * 判断参数 AvailabilityRate 是否已赋值
+                     * @return AvailabilityRate 是否已赋值
+                     * 
+                     */
+                    bool AvailabilityRateHasBeenSet() const;
+
+                    /**
+                     * 获取可用状态 1:异常 0:正常
+                     * @return AvailabilityState 可用状态 1:异常 0:正常
+                     * 
+                     */
+                    int64_t GetAvailabilityState() const;
+
+                    /**
+                     * 设置可用状态 1:异常 0:正常
+                     * @param _availabilityState 可用状态 1:异常 0:正常
+                     * 
+                     */
+                    void SetAvailabilityState(const int64_t& _availabilityState);
+
+                    /**
+                     * 判断参数 AvailabilityState 是否已赋值
+                     * @return AvailabilityState 是否已赋值
+                     * 
+                     */
+                    bool AvailabilityStateHasBeenSet() const;
+
+                    /**
+                     * 获取域名解析状态 1:异常 0:正常
+                     * @return AnalysisState 域名解析状态 1:异常 0:正常
+                     * 
+                     */
+                    int64_t GetAnalysisState() const;
+
+                    /**
+                     * 设置域名解析状态 1:异常 0:正常
+                     * @param _analysisState 域名解析状态 1:异常 0:正常
+                     * 
+                     */
+                    void SetAnalysisState(const int64_t& _analysisState);
+
+                    /**
+                     * 判断参数 AnalysisState 是否已赋值
+                     * @return AnalysisState 是否已赋值
+                     * 
+                     */
+                    bool AnalysisStateHasBeenSet() const;
+
+                    /**
+                     * 获取平均时延：单位ms
+                     * @return AverageDelay 平均时延：单位ms
+                     * 
+                     */
+                    int64_t GetAverageDelay() const;
+
+                    /**
+                     * 设置平均时延：单位ms
+                     * @param _averageDelay 平均时延：单位ms
+                     * 
+                     */
+                    void SetAverageDelay(const int64_t& _averageDelay);
+
+                    /**
+                     * 判断参数 AverageDelay 是否已赋值
+                     * @return AverageDelay 是否已赋值
+                     * 
+                     */
+                    bool AverageDelayHasBeenSet() const;
+
+                    /**
+                     * 获取丢包率（百分比）
+                     * @return LossRate 丢包率（百分比）
+                     * 
+                     */
+                    int64_t GetLossRate() const;
+
+                    /**
+                     * 设置丢包率（百分比）
+                     * @param _lossRate 丢包率（百分比）
+                     * 
+                     */
+                    void SetLossRate(const int64_t& _lossRate);
+
+                    /**
+                     * 判断参数 LossRate 是否已赋值
+                     * @return LossRate 是否已赋值
+                     * 
+                     */
+                    bool LossRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +411,48 @@ namespace TencentCloud
                      */
                     DisplayToolCommon m_displayToolCommon;
                     bool m_displayToolCommonHasBeenSet;
+
+                    /**
+                     * 是否为云资产：0-非云资产 1-是云资产
+                     */
+                    int64_t m_isCloudAsset;
+                    bool m_isCloudAssetHasBeenSet;
+
+                    /**
+                     * 云资产是否下线：-1-已下线 0-正常
+                     */
+                    int64_t m_cloudAssetStatus;
+                    bool m_cloudAssetStatusHasBeenSet;
+
+                    /**
+                     * 可用率（百分比）
+                     */
+                    int64_t m_availabilityRate;
+                    bool m_availabilityRateHasBeenSet;
+
+                    /**
+                     * 可用状态 1:异常 0:正常
+                     */
+                    int64_t m_availabilityState;
+                    bool m_availabilityStateHasBeenSet;
+
+                    /**
+                     * 域名解析状态 1:异常 0:正常
+                     */
+                    int64_t m_analysisState;
+                    bool m_analysisStateHasBeenSet;
+
+                    /**
+                     * 平均时延：单位ms
+                     */
+                    int64_t m_averageDelay;
+                    bool m_averageDelayHasBeenSet;
+
+                    /**
+                     * 丢包率（百分比）
+                     */
+                    int64_t m_lossRate;
+                    bool m_lossRateHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ CreateStreamLinkFlowRequest::CreateStreamLinkFlowRequest() :
     m_flowNameHasBeenSet(false),
     m_maxBandwidthHasBeenSet(false),
     m_inputGroupHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+    m_eventIdHasBeenSet(false),
+    m_outputGroupHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,15 @@ string CreateStreamLinkFlowRequest::ToJsonString() const
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_outputGroup.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -146,6 +156,22 @@ void CreateStreamLinkFlowRequest::SetEventId(const string& _eventId)
 bool CreateStreamLinkFlowRequest::EventIdHasBeenSet() const
 {
     return m_eventIdHasBeenSet;
+}
+
+CreateOutputInfo CreateStreamLinkFlowRequest::GetOutputGroup() const
+{
+    return m_outputGroup;
+}
+
+void CreateStreamLinkFlowRequest::SetOutputGroup(const CreateOutputInfo& _outputGroup)
+{
+    m_outputGroup = _outputGroup;
+    m_outputGroupHasBeenSet = true;
+}
+
+bool CreateStreamLinkFlowRequest::OutputGroupHasBeenSet() const
+{
+    return m_outputGroupHasBeenSet;
 }
 
 

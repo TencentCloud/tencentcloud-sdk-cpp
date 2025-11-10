@@ -33,7 +33,10 @@ DisplayVul::DisplayVul() :
     m_discoverTimeHasBeenSet(false),
     m_aiJudgeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_lastCheckTimeHasBeenSet(false)
+    m_lastCheckTimeHasBeenSet(false),
+    m_isCloudAssetHasBeenSet(false),
+    m_cloudAssetStatusHasBeenSet(false),
+    m_analysisStateHasBeenSet(false)
 {
 }
 
@@ -179,6 +182,36 @@ CoreInternalOutcome DisplayVul::Deserialize(const rapidjson::Value &value)
         m_lastCheckTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCloudAsset") && !value["IsCloudAsset"].IsNull())
+    {
+        if (!value["IsCloudAsset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayVul.IsCloudAsset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCloudAsset = value["IsCloudAsset"].GetInt64();
+        m_isCloudAssetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudAssetStatus") && !value["CloudAssetStatus"].IsNull())
+    {
+        if (!value["CloudAssetStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayVul.CloudAssetStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudAssetStatus = value["CloudAssetStatus"].GetInt64();
+        m_cloudAssetStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnalysisState") && !value["AnalysisState"].IsNull())
+    {
+        if (!value["AnalysisState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayVul.AnalysisState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_analysisState = value["AnalysisState"].GetInt64();
+        m_analysisStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +322,30 @@ void DisplayVul::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "LastCheckTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastCheckTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCloudAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCloudAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCloudAsset, allocator);
+    }
+
+    if (m_cloudAssetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudAssetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudAssetStatus, allocator);
+    }
+
+    if (m_analysisStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_analysisState, allocator);
     }
 
 }
@@ -500,5 +557,53 @@ void DisplayVul::SetLastCheckTime(const string& _lastCheckTime)
 bool DisplayVul::LastCheckTimeHasBeenSet() const
 {
     return m_lastCheckTimeHasBeenSet;
+}
+
+int64_t DisplayVul::GetIsCloudAsset() const
+{
+    return m_isCloudAsset;
+}
+
+void DisplayVul::SetIsCloudAsset(const int64_t& _isCloudAsset)
+{
+    m_isCloudAsset = _isCloudAsset;
+    m_isCloudAssetHasBeenSet = true;
+}
+
+bool DisplayVul::IsCloudAssetHasBeenSet() const
+{
+    return m_isCloudAssetHasBeenSet;
+}
+
+int64_t DisplayVul::GetCloudAssetStatus() const
+{
+    return m_cloudAssetStatus;
+}
+
+void DisplayVul::SetCloudAssetStatus(const int64_t& _cloudAssetStatus)
+{
+    m_cloudAssetStatus = _cloudAssetStatus;
+    m_cloudAssetStatusHasBeenSet = true;
+}
+
+bool DisplayVul::CloudAssetStatusHasBeenSet() const
+{
+    return m_cloudAssetStatusHasBeenSet;
+}
+
+int64_t DisplayVul::GetAnalysisState() const
+{
+    return m_analysisState;
+}
+
+void DisplayVul::SetAnalysisState(const int64_t& _analysisState)
+{
+    m_analysisState = _analysisState;
+    m_analysisStateHasBeenSet = true;
+}
+
+bool DisplayVul::AnalysisStateHasBeenSet() const
+{
+    return m_analysisStateHasBeenSet;
 }
 

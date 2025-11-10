@@ -35,7 +35,8 @@ CreateMiniAppPrepareFlowRequest::CreateMiniAppPrepareFlowRequest() :
     m_userFlowTypeIdHasBeenSet(false),
     m_flowOptionHasBeenSet(false),
     m_pageOptionHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_hidesHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,19 @@ string CreateMiniAppPrepareFlowRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hidesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Hides";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_hides.begin(); itr != m_hides.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -382,6 +396,22 @@ void CreateMiniAppPrepareFlowRequest::SetUserData(const string& _userData)
 bool CreateMiniAppPrepareFlowRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+vector<int64_t> CreateMiniAppPrepareFlowRequest::GetHides() const
+{
+    return m_hides;
+}
+
+void CreateMiniAppPrepareFlowRequest::SetHides(const vector<int64_t>& _hides)
+{
+    m_hides = _hides;
+    m_hidesHasBeenSet = true;
+}
+
+bool CreateMiniAppPrepareFlowRequest::HidesHasBeenSet() const
+{
+    return m_hidesHasBeenSet;
 }
 
 

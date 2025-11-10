@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取是否蜜罐
-                     * @return IsHoneypot 是否蜜罐
+                     * 获取是否为蜜罐
+                     * @return IsHoneypot 是否为蜜罐
                      * 
                      */
                     bool GetIsHoneypot() const;
 
                     /**
-                     * 设置是否蜜罐
-                     * @param _isHoneypot 是否蜜罐
+                     * 设置是否为蜜罐
+                     * @param _isHoneypot 是否为蜜罐
                      * 
                      */
                     void SetIsHoneypot(const bool& _isHoneypot);
@@ -299,6 +299,48 @@ namespace TencentCloud
                      */
                     bool LastCheckTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为云资产：0-非云资产 1-是云资产
+                     * @return IsCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 
+                     */
+                    int64_t GetIsCloudAsset() const;
+
+                    /**
+                     * 设置是否为云资产：0-非云资产 1-是云资产
+                     * @param _isCloudAsset 是否为云资产：0-非云资产 1-是云资产
+                     * 
+                     */
+                    void SetIsCloudAsset(const int64_t& _isCloudAsset);
+
+                    /**
+                     * 判断参数 IsCloudAsset 是否已赋值
+                     * @return IsCloudAsset 是否已赋值
+                     * 
+                     */
+                    bool IsCloudAssetHasBeenSet() const;
+
+                    /**
+                     * 获取云资产是否下线：-1-已下线 0-正常
+                     * @return CloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 
+                     */
+                    int64_t GetCloudAssetStatus() const;
+
+                    /**
+                     * 设置云资产是否下线：-1-已下线 0-正常
+                     * @param _cloudAssetStatus 云资产是否下线：-1-已下线 0-正常
+                     * 
+                     */
+                    void SetCloudAssetStatus(const int64_t& _cloudAssetStatus);
+
+                    /**
+                     * 判断参数 CloudAssetStatus 是否已赋值
+                     * @return CloudAssetStatus 是否已赋值
+                     * 
+                     */
+                    bool CloudAssetStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,7 +392,7 @@ namespace TencentCloud
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 是否蜜罐
+                     * 是否为蜜罐
                      */
                     bool m_isHoneypot;
                     bool m_isHoneypotHasBeenSet;
@@ -372,6 +414,18 @@ namespace TencentCloud
                      */
                     std::string m_lastCheckTime;
                     bool m_lastCheckTimeHasBeenSet;
+
+                    /**
+                     * 是否为云资产：0-非云资产 1-是云资产
+                     */
+                    int64_t m_isCloudAsset;
+                    bool m_isCloudAssetHasBeenSet;
+
+                    /**
+                     * 云资产是否下线：-1-已下线 0-正常
+                     */
+                    int64_t m_cloudAssetStatus;
+                    bool m_cloudAssetStatusHasBeenSet;
 
                 };
             }

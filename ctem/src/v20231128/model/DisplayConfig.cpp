@@ -31,7 +31,9 @@ DisplayConfig::DisplayConfig() :
     m_aIRatingHasBeenSet(false),
     m_aIAnalysisHasBeenSet(false),
     m_riskLevelHasBeenSet(false),
-    m_suggestionHasBeenSet(false)
+    m_suggestionHasBeenSet(false),
+    m_isCloudAssetHasBeenSet(false),
+    m_cloudAssetStatusHasBeenSet(false)
 {
 }
 
@@ -157,6 +159,26 @@ CoreInternalOutcome DisplayConfig::Deserialize(const rapidjson::Value &value)
         m_suggestionHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCloudAsset") && !value["IsCloudAsset"].IsNull())
+    {
+        if (!value["IsCloudAsset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayConfig.IsCloudAsset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCloudAsset = value["IsCloudAsset"].GetInt64();
+        m_isCloudAssetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudAssetStatus") && !value["CloudAssetStatus"].IsNull())
+    {
+        if (!value["CloudAssetStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayConfig.CloudAssetStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudAssetStatus = value["CloudAssetStatus"].GetInt64();
+        m_cloudAssetStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +273,22 @@ void DisplayConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Suggestion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCloudAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCloudAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCloudAsset, allocator);
+    }
+
+    if (m_cloudAssetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudAssetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudAssetStatus, allocator);
     }
 
 }
@@ -430,5 +468,37 @@ void DisplayConfig::SetSuggestion(const string& _suggestion)
 bool DisplayConfig::SuggestionHasBeenSet() const
 {
     return m_suggestionHasBeenSet;
+}
+
+int64_t DisplayConfig::GetIsCloudAsset() const
+{
+    return m_isCloudAsset;
+}
+
+void DisplayConfig::SetIsCloudAsset(const int64_t& _isCloudAsset)
+{
+    m_isCloudAsset = _isCloudAsset;
+    m_isCloudAssetHasBeenSet = true;
+}
+
+bool DisplayConfig::IsCloudAssetHasBeenSet() const
+{
+    return m_isCloudAssetHasBeenSet;
+}
+
+int64_t DisplayConfig::GetCloudAssetStatus() const
+{
+    return m_cloudAssetStatus;
+}
+
+void DisplayConfig::SetCloudAssetStatus(const int64_t& _cloudAssetStatus)
+{
+    m_cloudAssetStatus = _cloudAssetStatus;
+    m_cloudAssetStatusHasBeenSet = true;
+}
+
+bool DisplayConfig::CloudAssetStatusHasBeenSet() const
+{
+    return m_cloudAssetStatusHasBeenSet;
 }
 

@@ -28,7 +28,14 @@ DisplaySubDomain::DisplaySubDomain() :
     m_provinceHasBeenSet(false),
     m_cityHasBeenSet(false),
     m_ispHasBeenSet(false),
-    m_displayToolCommonHasBeenSet(false)
+    m_displayToolCommonHasBeenSet(false),
+    m_isCloudAssetHasBeenSet(false),
+    m_cloudAssetStatusHasBeenSet(false),
+    m_availabilityRateHasBeenSet(false),
+    m_availabilityStateHasBeenSet(false),
+    m_analysisStateHasBeenSet(false),
+    m_averageDelayHasBeenSet(false),
+    m_lossRateHasBeenSet(false)
 {
 }
 
@@ -124,6 +131,76 @@ CoreInternalOutcome DisplaySubDomain::Deserialize(const rapidjson::Value &value)
         m_displayToolCommonHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCloudAsset") && !value["IsCloudAsset"].IsNull())
+    {
+        if (!value["IsCloudAsset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySubDomain.IsCloudAsset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCloudAsset = value["IsCloudAsset"].GetInt64();
+        m_isCloudAssetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudAssetStatus") && !value["CloudAssetStatus"].IsNull())
+    {
+        if (!value["CloudAssetStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySubDomain.CloudAssetStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudAssetStatus = value["CloudAssetStatus"].GetInt64();
+        m_cloudAssetStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AvailabilityRate") && !value["AvailabilityRate"].IsNull())
+    {
+        if (!value["AvailabilityRate"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySubDomain.AvailabilityRate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_availabilityRate = value["AvailabilityRate"].GetInt64();
+        m_availabilityRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("AvailabilityState") && !value["AvailabilityState"].IsNull())
+    {
+        if (!value["AvailabilityState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySubDomain.AvailabilityState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_availabilityState = value["AvailabilityState"].GetInt64();
+        m_availabilityStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnalysisState") && !value["AnalysisState"].IsNull())
+    {
+        if (!value["AnalysisState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySubDomain.AnalysisState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_analysisState = value["AnalysisState"].GetInt64();
+        m_analysisStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("AverageDelay") && !value["AverageDelay"].IsNull())
+    {
+        if (!value["AverageDelay"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySubDomain.AverageDelay` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_averageDelay = value["AverageDelay"].GetInt64();
+        m_averageDelayHasBeenSet = true;
+    }
+
+    if (value.HasMember("LossRate") && !value["LossRate"].IsNull())
+    {
+        if (!value["LossRate"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySubDomain.LossRate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lossRate = value["LossRate"].GetInt64();
+        m_lossRateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +271,62 @@ void DisplaySubDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_displayToolCommon.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isCloudAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCloudAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCloudAsset, allocator);
+    }
+
+    if (m_cloudAssetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudAssetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudAssetStatus, allocator);
+    }
+
+    if (m_availabilityRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailabilityRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_availabilityRate, allocator);
+    }
+
+    if (m_availabilityStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailabilityState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_availabilityState, allocator);
+    }
+
+    if (m_analysisStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_analysisState, allocator);
+    }
+
+    if (m_averageDelayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AverageDelay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_averageDelay, allocator);
+    }
+
+    if (m_lossRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LossRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lossRate, allocator);
     }
 
 }
@@ -325,5 +458,117 @@ void DisplaySubDomain::SetDisplayToolCommon(const DisplayToolCommon& _displayToo
 bool DisplaySubDomain::DisplayToolCommonHasBeenSet() const
 {
     return m_displayToolCommonHasBeenSet;
+}
+
+int64_t DisplaySubDomain::GetIsCloudAsset() const
+{
+    return m_isCloudAsset;
+}
+
+void DisplaySubDomain::SetIsCloudAsset(const int64_t& _isCloudAsset)
+{
+    m_isCloudAsset = _isCloudAsset;
+    m_isCloudAssetHasBeenSet = true;
+}
+
+bool DisplaySubDomain::IsCloudAssetHasBeenSet() const
+{
+    return m_isCloudAssetHasBeenSet;
+}
+
+int64_t DisplaySubDomain::GetCloudAssetStatus() const
+{
+    return m_cloudAssetStatus;
+}
+
+void DisplaySubDomain::SetCloudAssetStatus(const int64_t& _cloudAssetStatus)
+{
+    m_cloudAssetStatus = _cloudAssetStatus;
+    m_cloudAssetStatusHasBeenSet = true;
+}
+
+bool DisplaySubDomain::CloudAssetStatusHasBeenSet() const
+{
+    return m_cloudAssetStatusHasBeenSet;
+}
+
+int64_t DisplaySubDomain::GetAvailabilityRate() const
+{
+    return m_availabilityRate;
+}
+
+void DisplaySubDomain::SetAvailabilityRate(const int64_t& _availabilityRate)
+{
+    m_availabilityRate = _availabilityRate;
+    m_availabilityRateHasBeenSet = true;
+}
+
+bool DisplaySubDomain::AvailabilityRateHasBeenSet() const
+{
+    return m_availabilityRateHasBeenSet;
+}
+
+int64_t DisplaySubDomain::GetAvailabilityState() const
+{
+    return m_availabilityState;
+}
+
+void DisplaySubDomain::SetAvailabilityState(const int64_t& _availabilityState)
+{
+    m_availabilityState = _availabilityState;
+    m_availabilityStateHasBeenSet = true;
+}
+
+bool DisplaySubDomain::AvailabilityStateHasBeenSet() const
+{
+    return m_availabilityStateHasBeenSet;
+}
+
+int64_t DisplaySubDomain::GetAnalysisState() const
+{
+    return m_analysisState;
+}
+
+void DisplaySubDomain::SetAnalysisState(const int64_t& _analysisState)
+{
+    m_analysisState = _analysisState;
+    m_analysisStateHasBeenSet = true;
+}
+
+bool DisplaySubDomain::AnalysisStateHasBeenSet() const
+{
+    return m_analysisStateHasBeenSet;
+}
+
+int64_t DisplaySubDomain::GetAverageDelay() const
+{
+    return m_averageDelay;
+}
+
+void DisplaySubDomain::SetAverageDelay(const int64_t& _averageDelay)
+{
+    m_averageDelay = _averageDelay;
+    m_averageDelayHasBeenSet = true;
+}
+
+bool DisplaySubDomain::AverageDelayHasBeenSet() const
+{
+    return m_averageDelayHasBeenSet;
+}
+
+int64_t DisplaySubDomain::GetLossRate() const
+{
+    return m_lossRate;
+}
+
+void DisplaySubDomain::SetLossRate(const int64_t& _lossRate)
+{
+    m_lossRate = _lossRate;
+    m_lossRateHasBeenSet = true;
+}
+
+bool DisplaySubDomain::LossRateHasBeenSet() const
+{
+    return m_lossRateHasBeenSet;
 }
 

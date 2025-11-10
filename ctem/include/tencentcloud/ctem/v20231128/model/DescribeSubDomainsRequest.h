@@ -337,6 +337,27 @@ namespace TencentCloud
                      */
                     bool IgnoredHasBeenSet() const;
 
+                    /**
+                     * 获取是否只查询离线子域名
+                     * @return OnlyOffline 是否只查询离线子域名
+                     * 
+                     */
+                    bool GetOnlyOffline() const;
+
+                    /**
+                     * 设置是否只查询离线子域名
+                     * @param _onlyOffline 是否只查询离线子域名
+                     * 
+                     */
+                    void SetOnlyOffline(const bool& _onlyOffline);
+
+                    /**
+                     * 判断参数 OnlyOffline 是否已赋值
+                     * @return OnlyOffline 是否已赋值
+                     * 
+                     */
+                    bool OnlyOfflineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,6 +443,12 @@ namespace TencentCloud
                      */
                     bool m_ignored;
                     bool m_ignoredHasBeenSet;
+
+                    /**
+                     * 是否只查询离线子域名
+                     */
+                    bool m_onlyOffline;
+                    bool m_onlyOfflineHasBeenSet;
 
                 };
             }

@@ -34,7 +34,13 @@ DisplayHttp::DisplayHttp() :
     m_ipHasBeenSet(false),
     m_sslHasBeenSet(false),
     m_sslExpiredTimeHasBeenSet(false),
-    m_isChangeHasBeenSet(false)
+    m_isChangeHasBeenSet(false),
+    m_isCloudAssetHasBeenSet(false),
+    m_cloudAssetStatusHasBeenSet(false),
+    m_availabilityRateHasBeenSet(false),
+    m_availabilityStateHasBeenSet(false),
+    m_responseTimeHasBeenSet(false),
+    m_analysisStateHasBeenSet(false)
 {
 }
 
@@ -190,6 +196,66 @@ CoreInternalOutcome DisplayHttp::Deserialize(const rapidjson::Value &value)
         m_isChangeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCloudAsset") && !value["IsCloudAsset"].IsNull())
+    {
+        if (!value["IsCloudAsset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayHttp.IsCloudAsset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCloudAsset = value["IsCloudAsset"].GetInt64();
+        m_isCloudAssetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudAssetStatus") && !value["CloudAssetStatus"].IsNull())
+    {
+        if (!value["CloudAssetStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayHttp.CloudAssetStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudAssetStatus = value["CloudAssetStatus"].GetInt64();
+        m_cloudAssetStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AvailabilityRate") && !value["AvailabilityRate"].IsNull())
+    {
+        if (!value["AvailabilityRate"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayHttp.AvailabilityRate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_availabilityRate = value["AvailabilityRate"].GetInt64();
+        m_availabilityRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("AvailabilityState") && !value["AvailabilityState"].IsNull())
+    {
+        if (!value["AvailabilityState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayHttp.AvailabilityState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_availabilityState = value["AvailabilityState"].GetInt64();
+        m_availabilityStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResponseTime") && !value["ResponseTime"].IsNull())
+    {
+        if (!value["ResponseTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayHttp.ResponseTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseTime = value["ResponseTime"].GetInt64();
+        m_responseTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnalysisState") && !value["AnalysisState"].IsNull())
+    {
+        if (!value["AnalysisState"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplayHttp.AnalysisState` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_analysisState = value["AnalysisState"].GetInt64();
+        m_analysisStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +374,54 @@ void DisplayHttp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsChange";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isChange, allocator);
+    }
+
+    if (m_isCloudAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCloudAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCloudAsset, allocator);
+    }
+
+    if (m_cloudAssetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudAssetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudAssetStatus, allocator);
+    }
+
+    if (m_availabilityRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailabilityRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_availabilityRate, allocator);
+    }
+
+    if (m_availabilityStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailabilityState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_availabilityState, allocator);
+    }
+
+    if (m_responseTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_responseTime, allocator);
+    }
+
+    if (m_analysisStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_analysisState, allocator);
     }
 
 }
@@ -535,5 +649,101 @@ void DisplayHttp::SetIsChange(const bool& _isChange)
 bool DisplayHttp::IsChangeHasBeenSet() const
 {
     return m_isChangeHasBeenSet;
+}
+
+int64_t DisplayHttp::GetIsCloudAsset() const
+{
+    return m_isCloudAsset;
+}
+
+void DisplayHttp::SetIsCloudAsset(const int64_t& _isCloudAsset)
+{
+    m_isCloudAsset = _isCloudAsset;
+    m_isCloudAssetHasBeenSet = true;
+}
+
+bool DisplayHttp::IsCloudAssetHasBeenSet() const
+{
+    return m_isCloudAssetHasBeenSet;
+}
+
+int64_t DisplayHttp::GetCloudAssetStatus() const
+{
+    return m_cloudAssetStatus;
+}
+
+void DisplayHttp::SetCloudAssetStatus(const int64_t& _cloudAssetStatus)
+{
+    m_cloudAssetStatus = _cloudAssetStatus;
+    m_cloudAssetStatusHasBeenSet = true;
+}
+
+bool DisplayHttp::CloudAssetStatusHasBeenSet() const
+{
+    return m_cloudAssetStatusHasBeenSet;
+}
+
+int64_t DisplayHttp::GetAvailabilityRate() const
+{
+    return m_availabilityRate;
+}
+
+void DisplayHttp::SetAvailabilityRate(const int64_t& _availabilityRate)
+{
+    m_availabilityRate = _availabilityRate;
+    m_availabilityRateHasBeenSet = true;
+}
+
+bool DisplayHttp::AvailabilityRateHasBeenSet() const
+{
+    return m_availabilityRateHasBeenSet;
+}
+
+int64_t DisplayHttp::GetAvailabilityState() const
+{
+    return m_availabilityState;
+}
+
+void DisplayHttp::SetAvailabilityState(const int64_t& _availabilityState)
+{
+    m_availabilityState = _availabilityState;
+    m_availabilityStateHasBeenSet = true;
+}
+
+bool DisplayHttp::AvailabilityStateHasBeenSet() const
+{
+    return m_availabilityStateHasBeenSet;
+}
+
+int64_t DisplayHttp::GetResponseTime() const
+{
+    return m_responseTime;
+}
+
+void DisplayHttp::SetResponseTime(const int64_t& _responseTime)
+{
+    m_responseTime = _responseTime;
+    m_responseTimeHasBeenSet = true;
+}
+
+bool DisplayHttp::ResponseTimeHasBeenSet() const
+{
+    return m_responseTimeHasBeenSet;
+}
+
+int64_t DisplayHttp::GetAnalysisState() const
+{
+    return m_analysisState;
+}
+
+void DisplayHttp::SetAnalysisState(const int64_t& _analysisState)
+{
+    m_analysisState = _analysisState;
+    m_analysisStateHasBeenSet = true;
+}
+
+bool DisplayHttp::AnalysisStateHasBeenSet() const
+{
+    return m_analysisStateHasBeenSet;
 }
 

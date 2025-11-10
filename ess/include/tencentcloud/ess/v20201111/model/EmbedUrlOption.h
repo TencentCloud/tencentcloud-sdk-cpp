@@ -113,13 +113,13 @@ namespace TencentCloud
                     bool ShowTemplateComponentHasBeenSet() const;
 
                     /**
-                     * 获取跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
+                     * 获取跳过上传文件，默认为false(展示上传文件页)![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
 - false: 展示上传文件页
 - true: 不展示上传文件页
  
 
 注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)和EmbedType=CREATE_CONTRACT_DRAFT_COOPEDIT(创建起草合同)有效**，
-                     * @return SkipUploadFile 跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
+                     * @return SkipUploadFile 跳过上传文件，默认为false(展示上传文件页)![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
 - false: 展示上传文件页
 - true: 不展示上传文件页
  
@@ -130,13 +130,13 @@ namespace TencentCloud
                     bool GetSkipUploadFile() const;
 
                     /**
-                     * 设置跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
+                     * 设置跳过上传文件，默认为false(展示上传文件页)![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
 - false: 展示上传文件页
 - true: 不展示上传文件页
  
 
 注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)和EmbedType=CREATE_CONTRACT_DRAFT_COOPEDIT(创建起草合同)有效**，
-                     * @param _skipUploadFile 跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
+                     * @param _skipUploadFile 跳过上传文件，默认为false(展示上传文件页)![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
 - false: 展示上传文件页
 - true: 不展示上传文件页
  
@@ -152,6 +152,55 @@ namespace TencentCloud
                      * 
                      */
                     bool SkipUploadFileHasBeenSet() const;
+
+                    /**
+                     * 获取隐藏下载文件按钮，默认为false(展示下载文件按钮)
+
+- false: 展示下载文件按钮
+- true: 不展示下载文件按钮
+
+ 
+
+注意: 此参数仅针对**EmbedType=PREVIEW_FLOW_DETAIL(查看合同详情)**有效
+                     * @return SkipDownloadFile 隐藏下载文件按钮，默认为false(展示下载文件按钮)
+
+- false: 展示下载文件按钮
+- true: 不展示下载文件按钮
+
+ 
+
+注意: 此参数仅针对**EmbedType=PREVIEW_FLOW_DETAIL(查看合同详情)**有效
+                     * 
+                     */
+                    bool GetSkipDownloadFile() const;
+
+                    /**
+                     * 设置隐藏下载文件按钮，默认为false(展示下载文件按钮)
+
+- false: 展示下载文件按钮
+- true: 不展示下载文件按钮
+
+ 
+
+注意: 此参数仅针对**EmbedType=PREVIEW_FLOW_DETAIL(查看合同详情)**有效
+                     * @param _skipDownloadFile 隐藏下载文件按钮，默认为false(展示下载文件按钮)
+
+- false: 展示下载文件按钮
+- true: 不展示下载文件按钮
+
+ 
+
+注意: 此参数仅针对**EmbedType=PREVIEW_FLOW_DETAIL(查看合同详情)**有效
+                     * 
+                     */
+                    void SetSkipDownloadFile(const bool& _skipDownloadFile);
+
+                    /**
+                     * 判断参数 SkipDownloadFile 是否已赋值
+                     * @return SkipDownloadFile 是否已赋值
+                     * 
+                     */
+                    bool SkipDownloadFileHasBeenSet() const;
 
                     /**
                      * 获取是否禁止编辑（展示）水印控件属性
@@ -249,7 +298,7 @@ namespace TencentCloud
                     bool m_showTemplateComponentHasBeenSet;
 
                     /**
-                     * 跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
+                     * 跳过上传文件，默认为false(展示上传文件页)![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
 - false: 展示上传文件页
 - true: 不展示上传文件页
  
@@ -258,6 +307,19 @@ namespace TencentCloud
                      */
                     bool m_skipUploadFile;
                     bool m_skipUploadFileHasBeenSet;
+
+                    /**
+                     * 隐藏下载文件按钮，默认为false(展示下载文件按钮)
+
+- false: 展示下载文件按钮
+- true: 不展示下载文件按钮
+
+ 
+
+注意: 此参数仅针对**EmbedType=PREVIEW_FLOW_DETAIL(查看合同详情)**有效
+                     */
+                    bool m_skipDownloadFile;
+                    bool m_skipDownloadFileHasBeenSet;
 
                     /**
                      * 是否禁止编辑（展示）水印控件属性

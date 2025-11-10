@@ -38,7 +38,8 @@ DescribeHttpsRequest::DescribeHttpsRequest() :
     m_filtersHasBeenSet(false),
     m_ignoredHasBeenSet(false),
     m_isShowChangeHasBeenSet(false),
-    m_hasExpirationRiskHasBeenSet(false)
+    m_hasExpirationRiskHasBeenSet(false),
+    m_onlyOfflineHasBeenSet(false)
 {
 }
 
@@ -192,6 +193,14 @@ string DescribeHttpsRequest::ToJsonString() const
         string key = "HasExpirationRisk";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_hasExpirationRisk, allocator);
+    }
+
+    if (m_onlyOfflineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlyOffline";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_onlyOffline, allocator);
     }
 
 
@@ -456,6 +465,22 @@ void DescribeHttpsRequest::SetHasExpirationRisk(const bool& _hasExpirationRisk)
 bool DescribeHttpsRequest::HasExpirationRiskHasBeenSet() const
 {
     return m_hasExpirationRiskHasBeenSet;
+}
+
+bool DescribeHttpsRequest::GetOnlyOffline() const
+{
+    return m_onlyOffline;
+}
+
+void DescribeHttpsRequest::SetOnlyOffline(const bool& _onlyOffline)
+{
+    m_onlyOffline = _onlyOffline;
+    m_onlyOfflineHasBeenSet = true;
+}
+
+bool DescribeHttpsRequest::OnlyOfflineHasBeenSet() const
+{
+    return m_onlyOfflineHasBeenSet;
 }
 
 

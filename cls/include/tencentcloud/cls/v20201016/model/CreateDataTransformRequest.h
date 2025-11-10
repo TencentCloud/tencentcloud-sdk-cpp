@@ -293,6 +293,48 @@ namespace TencentCloud
                      */
                     bool DataTransformTypeHasBeenSet() const;
 
+                    /**
+                     * 获取保留失败日志状态，1:不保留(默认)，2:保留。
+                     * @return KeepFailureLog 保留失败日志状态，1:不保留(默认)，2:保留。
+                     * 
+                     */
+                    uint64_t GetKeepFailureLog() const;
+
+                    /**
+                     * 设置保留失败日志状态，1:不保留(默认)，2:保留。
+                     * @param _keepFailureLog 保留失败日志状态，1:不保留(默认)，2:保留。
+                     * 
+                     */
+                    void SetKeepFailureLog(const uint64_t& _keepFailureLog);
+
+                    /**
+                     * 判断参数 KeepFailureLog 是否已赋值
+                     * @return KeepFailureLog 是否已赋值
+                     * 
+                     */
+                    bool KeepFailureLogHasBeenSet() const;
+
+                    /**
+                     * 获取失败日志的字段名称
+                     * @return FailureLogKey 失败日志的字段名称
+                     * 
+                     */
+                    std::string GetFailureLogKey() const;
+
+                    /**
+                     * 设置失败日志的字段名称
+                     * @param _failureLogKey 失败日志的字段名称
+                     * 
+                     */
+                    void SetFailureLogKey(const std::string& _failureLogKey);
+
+                    /**
+                     * 判断参数 FailureLogKey 是否已赋值
+                     * @return FailureLogKey 是否已赋值
+                     * 
+                     */
+                    bool FailureLogKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -363,6 +405,18 @@ namespace TencentCloud
                      */
                     uint64_t m_dataTransformType;
                     bool m_dataTransformTypeHasBeenSet;
+
+                    /**
+                     * 保留失败日志状态，1:不保留(默认)，2:保留。
+                     */
+                    uint64_t m_keepFailureLog;
+                    bool m_keepFailureLogHasBeenSet;
+
+                    /**
+                     * 失败日志的字段名称
+                     */
+                    std::string m_failureLogKey;
+                    bool m_failureLogKeyHasBeenSet;
 
                 };
             }

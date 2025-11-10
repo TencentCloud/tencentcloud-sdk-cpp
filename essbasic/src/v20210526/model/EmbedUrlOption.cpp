@@ -24,6 +24,7 @@ EmbedUrlOption::EmbedUrlOption() :
     m_showFlowDetailComponentHasBeenSet(false),
     m_showTemplateComponentHasBeenSet(false),
     m_skipUploadFileHasBeenSet(false),
+    m_skipDownloadFileHasBeenSet(false),
     m_forbidEditWatermarkHasBeenSet(false),
     m_sealDescriptionHasBeenSet(false),
     m_forbidEditSealDescriptionHasBeenSet(false)
@@ -57,12 +58,22 @@ CoreInternalOutcome EmbedUrlOption::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("SkipUploadFile") && !value["SkipUploadFile"].IsNull())
     {
-        if (!value["SkipUploadFile"].IsString())
+        if (!value["SkipUploadFile"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `EmbedUrlOption.SkipUploadFile` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EmbedUrlOption.SkipUploadFile` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_skipUploadFile = string(value["SkipUploadFile"].GetString());
+        m_skipUploadFile = value["SkipUploadFile"].GetBool();
         m_skipUploadFileHasBeenSet = true;
+    }
+
+    if (value.HasMember("SkipDownloadFile") && !value["SkipDownloadFile"].IsNull())
+    {
+        if (!value["SkipDownloadFile"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedUrlOption.SkipDownloadFile` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_skipDownloadFile = value["SkipDownloadFile"].GetBool();
+        m_skipDownloadFileHasBeenSet = true;
     }
 
     if (value.HasMember("ForbidEditWatermark") && !value["ForbidEditWatermark"].IsNull())
@@ -123,7 +134,15 @@ void EmbedUrlOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SkipUploadFile";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_skipUploadFile.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_skipUploadFile, allocator);
+    }
+
+    if (m_skipDownloadFileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipDownloadFile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_skipDownloadFile, allocator);
     }
 
     if (m_forbidEditWatermarkHasBeenSet)
@@ -185,12 +204,12 @@ bool EmbedUrlOption::ShowTemplateComponentHasBeenSet() const
     return m_showTemplateComponentHasBeenSet;
 }
 
-string EmbedUrlOption::GetSkipUploadFile() const
+bool EmbedUrlOption::GetSkipUploadFile() const
 {
     return m_skipUploadFile;
 }
 
-void EmbedUrlOption::SetSkipUploadFile(const string& _skipUploadFile)
+void EmbedUrlOption::SetSkipUploadFile(const bool& _skipUploadFile)
 {
     m_skipUploadFile = _skipUploadFile;
     m_skipUploadFileHasBeenSet = true;
@@ -199,6 +218,22 @@ void EmbedUrlOption::SetSkipUploadFile(const string& _skipUploadFile)
 bool EmbedUrlOption::SkipUploadFileHasBeenSet() const
 {
     return m_skipUploadFileHasBeenSet;
+}
+
+bool EmbedUrlOption::GetSkipDownloadFile() const
+{
+    return m_skipDownloadFile;
+}
+
+void EmbedUrlOption::SetSkipDownloadFile(const bool& _skipDownloadFile)
+{
+    m_skipDownloadFile = _skipDownloadFile;
+    m_skipDownloadFileHasBeenSet = true;
+}
+
+bool EmbedUrlOption::SkipDownloadFileHasBeenSet() const
+{
+    return m_skipDownloadFileHasBeenSet;
 }
 
 bool EmbedUrlOption::GetForbidEditWatermark() const

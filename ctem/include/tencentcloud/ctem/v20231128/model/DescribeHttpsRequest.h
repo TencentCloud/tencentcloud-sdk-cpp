@@ -379,6 +379,27 @@ namespace TencentCloud
                      */
                     bool HasExpirationRiskHasBeenSet() const;
 
+                    /**
+                     * 获取是否只查询离线网站
+                     * @return OnlyOffline 是否只查询离线网站
+                     * 
+                     */
+                    bool GetOnlyOffline() const;
+
+                    /**
+                     * 设置是否只查询离线网站
+                     * @param _onlyOffline 是否只查询离线网站
+                     * 
+                     */
+                    void SetOnlyOffline(const bool& _onlyOffline);
+
+                    /**
+                     * 判断参数 OnlyOffline 是否已赋值
+                     * @return OnlyOffline 是否已赋值
+                     * 
+                     */
+                    bool OnlyOfflineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -476,6 +497,12 @@ namespace TencentCloud
                      */
                     bool m_hasExpirationRisk;
                     bool m_hasExpirationRiskHasBeenSet;
+
+                    /**
+                     * 是否只查询离线网站
+                     */
+                    bool m_onlyOffline;
+                    bool m_onlyOfflineHasBeenSet;
 
                 };
             }

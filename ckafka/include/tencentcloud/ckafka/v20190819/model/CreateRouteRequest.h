@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
-                     * @return InstanceId ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * 获取<p>ckafka集群实例id,可通过<a href="https://cloud.tencent.com/document/product/597/40835">DescribeInstances</a>接口获取</p>
+                     * @return InstanceId <p>ckafka集群实例id,可通过<a href="https://cloud.tencent.com/document/product/597/40835">DescribeInstances</a>接口获取</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
-                     * @param _instanceId ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * 设置<p>ckafka集群实例id,可通过<a href="https://cloud.tencent.com/document/product/597/40835">DescribeInstances</a>接口获取</p>
+                     * @param _instanceId <p>ckafka集群实例id,可通过<a href="https://cloud.tencent.com/document/product/597/40835">DescribeInstances</a>接口获取</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
-                     * @return VipType 路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
+                     * 获取<p>路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)</p>
+                     * @return VipType <p>路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)</p>
                      * 
                      */
                     int64_t GetVipType() const;
 
                     /**
-                     * 设置路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
-                     * @param _vipType 路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
+                     * 设置<p>路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)</p>
+                     * @param _vipType <p>路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)</p>
                      * 
                      */
                     void SetVipType(const int64_t& _vipType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VipTypeHasBeenSet() const;
 
                     /**
-                     * 获取vpc网络Id,当vipType为3时必填
-                     * @return VpcId vpc网络Id,当vipType为3时必填
+                     * 获取<p>vpc网络Id,当vipType为3时必填</p>
+                     * @return VpcId <p>vpc网络Id,当vipType为3时必填</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpc网络Id,当vipType为3时必填
-                     * @param _vpcId vpc网络Id,当vipType为3时必填
+                     * 设置<p>vpc网络Id,当vipType为3时必填</p>
+                     * @param _vpcId <p>vpc网络Id,当vipType为3时必填</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取vpc子网id,当vipType为3时必填
-                     * @return SubnetId vpc子网id,当vipType为3时必填
+                     * 获取<p>vpc子网id,当vipType为3时必填</p>
+                     * @return SubnetId <p>vpc子网id,当vipType为3时必填</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置vpc子网id,当vipType为3时必填
-                     * @param _subnetId vpc子网id,当vipType为3时必填
+                     * 设置<p>vpc子网id,当vipType为3时必填</p>
+                     * @param _subnetId <p>vpc子网id,当vipType为3时必填</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -127,31 +127,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0
-vipType=3,支持 0,1,3,4,5
-vipType=7,支持0,1,3
-vipType=1,支持1,3
-
-                     * @return AccessType 访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0
-vipType=3,支持 0,1,3,4,5
-vipType=7,支持0,1,3
-vipType=1,支持1,3
-
+                     * 获取<p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0vipType=3,支持 0,1,3,4,5vipType=7,支持0,1,3vipType=1,支持1,3</p>
+                     * @return AccessType <p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0vipType=3,支持 0,1,3,4,5vipType=7,支持0,1,3vipType=1,支持1,3</p>
                      * 
                      */
                     int64_t GetAccessType() const;
 
                     /**
-                     * 设置访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0
-vipType=3,支持 0,1,3,4,5
-vipType=7,支持0,1,3
-vipType=1,支持1,3
-
-                     * @param _accessType 访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0
-vipType=3,支持 0,1,3,4,5
-vipType=7,支持0,1,3
-vipType=1,支持1,3
-
+                     * 设置<p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0vipType=3,支持 0,1,3,4,5vipType=7,支持0,1,3vipType=1,支持1,3</p>
+                     * @param _accessType <p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0vipType=3,支持 0,1,3,4,5vipType=7,支持0,1,3vipType=1,支持1,3</p>
                      * 
                      */
                     void SetAccessType(const int64_t& _accessType);
@@ -164,15 +148,15 @@ vipType=1,支持1,3
                     bool AccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否需要权限管理,该字段已废弃
-                     * @return AuthFlag 是否需要权限管理,该字段已废弃
+                     * 获取<p>是否需要权限管理,该字段已废弃</p>
+                     * @return AuthFlag <p>是否需要权限管理,该字段已废弃</p>
                      * 
                      */
                     int64_t GetAuthFlag() const;
 
                     /**
-                     * 设置是否需要权限管理,该字段已废弃
-                     * @param _authFlag 是否需要权限管理,该字段已废弃
+                     * 设置<p>是否需要权限管理,该字段已废弃</p>
+                     * @param _authFlag <p>是否需要权限管理,该字段已废弃</p>
                      * 
                      */
                     void SetAuthFlag(const int64_t& _authFlag);
@@ -185,15 +169,15 @@ vipType=1,支持1,3
                     bool AuthFlagHasBeenSet() const;
 
                     /**
-                     * 获取调用方appId
-                     * @return CallerAppid 调用方appId
+                     * 获取<p>调用方appId</p>
+                     * @return CallerAppid <p>调用方appId</p>
                      * 
                      */
                     int64_t GetCallerAppid() const;
 
                     /**
-                     * 设置调用方appId
-                     * @param _callerAppid 调用方appId
+                     * 设置<p>调用方appId</p>
+                     * @param _callerAppid <p>调用方appId</p>
                      * 
                      */
                     void SetCallerAppid(const int64_t& _callerAppid);
@@ -206,15 +190,15 @@ vipType=1,支持1,3
                     bool CallerAppidHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽,公网路由必传,且是3的倍数,无默认值
-                     * @return PublicNetwork 公网带宽,公网路由必传,且是3的倍数,无默认值
+                     * 获取<p>公网带宽,公网路由必传,且是3的倍数,无默认值</p>
+                     * @return PublicNetwork <p>公网带宽,公网路由必传,且是3的倍数,无默认值</p>
                      * 
                      */
                     int64_t GetPublicNetwork() const;
 
                     /**
-                     * 设置公网带宽,公网路由必传,且是3的倍数,无默认值
-                     * @param _publicNetwork 公网带宽,公网路由必传,且是3的倍数,无默认值
+                     * 设置<p>公网带宽,公网路由必传,且是3的倍数,无默认值</p>
+                     * @param _publicNetwork <p>公网带宽,公网路由必传,且是3的倍数,无默认值</p>
                      * 
                      */
                     void SetPublicNetwork(const int64_t& _publicNetwork);
@@ -227,15 +211,15 @@ vipType=1,支持1,3
                     bool PublicNetworkHasBeenSet() const;
 
                     /**
-                     * 获取vip地址
-                     * @return Ip vip地址
+                     * 获取<p>vip地址</p>
+                     * @return Ip <p>vip地址</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置vip地址
-                     * @param _ip vip地址
+                     * 设置<p>vip地址</p>
+                     * @param _ip <p>vip地址</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -248,15 +232,15 @@ vipType=1,支持1,3
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
-                     * @return Note 备注信息
+                     * 获取<p>备注信息</p>
+                     * @return Note <p>备注信息</p>
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
-                     * 设置备注信息
-                     * @param _note 备注信息
+                     * 设置<p>备注信息</p>
+                     * @param _note <p>备注信息</p>
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -268,71 +252,94 @@ vipType=1,支持1,3
                      */
                     bool NoteHasBeenSet() const;
 
+                    /**
+                     * 获取<p>关联安全组有序列表</p>
+                     * @return SecurityGroupIds <p>关联安全组有序列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置<p>关联安全组有序列表</p>
+                     * @param _securityGroupIds <p>关联安全组有序列表</p>
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取
+                     * <p>ckafka集群实例id,可通过<a href="https://cloud.tencent.com/document/product/597/40835">DescribeInstances</a>接口获取</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)
+                     * <p>路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)</p>
                      */
                     int64_t m_vipType;
                     bool m_vipTypeHasBeenSet;
 
                     /**
-                     * vpc网络Id,当vipType为3时必填
+                     * <p>vpc网络Id,当vipType为3时必填</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * vpc子网id,当vipType为3时必填
+                     * <p>vpc子网id,当vipType为3时必填</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0
-vipType=3,支持 0,1,3,4,5
-vipType=7,支持0,1,3
-vipType=1,支持1,3
-
+                     * <p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0vipType=3,支持 0,1,3,4,5vipType=7,支持0,1,3vipType=1,支持1,3</p>
                      */
                     int64_t m_accessType;
                     bool m_accessTypeHasBeenSet;
 
                     /**
-                     * 是否需要权限管理,该字段已废弃
+                     * <p>是否需要权限管理,该字段已废弃</p>
                      */
                     int64_t m_authFlag;
                     bool m_authFlagHasBeenSet;
 
                     /**
-                     * 调用方appId
+                     * <p>调用方appId</p>
                      */
                     int64_t m_callerAppid;
                     bool m_callerAppidHasBeenSet;
 
                     /**
-                     * 公网带宽,公网路由必传,且是3的倍数,无默认值
+                     * <p>公网带宽,公网路由必传,且是3的倍数,无默认值</p>
                      */
                     int64_t m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
 
                     /**
-                     * vip地址
+                     * <p>vip地址</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * <p>备注信息</p>
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
+
+                    /**
+                     * <p>关联安全组有序列表</p>
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }
