@@ -23,6 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/DataTransformResouceInfo.h>
 #include <tencentcloud/cls/v20201016/model/PreviewLogStatistic.h>
+#include <tencentcloud/cls/v20201016/model/DataTransformSqlDataSource.h>
+#include <tencentcloud/cls/v20201016/model/EnvInfo.h>
 
 
 namespace TencentCloud
@@ -273,6 +275,60 @@ namespace TencentCloud
                     bool PreviewLogStatisticsHasBeenSet() const;
 
                     /**
+                     * 获取当FuncType为2时，动态创建的日志集、日志主题的个数超出产品规格限制是否丢弃数据， 默认为false。
+
+false：创建兜底日志集、日志主题并将日志写入兜底主题；
+true：丢弃日志数据。
+                     * @return BackupGiveUpData 当FuncType为2时，动态创建的日志集、日志主题的个数超出产品规格限制是否丢弃数据， 默认为false。
+
+false：创建兜底日志集、日志主题并将日志写入兜底主题；
+true：丢弃日志数据。
+                     * 
+                     */
+                    bool GetBackupGiveUpData() const;
+
+                    /**
+                     * 设置当FuncType为2时，动态创建的日志集、日志主题的个数超出产品规格限制是否丢弃数据， 默认为false。
+
+false：创建兜底日志集、日志主题并将日志写入兜底主题；
+true：丢弃日志数据。
+                     * @param _backupGiveUpData 当FuncType为2时，动态创建的日志集、日志主题的个数超出产品规格限制是否丢弃数据， 默认为false。
+
+false：创建兜底日志集、日志主题并将日志写入兜底主题；
+true：丢弃日志数据。
+                     * 
+                     */
+                    void SetBackupGiveUpData(const bool& _backupGiveUpData);
+
+                    /**
+                     * 判断参数 BackupGiveUpData 是否已赋值
+                     * @return BackupGiveUpData 是否已赋值
+                     * 
+                     */
+                    bool BackupGiveUpDataHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启投递服务日志。1：关闭，2：开启。
+                     * @return HasServicesLog 是否开启投递服务日志。1：关闭，2：开启。
+                     * 
+                     */
+                    uint64_t GetHasServicesLog() const;
+
+                    /**
+                     * 设置是否开启投递服务日志。1：关闭，2：开启。
+                     * @param _hasServicesLog 是否开启投递服务日志。1：关闭，2：开启。
+                     * 
+                     */
+                    void SetHasServicesLog(const uint64_t& _hasServicesLog);
+
+                    /**
+                     * 判断参数 HasServicesLog 是否已赋值
+                     * @return HasServicesLog 是否已赋值
+                     * 
+                     */
+                    bool HasServicesLogHasBeenSet() const;
+
+                    /**
                      * 获取数据加工类型。0：标准加工任务； 1：前置加工任务。前置加工任务将采集的日志处理完成后，再写入日志主题。
                      * @return DataTransformType 数据加工类型。0：标准加工任务； 1：前置加工任务。前置加工任务将采集的日志处理完成后，再写入日志主题。
                      * 
@@ -334,6 +390,131 @@ namespace TencentCloud
                      * 
                      */
                     bool FailureLogKeyHasBeenSet() const;
+
+                    /**
+                     * 获取指定加工数据的开始时间, 秒级时间戳。
+ - 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     * @return ProcessFromTimestamp 指定加工数据的开始时间, 秒级时间戳。
+ - 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     * 
+                     */
+                    uint64_t GetProcessFromTimestamp() const;
+
+                    /**
+                     * 设置指定加工数据的开始时间, 秒级时间戳。
+ - 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     * @param _processFromTimestamp 指定加工数据的开始时间, 秒级时间戳。
+ - 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     * 
+                     */
+                    void SetProcessFromTimestamp(const uint64_t& _processFromTimestamp);
+
+                    /**
+                     * 判断参数 ProcessFromTimestamp 是否已赋值
+                     * @return ProcessFromTimestamp 是否已赋值
+                     * 
+                     */
+                    bool ProcessFromTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取指定加工数据的结束时间，秒级时间戳。
+
+-  不可指定未来的时间
+-  不填则表示持续执行
+                     * @return ProcessToTimestamp 指定加工数据的结束时间，秒级时间戳。
+
+-  不可指定未来的时间
+-  不填则表示持续执行
+                     * 
+                     */
+                    uint64_t GetProcessToTimestamp() const;
+
+                    /**
+                     * 设置指定加工数据的结束时间，秒级时间戳。
+
+-  不可指定未来的时间
+-  不填则表示持续执行
+                     * @param _processToTimestamp 指定加工数据的结束时间，秒级时间戳。
+
+-  不可指定未来的时间
+-  不填则表示持续执行
+                     * 
+                     */
+                    void SetProcessToTimestamp(const uint64_t& _processToTimestamp);
+
+                    /**
+                     * 判断参数 ProcessToTimestamp 是否已赋值
+                     * @return ProcessToTimestamp 是否已赋值
+                     * 
+                     */
+                    bool ProcessToTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取对已经创建的并且使用了关联外部数据库能力的任务预览（TaskType 为 1 或 2）时，该值必传
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
+                     * @return TaskId 对已经创建的并且使用了关联外部数据库能力的任务预览（TaskType 为 1 或 2）时，该值必传
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置对已经创建的并且使用了关联外部数据库能力的任务预览（TaskType 为 1 或 2）时，该值必传
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
+                     * @param _taskId 对已经创建的并且使用了关联外部数据库能力的任务预览（TaskType 为 1 或 2）时，该值必传
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
+                     * 
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取关联的数据源信息
+                     * @return DataTransformSqlDataSources 关联的数据源信息
+                     * 
+                     */
+                    std::vector<DataTransformSqlDataSource> GetDataTransformSqlDataSources() const;
+
+                    /**
+                     * 设置关联的数据源信息
+                     * @param _dataTransformSqlDataSources 关联的数据源信息
+                     * 
+                     */
+                    void SetDataTransformSqlDataSources(const std::vector<DataTransformSqlDataSource>& _dataTransformSqlDataSources);
+
+                    /**
+                     * 判断参数 DataTransformSqlDataSources 是否已赋值
+                     * @return DataTransformSqlDataSources 是否已赋值
+                     * 
+                     */
+                    bool DataTransformSqlDataSourcesHasBeenSet() const;
+
+                    /**
+                     * 获取设置的环境变量
+                     * @return EnvInfos 设置的环境变量
+                     * 
+                     */
+                    std::vector<EnvInfo> GetEnvInfos() const;
+
+                    /**
+                     * 设置设置的环境变量
+                     * @param _envInfos 设置的环境变量
+                     * 
+                     */
+                    void SetEnvInfos(const std::vector<EnvInfo>& _envInfos);
+
+                    /**
+                     * 判断参数 EnvInfos 是否已赋值
+                     * @return EnvInfos 是否已赋值
+                     * 
+                     */
+                    bool EnvInfosHasBeenSet() const;
 
                 private:
 
@@ -401,6 +582,21 @@ namespace TencentCloud
                     bool m_previewLogStatisticsHasBeenSet;
 
                     /**
+                     * 当FuncType为2时，动态创建的日志集、日志主题的个数超出产品规格限制是否丢弃数据， 默认为false。
+
+false：创建兜底日志集、日志主题并将日志写入兜底主题；
+true：丢弃日志数据。
+                     */
+                    bool m_backupGiveUpData;
+                    bool m_backupGiveUpDataHasBeenSet;
+
+                    /**
+                     * 是否开启投递服务日志。1：关闭，2：开启。
+                     */
+                    uint64_t m_hasServicesLog;
+                    bool m_hasServicesLogHasBeenSet;
+
+                    /**
                      * 数据加工类型。0：标准加工任务； 1：前置加工任务。前置加工任务将采集的日志处理完成后，再写入日志主题。
                      */
                     uint64_t m_dataTransformType;
@@ -417,6 +613,41 @@ namespace TencentCloud
                      */
                     std::string m_failureLogKey;
                     bool m_failureLogKeyHasBeenSet;
+
+                    /**
+                     * 指定加工数据的开始时间, 秒级时间戳。
+ - 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     */
+                    uint64_t m_processFromTimestamp;
+                    bool m_processFromTimestampHasBeenSet;
+
+                    /**
+                     * 指定加工数据的结束时间，秒级时间戳。
+
+-  不可指定未来的时间
+-  不填则表示持续执行
+                     */
+                    uint64_t m_processToTimestamp;
+                    bool m_processToTimestampHasBeenSet;
+
+                    /**
+                     * 对已经创建的并且使用了关联外部数据库能力的任务预览（TaskType 为 1 或 2）时，该值必传
+数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 关联的数据源信息
+                     */
+                    std::vector<DataTransformSqlDataSource> m_dataTransformSqlDataSources;
+                    bool m_dataTransformSqlDataSourcesHasBeenSet;
+
+                    /**
+                     * 设置的环境变量
+                     */
+                    std::vector<EnvInfo> m_envInfos;
+                    bool m_envInfosHasBeenSet;
 
                 };
             }

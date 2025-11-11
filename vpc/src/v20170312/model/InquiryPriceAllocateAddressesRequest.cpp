@@ -26,7 +26,8 @@ InquiryPriceAllocateAddressesRequest::InquiryPriceAllocateAddressesRequest() :
     m_internetChargeTypeHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_addressChargePrepaidHasBeenSet(false),
-    m_addressTypeHasBeenSet(false)
+    m_addressTypeHasBeenSet(false),
+    m_iPChargeTypeHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string InquiryPriceAllocateAddressesRequest::ToJsonString() const
         string key = "AddressType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_addressType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_iPChargeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void InquiryPriceAllocateAddressesRequest::SetAddressType(const string& _address
 bool InquiryPriceAllocateAddressesRequest::AddressTypeHasBeenSet() const
 {
     return m_addressTypeHasBeenSet;
+}
+
+string InquiryPriceAllocateAddressesRequest::GetIPChargeType() const
+{
+    return m_iPChargeType;
+}
+
+void InquiryPriceAllocateAddressesRequest::SetIPChargeType(const string& _iPChargeType)
+{
+    m_iPChargeType = _iPChargeType;
+    m_iPChargeTypeHasBeenSet = true;
+}
+
+bool InquiryPriceAllocateAddressesRequest::IPChargeTypeHasBeenSet() const
+{
+    return m_iPChargeTypeHasBeenSet;
 }
 
 

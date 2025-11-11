@@ -82,8 +82,14 @@ string CreateStreamLinkFlowRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OutputGroup";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_outputGroup.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_outputGroup.begin(); itr != m_outputGroup.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -158,12 +164,12 @@ bool CreateStreamLinkFlowRequest::EventIdHasBeenSet() const
     return m_eventIdHasBeenSet;
 }
 
-CreateOutputInfo CreateStreamLinkFlowRequest::GetOutputGroup() const
+vector<CreateOutputInfo> CreateStreamLinkFlowRequest::GetOutputGroup() const
 {
     return m_outputGroup;
 }
 
-void CreateStreamLinkFlowRequest::SetOutputGroup(const CreateOutputInfo& _outputGroup)
+void CreateStreamLinkFlowRequest::SetOutputGroup(const vector<CreateOutputInfo>& _outputGroup)
 {
     m_outputGroup = _outputGroup;
     m_outputGroupHasBeenSet = true;

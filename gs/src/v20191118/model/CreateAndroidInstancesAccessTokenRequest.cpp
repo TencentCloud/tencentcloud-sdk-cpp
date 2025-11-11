@@ -24,7 +24,9 @@ using namespace std;
 
 CreateAndroidInstancesAccessTokenRequest::CreateAndroidInstancesAccessTokenRequest() :
     m_androidInstanceIdsHasBeenSet(false),
-    m_expirationDurationHasBeenSet(false)
+    m_expirationDurationHasBeenSet(false),
+    m_modeHasBeenSet(false),
+    m_userIPHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,22 @@ string CreateAndroidInstancesAccessTokenRequest::ToJsonString() const
         string key = "ExpirationDuration";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_expirationDuration.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIP";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userIP.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +112,38 @@ void CreateAndroidInstancesAccessTokenRequest::SetExpirationDuration(const strin
 bool CreateAndroidInstancesAccessTokenRequest::ExpirationDurationHasBeenSet() const
 {
     return m_expirationDurationHasBeenSet;
+}
+
+string CreateAndroidInstancesAccessTokenRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void CreateAndroidInstancesAccessTokenRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool CreateAndroidInstancesAccessTokenRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
+}
+
+string CreateAndroidInstancesAccessTokenRequest::GetUserIP() const
+{
+    return m_userIP;
+}
+
+void CreateAndroidInstancesAccessTokenRequest::SetUserIP(const string& _userIP)
+{
+    m_userIP = _userIP;
+    m_userIPHasBeenSet = true;
+}
+
+bool CreateAndroidInstancesAccessTokenRequest::UserIPHasBeenSet() const
+{
+    return m_userIPHasBeenSet;
 }
 
 

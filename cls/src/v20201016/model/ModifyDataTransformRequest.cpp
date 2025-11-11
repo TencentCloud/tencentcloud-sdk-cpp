@@ -28,7 +28,12 @@ ModifyDataTransformRequest::ModifyDataTransformRequest() :
     m_etlContentHasBeenSet(false),
     m_enableFlagHasBeenSet(false),
     m_dstResourcesHasBeenSet(false),
-    m_hasServicesLogHasBeenSet(false)
+    m_backupGiveUpDataHasBeenSet(false),
+    m_hasServicesLogHasBeenSet(false),
+    m_keepFailureLogHasBeenSet(false),
+    m_failureLogKeyHasBeenSet(false),
+    m_dataTransformSqlDataSourcesHasBeenSet(false),
+    m_envInfosHasBeenSet(false)
 {
 }
 
@@ -86,12 +91,66 @@ string ModifyDataTransformRequest::ToJsonString() const
         }
     }
 
+    if (m_backupGiveUpDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupGiveUpData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupGiveUpData, allocator);
+    }
+
     if (m_hasServicesLogHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HasServicesLog";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_hasServicesLog, allocator);
+    }
+
+    if (m_keepFailureLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepFailureLog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_keepFailureLog, allocator);
+    }
+
+    if (m_failureLogKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailureLogKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_failureLogKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataTransformSqlDataSourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataTransformSqlDataSources";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataTransformSqlDataSources.begin(); itr != m_dataTransformSqlDataSources.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_envInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_envInfos.begin(); itr != m_envInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -182,6 +241,22 @@ bool ModifyDataTransformRequest::DstResourcesHasBeenSet() const
     return m_dstResourcesHasBeenSet;
 }
 
+bool ModifyDataTransformRequest::GetBackupGiveUpData() const
+{
+    return m_backupGiveUpData;
+}
+
+void ModifyDataTransformRequest::SetBackupGiveUpData(const bool& _backupGiveUpData)
+{
+    m_backupGiveUpData = _backupGiveUpData;
+    m_backupGiveUpDataHasBeenSet = true;
+}
+
+bool ModifyDataTransformRequest::BackupGiveUpDataHasBeenSet() const
+{
+    return m_backupGiveUpDataHasBeenSet;
+}
+
 uint64_t ModifyDataTransformRequest::GetHasServicesLog() const
 {
     return m_hasServicesLog;
@@ -196,6 +271,70 @@ void ModifyDataTransformRequest::SetHasServicesLog(const uint64_t& _hasServicesL
 bool ModifyDataTransformRequest::HasServicesLogHasBeenSet() const
 {
     return m_hasServicesLogHasBeenSet;
+}
+
+uint64_t ModifyDataTransformRequest::GetKeepFailureLog() const
+{
+    return m_keepFailureLog;
+}
+
+void ModifyDataTransformRequest::SetKeepFailureLog(const uint64_t& _keepFailureLog)
+{
+    m_keepFailureLog = _keepFailureLog;
+    m_keepFailureLogHasBeenSet = true;
+}
+
+bool ModifyDataTransformRequest::KeepFailureLogHasBeenSet() const
+{
+    return m_keepFailureLogHasBeenSet;
+}
+
+string ModifyDataTransformRequest::GetFailureLogKey() const
+{
+    return m_failureLogKey;
+}
+
+void ModifyDataTransformRequest::SetFailureLogKey(const string& _failureLogKey)
+{
+    m_failureLogKey = _failureLogKey;
+    m_failureLogKeyHasBeenSet = true;
+}
+
+bool ModifyDataTransformRequest::FailureLogKeyHasBeenSet() const
+{
+    return m_failureLogKeyHasBeenSet;
+}
+
+vector<DataTransformSqlDataSource> ModifyDataTransformRequest::GetDataTransformSqlDataSources() const
+{
+    return m_dataTransformSqlDataSources;
+}
+
+void ModifyDataTransformRequest::SetDataTransformSqlDataSources(const vector<DataTransformSqlDataSource>& _dataTransformSqlDataSources)
+{
+    m_dataTransformSqlDataSources = _dataTransformSqlDataSources;
+    m_dataTransformSqlDataSourcesHasBeenSet = true;
+}
+
+bool ModifyDataTransformRequest::DataTransformSqlDataSourcesHasBeenSet() const
+{
+    return m_dataTransformSqlDataSourcesHasBeenSet;
+}
+
+vector<EnvInfo> ModifyDataTransformRequest::GetEnvInfos() const
+{
+    return m_envInfos;
+}
+
+void ModifyDataTransformRequest::SetEnvInfos(const vector<EnvInfo>& _envInfos)
+{
+    m_envInfos = _envInfos;
+    m_envInfosHasBeenSet = true;
+}
+
+bool ModifyDataTransformRequest::EnvInfosHasBeenSet() const
+{
+    return m_envInfosHasBeenSet;
 }
 
 

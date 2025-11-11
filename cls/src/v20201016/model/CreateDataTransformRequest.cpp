@@ -31,9 +31,16 @@ CreateDataTransformRequest::CreateDataTransformRequest() :
     m_dstResourcesHasBeenSet(false),
     m_enableFlagHasBeenSet(false),
     m_previewLogStatisticsHasBeenSet(false),
+    m_backupGiveUpDataHasBeenSet(false),
+    m_hasServicesLogHasBeenSet(false),
     m_dataTransformTypeHasBeenSet(false),
     m_keepFailureLogHasBeenSet(false),
-    m_failureLogKeyHasBeenSet(false)
+    m_failureLogKeyHasBeenSet(false),
+    m_processFromTimestampHasBeenSet(false),
+    m_processToTimestampHasBeenSet(false),
+    m_taskIdHasBeenSet(false),
+    m_dataTransformSqlDataSourcesHasBeenSet(false),
+    m_envInfosHasBeenSet(false)
 {
 }
 
@@ -122,6 +129,22 @@ string CreateDataTransformRequest::ToJsonString() const
         }
     }
 
+    if (m_backupGiveUpDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupGiveUpData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupGiveUpData, allocator);
+    }
+
+    if (m_hasServicesLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasServicesLog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hasServicesLog, allocator);
+    }
+
     if (m_dataTransformTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -144,6 +167,60 @@ string CreateDataTransformRequest::ToJsonString() const
         string key = "FailureLogKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_failureLogKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processFromTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessFromTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_processFromTimestamp, allocator);
+    }
+
+    if (m_processToTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessToTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_processToTimestamp, allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataTransformSqlDataSourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataTransformSqlDataSources";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataTransformSqlDataSources.begin(); itr != m_dataTransformSqlDataSources.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_envInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_envInfos.begin(); itr != m_envInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -282,6 +359,38 @@ bool CreateDataTransformRequest::PreviewLogStatisticsHasBeenSet() const
     return m_previewLogStatisticsHasBeenSet;
 }
 
+bool CreateDataTransformRequest::GetBackupGiveUpData() const
+{
+    return m_backupGiveUpData;
+}
+
+void CreateDataTransformRequest::SetBackupGiveUpData(const bool& _backupGiveUpData)
+{
+    m_backupGiveUpData = _backupGiveUpData;
+    m_backupGiveUpDataHasBeenSet = true;
+}
+
+bool CreateDataTransformRequest::BackupGiveUpDataHasBeenSet() const
+{
+    return m_backupGiveUpDataHasBeenSet;
+}
+
+uint64_t CreateDataTransformRequest::GetHasServicesLog() const
+{
+    return m_hasServicesLog;
+}
+
+void CreateDataTransformRequest::SetHasServicesLog(const uint64_t& _hasServicesLog)
+{
+    m_hasServicesLog = _hasServicesLog;
+    m_hasServicesLogHasBeenSet = true;
+}
+
+bool CreateDataTransformRequest::HasServicesLogHasBeenSet() const
+{
+    return m_hasServicesLogHasBeenSet;
+}
+
 uint64_t CreateDataTransformRequest::GetDataTransformType() const
 {
     return m_dataTransformType;
@@ -328,6 +437,86 @@ void CreateDataTransformRequest::SetFailureLogKey(const string& _failureLogKey)
 bool CreateDataTransformRequest::FailureLogKeyHasBeenSet() const
 {
     return m_failureLogKeyHasBeenSet;
+}
+
+uint64_t CreateDataTransformRequest::GetProcessFromTimestamp() const
+{
+    return m_processFromTimestamp;
+}
+
+void CreateDataTransformRequest::SetProcessFromTimestamp(const uint64_t& _processFromTimestamp)
+{
+    m_processFromTimestamp = _processFromTimestamp;
+    m_processFromTimestampHasBeenSet = true;
+}
+
+bool CreateDataTransformRequest::ProcessFromTimestampHasBeenSet() const
+{
+    return m_processFromTimestampHasBeenSet;
+}
+
+uint64_t CreateDataTransformRequest::GetProcessToTimestamp() const
+{
+    return m_processToTimestamp;
+}
+
+void CreateDataTransformRequest::SetProcessToTimestamp(const uint64_t& _processToTimestamp)
+{
+    m_processToTimestamp = _processToTimestamp;
+    m_processToTimestampHasBeenSet = true;
+}
+
+bool CreateDataTransformRequest::ProcessToTimestampHasBeenSet() const
+{
+    return m_processToTimestampHasBeenSet;
+}
+
+string CreateDataTransformRequest::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void CreateDataTransformRequest::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool CreateDataTransformRequest::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
+
+vector<DataTransformSqlDataSource> CreateDataTransformRequest::GetDataTransformSqlDataSources() const
+{
+    return m_dataTransformSqlDataSources;
+}
+
+void CreateDataTransformRequest::SetDataTransformSqlDataSources(const vector<DataTransformSqlDataSource>& _dataTransformSqlDataSources)
+{
+    m_dataTransformSqlDataSources = _dataTransformSqlDataSources;
+    m_dataTransformSqlDataSourcesHasBeenSet = true;
+}
+
+bool CreateDataTransformRequest::DataTransformSqlDataSourcesHasBeenSet() const
+{
+    return m_dataTransformSqlDataSourcesHasBeenSet;
+}
+
+vector<EnvInfo> CreateDataTransformRequest::GetEnvInfos() const
+{
+    return m_envInfos;
+}
+
+void CreateDataTransformRequest::SetEnvInfos(const vector<EnvInfo>& _envInfos)
+{
+    m_envInfos = _envInfos;
+    m_envInfosHasBeenSet = true;
+}
+
+bool CreateDataTransformRequest::EnvInfosHasBeenSet() const
+{
+    return m_envInfosHasBeenSet;
 }
 
 

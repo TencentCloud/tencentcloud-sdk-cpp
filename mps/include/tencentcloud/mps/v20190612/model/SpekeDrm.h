@@ -130,31 +130,39 @@ namespace TencentCloud
                     bool VectorHasBeenSet() const;
 
                     /**
-                     * 获取加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc
-加密方式选择WideVine+FairPlay时，仅支持cbcs
+                     * 获取加密方式，FairPlay 默认cbcs
+加密方式，PlayReady，Widevine 默认cenc
+加密方式，WideVine+FairPlay，Playready+Fairplay，Widevine+Playready+Fairplay默认cbcs
+加密方式，Widevine+Playready默认cenc
 
-cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay 支持；
-cenc：PlayReady，Widevine支持；
-                     * @return EncryptionMethod 加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc
-加密方式选择WideVine+FairPlay时，仅支持cbcs
+cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay，Widevine+Playready，Playready+Fairplay，Widevine+Playready+Fairplay支持；
+cenc：PlayReady，Widevine，Widevine+Playready支持；
+                     * @return EncryptionMethod 加密方式，FairPlay 默认cbcs
+加密方式，PlayReady，Widevine 默认cenc
+加密方式，WideVine+FairPlay，Playready+Fairplay，Widevine+Playready+Fairplay默认cbcs
+加密方式，Widevine+Playready默认cenc
 
-cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay 支持；
-cenc：PlayReady，Widevine支持；
+cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay，Widevine+Playready，Playready+Fairplay，Widevine+Playready+Fairplay支持；
+cenc：PlayReady，Widevine，Widevine+Playready支持；
                      * 
                      */
                     std::string GetEncryptionMethod() const;
 
                     /**
-                     * 设置加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc
-加密方式选择WideVine+FairPlay时，仅支持cbcs
+                     * 设置加密方式，FairPlay 默认cbcs
+加密方式，PlayReady，Widevine 默认cenc
+加密方式，WideVine+FairPlay，Playready+Fairplay，Widevine+Playready+Fairplay默认cbcs
+加密方式，Widevine+Playready默认cenc
 
-cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay 支持；
-cenc：PlayReady，Widevine支持；
-                     * @param _encryptionMethod 加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc
-加密方式选择WideVine+FairPlay时，仅支持cbcs
+cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay，Widevine+Playready，Playready+Fairplay，Widevine+Playready+Fairplay支持；
+cenc：PlayReady，Widevine，Widevine+Playready支持；
+                     * @param _encryptionMethod 加密方式，FairPlay 默认cbcs
+加密方式，PlayReady，Widevine 默认cenc
+加密方式，WideVine+FairPlay，Playready+Fairplay，Widevine+Playready+Fairplay默认cbcs
+加密方式，Widevine+Playready默认cenc
 
-cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay 支持；
-cenc：PlayReady，Widevine支持；
+cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay，Widevine+Playready，Playready+Fairplay，Widevine+Playready+Fairplay支持；
+cenc：PlayReady，Widevine，Widevine+Playready支持；
                      * 
                      */
                     void SetEncryptionMethod(const std::string& _encryptionMethod);
@@ -225,11 +233,13 @@ preset1：每个子流使用不同的key加密；
                     bool m_vectorHasBeenSet;
 
                     /**
-                     * 加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc
-加密方式选择WideVine+FairPlay时，仅支持cbcs
+                     * 加密方式，FairPlay 默认cbcs
+加密方式，PlayReady，Widevine 默认cenc
+加密方式，WideVine+FairPlay，Playready+Fairplay，Widevine+Playready+Fairplay默认cbcs
+加密方式，Widevine+Playready默认cenc
 
-cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay 支持；
-cenc：PlayReady，Widevine支持；
+cbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay，Widevine+Playready，Playready+Fairplay，Widevine+Playready+Fairplay支持；
+cenc：PlayReady，Widevine，Widevine+Playready支持；
                      */
                     std::string m_encryptionMethod;
                     bool m_encryptionMethodHasBeenSet;

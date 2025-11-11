@@ -509,6 +509,47 @@ AnycastEIP是否用于绑定负载均衡。
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取原生EIP IP资源的计费方式。
+<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul>
+<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>
+<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>
+</ul></li>
+</ul>
+                     * @return IPChargeType 原生EIP IP资源的计费方式。
+<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul>
+<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>
+<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>
+</ul></li>
+</ul>
+                     * 
+                     */
+                    std::string GetIPChargeType() const;
+
+                    /**
+                     * 设置原生EIP IP资源的计费方式。
+<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul>
+<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>
+<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>
+</ul></li>
+</ul>
+                     * @param _iPChargeType 原生EIP IP资源的计费方式。
+<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul>
+<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>
+<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>
+</ul></li>
+</ul>
+                     * 
+                     */
+                    void SetIPChargeType(const std::string& _iPChargeType);
+
+                    /**
+                     * 判断参数 IPChargeType 是否已赋值
+                     * @return IPChargeType 是否已赋值
+                     * 
+                     */
+                    bool IPChargeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -639,6 +680,17 @@ AnycastEIP是否用于绑定负载均衡。
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * 原生EIP IP资源的计费方式。
+<ul style="margin:0"><li>账号为标准账户类型的用户，可选值：<ul>
+<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>
+<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>
+</ul></li>
+</ul>
+                     */
+                    std::string m_iPChargeType;
+                    bool m_iPChargeTypeHasBeenSet;
 
                 };
             }

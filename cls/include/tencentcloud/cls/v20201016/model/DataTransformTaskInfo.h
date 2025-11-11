@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/DataTransformResouceInfo.h>
+#include <tencentcloud/cls/v20201016/model/DataTransformSqlDataSource.h>
+#include <tencentcloud/cls/v20201016/model/EnvInfo.h>
 
 
 namespace TencentCloud
@@ -174,18 +176,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取加工任务创建时间
+                     * 获取创建时间
 时间格式：yyyy-MM-dd HH:mm:ss
-                     * @return CreateTime 加工任务创建时间
+                     * @return CreateTime 创建时间
 时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置加工任务创建时间
+                     * 设置创建时间
 时间格式：yyyy-MM-dd HH:mm:ss
-                     * @param _createTime 加工任务创建时间
+                     * @param _createTime 创建时间
 时间格式：yyyy-MM-dd HH:mm:ss
                      * 
                      */
@@ -333,6 +335,90 @@ namespace TencentCloud
                     bool EtlContentHasBeenSet() const;
 
                     /**
+                     * 获取兜底topic_id
+                     * @return BackupTopicID 兜底topic_id
+                     * 
+                     */
+                    std::string GetBackupTopicID() const;
+
+                    /**
+                     * 设置兜底topic_id
+                     * @param _backupTopicID 兜底topic_id
+                     * 
+                     */
+                    void SetBackupTopicID(const std::string& _backupTopicID);
+
+                    /**
+                     * 判断参数 BackupTopicID 是否已赋值
+                     * @return BackupTopicID 是否已赋值
+                     * 
+                     */
+                    bool BackupTopicIDHasBeenSet() const;
+
+                    /**
+                     * 获取超限之后是否丢弃日志数据
+                     * @return BackupGiveUpData 超限之后是否丢弃日志数据
+                     * 
+                     */
+                    bool GetBackupGiveUpData() const;
+
+                    /**
+                     * 设置超限之后是否丢弃日志数据
+                     * @param _backupGiveUpData 超限之后是否丢弃日志数据
+                     * 
+                     */
+                    void SetBackupGiveUpData(const bool& _backupGiveUpData);
+
+                    /**
+                     * 判断参数 BackupGiveUpData 是否已赋值
+                     * @return BackupGiveUpData 是否已赋值
+                     * 
+                     */
+                    bool BackupGiveUpDataHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启投递服务日志。 1关闭,2开启
+                     * @return HasServicesLog 是否开启投递服务日志。 1关闭,2开启
+                     * 
+                     */
+                    uint64_t GetHasServicesLog() const;
+
+                    /**
+                     * 设置是否开启投递服务日志。 1关闭,2开启
+                     * @param _hasServicesLog 是否开启投递服务日志。 1关闭,2开启
+                     * 
+                     */
+                    void SetHasServicesLog(const uint64_t& _hasServicesLog);
+
+                    /**
+                     * 判断参数 HasServicesLog 是否已赋值
+                     * @return HasServicesLog 是否已赋值
+                     * 
+                     */
+                    bool HasServicesLogHasBeenSet() const;
+
+                    /**
+                     * 获取任务目标日志主题数量
+                     * @return TaskDstCount 任务目标日志主题数量
+                     * 
+                     */
+                    uint64_t GetTaskDstCount() const;
+
+                    /**
+                     * 设置任务目标日志主题数量
+                     * @param _taskDstCount 任务目标日志主题数量
+                     * 
+                     */
+                    void SetTaskDstCount(const uint64_t& _taskDstCount);
+
+                    /**
+                     * 判断参数 TaskDstCount 是否已赋值
+                     * @return TaskDstCount 是否已赋值
+                     * 
+                     */
+                    bool TaskDstCountHasBeenSet() const;
+
+                    /**
                      * 获取数据加工类型。0：标准加工任务；1：前置加工任务。
                      * @return DataTransformType 数据加工类型。0：标准加工任务；1：前置加工任务。
                      * 
@@ -395,6 +481,102 @@ namespace TencentCloud
                      */
                     bool FailureLogKeyHasBeenSet() const;
 
+                    /**
+                     * 获取指定加工数据的开始时间，秒级时间戳。
+- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     * @return ProcessFromTimestamp 指定加工数据的开始时间，秒级时间戳。
+- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     * 
+                     */
+                    uint64_t GetProcessFromTimestamp() const;
+
+                    /**
+                     * 设置指定加工数据的开始时间，秒级时间戳。
+- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     * @param _processFromTimestamp 指定加工数据的开始时间，秒级时间戳。
+- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     * 
+                     */
+                    void SetProcessFromTimestamp(const uint64_t& _processFromTimestamp);
+
+                    /**
+                     * 判断参数 ProcessFromTimestamp 是否已赋值
+                     * @return ProcessFromTimestamp 是否已赋值
+                     * 
+                     */
+                    bool ProcessFromTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取指定加工数据的结束时间，秒级时间戳。
+1. 不可指定未来的时间
+2. 不填则表示持续执行
+                     * @return ProcessToTimestamp 指定加工数据的结束时间，秒级时间戳。
+1. 不可指定未来的时间
+2. 不填则表示持续执行
+                     * 
+                     */
+                    uint64_t GetProcessToTimestamp() const;
+
+                    /**
+                     * 设置指定加工数据的结束时间，秒级时间戳。
+1. 不可指定未来的时间
+2. 不填则表示持续执行
+                     * @param _processToTimestamp 指定加工数据的结束时间，秒级时间戳。
+1. 不可指定未来的时间
+2. 不填则表示持续执行
+                     * 
+                     */
+                    void SetProcessToTimestamp(const uint64_t& _processToTimestamp);
+
+                    /**
+                     * 判断参数 ProcessToTimestamp 是否已赋值
+                     * @return ProcessToTimestamp 是否已赋值
+                     * 
+                     */
+                    bool ProcessToTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取sql数据源信息
+                     * @return DataTransformSqlDataSources sql数据源信息
+                     * 
+                     */
+                    std::vector<DataTransformSqlDataSource> GetDataTransformSqlDataSources() const;
+
+                    /**
+                     * 设置sql数据源信息
+                     * @param _dataTransformSqlDataSources sql数据源信息
+                     * 
+                     */
+                    void SetDataTransformSqlDataSources(const std::vector<DataTransformSqlDataSource>& _dataTransformSqlDataSources);
+
+                    /**
+                     * 判断参数 DataTransformSqlDataSources 是否已赋值
+                     * @return DataTransformSqlDataSources 是否已赋值
+                     * 
+                     */
+                    bool DataTransformSqlDataSourcesHasBeenSet() const;
+
+                    /**
+                     * 获取环境变量
+                     * @return EnvInfos 环境变量
+                     * 
+                     */
+                    std::vector<EnvInfo> GetEnvInfos() const;
+
+                    /**
+                     * 设置环境变量
+                     * @param _envInfos 环境变量
+                     * 
+                     */
+                    void SetEnvInfos(const std::vector<EnvInfo>& _envInfos);
+
+                    /**
+                     * 判断参数 EnvInfos 是否已赋值
+                     * @return EnvInfos 是否已赋值
+                     * 
+                     */
+                    bool EnvInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -434,7 +616,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 加工任务创建时间
+                     * 创建时间
 时间格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_createTime;
@@ -479,6 +661,30 @@ namespace TencentCloud
                     bool m_etlContentHasBeenSet;
 
                     /**
+                     * 兜底topic_id
+                     */
+                    std::string m_backupTopicID;
+                    bool m_backupTopicIDHasBeenSet;
+
+                    /**
+                     * 超限之后是否丢弃日志数据
+                     */
+                    bool m_backupGiveUpData;
+                    bool m_backupGiveUpDataHasBeenSet;
+
+                    /**
+                     * 是否开启投递服务日志。 1关闭,2开启
+                     */
+                    uint64_t m_hasServicesLog;
+                    bool m_hasServicesLogHasBeenSet;
+
+                    /**
+                     * 任务目标日志主题数量
+                     */
+                    uint64_t m_taskDstCount;
+                    bool m_taskDstCountHasBeenSet;
+
+                    /**
                      * 数据加工类型。0：标准加工任务；1：前置加工任务。
                      */
                     uint64_t m_dataTransformType;
@@ -495,6 +701,33 @@ namespace TencentCloud
                      */
                     std::string m_failureLogKey;
                     bool m_failureLogKeyHasBeenSet;
+
+                    /**
+                     * 指定加工数据的开始时间，秒级时间戳。
+- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     */
+                    uint64_t m_processFromTimestamp;
+                    bool m_processFromTimestampHasBeenSet;
+
+                    /**
+                     * 指定加工数据的结束时间，秒级时间戳。
+1. 不可指定未来的时间
+2. 不填则表示持续执行
+                     */
+                    uint64_t m_processToTimestamp;
+                    bool m_processToTimestampHasBeenSet;
+
+                    /**
+                     * sql数据源信息
+                     */
+                    std::vector<DataTransformSqlDataSource> m_dataTransformSqlDataSources;
+                    bool m_dataTransformSqlDataSourcesHasBeenSet;
+
+                    /**
+                     * 环境变量
+                     */
+                    std::vector<EnvInfo> m_envInfos;
+                    bool m_envInfosHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_drmInfoHasBeenSet(false),
     m_definitionTypeHasBeenSet(false),
     m_subtitleTemplateHasBeenSet(false),
-    m_stdExtInfoHasBeenSet(false)
+    m_stdExtInfoHasBeenSet(false),
+    m_keyPTSListHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,19 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
         m_stdExtInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("KeyPTSList") && !value["KeyPTSList"].IsNull())
+    {
+        if (!value["KeyPTSList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.KeyPTSList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KeyPTSList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keyPTSList.push_back((*itr).GetInt64());
+        }
+        m_keyPTSListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +315,19 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
         string key = "StdExtInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_stdExtInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyPTSListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyPTSList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keyPTSList.begin(); itr != m_keyPTSList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -480,5 +507,21 @@ void AdaptiveDynamicStreamingTaskInput::SetStdExtInfo(const string& _stdExtInfo)
 bool AdaptiveDynamicStreamingTaskInput::StdExtInfoHasBeenSet() const
 {
     return m_stdExtInfoHasBeenSet;
+}
+
+vector<int64_t> AdaptiveDynamicStreamingTaskInput::GetKeyPTSList() const
+{
+    return m_keyPTSList;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetKeyPTSList(const vector<int64_t>& _keyPTSList)
+{
+    m_keyPTSList = _keyPTSList;
+    m_keyPTSListHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::KeyPTSListHasBeenSet() const
+{
+    return m_keyPTSListHasBeenSet;
 }
 

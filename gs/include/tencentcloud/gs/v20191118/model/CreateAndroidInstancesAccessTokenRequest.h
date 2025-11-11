@@ -84,6 +84,56 @@ namespace TencentCloud
                      */
                     bool ExpirationDurationHasBeenSet() const;
 
+                    /**
+                     * 获取模式。
+STANDARD：默认值，标准模式
+ACCELERATED：加速模式，该模式需要开通加速服务才能生效
+                     * @return Mode 模式。
+STANDARD：默认值，标准模式
+ACCELERATED：加速模式，该模式需要开通加速服务才能生效
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置模式。
+STANDARD：默认值，标准模式
+ACCELERATED：加速模式，该模式需要开通加速服务才能生效
+                     * @param _mode 模式。
+STANDARD：默认值，标准模式
+ACCELERATED：加速模式，该模式需要开通加速服务才能生效
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
+                     * 获取用户 IP。在加速模式下，该字段必填。
+                     * @return UserIP 用户 IP。在加速模式下，该字段必填。
+                     * 
+                     */
+                    std::string GetUserIP() const;
+
+                    /**
+                     * 设置用户 IP。在加速模式下，该字段必填。
+                     * @param _userIP 用户 IP。在加速模式下，该字段必填。
+                     * 
+                     */
+                    void SetUserIP(const std::string& _userIP);
+
+                    /**
+                     * 判断参数 UserIP 是否已赋值
+                     * @return UserIP 是否已赋值
+                     * 
+                     */
+                    bool UserIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +147,20 @@ namespace TencentCloud
                      */
                     std::string m_expirationDuration;
                     bool m_expirationDurationHasBeenSet;
+
+                    /**
+                     * 模式。
+STANDARD：默认值，标准模式
+ACCELERATED：加速模式，该模式需要开通加速服务才能生效
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
+
+                    /**
+                     * 用户 IP。在加速模式下，该字段必填。
+                     */
+                    std::string m_userIP;
+                    bool m_userIPHasBeenSet;
 
                 };
             }

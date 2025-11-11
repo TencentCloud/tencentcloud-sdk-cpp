@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/DataTransformResouceInfo.h>
+#include <tencentcloud/cls/v20201016/model/DataTransformSqlDataSource.h>
+#include <tencentcloud/cls/v20201016/model/EnvInfo.h>
 
 
 namespace TencentCloud
@@ -197,6 +199,27 @@ namespace TencentCloud
                     bool DstResourcesHasBeenSet() const;
 
                     /**
+                     * 获取超限之后是否丢弃日志数据
+                     * @return BackupGiveUpData 超限之后是否丢弃日志数据
+                     * 
+                     */
+                    bool GetBackupGiveUpData() const;
+
+                    /**
+                     * 设置超限之后是否丢弃日志数据
+                     * @param _backupGiveUpData 超限之后是否丢弃日志数据
+                     * 
+                     */
+                    void SetBackupGiveUpData(const bool& _backupGiveUpData);
+
+                    /**
+                     * 判断参数 BackupGiveUpData 是否已赋值
+                     * @return BackupGiveUpData 是否已赋值
+                     * 
+                     */
+                    bool BackupGiveUpDataHasBeenSet() const;
+
+                    /**
                      * 获取是否开启投递服务日志。1关闭，2开启
                      * @return HasServicesLog 是否开启投递服务日志。1关闭，2开启
                      * 
@@ -216,6 +239,90 @@ namespace TencentCloud
                      * 
                      */
                     bool HasServicesLogHasBeenSet() const;
+
+                    /**
+                     * 获取保留失败日志状态。 1:不保留，2:保留
+                     * @return KeepFailureLog 保留失败日志状态。 1:不保留，2:保留
+                     * 
+                     */
+                    uint64_t GetKeepFailureLog() const;
+
+                    /**
+                     * 设置保留失败日志状态。 1:不保留，2:保留
+                     * @param _keepFailureLog 保留失败日志状态。 1:不保留，2:保留
+                     * 
+                     */
+                    void SetKeepFailureLog(const uint64_t& _keepFailureLog);
+
+                    /**
+                     * 判断参数 KeepFailureLog 是否已赋值
+                     * @return KeepFailureLog 是否已赋值
+                     * 
+                     */
+                    bool KeepFailureLogHasBeenSet() const;
+
+                    /**
+                     * 获取失败日志的字段名称
+                     * @return FailureLogKey 失败日志的字段名称
+                     * 
+                     */
+                    std::string GetFailureLogKey() const;
+
+                    /**
+                     * 设置失败日志的字段名称
+                     * @param _failureLogKey 失败日志的字段名称
+                     * 
+                     */
+                    void SetFailureLogKey(const std::string& _failureLogKey);
+
+                    /**
+                     * 判断参数 FailureLogKey 是否已赋值
+                     * @return FailureLogKey 是否已赋值
+                     * 
+                     */
+                    bool FailureLogKeyHasBeenSet() const;
+
+                    /**
+                     * 获取外部数据源信息
+                     * @return DataTransformSqlDataSources 外部数据源信息
+                     * 
+                     */
+                    std::vector<DataTransformSqlDataSource> GetDataTransformSqlDataSources() const;
+
+                    /**
+                     * 设置外部数据源信息
+                     * @param _dataTransformSqlDataSources 外部数据源信息
+                     * 
+                     */
+                    void SetDataTransformSqlDataSources(const std::vector<DataTransformSqlDataSource>& _dataTransformSqlDataSources);
+
+                    /**
+                     * 判断参数 DataTransformSqlDataSources 是否已赋值
+                     * @return DataTransformSqlDataSources 是否已赋值
+                     * 
+                     */
+                    bool DataTransformSqlDataSourcesHasBeenSet() const;
+
+                    /**
+                     * 获取设置的环境变量
+                     * @return EnvInfos 设置的环境变量
+                     * 
+                     */
+                    std::vector<EnvInfo> GetEnvInfos() const;
+
+                    /**
+                     * 设置设置的环境变量
+                     * @param _envInfos 设置的环境变量
+                     * 
+                     */
+                    void SetEnvInfos(const std::vector<EnvInfo>& _envInfos);
+
+                    /**
+                     * 判断参数 EnvInfos 是否已赋值
+                     * @return EnvInfos 是否已赋值
+                     * 
+                     */
+                    bool EnvInfosHasBeenSet() const;
 
                 private:
 
@@ -262,10 +369,40 @@ namespace TencentCloud
                     bool m_dstResourcesHasBeenSet;
 
                     /**
+                     * 超限之后是否丢弃日志数据
+                     */
+                    bool m_backupGiveUpData;
+                    bool m_backupGiveUpDataHasBeenSet;
+
+                    /**
                      * 是否开启投递服务日志。1关闭，2开启
                      */
                     uint64_t m_hasServicesLog;
                     bool m_hasServicesLogHasBeenSet;
+
+                    /**
+                     * 保留失败日志状态。 1:不保留，2:保留
+                     */
+                    uint64_t m_keepFailureLog;
+                    bool m_keepFailureLogHasBeenSet;
+
+                    /**
+                     * 失败日志的字段名称
+                     */
+                    std::string m_failureLogKey;
+                    bool m_failureLogKeyHasBeenSet;
+
+                    /**
+                     * 外部数据源信息
+                     */
+                    std::vector<DataTransformSqlDataSource> m_dataTransformSqlDataSources;
+                    bool m_dataTransformSqlDataSourcesHasBeenSet;
+
+                    /**
+                     * 设置的环境变量
+                     */
+                    std::vector<EnvInfo> m_envInfos;
+                    bool m_envInfosHasBeenSet;
 
                 };
             }

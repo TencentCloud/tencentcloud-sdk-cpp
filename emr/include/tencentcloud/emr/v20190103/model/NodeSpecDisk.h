@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool DefaultDiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为特殊的数据盘，如：单副本盘
+                     * @return IsSpecialDisk 是否为特殊的数据盘，如：单副本盘
+                     * 
+                     */
+                    bool GetIsSpecialDisk() const;
+
+                    /**
+                     * 设置是否为特殊的数据盘，如：单副本盘
+                     * @param _isSpecialDisk 是否为特殊的数据盘，如：单副本盘
+                     * 
+                     */
+                    void SetIsSpecialDisk(const bool& _isSpecialDisk);
+
+                    /**
+                     * 判断参数 IsSpecialDisk 是否已赋值
+                     * @return IsSpecialDisk 是否已赋值
+                     * 
+                     */
+                    bool IsSpecialDiskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     int64_t m_defaultDiskSize;
                     bool m_defaultDiskSizeHasBeenSet;
+
+                    /**
+                     * 是否为特殊的数据盘，如：单副本盘
+                     */
+                    bool m_isSpecialDisk;
+                    bool m_isSpecialDiskHasBeenSet;
 
                 };
             }

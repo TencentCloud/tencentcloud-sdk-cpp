@@ -133,14 +133,14 @@ namespace TencentCloud
                      * @return OutputGroup 流的输出组。
                      * 
                      */
-                    CreateOutputInfo GetOutputGroup() const;
+                    std::vector<CreateOutputInfo> GetOutputGroup() const;
 
                     /**
                      * 设置流的输出组。
                      * @param _outputGroup 流的输出组。
                      * 
                      */
-                    void SetOutputGroup(const CreateOutputInfo& _outputGroup);
+                    void SetOutputGroup(const std::vector<CreateOutputInfo>& _outputGroup);
 
                     /**
                      * 判断参数 OutputGroup 是否已赋值
@@ -178,7 +178,7 @@ namespace TencentCloud
                     /**
                      * 流的输出组。
                      */
-                    CreateOutputInfo m_outputGroup;
+                    std::vector<CreateOutputInfo> m_outputGroup;
                     bool m_outputGroupHasBeenSet;
 
                 };

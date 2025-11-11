@@ -69,6 +69,8 @@ DeviceDetail::DeviceDetail() :
     m_accountGroupNameHasBeenSet(false),
     m_accountNameHasBeenSet(false),
     m_accountGroupIdHasBeenSet(false),
+    m_screenRecordingPermissionHasBeenSet(false),
+    m_diskAccessPermissionHasBeenSet(false),
     m_remarkNameHasBeenSet(false)
 {
 }
@@ -561,6 +563,26 @@ CoreInternalOutcome DeviceDetail::Deserialize(const rapidjson::Value &value)
         m_accountGroupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ScreenRecordingPermission") && !value["ScreenRecordingPermission"].IsNull())
+    {
+        if (!value["ScreenRecordingPermission"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.ScreenRecordingPermission` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_screenRecordingPermission = value["ScreenRecordingPermission"].GetInt64();
+        m_screenRecordingPermissionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskAccessPermission") && !value["DiskAccessPermission"].IsNull())
+    {
+        if (!value["DiskAccessPermission"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.DiskAccessPermission` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskAccessPermission = value["DiskAccessPermission"].GetInt64();
+        m_diskAccessPermissionHasBeenSet = true;
+    }
+
     if (value.HasMember("RemarkName") && !value["RemarkName"].IsNull())
     {
         if (!value["RemarkName"].IsString())
@@ -965,6 +987,22 @@ void DeviceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AccountGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accountGroupId, allocator);
+    }
+
+    if (m_screenRecordingPermissionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScreenRecordingPermission";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_screenRecordingPermission, allocator);
+    }
+
+    if (m_diskAccessPermissionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskAccessPermission";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskAccessPermission, allocator);
     }
 
     if (m_remarkNameHasBeenSet)
@@ -1744,6 +1782,38 @@ void DeviceDetail::SetAccountGroupId(const int64_t& _accountGroupId)
 bool DeviceDetail::AccountGroupIdHasBeenSet() const
 {
     return m_accountGroupIdHasBeenSet;
+}
+
+int64_t DeviceDetail::GetScreenRecordingPermission() const
+{
+    return m_screenRecordingPermission;
+}
+
+void DeviceDetail::SetScreenRecordingPermission(const int64_t& _screenRecordingPermission)
+{
+    m_screenRecordingPermission = _screenRecordingPermission;
+    m_screenRecordingPermissionHasBeenSet = true;
+}
+
+bool DeviceDetail::ScreenRecordingPermissionHasBeenSet() const
+{
+    return m_screenRecordingPermissionHasBeenSet;
+}
+
+int64_t DeviceDetail::GetDiskAccessPermission() const
+{
+    return m_diskAccessPermission;
+}
+
+void DeviceDetail::SetDiskAccessPermission(const int64_t& _diskAccessPermission)
+{
+    m_diskAccessPermission = _diskAccessPermission;
+    m_diskAccessPermissionHasBeenSet = true;
+}
+
+bool DeviceDetail::DiskAccessPermissionHasBeenSet() const
+{
+    return m_diskAccessPermissionHasBeenSet;
 }
 
 string DeviceDetail::GetRemarkName() const

@@ -334,6 +334,31 @@ PureAudio：纯音频类型
                      */
                     bool StdExtInfoHasBeenSet() const;
 
+                    /**
+                     * 获取指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差<=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KeyPTSList 指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差<=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetKeyPTSList() const;
+
+                    /**
+                     * 设置指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差<=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _keyPTSList 指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差<=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKeyPTSList(const std::vector<int64_t>& _keyPTSList);
+
+                    /**
+                     * 判断参数 KeyPTSList 是否已赋值
+                     * @return KeyPTSList 是否已赋值
+                     * 
+                     */
+                    bool KeyPTSListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -414,6 +439,13 @@ PureAudio：纯音频类型
                      */
                     std::string m_stdExtInfo;
                     bool m_stdExtInfoHasBeenSet;
+
+                    /**
+                     * 指定pts时间的帧设为关键帧，并切片。单位毫秒（允许相对偏差<=1ms）。当同时指定gop和切片时长时，会共同作用。注意需开启RawPts，保持帧率随源，并确保传入的pts时间在源中是有对应帧的。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_keyPTSList;
+                    bool m_keyPTSListHasBeenSet;
 
                 };
             }

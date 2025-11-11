@@ -24,7 +24,8 @@ NodeSpecDisk::NodeSpecDisk() :
     m_countHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
-    m_defaultDiskSizeHasBeenSet(false)
+    m_defaultDiskSizeHasBeenSet(false),
+    m_isSpecialDiskHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome NodeSpecDisk::Deserialize(const rapidjson::Value &value)
         m_defaultDiskSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSpecialDisk") && !value["IsSpecialDisk"].IsNull())
+    {
+        if (!value["IsSpecialDisk"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeSpecDisk.IsSpecialDisk` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSpecialDisk = value["IsSpecialDisk"].GetBool();
+        m_isSpecialDiskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void NodeSpecDisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DefaultDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultDiskSize, allocator);
+    }
+
+    if (m_isSpecialDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSpecialDisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSpecialDisk, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void NodeSpecDisk::SetDefaultDiskSize(const int64_t& _defaultDiskSize)
 bool NodeSpecDisk::DefaultDiskSizeHasBeenSet() const
 {
     return m_defaultDiskSizeHasBeenSet;
+}
+
+bool NodeSpecDisk::GetIsSpecialDisk() const
+{
+    return m_isSpecialDisk;
+}
+
+void NodeSpecDisk::SetIsSpecialDisk(const bool& _isSpecialDisk)
+{
+    m_isSpecialDisk = _isSpecialDisk;
+    m_isSpecialDiskHasBeenSet = true;
+}
+
+bool NodeSpecDisk::IsSpecialDiskHasBeenSet() const
+{
+    return m_isSpecialDiskHasBeenSet;
 }
 

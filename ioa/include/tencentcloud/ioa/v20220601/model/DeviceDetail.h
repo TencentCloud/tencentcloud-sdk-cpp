@@ -1055,6 +1055,48 @@ namespace TencentCloud
                     bool AccountGroupIdHasBeenSet() const;
 
                     /**
+                     * 获取是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启
+                     * @return ScreenRecordingPermission 是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启
+                     * 
+                     */
+                    int64_t GetScreenRecordingPermission() const;
+
+                    /**
+                     * 设置是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启
+                     * @param _screenRecordingPermission 是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启
+                     * 
+                     */
+                    void SetScreenRecordingPermission(const int64_t& _screenRecordingPermission);
+
+                    /**
+                     * 判断参数 ScreenRecordingPermission 是否已赋值
+                     * @return ScreenRecordingPermission 是否已赋值
+                     * 
+                     */
+                    bool ScreenRecordingPermissionHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启
+                     * @return DiskAccessPermission 是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启
+                     * 
+                     */
+                    int64_t GetDiskAccessPermission() const;
+
+                    /**
+                     * 设置是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启
+                     * @param _diskAccessPermission 是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启
+                     * 
+                     */
+                    void SetDiskAccessPermission(const int64_t& _diskAccessPermission);
+
+                    /**
+                     * 判断参数 DiskAccessPermission 是否已赋值
+                     * @return DiskAccessPermission 是否已赋值
+                     * 
+                     */
+                    bool DiskAccessPermissionHasBeenSet() const;
+
+                    /**
                      * 获取终端备注名
                      * @return RemarkName 终端备注名
                      * 
@@ -1364,6 +1406,18 @@ namespace TencentCloud
                      */
                     int64_t m_accountGroupId;
                     bool m_accountGroupIdHasBeenSet;
+
+                    /**
+                     * 是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启
+                     */
+                    int64_t m_screenRecordingPermission;
+                    bool m_screenRecordingPermissionHasBeenSet;
+
+                    /**
+                     * 是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启
+                     */
+                    int64_t m_diskAccessPermission;
+                    bool m_diskAccessPermissionHasBeenSet;
 
                     /**
                      * 终端备注名

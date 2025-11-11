@@ -34,9 +34,17 @@ DataTransformTaskInfo::DataTransformTaskInfo() :
     m_logsetIdHasBeenSet(false),
     m_dstResourcesHasBeenSet(false),
     m_etlContentHasBeenSet(false),
+    m_backupTopicIDHasBeenSet(false),
+    m_backupGiveUpDataHasBeenSet(false),
+    m_hasServicesLogHasBeenSet(false),
+    m_taskDstCountHasBeenSet(false),
     m_dataTransformTypeHasBeenSet(false),
     m_keepFailureLogHasBeenSet(false),
-    m_failureLogKeyHasBeenSet(false)
+    m_failureLogKeyHasBeenSet(false),
+    m_processFromTimestampHasBeenSet(false),
+    m_processToTimestampHasBeenSet(false),
+    m_dataTransformSqlDataSourcesHasBeenSet(false),
+    m_envInfosHasBeenSet(false)
 {
 }
 
@@ -185,6 +193,46 @@ CoreInternalOutcome DataTransformTaskInfo::Deserialize(const rapidjson::Value &v
         m_etlContentHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupTopicID") && !value["BackupTopicID"].IsNull())
+    {
+        if (!value["BackupTopicID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.BackupTopicID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupTopicID = string(value["BackupTopicID"].GetString());
+        m_backupTopicIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupGiveUpData") && !value["BackupGiveUpData"].IsNull())
+    {
+        if (!value["BackupGiveUpData"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.BackupGiveUpData` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupGiveUpData = value["BackupGiveUpData"].GetBool();
+        m_backupGiveUpDataHasBeenSet = true;
+    }
+
+    if (value.HasMember("HasServicesLog") && !value["HasServicesLog"].IsNull())
+    {
+        if (!value["HasServicesLog"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.HasServicesLog` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasServicesLog = value["HasServicesLog"].GetUint64();
+        m_hasServicesLogHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskDstCount") && !value["TaskDstCount"].IsNull())
+    {
+        if (!value["TaskDstCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.TaskDstCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskDstCount = value["TaskDstCount"].GetUint64();
+        m_taskDstCountHasBeenSet = true;
+    }
+
     if (value.HasMember("DataTransformType") && !value["DataTransformType"].IsNull())
     {
         if (!value["DataTransformType"].IsUint64())
@@ -213,6 +261,66 @@ CoreInternalOutcome DataTransformTaskInfo::Deserialize(const rapidjson::Value &v
         }
         m_failureLogKey = string(value["FailureLogKey"].GetString());
         m_failureLogKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProcessFromTimestamp") && !value["ProcessFromTimestamp"].IsNull())
+    {
+        if (!value["ProcessFromTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.ProcessFromTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_processFromTimestamp = value["ProcessFromTimestamp"].GetUint64();
+        m_processFromTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProcessToTimestamp") && !value["ProcessToTimestamp"].IsNull())
+    {
+        if (!value["ProcessToTimestamp"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.ProcessToTimestamp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_processToTimestamp = value["ProcessToTimestamp"].GetUint64();
+        m_processToTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataTransformSqlDataSources") && !value["DataTransformSqlDataSources"].IsNull())
+    {
+        if (!value["DataTransformSqlDataSources"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.DataTransformSqlDataSources` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DataTransformSqlDataSources"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DataTransformSqlDataSource item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dataTransformSqlDataSources.push_back(item);
+        }
+        m_dataTransformSqlDataSourcesHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnvInfos") && !value["EnvInfos"].IsNull())
+    {
+        if (!value["EnvInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.EnvInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EnvInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EnvInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_envInfos.push_back(item);
+        }
+        m_envInfosHasBeenSet = true;
     }
 
 
@@ -333,6 +441,38 @@ void DataTransformTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_etlContent.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_backupTopicIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupTopicID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupTopicID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupGiveUpDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupGiveUpData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupGiveUpData, allocator);
+    }
+
+    if (m_hasServicesLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasServicesLog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasServicesLog, allocator);
+    }
+
+    if (m_taskDstCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskDstCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskDstCount, allocator);
+    }
+
     if (m_dataTransformTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -355,6 +495,52 @@ void DataTransformTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "FailureLogKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_failureLogKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_processFromTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessFromTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processFromTimestamp, allocator);
+    }
+
+    if (m_processToTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessToTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processToTimestamp, allocator);
+    }
+
+    if (m_dataTransformSqlDataSourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataTransformSqlDataSources";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataTransformSqlDataSources.begin(); itr != m_dataTransformSqlDataSources.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_envInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_envInfos.begin(); itr != m_envInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -568,6 +754,70 @@ bool DataTransformTaskInfo::EtlContentHasBeenSet() const
     return m_etlContentHasBeenSet;
 }
 
+string DataTransformTaskInfo::GetBackupTopicID() const
+{
+    return m_backupTopicID;
+}
+
+void DataTransformTaskInfo::SetBackupTopicID(const string& _backupTopicID)
+{
+    m_backupTopicID = _backupTopicID;
+    m_backupTopicIDHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::BackupTopicIDHasBeenSet() const
+{
+    return m_backupTopicIDHasBeenSet;
+}
+
+bool DataTransformTaskInfo::GetBackupGiveUpData() const
+{
+    return m_backupGiveUpData;
+}
+
+void DataTransformTaskInfo::SetBackupGiveUpData(const bool& _backupGiveUpData)
+{
+    m_backupGiveUpData = _backupGiveUpData;
+    m_backupGiveUpDataHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::BackupGiveUpDataHasBeenSet() const
+{
+    return m_backupGiveUpDataHasBeenSet;
+}
+
+uint64_t DataTransformTaskInfo::GetHasServicesLog() const
+{
+    return m_hasServicesLog;
+}
+
+void DataTransformTaskInfo::SetHasServicesLog(const uint64_t& _hasServicesLog)
+{
+    m_hasServicesLog = _hasServicesLog;
+    m_hasServicesLogHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::HasServicesLogHasBeenSet() const
+{
+    return m_hasServicesLogHasBeenSet;
+}
+
+uint64_t DataTransformTaskInfo::GetTaskDstCount() const
+{
+    return m_taskDstCount;
+}
+
+void DataTransformTaskInfo::SetTaskDstCount(const uint64_t& _taskDstCount)
+{
+    m_taskDstCount = _taskDstCount;
+    m_taskDstCountHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::TaskDstCountHasBeenSet() const
+{
+    return m_taskDstCountHasBeenSet;
+}
+
 uint64_t DataTransformTaskInfo::GetDataTransformType() const
 {
     return m_dataTransformType;
@@ -614,5 +864,69 @@ void DataTransformTaskInfo::SetFailureLogKey(const string& _failureLogKey)
 bool DataTransformTaskInfo::FailureLogKeyHasBeenSet() const
 {
     return m_failureLogKeyHasBeenSet;
+}
+
+uint64_t DataTransformTaskInfo::GetProcessFromTimestamp() const
+{
+    return m_processFromTimestamp;
+}
+
+void DataTransformTaskInfo::SetProcessFromTimestamp(const uint64_t& _processFromTimestamp)
+{
+    m_processFromTimestamp = _processFromTimestamp;
+    m_processFromTimestampHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::ProcessFromTimestampHasBeenSet() const
+{
+    return m_processFromTimestampHasBeenSet;
+}
+
+uint64_t DataTransformTaskInfo::GetProcessToTimestamp() const
+{
+    return m_processToTimestamp;
+}
+
+void DataTransformTaskInfo::SetProcessToTimestamp(const uint64_t& _processToTimestamp)
+{
+    m_processToTimestamp = _processToTimestamp;
+    m_processToTimestampHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::ProcessToTimestampHasBeenSet() const
+{
+    return m_processToTimestampHasBeenSet;
+}
+
+vector<DataTransformSqlDataSource> DataTransformTaskInfo::GetDataTransformSqlDataSources() const
+{
+    return m_dataTransformSqlDataSources;
+}
+
+void DataTransformTaskInfo::SetDataTransformSqlDataSources(const vector<DataTransformSqlDataSource>& _dataTransformSqlDataSources)
+{
+    m_dataTransformSqlDataSources = _dataTransformSqlDataSources;
+    m_dataTransformSqlDataSourcesHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::DataTransformSqlDataSourcesHasBeenSet() const
+{
+    return m_dataTransformSqlDataSourcesHasBeenSet;
+}
+
+vector<EnvInfo> DataTransformTaskInfo::GetEnvInfos() const
+{
+    return m_envInfos;
+}
+
+void DataTransformTaskInfo::SetEnvInfos(const vector<EnvInfo>& _envInfos)
+{
+    m_envInfos = _envInfos;
+    m_envInfosHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::EnvInfosHasBeenSet() const
+{
+    return m_envInfosHasBeenSet;
 }
 
