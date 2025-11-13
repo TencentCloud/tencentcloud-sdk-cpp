@@ -45,7 +45,8 @@ Listener::Listener() :
     m_maxCpsHasBeenSet(false),
     m_idleConnectTimeoutHasBeenSet(false),
     m_rescheduleIntervalHasBeenSet(false),
-    m_dataCompressModeHasBeenSet(false)
+    m_dataCompressModeHasBeenSet(false),
+    m_rescheduleStartTimeHasBeenSet(false)
 {
 }
 
@@ -348,6 +349,16 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
         m_dataCompressModeHasBeenSet = true;
     }
 
+    if (value.HasMember("RescheduleStartTime") && !value["RescheduleStartTime"].IsNull())
+    {
+        if (!value["RescheduleStartTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Listener.RescheduleStartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rescheduleStartTime = value["RescheduleStartTime"].GetInt64();
+        m_rescheduleStartTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -575,6 +586,14 @@ void Listener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DataCompressMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dataCompressMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rescheduleStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rescheduleStartTime, allocator);
     }
 
 }
@@ -978,5 +997,21 @@ void Listener::SetDataCompressMode(const string& _dataCompressMode)
 bool Listener::DataCompressModeHasBeenSet() const
 {
     return m_dataCompressModeHasBeenSet;
+}
+
+int64_t Listener::GetRescheduleStartTime() const
+{
+    return m_rescheduleStartTime;
+}
+
+void Listener::SetRescheduleStartTime(const int64_t& _rescheduleStartTime)
+{
+    m_rescheduleStartTime = _rescheduleStartTime;
+    m_rescheduleStartTimeHasBeenSet = true;
+}
+
+bool Listener::RescheduleStartTimeHasBeenSet() const
+{
+    return m_rescheduleStartTimeHasBeenSet;
 }
 

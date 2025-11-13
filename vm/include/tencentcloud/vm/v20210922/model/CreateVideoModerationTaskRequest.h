@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool BizTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务类型：可选VIDEO（点播视频），LIVE_VIDEO（直播视频）
-                     * @return Type 任务类型：可选VIDEO（点播视频），LIVE_VIDEO（直播视频）
+                     * 获取任务类型：可选VIDEO（点播视频），LIVE_VIDEO（直播视频），VIDEO_AIGC（AI生成检测）
+                     * @return Type 任务类型：可选VIDEO（点播视频），LIVE_VIDEO（直播视频），VIDEO_AIGC（AI生成检测）
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置任务类型：可选VIDEO（点播视频），LIVE_VIDEO（直播视频）
-                     * @param _type 任务类型：可选VIDEO（点播视频），LIVE_VIDEO（直播视频）
+                     * 设置任务类型：可选VIDEO（点播视频），LIVE_VIDEO（直播视频），VIDEO_AIGC（AI生成检测）
+                     * @param _type 任务类型：可选VIDEO（点播视频），LIVE_VIDEO（直播视频），VIDEO_AIGC（AI生成检测）
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_bizTypeHasBeenSet;
 
                     /**
-                     * 任务类型：可选VIDEO（点播视频），LIVE_VIDEO（直播视频）
+                     * 任务类型：可选VIDEO（点播视频），LIVE_VIDEO（直播视频），VIDEO_AIGC（AI生成检测）
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

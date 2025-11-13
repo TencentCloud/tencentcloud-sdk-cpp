@@ -48,6 +48,7 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/DescribeDeviceIdentitiesRequest.h
   include/tencentcloud/mqtt/v20240516/model/RegisterCaCertificateResponse.h
   include/tencentcloud/mqtt/v20240516/model/UserProperty.h
+  include/tencentcloud/mqtt/v20240516/model/KickOutClientResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeMessageDetailsRequest.h
   include/tencentcloud/mqtt/v20240516/model/DeleteInstanceRequest.h
   include/tencentcloud/mqtt/v20240516/model/ModifyInstanceRequest.h
@@ -130,6 +131,7 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/DeleteInsPublicEndpointRequest.h
   include/tencentcloud/mqtt/v20240516/model/DescribeInsPublicEndpointsRequest.h
   include/tencentcloud/mqtt/v20240516/model/CreateDeviceIdentityResponse.h
+  include/tencentcloud/mqtt/v20240516/model/KickOutClientRequest.h
   include/tencentcloud/mqtt/v20240516/model/DescribeDeviceIdentityResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeCaCertificateRequest.h
   include/tencentcloud/mqtt/v20240516/model/UpdateAuthorizationPolicyPriorityRequest.h
@@ -197,6 +199,7 @@ set(mqtt_src
   src/v20240516/model/DescribeDeviceIdentitiesRequest.cpp
   src/v20240516/model/RegisterCaCertificateResponse.cpp
   src/v20240516/model/UserProperty.cpp
+  src/v20240516/model/KickOutClientResponse.cpp
   src/v20240516/model/DescribeMessageDetailsRequest.cpp
   src/v20240516/model/DeleteInstanceRequest.cpp
   src/v20240516/model/ModifyInstanceRequest.cpp
@@ -279,6 +282,7 @@ set(mqtt_src
   src/v20240516/model/DeleteInsPublicEndpointRequest.cpp
   src/v20240516/model/DescribeInsPublicEndpointsRequest.cpp
   src/v20240516/model/CreateDeviceIdentityResponse.cpp
+  src/v20240516/model/KickOutClientRequest.cpp
   src/v20240516/model/DescribeDeviceIdentityResponse.cpp
   src/v20240516/model/DescribeCaCertificateRequest.cpp
   src/v20240516/model/UpdateAuthorizationPolicyPriorityRequest.cpp

@@ -23,6 +23,7 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 ModifyUserGroupRequest::ModifyUserGroupRequest() :
+    m_instanceIdHasBeenSet(false),
     m_usersHasBeenSet(false),
     m_userGroupHasBeenSet(false),
     m_groupsHasBeenSet(false),
@@ -36,6 +37,14 @@ string ModifyUserGroupRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_usersHasBeenSet)
     {
@@ -86,6 +95,22 @@ string ModifyUserGroupRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyUserGroupRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void ModifyUserGroupRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool ModifyUserGroupRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
 
 vector<string> ModifyUserGroupRequest::GetUsers() const
 {

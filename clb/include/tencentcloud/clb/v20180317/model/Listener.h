@@ -574,15 +574,15 @@ namespace TencentCloud
                     bool IdleConnectTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
-                     * @return RescheduleInterval 调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
+                     * 获取重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。触发重新调度后，长连接将会在设置的调度时间内断开并完成重新分配。
+                     * @return RescheduleInterval 重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。触发重新调度后，长连接将会在设置的调度时间内断开并完成重新分配。
                      * 
                      */
                     uint64_t GetRescheduleInterval() const;
 
                     /**
-                     * 设置调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
-                     * @param _rescheduleInterval 调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
+                     * 设置重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。触发重新调度后，长连接将会在设置的调度时间内断开并完成重新分配。
+                     * @param _rescheduleInterval 重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。触发重新调度后，长连接将会在设置的调度时间内断开并完成重新分配。
                      * 
                      */
                     void SetRescheduleInterval(const uint64_t& _rescheduleInterval);
@@ -614,6 +614,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DataCompressModeHasBeenSet() const;
+
+                    /**
+                     * 获取重新调度启动时间，配置了重新调度启动时间后，会在启动时间到达时触发重新调度。
+                     * @return RescheduleStartTime 重新调度启动时间，配置了重新调度启动时间后，会在启动时间到达时触发重新调度。
+                     * 
+                     */
+                    int64_t GetRescheduleStartTime() const;
+
+                    /**
+                     * 设置重新调度启动时间，配置了重新调度启动时间后，会在启动时间到达时触发重新调度。
+                     * @param _rescheduleStartTime 重新调度启动时间，配置了重新调度启动时间后，会在启动时间到达时触发重新调度。
+                     * 
+                     */
+                    void SetRescheduleStartTime(const int64_t& _rescheduleStartTime);
+
+                    /**
+                     * 判断参数 RescheduleStartTime 是否已赋值
+                     * @return RescheduleStartTime 是否已赋值
+                     * 
+                     */
+                    bool RescheduleStartTimeHasBeenSet() const;
 
                 private:
 
@@ -766,7 +787,7 @@ namespace TencentCloud
                     bool m_idleConnectTimeoutHasBeenSet;
 
                     /**
-                     * 调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
+                     * 重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。触发重新调度后，长连接将会在设置的调度时间内断开并完成重新分配。
                      */
                     uint64_t m_rescheduleInterval;
                     bool m_rescheduleIntervalHasBeenSet;
@@ -776,6 +797,12 @@ namespace TencentCloud
                      */
                     std::string m_dataCompressMode;
                     bool m_dataCompressModeHasBeenSet;
+
+                    /**
+                     * 重新调度启动时间，配置了重新调度启动时间后，会在启动时间到达时触发重新调度。
+                     */
+                    int64_t m_rescheduleStartTime;
+                    bool m_rescheduleStartTimeHasBeenSet;
 
                 };
             }

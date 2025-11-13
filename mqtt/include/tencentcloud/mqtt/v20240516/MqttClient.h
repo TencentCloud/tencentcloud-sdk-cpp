@@ -111,6 +111,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeUserListRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeUserListResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/KickOutClientRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/KickOutClientResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyDeviceIdentityRequest.h>
@@ -287,6 +289,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserListResponse> DescribeUserListOutcome;
                 typedef std::future<DescribeUserListOutcome> DescribeUserListOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeUserListRequest&, DescribeUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::KickOutClientResponse> KickOutClientOutcome;
+                typedef std::future<KickOutClientOutcome> KickOutClientOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::KickOutClientRequest&, KickOutClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KickOutClientAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAuthorizationPolicyResponse> ModifyAuthorizationPolicyOutcome;
                 typedef std::future<ModifyAuthorizationPolicyOutcome> ModifyAuthorizationPolicyOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyAuthorizationPolicyRequest&, ModifyAuthorizationPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuthorizationPolicyAsyncHandler;
@@ -740,6 +745,15 @@ namespace TencentCloud
                 DescribeUserListOutcome DescribeUserList(const Model::DescribeUserListRequest &request);
                 void DescribeUserListAsync(const Model::DescribeUserListRequest& request, const DescribeUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserListOutcomeCallable DescribeUserListCallable(const Model::DescribeUserListRequest& request);
+
+                /**
+                 *踢出客户端
+                 * @param req KickOutClientRequest
+                 * @return KickOutClientOutcome
+                 */
+                KickOutClientOutcome KickOutClient(const Model::KickOutClientRequest &request);
+                void KickOutClientAsync(const Model::KickOutClientRequest& request, const KickOutClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                KickOutClientOutcomeCallable KickOutClientCallable(const Model::KickOutClientRequest& request);
 
                 /**
                  *修改策略规则，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)

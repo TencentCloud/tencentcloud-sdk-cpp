@@ -3351,6 +3351,49 @@ TkeClient::DescribeClusterAuthenticationOptionsOutcomeCallable TkeClient::Descri
     return task->get_future();
 }
 
+TkeClient::DescribeClusterAvailableExtraArgsOutcome TkeClient::DescribeClusterAvailableExtraArgs(const DescribeClusterAvailableExtraArgsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterAvailableExtraArgs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterAvailableExtraArgsResponse rsp = DescribeClusterAvailableExtraArgsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterAvailableExtraArgsOutcome(rsp);
+        else
+            return DescribeClusterAvailableExtraArgsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterAvailableExtraArgsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterAvailableExtraArgsAsync(const DescribeClusterAvailableExtraArgsRequest& request, const DescribeClusterAvailableExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterAvailableExtraArgs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterAvailableExtraArgsOutcomeCallable TkeClient::DescribeClusterAvailableExtraArgsCallable(const DescribeClusterAvailableExtraArgsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterAvailableExtraArgsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterAvailableExtraArgs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeClusterCommonNamesOutcome TkeClient::DescribeClusterCommonNames(const DescribeClusterCommonNamesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterCommonNames");
@@ -6963,6 +7006,49 @@ TkeClient::DescribeTKEEdgeScriptOutcomeCallable TkeClient::DescribeTKEEdgeScript
     return task->get_future();
 }
 
+TkeClient::DescribeTasksOutcome TkeClient::DescribeTasks(const DescribeTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTasksResponse rsp = DescribeTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTasksOutcome(rsp);
+        else
+            return DescribeTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTasksOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeTasksAsync(const DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeTasksOutcomeCallable TkeClient::DescribeTasksCallable(const DescribeTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeVersionsOutcome TkeClient::DescribeVersions(const DescribeVersionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVersions");
@@ -8160,6 +8246,92 @@ TkeClient::ModifyClusterEndpointSPOutcomeCallable TkeClient::ModifyClusterEndpoi
         [this, request]()
         {
             return this->ModifyClusterEndpointSP(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyClusterExtraArgsOutcome TkeClient::ModifyClusterExtraArgs(const ModifyClusterExtraArgsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterExtraArgs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterExtraArgsResponse rsp = ModifyClusterExtraArgsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterExtraArgsOutcome(rsp);
+        else
+            return ModifyClusterExtraArgsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterExtraArgsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterExtraArgsAsync(const ModifyClusterExtraArgsRequest& request, const ModifyClusterExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterExtraArgs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterExtraArgsOutcomeCallable TkeClient::ModifyClusterExtraArgsCallable(const ModifyClusterExtraArgsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterExtraArgsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterExtraArgs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyClusterExtraArgsTaskStateOutcome TkeClient::ModifyClusterExtraArgsTaskState(const ModifyClusterExtraArgsTaskStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterExtraArgsTaskState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterExtraArgsTaskStateResponse rsp = ModifyClusterExtraArgsTaskStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterExtraArgsTaskStateOutcome(rsp);
+        else
+            return ModifyClusterExtraArgsTaskStateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterExtraArgsTaskStateOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterExtraArgsTaskStateAsync(const ModifyClusterExtraArgsTaskStateRequest& request, const ModifyClusterExtraArgsTaskStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterExtraArgsTaskState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterExtraArgsTaskStateOutcomeCallable TkeClient::ModifyClusterExtraArgsTaskStateCallable(const ModifyClusterExtraArgsTaskStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterExtraArgsTaskStateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterExtraArgsTaskState(request);
         }
     );
 

@@ -1932,6 +1932,49 @@ MqttClient::DescribeUserListOutcomeCallable MqttClient::DescribeUserListCallable
     return task->get_future();
 }
 
+MqttClient::KickOutClientOutcome MqttClient::KickOutClient(const KickOutClientRequest &request)
+{
+    auto outcome = MakeRequest(request, "KickOutClient");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        KickOutClientResponse rsp = KickOutClientResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return KickOutClientOutcome(rsp);
+        else
+            return KickOutClientOutcome(o.GetError());
+    }
+    else
+    {
+        return KickOutClientOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::KickOutClientAsync(const KickOutClientRequest& request, const KickOutClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->KickOutClient(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::KickOutClientOutcomeCallable MqttClient::KickOutClientCallable(const KickOutClientRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<KickOutClientOutcome()>>(
+        [this, request]()
+        {
+            return this->KickOutClient(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::ModifyAuthorizationPolicyOutcome MqttClient::ModifyAuthorizationPolicy(const ModifyAuthorizationPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAuthorizationPolicy");

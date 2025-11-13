@@ -177,6 +177,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAuthenticationOptionsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAuthenticationOptionsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterAvailableExtraArgsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterAvailableExtraArgsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterCommonNamesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterCommonNamesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterControllersRequest.h>
@@ -345,6 +347,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeTKEEdgeExternalKubeconfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeTKEEdgeScriptRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeTKEEdgeScriptResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeTasksRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeTasksResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeVersionsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeVersionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeVpcCniPodLimitsRequest.h>
@@ -401,6 +405,10 @@
 #include <tencentcloud/tke/v20180525/model/ModifyClusterAuthenticationOptionsResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterExtraArgsRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterExtraArgsResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterExtraArgsTaskStateRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterExtraArgsTaskStateResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterImageRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterImageResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterNodePoolRequest.h>
@@ -728,6 +736,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterAuthenticationOptionsResponse> DescribeClusterAuthenticationOptionsOutcome;
                 typedef std::future<DescribeClusterAuthenticationOptionsOutcome> DescribeClusterAuthenticationOptionsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterAuthenticationOptionsRequest&, DescribeClusterAuthenticationOptionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAuthenticationOptionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterAvailableExtraArgsResponse> DescribeClusterAvailableExtraArgsOutcome;
+                typedef std::future<DescribeClusterAvailableExtraArgsOutcome> DescribeClusterAvailableExtraArgsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterAvailableExtraArgsRequest&, DescribeClusterAvailableExtraArgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAvailableExtraArgsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterCommonNamesResponse> DescribeClusterCommonNamesOutcome;
                 typedef std::future<DescribeClusterCommonNamesOutcome> DescribeClusterCommonNamesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterCommonNamesRequest&, DescribeClusterCommonNamesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterCommonNamesAsyncHandler;
@@ -980,6 +991,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTKEEdgeScriptResponse> DescribeTKEEdgeScriptOutcome;
                 typedef std::future<DescribeTKEEdgeScriptOutcome> DescribeTKEEdgeScriptOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeTKEEdgeScriptRequest&, DescribeTKEEdgeScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTKEEdgeScriptAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
+                typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVersionsResponse> DescribeVersionsOutcome;
                 typedef std::future<DescribeVersionsOutcome> DescribeVersionsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeVersionsRequest&, DescribeVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVersionsAsyncHandler;
@@ -1064,6 +1078,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterEndpointSPResponse> ModifyClusterEndpointSPOutcome;
                 typedef std::future<ModifyClusterEndpointSPOutcome> ModifyClusterEndpointSPOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterEndpointSPRequest&, ModifyClusterEndpointSPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterEndpointSPAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterExtraArgsResponse> ModifyClusterExtraArgsOutcome;
+                typedef std::future<ModifyClusterExtraArgsOutcome> ModifyClusterExtraArgsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyClusterExtraArgsRequest&, ModifyClusterExtraArgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterExtraArgsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterExtraArgsTaskStateResponse> ModifyClusterExtraArgsTaskStateOutcome;
+                typedef std::future<ModifyClusterExtraArgsTaskStateOutcome> ModifyClusterExtraArgsTaskStateOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyClusterExtraArgsTaskStateRequest&, ModifyClusterExtraArgsTaskStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterExtraArgsTaskStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterImageResponse> ModifyClusterImageOutcome;
                 typedef std::future<ModifyClusterImageOutcome> ModifyClusterImageOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterImageRequest&, ModifyClusterImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterImageAsyncHandler;
@@ -1884,6 +1904,15 @@ namespace TencentCloud
                 DescribeClusterAuthenticationOptionsOutcomeCallable DescribeClusterAuthenticationOptionsCallable(const Model::DescribeClusterAuthenticationOptionsRequest& request);
 
                 /**
+                 *查询集群可用的自定义参数
+                 * @param req DescribeClusterAvailableExtraArgsRequest
+                 * @return DescribeClusterAvailableExtraArgsOutcome
+                 */
+                DescribeClusterAvailableExtraArgsOutcome DescribeClusterAvailableExtraArgs(const Model::DescribeClusterAvailableExtraArgsRequest &request);
+                void DescribeClusterAvailableExtraArgsAsync(const Model::DescribeClusterAvailableExtraArgsRequest& request, const DescribeClusterAvailableExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterAvailableExtraArgsOutcomeCallable DescribeClusterAvailableExtraArgsCallable(const Model::DescribeClusterAvailableExtraArgsRequest& request);
+
+                /**
                  *获取指定子账户在RBAC授权模式中对应kube-apiserver客户端证书的CommonName字段，如果没有客户端证书，将会签发一个，此接口有最大传入子账户数量上限，当前为50
                  * @param req DescribeClusterCommonNamesRequest
                  * @return DescribeClusterCommonNamesOutcome
@@ -2640,6 +2669,15 @@ namespace TencentCloud
                 DescribeTKEEdgeScriptOutcomeCallable DescribeTKEEdgeScriptCallable(const Model::DescribeTKEEdgeScriptRequest& request);
 
                 /**
+                 *查询任务相关信息，只会查询对应任务类型的最新的一条任务状态
+                 * @param req DescribeTasksRequest
+                 * @return DescribeTasksOutcome
+                 */
+                DescribeTasksOutcome DescribeTasks(const Model::DescribeTasksRequest &request);
+                void DescribeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
+
+                /**
                  *获取集群版本信息
                  * @param req DescribeVersionsRequest
                  * @return DescribeVersionsOutcome
@@ -2890,6 +2928,24 @@ namespace TencentCloud
                 ModifyClusterEndpointSPOutcome ModifyClusterEndpointSP(const Model::ModifyClusterEndpointSPRequest &request);
                 void ModifyClusterEndpointSPAsync(const Model::ModifyClusterEndpointSPRequest& request, const ModifyClusterEndpointSPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClusterEndpointSPOutcomeCallable ModifyClusterEndpointSPCallable(const Model::ModifyClusterEndpointSPRequest& request);
+
+                /**
+                 *更新集群自定义参数，只支持托管集群
+                 * @param req ModifyClusterExtraArgsRequest
+                 * @return ModifyClusterExtraArgsOutcome
+                 */
+                ModifyClusterExtraArgsOutcome ModifyClusterExtraArgs(const Model::ModifyClusterExtraArgsRequest &request);
+                void ModifyClusterExtraArgsAsync(const Model::ModifyClusterExtraArgsRequest& request, const ModifyClusterExtraArgsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterExtraArgsOutcomeCallable ModifyClusterExtraArgsCallable(const Model::ModifyClusterExtraArgsRequest& request);
+
+                /**
+                 *暂停或者取消集群更新参数任务
+                 * @param req ModifyClusterExtraArgsTaskStateRequest
+                 * @return ModifyClusterExtraArgsTaskStateOutcome
+                 */
+                ModifyClusterExtraArgsTaskStateOutcome ModifyClusterExtraArgsTaskState(const Model::ModifyClusterExtraArgsTaskStateRequest &request);
+                void ModifyClusterExtraArgsTaskStateAsync(const Model::ModifyClusterExtraArgsTaskStateRequest& request, const ModifyClusterExtraArgsTaskStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterExtraArgsTaskStateOutcomeCallable ModifyClusterExtraArgsTaskStateCallable(const Model::ModifyClusterExtraArgsTaskStateRequest& request);
 
                 /**
                  *修改集群镜像

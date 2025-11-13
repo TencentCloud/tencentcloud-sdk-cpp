@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取集群字符串ID
+                     * @return InstanceId 集群字符串ID
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置集群字符串ID
+                     * @param _instanceId 集群字符串ID
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
                      * 获取用户信息列表
                      * @return Users 用户信息列表
                      * 
@@ -127,6 +148,12 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 集群字符串ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                     /**
                      * 用户信息列表
