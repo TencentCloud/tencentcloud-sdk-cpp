@@ -22,6 +22,8 @@
 
 namespace TencentCloud
 {
+    class HttpClient;
+
     class Http
     {
     private:
@@ -52,6 +54,8 @@ namespace TencentCloud
     private:
         HeaderCollection m_headers;
         std::string m_body;
+
+        friend class HttpClient;
     };
 }
 #endif // !TENCENTCLOUD_CORE_HTTP_HTTPMESSAGE_H_

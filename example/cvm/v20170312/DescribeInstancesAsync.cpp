@@ -15,10 +15,7 @@
  */
 
 #include <tencentcloud/core/TencentCloud.h>
-#include <tencentcloud/core/profile/HttpProfile.h>
-#include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/Credential.h>
-#include <tencentcloud/core/NetworkProxy.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cvm/v20170312/CvmClient.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesRequest.h>
@@ -27,83 +24,146 @@
 
 #include <iostream>
 #include <string>
-#include <thread>
 #include <chrono>
-#include <cstdlib>
+#include <mutex>
+#include <condition_variable>
+#include <iomanip>
 
 using namespace TencentCloud;
 using namespace TencentCloud::Cvm::V20170312;
 using namespace TencentCloud::Cvm::V20170312::Model;
 using namespace std;
 
-int main()
+class WaitGroup
 {
-    TencentCloud::InitAPI();
+private:
+    std::mutex m_mutex;
+    std::condition_variable m_cv;
+    int m_count = 0;
 
-    // use the sdk
+public:
+    void Add(int delta)
+    {
+        std::unique_lock<std::mutex> lock(m_mutex);
+        m_count += delta;
+        if (m_count < 0)
+        {
+            m_count = 0;
+        }
+        lock.unlock();
+        m_cv.notify_one();
+    }
 
-    string secretId = "<your secret id>";
-    string secretKey = "<your secret key>";
-    Credential cred = Credential(getenv("TENCENTCLOUD_SECRET_ID"),
-                                 getenv("TENCENTCLOUD_SECRET_KEY"));
+    void Done()
+    {
+        Add(-1);
+    }
+
+    void Wait()
+    {
+        std::unique_lock<std::mutex> lock(m_mutex);
+        m_cv.wait(lock, [this]() { return m_count == 0; });
+    }
+};
+
+
+void AsyncWithFuture()
+{
+    cout << "AsyncWithFuture()" << endl;
+
+    Credential cred = Credential(
+        string(getenv("TENCENTCLOUD_SECRET_ID")),
+        string(getenv("TENCENTCLOUD_SECRET_KEY"))
+    );
+    CvmClient cvm_client(cred, "ap-guangzhou");
 
     DescribeInstancesRequest req = DescribeInstancesRequest();
     req.SetOffset(0);
     req.SetLimit(5);
 
-    CvmClient cvm_client = CvmClient(cred, "ap-guangzhou");
+    constexpr int parallel_reqs = 20;
 
-    // use callback
-    cout<<"Use callback..."<<endl;
-    auto callback = [](const CvmClient* client, const DescribeInstancesRequest& req, CvmClient::DescribeInstancesOutcome outcome, const shared_ptr<const AsyncCallerContext>& context)
+    vector<CvmClient::DescribeInstancesOutcomeCallable> callables;
+    for (auto i = 0; i < parallel_reqs; i++)
     {
-        cout<<"context uuid="<<context->GetUuid()<<endl;
+        callables.emplace_back(cvm_client.DescribeInstancesCallable(req));
+    }
+
+    for (auto& callable : callables)
+    {
+        auto outcome = callable.get();
+
         if (!outcome.IsSuccess())
         {
             cout << outcome.GetError().PrintAll() << endl;
             return;
         }
         DescribeInstancesResponse rsp = outcome.GetResult();
-        cout<<"RequestId="<<rsp.GetRequestId()<<endl;
-        cout<<"TotalCount="<<rsp.GetTotalCount()<<endl;
-        if (rsp.InstanceSetHasBeenSet())
+        cout << "RequestId=" << rsp.GetRequestId() << "\tTotalCount=" << rsp.GetTotalCount() << endl;
+    }
+
+    cout << "AsyncWithFuture() finished" << endl;
+}
+
+
+void AsyncWithCallback()
+{
+    cout << "AsyncWithCallback()" << endl;
+
+    Credential cred = Credential(
+        string(getenv("TENCENTCLOUD_SECRET_ID")),
+        string(getenv("TENCENTCLOUD_SECRET_KEY"))
+    );
+    CvmClient cvm_client(cred, "ap-guangzhou");
+
+    constexpr int parallel_reqs = 20;
+
+    WaitGroup wg;
+    wg.Add(parallel_reqs);
+
+    auto callback = [&wg](
+        const CvmClient* client,
+        const DescribeInstancesRequest& req,
+        CvmClient::DescribeInstancesOutcome outcome,
+        const shared_ptr<const AsyncCallerContext>& context
+    )
+    {
+        if (!outcome.IsSuccess())
         {
-            vector<Instance> instanceSet = rsp.GetInstanceSet();
-            for (auto itr=instanceSet.begin(); itr!=instanceSet.end(); ++itr)
-            {
-                cout<<(*itr).GetPlacement().GetZone()<<endl;
-            }
+            cout << outcome.GetError().PrintAll() << endl;
+            wg.Done();
+            return;
         }
+
+        DescribeInstancesResponse rsp = outcome.GetResult();
+        cout << "RequestId=" << rsp.GetRequestId() << "\tTotalCount=" << rsp.GetTotalCount() << endl;
+
+        wg.Done();
     };
-    shared_ptr<const AsyncCallerContext> context(new AsyncCallerContext);
 
-    cvm_client.DescribeInstancesAsync(req, callback, context);
+    DescribeInstancesRequest req = DescribeInstancesRequest();
+    req.SetOffset(0);
+    req.SetLimit(5);
 
-    this_thread::sleep_for(chrono::seconds(5));
+    auto context_ptr = std::make_shared<AsyncCallerContext>();
 
-
-    // use future
-    cout<<"Use future..."<<endl;
-    auto ret = cvm_client.DescribeInstancesCallable(req);
-    auto outcome = ret.get();
-
-    if (!outcome.IsSuccess())
+    for (auto i = 0; i < parallel_reqs; i++)
     {
-        cout << outcome.GetError().PrintAll() << endl;
-        TencentCloud::ShutdownAPI();
-        return -1;
+        cvm_client.DescribeInstancesAsync(req, callback, context_ptr);
     }
-    DescribeInstancesResponse rsp = outcome.GetResult();
-    cout<<"RequestId="<<rsp.GetRequestId()<<endl;
-    cout<<"TotalCount="<<rsp.GetTotalCount()<<endl;
-    if (rsp.InstanceSetHasBeenSet())
-    {
-        vector<Instance> instanceSet = rsp.GetInstanceSet();
-        for (auto itr=instanceSet.begin(); itr!=instanceSet.end(); ++itr)
-        {
-            cout<<(*itr).GetPlacement().GetZone()<<endl;
-        }
-    }
+
+    wg.Wait();
+
+    cout << "AsyncWithCallback() finished" << endl;
+}
+
+
+int main()
+{
+    TencentCloud::InitAPI();
+
+    AsyncWithCallback();
+    AsyncWithFuture();
 
     TencentCloud::ShutdownAPI();
 
