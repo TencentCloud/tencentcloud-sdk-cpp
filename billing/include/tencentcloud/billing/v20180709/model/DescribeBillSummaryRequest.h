@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool TagKeyHasBeenSet() const;
 
+                    /**
+                     * 获取操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+                     * @return OperateUin 操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+                     * 
+                     */
+                    std::string GetOperateUin() const;
+
+                    /**
+                     * 设置操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+                     * @param _operateUin 操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+                     * 
+                     */
+                    void SetOperateUin(const std::string& _operateUin);
+
+                    /**
+                     * 判断参数 OperateUin 是否已赋值
+                     * @return OperateUin 是否已赋值
+                     * 
+                     */
+                    bool OperateUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagKey;
                     bool m_tagKeyHasBeenSet;
+
+                    /**
+                     * 操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+                     */
+                    std::string m_operateUin;
+                    bool m_operateUinHasBeenSet;
 
                 };
             }

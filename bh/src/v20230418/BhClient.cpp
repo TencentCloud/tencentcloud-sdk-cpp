@@ -1459,6 +1459,49 @@ BhClient::DescribeAclsOutcomeCallable BhClient::DescribeAclsCallable(const Descr
     return task->get_future();
 }
 
+BhClient::DescribeAssetSyncFlagOutcome BhClient::DescribeAssetSyncFlag(const DescribeAssetSyncFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetSyncFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetSyncFlagResponse rsp = DescribeAssetSyncFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetSyncFlagOutcome(rsp);
+        else
+            return DescribeAssetSyncFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetSyncFlagOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeAssetSyncFlagAsync(const DescribeAssetSyncFlagRequest& request, const DescribeAssetSyncFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetSyncFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::DescribeAssetSyncFlagOutcomeCallable BhClient::DescribeAssetSyncFlagCallable(const DescribeAssetSyncFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetSyncFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetSyncFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::DescribeAssetSyncStatusOutcome BhClient::DescribeAssetSyncStatus(const DescribeAssetSyncStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetSyncStatus");
@@ -2061,6 +2104,49 @@ BhClient::DescribeResourcesOutcomeCallable BhClient::DescribeResourcesCallable(c
     return task->get_future();
 }
 
+BhClient::DescribeSecuritySettingOutcome BhClient::DescribeSecuritySetting(const DescribeSecuritySettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecuritySetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecuritySettingResponse rsp = DescribeSecuritySettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecuritySettingOutcome(rsp);
+        else
+            return DescribeSecuritySettingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecuritySettingOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeSecuritySettingAsync(const DescribeSecuritySettingRequest& request, const DescribeSecuritySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecuritySetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::DescribeSecuritySettingOutcomeCallable BhClient::DescribeSecuritySettingCallable(const DescribeSecuritySettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecuritySettingOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecuritySetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::DescribeUserGroupMembersOutcome BhClient::DescribeUserGroupMembers(const DescribeUserGroupMembersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserGroupMembers");
@@ -2190,6 +2276,178 @@ BhClient::DescribeUsersOutcomeCallable BhClient::DescribeUsersCallable(const Des
     return task->get_future();
 }
 
+BhClient::DisableExternalAccessOutcome BhClient::DisableExternalAccess(const DisableExternalAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableExternalAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableExternalAccessResponse rsp = DisableExternalAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableExternalAccessOutcome(rsp);
+        else
+            return DisableExternalAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableExternalAccessOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DisableExternalAccessAsync(const DisableExternalAccessRequest& request, const DisableExternalAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableExternalAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::DisableExternalAccessOutcomeCallable BhClient::DisableExternalAccessCallable(const DisableExternalAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableExternalAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableExternalAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::DisableIntranetAccessOutcome BhClient::DisableIntranetAccess(const DisableIntranetAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableIntranetAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableIntranetAccessResponse rsp = DisableIntranetAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableIntranetAccessOutcome(rsp);
+        else
+            return DisableIntranetAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableIntranetAccessOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DisableIntranetAccessAsync(const DisableIntranetAccessRequest& request, const DisableIntranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableIntranetAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::DisableIntranetAccessOutcomeCallable BhClient::DisableIntranetAccessCallable(const DisableIntranetAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableIntranetAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableIntranetAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::EnableExternalAccessOutcome BhClient::EnableExternalAccess(const EnableExternalAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableExternalAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableExternalAccessResponse rsp = EnableExternalAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableExternalAccessOutcome(rsp);
+        else
+            return EnableExternalAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableExternalAccessOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::EnableExternalAccessAsync(const EnableExternalAccessRequest& request, const EnableExternalAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableExternalAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::EnableExternalAccessOutcomeCallable BhClient::EnableExternalAccessCallable(const EnableExternalAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableExternalAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableExternalAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::EnableIntranetAccessOutcome BhClient::EnableIntranetAccess(const EnableIntranetAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableIntranetAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableIntranetAccessResponse rsp = EnableIntranetAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableIntranetAccessOutcome(rsp);
+        else
+            return EnableIntranetAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableIntranetAccessOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::EnableIntranetAccessAsync(const EnableIntranetAccessRequest& request, const EnableIntranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableIntranetAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::EnableIntranetAccessOutcomeCallable BhClient::EnableIntranetAccessCallable(const EnableIntranetAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableIntranetAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableIntranetAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::ImportExternalDeviceOutcome BhClient::ImportExternalDevice(const ImportExternalDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "ImportExternalDevice");
@@ -2233,6 +2491,135 @@ BhClient::ImportExternalDeviceOutcomeCallable BhClient::ImportExternalDeviceCall
     return task->get_future();
 }
 
+BhClient::ModifyAccessWhiteListAutoStatusOutcome BhClient::ModifyAccessWhiteListAutoStatus(const ModifyAccessWhiteListAutoStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccessWhiteListAutoStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccessWhiteListAutoStatusResponse rsp = ModifyAccessWhiteListAutoStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccessWhiteListAutoStatusOutcome(rsp);
+        else
+            return ModifyAccessWhiteListAutoStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccessWhiteListAutoStatusOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::ModifyAccessWhiteListAutoStatusAsync(const ModifyAccessWhiteListAutoStatusRequest& request, const ModifyAccessWhiteListAutoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccessWhiteListAutoStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::ModifyAccessWhiteListAutoStatusOutcomeCallable BhClient::ModifyAccessWhiteListAutoStatusCallable(const ModifyAccessWhiteListAutoStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccessWhiteListAutoStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccessWhiteListAutoStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::ModifyAccessWhiteListRuleOutcome BhClient::ModifyAccessWhiteListRule(const ModifyAccessWhiteListRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccessWhiteListRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccessWhiteListRuleResponse rsp = ModifyAccessWhiteListRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccessWhiteListRuleOutcome(rsp);
+        else
+            return ModifyAccessWhiteListRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccessWhiteListRuleOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::ModifyAccessWhiteListRuleAsync(const ModifyAccessWhiteListRuleRequest& request, const ModifyAccessWhiteListRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccessWhiteListRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::ModifyAccessWhiteListRuleOutcomeCallable BhClient::ModifyAccessWhiteListRuleCallable(const ModifyAccessWhiteListRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccessWhiteListRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccessWhiteListRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::ModifyAccessWhiteListStatusOutcome BhClient::ModifyAccessWhiteListStatus(const ModifyAccessWhiteListStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccessWhiteListStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccessWhiteListStatusResponse rsp = ModifyAccessWhiteListStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccessWhiteListStatusOutcome(rsp);
+        else
+            return ModifyAccessWhiteListStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccessWhiteListStatusOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::ModifyAccessWhiteListStatusAsync(const ModifyAccessWhiteListStatusRequest& request, const ModifyAccessWhiteListStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccessWhiteListStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::ModifyAccessWhiteListStatusOutcomeCallable BhClient::ModifyAccessWhiteListStatusCallable(const ModifyAccessWhiteListStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccessWhiteListStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccessWhiteListStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::ModifyAclOutcome BhClient::ModifyAcl(const ModifyAclRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAcl");
@@ -2269,6 +2656,92 @@ BhClient::ModifyAclOutcomeCallable BhClient::ModifyAclCallable(const ModifyAclRe
         [this, request]()
         {
             return this->ModifyAcl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::ModifyAssetSyncFlagOutcome BhClient::ModifyAssetSyncFlag(const ModifyAssetSyncFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAssetSyncFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAssetSyncFlagResponse rsp = ModifyAssetSyncFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAssetSyncFlagOutcome(rsp);
+        else
+            return ModifyAssetSyncFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAssetSyncFlagOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::ModifyAssetSyncFlagAsync(const ModifyAssetSyncFlagRequest& request, const ModifyAssetSyncFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAssetSyncFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::ModifyAssetSyncFlagOutcomeCallable BhClient::ModifyAssetSyncFlagCallable(const ModifyAssetSyncFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAssetSyncFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAssetSyncFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::ModifyAuthModeSettingOutcome BhClient::ModifyAuthModeSetting(const ModifyAuthModeSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAuthModeSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAuthModeSettingResponse rsp = ModifyAuthModeSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAuthModeSettingOutcome(rsp);
+        else
+            return ModifyAuthModeSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAuthModeSettingOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::ModifyAuthModeSettingAsync(const ModifyAuthModeSettingRequest& request, const ModifyAuthModeSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAuthModeSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::ModifyAuthModeSettingOutcomeCallable BhClient::ModifyAuthModeSettingCallable(const ModifyAuthModeSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAuthModeSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAuthModeSetting(request);
         }
     );
 
@@ -2570,6 +3043,49 @@ BhClient::ModifyOperationTaskOutcomeCallable BhClient::ModifyOperationTaskCallab
         [this, request]()
         {
             return this->ModifyOperationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::ModifyReconnectionSettingOutcome BhClient::ModifyReconnectionSetting(const ModifyReconnectionSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyReconnectionSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyReconnectionSettingResponse rsp = ModifyReconnectionSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyReconnectionSettingOutcome(rsp);
+        else
+            return ModifyReconnectionSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyReconnectionSettingOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::ModifyReconnectionSettingAsync(const ModifyReconnectionSettingRequest& request, const ModifyReconnectionSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyReconnectionSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::ModifyReconnectionSettingOutcomeCallable BhClient::ModifyReconnectionSettingCallable(const ModifyReconnectionSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyReconnectionSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyReconnectionSetting(request);
         }
     );
 

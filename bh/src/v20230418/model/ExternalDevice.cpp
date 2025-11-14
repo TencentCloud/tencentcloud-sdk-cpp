@@ -29,7 +29,13 @@ ExternalDevice::ExternalDevice() :
     m_ipPortSetHasBeenSet(false),
     m_enableSSLHasBeenSet(false),
     m_sSLCertHasBeenSet(false),
-    m_sSLCertNameHasBeenSet(false)
+    m_sSLCertNameHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_apCodeHasBeenSet(false),
+    m_apNameHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
 }
 
@@ -131,6 +137,66 @@ CoreInternalOutcome ExternalDevice::Deserialize(const rapidjson::Value &value)
         m_sSLCertNameHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalDevice.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApCode") && !value["ApCode"].IsNull())
+    {
+        if (!value["ApCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalDevice.ApCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apCode = string(value["ApCode"].GetString());
+        m_apCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApName") && !value["ApName"].IsNull())
+    {
+        if (!value["ApName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalDevice.ApName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apName = string(value["ApName"].GetString());
+        m_apNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalDevice.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalDevice.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicIp") && !value["PublicIp"].IsNull())
+    {
+        if (!value["PublicIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalDevice.PublicIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIp = string(value["PublicIp"].GetString());
+        m_publicIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +279,54 @@ void ExternalDevice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SSLCertName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sSLCertName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -360,5 +474,101 @@ void ExternalDevice::SetSSLCertName(const string& _sSLCertName)
 bool ExternalDevice::SSLCertNameHasBeenSet() const
 {
     return m_sSLCertNameHasBeenSet;
+}
+
+string ExternalDevice::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void ExternalDevice::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool ExternalDevice::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string ExternalDevice::GetApCode() const
+{
+    return m_apCode;
+}
+
+void ExternalDevice::SetApCode(const string& _apCode)
+{
+    m_apCode = _apCode;
+    m_apCodeHasBeenSet = true;
+}
+
+bool ExternalDevice::ApCodeHasBeenSet() const
+{
+    return m_apCodeHasBeenSet;
+}
+
+string ExternalDevice::GetApName() const
+{
+    return m_apName;
+}
+
+void ExternalDevice::SetApName(const string& _apName)
+{
+    m_apName = _apName;
+    m_apNameHasBeenSet = true;
+}
+
+bool ExternalDevice::ApNameHasBeenSet() const
+{
+    return m_apNameHasBeenSet;
+}
+
+string ExternalDevice::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void ExternalDevice::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool ExternalDevice::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string ExternalDevice::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void ExternalDevice::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool ExternalDevice::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
+
+string ExternalDevice::GetPublicIp() const
+{
+    return m_publicIp;
+}
+
+void ExternalDevice::SetPublicIp(const string& _publicIp)
+{
+    m_publicIp = _publicIp;
+    m_publicIpHasBeenSet = true;
+}
+
+bool ExternalDevice::PublicIpHasBeenSet() const
+{
+    return m_publicIpHasBeenSet;
 }
 

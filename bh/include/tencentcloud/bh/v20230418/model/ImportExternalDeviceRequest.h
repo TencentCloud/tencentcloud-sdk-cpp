@@ -64,6 +64,27 @@ namespace TencentCloud
                      */
                     bool DeviceSetHasBeenSet() const;
 
+                    /**
+                     * 获取 资产所属云账号id
+                     * @return AccountId  资产所属云账号id
+                     * 
+                     */
+                    uint64_t GetAccountId() const;
+
+                    /**
+                     * 设置 资产所属云账号id
+                     * @param _accountId  资产所属云账号id
+                     * 
+                     */
+                    void SetAccountId(const uint64_t& _accountId);
+
+                    /**
+                     * 判断参数 AccountId 是否已赋值
+                     * @return AccountId 是否已赋值
+                     * 
+                     */
+                    bool AccountIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +92,12 @@ namespace TencentCloud
                      */
                     std::vector<ExternalDevice> m_deviceSet;
                     bool m_deviceSetHasBeenSet;
+
+                    /**
+                     *  资产所属云账号id
+                     */
+                    uint64_t m_accountId;
+                    bool m_accountIdHasBeenSet;
 
                 };
             }

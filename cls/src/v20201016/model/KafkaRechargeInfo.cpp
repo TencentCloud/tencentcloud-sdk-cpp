@@ -35,7 +35,8 @@ KafkaRechargeInfo::KafkaRechargeInfo() :
     m_offsetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_logRechargeRuleHasBeenSet(false)
+    m_logRechargeRuleHasBeenSet(false),
+    m_userKafkaMetaHasBeenSet(false)
 {
 }
 
@@ -208,6 +209,23 @@ CoreInternalOutcome KafkaRechargeInfo::Deserialize(const rapidjson::Value &value
         m_logRechargeRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("UserKafkaMeta") && !value["UserKafkaMeta"].IsNull())
+    {
+        if (!value["UserKafkaMeta"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaRechargeInfo.UserKafkaMeta` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_userKafkaMeta.Deserialize(value["UserKafkaMeta"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_userKafkaMetaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +353,15 @@ void KafkaRechargeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logRechargeRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_userKafkaMetaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserKafkaMeta";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_userKafkaMeta.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -578,5 +605,21 @@ void KafkaRechargeInfo::SetLogRechargeRule(const LogRechargeRuleInfo& _logRechar
 bool KafkaRechargeInfo::LogRechargeRuleHasBeenSet() const
 {
     return m_logRechargeRuleHasBeenSet;
+}
+
+UserKafkaMeta KafkaRechargeInfo::GetUserKafkaMeta() const
+{
+    return m_userKafkaMeta;
+}
+
+void KafkaRechargeInfo::SetUserKafkaMeta(const UserKafkaMeta& _userKafkaMeta)
+{
+    m_userKafkaMeta = _userKafkaMeta;
+    m_userKafkaMetaHasBeenSet = true;
+}
+
+bool KafkaRechargeInfo::UserKafkaMetaHasBeenSet() const
+{
+    return m_userKafkaMetaHasBeenSet;
 }
 

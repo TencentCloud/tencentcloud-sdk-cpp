@@ -21,7 +21,8 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 UpstreamCertInfo::UpstreamCertInfo() :
-    m_upstreamMutualTLSHasBeenSet(false)
+    m_upstreamMutualTLSHasBeenSet(false),
+    m_upstreamCertificateVerifyHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,23 @@ CoreInternalOutcome UpstreamCertInfo::Deserialize(const rapidjson::Value &value)
         m_upstreamMutualTLSHasBeenSet = true;
     }
 
+    if (value.HasMember("UpstreamCertificateVerify") && !value["UpstreamCertificateVerify"].IsNull())
+    {
+        if (!value["UpstreamCertificateVerify"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpstreamCertInfo.UpstreamCertificateVerify` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_upstreamCertificateVerify.Deserialize(value["UpstreamCertificateVerify"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_upstreamCertificateVerifyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +79,15 @@ void UpstreamCertInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_upstreamMutualTLS.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_upstreamCertificateVerifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamCertificateVerify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_upstreamCertificateVerify.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -80,5 +107,21 @@ void UpstreamCertInfo::SetUpstreamMutualTLS(const MutualTLS& _upstreamMutualTLS)
 bool UpstreamCertInfo::UpstreamMutualTLSHasBeenSet() const
 {
     return m_upstreamMutualTLSHasBeenSet;
+}
+
+OriginCertificateVerify UpstreamCertInfo::GetUpstreamCertificateVerify() const
+{
+    return m_upstreamCertificateVerify;
+}
+
+void UpstreamCertInfo::SetUpstreamCertificateVerify(const OriginCertificateVerify& _upstreamCertificateVerify)
+{
+    m_upstreamCertificateVerify = _upstreamCertificateVerify;
+    m_upstreamCertificateVerifyHasBeenSet = true;
+}
+
+bool UpstreamCertInfo::UpstreamCertificateVerifyHasBeenSet() const
+{
+    return m_upstreamCertificateVerifyHasBeenSet;
 }
 

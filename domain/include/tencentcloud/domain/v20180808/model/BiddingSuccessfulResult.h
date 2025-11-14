@@ -71,6 +71,31 @@ namespace TencentCloud
                      */
                     bool PayEndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取交割时间
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return ModifyOwnerEndTime 交割时间
+格式:YYYY-MM-DD HH:mm:ss
+                     * 
+                     */
+                    std::string GetModifyOwnerEndTime() const;
+
+                    /**
+                     * 设置交割时间
+格式:YYYY-MM-DD HH:mm:ss
+                     * @param _modifyOwnerEndTime 交割时间
+格式:YYYY-MM-DD HH:mm:ss
+                     * 
+                     */
+                    void SetModifyOwnerEndTime(const std::string& _modifyOwnerEndTime);
+
+                    /**
+                     * 判断参数 ModifyOwnerEndTime 是否已赋值
+                     * @return ModifyOwnerEndTime 是否已赋值
+                     * 
+                     */
+                    bool ModifyOwnerEndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +104,13 @@ namespace TencentCloud
                      */
                     std::string m_payEndTime;
                     bool m_payEndTimeHasBeenSet;
+
+                    /**
+                     * 交割时间
+格式:YYYY-MM-DD HH:mm:ss
+                     */
+                    std::string m_modifyOwnerEndTime;
+                    bool m_modifyOwnerEndTimeHasBeenSet;
 
                 };
             }

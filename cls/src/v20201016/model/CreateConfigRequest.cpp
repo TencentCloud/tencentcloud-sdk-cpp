@@ -30,7 +30,8 @@ CreateConfigRequest::CreateConfigRequest() :
     m_extractRuleHasBeenSet(false),
     m_excludePathsHasBeenSet(false),
     m_userDefineRuleHasBeenSet(false),
-    m_advancedConfigHasBeenSet(false)
+    m_advancedConfigHasBeenSet(false),
+    m_inputTypeHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string CreateConfigRequest::ToJsonString() const
         string key = "AdvancedConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_advancedConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inputType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -247,6 +256,22 @@ void CreateConfigRequest::SetAdvancedConfig(const string& _advancedConfig)
 bool CreateConfigRequest::AdvancedConfigHasBeenSet() const
 {
     return m_advancedConfigHasBeenSet;
+}
+
+string CreateConfigRequest::GetInputType() const
+{
+    return m_inputType;
+}
+
+void CreateConfigRequest::SetInputType(const string& _inputType)
+{
+    m_inputType = _inputType;
+    m_inputTypeHasBeenSet = true;
+}
+
+bool CreateConfigRequest::InputTypeHasBeenSet() const
+{
+    return m_inputTypeHasBeenSet;
 }
 
 

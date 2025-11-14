@@ -176,6 +176,27 @@ namespace TencentCloud
                     bool ApCodeHasBeenSet() const;
 
                     /**
+                     * 获取地域名称
+                     * @return ApName 地域名称
+                     * 
+                     */
+                    std::string GetApName() const;
+
+                    /**
+                     * 设置地域名称
+                     * @param _apName 地域名称
+                     * 
+                     */
+                    void SetApName(const std::string& _apName);
+
+                    /**
+                     * 判断参数 ApName 是否已赋值
+                     * @return ApName 是否已赋值
+                     * 
+                     */
+                    bool ApNameHasBeenSet() const;
+
+                    /**
                      * 获取操作系统名称
                      * @return OsName 操作系统名称
                      * 
@@ -616,6 +637,111 @@ namespace TencentCloud
                      */
                     bool TotalPodCountHasBeenSet() const;
 
+                    /**
+                     * 获取云账号id
+                     * @return CloudAccountId 云账号id
+                     * 
+                     */
+                    uint64_t GetCloudAccountId() const;
+
+                    /**
+                     * 设置云账号id
+                     * @param _cloudAccountId 云账号id
+                     * 
+                     */
+                    void SetCloudAccountId(const uint64_t& _cloudAccountId);
+
+                    /**
+                     * 判断参数 CloudAccountId 是否已赋值
+                     * @return CloudAccountId 是否已赋值
+                     * 
+                     */
+                    bool CloudAccountIdHasBeenSet() const;
+
+                    /**
+                     * 获取云账号名称
+                     * @return CloudAccountName 云账号名称
+                     * 
+                     */
+                    std::string GetCloudAccountName() const;
+
+                    /**
+                     * 设置云账号名称
+                     * @param _cloudAccountName 云账号名称
+                     * 
+                     */
+                    void SetCloudAccountName(const std::string& _cloudAccountName);
+
+                    /**
+                     * 判断参数 CloudAccountName 是否已赋值
+                     * @return CloudAccountName 是否已赋值
+                     * 
+                     */
+                    bool CloudAccountNameHasBeenSet() const;
+
+                    /**
+                     * 获取云厂商类型1-腾讯云，2-阿里云
+                     * @return ProviderType 云厂商类型1-腾讯云，2-阿里云
+                     * 
+                     */
+                    uint64_t GetProviderType() const;
+
+                    /**
+                     * 设置云厂商类型1-腾讯云，2-阿里云
+                     * @param _providerType 云厂商类型1-腾讯云，2-阿里云
+                     * 
+                     */
+                    void SetProviderType(const uint64_t& _providerType);
+
+                    /**
+                     * 判断参数 ProviderType 是否已赋值
+                     * @return ProviderType 是否已赋值
+                     * 
+                     */
+                    bool ProviderTypeHasBeenSet() const;
+
+                    /**
+                     * 获取云厂商名称
+                     * @return ProviderName 云厂商名称
+                     * 
+                     */
+                    std::string GetProviderName() const;
+
+                    /**
+                     * 设置云厂商名称
+                     * @param _providerName 云厂商名称
+                     * 
+                     */
+                    void SetProviderName(const std::string& _providerName);
+
+                    /**
+                     * 判断参数 ProviderName 是否已赋值
+                     * @return ProviderName 是否已赋值
+                     * 
+                     */
+                    bool ProviderNameHasBeenSet() const;
+
+                    /**
+                     * 获取同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * @return SyncCloudDeviceStatus 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * 
+                     */
+                    uint64_t GetSyncCloudDeviceStatus() const;
+
+                    /**
+                     * 设置同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * @param _syncCloudDeviceStatus 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * 
+                     */
+                    void SetSyncCloudDeviceStatus(const uint64_t& _syncCloudDeviceStatus);
+
+                    /**
+                     * 判断参数 SyncCloudDeviceStatus 是否已赋值
+                     * @return SyncCloudDeviceStatus 是否已赋值
+                     * 
+                     */
+                    bool SyncCloudDeviceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -653,6 +779,12 @@ namespace TencentCloud
                      */
                     std::string m_apCode;
                     bool m_apCodeHasBeenSet;
+
+                    /**
+                     * 地域名称
+                     */
+                    std::string m_apName;
+                    bool m_apNameHasBeenSet;
 
                     /**
                      * 操作系统名称
@@ -779,6 +911,36 @@ namespace TencentCloud
                      */
                     uint64_t m_totalPodCount;
                     bool m_totalPodCountHasBeenSet;
+
+                    /**
+                     * 云账号id
+                     */
+                    uint64_t m_cloudAccountId;
+                    bool m_cloudAccountIdHasBeenSet;
+
+                    /**
+                     * 云账号名称
+                     */
+                    std::string m_cloudAccountName;
+                    bool m_cloudAccountNameHasBeenSet;
+
+                    /**
+                     * 云厂商类型1-腾讯云，2-阿里云
+                     */
+                    uint64_t m_providerType;
+                    bool m_providerTypeHasBeenSet;
+
+                    /**
+                     * 云厂商名称
+                     */
+                    std::string m_providerName;
+                    bool m_providerNameHasBeenSet;
+
+                    /**
+                     * 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     */
+                    uint64_t m_syncCloudDeviceStatus;
+                    bool m_syncCloudDeviceStatusHasBeenSet;
 
                 };
             }

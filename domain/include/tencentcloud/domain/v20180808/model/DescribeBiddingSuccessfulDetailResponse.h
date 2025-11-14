@@ -193,6 +193,22 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取交割时间
+格式:YYYY-MM-DD HH:mm:ss
+                     * @return ModifyOwnerEndTime 交割时间
+格式:YYYY-MM-DD HH:mm:ss
+                     * 
+                     */
+                    std::string GetModifyOwnerEndTime() const;
+
+                    /**
+                     * 判断参数 ModifyOwnerEndTime 是否已赋值
+                     * @return ModifyOwnerEndTime 是否已赋值
+                     * 
+                     */
+                    bool ModifyOwnerEndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +275,13 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 交割时间
+格式:YYYY-MM-DD HH:mm:ss
+                     */
+                    std::string m_modifyOwnerEndTime;
+                    bool m_modifyOwnerEndTimeHasBeenSet;
 
                 };
             }

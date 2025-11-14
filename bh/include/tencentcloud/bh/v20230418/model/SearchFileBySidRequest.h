@@ -170,6 +170,27 @@ namespace TencentCloud
                     bool AuditActionHasBeenSet() const;
 
                     /**
+                     * 获取1-已执行，  2-被阻断
+                     * @return AuditActionSet 1-已执行，  2-被阻断
+                     * 
+                     */
+                    std::vector<int64_t> GetAuditActionSet() const;
+
+                    /**
+                     * 设置1-已执行，  2-被阻断
+                     * @param _auditActionSet 1-已执行，  2-被阻断
+                     * 
+                     */
+                    void SetAuditActionSet(const std::vector<int64_t>& _auditActionSet);
+
+                    /**
+                     * 判断参数 AuditActionSet 是否已赋值
+                     * @return AuditActionSet 是否已赋值
+                     * 
+                     */
+                    bool AuditActionSetHasBeenSet() const;
+
+                    /**
                      * 获取以Protocol和Method为条件查询
                      * @return TypeFilters 以Protocol和Method为条件查询
                      * 
@@ -227,6 +248,12 @@ namespace TencentCloud
                      */
                     int64_t m_auditAction;
                     bool m_auditActionHasBeenSet;
+
+                    /**
+                     * 1-已执行，  2-被阻断
+                     */
+                    std::vector<int64_t> m_auditActionSet;
+                    bool m_auditActionSetHasBeenSet;
 
                     /**
                      * 以Protocol和Method为条件查询

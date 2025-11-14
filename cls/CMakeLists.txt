@@ -349,6 +349,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/LogContextInfo.h
   include/tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupRequest.h
   include/tencentcloud/cls/v20201016/model/AddMachineGroupInfoResponse.h
+  include/tencentcloud/cls/v20201016/model/UserKafkaMeta.h
   include/tencentcloud/cls/v20201016/model/MetricLabel.h
   include/tencentcloud/cls/v20201016/model/DescribeScheduledSqlInfoRequest.h
   include/tencentcloud/cls/v20201016/model/SearchLogRequest.h
@@ -695,6 +696,7 @@ set(cls_src
   src/v20201016/model/LogContextInfo.cpp
   src/v20201016/model/DeleteConfigFromMachineGroupRequest.cpp
   src/v20201016/model/AddMachineGroupInfoResponse.cpp
+  src/v20201016/model/UserKafkaMeta.cpp
   src/v20201016/model/MetricLabel.cpp
   src/v20201016/model/DescribeScheduledSqlInfoRequest.cpp
   src/v20201016/model/SearchLogRequest.cpp

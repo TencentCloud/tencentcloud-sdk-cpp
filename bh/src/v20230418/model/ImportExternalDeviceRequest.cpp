@@ -23,7 +23,8 @@ using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
 ImportExternalDeviceRequest::ImportExternalDeviceRequest() :
-    m_deviceSetHasBeenSet(false)
+    m_deviceSetHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ImportExternalDeviceRequest::ToJsonString() const
         }
     }
 
+    if (m_accountIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_accountId, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -71,6 +80,22 @@ void ImportExternalDeviceRequest::SetDeviceSet(const vector<ExternalDevice>& _de
 bool ImportExternalDeviceRequest::DeviceSetHasBeenSet() const
 {
     return m_deviceSetHasBeenSet;
+}
+
+uint64_t ImportExternalDeviceRequest::GetAccountId() const
+{
+    return m_accountId;
+}
+
+void ImportExternalDeviceRequest::SetAccountId(const uint64_t& _accountId)
+{
+    m_accountId = _accountId;
+    m_accountIdHasBeenSet = true;
+}
+
+bool ImportExternalDeviceRequest::AccountIdHasBeenSet() const
+{
+    return m_accountIdHasBeenSet;
 }
 
 

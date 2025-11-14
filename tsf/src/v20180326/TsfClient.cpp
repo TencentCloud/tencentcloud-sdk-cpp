@@ -7866,6 +7866,49 @@ TsfClient::ModifyGroupOutcomeCallable TsfClient::ModifyGroupCallable(const Modif
     return task->get_future();
 }
 
+TsfClient::ModifyGroupLaneOutcome TsfClient::ModifyGroupLane(const ModifyGroupLaneRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGroupLane");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGroupLaneResponse rsp = ModifyGroupLaneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGroupLaneOutcome(rsp);
+        else
+            return ModifyGroupLaneOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGroupLaneOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ModifyGroupLaneAsync(const ModifyGroupLaneRequest& request, const ModifyGroupLaneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGroupLane(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ModifyGroupLaneOutcomeCallable TsfClient::ModifyGroupLaneCallable(const ModifyGroupLaneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGroupLaneOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGroupLane(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::ModifyLaneOutcome TsfClient::ModifyLane(const ModifyLaneRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLane");

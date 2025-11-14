@@ -608,6 +608,31 @@ namespace TencentCloud
                      */
                     bool DeleteProtectHasBeenSet() const;
 
+                    /**
+                     * 获取表示可以升级的版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AvailableVersions 表示可以升级的版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetAvailableVersions() const;
+
+                    /**
+                     * 设置表示可以升级的版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _availableVersions 表示可以升级的版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAvailableVersions(const std::vector<std::string>& _availableVersions);
+
+                    /**
+                     * 判断参数 AvailableVersions 是否已赋值
+                     * @return AvailableVersions 是否已赋值
+                     * 
+                     */
+                    bool AvailableVersionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -768,6 +793,13 @@ namespace TencentCloud
                      */
                     bool m_deleteProtect;
                     bool m_deleteProtectHasBeenSet;
+
+                    /**
+                     * 表示可以升级的版本号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_availableVersions;
+                    bool m_availableVersionsHasBeenSet;
 
                 };
             }

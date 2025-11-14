@@ -36,10 +36,12 @@ SearchSessionRequest::SearchSessionRequest() :
     m_realNameHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_statusSetHasBeenSet(false),
     m_idHasBeenSet(false),
     m_appAssetKindSetHasBeenSet(false),
     m_appAssetUrlHasBeenSet(false),
-    m_deviceKindHasBeenSet(false)
+    m_deviceKindHasBeenSet(false),
+    m_deviceKindSetHasBeenSet(false)
 {
 }
 
@@ -154,6 +156,19 @@ string SearchSessionRequest::ToJsonString() const
         d.AddMember(iKey, m_status, allocator);
     }
 
+    if (m_statusSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_statusSet.begin(); itr != m_statusSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
     if (m_idHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -189,6 +204,19 @@ string SearchSessionRequest::ToJsonString() const
         string key = "DeviceKind";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deviceKind.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceKindSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceKindSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deviceKindSet.begin(); itr != m_deviceKindSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -407,6 +435,22 @@ bool SearchSessionRequest::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
+vector<uint64_t> SearchSessionRequest::GetStatusSet() const
+{
+    return m_statusSet;
+}
+
+void SearchSessionRequest::SetStatusSet(const vector<uint64_t>& _statusSet)
+{
+    m_statusSet = _statusSet;
+    m_statusSetHasBeenSet = true;
+}
+
+bool SearchSessionRequest::StatusSetHasBeenSet() const
+{
+    return m_statusSetHasBeenSet;
+}
+
 string SearchSessionRequest::GetId() const
 {
     return m_id;
@@ -469,6 +513,22 @@ void SearchSessionRequest::SetDeviceKind(const string& _deviceKind)
 bool SearchSessionRequest::DeviceKindHasBeenSet() const
 {
     return m_deviceKindHasBeenSet;
+}
+
+vector<string> SearchSessionRequest::GetDeviceKindSet() const
+{
+    return m_deviceKindSet;
+}
+
+void SearchSessionRequest::SetDeviceKindSet(const vector<string>& _deviceKindSet)
+{
+    m_deviceKindSet = _deviceKindSet;
+    m_deviceKindSetHasBeenSet = true;
+}
+
+bool SearchSessionRequest::DeviceKindSetHasBeenSet() const
+{
+    return m_deviceKindSetHasBeenSet;
 }
 
 

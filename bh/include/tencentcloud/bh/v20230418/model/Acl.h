@@ -733,6 +733,69 @@ namespace TencentCloud
                      */
                     bool AppAssetSetHasBeenSet() const;
 
+                    /**
+                     * 获取权限类型 0-默认普通权限 1-工单权限,2-权限工单权限
+                     * @return AclType 权限类型 0-默认普通权限 1-工单权限,2-权限工单权限
+                     * 
+                     */
+                    uint64_t GetAclType() const;
+
+                    /**
+                     * 设置权限类型 0-默认普通权限 1-工单权限,2-权限工单权限
+                     * @param _aclType 权限类型 0-默认普通权限 1-工单权限,2-权限工单权限
+                     * 
+                     */
+                    void SetAclType(const uint64_t& _aclType);
+
+                    /**
+                     * 判断参数 AclType 是否已赋值
+                     * @return AclType 是否已赋值
+                     * 
+                     */
+                    bool AclTypeHasBeenSet() const;
+
+                    /**
+                     * 获取权限所属工单id
+                     * @return TicketId 权限所属工单id
+                     * 
+                     */
+                    std::string GetTicketId() const;
+
+                    /**
+                     * 设置权限所属工单id
+                     * @param _ticketId 权限所属工单id
+                     * 
+                     */
+                    void SetTicketId(const std::string& _ticketId);
+
+                    /**
+                     * 判断参数 TicketId 是否已赋值
+                     * @return TicketId 是否已赋值
+                     * 
+                     */
+                    bool TicketIdHasBeenSet() const;
+
+                    /**
+                     * 获取权限所属工单名称
+                     * @return TicketName 权限所属工单名称
+                     * 
+                     */
+                    std::string GetTicketName() const;
+
+                    /**
+                     * 设置权限所属工单名称
+                     * @param _ticketName 权限所属工单名称
+                     * 
+                     */
+                    void SetTicketName(const std::string& _ticketName);
+
+                    /**
+                     * 判断参数 TicketName 是否已赋值
+                     * @return TicketName 是否已赋值
+                     * 
+                     */
+                    bool TicketNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -928,6 +991,24 @@ namespace TencentCloud
                      */
                     std::vector<AppAsset> m_appAssetSet;
                     bool m_appAssetSetHasBeenSet;
+
+                    /**
+                     * 权限类型 0-默认普通权限 1-工单权限,2-权限工单权限
+                     */
+                    uint64_t m_aclType;
+                    bool m_aclTypeHasBeenSet;
+
+                    /**
+                     * 权限所属工单id
+                     */
+                    std::string m_ticketId;
+                    bool m_ticketIdHasBeenSet;
+
+                    /**
+                     * 权限所属工单名称
+                     */
+                    std::string m_ticketName;
+                    bool m_ticketNameHasBeenSet;
 
                 };
             }

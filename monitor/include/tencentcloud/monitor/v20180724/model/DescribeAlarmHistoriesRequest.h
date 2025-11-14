@@ -496,6 +496,27 @@ namespace TencentCloud
                      */
                     bool AlarmTypesHasBeenSet() const;
 
+                    /**
+                     * 获取是否已屏蔽
+                     * @return ShieldStatus 是否已屏蔽
+                     * 
+                     */
+                    std::vector<std::string> GetShieldStatus() const;
+
+                    /**
+                     * 设置是否已屏蔽
+                     * @param _shieldStatus 是否已屏蔽
+                     * 
+                     */
+                    void SetShieldStatus(const std::vector<std::string>& _shieldStatus);
+
+                    /**
+                     * 判断参数 ShieldStatus 是否已赋值
+                     * @return ShieldStatus 是否已赋值
+                     * 
+                     */
+                    bool ShieldStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -626,6 +647,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_alarmTypes;
                     bool m_alarmTypesHasBeenSet;
+
+                    /**
+                     * 是否已屏蔽
+                     */
+                    std::vector<std::string> m_shieldStatus;
+                    bool m_shieldStatusHasBeenSet;
 
                 };
             }

@@ -89,6 +89,8 @@
 #include <tencentcloud/bh/v20230418/model/DescribeAccessWhiteListRulesResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAclsRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAclsResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeAssetSyncFlagRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeAssetSyncFlagResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAssetSyncStatusRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAssetSyncStatusResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeChangePwdTaskRequest.h>
@@ -117,16 +119,36 @@
 #include <tencentcloud/bh/v20230418/model/DescribeOperationTaskResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeResourcesRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeResourcesResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeSecuritySettingRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeSecuritySettingResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserGroupMembersRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserGroupMembersResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserGroupsRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserGroupsResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUsersRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUsersResponse.h>
+#include <tencentcloud/bh/v20230418/model/DisableExternalAccessRequest.h>
+#include <tencentcloud/bh/v20230418/model/DisableExternalAccessResponse.h>
+#include <tencentcloud/bh/v20230418/model/DisableIntranetAccessRequest.h>
+#include <tencentcloud/bh/v20230418/model/DisableIntranetAccessResponse.h>
+#include <tencentcloud/bh/v20230418/model/EnableExternalAccessRequest.h>
+#include <tencentcloud/bh/v20230418/model/EnableExternalAccessResponse.h>
+#include <tencentcloud/bh/v20230418/model/EnableIntranetAccessRequest.h>
+#include <tencentcloud/bh/v20230418/model/EnableIntranetAccessResponse.h>
 #include <tencentcloud/bh/v20230418/model/ImportExternalDeviceRequest.h>
 #include <tencentcloud/bh/v20230418/model/ImportExternalDeviceResponse.h>
+#include <tencentcloud/bh/v20230418/model/ModifyAccessWhiteListAutoStatusRequest.h>
+#include <tencentcloud/bh/v20230418/model/ModifyAccessWhiteListAutoStatusResponse.h>
+#include <tencentcloud/bh/v20230418/model/ModifyAccessWhiteListRuleRequest.h>
+#include <tencentcloud/bh/v20230418/model/ModifyAccessWhiteListRuleResponse.h>
+#include <tencentcloud/bh/v20230418/model/ModifyAccessWhiteListStatusRequest.h>
+#include <tencentcloud/bh/v20230418/model/ModifyAccessWhiteListStatusResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyAclRequest.h>
 #include <tencentcloud/bh/v20230418/model/ModifyAclResponse.h>
+#include <tencentcloud/bh/v20230418/model/ModifyAssetSyncFlagRequest.h>
+#include <tencentcloud/bh/v20230418/model/ModifyAssetSyncFlagResponse.h>
+#include <tencentcloud/bh/v20230418/model/ModifyAuthModeSettingRequest.h>
+#include <tencentcloud/bh/v20230418/model/ModifyAuthModeSettingResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyChangePwdTaskRequest.h>
 #include <tencentcloud/bh/v20230418/model/ModifyChangePwdTaskResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyCmdTemplateRequest.h>
@@ -141,6 +163,8 @@
 #include <tencentcloud/bh/v20230418/model/ModifyOAuthSettingResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyOperationTaskRequest.h>
 #include <tencentcloud/bh/v20230418/model/ModifyOperationTaskResponse.h>
+#include <tencentcloud/bh/v20230418/model/ModifyReconnectionSettingRequest.h>
+#include <tencentcloud/bh/v20230418/model/ModifyReconnectionSettingResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyResourceRequest.h>
 #include <tencentcloud/bh/v20230418/model/ModifyResourceResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyUserRequest.h>
@@ -294,6 +318,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAclsResponse> DescribeAclsOutcome;
                 typedef std::future<DescribeAclsOutcome> DescribeAclsOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeAclsRequest&, DescribeAclsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetSyncFlagResponse> DescribeAssetSyncFlagOutcome;
+                typedef std::future<DescribeAssetSyncFlagOutcome> DescribeAssetSyncFlagOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeAssetSyncFlagRequest&, DescribeAssetSyncFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetSyncFlagAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetSyncStatusResponse> DescribeAssetSyncStatusOutcome;
                 typedef std::future<DescribeAssetSyncStatusOutcome> DescribeAssetSyncStatusOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeAssetSyncStatusRequest&, DescribeAssetSyncStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetSyncStatusAsyncHandler;
@@ -336,6 +363,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResourcesResponse> DescribeResourcesOutcome;
                 typedef std::future<DescribeResourcesOutcome> DescribeResourcesOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeResourcesRequest&, DescribeResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecuritySettingResponse> DescribeSecuritySettingOutcome;
+                typedef std::future<DescribeSecuritySettingOutcome> DescribeSecuritySettingOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeSecuritySettingRequest&, DescribeSecuritySettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecuritySettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserGroupMembersResponse> DescribeUserGroupMembersOutcome;
                 typedef std::future<DescribeUserGroupMembersOutcome> DescribeUserGroupMembersOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeUserGroupMembersRequest&, DescribeUserGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserGroupMembersAsyncHandler;
@@ -345,12 +375,39 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUsersResponse> DescribeUsersOutcome;
                 typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeUsersRequest&, DescribeUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableExternalAccessResponse> DisableExternalAccessOutcome;
+                typedef std::future<DisableExternalAccessOutcome> DisableExternalAccessOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DisableExternalAccessRequest&, DisableExternalAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableExternalAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableIntranetAccessResponse> DisableIntranetAccessOutcome;
+                typedef std::future<DisableIntranetAccessOutcome> DisableIntranetAccessOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DisableIntranetAccessRequest&, DisableIntranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableIntranetAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableExternalAccessResponse> EnableExternalAccessOutcome;
+                typedef std::future<EnableExternalAccessOutcome> EnableExternalAccessOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::EnableExternalAccessRequest&, EnableExternalAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableExternalAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableIntranetAccessResponse> EnableIntranetAccessOutcome;
+                typedef std::future<EnableIntranetAccessOutcome> EnableIntranetAccessOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::EnableIntranetAccessRequest&, EnableIntranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableIntranetAccessAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportExternalDeviceResponse> ImportExternalDeviceOutcome;
                 typedef std::future<ImportExternalDeviceOutcome> ImportExternalDeviceOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ImportExternalDeviceRequest&, ImportExternalDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportExternalDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAccessWhiteListAutoStatusResponse> ModifyAccessWhiteListAutoStatusOutcome;
+                typedef std::future<ModifyAccessWhiteListAutoStatusOutcome> ModifyAccessWhiteListAutoStatusOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::ModifyAccessWhiteListAutoStatusRequest&, ModifyAccessWhiteListAutoStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessWhiteListAutoStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAccessWhiteListRuleResponse> ModifyAccessWhiteListRuleOutcome;
+                typedef std::future<ModifyAccessWhiteListRuleOutcome> ModifyAccessWhiteListRuleOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::ModifyAccessWhiteListRuleRequest&, ModifyAccessWhiteListRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessWhiteListRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAccessWhiteListStatusResponse> ModifyAccessWhiteListStatusOutcome;
+                typedef std::future<ModifyAccessWhiteListStatusOutcome> ModifyAccessWhiteListStatusOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::ModifyAccessWhiteListStatusRequest&, ModifyAccessWhiteListStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessWhiteListStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAclResponse> ModifyAclOutcome;
                 typedef std::future<ModifyAclOutcome> ModifyAclOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ModifyAclRequest&, ModifyAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAssetSyncFlagResponse> ModifyAssetSyncFlagOutcome;
+                typedef std::future<ModifyAssetSyncFlagOutcome> ModifyAssetSyncFlagOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::ModifyAssetSyncFlagRequest&, ModifyAssetSyncFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAssetSyncFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAuthModeSettingResponse> ModifyAuthModeSettingOutcome;
+                typedef std::future<ModifyAuthModeSettingOutcome> ModifyAuthModeSettingOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::ModifyAuthModeSettingRequest&, ModifyAuthModeSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuthModeSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyChangePwdTaskResponse> ModifyChangePwdTaskOutcome;
                 typedef std::future<ModifyChangePwdTaskOutcome> ModifyChangePwdTaskOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ModifyChangePwdTaskRequest&, ModifyChangePwdTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChangePwdTaskAsyncHandler;
@@ -372,6 +429,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyOperationTaskResponse> ModifyOperationTaskOutcome;
                 typedef std::future<ModifyOperationTaskOutcome> ModifyOperationTaskOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ModifyOperationTaskRequest&, ModifyOperationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOperationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyReconnectionSettingResponse> ModifyReconnectionSettingOutcome;
+                typedef std::future<ModifyReconnectionSettingOutcome> ModifyReconnectionSettingOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::ModifyReconnectionSettingRequest&, ModifyReconnectionSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReconnectionSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyResourceResponse> ModifyResourceOutcome;
                 typedef std::future<ModifyResourceOutcome> ModifyResourceOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ModifyResourceRequest&, ModifyResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceAsyncHandler;
@@ -733,6 +793,15 @@ namespace TencentCloud
                 DescribeAclsOutcomeCallable DescribeAclsCallable(const Model::DescribeAclsRequest& request);
 
                 /**
+                 *查询资产自动同步开关
+                 * @param req DescribeAssetSyncFlagRequest
+                 * @return DescribeAssetSyncFlagOutcome
+                 */
+                DescribeAssetSyncFlagOutcome DescribeAssetSyncFlag(const Model::DescribeAssetSyncFlagRequest &request);
+                void DescribeAssetSyncFlagAsync(const Model::DescribeAssetSyncFlagRequest& request, const DescribeAssetSyncFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetSyncFlagOutcomeCallable DescribeAssetSyncFlagCallable(const Model::DescribeAssetSyncFlagRequest& request);
+
+                /**
                  *查询资产同步状态
                  * @param req DescribeAssetSyncStatusRequest
                  * @return DescribeAssetSyncStatusOutcome
@@ -859,6 +928,15 @@ namespace TencentCloud
                 DescribeResourcesOutcomeCallable DescribeResourcesCallable(const Model::DescribeResourcesRequest& request);
 
                 /**
+                 *查询安全配置信息
+                 * @param req DescribeSecuritySettingRequest
+                 * @return DescribeSecuritySettingOutcome
+                 */
+                DescribeSecuritySettingOutcome DescribeSecuritySetting(const Model::DescribeSecuritySettingRequest &request);
+                void DescribeSecuritySettingAsync(const Model::DescribeSecuritySettingRequest& request, const DescribeSecuritySettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecuritySettingOutcomeCallable DescribeSecuritySettingCallable(const Model::DescribeSecuritySettingRequest& request);
+
+                /**
                  *查询用户组成员列表
                  * @param req DescribeUserGroupMembersRequest
                  * @return DescribeUserGroupMembersOutcome
@@ -886,6 +964,42 @@ namespace TencentCloud
                 DescribeUsersOutcomeCallable DescribeUsersCallable(const Model::DescribeUsersRequest& request);
 
                 /**
+                 *关闭公网访问堡垒机
+                 * @param req DisableExternalAccessRequest
+                 * @return DisableExternalAccessOutcome
+                 */
+                DisableExternalAccessOutcome DisableExternalAccess(const Model::DisableExternalAccessRequest &request);
+                void DisableExternalAccessAsync(const Model::DisableExternalAccessRequest& request, const DisableExternalAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableExternalAccessOutcomeCallable DisableExternalAccessCallable(const Model::DisableExternalAccessRequest& request);
+
+                /**
+                 *关闭内网访问
+                 * @param req DisableIntranetAccessRequest
+                 * @return DisableIntranetAccessOutcome
+                 */
+                DisableIntranetAccessOutcome DisableIntranetAccess(const Model::DisableIntranetAccessRequest &request);
+                void DisableIntranetAccessAsync(const Model::DisableIntranetAccessRequest& request, const DisableIntranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableIntranetAccessOutcomeCallable DisableIntranetAccessCallable(const Model::DisableIntranetAccessRequest& request);
+
+                /**
+                 *开启公网访问堡垒机
+                 * @param req EnableExternalAccessRequest
+                 * @return EnableExternalAccessOutcome
+                 */
+                EnableExternalAccessOutcome EnableExternalAccess(const Model::EnableExternalAccessRequest &request);
+                void EnableExternalAccessAsync(const Model::EnableExternalAccessRequest& request, const EnableExternalAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableExternalAccessOutcomeCallable EnableExternalAccessCallable(const Model::EnableExternalAccessRequest& request);
+
+                /**
+                 *开通内网访问
+                 * @param req EnableIntranetAccessRequest
+                 * @return EnableIntranetAccessOutcome
+                 */
+                EnableIntranetAccessOutcome EnableIntranetAccess(const Model::EnableIntranetAccessRequest &request);
+                void EnableIntranetAccessAsync(const Model::EnableIntranetAccessRequest& request, const EnableIntranetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableIntranetAccessOutcomeCallable EnableIntranetAccessCallable(const Model::EnableIntranetAccessRequest& request);
+
+                /**
                  *导入外部资产信息
                  * @param req ImportExternalDeviceRequest
                  * @return ImportExternalDeviceOutcome
@@ -895,6 +1009,33 @@ namespace TencentCloud
                 ImportExternalDeviceOutcomeCallable ImportExternalDeviceCallable(const Model::ImportExternalDeviceRequest& request);
 
                 /**
+                 *修改访问白名单自动添加IP状态：开启或关闭自动添加IP
+                 * @param req ModifyAccessWhiteListAutoStatusRequest
+                 * @return ModifyAccessWhiteListAutoStatusOutcome
+                 */
+                ModifyAccessWhiteListAutoStatusOutcome ModifyAccessWhiteListAutoStatus(const Model::ModifyAccessWhiteListAutoStatusRequest &request);
+                void ModifyAccessWhiteListAutoStatusAsync(const Model::ModifyAccessWhiteListAutoStatusRequest& request, const ModifyAccessWhiteListAutoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccessWhiteListAutoStatusOutcomeCallable ModifyAccessWhiteListAutoStatusCallable(const Model::ModifyAccessWhiteListAutoStatusRequest& request);
+
+                /**
+                 *修改访问白名单规则
+                 * @param req ModifyAccessWhiteListRuleRequest
+                 * @return ModifyAccessWhiteListRuleOutcome
+                 */
+                ModifyAccessWhiteListRuleOutcome ModifyAccessWhiteListRule(const Model::ModifyAccessWhiteListRuleRequest &request);
+                void ModifyAccessWhiteListRuleAsync(const Model::ModifyAccessWhiteListRuleRequest& request, const ModifyAccessWhiteListRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccessWhiteListRuleOutcomeCallable ModifyAccessWhiteListRuleCallable(const Model::ModifyAccessWhiteListRuleRequest& request);
+
+                /**
+                 *修改访问白名单状态：开启或关闭放开全部来源IP。
+                 * @param req ModifyAccessWhiteListStatusRequest
+                 * @return ModifyAccessWhiteListStatusOutcome
+                 */
+                ModifyAccessWhiteListStatusOutcome ModifyAccessWhiteListStatus(const Model::ModifyAccessWhiteListStatusRequest &request);
+                void ModifyAccessWhiteListStatusAsync(const Model::ModifyAccessWhiteListStatusRequest& request, const ModifyAccessWhiteListStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccessWhiteListStatusOutcomeCallable ModifyAccessWhiteListStatusCallable(const Model::ModifyAccessWhiteListStatusRequest& request);
+
+                /**
                  *修改访问权限
                  * @param req ModifyAclRequest
                  * @return ModifyAclOutcome
@@ -902,6 +1043,24 @@ namespace TencentCloud
                 ModifyAclOutcome ModifyAcl(const Model::ModifyAclRequest &request);
                 void ModifyAclAsync(const Model::ModifyAclRequest& request, const ModifyAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAclOutcomeCallable ModifyAclCallable(const Model::ModifyAclRequest& request);
+
+                /**
+                 *修改资产自动同步开关
+                 * @param req ModifyAssetSyncFlagRequest
+                 * @return ModifyAssetSyncFlagOutcome
+                 */
+                ModifyAssetSyncFlagOutcome ModifyAssetSyncFlag(const Model::ModifyAssetSyncFlagRequest &request);
+                void ModifyAssetSyncFlagAsync(const Model::ModifyAssetSyncFlagRequest& request, const ModifyAssetSyncFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAssetSyncFlagOutcomeCallable ModifyAssetSyncFlagCallable(const Model::ModifyAssetSyncFlagRequest& request);
+
+                /**
+                 *修改认证方式配置信息
+                 * @param req ModifyAuthModeSettingRequest
+                 * @return ModifyAuthModeSettingOutcome
+                 */
+                ModifyAuthModeSettingOutcome ModifyAuthModeSetting(const Model::ModifyAuthModeSettingRequest &request);
+                void ModifyAuthModeSettingAsync(const Model::ModifyAuthModeSettingRequest& request, const ModifyAuthModeSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAuthModeSettingOutcomeCallable ModifyAuthModeSettingCallable(const Model::ModifyAuthModeSettingRequest& request);
 
                 /**
                  *更新修改密码任务
@@ -965,6 +1124,15 @@ namespace TencentCloud
                 ModifyOperationTaskOutcome ModifyOperationTask(const Model::ModifyOperationTaskRequest &request);
                 void ModifyOperationTaskAsync(const Model::ModifyOperationTaskRequest& request, const ModifyOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyOperationTaskOutcomeCallable ModifyOperationTaskCallable(const Model::ModifyOperationTaskRequest& request);
+
+                /**
+                 *修改运维资产连接重连次数
+                 * @param req ModifyReconnectionSettingRequest
+                 * @return ModifyReconnectionSettingOutcome
+                 */
+                ModifyReconnectionSettingOutcome ModifyReconnectionSetting(const Model::ModifyReconnectionSettingRequest &request);
+                void ModifyReconnectionSettingAsync(const Model::ModifyReconnectionSettingRequest& request, const ModifyReconnectionSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyReconnectionSettingOutcomeCallable ModifyReconnectionSettingCallable(const Model::ModifyReconnectionSettingRequest& request);
 
                 /**
                  *资源变配

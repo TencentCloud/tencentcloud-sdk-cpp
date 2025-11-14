@@ -167,6 +167,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTTopicListResponse.h
   include/tencentcloud/trocket/v20230308/model/MQTTUserItem.h
   include/tencentcloud/trocket/v20230308/model/ModifyInstanceEndpointRequest.h
+  include/tencentcloud/trocket/v20230308/model/ZoneScheduledItem.h
   include/tencentcloud/trocket/v20230308/model/ChangeMigratingTopicToNextStageRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTUserListRequest.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceRequest.h
@@ -351,6 +352,7 @@ set(trocket_src
   src/v20230308/model/DescribeMQTTTopicListResponse.cpp
   src/v20230308/model/MQTTUserItem.cpp
   src/v20230308/model/ModifyInstanceEndpointRequest.cpp
+  src/v20230308/model/ZoneScheduledItem.cpp
   src/v20230308/model/ChangeMigratingTopicToNextStageRequest.cpp
   src/v20230308/model/DescribeMQTTUserListRequest.cpp
   src/v20230308/model/ModifyMQTTInstanceRequest.cpp

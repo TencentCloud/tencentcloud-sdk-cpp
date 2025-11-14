@@ -33,7 +33,8 @@ DescribeBiddingSuccessfulDetailResponse::DescribeBiddingSuccessfulDetailResponse
     m_payEndTimeHasBeenSet(false),
     m_biddingBondRefundHasBeenSet(false),
     m_biddingBondPriceHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_modifyOwnerEndTimeHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome DescribeBiddingSuccessfulDetailResponse::Deserialize(const s
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ModifyOwnerEndTime") && !rsp["ModifyOwnerEndTime"].IsNull())
+    {
+        if (!rsp["ModifyOwnerEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyOwnerEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyOwnerEndTime = string(rsp["ModifyOwnerEndTime"].GetString());
+        m_modifyOwnerEndTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ string DescribeBiddingSuccessfulDetailResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_modifyOwnerEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyOwnerEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyOwnerEndTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +390,16 @@ uint64_t DescribeBiddingSuccessfulDetailResponse::GetStatus() const
 bool DescribeBiddingSuccessfulDetailResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribeBiddingSuccessfulDetailResponse::GetModifyOwnerEndTime() const
+{
+    return m_modifyOwnerEndTime;
+}
+
+bool DescribeBiddingSuccessfulDetailResponse::ModifyOwnerEndTimeHasBeenSet() const
+{
+    return m_modifyOwnerEndTimeHasBeenSet;
 }
 
 

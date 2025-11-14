@@ -235,6 +235,132 @@ namespace TencentCloud
                      */
                     bool SSLCertNameHasBeenSet() const;
 
+                    /**
+                     * 获取资产实例id
+                     * @return InstanceId 资产实例id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置资产实例id
+                     * @param _instanceId 资产实例id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取资产所属地域
+                     * @return ApCode 资产所属地域
+                     * 
+                     */
+                    std::string GetApCode() const;
+
+                    /**
+                     * 设置资产所属地域
+                     * @param _apCode 资产所属地域
+                     * 
+                     */
+                    void SetApCode(const std::string& _apCode);
+
+                    /**
+                     * 判断参数 ApCode 是否已赋值
+                     * @return ApCode 是否已赋值
+                     * 
+                     */
+                    bool ApCodeHasBeenSet() const;
+
+                    /**
+                     * 获取地域名称
+                     * @return ApName 地域名称
+                     * 
+                     */
+                    std::string GetApName() const;
+
+                    /**
+                     * 设置地域名称
+                     * @param _apName 地域名称
+                     * 
+                     */
+                    void SetApName(const std::string& _apName);
+
+                    /**
+                     * 判断参数 ApName 是否已赋值
+                     * @return ApName 是否已赋值
+                     * 
+                     */
+                    bool ApNameHasBeenSet() const;
+
+                    /**
+                     * 获取资产所属VPC
+                     * @return VpcId 资产所属VPC
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置资产所属VPC
+                     * @param _vpcId 资产所属VPC
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取资产所属子网
+                     * @return SubnetId 资产所属子网
+                     * 
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置资产所属子网
+                     * @param _subnetId 资产所属子网
+                     * 
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     * 
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取公网IP
+                     * @return PublicIp 公网IP
+                     * 
+                     */
+                    std::string GetPublicIp() const;
+
+                    /**
+                     * 设置公网IP
+                     * @param _publicIp 公网IP
+                     * 
+                     */
+                    void SetPublicIp(const std::string& _publicIp);
+
+                    /**
+                     * 判断参数 PublicIp 是否已赋值
+                     * @return PublicIp 是否已赋值
+                     * 
+                     */
+                    bool PublicIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +416,42 @@ namespace TencentCloud
                      */
                     std::string m_sSLCertName;
                     bool m_sSLCertNameHasBeenSet;
+
+                    /**
+                     * 资产实例id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 资产所属地域
+                     */
+                    std::string m_apCode;
+                    bool m_apCodeHasBeenSet;
+
+                    /**
+                     * 地域名称
+                     */
+                    std::string m_apName;
+                    bool m_apNameHasBeenSet;
+
+                    /**
+                     * 资产所属VPC
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 资产所属子网
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 公网IP
+                     */
+                    std::string m_publicIp;
+                    bool m_publicIpHasBeenSet;
 
                 };
             }

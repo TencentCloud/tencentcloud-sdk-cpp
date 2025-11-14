@@ -29,6 +29,7 @@ SearchFileBySidRequest::SearchFileBySidRequest() :
     m_fileNameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_auditActionHasBeenSet(false),
+    m_auditActionSetHasBeenSet(false),
     m_typeFiltersHasBeenSet(false)
 {
 }
@@ -86,6 +87,19 @@ string SearchFileBySidRequest::ToJsonString() const
         string key = "AuditAction";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_auditAction, allocator);
+    }
+
+    if (m_auditActionSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuditActionSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_auditActionSet.begin(); itr != m_auditActionSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
     if (m_typeFiltersHasBeenSet)
@@ -205,6 +219,22 @@ void SearchFileBySidRequest::SetAuditAction(const int64_t& _auditAction)
 bool SearchFileBySidRequest::AuditActionHasBeenSet() const
 {
     return m_auditActionHasBeenSet;
+}
+
+vector<int64_t> SearchFileBySidRequest::GetAuditActionSet() const
+{
+    return m_auditActionSet;
+}
+
+void SearchFileBySidRequest::SetAuditActionSet(const vector<int64_t>& _auditActionSet)
+{
+    m_auditActionSet = _auditActionSet;
+    m_auditActionSetHasBeenSet = true;
+}
+
+bool SearchFileBySidRequest::AuditActionSetHasBeenSet() const
+{
+    return m_auditActionSetHasBeenSet;
 }
 
 vector<SearchFileTypeFilter> SearchFileBySidRequest::GetTypeFilters() const

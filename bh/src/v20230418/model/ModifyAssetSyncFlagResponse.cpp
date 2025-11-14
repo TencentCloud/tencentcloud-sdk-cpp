@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ai3d/v20250513/model/SubmitHunyuanTo3DJobResponse.h>
+#include <tencentcloud/bh/v20230418/model/ModifyAssetSyncFlagResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ai3d::V20250513::Model;
+using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
-SubmitHunyuanTo3DJobResponse::SubmitHunyuanTo3DJobResponse() :
-    m_jobIdHasBeenSet(false)
+ModifyAssetSyncFlagResponse::ModifyAssetSyncFlagResponse()
 {
 }
 
-CoreInternalOutcome SubmitHunyuanTo3DJobResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyAssetSyncFlagResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,33 +61,15 @@ CoreInternalOutcome SubmitHunyuanTo3DJobResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
-    {
-        if (!rsp["JobId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `JobId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_jobId = string(rsp["JobId"].GetString());
-        m_jobIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string SubmitHunyuanTo3DJobResponse::ToJsonString() const
+string ModifyAssetSyncFlagResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_jobIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "JobId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string SubmitHunyuanTo3DJobResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string SubmitHunyuanTo3DJobResponse::GetJobId() const
-{
-    return m_jobId;
-}
-
-bool SubmitHunyuanTo3DJobResponse::JobIdHasBeenSet() const
-{
-    return m_jobIdHasBeenSet;
-}
 
 

@@ -297,6 +297,69 @@ namespace TencentCloud
                     bool DepartmentIdHasBeenSet() const;
 
                     /**
+                     * 获取资产所属云账号id
+                     * @return AccountIdSet 资产所属云账号id
+                     * 
+                     */
+                    std::vector<uint64_t> GetAccountIdSet() const;
+
+                    /**
+                     * 设置资产所属云账号id
+                     * @param _accountIdSet 资产所属云账号id
+                     * 
+                     */
+                    void SetAccountIdSet(const std::vector<uint64_t>& _accountIdSet);
+
+                    /**
+                     * 判断参数 AccountIdSet 是否已赋值
+                     * @return AccountIdSet 是否已赋值
+                     * 
+                     */
+                    bool AccountIdSetHasBeenSet() const;
+
+                    /**
+                     * 获取云厂商类型，1-腾讯云，2-阿里云
+                     * @return ProviderTypeSet 云厂商类型，1-腾讯云，2-阿里云
+                     * 
+                     */
+                    std::vector<uint64_t> GetProviderTypeSet() const;
+
+                    /**
+                     * 设置云厂商类型，1-腾讯云，2-阿里云
+                     * @param _providerTypeSet 云厂商类型，1-腾讯云，2-阿里云
+                     * 
+                     */
+                    void SetProviderTypeSet(const std::vector<uint64_t>& _providerTypeSet);
+
+                    /**
+                     * 判断参数 ProviderTypeSet 是否已赋值
+                     * @return ProviderTypeSet 是否已赋值
+                     * 
+                     */
+                    bool ProviderTypeSetHasBeenSet() const;
+
+                    /**
+                     * 获取同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * @return CloudDeviceStatusSet 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * 
+                     */
+                    std::vector<uint64_t> GetCloudDeviceStatusSet() const;
+
+                    /**
+                     * 设置同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * @param _cloudDeviceStatusSet 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * 
+                     */
+                    void SetCloudDeviceStatusSet(const std::vector<uint64_t>& _cloudDeviceStatusSet);
+
+                    /**
+                     * 判断参数 CloudDeviceStatusSet 是否已赋值
+                     * @return CloudDeviceStatusSet 是否已赋值
+                     * 
+                     */
+                    bool CloudDeviceStatusSetHasBeenSet() const;
+
+                    /**
                      * 获取过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系
                      * @return TagFilters 过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系
                      * 
@@ -415,6 +478,24 @@ BindingStatus 绑定状态
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
+
+                    /**
+                     * 资产所属云账号id
+                     */
+                    std::vector<uint64_t> m_accountIdSet;
+                    bool m_accountIdSetHasBeenSet;
+
+                    /**
+                     * 云厂商类型，1-腾讯云，2-阿里云
+                     */
+                    std::vector<uint64_t> m_providerTypeSet;
+                    bool m_providerTypeSetHasBeenSet;
+
+                    /**
+                     * 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     */
+                    std::vector<uint64_t> m_cloudDeviceStatusSet;
+                    bool m_cloudDeviceStatusSetHasBeenSet;
 
                     /**
                      * 过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系

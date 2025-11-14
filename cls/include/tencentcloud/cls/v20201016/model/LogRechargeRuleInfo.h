@@ -672,15 +672,15 @@ namespace TencentCloud
                     bool MetadataHasBeenSet() const;
 
                     /**
-                     * 获取日志Key列表，RechargeType为full_regex_log时必填
-                     * @return Keys 日志Key列表，RechargeType为full_regex_log时必填
+                     * 获取日志Key列表，RechargeType为full_regex_log、delimiter_log时必填
+                     * @return Keys 日志Key列表，RechargeType为full_regex_log、delimiter_log时必填
                      * 
                      */
                     std::vector<std::string> GetKeys() const;
 
                     /**
-                     * 设置日志Key列表，RechargeType为full_regex_log时必填
-                     * @param _keys 日志Key列表，RechargeType为full_regex_log时必填
+                     * 设置日志Key列表，RechargeType为full_regex_log、delimiter_log时必填
+                     * @param _keys 日志Key列表，RechargeType为full_regex_log、delimiter_log时必填
                      * 
                      */
                     void SetKeys(const std::vector<std::string>& _keys);
@@ -712,6 +712,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ParseArrayHasBeenSet() const;
+
+                    /**
+                     * 获取分隔符解析模式-分隔符
+当解析格式为分隔符提取时，该字段必填
+                     * @return Delimiter 分隔符解析模式-分隔符
+当解析格式为分隔符提取时，该字段必填
+                     * 
+                     */
+                    std::string GetDelimiter() const;
+
+                    /**
+                     * 设置分隔符解析模式-分隔符
+当解析格式为分隔符提取时，该字段必填
+                     * @param _delimiter 分隔符解析模式-分隔符
+当解析格式为分隔符提取时，该字段必填
+                     * 
+                     */
+                    void SetDelimiter(const std::string& _delimiter);
+
+                    /**
+                     * 判断参数 Delimiter 是否已赋值
+                     * @return Delimiter 是否已赋值
+                     * 
+                     */
+                    bool DelimiterHasBeenSet() const;
 
                 private:
 
@@ -882,7 +907,7 @@ namespace TencentCloud
                     bool m_metadataHasBeenSet;
 
                     /**
-                     * 日志Key列表，RechargeType为full_regex_log时必填
+                     * 日志Key列表，RechargeType为full_regex_log、delimiter_log时必填
                      */
                     std::vector<std::string> m_keys;
                     bool m_keysHasBeenSet;
@@ -892,6 +917,13 @@ namespace TencentCloud
                      */
                     bool m_parseArray;
                     bool m_parseArrayHasBeenSet;
+
+                    /**
+                     * 分隔符解析模式-分隔符
+当解析格式为分隔符提取时，该字段必填
+                     */
+                    std::string m_delimiter;
+                    bool m_delimiterHasBeenSet;
 
                 };
             }

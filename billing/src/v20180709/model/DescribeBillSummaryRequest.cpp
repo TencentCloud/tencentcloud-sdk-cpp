@@ -25,7 +25,8 @@ using namespace std;
 DescribeBillSummaryRequest::DescribeBillSummaryRequest() :
     m_monthHasBeenSet(false),
     m_groupTypeHasBeenSet(false),
-    m_tagKeyHasBeenSet(false)
+    m_tagKeyHasBeenSet(false),
+    m_operateUinHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DescribeBillSummaryRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_operateUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operateUin.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DescribeBillSummaryRequest::SetTagKey(const vector<string>& _tagKey)
 bool DescribeBillSummaryRequest::TagKeyHasBeenSet() const
 {
     return m_tagKeyHasBeenSet;
+}
+
+string DescribeBillSummaryRequest::GetOperateUin() const
+{
+    return m_operateUin;
+}
+
+void DescribeBillSummaryRequest::SetOperateUin(const string& _operateUin)
+{
+    m_operateUin = _operateUin;
+    m_operateUinHasBeenSet = true;
+}
+
+bool DescribeBillSummaryRequest::OperateUinHasBeenSet() const
+{
+    return m_operateUinHasBeenSet;
 }
 
 

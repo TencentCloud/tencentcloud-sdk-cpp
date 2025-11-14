@@ -33,7 +33,8 @@ CreateKafkaRechargeRequest::CreateKafkaRechargeRequest() :
     m_serverAddrHasBeenSet(false),
     m_isEncryptionAddrHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_consumerGroupNameHasBeenSet(false)
+    m_consumerGroupNameHasBeenSet(false),
+    m_userKafkaMetaHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,15 @@ string CreateKafkaRechargeRequest::ToJsonString() const
         string key = "ConsumerGroupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_consumerGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userKafkaMetaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserKafkaMeta";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_userKafkaMeta.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -316,6 +326,22 @@ void CreateKafkaRechargeRequest::SetConsumerGroupName(const string& _consumerGro
 bool CreateKafkaRechargeRequest::ConsumerGroupNameHasBeenSet() const
 {
     return m_consumerGroupNameHasBeenSet;
+}
+
+UserKafkaMeta CreateKafkaRechargeRequest::GetUserKafkaMeta() const
+{
+    return m_userKafkaMeta;
+}
+
+void CreateKafkaRechargeRequest::SetUserKafkaMeta(const UserKafkaMeta& _userKafkaMeta)
+{
+    m_userKafkaMeta = _userKafkaMeta;
+    m_userKafkaMetaHasBeenSet = true;
+}
+
+bool CreateKafkaRechargeRequest::UserKafkaMetaHasBeenSet() const
+{
+    return m_userKafkaMetaHasBeenSet;
 }
 
 

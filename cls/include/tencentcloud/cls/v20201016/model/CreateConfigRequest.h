@@ -288,6 +288,27 @@ namespace TencentCloud
                      */
                     bool AdvancedConfigHasBeenSet() const;
 
+                    /**
+                     * 获取日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file
+                     * @return InputType 日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file
+                     * 
+                     */
+                    std::string GetInputType() const;
+
+                    /**
+                     * 设置日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file
+                     * @param _inputType 日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file
+                     * 
+                     */
+                    void SetInputType(const std::string& _inputType);
+
+                    /**
+                     * 判断参数 InputType 是否已赋值
+                     * @return InputType 是否已赋值
+                     * 
+                     */
+                    bool InputTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,6 +377,12 @@ namespace TencentCloud
                      */
                     std::string m_advancedConfig;
                     bool m_advancedConfigHasBeenSet;
+
+                    /**
+                     * 日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file
+                     */
+                    std::string m_inputType;
+                    bool m_inputTypeHasBeenSet;
 
                 };
             }

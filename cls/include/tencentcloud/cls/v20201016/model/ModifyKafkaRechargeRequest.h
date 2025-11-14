@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/KafkaProtocolInfo.h>
 #include <tencentcloud/cls/v20201016/model/LogRechargeRuleInfo.h>
+#include <tencentcloud/cls/v20201016/model/UserKafkaMeta.h>
 
 
 namespace TencentCloud
@@ -324,6 +325,27 @@ namespace TencentCloud
                      */
                     bool StatusControlHasBeenSet() const;
 
+                    /**
+                     * 获取用户kafka拓展信息
+                     * @return UserKafkaMeta 用户kafka拓展信息
+                     * 
+                     */
+                    UserKafkaMeta GetUserKafkaMeta() const;
+
+                    /**
+                     * 设置用户kafka拓展信息
+                     * @param _userKafkaMeta 用户kafka拓展信息
+                     * 
+                     */
+                    void SetUserKafkaMeta(const UserKafkaMeta& _userKafkaMeta);
+
+                    /**
+                     * 判断参数 UserKafkaMeta 是否已赋值
+                     * @return UserKafkaMeta 是否已赋值
+                     * 
+                     */
+                    bool UserKafkaMetaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -404,6 +426,12 @@ namespace TencentCloud
                      */
                     uint64_t m_statusControl;
                     bool m_statusControlHasBeenSet;
+
+                    /**
+                     * 用户kafka拓展信息
+                     */
+                    UserKafkaMeta m_userKafkaMeta;
+                    bool m_userKafkaMetaHasBeenSet;
 
                 };
             }

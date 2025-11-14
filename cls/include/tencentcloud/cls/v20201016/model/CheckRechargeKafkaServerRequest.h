@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/KafkaProtocolInfo.h>
+#include <tencentcloud/cls/v20201016/model/UserKafkaMeta.h>
 
 
 namespace TencentCloud
@@ -164,6 +165,27 @@ KafkaType为1时，ServerAddr必填
                      */
                     bool ProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取用户kafka拓展信息
+                     * @return UserKafkaMeta 用户kafka拓展信息
+                     * 
+                     */
+                    UserKafkaMeta GetUserKafkaMeta() const;
+
+                    /**
+                     * 设置用户kafka拓展信息
+                     * @param _userKafkaMeta 用户kafka拓展信息
+                     * 
+                     */
+                    void SetUserKafkaMeta(const UserKafkaMeta& _userKafkaMeta);
+
+                    /**
+                     * 判断参数 UserKafkaMeta 是否已赋值
+                     * @return UserKafkaMeta 是否已赋值
+                     * 
+                     */
+                    bool UserKafkaMetaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -199,6 +221,12 @@ KafkaType为1时，ServerAddr必填
                      */
                     KafkaProtocolInfo m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * 用户kafka拓展信息
+                     */
+                    UserKafkaMeta m_userKafkaMeta;
+                    bool m_userKafkaMetaHasBeenSet;
 
                 };
             }

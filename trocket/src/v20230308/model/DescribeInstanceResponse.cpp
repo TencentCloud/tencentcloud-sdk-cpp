@@ -54,7 +54,9 @@ DescribeInstanceResponse::DescribeInstanceResponse() :
     m_aclEnabledHasBeenSet(false),
     m_topicNumLowerLimitHasBeenSet(false),
     m_topicNumUpperLimitHasBeenSet(false),
-    m_zoneIdsHasBeenSet(false)
+    m_zoneIdsHasBeenSet(false),
+    m_nodeCountHasBeenSet(false),
+    m_zoneScheduledListHasBeenSet(false)
 {
 }
 
@@ -425,6 +427,36 @@ CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
         m_zoneIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NodeCount") && !rsp["NodeCount"].IsNull())
+    {
+        if (!rsp["NodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeCount = rsp["NodeCount"].GetInt64();
+        m_nodeCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ZoneScheduledList") && !rsp["ZoneScheduledList"].IsNull())
+    {
+        if (!rsp["ZoneScheduledList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ZoneScheduledList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ZoneScheduledList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ZoneScheduledItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_zoneScheduledList.push_back(item);
+        }
+        m_zoneScheduledListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -699,6 +731,29 @@ string DescribeInstanceResponse::ToJsonString() const
         for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_nodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodeCount, allocator);
+    }
+
+    if (m_zoneScheduledListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneScheduledList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_zoneScheduledList.begin(); itr != m_zoneScheduledList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -1022,6 +1077,26 @@ vector<int64_t> DescribeInstanceResponse::GetZoneIds() const
 bool DescribeInstanceResponse::ZoneIdsHasBeenSet() const
 {
     return m_zoneIdsHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetNodeCount() const
+{
+    return m_nodeCount;
+}
+
+bool DescribeInstanceResponse::NodeCountHasBeenSet() const
+{
+    return m_nodeCountHasBeenSet;
+}
+
+vector<ZoneScheduledItem> DescribeInstanceResponse::GetZoneScheduledList() const
+{
+    return m_zoneScheduledList;
+}
+
+bool DescribeInstanceResponse::ZoneScheduledListHasBeenSet() const
+{
+    return m_zoneScheduledListHasBeenSet;
 }
 
 

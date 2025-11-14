@@ -52,7 +52,10 @@ Acl::Acl() :
     m_aCTemplateSetHasBeenSet(false),
     m_whiteCmdsHasBeenSet(false),
     m_allowKeyboardLoggerHasBeenSet(false),
-    m_appAssetSetHasBeenSet(false)
+    m_appAssetSetHasBeenSet(false),
+    m_aclTypeHasBeenSet(false),
+    m_ticketIdHasBeenSet(false),
+    m_ticketNameHasBeenSet(false)
 {
 }
 
@@ -464,6 +467,36 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
         m_appAssetSetHasBeenSet = true;
     }
 
+    if (value.HasMember("AclType") && !value["AclType"].IsNull())
+    {
+        if (!value["AclType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Acl.AclType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aclType = value["AclType"].GetUint64();
+        m_aclTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TicketId") && !value["TicketId"].IsNull())
+    {
+        if (!value["TicketId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Acl.TicketId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ticketId = string(value["TicketId"].GetString());
+        m_ticketIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TicketName") && !value["TicketName"].IsNull())
+    {
+        if (!value["TicketName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Acl.TicketName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ticketName = string(value["TicketName"].GetString());
+        m_ticketNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -785,6 +818,30 @@ void Acl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_aclTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AclType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aclType, allocator);
+    }
+
+    if (m_ticketIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TicketId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ticketId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ticketNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TicketName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ticketName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1300,5 +1357,53 @@ void Acl::SetAppAssetSet(const vector<AppAsset>& _appAssetSet)
 bool Acl::AppAssetSetHasBeenSet() const
 {
     return m_appAssetSetHasBeenSet;
+}
+
+uint64_t Acl::GetAclType() const
+{
+    return m_aclType;
+}
+
+void Acl::SetAclType(const uint64_t& _aclType)
+{
+    m_aclType = _aclType;
+    m_aclTypeHasBeenSet = true;
+}
+
+bool Acl::AclTypeHasBeenSet() const
+{
+    return m_aclTypeHasBeenSet;
+}
+
+string Acl::GetTicketId() const
+{
+    return m_ticketId;
+}
+
+void Acl::SetTicketId(const string& _ticketId)
+{
+    m_ticketId = _ticketId;
+    m_ticketIdHasBeenSet = true;
+}
+
+bool Acl::TicketIdHasBeenSet() const
+{
+    return m_ticketIdHasBeenSet;
+}
+
+string Acl::GetTicketName() const
+{
+    return m_ticketName;
+}
+
+void Acl::SetTicketName(const string& _ticketName)
+{
+    m_ticketName = _ticketName;
+    m_ticketNameHasBeenSet = true;
+}
+
+bool Acl::TicketNameHasBeenSet() const
+{
+    return m_ticketNameHasBeenSet;
 }
 

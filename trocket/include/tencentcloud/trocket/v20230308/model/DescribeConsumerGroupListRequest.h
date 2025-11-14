@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trocket/v20230308/model/TagFilter.h>
 #include <tencentcloud/trocket/v20230308/model/Filter.h>
 
 
@@ -63,6 +64,27 @@ namespace TencentCloud
                      * 
                      */
                     bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取标签过滤器
+                     * @return TagFilters 标签过滤器
+                     * 
+                     */
+                    std::vector<TagFilter> GetTagFilters() const;
+
+                    /**
+                     * 设置标签过滤器
+                     * @param _tagFilters 标签过滤器
+                     * 
+                     */
+                    void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
+
+                    /**
+                     * 判断参数 TagFilters 是否已赋值
+                     * @return TagFilters 是否已赋值
+                     * 
+                     */
+                    bool TagFiltersHasBeenSet() const;
 
                     /**
                      * 获取过滤查询条件列表，请在引用此参数的API说明中了解使用方法。
@@ -213,6 +235,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 标签过滤器
+                     */
+                    std::vector<TagFilter> m_tagFilters;
+                    bool m_tagFiltersHasBeenSet;
 
                     /**
                      * 过滤查询条件列表，请在引用此参数的API说明中了解使用方法。

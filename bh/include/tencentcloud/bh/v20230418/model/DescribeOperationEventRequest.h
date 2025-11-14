@@ -169,6 +169,27 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
+                     * 获取操作类型，参考DescribeOperationType返回结果
+                     * @return KindSet 操作类型，参考DescribeOperationType返回结果
+                     * 
+                     */
+                    std::vector<uint64_t> GetKindSet() const;
+
+                    /**
+                     * 设置操作类型，参考DescribeOperationType返回结果
+                     * @param _kindSet 操作类型，参考DescribeOperationType返回结果
+                     * 
+                     */
+                    void SetKindSet(const std::vector<uint64_t>& _kindSet);
+
+                    /**
+                     * 判断参数 KindSet 是否已赋值
+                     * @return KindSet 是否已赋值
+                     * 
+                     */
+                    bool KindSetHasBeenSet() const;
+
+                    /**
                      * 获取操作结果，1-成功，2-失败
                      * @return Result 操作结果，1-成功，2-失败
                      * 
@@ -188,6 +209,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ResultHasBeenSet() const;
+
+                    /**
+                     * 获取操作结果，1-成功，2-失败
+                     * @return ResultSet 操作结果，1-成功，2-失败
+                     * 
+                     */
+                    std::vector<uint64_t> GetResultSet() const;
+
+                    /**
+                     * 设置操作结果，1-成功，2-失败
+                     * @param _resultSet 操作结果，1-成功，2-失败
+                     * 
+                     */
+                    void SetResultSet(const std::vector<uint64_t>& _resultSet);
+
+                    /**
+                     * 判断参数 ResultSet 是否已赋值
+                     * @return ResultSet 是否已赋值
+                     * 
+                     */
+                    bool ResultSetHasBeenSet() const;
 
                     /**
                      * 获取分页偏移位置，默认值为0
@@ -270,10 +312,22 @@ namespace TencentCloud
                     bool m_kindHasBeenSet;
 
                     /**
+                     * 操作类型，参考DescribeOperationType返回结果
+                     */
+                    std::vector<uint64_t> m_kindSet;
+                    bool m_kindSetHasBeenSet;
+
+                    /**
                      * 操作结果，1-成功，2-失败
                      */
                     uint64_t m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 操作结果，1-成功，2-失败
+                     */
+                    std::vector<uint64_t> m_resultSet;
+                    bool m_resultSetHasBeenSet;
 
                     /**
                      * 分页偏移位置，默认值为0

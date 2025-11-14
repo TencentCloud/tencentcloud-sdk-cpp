@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/MutualTLS.h>
+#include <tencentcloud/teo/v20220901/model/OriginCertificateVerify.h>
 
 
 namespace TencentCloud
@@ -36,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 用于 EO 节点回源时携带的证书，源站启用双向认证握手时使用，用于源站认证客户端证书是否有效，确保请求来源于受信任的 EO 节点。
+                * 用于分别开启/关闭回源双向认证和源站证书校验。回源双向认证的证书用于 EO 回源时携带，源站可选择校验该证书用于确保请求来源于受信任的 EO 节点。源站证书校验开启时，证书配置用于 EO 节点校验源站证书是否可信。
                 */
                 class UpstreamCertInfo : public AbstractModel
                 {
@@ -68,6 +69,27 @@ namespace TencentCloud
                      */
                     bool UpstreamMutualTLSHasBeenSet() const;
 
+                    /**
+                     * 获取在源站证书校验场景下，该字段为 EO 节点回源时用于验证的 CA 证书，部署在 EO 节点，用于 EO 节点对服务端证书进行认证。在作为入参使用时，不填写表示保持原有配置。
+                     * @return UpstreamCertificateVerify 在源站证书校验场景下，该字段为 EO 节点回源时用于验证的 CA 证书，部署在 EO 节点，用于 EO 节点对服务端证书进行认证。在作为入参使用时，不填写表示保持原有配置。
+                     * 
+                     */
+                    OriginCertificateVerify GetUpstreamCertificateVerify() const;
+
+                    /**
+                     * 设置在源站证书校验场景下，该字段为 EO 节点回源时用于验证的 CA 证书，部署在 EO 节点，用于 EO 节点对服务端证书进行认证。在作为入参使用时，不填写表示保持原有配置。
+                     * @param _upstreamCertificateVerify 在源站证书校验场景下，该字段为 EO 节点回源时用于验证的 CA 证书，部署在 EO 节点，用于 EO 节点对服务端证书进行认证。在作为入参使用时，不填写表示保持原有配置。
+                     * 
+                     */
+                    void SetUpstreamCertificateVerify(const OriginCertificateVerify& _upstreamCertificateVerify);
+
+                    /**
+                     * 判断参数 UpstreamCertificateVerify 是否已赋值
+                     * @return UpstreamCertificateVerify 是否已赋值
+                     * 
+                     */
+                    bool UpstreamCertificateVerifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +97,12 @@ namespace TencentCloud
                      */
                     MutualTLS m_upstreamMutualTLS;
                     bool m_upstreamMutualTLSHasBeenSet;
+
+                    /**
+                     * 在源站证书校验场景下，该字段为 EO 节点回源时用于验证的 CA 证书，部署在 EO 节点，用于 EO 节点对服务端证书进行认证。在作为入参使用时，不填写表示保持原有配置。
+                     */
+                    OriginCertificateVerify m_upstreamCertificateVerify;
+                    bool m_upstreamCertificateVerifyHasBeenSet;
 
                 };
             }

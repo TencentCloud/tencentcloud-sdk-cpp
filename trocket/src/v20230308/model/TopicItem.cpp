@@ -30,7 +30,8 @@ TopicItem::TopicItem() :
     m_namespaceV4HasBeenSet(false),
     m_topicV4HasBeenSet(false),
     m_fullNamespaceV4HasBeenSet(false),
-    m_msgTTLHasBeenSet(false)
+    m_msgTTLHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,26 @@ CoreInternalOutcome TopicItem::Deserialize(const rapidjson::Value &value)
         m_msgTTLHasBeenSet = true;
     }
 
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TopicItem.TagList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagList.push_back(item);
+        }
+        m_tagListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +245,21 @@ void TopicItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "MsgTTL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_msgTTL, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -387,5 +423,21 @@ void TopicItem::SetMsgTTL(const int64_t& _msgTTL)
 bool TopicItem::MsgTTLHasBeenSet() const
 {
     return m_msgTTLHasBeenSet;
+}
+
+vector<Tag> TopicItem::GetTagList() const
+{
+    return m_tagList;
+}
+
+void TopicItem::SetTagList(const vector<Tag>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool TopicItem::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 

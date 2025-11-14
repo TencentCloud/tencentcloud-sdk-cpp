@@ -233,6 +233,27 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     * @return StatusSet 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     * 
+                     */
+                    std::vector<uint64_t> GetStatusSet() const;
+
+                    /**
+                     * 设置访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     * @param _statusSet 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     * 
+                     */
+                    void SetStatusSet(const std::vector<uint64_t>& _statusSet);
+
+                    /**
+                     * 判断参数 StatusSet 是否已赋值
+                     * @return StatusSet 是否已赋值
+                     * 
+                     */
+                    bool StatusSetHasBeenSet() const;
+
+                    /**
                      * 获取部门ID，用于过滤属于某个部门的访问权限
                      * @return DepartmentId 部门ID，用于过滤属于某个部门的访问权限
                      * 
@@ -350,6 +371,12 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
+                     */
+                    std::vector<uint64_t> m_statusSet;
+                    bool m_statusSetHasBeenSet;
 
                     /**
                      * 部门ID，用于过滤属于某个部门的访问权限

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/hunyuan/v20230901/model/ImageUrl.h>
+#include <tencentcloud/hunyuan/v20230901/model/VideoUrl.h>
+#include <tencentcloud/hunyuan/v20230901/model/VideoFrames.h>
 
 
 namespace TencentCloud
@@ -51,12 +53,12 @@ namespace TencentCloud
                      * 获取内容类型
 注意：
 需包含至少一个 Type 为"text"的参数。
-参数值可选范围：[text", "image_url"]
+参数值可选范围：[text", "image_url","video_url"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 内容类型
 注意：
 需包含至少一个 Type 为"text"的参数。
-参数值可选范围：[text", "image_url"]
+参数值可选范围：[text", "image_url","video_url"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -66,12 +68,12 @@ namespace TencentCloud
                      * 设置内容类型
 注意：
 需包含至少一个 Type 为"text"的参数。
-参数值可选范围：[text", "image_url"]
+参数值可选范围：[text", "image_url","video_url"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 内容类型
 注意：
 需包含至少一个 Type 为"text"的参数。
-参数值可选范围：[text", "image_url"]
+参数值可选范围：[text", "image_url","video_url"]
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -138,13 +140,63 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取当type为video_url时使用，标识具体的视频链接内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VideoUrl 当type为video_url时使用，标识具体的视频链接内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    VideoUrl GetVideoUrl() const;
+
+                    /**
+                     * 设置当type为video_url时使用，标识具体的视频链接内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _videoUrl 当type为video_url时使用，标识具体的视频链接内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVideoUrl(const VideoUrl& _videoUrl);
+
+                    /**
+                     * 判断参数 VideoUrl 是否已赋值
+                     * @return VideoUrl 是否已赋值
+                     * 
+                     */
+                    bool VideoUrlHasBeenSet() const;
+
+                    /**
+                     * 获取当type为video_frames时使用，标识具体的视频内图像帧内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VideoFrames 当type为video_frames时使用，标识具体的视频内图像帧内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    VideoFrames GetVideoFrames() const;
+
+                    /**
+                     * 设置当type为video_frames时使用，标识具体的视频内图像帧内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _videoFrames 当type为video_frames时使用，标识具体的视频内图像帧内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVideoFrames(const VideoFrames& _videoFrames);
+
+                    /**
+                     * 判断参数 VideoFrames 是否已赋值
+                     * @return VideoFrames 是否已赋值
+                     * 
+                     */
+                    bool VideoFramesHasBeenSet() const;
+
                 private:
 
                     /**
                      * 内容类型
 注意：
 需包含至少一个 Type 为"text"的参数。
-参数值可选范围：[text", "image_url"]
+参数值可选范围：[text", "image_url","video_url"]
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
@@ -164,6 +216,20 @@ namespace TencentCloud
                      */
                     ImageUrl m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 当type为video_url时使用，标识具体的视频链接内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VideoUrl m_videoUrl;
+                    bool m_videoUrlHasBeenSet;
+
+                    /**
+                     * 当type为video_frames时使用，标识具体的视频内图像帧内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VideoFrames m_videoFrames;
+                    bool m_videoFramesHasBeenSet;
 
                 };
             }

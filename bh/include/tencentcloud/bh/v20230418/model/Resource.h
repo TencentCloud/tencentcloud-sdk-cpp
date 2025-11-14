@@ -888,6 +888,27 @@ namespace TencentCloud
                     bool IntranetVpcCidrHasBeenSet() const;
 
                     /**
+                     * 获取堡垒机内网ip自定义域名
+                     * @return DomainName 堡垒机内网ip自定义域名
+                     * 
+                     */
+                    std::string GetDomainName() const;
+
+                    /**
+                     * 设置堡垒机内网ip自定义域名
+                     * @param _domainName 堡垒机内网ip自定义域名
+                     * 
+                     */
+                    void SetDomainName(const std::string& _domainName);
+
+                    /**
+                     * 判断参数 DomainName 是否已赋值
+                     * @return DomainName 是否已赋值
+                     * 
+                     */
+                    bool DomainNameHasBeenSet() const;
+
+                    /**
                      * 获取是否共享clb，true-共享clb，false-独享clb
                      * @return ShareClb 是否共享clb，true-共享clb，false-独享clb
                      * 
@@ -1380,6 +1401,12 @@ namespace TencentCloud
                      */
                     std::string m_intranetVpcCidr;
                     bool m_intranetVpcCidrHasBeenSet;
+
+                    /**
+                     * 堡垒机内网ip自定义域名
+                     */
+                    std::string m_domainName;
+                    bool m_domainNameHasBeenSet;
 
                     /**
                      * 是否共享clb，true-共享clb，false-独享clb

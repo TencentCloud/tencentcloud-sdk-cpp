@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeTopicListRequest::DescribeTopicListRequest() :
     m_instanceIdHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
@@ -44,6 +45,21 @@ string DescribeTopicListRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagFilters.begin(); itr != m_tagFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_filtersHasBeenSet)
@@ -107,6 +123,22 @@ void DescribeTopicListRequest::SetInstanceId(const string& _instanceId)
 bool DescribeTopicListRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+vector<TagFilter> DescribeTopicListRequest::GetTagFilters() const
+{
+    return m_tagFilters;
+}
+
+void DescribeTopicListRequest::SetTagFilters(const vector<TagFilter>& _tagFilters)
+{
+    m_tagFilters = _tagFilters;
+    m_tagFiltersHasBeenSet = true;
+}
+
+bool DescribeTopicListRequest::TagFiltersHasBeenSet() const
+{
+    return m_tagFiltersHasBeenSet;
 }
 
 vector<Filter> DescribeTopicListRequest::GetFilters() const

@@ -32,7 +32,8 @@ PreviewKafkaRechargeRequest::PreviewKafkaRechargeRequest() :
     m_isEncryptionAddrHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_consumerGroupNameHasBeenSet(false),
-    m_logRechargeRuleHasBeenSet(false)
+    m_logRechargeRuleHasBeenSet(false),
+    m_userKafkaMetaHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,15 @@ string PreviewKafkaRechargeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logRechargeRule.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_userKafkaMetaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserKafkaMeta";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_userKafkaMeta.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -291,6 +301,22 @@ void PreviewKafkaRechargeRequest::SetLogRechargeRule(const LogRechargeRuleInfo& 
 bool PreviewKafkaRechargeRequest::LogRechargeRuleHasBeenSet() const
 {
     return m_logRechargeRuleHasBeenSet;
+}
+
+UserKafkaMeta PreviewKafkaRechargeRequest::GetUserKafkaMeta() const
+{
+    return m_userKafkaMeta;
+}
+
+void PreviewKafkaRechargeRequest::SetUserKafkaMeta(const UserKafkaMeta& _userKafkaMeta)
+{
+    m_userKafkaMeta = _userKafkaMeta;
+    m_userKafkaMetaHasBeenSet = true;
+}
+
+bool PreviewKafkaRechargeRequest::UserKafkaMetaHasBeenSet() const
+{
+    return m_userKafkaMetaHasBeenSet;
 }
 
 

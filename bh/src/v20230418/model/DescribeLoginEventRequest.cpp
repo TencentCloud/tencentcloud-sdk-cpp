@@ -29,7 +29,9 @@ DescribeLoginEventRequest::DescribeLoginEventRequest() :
     m_endTimeHasBeenSet(false),
     m_sourceIpHasBeenSet(false),
     m_entryHasBeenSet(false),
+    m_entrySetHasBeenSet(false),
     m_resultHasBeenSet(false),
+    m_resultSetHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -90,12 +92,38 @@ string DescribeLoginEventRequest::ToJsonString() const
         d.AddMember(iKey, m_entry, allocator);
     }
 
+    if (m_entrySetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EntrySet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_entrySet.begin(); itr != m_entrySet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
     if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_result, allocator);
+    }
+
+    if (m_resultSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resultSet.begin(); itr != m_resultSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
     if (m_offsetHasBeenSet)
@@ -218,6 +246,22 @@ bool DescribeLoginEventRequest::EntryHasBeenSet() const
     return m_entryHasBeenSet;
 }
 
+vector<uint64_t> DescribeLoginEventRequest::GetEntrySet() const
+{
+    return m_entrySet;
+}
+
+void DescribeLoginEventRequest::SetEntrySet(const vector<uint64_t>& _entrySet)
+{
+    m_entrySet = _entrySet;
+    m_entrySetHasBeenSet = true;
+}
+
+bool DescribeLoginEventRequest::EntrySetHasBeenSet() const
+{
+    return m_entrySetHasBeenSet;
+}
+
 uint64_t DescribeLoginEventRequest::GetResult() const
 {
     return m_result;
@@ -232,6 +276,22 @@ void DescribeLoginEventRequest::SetResult(const uint64_t& _result)
 bool DescribeLoginEventRequest::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+vector<uint64_t> DescribeLoginEventRequest::GetResultSet() const
+{
+    return m_resultSet;
+}
+
+void DescribeLoginEventRequest::SetResultSet(const vector<uint64_t>& _resultSet)
+{
+    m_resultSet = _resultSet;
+    m_resultSetHasBeenSet = true;
+}
+
+bool DescribeLoginEventRequest::ResultSetHasBeenSet() const
+{
+    return m_resultSetHasBeenSet;
 }
 
 uint64_t DescribeLoginEventRequest::GetOffset() const

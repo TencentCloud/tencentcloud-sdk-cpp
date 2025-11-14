@@ -35,6 +35,9 @@ DescribeDevicesRequest::DescribeDevicesRequest() :
     m_kindSetHasBeenSet(false),
     m_managedAccountHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
+    m_accountIdSetHasBeenSet(false),
+    m_providerTypeSetHasBeenSet(false),
+    m_cloudDeviceStatusSetHasBeenSet(false),
     m_tagFiltersHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
@@ -166,6 +169,45 @@ string DescribeDevicesRequest::ToJsonString() const
         string key = "DepartmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_accountIdSet.begin(); itr != m_accountIdSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_providerTypeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProviderTypeSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_providerTypeSet.begin(); itr != m_providerTypeSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_cloudDeviceStatusSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudDeviceStatusSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cloudDeviceStatusSet.begin(); itr != m_cloudDeviceStatusSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
     if (m_tagFiltersHasBeenSet)
@@ -396,6 +438,54 @@ void DescribeDevicesRequest::SetDepartmentId(const string& _departmentId)
 bool DescribeDevicesRequest::DepartmentIdHasBeenSet() const
 {
     return m_departmentIdHasBeenSet;
+}
+
+vector<uint64_t> DescribeDevicesRequest::GetAccountIdSet() const
+{
+    return m_accountIdSet;
+}
+
+void DescribeDevicesRequest::SetAccountIdSet(const vector<uint64_t>& _accountIdSet)
+{
+    m_accountIdSet = _accountIdSet;
+    m_accountIdSetHasBeenSet = true;
+}
+
+bool DescribeDevicesRequest::AccountIdSetHasBeenSet() const
+{
+    return m_accountIdSetHasBeenSet;
+}
+
+vector<uint64_t> DescribeDevicesRequest::GetProviderTypeSet() const
+{
+    return m_providerTypeSet;
+}
+
+void DescribeDevicesRequest::SetProviderTypeSet(const vector<uint64_t>& _providerTypeSet)
+{
+    m_providerTypeSet = _providerTypeSet;
+    m_providerTypeSetHasBeenSet = true;
+}
+
+bool DescribeDevicesRequest::ProviderTypeSetHasBeenSet() const
+{
+    return m_providerTypeSetHasBeenSet;
+}
+
+vector<uint64_t> DescribeDevicesRequest::GetCloudDeviceStatusSet() const
+{
+    return m_cloudDeviceStatusSet;
+}
+
+void DescribeDevicesRequest::SetCloudDeviceStatusSet(const vector<uint64_t>& _cloudDeviceStatusSet)
+{
+    m_cloudDeviceStatusSet = _cloudDeviceStatusSet;
+    m_cloudDeviceStatusSetHasBeenSet = true;
+}
+
+bool DescribeDevicesRequest::CloudDeviceStatusSetHasBeenSet() const
+{
+    return m_cloudDeviceStatusSetHasBeenSet;
 }
 
 vector<TagFilter> DescribeDevicesRequest::GetTagFilters() const

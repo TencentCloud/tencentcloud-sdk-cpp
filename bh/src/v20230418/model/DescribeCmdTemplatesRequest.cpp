@@ -26,6 +26,7 @@ DescribeCmdTemplatesRequest::DescribeCmdTemplatesRequest() :
     m_idSetHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_typeSetHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -65,6 +66,19 @@ string DescribeCmdTemplatesRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_typeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_typeSet.begin(); itr != m_typeSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
     if (m_offsetHasBeenSet)
@@ -137,6 +151,22 @@ void DescribeCmdTemplatesRequest::SetType(const uint64_t& _type)
 bool DescribeCmdTemplatesRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+vector<uint64_t> DescribeCmdTemplatesRequest::GetTypeSet() const
+{
+    return m_typeSet;
+}
+
+void DescribeCmdTemplatesRequest::SetTypeSet(const vector<uint64_t>& _typeSet)
+{
+    m_typeSet = _typeSet;
+    m_typeSetHasBeenSet = true;
+}
+
+bool DescribeCmdTemplatesRequest::TypeSetHasBeenSet() const
+{
+    return m_typeSetHasBeenSet;
 }
 
 uint64_t DescribeCmdTemplatesRequest::GetOffset() const

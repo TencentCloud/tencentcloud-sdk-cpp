@@ -61,6 +61,7 @@ Resource::Resource() :
     m_intranetPrivateIpSetHasBeenSet(false),
     m_intranetVpcIdHasBeenSet(false),
     m_intranetVpcCidrHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
     m_shareClbHasBeenSet(false),
     m_openClbIdHasBeenSet(false),
     m_lbVipIspHasBeenSet(false),
@@ -501,6 +502,16 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         }
         m_intranetVpcCidr = string(value["IntranetVpcCidr"].GetString());
         m_intranetVpcCidrHasBeenSet = true;
+    }
+
+    if (value.HasMember("DomainName") && !value["DomainName"].IsNull())
+    {
+        if (!value["DomainName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainName = string(value["DomainName"].GetString());
+        m_domainNameHasBeenSet = true;
     }
 
     if (value.HasMember("ShareClb") && !value["ShareClb"].IsNull())
@@ -975,6 +986,14 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IntranetVpcCidr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_intranetVpcCidr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_shareClbHasBeenSet)
@@ -1714,6 +1733,22 @@ void Resource::SetIntranetVpcCidr(const string& _intranetVpcCidr)
 bool Resource::IntranetVpcCidrHasBeenSet() const
 {
     return m_intranetVpcCidrHasBeenSet;
+}
+
+string Resource::GetDomainName() const
+{
+    return m_domainName;
+}
+
+void Resource::SetDomainName(const string& _domainName)
+{
+    m_domainName = _domainName;
+    m_domainNameHasBeenSet = true;
+}
+
+bool Resource::DomainNameHasBeenSet() const
+{
+    return m_domainNameHasBeenSet;
 }
 
 bool Resource::GetShareClb() const

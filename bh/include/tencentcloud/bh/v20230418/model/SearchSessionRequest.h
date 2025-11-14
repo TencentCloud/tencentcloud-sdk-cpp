@@ -316,6 +316,27 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取状态，1为活跃，2为结束，3为强制离线
+                     * @return StatusSet 状态，1为活跃，2为结束，3为强制离线
+                     * 
+                     */
+                    std::vector<uint64_t> GetStatusSet() const;
+
+                    /**
+                     * 设置状态，1为活跃，2为结束，3为强制离线
+                     * @param _statusSet 状态，1为活跃，2为结束，3为强制离线
+                     * 
+                     */
+                    void SetStatusSet(const std::vector<uint64_t>& _statusSet);
+
+                    /**
+                     * 判断参数 StatusSet 是否已赋值
+                     * @return StatusSet 是否已赋值
+                     * 
+                     */
+                    bool StatusSetHasBeenSet() const;
+
+                    /**
                      * 获取若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话
                      * @return Id 若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话
                      * 
@@ -399,6 +420,27 @@ namespace TencentCloud
                      */
                     bool DeviceKindHasBeenSet() const;
 
+                    /**
+                     * 获取资产类型 Linux, EKS,TKE
+                     * @return DeviceKindSet 资产类型 Linux, EKS,TKE
+                     * 
+                     */
+                    std::vector<std::string> GetDeviceKindSet() const;
+
+                    /**
+                     * 设置资产类型 Linux, EKS,TKE
+                     * @param _deviceKindSet 资产类型 Linux, EKS,TKE
+                     * 
+                     */
+                    void SetDeviceKindSet(const std::vector<std::string>& _deviceKindSet);
+
+                    /**
+                     * 判断参数 DeviceKindSet 是否已赋值
+                     * @return DeviceKindSet 是否已赋值
+                     * 
+                     */
+                    bool DeviceKindSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -480,6 +522,12 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
+                     * 状态，1为活跃，2为结束，3为强制离线
+                     */
+                    std::vector<uint64_t> m_statusSet;
+                    bool m_statusSetHasBeenSet;
+
+                    /**
                      * 若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话
                      */
                     std::string m_id;
@@ -502,6 +550,12 @@ namespace TencentCloud
                      */
                     std::string m_deviceKind;
                     bool m_deviceKindHasBeenSet;
+
+                    /**
+                     * 资产类型 Linux, EKS,TKE
+                     */
+                    std::vector<std::string> m_deviceKindSet;
+                    bool m_deviceKindSetHasBeenSet;
 
                 };
             }

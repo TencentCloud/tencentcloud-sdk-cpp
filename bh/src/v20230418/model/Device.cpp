@@ -27,6 +27,7 @@ Device::Device() :
     m_publicIpHasBeenSet(false),
     m_privateIpHasBeenSet(false),
     m_apCodeHasBeenSet(false),
+    m_apNameHasBeenSet(false),
     m_osNameHasBeenSet(false),
     m_kindHasBeenSet(false),
     m_portHasBeenSet(false),
@@ -47,7 +48,12 @@ Device::Device() :
     m_namespaceHasBeenSet(false),
     m_workloadHasBeenSet(false),
     m_syncPodCountHasBeenSet(false),
-    m_totalPodCountHasBeenSet(false)
+    m_totalPodCountHasBeenSet(false),
+    m_cloudAccountIdHasBeenSet(false),
+    m_cloudAccountNameHasBeenSet(false),
+    m_providerTypeHasBeenSet(false),
+    m_providerNameHasBeenSet(false),
+    m_syncCloudDeviceStatusHasBeenSet(false)
 {
 }
 
@@ -114,6 +120,16 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         }
         m_apCode = string(value["ApCode"].GetString());
         m_apCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApName") && !value["ApName"].IsNull())
+    {
+        if (!value["ApName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.ApName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apName = string(value["ApName"].GetString());
+        m_apNameHasBeenSet = true;
     }
 
     if (value.HasMember("OsName") && !value["OsName"].IsNull())
@@ -353,6 +369,56 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_totalPodCountHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudAccountId") && !value["CloudAccountId"].IsNull())
+    {
+        if (!value["CloudAccountId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.CloudAccountId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudAccountId = value["CloudAccountId"].GetUint64();
+        m_cloudAccountIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudAccountName") && !value["CloudAccountName"].IsNull())
+    {
+        if (!value["CloudAccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.CloudAccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudAccountName = string(value["CloudAccountName"].GetString());
+        m_cloudAccountNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProviderType") && !value["ProviderType"].IsNull())
+    {
+        if (!value["ProviderType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.ProviderType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_providerType = value["ProviderType"].GetUint64();
+        m_providerTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProviderName") && !value["ProviderName"].IsNull())
+    {
+        if (!value["ProviderName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.ProviderName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_providerName = string(value["ProviderName"].GetString());
+        m_providerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncCloudDeviceStatus") && !value["SyncCloudDeviceStatus"].IsNull())
+    {
+        if (!value["SyncCloudDeviceStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.SyncCloudDeviceStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncCloudDeviceStatus = value["SyncCloudDeviceStatus"].GetUint64();
+        m_syncCloudDeviceStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -406,6 +472,14 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "ApCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_apCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_osNameHasBeenSet)
@@ -590,6 +664,46 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, m_totalPodCount, allocator);
     }
 
+    if (m_cloudAccountIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudAccountId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudAccountId, allocator);
+    }
+
+    if (m_cloudAccountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudAccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cloudAccountName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_providerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProviderType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_providerType, allocator);
+    }
+
+    if (m_providerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProviderName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_providerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncCloudDeviceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncCloudDeviceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncCloudDeviceStatus, allocator);
+    }
+
 }
 
 
@@ -687,6 +801,22 @@ void Device::SetApCode(const string& _apCode)
 bool Device::ApCodeHasBeenSet() const
 {
     return m_apCodeHasBeenSet;
+}
+
+string Device::GetApName() const
+{
+    return m_apName;
+}
+
+void Device::SetApName(const string& _apName)
+{
+    m_apName = _apName;
+    m_apNameHasBeenSet = true;
+}
+
+bool Device::ApNameHasBeenSet() const
+{
+    return m_apNameHasBeenSet;
 }
 
 string Device::GetOsName() const
@@ -1023,5 +1153,85 @@ void Device::SetTotalPodCount(const uint64_t& _totalPodCount)
 bool Device::TotalPodCountHasBeenSet() const
 {
     return m_totalPodCountHasBeenSet;
+}
+
+uint64_t Device::GetCloudAccountId() const
+{
+    return m_cloudAccountId;
+}
+
+void Device::SetCloudAccountId(const uint64_t& _cloudAccountId)
+{
+    m_cloudAccountId = _cloudAccountId;
+    m_cloudAccountIdHasBeenSet = true;
+}
+
+bool Device::CloudAccountIdHasBeenSet() const
+{
+    return m_cloudAccountIdHasBeenSet;
+}
+
+string Device::GetCloudAccountName() const
+{
+    return m_cloudAccountName;
+}
+
+void Device::SetCloudAccountName(const string& _cloudAccountName)
+{
+    m_cloudAccountName = _cloudAccountName;
+    m_cloudAccountNameHasBeenSet = true;
+}
+
+bool Device::CloudAccountNameHasBeenSet() const
+{
+    return m_cloudAccountNameHasBeenSet;
+}
+
+uint64_t Device::GetProviderType() const
+{
+    return m_providerType;
+}
+
+void Device::SetProviderType(const uint64_t& _providerType)
+{
+    m_providerType = _providerType;
+    m_providerTypeHasBeenSet = true;
+}
+
+bool Device::ProviderTypeHasBeenSet() const
+{
+    return m_providerTypeHasBeenSet;
+}
+
+string Device::GetProviderName() const
+{
+    return m_providerName;
+}
+
+void Device::SetProviderName(const string& _providerName)
+{
+    m_providerName = _providerName;
+    m_providerNameHasBeenSet = true;
+}
+
+bool Device::ProviderNameHasBeenSet() const
+{
+    return m_providerNameHasBeenSet;
+}
+
+uint64_t Device::GetSyncCloudDeviceStatus() const
+{
+    return m_syncCloudDeviceStatus;
+}
+
+void Device::SetSyncCloudDeviceStatus(const uint64_t& _syncCloudDeviceStatus)
+{
+    m_syncCloudDeviceStatus = _syncCloudDeviceStatus;
+    m_syncCloudDeviceStatusHasBeenSet = true;
+}
+
+bool Device::SyncCloudDeviceStatusHasBeenSet() const
+{
+    return m_syncCloudDeviceStatusHasBeenSet;
 }
 

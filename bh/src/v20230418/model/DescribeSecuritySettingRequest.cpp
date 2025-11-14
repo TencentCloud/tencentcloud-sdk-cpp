@@ -14,33 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ai3d/v20250513/model/QueryHunyuanTo3DJobRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeSecuritySettingRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Ai3d::V20250513::Model;
+using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
-QueryHunyuanTo3DJobRequest::QueryHunyuanTo3DJobRequest() :
-    m_jobIdHasBeenSet(false)
+DescribeSecuritySettingRequest::DescribeSecuritySettingRequest()
 {
 }
 
-string QueryHunyuanTo3DJobRequest::ToJsonString() const
+string DescribeSecuritySettingRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_jobIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "JobId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
-    }
 
 
     rapidjson::StringBuffer buffer;
@@ -49,21 +40,5 @@ string QueryHunyuanTo3DJobRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string QueryHunyuanTo3DJobRequest::GetJobId() const
-{
-    return m_jobId;
-}
-
-void QueryHunyuanTo3DJobRequest::SetJobId(const string& _jobId)
-{
-    m_jobId = _jobId;
-    m_jobIdHasBeenSet = true;
-}
-
-bool QueryHunyuanTo3DJobRequest::JobIdHasBeenSet() const
-{
-    return m_jobIdHasBeenSet;
-}
 
 

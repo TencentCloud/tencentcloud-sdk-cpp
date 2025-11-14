@@ -23,7 +23,9 @@ using namespace std;
 Content::Content() :
     m_typeHasBeenSet(false),
     m_textHasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_videoUrlHasBeenSet(false),
+    m_videoFramesHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,40 @@ CoreInternalOutcome Content::Deserialize(const rapidjson::Value &value)
         m_imageUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("VideoUrl") && !value["VideoUrl"].IsNull())
+    {
+        if (!value["VideoUrl"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Content.VideoUrl` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoUrl.Deserialize(value["VideoUrl"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoFrames") && !value["VideoFrames"].IsNull())
+    {
+        if (!value["VideoFrames"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Content.VideoFrames` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoFrames.Deserialize(value["VideoFrames"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoFramesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +135,24 @@ void Content::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageUrl.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_videoUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoUrl.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_videoFramesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoFrames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoFrames.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -150,5 +204,37 @@ void Content::SetImageUrl(const ImageUrl& _imageUrl)
 bool Content::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+VideoUrl Content::GetVideoUrl() const
+{
+    return m_videoUrl;
+}
+
+void Content::SetVideoUrl(const VideoUrl& _videoUrl)
+{
+    m_videoUrl = _videoUrl;
+    m_videoUrlHasBeenSet = true;
+}
+
+bool Content::VideoUrlHasBeenSet() const
+{
+    return m_videoUrlHasBeenSet;
+}
+
+VideoFrames Content::GetVideoFrames() const
+{
+    return m_videoFrames;
+}
+
+void Content::SetVideoFrames(const VideoFrames& _videoFrames)
+{
+    m_videoFrames = _videoFrames;
+    m_videoFramesHasBeenSet = true;
+}
+
+bool Content::VideoFramesHasBeenSet() const
+{
+    return m_videoFramesHasBeenSet;
 }
 

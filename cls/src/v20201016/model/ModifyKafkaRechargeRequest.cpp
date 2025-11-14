@@ -34,7 +34,8 @@ ModifyKafkaRechargeRequest::ModifyKafkaRechargeRequest() :
     m_userKafkaTopicsHasBeenSet(false),
     m_consumerGroupNameHasBeenSet(false),
     m_logRechargeRuleHasBeenSet(false),
-    m_statusControlHasBeenSet(false)
+    m_statusControlHasBeenSet(false),
+    m_userKafkaMetaHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,15 @@ string ModifyKafkaRechargeRequest::ToJsonString() const
         string key = "StatusControl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_statusControl, allocator);
+    }
+
+    if (m_userKafkaMetaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserKafkaMeta";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_userKafkaMeta.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -341,6 +351,22 @@ void ModifyKafkaRechargeRequest::SetStatusControl(const uint64_t& _statusControl
 bool ModifyKafkaRechargeRequest::StatusControlHasBeenSet() const
 {
     return m_statusControlHasBeenSet;
+}
+
+UserKafkaMeta ModifyKafkaRechargeRequest::GetUserKafkaMeta() const
+{
+    return m_userKafkaMeta;
+}
+
+void ModifyKafkaRechargeRequest::SetUserKafkaMeta(const UserKafkaMeta& _userKafkaMeta)
+{
+    m_userKafkaMeta = _userKafkaMeta;
+    m_userKafkaMetaHasBeenSet = true;
+}
+
+bool ModifyKafkaRechargeRequest::UserKafkaMetaHasBeenSet() const
+{
+    return m_userKafkaMetaHasBeenSet;
 }
 
 

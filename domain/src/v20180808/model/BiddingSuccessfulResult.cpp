@@ -21,7 +21,8 @@ using namespace TencentCloud::Domain::V20180808::Model;
 using namespace std;
 
 BiddingSuccessfulResult::BiddingSuccessfulResult() :
-    m_payEndTimeHasBeenSet(false)
+    m_payEndTimeHasBeenSet(false),
+    m_modifyOwnerEndTimeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome BiddingSuccessfulResult::Deserialize(const rapidjson::Value 
         m_payEndTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifyOwnerEndTime") && !value["ModifyOwnerEndTime"].IsNull())
+    {
+        if (!value["ModifyOwnerEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BiddingSuccessfulResult.ModifyOwnerEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyOwnerEndTime = string(value["ModifyOwnerEndTime"].GetString());
+        m_modifyOwnerEndTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void BiddingSuccessfulResult::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "PayEndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_payEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyOwnerEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyOwnerEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyOwnerEndTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void BiddingSuccessfulResult::SetPayEndTime(const string& _payEndTime)
 bool BiddingSuccessfulResult::PayEndTimeHasBeenSet() const
 {
     return m_payEndTimeHasBeenSet;
+}
+
+string BiddingSuccessfulResult::GetModifyOwnerEndTime() const
+{
+    return m_modifyOwnerEndTime;
+}
+
+void BiddingSuccessfulResult::SetModifyOwnerEndTime(const string& _modifyOwnerEndTime)
+{
+    m_modifyOwnerEndTime = _modifyOwnerEndTime;
+    m_modifyOwnerEndTimeHasBeenSet = true;
+}
+
+bool BiddingSuccessfulResult::ModifyOwnerEndTimeHasBeenSet() const
+{
+    return m_modifyOwnerEndTimeHasBeenSet;
 }
 

@@ -27,7 +27,8 @@ CheckRechargeKafkaServerRequest::CheckRechargeKafkaServerRequest() :
     m_kafkaInstanceHasBeenSet(false),
     m_serverAddrHasBeenSet(false),
     m_isEncryptionAddrHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_userKafkaMetaHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,15 @@ string CheckRechargeKafkaServerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_protocol.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_userKafkaMetaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserKafkaMeta";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_userKafkaMeta.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -165,6 +175,22 @@ void CheckRechargeKafkaServerRequest::SetProtocol(const KafkaProtocolInfo& _prot
 bool CheckRechargeKafkaServerRequest::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+UserKafkaMeta CheckRechargeKafkaServerRequest::GetUserKafkaMeta() const
+{
+    return m_userKafkaMeta;
+}
+
+void CheckRechargeKafkaServerRequest::SetUserKafkaMeta(const UserKafkaMeta& _userKafkaMeta)
+{
+    m_userKafkaMeta = _userKafkaMeta;
+    m_userKafkaMetaHasBeenSet = true;
+}
+
+bool CheckRechargeKafkaServerRequest::UserKafkaMetaHasBeenSet() const
+{
+    return m_userKafkaMetaHasBeenSet;
 }
 
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_AI3D_V20250513_MODEL_SUBMITHUNYUANTO3DJOBRESPONSE_H_
-#define TENCENTCLOUD_AI3D_V20250513_MODEL_SUBMITHUNYUANTO3DJOBRESPONSE_H_
+#ifndef TENCENTCLOUD_BH_V20230418_MODEL_DISABLEEXTERNALACCESSREQUEST_H_
+#define TENCENTCLOUD_BH_V20230418_MODEL_DISABLEEXTERNALACCESSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Ai3d
+    namespace Bh
     {
-        namespace V20250513
+        namespace V20230418
         {
             namespace Model
             {
                 /**
-                * SubmitHunyuanTo3DJob返回参数结构体
+                * DisableExternalAccess请求参数结构体
                 */
-                class SubmitHunyuanTo3DJobResponse : public AbstractModel
+                class DisableExternalAccessRequest : public AbstractModel
                 {
                 public:
-                    SubmitHunyuanTo3DJobResponse();
-                    ~SubmitHunyuanTo3DJobResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    DisableExternalAccessRequest();
+                    ~DisableExternalAccessRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务ID（有效期24小时）
-                     * @return JobId 任务ID（有效期24小时）
+                     * 获取堡垒机id
+                     * @return ResourceId 堡垒机id
                      * 
                      */
-                    std::string GetJobId() const;
+                    std::string GetResourceId() const;
 
                     /**
-                     * 判断参数 JobId 是否已赋值
-                     * @return JobId 是否已赋值
+                     * 设置堡垒机id
+                     * @param _resourceId 堡垒机id
                      * 
                      */
-                    bool JobIdHasBeenSet() const;
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务ID（有效期24小时）
+                     * 堡垒机id
                      */
-                    std::string m_jobId;
-                    bool m_jobIdHasBeenSet;
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }
@@ -71,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_AI3D_V20250513_MODEL_SUBMITHUNYUANTO3DJOBRESPONSE_H_
+#endif // !TENCENTCLOUD_BH_V20230418_MODEL_DISABLEEXTERNALACCESSREQUEST_H_

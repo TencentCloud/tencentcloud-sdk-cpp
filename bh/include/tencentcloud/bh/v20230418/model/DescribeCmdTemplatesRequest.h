@@ -106,6 +106,27 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
+                     * 获取命令模板类型 1-内置模板 2-自定义模板
+                     * @return TypeSet 命令模板类型 1-内置模板 2-自定义模板
+                     * 
+                     */
+                    std::vector<uint64_t> GetTypeSet() const;
+
+                    /**
+                     * 设置命令模板类型 1-内置模板 2-自定义模板
+                     * @param _typeSet 命令模板类型 1-内置模板 2-自定义模板
+                     * 
+                     */
+                    void SetTypeSet(const std::vector<uint64_t>& _typeSet);
+
+                    /**
+                     * 判断参数 TypeSet 是否已赋值
+                     * @return TypeSet 是否已赋值
+                     * 
+                     */
+                    bool TypeSetHasBeenSet() const;
+
+                    /**
                      * 获取分页偏移位置，默认值为0
                      * @return Offset 分页偏移位置，默认值为0
                      * 
@@ -166,6 +187,12 @@ namespace TencentCloud
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 命令模板类型 1-内置模板 2-自定义模板
+                     */
+                    std::vector<uint64_t> m_typeSet;
+                    bool m_typeSetHasBeenSet;
 
                     /**
                      * 分页偏移位置，默认值为0

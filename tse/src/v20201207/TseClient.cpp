@@ -900,6 +900,49 @@ TseClient::CreateNativeGatewayServiceSourceOutcomeCallable TseClient::CreateNati
     return task->get_future();
 }
 
+TseClient::CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome TseClient::CreateOrModifyCloudNativeAPIGatewayIPRestriction(const CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrModifyCloudNativeAPIGatewayIPRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrModifyCloudNativeAPIGatewayIPRestrictionResponse rsp = CreateOrModifyCloudNativeAPIGatewayIPRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome(rsp);
+        else
+            return CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateOrModifyCloudNativeAPIGatewayIPRestrictionAsync(const CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest& request, const CreateOrModifyCloudNativeAPIGatewayIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrModifyCloudNativeAPIGatewayIPRestriction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcomeCallable TseClient::CreateOrModifyCloudNativeAPIGatewayIPRestrictionCallable(const CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrModifyCloudNativeAPIGatewayIPRestriction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::CreateOrUpdateConfigFileAndReleaseOutcome TseClient::CreateOrUpdateConfigFileAndRelease(const CreateOrUpdateConfigFileAndReleaseRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOrUpdateConfigFileAndRelease");
@@ -1151,6 +1194,49 @@ TseClient::DeleteCloudNativeAPIGatewayCertificateOutcomeCallable TseClient::Dele
         [this, request]()
         {
             return this->DeleteCloudNativeAPIGatewayCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteCloudNativeAPIGatewayIPRestrictionOutcome TseClient::DeleteCloudNativeAPIGatewayIPRestriction(const DeleteCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayIPRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayIPRestrictionResponse rsp = DeleteCloudNativeAPIGatewayIPRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayIPRestrictionOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayIPRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayIPRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteCloudNativeAPIGatewayIPRestrictionAsync(const DeleteCloudNativeAPIGatewayIPRestrictionRequest& request, const DeleteCloudNativeAPIGatewayIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudNativeAPIGatewayIPRestriction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteCloudNativeAPIGatewayIPRestrictionOutcomeCallable TseClient::DeleteCloudNativeAPIGatewayIPRestrictionCallable(const DeleteCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudNativeAPIGatewayIPRestrictionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudNativeAPIGatewayIPRestriction(request);
         }
     );
 
@@ -2226,6 +2312,49 @@ TseClient::DescribeCloudNativeAPIGatewayConfigOutcomeCallable TseClient::Describ
         [this, request]()
         {
             return this->DescribeCloudNativeAPIGatewayConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeCloudNativeAPIGatewayIPRestrictionOutcome TseClient::DescribeCloudNativeAPIGatewayIPRestriction(const DescribeCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayIPRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayIPRestrictionResponse rsp = DescribeCloudNativeAPIGatewayIPRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayIPRestrictionOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayIPRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayIPRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayIPRestrictionAsync(const DescribeCloudNativeAPIGatewayIPRestrictionRequest& request, const DescribeCloudNativeAPIGatewayIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayIPRestriction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayIPRestrictionOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayIPRestrictionCallable(const DescribeCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayIPRestrictionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayIPRestriction(request);
         }
     );
 

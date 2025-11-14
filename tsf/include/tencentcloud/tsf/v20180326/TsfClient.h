@@ -387,6 +387,8 @@
 #include <tencentcloud/tsf/v20180326/model/ModifyContainerReplicasResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyGroupLaneRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyGroupLaneResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyLaneRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyLaneResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyLaneRuleRequest.h>
@@ -1037,6 +1039,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGroupResponse> ModifyGroupOutcome;
                 typedef std::future<ModifyGroupOutcome> ModifyGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyGroupRequest&, ModifyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGroupLaneResponse> ModifyGroupLaneOutcome;
+                typedef std::future<ModifyGroupLaneOutcome> ModifyGroupLaneOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ModifyGroupLaneRequest&, ModifyGroupLaneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGroupLaneAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLaneResponse> ModifyLaneOutcome;
                 typedef std::future<ModifyLaneOutcome> ModifyLaneOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyLaneRequest&, ModifyLaneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLaneAsyncHandler;
@@ -2822,6 +2827,15 @@ namespace TencentCloud
                 ModifyGroupOutcome ModifyGroup(const Model::ModifyGroupRequest &request);
                 void ModifyGroupAsync(const Model::ModifyGroupRequest& request, const ModifyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyGroupOutcomeCallable ModifyGroupCallable(const Model::ModifyGroupRequest& request);
+
+                /**
+                 *更新部署组泳道信息
+                 * @param req ModifyGroupLaneRequest
+                 * @return ModifyGroupLaneOutcome
+                 */
+                ModifyGroupLaneOutcome ModifyGroupLane(const Model::ModifyGroupLaneRequest &request);
+                void ModifyGroupLaneAsync(const Model::ModifyGroupLaneRequest& request, const ModifyGroupLaneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGroupLaneOutcomeCallable ModifyGroupLaneCallable(const Model::ModifyGroupLaneRequest& request);
 
                 /**
                  *更新泳道配置信息

@@ -112,6 +112,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/ModifyNamespaceResponse.h
   include/tencentcloud/tsf/v20180326/model/ModifyLaneRuleRequest.h
   include/tencentcloud/tsf/v20180326/model/AddInstancesResponse.h
+  include/tencentcloud/tsf/v20180326/model/VmGroup.h
   include/tencentcloud/tsf/v20180326/model/DescribeResourceConfigResponse.h
   include/tencentcloud/tsf/v20180326/model/StartContainerGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeRepositoryResponse.h
@@ -153,6 +154,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribePkgsResponse.h
   include/tencentcloud/tsf/v20180326/model/ConfigMapOption.h
   include/tencentcloud/tsf/v20180326/model/DeleteImageTag.h
+  include/tencentcloud/tsf/v20180326/model/ModifyGroupLaneRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeContainerGroupDeployInfoResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeOverviewInvocationRequest.h
   include/tencentcloud/tsf/v20180326/model/TaskLastExecuteStatus.h
@@ -385,7 +387,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/CreateUnitRuleResponse.h
   include/tencentcloud/tsf/v20180326/model/CreateUnitNamespacesRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeTaskRecordsResponse.h
-  include/tencentcloud/tsf/v20180326/model/VmGroup.h
+  include/tencentcloud/tsf/v20180326/model/ModifyGroupLaneResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeApiUseDetailResponse.h
   include/tencentcloud/tsf/v20180326/model/ServiceSetting.h
   include/tencentcloud/tsf/v20180326/model/ModifyUploadInfoRequest.h
@@ -788,6 +790,7 @@ set(tsf_src
   src/v20180326/model/ModifyNamespaceResponse.cpp
   src/v20180326/model/ModifyLaneRuleRequest.cpp
   src/v20180326/model/AddInstancesResponse.cpp
+  src/v20180326/model/VmGroup.cpp
   src/v20180326/model/DescribeResourceConfigResponse.cpp
   src/v20180326/model/StartContainerGroupRequest.cpp
   src/v20180326/model/DescribeRepositoryResponse.cpp
@@ -829,6 +832,7 @@ set(tsf_src
   src/v20180326/model/DescribePkgsResponse.cpp
   src/v20180326/model/ConfigMapOption.cpp
   src/v20180326/model/DeleteImageTag.cpp
+  src/v20180326/model/ModifyGroupLaneRequest.cpp
   src/v20180326/model/DescribeContainerGroupDeployInfoResponse.cpp
   src/v20180326/model/DescribeOverviewInvocationRequest.cpp
   src/v20180326/model/TaskLastExecuteStatus.cpp
@@ -1061,7 +1065,7 @@ set(tsf_src
   src/v20180326/model/CreateUnitRuleResponse.cpp
   src/v20180326/model/CreateUnitNamespacesRequest.cpp
   src/v20180326/model/DescribeTaskRecordsResponse.cpp
-  src/v20180326/model/VmGroup.cpp
+  src/v20180326/model/ModifyGroupLaneResponse.cpp
   src/v20180326/model/DescribeApiUseDetailResponse.cpp
   src/v20180326/model/ServiceSetting.cpp
   src/v20180326/model/ModifyUploadInfoRequest.cpp

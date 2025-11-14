@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trocket/v20230308/model/Tag.h>
 
 
 namespace TencentCloud
@@ -298,18 +299,18 @@ namespace TencentCloud
                     bool SubscribeTopicNumHasBeenSet() const;
 
                     /**
-                     * 获取1753153590
+                     * 获取创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 1753153590
+                     * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置1753153590
+                     * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 1753153590
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -321,6 +322,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取绑定的标签列表
+                     * @return TagList 绑定的标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTagList() const;
+
+                    /**
+                     * 设置绑定的标签列表
+                     * @param _tagList 绑定的标签列表
+                     * 
+                     */
+                    void SetTagList(const std::vector<Tag>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
 
                 private:
 
@@ -396,11 +418,17 @@ namespace TencentCloud
                     bool m_subscribeTopicNumHasBeenSet;
 
                     /**
-                     * 1753153590
+                     * 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 绑定的标签列表
+                     */
+                    std::vector<Tag> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

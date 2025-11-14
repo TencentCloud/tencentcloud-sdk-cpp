@@ -29,7 +29,9 @@ DescribeOperationEventRequest::DescribeOperationEventRequest() :
     m_endTimeHasBeenSet(false),
     m_sourceIpHasBeenSet(false),
     m_kindHasBeenSet(false),
+    m_kindSetHasBeenSet(false),
     m_resultHasBeenSet(false),
+    m_resultSetHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -90,12 +92,38 @@ string DescribeOperationEventRequest::ToJsonString() const
         d.AddMember(iKey, m_kind, allocator);
     }
 
+    if (m_kindSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KindSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_kindSet.begin(); itr != m_kindSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
     if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_result, allocator);
+    }
+
+    if (m_resultSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resultSet.begin(); itr != m_resultSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
     if (m_offsetHasBeenSet)
@@ -218,6 +246,22 @@ bool DescribeOperationEventRequest::KindHasBeenSet() const
     return m_kindHasBeenSet;
 }
 
+vector<uint64_t> DescribeOperationEventRequest::GetKindSet() const
+{
+    return m_kindSet;
+}
+
+void DescribeOperationEventRequest::SetKindSet(const vector<uint64_t>& _kindSet)
+{
+    m_kindSet = _kindSet;
+    m_kindSetHasBeenSet = true;
+}
+
+bool DescribeOperationEventRequest::KindSetHasBeenSet() const
+{
+    return m_kindSetHasBeenSet;
+}
+
 uint64_t DescribeOperationEventRequest::GetResult() const
 {
     return m_result;
@@ -232,6 +276,22 @@ void DescribeOperationEventRequest::SetResult(const uint64_t& _result)
 bool DescribeOperationEventRequest::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+vector<uint64_t> DescribeOperationEventRequest::GetResultSet() const
+{
+    return m_resultSet;
+}
+
+void DescribeOperationEventRequest::SetResultSet(const vector<uint64_t>& _resultSet)
+{
+    m_resultSet = _resultSet;
+    m_resultSetHasBeenSet = true;
+}
+
+bool DescribeOperationEventRequest::ResultSetHasBeenSet() const
+{
+    return m_resultSetHasBeenSet;
 }
 
 uint64_t DescribeOperationEventRequest::GetOffset() const

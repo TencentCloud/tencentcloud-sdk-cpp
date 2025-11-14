@@ -43,7 +43,9 @@ FusionInstanceItem::FusionInstanceItem() :
     m_instanceItemExtraInfoHasBeenSet(false),
     m_destroyTimeHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
-    m_enableDeletionProtectionHasBeenSet(false)
+    m_enableDeletionProtectionHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_scaledTpsEnabledHasBeenSet(false)
 {
 }
 
@@ -302,6 +304,26 @@ CoreInternalOutcome FusionInstanceItem::Deserialize(const rapidjson::Value &valu
         m_enableDeletionProtectionHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FusionInstanceItem.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetInt64();
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScaledTpsEnabled") && !value["ScaledTpsEnabled"].IsNull())
+    {
+        if (!value["ScaledTpsEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FusionInstanceItem.ScaledTpsEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaledTpsEnabled = value["ScaledTpsEnabled"].GetBool();
+        m_scaledTpsEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -504,6 +526,22 @@ void FusionInstanceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "EnableDeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableDeletionProtection, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_scaledTpsEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaledTpsEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scaledTpsEnabled, allocator);
     }
 
 }
@@ -875,5 +913,37 @@ void FusionInstanceItem::SetEnableDeletionProtection(const bool& _enableDeletion
 bool FusionInstanceItem::EnableDeletionProtectionHasBeenSet() const
 {
     return m_enableDeletionProtectionHasBeenSet;
+}
+
+int64_t FusionInstanceItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void FusionInstanceItem::SetCreateTime(const int64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool FusionInstanceItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+bool FusionInstanceItem::GetScaledTpsEnabled() const
+{
+    return m_scaledTpsEnabled;
+}
+
+void FusionInstanceItem::SetScaledTpsEnabled(const bool& _scaledTpsEnabled)
+{
+    m_scaledTpsEnabled = _scaledTpsEnabled;
+    m_scaledTpsEnabledHasBeenSet = true;
+}
+
+bool FusionInstanceItem::ScaledTpsEnabledHasBeenSet() const
+{
+    return m_scaledTpsEnabledHasBeenSet;
 }
 

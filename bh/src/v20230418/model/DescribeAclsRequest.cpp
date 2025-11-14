@@ -32,6 +32,7 @@ DescribeAclsRequest::DescribeAclsRequest() :
     m_authorizedDeviceIdSetHasBeenSet(false),
     m_authorizedAppAssetIdSetHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_statusSetHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
     m_exactAccountHasBeenSet(false),
     m_filtersHasBeenSet(false)
@@ -135,6 +136,19 @@ string DescribeAclsRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_statusSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_statusSet.begin(); itr != m_statusSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
     if (m_departmentIdHasBeenSet)
@@ -318,6 +332,22 @@ void DescribeAclsRequest::SetStatus(const uint64_t& _status)
 bool DescribeAclsRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<uint64_t> DescribeAclsRequest::GetStatusSet() const
+{
+    return m_statusSet;
+}
+
+void DescribeAclsRequest::SetStatusSet(const vector<uint64_t>& _statusSet)
+{
+    m_statusSet = _statusSet;
+    m_statusSetHasBeenSet = true;
+}
+
+bool DescribeAclsRequest::StatusSetHasBeenSet() const
+{
+    return m_statusSetHasBeenSet;
 }
 
 string DescribeAclsRequest::GetDepartmentId() const

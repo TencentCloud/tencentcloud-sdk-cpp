@@ -46,7 +46,8 @@ DescribeCloudNativeAPIGatewayResult::DescribeCloudNativeAPIGatewayResult() :
     m_instancePortHasBeenSet(false),
     m_loadBalancerTypeHasBeenSet(false),
     m_publicIpAddressesHasBeenSet(false),
-    m_deleteProtectHasBeenSet(false)
+    m_deleteProtectHasBeenSet(false),
+    m_availableVersionsHasBeenSet(false)
 {
 }
 
@@ -349,6 +350,19 @@ CoreInternalOutcome DescribeCloudNativeAPIGatewayResult::Deserialize(const rapid
         m_deleteProtectHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailableVersions") && !value["AvailableVersions"].IsNull())
+    {
+        if (!value["AvailableVersions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeCloudNativeAPIGatewayResult.AvailableVersions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AvailableVersions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_availableVersions.push_back((*itr).GetString());
+        }
+        m_availableVersionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -577,6 +591,19 @@ void DescribeCloudNativeAPIGatewayResult::ToJsonObject(rapidjson::Value &value, 
         string key = "DeleteProtect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteProtect, allocator);
+    }
+
+    if (m_availableVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableVersions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_availableVersions.begin(); itr != m_availableVersions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -996,5 +1023,21 @@ void DescribeCloudNativeAPIGatewayResult::SetDeleteProtect(const bool& _deletePr
 bool DescribeCloudNativeAPIGatewayResult::DeleteProtectHasBeenSet() const
 {
     return m_deleteProtectHasBeenSet;
+}
+
+vector<string> DescribeCloudNativeAPIGatewayResult::GetAvailableVersions() const
+{
+    return m_availableVersions;
+}
+
+void DescribeCloudNativeAPIGatewayResult::SetAvailableVersions(const vector<string>& _availableVersions)
+{
+    m_availableVersions = _availableVersions;
+    m_availableVersionsHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayResult::AvailableVersionsHasBeenSet() const
+{
+    return m_availableVersionsHasBeenSet;
 }
 

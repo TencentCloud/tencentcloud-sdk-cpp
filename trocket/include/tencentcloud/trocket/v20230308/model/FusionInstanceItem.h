@@ -643,6 +643,56 @@ DELETING，删除中
                      */
                     bool EnableDeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取实例创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 实例创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCreateTime() const;
+
+                    /**
+                     * 设置实例创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTime 实例创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTime(const int64_t& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取弹性TPS开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScaledTpsEnabled 弹性TPS开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetScaledTpsEnabled() const;
+
+                    /**
+                     * 设置弹性TPS开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scaledTpsEnabled 弹性TPS开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScaledTpsEnabled(const bool& _scaledTpsEnabled);
+
+                    /**
+                     * 判断参数 ScaledTpsEnabled 是否已赋值
+                     * @return ScaledTpsEnabled 是否已赋值
+                     * 
+                     */
+                    bool ScaledTpsEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -810,6 +860,20 @@ DELETING，删除中
                      */
                     bool m_enableDeletionProtection;
                     bool m_enableDeletionProtectionHasBeenSet;
+
+                    /**
+                     * 实例创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 弹性TPS开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_scaledTpsEnabled;
+                    bool m_scaledTpsEnabledHasBeenSet;
 
                 };
             }

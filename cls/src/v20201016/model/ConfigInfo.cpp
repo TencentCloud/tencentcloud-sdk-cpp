@@ -32,7 +32,8 @@ ConfigInfo::ConfigInfo() :
     m_updateTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_userDefineRuleHasBeenSet(false),
-    m_advancedConfigHasBeenSet(false)
+    m_advancedConfigHasBeenSet(false),
+    m_inputTypeHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,16 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
         m_advancedConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("InputType") && !value["InputType"].IsNull())
+    {
+        if (!value["InputType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.InputType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputType = string(value["InputType"].GetString());
+        m_inputTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +298,14 @@ void ConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AdvancedConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_advancedConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -482,5 +501,21 @@ void ConfigInfo::SetAdvancedConfig(const string& _advancedConfig)
 bool ConfigInfo::AdvancedConfigHasBeenSet() const
 {
     return m_advancedConfigHasBeenSet;
+}
+
+string ConfigInfo::GetInputType() const
+{
+    return m_inputType;
+}
+
+void ConfigInfo::SetInputType(const string& _inputType)
+{
+    m_inputType = _inputType;
+    m_inputTypeHasBeenSet = true;
+}
+
+bool ConfigInfo::InputTypeHasBeenSet() const
+{
+    return m_inputTypeHasBeenSet;
 }
 

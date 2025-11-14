@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trocket/v20230308/model/Tag.h>
 #include <tencentcloud/trocket/v20230308/model/Endpoint.h>
+#include <tencentcloud/trocket/v20230308/model/ZoneScheduledItem.h>
 
 
 namespace TencentCloud
@@ -529,6 +530,38 @@ PLATINUM 铂金版
                      */
                     bool ZoneIdsHasBeenSet() const;
 
+                    /**
+                     * 获取proxy节点数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeCount proxy节点数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetNodeCount() const;
+
+                    /**
+                     * 判断参数 NodeCount 是否已赋值
+                     * @return NodeCount 是否已赋值
+                     * 
+                     */
+                    bool NodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取proxy调度详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneScheduledList proxy调度详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ZoneScheduledItem> GetZoneScheduledList() const;
+
+                    /**
+                     * 判断参数 ZoneScheduledList 是否已赋值
+                     * @return ZoneScheduledList 是否已赋值
+                     * 
+                     */
+                    bool ZoneScheduledListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -741,6 +774,20 @@ PLATINUM 铂金版
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
+
+                    /**
+                     * proxy节点数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_nodeCount;
+                    bool m_nodeCountHasBeenSet;
+
+                    /**
+                     * proxy调度详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ZoneScheduledItem> m_zoneScheduledList;
+                    bool m_zoneScheduledListHasBeenSet;
 
                 };
             }

@@ -169,6 +169,27 @@ namespace TencentCloud
                     bool EntryHasBeenSet() const;
 
                     /**
+                     * 获取登录入口：1-字符界面,2-图形界面，3-web页面, 4-API
+                     * @return EntrySet 登录入口：1-字符界面,2-图形界面，3-web页面, 4-API
+                     * 
+                     */
+                    std::vector<uint64_t> GetEntrySet() const;
+
+                    /**
+                     * 设置登录入口：1-字符界面,2-图形界面，3-web页面, 4-API
+                     * @param _entrySet 登录入口：1-字符界面,2-图形界面，3-web页面, 4-API
+                     * 
+                     */
+                    void SetEntrySet(const std::vector<uint64_t>& _entrySet);
+
+                    /**
+                     * 判断参数 EntrySet 是否已赋值
+                     * @return EntrySet 是否已赋值
+                     * 
+                     */
+                    bool EntrySetHasBeenSet() const;
+
+                    /**
                      * 获取操作结果，1-成功，2-失败
                      * @return Result 操作结果，1-成功，2-失败
                      * 
@@ -188,6 +209,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ResultHasBeenSet() const;
+
+                    /**
+                     * 获取操作结果，1-成功，2-失败
+                     * @return ResultSet 操作结果，1-成功，2-失败
+                     * 
+                     */
+                    std::vector<uint64_t> GetResultSet() const;
+
+                    /**
+                     * 设置操作结果，1-成功，2-失败
+                     * @param _resultSet 操作结果，1-成功，2-失败
+                     * 
+                     */
+                    void SetResultSet(const std::vector<uint64_t>& _resultSet);
+
+                    /**
+                     * 判断参数 ResultSet 是否已赋值
+                     * @return ResultSet 是否已赋值
+                     * 
+                     */
+                    bool ResultSetHasBeenSet() const;
 
                     /**
                      * 获取分页偏移位置，默认值为0
@@ -270,10 +312,22 @@ namespace TencentCloud
                     bool m_entryHasBeenSet;
 
                     /**
+                     * 登录入口：1-字符界面,2-图形界面，3-web页面, 4-API
+                     */
+                    std::vector<uint64_t> m_entrySet;
+                    bool m_entrySetHasBeenSet;
+
+                    /**
                      * 操作结果，1-成功，2-失败
                      */
                     uint64_t m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 操作结果，1-成功，2-失败
+                     */
+                    std::vector<uint64_t> m_resultSet;
+                    bool m_resultSetHasBeenSet;
 
                     /**
                      * 分页偏移位置，默认值为0

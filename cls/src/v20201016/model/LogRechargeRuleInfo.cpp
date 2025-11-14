@@ -35,7 +35,8 @@ LogRechargeRuleInfo::LogRechargeRuleInfo() :
     m_timeZoneHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_keysHasBeenSet(false),
-    m_parseArrayHasBeenSet(false)
+    m_parseArrayHasBeenSet(false),
+    m_delimiterHasBeenSet(false)
 {
 }
 
@@ -200,6 +201,16 @@ CoreInternalOutcome LogRechargeRuleInfo::Deserialize(const rapidjson::Value &val
         m_parseArrayHasBeenSet = true;
     }
 
+    if (value.HasMember("Delimiter") && !value["Delimiter"].IsNull())
+    {
+        if (!value["Delimiter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogRechargeRuleInfo.Delimiter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_delimiter = string(value["Delimiter"].GetString());
+        m_delimiterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +346,14 @@ void LogRechargeRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ParseArray";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_parseArray, allocator);
+    }
+
+    if (m_delimiterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Delimiter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_delimiter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -578,5 +597,21 @@ void LogRechargeRuleInfo::SetParseArray(const bool& _parseArray)
 bool LogRechargeRuleInfo::ParseArrayHasBeenSet() const
 {
     return m_parseArrayHasBeenSet;
+}
+
+string LogRechargeRuleInfo::GetDelimiter() const
+{
+    return m_delimiter;
+}
+
+void LogRechargeRuleInfo::SetDelimiter(const string& _delimiter)
+{
+    m_delimiter = _delimiter;
+    m_delimiterHasBeenSet = true;
+}
+
+bool LogRechargeRuleInfo::DelimiterHasBeenSet() const
+{
+    return m_delimiterHasBeenSet;
 }
 

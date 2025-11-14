@@ -41,6 +41,7 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/Mindmap.h
   include/tencentcloud/hunyuan/v20230901/model/RunThreadResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ChatCompletionsResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/VideoUrl.h
   include/tencentcloud/hunyuan/v20230901/model/GetThreadMessageListRequest.h
   include/tencentcloud/hunyuan/v20230901/model/GetThreadMessageRequest.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobResponse.h
@@ -94,6 +95,7 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/ChatTranslationsResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ThreadMessageInCompleteDetailsObject.h
   include/tencentcloud/hunyuan/v20230901/model/ImageQuestionRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/VideoFrames.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/GetEmbeddingResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ThreadAdditionalMessage.h
@@ -132,6 +134,7 @@ set(hunyuan_src
   src/v20230901/model/Mindmap.cpp
   src/v20230901/model/RunThreadResponse.cpp
   src/v20230901/model/ChatCompletionsResponse.cpp
+  src/v20230901/model/VideoUrl.cpp
   src/v20230901/model/GetThreadMessageListRequest.cpp
   src/v20230901/model/GetThreadMessageRequest.cpp
   src/v20230901/model/SubmitHunyuanImageChatJobResponse.cpp
@@ -185,6 +188,7 @@ set(hunyuan_src
   src/v20230901/model/ChatTranslationsResponse.cpp
   src/v20230901/model/ThreadMessageInCompleteDetailsObject.cpp
   src/v20230901/model/ImageQuestionRequest.cpp
+  src/v20230901/model/VideoFrames.cpp
   src/v20230901/model/QueryHunyuanImageChatJobResponse.cpp
   src/v20230901/model/GetEmbeddingResponse.cpp
   src/v20230901/model/ThreadAdditionalMessage.cpp
