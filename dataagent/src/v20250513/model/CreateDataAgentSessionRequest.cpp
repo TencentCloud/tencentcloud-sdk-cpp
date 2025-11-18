@@ -22,7 +22,8 @@
 using namespace TencentCloud::Dataagent::V20250513::Model;
 using namespace std;
 
-CreateDataAgentSessionRequest::CreateDataAgentSessionRequest()
+CreateDataAgentSessionRequest::CreateDataAgentSessionRequest() :
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string CreateDataAgentSessionRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string CreateDataAgentSessionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateDataAgentSessionRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreateDataAgentSessionRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreateDataAgentSessionRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
 
 

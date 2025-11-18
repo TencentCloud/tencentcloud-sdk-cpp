@@ -33,7 +33,8 @@ AlarmNotice::AlarmNotice() :
     m_policyIdsHasBeenSet(false),
     m_aMPConsumerIdHasBeenSet(false),
     m_cLSNoticesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_isLoginFreeHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsLoginFree") && !value["IsLoginFree"].IsNull())
+    {
+        if (!value["IsLoginFree"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.IsLoginFree` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isLoginFree = value["IsLoginFree"].GetInt64();
+        m_isLoginFreeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void AlarmNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isLoginFreeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLoginFree";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isLoginFree, allocator);
     }
 
 }
@@ -568,5 +587,21 @@ void AlarmNotice::SetTags(const vector<Tag>& _tags)
 bool AlarmNotice::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t AlarmNotice::GetIsLoginFree() const
+{
+    return m_isLoginFree;
+}
+
+void AlarmNotice::SetIsLoginFree(const int64_t& _isLoginFree)
+{
+    m_isLoginFree = _isLoginFree;
+    m_isLoginFreeHasBeenSet = true;
+}
+
+bool AlarmNotice::IsLoginFreeHasBeenSet() const
+{
+    return m_isLoginFreeHasBeenSet;
 }
 

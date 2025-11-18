@@ -41,7 +41,15 @@ CCRuleItems::CCRuleItems() :
     m_celRuleHasBeenSet(false),
     m_logicalOpHasBeenSet(false),
     m_pageIdHasBeenSet(false),
-    m_actionRatioHasBeenSet(false)
+    m_actionRatioHasBeenSet(false),
+    m_domainsHasBeenSet(false),
+    m_groupIdsHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_jobDateTimeHasBeenSet(false),
+    m_cronTypeHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_validStatusHasBeenSet(false),
+    m_sourceHasBeenSet(false)
 {
 }
 
@@ -263,6 +271,99 @@ CoreInternalOutcome CCRuleItems::Deserialize(const rapidjson::Value &value)
         m_actionRatioHasBeenSet = true;
     }
 
+    if (value.HasMember("Domains") && !value["Domains"].IsNull())
+    {
+        if (!value["Domains"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.Domains` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Domains"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_domains.push_back((*itr).GetString());
+        }
+        m_domainsHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupIds") && !value["GroupIds"].IsNull())
+    {
+        if (!value["GroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.GroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_groupIds.push_back((*itr).GetUint64());
+        }
+        m_groupIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobType") && !value["JobType"].IsNull())
+    {
+        if (!value["JobType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.JobType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobType = string(value["JobType"].GetString());
+        m_jobTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobDateTime") && !value["JobDateTime"].IsNull())
+    {
+        if (!value["JobDateTime"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.JobDateTime` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jobDateTime.Deserialize(value["JobDateTime"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jobDateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CronType") && !value["CronType"].IsNull())
+    {
+        if (!value["CronType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.CronType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cronType = string(value["CronType"].GetString());
+        m_cronTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.ExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = value["ExpireTime"].GetUint64();
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ValidStatus") && !value["ValidStatus"].IsNull())
+    {
+        if (!value["ValidStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.ValidStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validStatus = value["ValidStatus"].GetInt64();
+        m_validStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Source") && !value["Source"].IsNull())
+    {
+        if (!value["Source"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.Source` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_source = string(value["Source"].GetString());
+        m_sourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -441,6 +542,81 @@ void CCRuleItems::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ActionRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_actionRatio, allocator);
+    }
+
+    if (m_domainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domains";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_domains.begin(); itr != m_domains.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_groupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupIds.begin(); itr != m_groupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDateTime.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cronTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CronType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cronType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_validStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validStatus, allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -780,5 +956,133 @@ void CCRuleItems::SetActionRatio(const uint64_t& _actionRatio)
 bool CCRuleItems::ActionRatioHasBeenSet() const
 {
     return m_actionRatioHasBeenSet;
+}
+
+vector<string> CCRuleItems::GetDomains() const
+{
+    return m_domains;
+}
+
+void CCRuleItems::SetDomains(const vector<string>& _domains)
+{
+    m_domains = _domains;
+    m_domainsHasBeenSet = true;
+}
+
+bool CCRuleItems::DomainsHasBeenSet() const
+{
+    return m_domainsHasBeenSet;
+}
+
+vector<uint64_t> CCRuleItems::GetGroupIds() const
+{
+    return m_groupIds;
+}
+
+void CCRuleItems::SetGroupIds(const vector<uint64_t>& _groupIds)
+{
+    m_groupIds = _groupIds;
+    m_groupIdsHasBeenSet = true;
+}
+
+bool CCRuleItems::GroupIdsHasBeenSet() const
+{
+    return m_groupIdsHasBeenSet;
+}
+
+string CCRuleItems::GetJobType() const
+{
+    return m_jobType;
+}
+
+void CCRuleItems::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool CCRuleItems::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+JobDateTime CCRuleItems::GetJobDateTime() const
+{
+    return m_jobDateTime;
+}
+
+void CCRuleItems::SetJobDateTime(const JobDateTime& _jobDateTime)
+{
+    m_jobDateTime = _jobDateTime;
+    m_jobDateTimeHasBeenSet = true;
+}
+
+bool CCRuleItems::JobDateTimeHasBeenSet() const
+{
+    return m_jobDateTimeHasBeenSet;
+}
+
+string CCRuleItems::GetCronType() const
+{
+    return m_cronType;
+}
+
+void CCRuleItems::SetCronType(const string& _cronType)
+{
+    m_cronType = _cronType;
+    m_cronTypeHasBeenSet = true;
+}
+
+bool CCRuleItems::CronTypeHasBeenSet() const
+{
+    return m_cronTypeHasBeenSet;
+}
+
+uint64_t CCRuleItems::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void CCRuleItems::SetExpireTime(const uint64_t& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool CCRuleItems::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+int64_t CCRuleItems::GetValidStatus() const
+{
+    return m_validStatus;
+}
+
+void CCRuleItems::SetValidStatus(const int64_t& _validStatus)
+{
+    m_validStatus = _validStatus;
+    m_validStatusHasBeenSet = true;
+}
+
+bool CCRuleItems::ValidStatusHasBeenSet() const
+{
+    return m_validStatusHasBeenSet;
+}
+
+string CCRuleItems::GetSource() const
+{
+    return m_source;
+}
+
+void CCRuleItems::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool CCRuleItems::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
 }
 

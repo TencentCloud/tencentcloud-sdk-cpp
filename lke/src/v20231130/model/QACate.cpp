@@ -27,7 +27,8 @@ QACate::QACate() :
     m_canAddHasBeenSet(false),
     m_canEditHasBeenSet(false),
     m_canDeleteHasBeenSet(false),
-    m_childrenHasBeenSet(false)
+    m_childrenHasBeenSet(false),
+    m_isLeafHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome QACate::Deserialize(const rapidjson::Value &value)
         m_childrenHasBeenSet = true;
     }
 
+    if (value.HasMember("IsLeaf") && !value["IsLeaf"].IsNull())
+    {
+        if (!value["IsLeaf"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `QACate.IsLeaf` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isLeaf = value["IsLeaf"].GetBool();
+        m_isLeafHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void QACate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isLeafHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLeaf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isLeaf, allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void QACate::SetChildren(const vector<QACate>& _children)
 bool QACate::ChildrenHasBeenSet() const
 {
     return m_childrenHasBeenSet;
+}
+
+bool QACate::GetIsLeaf() const
+{
+    return m_isLeaf;
+}
+
+void QACate::SetIsLeaf(const bool& _isLeaf)
+{
+    m_isLeaf = _isLeaf;
+    m_isLeafHasBeenSet = true;
+}
+
+bool QACate::IsLeafHasBeenSet() const
+{
+    return m_isLeafHasBeenSet;
 }
 

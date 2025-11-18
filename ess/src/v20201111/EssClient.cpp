@@ -255,6 +255,92 @@ EssClient::CancelUserAutoSignEnableUrlOutcomeCallable EssClient::CancelUserAutoS
     return task->get_future();
 }
 
+EssClient::CreateBatchAdminChangeInvitationsOutcome EssClient::CreateBatchAdminChangeInvitations(const CreateBatchAdminChangeInvitationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchAdminChangeInvitations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchAdminChangeInvitationsResponse rsp = CreateBatchAdminChangeInvitationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchAdminChangeInvitationsOutcome(rsp);
+        else
+            return CreateBatchAdminChangeInvitationsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchAdminChangeInvitationsOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateBatchAdminChangeInvitationsAsync(const CreateBatchAdminChangeInvitationsRequest& request, const CreateBatchAdminChangeInvitationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchAdminChangeInvitations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateBatchAdminChangeInvitationsOutcomeCallable EssClient::CreateBatchAdminChangeInvitationsCallable(const CreateBatchAdminChangeInvitationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchAdminChangeInvitationsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchAdminChangeInvitations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::CreateBatchAdminChangeInvitationsUrlOutcome EssClient::CreateBatchAdminChangeInvitationsUrl(const CreateBatchAdminChangeInvitationsUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchAdminChangeInvitationsUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchAdminChangeInvitationsUrlResponse rsp = CreateBatchAdminChangeInvitationsUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchAdminChangeInvitationsUrlOutcome(rsp);
+        else
+            return CreateBatchAdminChangeInvitationsUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchAdminChangeInvitationsUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateBatchAdminChangeInvitationsUrlAsync(const CreateBatchAdminChangeInvitationsUrlRequest& request, const CreateBatchAdminChangeInvitationsUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchAdminChangeInvitationsUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateBatchAdminChangeInvitationsUrlOutcomeCallable EssClient::CreateBatchAdminChangeInvitationsUrlCallable(const CreateBatchAdminChangeInvitationsUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchAdminChangeInvitationsUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchAdminChangeInvitationsUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateBatchCancelFlowUrlOutcome EssClient::CreateBatchCancelFlowUrl(const CreateBatchCancelFlowUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchCancelFlowUrl");

@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否免登录，0-否，1-是
+                     * @return IsLoginFree 是否免登录，0-否，1-是
+                     * 
+                     */
+                    int64_t GetIsLoginFree() const;
+
+                    /**
+                     * 设置是否免登录，0-否，1-是
+                     * @param _isLoginFree 是否免登录，0-否，1-是
+                     * 
+                     */
+                    void SetIsLoginFree(const int64_t& _isLoginFree);
+
+                    /**
+                     * 判断参数 IsLoginFree 是否已赋值
+                     * @return IsLoginFree 是否已赋值
+                     * 
+                     */
+                    bool IsLoginFreeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否免登录，0-否，1-是
+                     */
+                    int64_t m_isLoginFree;
+                    bool m_isLoginFreeHasBeenSet;
 
                 };
             }

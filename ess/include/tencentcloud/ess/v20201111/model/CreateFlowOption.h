@@ -935,6 +935,27 @@ namespace TencentCloud
                      */
                     bool SignAfterStartHasBeenSet() const;
 
+                    /**
+                     * 获取发起过程中是否保存草稿
+                     * @return NeedFlowDraft 发起过程中是否保存草稿
+                     * 
+                     */
+                    bool GetNeedFlowDraft() const;
+
+                    /**
+                     * 设置发起过程中是否保存草稿
+                     * @param _needFlowDraft 发起过程中是否保存草稿
+                     * 
+                     */
+                    void SetNeedFlowDraft(const bool& _needFlowDraft);
+
+                    /**
+                     * 判断参数 NeedFlowDraft 是否已赋值
+                     * @return NeedFlowDraft 是否已赋值
+                     * 
+                     */
+                    bool NeedFlowDraftHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1175,6 +1196,12 @@ namespace TencentCloud
                      */
                     bool m_signAfterStart;
                     bool m_signAfterStartHasBeenSet;
+
+                    /**
+                     * 发起过程中是否保存草稿
+                     */
+                    bool m_needFlowDraft;
+                    bool m_needFlowDraftHasBeenSet;
 
                 };
             }

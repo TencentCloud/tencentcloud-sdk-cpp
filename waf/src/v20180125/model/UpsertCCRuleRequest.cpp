@@ -46,7 +46,8 @@ UpsertCCRuleRequest::UpsertCCRuleRequest() :
     m_celRuleHasBeenSet(false),
     m_logicalOpHasBeenSet(false),
     m_pageIdHasBeenSet(false),
-    m_actionRatioHasBeenSet(false)
+    m_actionRatioHasBeenSet(false),
+    m_sourceHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,14 @@ string UpsertCCRuleRequest::ToJsonString() const
         string key = "ActionRatio";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_actionRatio, allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -644,6 +653,22 @@ void UpsertCCRuleRequest::SetActionRatio(const uint64_t& _actionRatio)
 bool UpsertCCRuleRequest::ActionRatioHasBeenSet() const
 {
     return m_actionRatioHasBeenSet;
+}
+
+string UpsertCCRuleRequest::GetSource() const
+{
+    return m_source;
+}
+
+void UpsertCCRuleRequest::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
 }
 
 

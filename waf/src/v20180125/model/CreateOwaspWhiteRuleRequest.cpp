@@ -31,7 +31,8 @@ CreateOwaspWhiteRuleRequest::CreateOwaspWhiteRuleRequest() :
     m_jobTypeHasBeenSet(false),
     m_jobDateTimeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_logicalOpHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,14 @@ string CreateOwaspWhiteRuleRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_logicalOpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicalOp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -277,6 +286,22 @@ void CreateOwaspWhiteRuleRequest::SetStatus(const uint64_t& _status)
 bool CreateOwaspWhiteRuleRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string CreateOwaspWhiteRuleRequest::GetLogicalOp() const
+{
+    return m_logicalOp;
+}
+
+void CreateOwaspWhiteRuleRequest::SetLogicalOp(const string& _logicalOp)
+{
+    m_logicalOp = _logicalOp;
+    m_logicalOpHasBeenSet = true;
+}
+
+bool CreateOwaspWhiteRuleRequest::LogicalOpHasBeenSet() const
+{
+    return m_logicalOpHasBeenSet;
 }
 
 

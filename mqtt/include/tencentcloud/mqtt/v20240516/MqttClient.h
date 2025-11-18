@@ -27,6 +27,8 @@
 #include <tencentcloud/mqtt/v20240516/model/ActivateCaCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ActivateDeviceCertificateRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ActivateDeviceCertificateResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/AddClientSubscriptionRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/AddClientSubscriptionResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ApplyRegistrationCodeRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ApplyRegistrationCodeResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DeleteAuthorizationPolicyResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteCaCertificateRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteCaCertificateResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteClientSubscriptionRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteClientSubscriptionResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteDeviceCertificateRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteDeviceCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteDeviceIdentityRequest.h>
@@ -163,6 +167,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ActivateDeviceCertificateResponse> ActivateDeviceCertificateOutcome;
                 typedef std::future<ActivateDeviceCertificateOutcome> ActivateDeviceCertificateOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ActivateDeviceCertificateRequest&, ActivateDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateDeviceCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddClientSubscriptionResponse> AddClientSubscriptionOutcome;
+                typedef std::future<AddClientSubscriptionOutcome> AddClientSubscriptionOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::AddClientSubscriptionRequest&, AddClientSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddClientSubscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyRegistrationCodeResponse> ApplyRegistrationCodeOutcome;
                 typedef std::future<ApplyRegistrationCodeOutcome> ApplyRegistrationCodeOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ApplyRegistrationCodeRequest&, ApplyRegistrationCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyRegistrationCodeAsyncHandler;
@@ -208,6 +215,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCaCertificateResponse> DeleteCaCertificateOutcome;
                 typedef std::future<DeleteCaCertificateOutcome> DeleteCaCertificateOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeleteCaCertificateRequest&, DeleteCaCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCaCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteClientSubscriptionResponse> DeleteClientSubscriptionOutcome;
+                typedef std::future<DeleteClientSubscriptionOutcome> DeleteClientSubscriptionOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DeleteClientSubscriptionRequest&, DeleteClientSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClientSubscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeviceCertificateResponse> DeleteDeviceCertificateOutcome;
                 typedef std::future<DeleteDeviceCertificateOutcome> DeleteDeviceCertificateOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeleteDeviceCertificateRequest&, DeleteDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceCertificateAsyncHandler;
@@ -359,6 +369,15 @@ namespace TencentCloud
                 ActivateDeviceCertificateOutcomeCallable ActivateDeviceCertificateCallable(const Model::ActivateDeviceCertificateRequest& request);
 
                 /**
+                 *为MQTT客户端增加一条订阅
+                 * @param req AddClientSubscriptionRequest
+                 * @return AddClientSubscriptionOutcome
+                 */
+                AddClientSubscriptionOutcome AddClientSubscription(const Model::AddClientSubscriptionRequest &request);
+                void AddClientSubscriptionAsync(const Model::AddClientSubscriptionRequest& request, const AddClientSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddClientSubscriptionOutcomeCallable AddClientSubscriptionCallable(const Model::AddClientSubscriptionRequest& request);
+
+                /**
                  *申请ca注册码
                  * @param req ApplyRegistrationCodeRequest
                  * @return ApplyRegistrationCodeOutcome
@@ -492,6 +511,15 @@ namespace TencentCloud
                 DeleteCaCertificateOutcome DeleteCaCertificate(const Model::DeleteCaCertificateRequest &request);
                 void DeleteCaCertificateAsync(const Model::DeleteCaCertificateRequest& request, const DeleteCaCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCaCertificateOutcomeCallable DeleteCaCertificateCallable(const Model::DeleteCaCertificateRequest& request);
+
+                /**
+                 *删除MQTT客户端下的一条订阅
+                 * @param req DeleteClientSubscriptionRequest
+                 * @return DeleteClientSubscriptionOutcome
+                 */
+                DeleteClientSubscriptionOutcome DeleteClientSubscription(const Model::DeleteClientSubscriptionRequest &request);
+                void DeleteClientSubscriptionAsync(const Model::DeleteClientSubscriptionRequest& request, const DeleteClientSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteClientSubscriptionOutcomeCallable DeleteClientSubscriptionCallable(const Model::DeleteClientSubscriptionRequest& request);
 
                 /**
                  *删除设备证书

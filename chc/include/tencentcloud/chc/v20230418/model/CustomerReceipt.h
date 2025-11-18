@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PickUpStuffContactHasBeenSet() const;
 
                     /**
-                     * 获取自提人证件号码
-                     * @return PickUpStuffIDCard 自提人证件号码
+                     * 获取到访人证件号码
+                     * @return PickUpStuffIDCard 到访人证件号码
                      * 
                      */
                     std::string GetPickUpStuffIDCard() const;
 
                     /**
-                     * 设置自提人证件号码
-                     * @param _pickUpStuffIDCard 自提人证件号码
+                     * 设置到访人证件号码
+                     * @param _pickUpStuffIDCard 到访人证件号码
                      * 
                      */
                     void SetPickUpStuffIDCard(const std::string& _pickUpStuffIDCard);
@@ -186,7 +186,7 @@ OTHER: 其他
                     bool m_pickUpStuffContactHasBeenSet;
 
                     /**
-                     * 自提人证件号码
+                     * 到访人证件号码
                      */
                     std::string m_pickUpStuffIDCard;
                     bool m_pickUpStuffIDCardHasBeenSet;

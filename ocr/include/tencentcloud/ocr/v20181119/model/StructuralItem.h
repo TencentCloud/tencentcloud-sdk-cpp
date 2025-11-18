@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能结构化识别
+                * 文档智能识别
                 */
                 class StructuralItem : public AbstractModel
                 {

@@ -529,6 +529,20 @@ API：通过API手动注册
                      */
                     bool TransportLayerSecurityHasBeenSet() const;
 
+                    /**
+                     * 获取消息属性增强规则配额
+                     * @return MessageEnrichmentRuleLimit 消息属性增强规则配额
+                     * 
+                     */
+                    int64_t GetMessageEnrichmentRuleLimit() const;
+
+                    /**
+                     * 判断参数 MessageEnrichmentRuleLimit 是否已赋值
+                     * @return MessageEnrichmentRuleLimit 是否已赋值
+                     * 
+                     */
+                    bool MessageEnrichmentRuleLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -739,6 +753,12 @@ API：通过API手动注册
                      */
                     std::string m_transportLayerSecurity;
                     bool m_transportLayerSecurityHasBeenSet;
+
+                    /**
+                     * 消息属性增强规则配额
+                     */
+                    int64_t m_messageEnrichmentRuleLimit;
+                    bool m_messageEnrichmentRuleLimitHasBeenSet;
 
                 };
             }

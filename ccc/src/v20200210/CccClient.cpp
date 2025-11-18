@@ -2921,6 +2921,49 @@ CccClient::ModifyStaffPasswordOutcomeCallable CccClient::ModifyStaffPasswordCall
     return task->get_future();
 }
 
+CccClient::PauseAutoCalloutTaskOutcome CccClient::PauseAutoCalloutTask(const PauseAutoCalloutTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "PauseAutoCalloutTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PauseAutoCalloutTaskResponse rsp = PauseAutoCalloutTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PauseAutoCalloutTaskOutcome(rsp);
+        else
+            return PauseAutoCalloutTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return PauseAutoCalloutTaskOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::PauseAutoCalloutTaskAsync(const PauseAutoCalloutTaskRequest& request, const PauseAutoCalloutTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PauseAutoCalloutTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::PauseAutoCalloutTaskOutcomeCallable CccClient::PauseAutoCalloutTaskCallable(const PauseAutoCalloutTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PauseAutoCalloutTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->PauseAutoCalloutTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::PausePredictiveDialingCampaignOutcome CccClient::PausePredictiveDialingCampaign(const PausePredictiveDialingCampaignRequest &request)
 {
     auto outcome = MakeRequest(request, "PausePredictiveDialingCampaign");
@@ -3043,6 +3086,49 @@ CccClient::RestoreMemberOnlineOutcomeCallable CccClient::RestoreMemberOnlineCall
         [this, request]()
         {
             return this->RestoreMemberOnline(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::ResumeAutoCalloutTaskOutcome CccClient::ResumeAutoCalloutTask(const ResumeAutoCalloutTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeAutoCalloutTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeAutoCalloutTaskResponse rsp = ResumeAutoCalloutTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeAutoCalloutTaskOutcome(rsp);
+        else
+            return ResumeAutoCalloutTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeAutoCalloutTaskOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::ResumeAutoCalloutTaskAsync(const ResumeAutoCalloutTaskRequest& request, const ResumeAutoCalloutTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResumeAutoCalloutTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::ResumeAutoCalloutTaskOutcomeCallable CccClient::ResumeAutoCalloutTaskCallable(const ResumeAutoCalloutTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResumeAutoCalloutTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ResumeAutoCalloutTask(request);
         }
     );
 

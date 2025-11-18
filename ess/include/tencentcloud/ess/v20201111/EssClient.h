@@ -33,6 +33,10 @@
 #include <tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchAdminChangeInvitationsRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchAdminChangeInvitationsResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchAdminChangeInvitationsUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchAdminChangeInvitationsUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchContractReviewTaskRequest.h>
@@ -306,6 +310,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelUserAutoSignEnableUrlResponse> CancelUserAutoSignEnableUrlOutcome;
                 typedef std::future<CancelUserAutoSignEnableUrlOutcome> CancelUserAutoSignEnableUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CancelUserAutoSignEnableUrlRequest&, CancelUserAutoSignEnableUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelUserAutoSignEnableUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchAdminChangeInvitationsResponse> CreateBatchAdminChangeInvitationsOutcome;
+                typedef std::future<CreateBatchAdminChangeInvitationsOutcome> CreateBatchAdminChangeInvitationsOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateBatchAdminChangeInvitationsRequest&, CreateBatchAdminChangeInvitationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchAdminChangeInvitationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchAdminChangeInvitationsUrlResponse> CreateBatchAdminChangeInvitationsUrlOutcome;
+                typedef std::future<CreateBatchAdminChangeInvitationsUrlOutcome> CreateBatchAdminChangeInvitationsUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateBatchAdminChangeInvitationsUrlRequest&, CreateBatchAdminChangeInvitationsUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchAdminChangeInvitationsUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchCancelFlowUrlResponse> CreateBatchCancelFlowUrlOutcome;
                 typedef std::future<CreateBatchCancelFlowUrlOutcome> CreateBatchCancelFlowUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchCancelFlowUrlRequest&, CreateBatchCancelFlowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchCancelFlowUrlAsyncHandler;
@@ -750,6 +760,38 @@ namespace TencentCloud
                 CancelUserAutoSignEnableUrlOutcome CancelUserAutoSignEnableUrl(const Model::CancelUserAutoSignEnableUrlRequest &request);
                 void CancelUserAutoSignEnableUrlAsync(const Model::CancelUserAutoSignEnableUrlRequest& request, const CancelUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelUserAutoSignEnableUrlOutcomeCallable CancelUserAutoSignEnableUrlCallable(const Model::CancelUserAutoSignEnableUrlRequest& request);
+
+                /**
+                 *本接口（CreateBatchAdminChangeInvitations）用于批量创建企业超管信息变更。
+该接口为提交任务接口,如果需要获得链接， 需要使用接口创建超管变更链接(CreateBatchAdminChangeInvitationsUrl)。
+
+批量创建链接有以下限制：
+
+1. 单次最多创建10个企业的超管变更。
+2. 同一批创建的企业不能重复,唯一值为企业 Id。
+
+注意：
+此接口创建的超管变更企业，必须是以下两种企业。
+1. 集团子企业，调用方必须是主企业。
+2. 代认证企业，此企业是由[创建企业认证链接](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthUrl)创建的
+                 * @param req CreateBatchAdminChangeInvitationsRequest
+                 * @return CreateBatchAdminChangeInvitationsOutcome
+                 */
+                CreateBatchAdminChangeInvitationsOutcome CreateBatchAdminChangeInvitations(const Model::CreateBatchAdminChangeInvitationsRequest &request);
+                void CreateBatchAdminChangeInvitationsAsync(const Model::CreateBatchAdminChangeInvitationsRequest& request, const CreateBatchAdminChangeInvitationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchAdminChangeInvitationsOutcomeCallable CreateBatchAdminChangeInvitationsCallable(const Model::CreateBatchAdminChangeInvitationsRequest& request);
+
+                /**
+                 *此接口用于获取企业批量变更超管链接，包含多条超管变更任务。
+
+前提条件：已调用 [CreateBatchAdminChangeInvitations生成批量变更超管任务接口](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchAdminChangeInvitations) 确保任务提交。
+此链接包含多条超管变更流程，使用该链接可以批量的对企业进行超管变更。
+                 * @param req CreateBatchAdminChangeInvitationsUrlRequest
+                 * @return CreateBatchAdminChangeInvitationsUrlOutcome
+                 */
+                CreateBatchAdminChangeInvitationsUrlOutcome CreateBatchAdminChangeInvitationsUrl(const Model::CreateBatchAdminChangeInvitationsUrlRequest &request);
+                void CreateBatchAdminChangeInvitationsUrlAsync(const Model::CreateBatchAdminChangeInvitationsUrlRequest& request, const CreateBatchAdminChangeInvitationsUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchAdminChangeInvitationsUrlOutcomeCallable CreateBatchAdminChangeInvitationsUrlCallable(const Model::CreateBatchAdminChangeInvitationsUrlRequest& request);
 
                 /**
                  *指定需要批量撤回的签署流程Id，以获取批量撤销链接。

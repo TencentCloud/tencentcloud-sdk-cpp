@@ -1415,6 +1415,73 @@ HoaiMy
                      */
                     bool EnableComplianceAudioHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启语音信箱识别
+                     * @return EnableVoicemailDetection 是否开启语音信箱识别
+                     * 
+                     */
+                    bool GetEnableVoicemailDetection() const;
+
+                    /**
+                     * 设置是否开启语音信箱识别
+                     * @param _enableVoicemailDetection 是否开启语音信箱识别
+                     * 
+                     */
+                    void SetEnableVoicemailDetection(const bool& _enableVoicemailDetection);
+
+                    /**
+                     * 判断参数 EnableVoicemailDetection 是否已赋值
+                     * @return EnableVoicemailDetection 是否已赋值
+                     * 
+                     */
+                    bool EnableVoicemailDetectionHasBeenSet() const;
+
+                    /**
+                     * 获取识别到对端为语音信箱时的行为，当EnableVoicemailDetection为True时生效
+0: 挂断电话（默认）
+                     * @return VoicemailAction 识别到对端为语音信箱时的行为，当EnableVoicemailDetection为True时生效
+0: 挂断电话（默认）
+                     * 
+                     */
+                    uint64_t GetVoicemailAction() const;
+
+                    /**
+                     * 设置识别到对端为语音信箱时的行为，当EnableVoicemailDetection为True时生效
+0: 挂断电话（默认）
+                     * @param _voicemailAction 识别到对端为语音信箱时的行为，当EnableVoicemailDetection为True时生效
+0: 挂断电话（默认）
+                     * 
+                     */
+                    void SetVoicemailAction(const uint64_t& _voicemailAction);
+
+                    /**
+                     * 判断参数 VoicemailAction 是否已赋值
+                     * @return VoicemailAction 是否已赋值
+                     * 
+                     */
+                    bool VoicemailActionHasBeenSet() const;
+
+                    /**
+                     * 获取大模型拓展参数， 格式为json字符串
+                     * @return LLMExtraBody 大模型拓展参数， 格式为json字符串
+                     * 
+                     */
+                    std::string GetLLMExtraBody() const;
+
+                    /**
+                     * 设置大模型拓展参数， 格式为json字符串
+                     * @param _lLMExtraBody 大模型拓展参数， 格式为json字符串
+                     * 
+                     */
+                    void SetLLMExtraBody(const std::string& _lLMExtraBody);
+
+                    /**
+                     * 判断参数 LLMExtraBody 是否已赋值
+                     * @return LLMExtraBody 是否已赋值
+                     * 
+                     */
+                    bool LLMExtraBodyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1783,6 +1850,25 @@ HoaiMy
                      */
                     bool m_enableComplianceAudio;
                     bool m_enableComplianceAudioHasBeenSet;
+
+                    /**
+                     * 是否开启语音信箱识别
+                     */
+                    bool m_enableVoicemailDetection;
+                    bool m_enableVoicemailDetectionHasBeenSet;
+
+                    /**
+                     * 识别到对端为语音信箱时的行为，当EnableVoicemailDetection为True时生效
+0: 挂断电话（默认）
+                     */
+                    uint64_t m_voicemailAction;
+                    bool m_voicemailActionHasBeenSet;
+
+                    /**
+                     * 大模型拓展参数， 格式为json字符串
+                     */
+                    std::string m_lLMExtraBody;
+                    bool m_lLMExtraBodyHasBeenSet;
 
                 };
             }

@@ -27,6 +27,8 @@
 #include <tencentcloud/postgres/v20170312/model/AddDBInstanceToReadOnlyGroupResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CloneDBInstanceRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CloneDBInstanceResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CloseAccountCAMRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CloseAccountCAMResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateAccountRequest.h>
@@ -169,6 +171,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyBaseBackupExpireTimeResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceChargeTypeRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceChargeTypeResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceDeletionProtectionRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceDeletionProtectionResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceDeploymentRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceDeploymentResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceHAConfigRequest.h>
@@ -199,10 +203,14 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyReadOnlyGroupConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifySwitchTimePeriodRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifySwitchTimePeriodResponse.h>
+#include <tencentcloud/postgres/v20170312/model/OpenAccountCAMRequest.h>
+#include <tencentcloud/postgres/v20170312/model/OpenAccountCAMResponse.h>
 #include <tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessRequest.h>
 #include <tencentcloud/postgres/v20170312/model/OpenDBExtranetAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/RebalanceReadOnlyGroupRequest.h>
 #include <tencentcloud/postgres/v20170312/model/RebalanceReadOnlyGroupResponse.h>
+#include <tencentcloud/postgres/v20170312/model/RefreshAccountPasswordRequest.h>
+#include <tencentcloud/postgres/v20170312/model/RefreshAccountPasswordResponse.h>
 #include <tencentcloud/postgres/v20170312/model/RemoveDBInstanceFromReadOnlyGroupRequest.h>
 #include <tencentcloud/postgres/v20170312/model/RemoveDBInstanceFromReadOnlyGroupResponse.h>
 #include <tencentcloud/postgres/v20170312/model/RenewInstanceRequest.h>
@@ -243,6 +251,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloneDBInstanceResponse> CloneDBInstanceOutcome;
                 typedef std::future<CloneDBInstanceOutcome> CloneDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CloneDBInstanceRequest&, CloneDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseAccountCAMResponse> CloseAccountCAMOutcome;
+                typedef std::future<CloseAccountCAMOutcome> CloseAccountCAMOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CloseAccountCAMRequest&, CloseAccountCAMOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAccountCAMAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseDBExtranetAccessResponse> CloseDBExtranetAccessOutcome;
                 typedef std::future<CloseDBExtranetAccessOutcome> CloseDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CloseDBExtranetAccessRequest&, CloseDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseDBExtranetAccessAsyncHandler;
@@ -456,6 +467,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceChargeTypeResponse> ModifyDBInstanceChargeTypeOutcome;
                 typedef std::future<ModifyDBInstanceChargeTypeOutcome> ModifyDBInstanceChargeTypeOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceChargeTypeRequest&, ModifyDBInstanceChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceChargeTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceDeletionProtectionResponse> ModifyDBInstanceDeletionProtectionOutcome;
+                typedef std::future<ModifyDBInstanceDeletionProtectionOutcome> ModifyDBInstanceDeletionProtectionOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceDeletionProtectionRequest&, ModifyDBInstanceDeletionProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceDeletionProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceDeploymentResponse> ModifyDBInstanceDeploymentOutcome;
                 typedef std::future<ModifyDBInstanceDeploymentOutcome> ModifyDBInstanceDeploymentOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceDeploymentRequest&, ModifyDBInstanceDeploymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceDeploymentAsyncHandler;
@@ -501,12 +515,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySwitchTimePeriodResponse> ModifySwitchTimePeriodOutcome;
                 typedef std::future<ModifySwitchTimePeriodOutcome> ModifySwitchTimePeriodOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifySwitchTimePeriodRequest&, ModifySwitchTimePeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySwitchTimePeriodAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenAccountCAMResponse> OpenAccountCAMOutcome;
+                typedef std::future<OpenAccountCAMOutcome> OpenAccountCAMOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::OpenAccountCAMRequest&, OpenAccountCAMOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenAccountCAMAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenDBExtranetAccessResponse> OpenDBExtranetAccessOutcome;
                 typedef std::future<OpenDBExtranetAccessOutcome> OpenDBExtranetAccessOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::OpenDBExtranetAccessRequest&, OpenDBExtranetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenDBExtranetAccessAsyncHandler;
                 typedef Outcome<Core::Error, Model::RebalanceReadOnlyGroupResponse> RebalanceReadOnlyGroupOutcome;
                 typedef std::future<RebalanceReadOnlyGroupOutcome> RebalanceReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::RebalanceReadOnlyGroupRequest&, RebalanceReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebalanceReadOnlyGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefreshAccountPasswordResponse> RefreshAccountPasswordOutcome;
+                typedef std::future<RefreshAccountPasswordOutcome> RefreshAccountPasswordOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::RefreshAccountPasswordRequest&, RefreshAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefreshAccountPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveDBInstanceFromReadOnlyGroupResponse> RemoveDBInstanceFromReadOnlyGroupOutcome;
                 typedef std::future<RemoveDBInstanceFromReadOnlyGroupOutcome> RemoveDBInstanceFromReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::RemoveDBInstanceFromReadOnlyGroupRequest&, RemoveDBInstanceFromReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveDBInstanceFromReadOnlyGroupAsyncHandler;
@@ -557,6 +577,15 @@ namespace TencentCloud
                 CloneDBInstanceOutcome CloneDBInstance(const Model::CloneDBInstanceRequest &request);
                 void CloneDBInstanceAsync(const Model::CloneDBInstanceRequest& request, const CloneDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloneDBInstanceOutcomeCallable CloneDBInstanceCallable(const Model::CloneDBInstanceRequest& request);
+
+                /**
+                 *本接口用于关闭数据库账户的CAM验证服务。
+                 * @param req CloseAccountCAMRequest
+                 * @return CloseAccountCAMOutcome
+                 */
+                CloseAccountCAMOutcome CloseAccountCAM(const Model::CloseAccountCAMRequest &request);
+                void CloseAccountCAMAsync(const Model::CloseAccountCAMRequest& request, const CloseAccountCAMAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseAccountCAMOutcomeCallable CloseAccountCAMCallable(const Model::CloseAccountCAMRequest& request);
 
                 /**
                  *本接口（CloseDBExtranetAccess）用于关闭实例公网地址。
@@ -1203,6 +1232,15 @@ namespace TencentCloud
                 ModifyDBInstanceChargeTypeOutcomeCallable ModifyDBInstanceChargeTypeCallable(const Model::ModifyDBInstanceChargeTypeRequest& request);
 
                 /**
+                 *本接口（DeletionProtection）用于开启或关闭实例销毁保护
+                 * @param req ModifyDBInstanceDeletionProtectionRequest
+                 * @return ModifyDBInstanceDeletionProtectionOutcome
+                 */
+                ModifyDBInstanceDeletionProtectionOutcome ModifyDBInstanceDeletionProtection(const Model::ModifyDBInstanceDeletionProtectionRequest &request);
+                void ModifyDBInstanceDeletionProtectionAsync(const Model::ModifyDBInstanceDeletionProtectionRequest& request, const ModifyDBInstanceDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceDeletionProtectionOutcomeCallable ModifyDBInstanceDeletionProtectionCallable(const Model::ModifyDBInstanceDeletionProtectionRequest& request);
+
+                /**
                  *本接口（ModifyDBInstanceDeployment）用于修改节点可用区部署方式，仅支持主实例。
                  * @param req ModifyDBInstanceDeploymentRequest
                  * @return ModifyDBInstanceDeploymentOutcome
@@ -1340,6 +1378,15 @@ namespace TencentCloud
                 ModifySwitchTimePeriodOutcomeCallable ModifySwitchTimePeriodCallable(const Model::ModifySwitchTimePeriodRequest& request);
 
                 /**
+                 *本接口用于开启数据库账户的CAM验证服务。
+                 * @param req OpenAccountCAMRequest
+                 * @return OpenAccountCAMOutcome
+                 */
+                OpenAccountCAMOutcome OpenAccountCAM(const Model::OpenAccountCAMRequest &request);
+                void OpenAccountCAMAsync(const Model::OpenAccountCAMRequest& request, const OpenAccountCAMAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenAccountCAMOutcomeCallable OpenAccountCAMCallable(const Model::OpenAccountCAMRequest& request);
+
+                /**
                  *本接口（OpenDBExtranetAccess）用于开通实例公网地址。
                  * @param req OpenDBExtranetAccessRequest
                  * @return OpenDBExtranetAccessOutcome
@@ -1356,6 +1403,15 @@ namespace TencentCloud
                 RebalanceReadOnlyGroupOutcome RebalanceReadOnlyGroup(const Model::RebalanceReadOnlyGroupRequest &request);
                 void RebalanceReadOnlyGroupAsync(const Model::RebalanceReadOnlyGroupRequest& request, const RebalanceReadOnlyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RebalanceReadOnlyGroupOutcomeCallable RebalanceReadOnlyGroupCallable(const Model::RebalanceReadOnlyGroupRequest& request);
+
+                /**
+                 *本接口用于对开启CAM验证的账户执行手动刷新密码。
+                 * @param req RefreshAccountPasswordRequest
+                 * @return RefreshAccountPasswordOutcome
+                 */
+                RefreshAccountPasswordOutcome RefreshAccountPassword(const Model::RefreshAccountPasswordRequest &request);
+                void RefreshAccountPasswordAsync(const Model::RefreshAccountPasswordRequest& request, const RefreshAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefreshAccountPasswordOutcomeCallable RefreshAccountPasswordCallable(const Model::RefreshAccountPasswordRequest& request);
 
                 /**
                  *本接口（RemoveDBInstanceFromReadOnlyGroup）用户将只读实例从只读组中移除

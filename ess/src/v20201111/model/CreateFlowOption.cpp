@@ -43,7 +43,8 @@ CreateFlowOption::CreateFlowOption() :
     m_selfNameHasBeenSet(false),
     m_hideSignCodeAfterStartHasBeenSet(false),
     m_previewAfterStartHasBeenSet(false),
-    m_signAfterStartHasBeenSet(false)
+    m_signAfterStartHasBeenSet(false),
+    m_needFlowDraftHasBeenSet(false)
 {
 }
 
@@ -311,6 +312,16 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         m_signAfterStartHasBeenSet = true;
     }
 
+    if (value.HasMember("NeedFlowDraft") && !value["NeedFlowDraft"].IsNull())
+    {
+        if (!value["NeedFlowDraft"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.NeedFlowDraft` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_needFlowDraft = value["NeedFlowDraft"].GetBool();
+        m_needFlowDraftHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -528,6 +539,14 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SignAfterStart";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_signAfterStart, allocator);
+    }
+
+    if (m_needFlowDraftHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedFlowDraft";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needFlowDraft, allocator);
     }
 
 }
@@ -899,5 +918,21 @@ void CreateFlowOption::SetSignAfterStart(const bool& _signAfterStart)
 bool CreateFlowOption::SignAfterStartHasBeenSet() const
 {
     return m_signAfterStartHasBeenSet;
+}
+
+bool CreateFlowOption::GetNeedFlowDraft() const
+{
+    return m_needFlowDraft;
+}
+
+void CreateFlowOption::SetNeedFlowDraft(const bool& _needFlowDraft)
+{
+    m_needFlowDraft = _needFlowDraft;
+    m_needFlowDraftHasBeenSet = true;
+}
+
+bool CreateFlowOption::NeedFlowDraftHasBeenSet() const
+{
+    return m_needFlowDraftHasBeenSet;
 }
 

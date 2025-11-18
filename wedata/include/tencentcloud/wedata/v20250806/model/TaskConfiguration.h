@@ -174,18 +174,18 @@ namespace TencentCloud
                     bool YarnQueueHasBeenSet() const;
 
                     /**
-                     * 获取来源数据源ID, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 获取来源数据源ID,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceServiceId 来源数据源ID, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @return SourceServiceId 来源数据源ID,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceServiceId() const;
 
                     /**
-                     * 设置来源数据源ID, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 设置来源数据源ID,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sourceServiceId 来源数据源ID, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @param _sourceServiceId 来源数据源ID,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,18 +199,18 @@ namespace TencentCloud
                     bool SourceServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取来源数据源类型, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 获取来源数据源类型,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceServiceType 来源数据源类型, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @return SourceServiceType 来源数据源类型,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceServiceType() const;
 
                     /**
-                     * 设置来源数据源类型, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 设置来源数据源类型,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sourceServiceType 来源数据源类型, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @param _sourceServiceType 来源数据源类型,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,18 +224,18 @@ namespace TencentCloud
                     bool SourceServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取来源数据源名称, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 获取来源数据源名称, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceServiceName 来源数据源名称, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @return SourceServiceName 来源数据源名称, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceServiceName() const;
 
                     /**
-                     * 设置来源数据源名称, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 设置来源数据源名称, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sourceServiceName 来源数据源名称, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @param _sourceServiceName 来源数据源名称, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -249,18 +249,18 @@ namespace TencentCloud
                     bool SourceServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取目标数据源ID, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 获取目标数据源ID, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetServiceId 目标数据源ID, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @return TargetServiceId 目标数据源ID, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetServiceId() const;
 
                     /**
-                     * 设置目标数据源ID, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 设置目标数据源ID, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetServiceId 目标数据源ID, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @param _targetServiceId 目标数据源ID, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,18 +274,18 @@ namespace TencentCloud
                     bool TargetServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取目标数据源类型, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 获取目标数据源类型,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetServiceType 目标数据源类型, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @return TargetServiceType 目标数据源类型,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetServiceType() const;
 
                     /**
-                     * 设置目标数据源类型, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 设置目标数据源类型,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetServiceType 目标数据源类型, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @param _targetServiceType 目标数据源类型,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -299,18 +299,18 @@ namespace TencentCloud
                     bool TargetServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标数据源名称, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 获取目标数据源名称, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetServiceName 目标数据源名称, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @return TargetServiceName 目标数据源名称, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetServiceName() const;
 
                     /**
-                     * 设置目标数据源名称, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 设置目标数据源名称, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetServiceName 目标数据源名称, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * @param _targetServiceName 目标数据源名称, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -486,42 +486,42 @@ namespace TencentCloud
                     bool m_yarnQueueHasBeenSet;
 
                     /**
-                     * 来源数据源ID, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 来源数据源ID,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceServiceId;
                     bool m_sourceServiceIdHasBeenSet;
 
                     /**
-                     * 来源数据源类型, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 来源数据源类型,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceServiceType;
                     bool m_sourceServiceTypeHasBeenSet;
 
                     /**
-                     * 来源数据源名称, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 来源数据源名称, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceServiceName;
                     bool m_sourceServiceNameHasBeenSet;
 
                     /**
-                     * 目标数据源ID, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 目标数据源ID, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetServiceId;
                     bool m_targetServiceIdHasBeenSet;
 
                     /**
-                     * 目标数据源类型, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 目标数据源类型,  需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetServiceType;
                     bool m_targetServiceTypeHasBeenSet;
 
                     /**
-                     * 目标数据源名称, 使用 ; 分隔, 需要通过 DescribeDataSourceWithoutInfo 获取
+                     * 目标数据源名称, 需要通过 DescribeDataSourceWithoutInfo 获取
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetServiceName;

@@ -259,6 +259,27 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取自定义反馈
+                     * @return FeedbackContent 自定义反馈
+                     * 
+                     */
+                    std::string GetFeedbackContent() const;
+
+                    /**
+                     * 设置自定义反馈
+                     * @param _feedbackContent 自定义反馈
+                     * 
+                     */
+                    void SetFeedbackContent(const std::string& _feedbackContent);
+
+                    /**
+                     * 判断参数 FeedbackContent 是否已赋值
+                     * @return FeedbackContent 是否已赋值
+                     * 
+                     */
+                    bool FeedbackContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -320,6 +341,12 @@ namespace TencentCloud
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 自定义反馈
+                     */
+                    std::string m_feedbackContent;
+                    bool m_feedbackContentHasBeenSet;
 
                 };
             }

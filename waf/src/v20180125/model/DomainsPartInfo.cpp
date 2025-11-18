@@ -76,7 +76,8 @@ DomainsPartInfo::DomainsPartInfo() :
     m_upstreamPolicyHasBeenSet(false),
     m_upstreamRulesHasBeenSet(false),
     m_useCaseHasBeenSet(false),
-    m_gzipHasBeenSet(false)
+    m_gzipHasBeenSet(false),
+    m_stateHasBeenSet(false)
 {
 }
 
@@ -680,6 +681,16 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_gzipHasBeenSet = true;
     }
 
+    if (value.HasMember("State") && !value["State"].IsNull())
+    {
+        if (!value["State"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.State` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_state = value["State"].GetInt64();
+        m_stateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1172,6 +1183,14 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Gzip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gzip, allocator);
+    }
+
+    if (m_stateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "State";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_state, allocator);
     }
 
 }
@@ -2071,5 +2090,21 @@ void DomainsPartInfo::SetGzip(const int64_t& _gzip)
 bool DomainsPartInfo::GzipHasBeenSet() const
 {
     return m_gzipHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetState() const
+{
+    return m_state;
+}
+
+void DomainsPartInfo::SetState(const int64_t& _state)
+{
+    m_state = _state;
+    m_stateHasBeenSet = true;
+}
+
+bool DomainsPartInfo::StateHasBeenSet() const
+{
+    return m_stateHasBeenSet;
 }
 

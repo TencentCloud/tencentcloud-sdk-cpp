@@ -47,7 +47,8 @@ CreateOrganizationAuthUrlRequest::CreateOrganizationAuthUrlRequest() :
     m_userDataHasBeenSet(false),
     m_bankAccountNumberHasBeenSet(false),
     m_bankAccountNumberSameHasBeenSet(false),
-    m_jumpEventsHasBeenSet(false)
+    m_jumpEventsHasBeenSet(false),
+    m_organizationIdCardTypeHasBeenSet(false)
 {
 }
 
@@ -279,6 +280,14 @@ string CreateOrganizationAuthUrlRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_organizationIdCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationIdCardType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_organizationIdCardType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -687,6 +696,22 @@ void CreateOrganizationAuthUrlRequest::SetJumpEvents(const vector<JumpEvent>& _j
 bool CreateOrganizationAuthUrlRequest::JumpEventsHasBeenSet() const
 {
     return m_jumpEventsHasBeenSet;
+}
+
+string CreateOrganizationAuthUrlRequest::GetOrganizationIdCardType() const
+{
+    return m_organizationIdCardType;
+}
+
+void CreateOrganizationAuthUrlRequest::SetOrganizationIdCardType(const string& _organizationIdCardType)
+{
+    m_organizationIdCardType = _organizationIdCardType;
+    m_organizationIdCardTypeHasBeenSet = true;
+}
+
+bool CreateOrganizationAuthUrlRequest::OrganizationIdCardTypeHasBeenSet() const
+{
+    return m_organizationIdCardTypeHasBeenSet;
 }
 
 

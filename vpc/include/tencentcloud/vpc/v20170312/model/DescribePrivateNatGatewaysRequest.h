@@ -45,14 +45,18 @@ namespace TencentCloud
 
                     /**
                      * 获取私网网关唯一`ID`，形如：`intranat-0g3blj80`。
+注意：NatGatewayIds和Filters参数互斥，不能同时传入。
                      * @return NatGatewayIds 私网网关唯一`ID`，形如：`intranat-0g3blj80`。
+注意：NatGatewayIds和Filters参数互斥，不能同时传入。
                      * 
                      */
                     std::vector<std::string> GetNatGatewayIds() const;
 
                     /**
                      * 设置私网网关唯一`ID`，形如：`intranat-0g3blj80`。
+注意：NatGatewayIds和Filters参数互斥，不能同时传入。
                      * @param _natGatewayIds 私网网关唯一`ID`，形如：`intranat-0g3blj80`。
+注意：NatGatewayIds和Filters参数互斥，不能同时传入。
                      * 
                      */
                     void SetNatGatewayIds(const std::vector<std::string>& _natGatewayIds);
@@ -128,15 +132,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序字段。可选值："NatGatewayId"、"NatGatewayName"、"CreatedTime"
-                     * @return OrderField 排序字段。可选值："NatGatewayId"、"NatGatewayName"、"CreatedTime"
+                     * 获取排序字段。可选值：NatGatewayId、NatGatewayName、CreatedTime。
+                     * @return OrderField 排序字段。可选值：NatGatewayId、NatGatewayName、CreatedTime。
                      * 
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置排序字段。可选值："NatGatewayId"、"NatGatewayName"、"CreatedTime"
-                     * @param _orderField 排序字段。可选值："NatGatewayId"、"NatGatewayName"、"CreatedTime"
+                     * 设置排序字段。可选值：NatGatewayId、NatGatewayName、CreatedTime。
+                     * @param _orderField 排序字段。可选值：NatGatewayId、NatGatewayName、CreatedTime。
                      * 
                      */
                     void SetOrderField(const std::string& _orderField);
@@ -149,15 +153,15 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序方式。可选值："ASC"、"DESC"。
-                     * @return OrderDirection 排序方式。可选值："ASC"、"DESC"。
+                     * 获取排序方式。可选值：ASC、DESC。分别表示升序、降序。
+                     * @return OrderDirection 排序方式。可选值：ASC、DESC。分别表示升序、降序。
                      * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
-                     * 设置排序方式。可选值："ASC"、"DESC"。
-                     * @param _orderDirection 排序方式。可选值："ASC"、"DESC"。
+                     * 设置排序方式。可选值：ASC、DESC。分别表示升序、降序。
+                     * @param _orderDirection 排序方式。可选值：ASC、DESC。分别表示升序、降序。
                      * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
@@ -173,6 +177,7 @@ namespace TencentCloud
 
                     /**
                      * 私网网关唯一`ID`，形如：`intranat-0g3blj80`。
+注意：NatGatewayIds和Filters参数互斥，不能同时传入。
                      */
                     std::vector<std::string> m_natGatewayIds;
                     bool m_natGatewayIdsHasBeenSet;
@@ -196,13 +201,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序字段。可选值："NatGatewayId"、"NatGatewayName"、"CreatedTime"
+                     * 排序字段。可选值：NatGatewayId、NatGatewayName、CreatedTime。
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 排序方式。可选值："ASC"、"DESC"。
+                     * 排序方式。可选值：ASC、DESC。分别表示升序、降序。
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;

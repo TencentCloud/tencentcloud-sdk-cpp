@@ -84,6 +84,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/ReplaceRoutePolicyEntriesRequest.h
   include/tencentcloud/vpc/v20170312/model/AssignIpv6SubnetCidrBlockRequest.h
   include/tencentcloud/vpc/v20170312/model/DeleteVpnGatewaySslClientResponse.h
+  include/tencentcloud/vpc/v20170312/model/DescribeNatGatewayZonesRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeCrossBorderComplianceRequest.h
   include/tencentcloud/vpc/v20170312/model/CreateVpcResponse.h
   include/tencentcloud/vpc/v20170312/model/AssistantCidr.h
@@ -213,6 +214,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeFlowLogRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeTenantCcnsRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeIp6AddressesRequest.h
+  include/tencentcloud/vpc/v20170312/model/ReplaceCcnRouteTableInputPolicysResponse.h
   include/tencentcloud/vpc/v20170312/model/TrafficFlow.h
   include/tencentcloud/vpc/v20170312/model/CreateRoutePolicyRequest.h
   include/tencentcloud/vpc/v20170312/model/DeleteRoutePolicyAssociationsResponse.h
@@ -557,7 +559,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/ModifySnapshotPoliciesResponse.h
   include/tencentcloud/vpc/v20170312/model/ResetRoutePolicyEntriesRequest.h
   include/tencentcloud/vpc/v20170312/model/InquiryPriceRenewAddressesResponse.h
-  include/tencentcloud/vpc/v20170312/model/ReplaceCcnRouteTableInputPolicysResponse.h
+  include/tencentcloud/vpc/v20170312/model/DescribeNatGatewayZonesResponse.h
   include/tencentcloud/vpc/v20170312/model/DeleteCdcNetPlanesResponse.h
   include/tencentcloud/vpc/v20170312/model/CreateRoutePolicyAssociationsRequest.h
   include/tencentcloud/vpc/v20170312/model/RenewAddressesResponse.h
@@ -1048,6 +1050,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DisassociateHaVipInstanceRequest.h
   include/tencentcloud/vpc/v20170312/model/ReplaceCcnRouteTableInputPolicysRequest.h
   include/tencentcloud/vpc/v20170312/model/InstanceChargePrepaid.h
+  include/tencentcloud/vpc/v20170312/model/NatZoneInfo.h
   include/tencentcloud/vpc/v20170312/model/CreateRoutePolicyAssociationsResponse.h
   include/tencentcloud/vpc/v20170312/model/AddTemplateMemberRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyNetworkInterfaceAttributeResponse.h
@@ -1126,6 +1129,7 @@ set(vpc_src
   src/v20170312/model/ReplaceRoutePolicyEntriesRequest.cpp
   src/v20170312/model/AssignIpv6SubnetCidrBlockRequest.cpp
   src/v20170312/model/DeleteVpnGatewaySslClientResponse.cpp
+  src/v20170312/model/DescribeNatGatewayZonesRequest.cpp
   src/v20170312/model/DescribeCrossBorderComplianceRequest.cpp
   src/v20170312/model/CreateVpcResponse.cpp
   src/v20170312/model/AssistantCidr.cpp
@@ -1255,6 +1259,7 @@ set(vpc_src
   src/v20170312/model/DescribeFlowLogRequest.cpp
   src/v20170312/model/DescribeTenantCcnsRequest.cpp
   src/v20170312/model/DescribeIp6AddressesRequest.cpp
+  src/v20170312/model/ReplaceCcnRouteTableInputPolicysResponse.cpp
   src/v20170312/model/TrafficFlow.cpp
   src/v20170312/model/CreateRoutePolicyRequest.cpp
   src/v20170312/model/DeleteRoutePolicyAssociationsResponse.cpp
@@ -1599,7 +1604,7 @@ set(vpc_src
   src/v20170312/model/ModifySnapshotPoliciesResponse.cpp
   src/v20170312/model/ResetRoutePolicyEntriesRequest.cpp
   src/v20170312/model/InquiryPriceRenewAddressesResponse.cpp
-  src/v20170312/model/ReplaceCcnRouteTableInputPolicysResponse.cpp
+  src/v20170312/model/DescribeNatGatewayZonesResponse.cpp
   src/v20170312/model/DeleteCdcNetPlanesResponse.cpp
   src/v20170312/model/CreateRoutePolicyAssociationsRequest.cpp
   src/v20170312/model/RenewAddressesResponse.cpp
@@ -2090,6 +2095,7 @@ set(vpc_src
   src/v20170312/model/DisassociateHaVipInstanceRequest.cpp
   src/v20170312/model/ReplaceCcnRouteTableInputPolicysRequest.cpp
   src/v20170312/model/InstanceChargePrepaid.cpp
+  src/v20170312/model/NatZoneInfo.cpp
   src/v20170312/model/CreateRoutePolicyAssociationsResponse.cpp
   src/v20170312/model/AddTemplateMemberRequest.cpp
   src/v20170312/model/ModifyNetworkInterfaceAttributeResponse.cpp

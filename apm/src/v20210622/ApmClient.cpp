@@ -83,6 +83,92 @@ ApmClient::CreateApmInstanceOutcomeCallable ApmClient::CreateApmInstanceCallable
     return task->get_future();
 }
 
+ApmClient::CreateApmPrometheusRuleOutcome ApmClient::CreateApmPrometheusRule(const CreateApmPrometheusRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApmPrometheusRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApmPrometheusRuleResponse rsp = CreateApmPrometheusRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApmPrometheusRuleOutcome(rsp);
+        else
+            return CreateApmPrometheusRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApmPrometheusRuleOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::CreateApmPrometheusRuleAsync(const CreateApmPrometheusRuleRequest& request, const CreateApmPrometheusRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApmPrometheusRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::CreateApmPrometheusRuleOutcomeCallable ApmClient::CreateApmPrometheusRuleCallable(const CreateApmPrometheusRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateApmPrometheusRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApmPrometheusRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::CreateApmSampleConfigOutcome ApmClient::CreateApmSampleConfig(const CreateApmSampleConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApmSampleConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApmSampleConfigResponse rsp = CreateApmSampleConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApmSampleConfigOutcome(rsp);
+        else
+            return CreateApmSampleConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApmSampleConfigOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::CreateApmSampleConfigAsync(const CreateApmSampleConfigRequest& request, const CreateApmSampleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApmSampleConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::CreateApmSampleConfigOutcomeCallable ApmClient::CreateApmSampleConfigCallable(const CreateApmSampleConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateApmSampleConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApmSampleConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::CreateProfileTaskOutcome ApmClient::CreateProfileTask(const CreateProfileTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateProfileTask");
@@ -119,6 +205,49 @@ ApmClient::CreateProfileTaskOutcomeCallable ApmClient::CreateProfileTaskCallable
         [this, request]()
         {
             return this->CreateProfileTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::DeleteApmSampleConfigOutcome ApmClient::DeleteApmSampleConfig(const DeleteApmSampleConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteApmSampleConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteApmSampleConfigResponse rsp = DeleteApmSampleConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteApmSampleConfigOutcome(rsp);
+        else
+            return DeleteApmSampleConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteApmSampleConfigOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DeleteApmSampleConfigAsync(const DeleteApmSampleConfigRequest& request, const DeleteApmSampleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteApmSampleConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DeleteApmSampleConfigOutcomeCallable ApmClient::DeleteApmSampleConfigCallable(const DeleteApmSampleConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteApmSampleConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteApmSampleConfig(request);
         }
     );
 
@@ -169,6 +298,92 @@ ApmClient::DescribeApmAgentOutcomeCallable ApmClient::DescribeApmAgentCallable(c
     return task->get_future();
 }
 
+ApmClient::DescribeApmApplicationConfigOutcome ApmClient::DescribeApmApplicationConfig(const DescribeApmApplicationConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApmApplicationConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApmApplicationConfigResponse rsp = DescribeApmApplicationConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApmApplicationConfigOutcome(rsp);
+        else
+            return DescribeApmApplicationConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApmApplicationConfigOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeApmApplicationConfigAsync(const DescribeApmApplicationConfigRequest& request, const DescribeApmApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApmApplicationConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeApmApplicationConfigOutcomeCallable ApmClient::DescribeApmApplicationConfigCallable(const DescribeApmApplicationConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApmApplicationConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApmApplicationConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::DescribeApmAssociationOutcome ApmClient::DescribeApmAssociation(const DescribeApmAssociationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApmAssociation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApmAssociationResponse rsp = DescribeApmAssociationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApmAssociationOutcome(rsp);
+        else
+            return DescribeApmAssociationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApmAssociationOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeApmAssociationAsync(const DescribeApmAssociationRequest& request, const DescribeApmAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApmAssociation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeApmAssociationOutcomeCallable ApmClient::DescribeApmAssociationCallable(const DescribeApmAssociationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApmAssociationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApmAssociation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::DescribeApmInstancesOutcome ApmClient::DescribeApmInstances(const DescribeApmInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApmInstances");
@@ -205,6 +420,92 @@ ApmClient::DescribeApmInstancesOutcomeCallable ApmClient::DescribeApmInstancesCa
         [this, request]()
         {
             return this->DescribeApmInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::DescribeApmPrometheusRuleOutcome ApmClient::DescribeApmPrometheusRule(const DescribeApmPrometheusRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApmPrometheusRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApmPrometheusRuleResponse rsp = DescribeApmPrometheusRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApmPrometheusRuleOutcome(rsp);
+        else
+            return DescribeApmPrometheusRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApmPrometheusRuleOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeApmPrometheusRuleAsync(const DescribeApmPrometheusRuleRequest& request, const DescribeApmPrometheusRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApmPrometheusRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeApmPrometheusRuleOutcomeCallable ApmClient::DescribeApmPrometheusRuleCallable(const DescribeApmPrometheusRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApmPrometheusRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApmPrometheusRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::DescribeApmSampleConfigOutcome ApmClient::DescribeApmSampleConfig(const DescribeApmSampleConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApmSampleConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApmSampleConfigResponse rsp = DescribeApmSampleConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApmSampleConfigOutcome(rsp);
+        else
+            return DescribeApmSampleConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApmSampleConfigOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeApmSampleConfigAsync(const DescribeApmSampleConfigRequest& request, const DescribeApmSampleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApmSampleConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeApmSampleConfigOutcomeCallable ApmClient::DescribeApmSampleConfigCallable(const DescribeApmSampleConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApmSampleConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApmSampleConfig(request);
         }
     );
 
@@ -556,6 +857,92 @@ ApmClient::DescribeTagValuesOutcomeCallable ApmClient::DescribeTagValuesCallable
     return task->get_future();
 }
 
+ApmClient::ModifyApmApplicationConfigOutcome ApmClient::ModifyApmApplicationConfig(const ModifyApmApplicationConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApmApplicationConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApmApplicationConfigResponse rsp = ModifyApmApplicationConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApmApplicationConfigOutcome(rsp);
+        else
+            return ModifyApmApplicationConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApmApplicationConfigOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::ModifyApmApplicationConfigAsync(const ModifyApmApplicationConfigRequest& request, const ModifyApmApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApmApplicationConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::ModifyApmApplicationConfigOutcomeCallable ApmClient::ModifyApmApplicationConfigCallable(const ModifyApmApplicationConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApmApplicationConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApmApplicationConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::ModifyApmAssociationOutcome ApmClient::ModifyApmAssociation(const ModifyApmAssociationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApmAssociation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApmAssociationResponse rsp = ModifyApmAssociationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApmAssociationOutcome(rsp);
+        else
+            return ModifyApmAssociationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApmAssociationOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::ModifyApmAssociationAsync(const ModifyApmAssociationRequest& request, const ModifyApmAssociationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApmAssociation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::ModifyApmAssociationOutcomeCallable ApmClient::ModifyApmAssociationCallable(const ModifyApmAssociationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApmAssociationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApmAssociation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::ModifyApmInstanceOutcome ApmClient::ModifyApmInstance(const ModifyApmInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyApmInstance");
@@ -592,6 +979,92 @@ ApmClient::ModifyApmInstanceOutcomeCallable ApmClient::ModifyApmInstanceCallable
         [this, request]()
         {
             return this->ModifyApmInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::ModifyApmPrometheusRuleOutcome ApmClient::ModifyApmPrometheusRule(const ModifyApmPrometheusRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApmPrometheusRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApmPrometheusRuleResponse rsp = ModifyApmPrometheusRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApmPrometheusRuleOutcome(rsp);
+        else
+            return ModifyApmPrometheusRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApmPrometheusRuleOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::ModifyApmPrometheusRuleAsync(const ModifyApmPrometheusRuleRequest& request, const ModifyApmPrometheusRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApmPrometheusRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::ModifyApmPrometheusRuleOutcomeCallable ApmClient::ModifyApmPrometheusRuleCallable(const ModifyApmPrometheusRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApmPrometheusRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApmPrometheusRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::ModifyApmSampleConfigOutcome ApmClient::ModifyApmSampleConfig(const ModifyApmSampleConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApmSampleConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApmSampleConfigResponse rsp = ModifyApmSampleConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApmSampleConfigOutcome(rsp);
+        else
+            return ModifyApmSampleConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApmSampleConfigOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::ModifyApmSampleConfigAsync(const ModifyApmSampleConfigRequest& request, const ModifyApmSampleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApmSampleConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::ModifyApmSampleConfigOutcomeCallable ApmClient::ModifyApmSampleConfigCallable(const ModifyApmSampleConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApmSampleConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApmSampleConfig(request);
         }
     );
 

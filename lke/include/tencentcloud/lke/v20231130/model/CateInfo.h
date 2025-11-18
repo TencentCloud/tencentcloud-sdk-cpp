@@ -238,6 +238,31 @@ namespace TencentCloud
                      */
                     bool ChildrenHasBeenSet() const;
 
+                    /**
+                     * 获取是否为叶子节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsLeaf 是否为叶子节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsLeaf() const;
+
+                    /**
+                     * 设置是否为叶子节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isLeaf 是否为叶子节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsLeaf(const bool& _isLeaf);
+
+                    /**
+                     * 判断参数 IsLeaf 是否已赋值
+                     * @return IsLeaf 是否已赋值
+                     * 
+                     */
+                    bool IsLeafHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,6 +317,13 @@ namespace TencentCloud
                      */
                     std::vector<CateInfo> m_children;
                     bool m_childrenHasBeenSet;
+
+                    /**
+                     * 是否为叶子节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isLeaf;
+                    bool m_isLeafHasBeenSet;
 
                 };
             }

@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能结构化元素组
+                * 文档智能元素组
                 */
                 class ItemInfo : public AbstractModel
                 {

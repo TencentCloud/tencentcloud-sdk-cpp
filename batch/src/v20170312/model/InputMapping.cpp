@@ -23,7 +23,8 @@ using namespace std;
 InputMapping::InputMapping() :
     m_sourcePathHasBeenSet(false),
     m_destinationPathHasBeenSet(false),
-    m_mountOptionParameterHasBeenSet(false)
+    m_mountOptionParameterHasBeenSet(false),
+    m_mountTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome InputMapping::Deserialize(const rapidjson::Value &value)
         m_mountOptionParameterHasBeenSet = true;
     }
 
+    if (value.HasMember("MountType") && !value["MountType"].IsNull())
+    {
+        if (!value["MountType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InputMapping.MountType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mountType = string(value["MountType"].GetString());
+        m_mountTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void InputMapping::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "MountOptionParameter";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mountOptionParameter.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void InputMapping::SetMountOptionParameter(const string& _mountOptionParameter)
 bool InputMapping::MountOptionParameterHasBeenSet() const
 {
     return m_mountOptionParameterHasBeenSet;
+}
+
+string InputMapping::GetMountType() const
+{
+    return m_mountType;
+}
+
+void InputMapping::SetMountType(const string& _mountType)
+{
+    m_mountType = _mountType;
+    m_mountTypeHasBeenSet = true;
+}
+
+bool InputMapping::MountTypeHasBeenSet() const
+{
+    return m_mountTypeHasBeenSet;
 }
 

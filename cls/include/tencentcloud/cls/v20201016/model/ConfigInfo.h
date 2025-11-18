@@ -377,15 +377,27 @@ namespace TencentCloud
                     bool AdvancedConfigHasBeenSet() const;
 
                     /**
-                     * 获取日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file
-                     * @return InputType 日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file
+                     * 获取日志输入类型（<span style="color:red; font-weight:bold">注：windows场景必填且仅支持file和windows_event类型</span>）
+- file: 文件类型采集
+- windows_event：windows事件采集
+- syslog：系统日志采集
+                     * @return InputType 日志输入类型（<span style="color:red; font-weight:bold">注：windows场景必填且仅支持file和windows_event类型</span>）
+- file: 文件类型采集
+- windows_event：windows事件采集
+- syslog：系统日志采集
                      * 
                      */
                     std::string GetInputType() const;
 
                     /**
-                     * 设置日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file
-                     * @param _inputType 日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file
+                     * 设置日志输入类型（<span style="color:red; font-weight:bold">注：windows场景必填且仅支持file和windows_event类型</span>）
+- file: 文件类型采集
+- windows_event：windows事件采集
+- syslog：系统日志采集
+                     * @param _inputType 日志输入类型（<span style="color:red; font-weight:bold">注：windows场景必填且仅支持file和windows_event类型</span>）
+- file: 文件类型采集
+- windows_event：windows事件采集
+- syslog：系统日志采集
                      * 
                      */
                     void SetInputType(const std::string& _inputType);
@@ -491,7 +503,10 @@ namespace TencentCloud
                     bool m_advancedConfigHasBeenSet;
 
                     /**
-                     * 日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file
+                     * 日志输入类型（<span style="color:red; font-weight:bold">注：windows场景必填且仅支持file和windows_event类型</span>）
+- file: 文件类型采集
+- windows_event：windows事件采集
+- syslog：系统日志采集
                      */
                     std::string m_inputType;
                     bool m_inputTypeHasBeenSet;

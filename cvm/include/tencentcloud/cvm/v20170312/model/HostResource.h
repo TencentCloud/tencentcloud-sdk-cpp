@@ -236,15 +236,19 @@ namespace TencentCloud
                     bool GpuAvailableHasBeenSet() const;
 
                     /**
-                     * 获取CDH owner
-                     * @return ExclusiveOwner CDH owner
+                     * 获取CDH 拥有者
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExclusiveOwner CDH 拥有者
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExclusiveOwner() const;
 
                     /**
-                     * 设置CDH owner
-                     * @param _exclusiveOwner CDH owner
+                     * 设置CDH 拥有者
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _exclusiveOwner CDH 拥有者
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExclusiveOwner(const std::string& _exclusiveOwner);
@@ -313,7 +317,8 @@ namespace TencentCloud
                     bool m_gpuAvailableHasBeenSet;
 
                     /**
-                     * CDH owner
+                     * CDH 拥有者
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exclusiveOwner;
                     bool m_exclusiveOwnerHasBeenSet;

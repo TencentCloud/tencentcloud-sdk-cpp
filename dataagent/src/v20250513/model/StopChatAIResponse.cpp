@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dataagent::V20250513::Model;
 using namespace std;
 
-StopChatAIResponse::StopChatAIResponse()
+StopChatAIResponse::StopChatAIResponse() :
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome StopChatAIResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
+    {
+        if (!rsp["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(rsp["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string StopChatAIResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string StopChatAIResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string StopChatAIResponse::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+bool StopChatAIResponse::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
 
 

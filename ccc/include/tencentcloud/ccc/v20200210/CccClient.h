@@ -157,12 +157,16 @@
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffPasswordRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffPasswordResponse.h>
+#include <tencentcloud/ccc/v20200210/model/PauseAutoCalloutTaskRequest.h>
+#include <tencentcloud/ccc/v20200210/model/PauseAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordResponse.h>
 #include <tencentcloud/ccc/v20200210/model/RestoreMemberOnlineRequest.h>
 #include <tencentcloud/ccc/v20200210/model/RestoreMemberOnlineResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ResumeAutoCalloutTaskRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ResumeAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/SetStaffStatusRequest.h>
@@ -396,6 +400,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyStaffPasswordResponse> ModifyStaffPasswordOutcome;
                 typedef std::future<ModifyStaffPasswordOutcome> ModifyStaffPasswordOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ModifyStaffPasswordRequest&, ModifyStaffPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStaffPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::PauseAutoCalloutTaskResponse> PauseAutoCalloutTaskOutcome;
+                typedef std::future<PauseAutoCalloutTaskOutcome> PauseAutoCalloutTaskOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::PauseAutoCalloutTaskRequest&, PauseAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseAutoCalloutTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::PausePredictiveDialingCampaignResponse> PausePredictiveDialingCampaignOutcome;
                 typedef std::future<PausePredictiveDialingCampaignOutcome> PausePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::PausePredictiveDialingCampaignRequest&, PausePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PausePredictiveDialingCampaignAsyncHandler;
@@ -405,6 +412,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestoreMemberOnlineResponse> RestoreMemberOnlineOutcome;
                 typedef std::future<RestoreMemberOnlineOutcome> RestoreMemberOnlineOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::RestoreMemberOnlineRequest&, RestoreMemberOnlineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreMemberOnlineAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeAutoCalloutTaskResponse> ResumeAutoCalloutTaskOutcome;
+                typedef std::future<ResumeAutoCalloutTaskOutcome> ResumeAutoCalloutTaskOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ResumeAutoCalloutTaskRequest&, ResumeAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeAutoCalloutTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumePredictiveDialingCampaignResponse> ResumePredictiveDialingCampaignOutcome;
                 typedef std::future<ResumePredictiveDialingCampaignOutcome> ResumePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ResumePredictiveDialingCampaignRequest&, ResumePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumePredictiveDialingCampaignAsyncHandler;
@@ -1049,6 +1059,15 @@ namespace TencentCloud
                 ModifyStaffPasswordOutcomeCallable ModifyStaffPasswordCallable(const Model::ModifyStaffPasswordRequest& request);
 
                 /**
+                 *暂停未完成的自动外呼任务
+                 * @param req PauseAutoCalloutTaskRequest
+                 * @return PauseAutoCalloutTaskOutcome
+                 */
+                PauseAutoCalloutTaskOutcome PauseAutoCalloutTask(const Model::PauseAutoCalloutTaskRequest &request);
+                void PauseAutoCalloutTaskAsync(const Model::PauseAutoCalloutTaskRequest& request, const PauseAutoCalloutTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PauseAutoCalloutTaskOutcomeCallable PauseAutoCalloutTaskCallable(const Model::PauseAutoCalloutTaskRequest& request);
+
+                /**
                  *暂停预测式外呼任务
                  * @param req PausePredictiveDialingCampaignRequest
                  * @return PausePredictiveDialingCampaignOutcome
@@ -1074,6 +1093,15 @@ namespace TencentCloud
                 RestoreMemberOnlineOutcome RestoreMemberOnline(const Model::RestoreMemberOnlineRequest &request);
                 void RestoreMemberOnlineAsync(const Model::RestoreMemberOnlineRequest& request, const RestoreMemberOnlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestoreMemberOnlineOutcomeCallable RestoreMemberOnlineCallable(const Model::RestoreMemberOnlineRequest& request);
+
+                /**
+                 *暂停未完成的自动外呼任务
+                 * @param req ResumeAutoCalloutTaskRequest
+                 * @return ResumeAutoCalloutTaskOutcome
+                 */
+                ResumeAutoCalloutTaskOutcome ResumeAutoCalloutTask(const Model::ResumeAutoCalloutTaskRequest &request);
+                void ResumeAutoCalloutTaskAsync(const Model::ResumeAutoCalloutTaskRequest& request, const ResumeAutoCalloutTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeAutoCalloutTaskOutcomeCallable ResumeAutoCalloutTaskCallable(const Model::ResumeAutoCalloutTaskRequest& request);
 
                 /**
                  *恢复预测式外呼任务

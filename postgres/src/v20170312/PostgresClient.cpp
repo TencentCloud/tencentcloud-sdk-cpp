@@ -126,6 +126,49 @@ PostgresClient::CloneDBInstanceOutcomeCallable PostgresClient::CloneDBInstanceCa
     return task->get_future();
 }
 
+PostgresClient::CloseAccountCAMOutcome PostgresClient::CloseAccountCAM(const CloseAccountCAMRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseAccountCAM");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseAccountCAMResponse rsp = CloseAccountCAMResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseAccountCAMOutcome(rsp);
+        else
+            return CloseAccountCAMOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseAccountCAMOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CloseAccountCAMAsync(const CloseAccountCAMRequest& request, const CloseAccountCAMAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseAccountCAM(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CloseAccountCAMOutcomeCallable PostgresClient::CloseAccountCAMCallable(const CloseAccountCAMRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseAccountCAMOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseAccountCAM(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CloseDBExtranetAccessOutcome PostgresClient::CloseDBExtranetAccess(const CloseDBExtranetAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseDBExtranetAccess");
@@ -3179,6 +3222,49 @@ PostgresClient::ModifyDBInstanceChargeTypeOutcomeCallable PostgresClient::Modify
     return task->get_future();
 }
 
+PostgresClient::ModifyDBInstanceDeletionProtectionOutcome PostgresClient::ModifyDBInstanceDeletionProtection(const ModifyDBInstanceDeletionProtectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceDeletionProtection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceDeletionProtectionResponse rsp = ModifyDBInstanceDeletionProtectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceDeletionProtectionOutcome(rsp);
+        else
+            return ModifyDBInstanceDeletionProtectionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceDeletionProtectionOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyDBInstanceDeletionProtectionAsync(const ModifyDBInstanceDeletionProtectionRequest& request, const ModifyDBInstanceDeletionProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceDeletionProtection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyDBInstanceDeletionProtectionOutcomeCallable PostgresClient::ModifyDBInstanceDeletionProtectionCallable(const ModifyDBInstanceDeletionProtectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceDeletionProtectionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceDeletionProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::ModifyDBInstanceDeploymentOutcome PostgresClient::ModifyDBInstanceDeployment(const ModifyDBInstanceDeploymentRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceDeployment");
@@ -3824,6 +3910,49 @@ PostgresClient::ModifySwitchTimePeriodOutcomeCallable PostgresClient::ModifySwit
     return task->get_future();
 }
 
+PostgresClient::OpenAccountCAMOutcome PostgresClient::OpenAccountCAM(const OpenAccountCAMRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenAccountCAM");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenAccountCAMResponse rsp = OpenAccountCAMResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenAccountCAMOutcome(rsp);
+        else
+            return OpenAccountCAMOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenAccountCAMOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::OpenAccountCAMAsync(const OpenAccountCAMRequest& request, const OpenAccountCAMAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenAccountCAM(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::OpenAccountCAMOutcomeCallable PostgresClient::OpenAccountCAMCallable(const OpenAccountCAMRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenAccountCAMOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenAccountCAM(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::OpenDBExtranetAccessOutcome PostgresClient::OpenDBExtranetAccess(const OpenDBExtranetAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "OpenDBExtranetAccess");
@@ -3903,6 +4032,49 @@ PostgresClient::RebalanceReadOnlyGroupOutcomeCallable PostgresClient::RebalanceR
         [this, request]()
         {
             return this->RebalanceReadOnlyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::RefreshAccountPasswordOutcome PostgresClient::RefreshAccountPassword(const RefreshAccountPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "RefreshAccountPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RefreshAccountPasswordResponse rsp = RefreshAccountPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RefreshAccountPasswordOutcome(rsp);
+        else
+            return RefreshAccountPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return RefreshAccountPasswordOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::RefreshAccountPasswordAsync(const RefreshAccountPasswordRequest& request, const RefreshAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RefreshAccountPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::RefreshAccountPasswordOutcomeCallable PostgresClient::RefreshAccountPasswordCallable(const RefreshAccountPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RefreshAccountPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->RefreshAccountPassword(request);
         }
     );
 

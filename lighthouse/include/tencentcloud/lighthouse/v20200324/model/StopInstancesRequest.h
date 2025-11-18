@@ -64,20 +64,16 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取关机类型。
-取值范围： 
-
-- SOFT：表示软关机
-- HARD：表示硬关机 
-- SOFT_FIRST：表示优先软关机，失败再执行硬关机  
+                     * 获取关机类型。取值范围： 
+<li>SOFT：表示软关机</li>
+<li>HARD：表示硬关机 </li>
+<li>SOFT_FIRST：表示优先软关机，失败再执行硬关机 </li>
 
 默认取值：SOFT_FIRST
-                     * @return StopType 关机类型。
-取值范围： 
-
-- SOFT：表示软关机
-- HARD：表示硬关机 
-- SOFT_FIRST：表示优先软关机，失败再执行硬关机  
+                     * @return StopType 关机类型。取值范围： 
+<li>SOFT：表示软关机</li>
+<li>HARD：表示硬关机 </li>
+<li>SOFT_FIRST：表示优先软关机，失败再执行硬关机 </li>
 
 默认取值：SOFT_FIRST
                      * 
@@ -85,20 +81,16 @@ namespace TencentCloud
                     std::string GetStopType() const;
 
                     /**
-                     * 设置关机类型。
-取值范围： 
-
-- SOFT：表示软关机
-- HARD：表示硬关机 
-- SOFT_FIRST：表示优先软关机，失败再执行硬关机  
+                     * 设置关机类型。取值范围： 
+<li>SOFT：表示软关机</li>
+<li>HARD：表示硬关机 </li>
+<li>SOFT_FIRST：表示优先软关机，失败再执行硬关机 </li>
 
 默认取值：SOFT_FIRST
-                     * @param _stopType 关机类型。
-取值范围： 
-
-- SOFT：表示软关机
-- HARD：表示硬关机 
-- SOFT_FIRST：表示优先软关机，失败再执行硬关机  
+                     * @param _stopType 关机类型。取值范围： 
+<li>SOFT：表示软关机</li>
+<li>HARD：表示硬关机 </li>
+<li>SOFT_FIRST：表示优先软关机，失败再执行硬关机 </li>
 
 默认取值：SOFT_FIRST
                      * 
@@ -121,12 +113,10 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 关机类型。
-取值范围： 
-
-- SOFT：表示软关机
-- HARD：表示硬关机 
-- SOFT_FIRST：表示优先软关机，失败再执行硬关机  
+                     * 关机类型。取值范围： 
+<li>SOFT：表示软关机</li>
+<li>HARD：表示硬关机 </li>
+<li>SOFT_FIRST：表示优先软关机，失败再执行硬关机 </li>
 
 默认取值：SOFT_FIRST
                      */

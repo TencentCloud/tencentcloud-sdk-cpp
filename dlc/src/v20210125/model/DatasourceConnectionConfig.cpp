@@ -31,7 +31,8 @@ DatasourceConnectionConfig::DatasourceConnectionConfig() :
     m_elasticsearchHasBeenSet(false),
     m_tDSQLPostgreSqlHasBeenSet(false),
     m_tCHouseDHasBeenSet(false),
-    m_tccHiveHasBeenSet(false)
+    m_tccHiveHasBeenSet(false),
+    m_mongoDBHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,23 @@ CoreInternalOutcome DatasourceConnectionConfig::Deserialize(const rapidjson::Val
         m_tccHiveHasBeenSet = true;
     }
 
+    if (value.HasMember("MongoDB") && !value["MongoDB"].IsNull())
+    {
+        if (!value["MongoDB"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceConnectionConfig.MongoDB` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mongoDB.Deserialize(value["MongoDB"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mongoDBHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -331,6 +349,15 @@ void DatasourceConnectionConfig::ToJsonObject(rapidjson::Value &value, rapidjson
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tccHive.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mongoDBHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MongoDB";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mongoDB.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -510,5 +537,21 @@ void DatasourceConnectionConfig::SetTccHive(const TccHive& _tccHive)
 bool DatasourceConnectionConfig::TccHiveHasBeenSet() const
 {
     return m_tccHiveHasBeenSet;
+}
+
+DataSourceInfo DatasourceConnectionConfig::GetMongoDB() const
+{
+    return m_mongoDB;
+}
+
+void DatasourceConnectionConfig::SetMongoDB(const DataSourceInfo& _mongoDB)
+{
+    m_mongoDB = _mongoDB;
+    m_mongoDBHasBeenSet = true;
+}
+
+bool DatasourceConnectionConfig::MongoDBHasBeenSet() const
+{
+    return m_mongoDBHasBeenSet;
 }
 

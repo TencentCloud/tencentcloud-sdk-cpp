@@ -57,7 +57,8 @@ DescribeInstanceResponse::DescribeInstanceResponse() :
     m_serverCertLimitHasBeenSet(false),
     m_topicPrefixSlashLimitHasBeenSet(false),
     m_messageRateHasBeenSet(false),
-    m_transportLayerSecurityHasBeenSet(false)
+    m_transportLayerSecurityHasBeenSet(false),
+    m_messageEnrichmentRuleLimitHasBeenSet(false)
 {
 }
 
@@ -435,6 +436,16 @@ CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
         m_transportLayerSecurityHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MessageEnrichmentRuleLimit") && !rsp["MessageEnrichmentRuleLimit"].IsNull())
+    {
+        if (!rsp["MessageEnrichmentRuleLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageEnrichmentRuleLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_messageEnrichmentRuleLimit = rsp["MessageEnrichmentRuleLimit"].GetInt64();
+        m_messageEnrichmentRuleLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -715,6 +726,14 @@ string DescribeInstanceResponse::ToJsonString() const
         string key = "TransportLayerSecurity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_transportLayerSecurity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageEnrichmentRuleLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageEnrichmentRuleLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_messageEnrichmentRuleLimit, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1067,6 +1086,16 @@ string DescribeInstanceResponse::GetTransportLayerSecurity() const
 bool DescribeInstanceResponse::TransportLayerSecurityHasBeenSet() const
 {
     return m_transportLayerSecurityHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetMessageEnrichmentRuleLimit() const
+{
+    return m_messageEnrichmentRuleLimit;
+}
+
+bool DescribeInstanceResponse::MessageEnrichmentRuleLimitHasBeenSet() const
+{
+    return m_messageEnrichmentRuleLimitHasBeenSet;
 }
 
 

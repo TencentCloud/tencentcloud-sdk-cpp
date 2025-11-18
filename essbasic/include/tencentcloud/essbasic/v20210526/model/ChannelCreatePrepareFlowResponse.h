@@ -85,6 +85,20 @@ namespace TencentCloud
                      */
                     bool FlowIdHasBeenSet() const;
 
+                    /**
+                     * 获取临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。
+                     * @return DraftId 临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。
+                     * 
+                     */
+                    std::string GetDraftId() const;
+
+                    /**
+                     * 判断参数 DraftId 是否已赋值
+                     * @return DraftId 是否已赋值
+                     * 
+                     */
+                    bool DraftIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
+
+                    /**
+                     * 临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。
+                     */
+                    std::string m_draftId;
+                    bool m_draftIdHasBeenSet;
 
                 };
             }

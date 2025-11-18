@@ -24,6 +24,7 @@ using namespace TencentCloud::Dataagent::V20250513::Model;
 using namespace std;
 
 GetSessionDetailsResponse::GetSessionDetailsResponse() :
+    m_recordListHasBeenSet(false),
     m_recordCountHasBeenSet(false),
     m_runRecordHasBeenSet(false)
 {
@@ -63,6 +64,26 @@ CoreInternalOutcome GetSessionDetailsResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("RecordList") && !rsp["RecordList"].IsNull())
+    {
+        if (!rsp["RecordList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RecordList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RecordList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Record item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_recordList.push_back(item);
+        }
+        m_recordListHasBeenSet = true;
+    }
+
     if (rsp.HasMember("RecordCount") && !rsp["RecordCount"].IsNull())
     {
         if (!rsp["RecordCount"].IsInt64())
@@ -93,6 +114,21 @@ string GetSessionDetailsResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_recordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_recordList.begin(); itr != m_recordList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_recordCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -120,6 +156,16 @@ string GetSessionDetailsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<Record> GetSessionDetailsResponse::GetRecordList() const
+{
+    return m_recordList;
+}
+
+bool GetSessionDetailsResponse::RecordListHasBeenSet() const
+{
+    return m_recordListHasBeenSet;
+}
 
 int64_t GetSessionDetailsResponse::GetRecordCount() const
 {

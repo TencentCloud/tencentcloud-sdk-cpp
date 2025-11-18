@@ -31,7 +31,8 @@ ModifyAlarmNoticeRequest::ModifyAlarmNoticeRequest() :
     m_userNoticesHasBeenSet(false),
     m_uRLNoticesHasBeenSet(false),
     m_cLSNoticesHasBeenSet(false),
-    m_policyIdsHasBeenSet(false)
+    m_policyIdsHasBeenSet(false),
+    m_isLoginFreeHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,14 @@ string ModifyAlarmNoticeRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isLoginFreeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLoginFree";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isLoginFree, allocator);
     }
 
 
@@ -290,6 +299,22 @@ void ModifyAlarmNoticeRequest::SetPolicyIds(const vector<string>& _policyIds)
 bool ModifyAlarmNoticeRequest::PolicyIdsHasBeenSet() const
 {
     return m_policyIdsHasBeenSet;
+}
+
+int64_t ModifyAlarmNoticeRequest::GetIsLoginFree() const
+{
+    return m_isLoginFree;
+}
+
+void ModifyAlarmNoticeRequest::SetIsLoginFree(const int64_t& _isLoginFree)
+{
+    m_isLoginFree = _isLoginFree;
+    m_isLoginFreeHasBeenSet = true;
+}
+
+bool ModifyAlarmNoticeRequest::IsLoginFreeHasBeenSet() const
+{
+    return m_isLoginFreeHasBeenSet;
 }
 
 

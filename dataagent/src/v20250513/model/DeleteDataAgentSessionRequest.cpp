@@ -22,7 +22,9 @@
 using namespace TencentCloud::Dataagent::V20250513::Model;
 using namespace std;
 
-DeleteDataAgentSessionRequest::DeleteDataAgentSessionRequest()
+DeleteDataAgentSessionRequest::DeleteDataAgentSessionRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string DeleteDataAgentSessionRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string DeleteDataAgentSessionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteDataAgentSessionRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DeleteDataAgentSessionRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DeleteDataAgentSessionRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string DeleteDataAgentSessionRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void DeleteDataAgentSessionRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool DeleteDataAgentSessionRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
 
 

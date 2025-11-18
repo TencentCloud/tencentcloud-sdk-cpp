@@ -36,7 +36,8 @@ CreateFlowOption::CreateFlowOption() :
     m_signAfterStartHasBeenSet(false),
     m_hideOperationStepsHasBeenSet(false),
     m_selfNameHasBeenSet(false),
-    m_hideSignCodeAfterStartHasBeenSet(false)
+    m_hideSignCodeAfterStartHasBeenSet(false),
+    m_needFlowDraftHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         m_hideSignCodeAfterStartHasBeenSet = true;
     }
 
+    if (value.HasMember("NeedFlowDraft") && !value["NeedFlowDraft"].IsNull())
+    {
+        if (!value["NeedFlowDraft"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.NeedFlowDraft` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_needFlowDraft = value["NeedFlowDraft"].GetBool();
+        m_needFlowDraftHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +365,14 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "HideSignCodeAfterStart";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hideSignCodeAfterStart, allocator);
+    }
+
+    if (m_needFlowDraftHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedFlowDraft";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needFlowDraft, allocator);
     }
 
 }
@@ -613,5 +632,21 @@ void CreateFlowOption::SetHideSignCodeAfterStart(const bool& _hideSignCodeAfterS
 bool CreateFlowOption::HideSignCodeAfterStartHasBeenSet() const
 {
     return m_hideSignCodeAfterStartHasBeenSet;
+}
+
+bool CreateFlowOption::GetNeedFlowDraft() const
+{
+    return m_needFlowDraft;
+}
+
+void CreateFlowOption::SetNeedFlowDraft(const bool& _needFlowDraft)
+{
+    m_needFlowDraft = _needFlowDraft;
+    m_needFlowDraftHasBeenSet = true;
+}
+
+bool CreateFlowOption::NeedFlowDraftHasBeenSet() const
+{
+    return m_needFlowDraftHasBeenSet;
 }
 

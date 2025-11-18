@@ -319,6 +319,48 @@ namespace TencentCloud
                      */
                     bool TrafficMarkingHasBeenSet() const;
 
+                    /**
+                     * 获取批量cc
+                     * @return BatchCC 批量cc
+                     * 
+                     */
+                    uint64_t GetBatchCC() const;
+
+                    /**
+                     * 设置批量cc
+                     * @param _batchCC 批量cc
+                     * 
+                     */
+                    void SetBatchCC(const uint64_t& _batchCC);
+
+                    /**
+                     * 判断参数 BatchCC 是否已赋值
+                     * @return BatchCC 是否已赋值
+                     * 
+                     */
+                    bool BatchCCHasBeenSet() const;
+
+                    /**
+                     * 获取批量session
+                     * @return BatchSession 批量session
+                     * 
+                     */
+                    uint64_t GetBatchSession() const;
+
+                    /**
+                     * 设置批量session
+                     * @param _batchSession 批量session
+                     * 
+                     */
+                    void SetBatchSession(const uint64_t& _batchSession);
+
+                    /**
+                     * 判断参数 BatchSession 是否已赋值
+                     * @return BatchSession 是否已赋值
+                     * 
+                     */
+                    bool BatchSessionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +440,18 @@ namespace TencentCloud
                      */
                     uint64_t m_trafficMarking;
                     bool m_trafficMarkingHasBeenSet;
+
+                    /**
+                     * 批量cc
+                     */
+                    uint64_t m_batchCC;
+                    bool m_batchCCHasBeenSet;
+
+                    /**
+                     * 批量session
+                     */
+                    uint64_t m_batchSession;
+                    bool m_batchSessionHasBeenSet;
 
                 };
             }

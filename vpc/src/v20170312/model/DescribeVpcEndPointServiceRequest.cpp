@@ -28,7 +28,9 @@ DescribeVpcEndPointServiceRequest::DescribeVpcEndPointServiceRequest() :
     m_limitHasBeenSet(false),
     m_endPointServiceIdsHasBeenSet(false),
     m_isListAuthorizedEndPointServiceHasBeenSet(false),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -97,6 +99,22 @@ string DescribeVpcEndPointServiceRequest::ToJsonString() const
         string key = "IpAddressType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ipAddressType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxResults";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxResults, allocator);
+    }
+
+    if (m_nextTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nextToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -201,6 +219,38 @@ void DescribeVpcEndPointServiceRequest::SetIpAddressType(const string& _ipAddres
 bool DescribeVpcEndPointServiceRequest::IpAddressTypeHasBeenSet() const
 {
     return m_ipAddressTypeHasBeenSet;
+}
+
+uint64_t DescribeVpcEndPointServiceRequest::GetMaxResults() const
+{
+    return m_maxResults;
+}
+
+void DescribeVpcEndPointServiceRequest::SetMaxResults(const uint64_t& _maxResults)
+{
+    m_maxResults = _maxResults;
+    m_maxResultsHasBeenSet = true;
+}
+
+bool DescribeVpcEndPointServiceRequest::MaxResultsHasBeenSet() const
+{
+    return m_maxResultsHasBeenSet;
+}
+
+string DescribeVpcEndPointServiceRequest::GetNextToken() const
+{
+    return m_nextToken;
+}
+
+void DescribeVpcEndPointServiceRequest::SetNextToken(const string& _nextToken)
+{
+    m_nextToken = _nextToken;
+    m_nextTokenHasBeenSet = true;
+}
+
+bool DescribeVpcEndPointServiceRequest::NextTokenHasBeenSet() const
+{
+    return m_nextTokenHasBeenSet;
 }
 
 

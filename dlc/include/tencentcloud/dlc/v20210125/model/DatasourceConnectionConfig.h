@@ -325,6 +325,27 @@ namespace TencentCloud
                      */
                     bool TccHiveHasBeenSet() const;
 
+                    /**
+                     * 获取MongoDB 数据源
+                     * @return MongoDB MongoDB 数据源
+                     * 
+                     */
+                    DataSourceInfo GetMongoDB() const;
+
+                    /**
+                     * 设置MongoDB 数据源
+                     * @param _mongoDB MongoDB 数据源
+                     * 
+                     */
+                    void SetMongoDB(const DataSourceInfo& _mongoDB);
+
+                    /**
+                     * 判断参数 MongoDB 是否已赋值
+                     * @return MongoDB 是否已赋值
+                     * 
+                     */
+                    bool MongoDBHasBeenSet() const;
+
                 private:
 
                     /**
@@ -402,6 +423,12 @@ namespace TencentCloud
                      */
                     TccHive m_tccHive;
                     bool m_tccHiveHasBeenSet;
+
+                    /**
+                     * MongoDB 数据源
+                     */
+                    DataSourceInfo m_mongoDB;
+                    bool m_mongoDBHasBeenSet;
 
                 };
             }

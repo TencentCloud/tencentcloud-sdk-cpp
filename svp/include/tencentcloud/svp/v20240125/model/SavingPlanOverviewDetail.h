@@ -47,6 +47,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取节省计划资源id
+                     * @return SpId 节省计划资源id
+                     * 
+                     */
+                    std::string GetSpId() const;
+
+                    /**
+                     * 设置节省计划资源id
+                     * @param _spId 节省计划资源id
+                     * 
+                     */
+                    void SetSpId(const std::string& _spId);
+
+                    /**
+                     * 判断参数 SpId 是否已赋值
+                     * @return SpId 是否已赋值
+                     * 
+                     */
+                    bool SpIdHasBeenSet() const;
+
+                    /**
                      * 获取节省计划类型
                      * @return SpType 节省计划类型
                      * 
@@ -261,6 +282,12 @@ namespace TencentCloud
                     bool PromiseAmountHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 节省计划资源id
+                     */
+                    std::string m_spId;
+                    bool m_spIdHasBeenSet;
 
                     /**
                      * 节省计划类型

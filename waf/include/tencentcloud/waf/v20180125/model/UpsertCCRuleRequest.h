@@ -546,6 +546,27 @@ namespace TencentCloud
                      */
                     bool ActionRatioHasBeenSet() const;
 
+                    /**
+                     * 获取规则来源
+                     * @return Source 规则来源
+                     * 
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置规则来源
+                     * @param _source 规则来源
+                     * 
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -691,6 +712,12 @@ namespace TencentCloud
                      */
                     uint64_t m_actionRatio;
                     bool m_actionRatioHasBeenSet;
+
+                    /**
+                     * 规则来源
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
 
                 };
             }

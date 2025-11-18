@@ -142,6 +142,27 @@ namespace TencentCloud
                      */
                     bool ReasonsHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义反馈内容
+                     * @return FeedbackContent 用户自定义反馈内容
+                     * 
+                     */
+                    std::string GetFeedbackContent() const;
+
+                    /**
+                     * 设置用户自定义反馈内容
+                     * @param _feedbackContent 用户自定义反馈内容
+                     * 
+                     */
+                    void SetFeedbackContent(const std::string& _feedbackContent);
+
+                    /**
+                     * 判断参数 FeedbackContent 是否已赋值
+                     * @return FeedbackContent 是否已赋值
+                     * 
+                     */
+                    bool FeedbackContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -171,6 +192,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_reasons;
                     bool m_reasonsHasBeenSet;
+
+                    /**
+                     * 用户自定义反馈内容
+                     */
+                    std::string m_feedbackContent;
+                    bool m_feedbackContentHasBeenSet;
 
                 };
             }

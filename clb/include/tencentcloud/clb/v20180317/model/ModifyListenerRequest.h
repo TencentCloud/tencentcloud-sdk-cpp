@@ -272,23 +272,15 @@ namespace TencentCloud
                     bool KeepaliveEnableHasBeenSet() const;
 
                     /**
-                     * 获取解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
-True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
-不传则表示不修改。
-                     * @return DeregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
-True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
-不传则表示不修改。
+                     * 获取重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。
+                     * @return DeregisterTargetRst 重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。
                      * 
                      */
                     bool GetDeregisterTargetRst() const;
 
                     /**
-                     * 设置解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
-True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
-不传则表示不修改。
-                     * @param _deregisterTargetRst 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
-True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
-不传则表示不修改。
+                     * 设置重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。
+                     * @param _deregisterTargetRst 重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。
                      * 
                      */
                     void SetDeregisterTargetRst(const bool& _deregisterTargetRst);
@@ -443,19 +435,15 @@ True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                     bool ProxyProtocolHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
-不传则表示不修改。
-                     * @return SnatEnable 是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
-不传则表示不修改。
+                     * 获取是否开启SNAT（源IP替换），True（开启）、False（关闭）。默认为关闭。注意：SnatEnable开启时会替换客户端源IP，此时`透传客户端源IP`选项关闭，反之亦然。
+                     * @return SnatEnable 是否开启SNAT（源IP替换），True（开启）、False（关闭）。默认为关闭。注意：SnatEnable开启时会替换客户端源IP，此时`透传客户端源IP`选项关闭，反之亦然。
                      * 
                      */
                     bool GetSnatEnable() const;
 
                     /**
-                     * 设置是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
-不传则表示不修改。
-                     * @param _snatEnable 是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
-不传则表示不修改。
+                     * 设置是否开启SNAT（源IP替换），True（开启）、False（关闭）。默认为关闭。注意：SnatEnable开启时会替换客户端源IP，此时`透传客户端源IP`选项关闭，反之亦然。
+                     * @param _snatEnable 是否开启SNAT（源IP替换），True（开启）、False（关闭）。默认为关闭。注意：SnatEnable开启时会替换客户端源IP，此时`透传客户端源IP`选项关闭，反之亦然。
                      * 
                      */
                     void SetSnatEnable(const bool& _snatEnable);
@@ -660,9 +648,7 @@ True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                     bool m_keepaliveEnableHasBeenSet;
 
                     /**
-                     * 解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。
-True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
-不传则表示不修改。
+                     * 重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。
                      */
                     bool m_deregisterTargetRst;
                     bool m_deregisterTargetRstHasBeenSet;
@@ -708,8 +694,7 @@ True表示发送 RST 给客户端，False表示不发送 RST 给客户端。
                     bool m_proxyProtocolHasBeenSet;
 
                     /**
-                     * 是否开启SNAT， True 表示开启 SNAT，False 表示不开启 SNAT。
-不传则表示不修改。
+                     * 是否开启SNAT（源IP替换），True（开启）、False（关闭）。默认为关闭。注意：SnatEnable开启时会替换客户端源IP，此时`透传客户端源IP`选项关闭，反之亦然。
                      */
                     bool m_snatEnable;
                     bool m_snatEnableHasBeenSet;

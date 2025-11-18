@@ -26,7 +26,8 @@ using namespace std;
 ChannelCreatePrepareFlowResponse::ChannelCreatePrepareFlowResponse() :
     m_prepareFlowUrlHasBeenSet(false),
     m_previewFlowUrlHasBeenSet(false),
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_draftIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome ChannelCreatePrepareFlowResponse::Deserialize(const string &
         m_flowIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DraftId") && !rsp["DraftId"].IsNull())
+    {
+        if (!rsp["DraftId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DraftId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_draftId = string(rsp["DraftId"].GetString());
+        m_draftIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string ChannelCreatePrepareFlowResponse::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_draftIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DraftId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_draftId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ string ChannelCreatePrepareFlowResponse::GetFlowId() const
 bool ChannelCreatePrepareFlowResponse::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+string ChannelCreatePrepareFlowResponse::GetDraftId() const
+{
+    return m_draftId;
+}
+
+bool ChannelCreatePrepareFlowResponse::DraftIdHasBeenSet() const
+{
+    return m_draftIdHasBeenSet;
 }
 
 

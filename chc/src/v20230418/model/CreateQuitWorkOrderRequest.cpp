@@ -33,7 +33,12 @@ CreateQuitWorkOrderRequest::CreateQuitWorkOrderRequest() :
     m_powerOffConfirmInfoHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_logisticsReceiptHasBeenSet(false),
-    m_customerReceiptHasBeenSet(false)
+    m_customerReceiptHasBeenSet(false),
+    m_buildingHasBeenSet(false),
+    m_idcUnitIdHasBeenSet(false),
+    m_ispHasBeenSet(false),
+    m_emailSetHasBeenSet(false),
+    m_factorSetHasBeenSet(false)
 {
 }
 
@@ -139,6 +144,56 @@ string CreateQuitWorkOrderRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customerReceipt.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_buildingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Building";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_building.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idcUnitIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdcUnitId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_idcUnitId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ispHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Isp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_emailSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmailSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_emailSet.begin(); itr != m_emailSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_factorSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FactorSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_factorSet.begin(); itr != m_factorSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -323,6 +378,86 @@ void CreateQuitWorkOrderRequest::SetCustomerReceipt(const CustomerReceipt& _cust
 bool CreateQuitWorkOrderRequest::CustomerReceiptHasBeenSet() const
 {
     return m_customerReceiptHasBeenSet;
+}
+
+string CreateQuitWorkOrderRequest::GetBuilding() const
+{
+    return m_building;
+}
+
+void CreateQuitWorkOrderRequest::SetBuilding(const string& _building)
+{
+    m_building = _building;
+    m_buildingHasBeenSet = true;
+}
+
+bool CreateQuitWorkOrderRequest::BuildingHasBeenSet() const
+{
+    return m_buildingHasBeenSet;
+}
+
+string CreateQuitWorkOrderRequest::GetIdcUnitId() const
+{
+    return m_idcUnitId;
+}
+
+void CreateQuitWorkOrderRequest::SetIdcUnitId(const string& _idcUnitId)
+{
+    m_idcUnitId = _idcUnitId;
+    m_idcUnitIdHasBeenSet = true;
+}
+
+bool CreateQuitWorkOrderRequest::IdcUnitIdHasBeenSet() const
+{
+    return m_idcUnitIdHasBeenSet;
+}
+
+string CreateQuitWorkOrderRequest::GetIsp() const
+{
+    return m_isp;
+}
+
+void CreateQuitWorkOrderRequest::SetIsp(const string& _isp)
+{
+    m_isp = _isp;
+    m_ispHasBeenSet = true;
+}
+
+bool CreateQuitWorkOrderRequest::IspHasBeenSet() const
+{
+    return m_ispHasBeenSet;
+}
+
+vector<string> CreateQuitWorkOrderRequest::GetEmailSet() const
+{
+    return m_emailSet;
+}
+
+void CreateQuitWorkOrderRequest::SetEmailSet(const vector<string>& _emailSet)
+{
+    m_emailSet = _emailSet;
+    m_emailSetHasBeenSet = true;
+}
+
+bool CreateQuitWorkOrderRequest::EmailSetHasBeenSet() const
+{
+    return m_emailSetHasBeenSet;
+}
+
+vector<string> CreateQuitWorkOrderRequest::GetFactorSet() const
+{
+    return m_factorSet;
+}
+
+void CreateQuitWorkOrderRequest::SetFactorSet(const vector<string>& _factorSet)
+{
+    m_factorSet = _factorSet;
+    m_factorSetHasBeenSet = true;
+}
+
+bool CreateQuitWorkOrderRequest::FactorSetHasBeenSet() const
+{
+    return m_factorSetHasBeenSet;
 }
 
 

@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取zone列表
-                     * @return ZoneList zone列表
+                     * 获取<p>zone列表</p>
+                     * @return ZoneList <p>zone列表</p>
                      * 
                      */
                     std::vector<ZoneInfo> GetZoneList() const;
 
                     /**
-                     * 设置zone列表
-                     * @param _zoneList zone列表
+                     * 设置<p>zone列表</p>
+                     * @param _zoneList <p>zone列表</p>
                      * 
                      */
                     void SetZoneList(const std::vector<ZoneInfo>& _zoneList);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool ZoneListHasBeenSet() const;
 
                     /**
-                     * 获取最大购买实例个数
-                     * @return MaxBuyInstanceNum 最大购买实例个数
+                     * 获取<p>最大购买实例个数</p>
+                     * @return MaxBuyInstanceNum <p>最大购买实例个数</p>
                      * 
                      */
                     int64_t GetMaxBuyInstanceNum() const;
 
                     /**
-                     * 设置最大购买实例个数
-                     * @param _maxBuyInstanceNum 最大购买实例个数
+                     * 设置<p>最大购买实例个数</p>
+                     * @param _maxBuyInstanceNum <p>最大购买实例个数</p>
                      * 
                      */
                     void SetMaxBuyInstanceNum(const int64_t& _maxBuyInstanceNum);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool MaxBuyInstanceNumHasBeenSet() const;
 
                     /**
-                     * 获取最大购买带宽 单位Mb/s
-                     * @return MaxBandwidth 最大购买带宽 单位Mb/s
+                     * 获取<p>最大购买带宽 单位Mb/s</p>
+                     * @return MaxBandwidth <p>最大购买带宽 单位Mb/s</p>
                      * 
                      */
                     int64_t GetMaxBandwidth() const;
 
                     /**
-                     * 设置最大购买带宽 单位Mb/s
-                     * @param _maxBandwidth 最大购买带宽 单位Mb/s
+                     * 设置<p>最大购买带宽 单位Mb/s</p>
+                     * @param _maxBandwidth <p>最大购买带宽 单位Mb/s</p>
                      * 
                      */
                     void SetMaxBandwidth(const int64_t& _maxBandwidth);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool MaxBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取后付费单位价格
-                     * @return UnitPrice 后付费单位价格
+                     * 获取<p>后付费单位价格</p>
+                     * @return UnitPrice <p>后付费单位价格</p>
                      * 
                      */
                     Price GetUnitPrice() const;
 
                     /**
-                     * 设置后付费单位价格
-                     * @param _unitPrice 后付费单位价格
+                     * 设置<p>后付费单位价格</p>
+                     * @param _unitPrice <p>后付费单位价格</p>
                      * 
                      */
                     void SetUnitPrice(const Price& _unitPrice);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool UnitPriceHasBeenSet() const;
 
                     /**
-                     * 获取后付费消息单价
-                     * @return MessagePrice 后付费消息单价
+                     * 获取<p>后付费消息单价</p>
+                     * @return MessagePrice <p>后付费消息单价</p>
                      * 
                      */
                     Price GetMessagePrice() const;
 
                     /**
-                     * 设置后付费消息单价
-                     * @param _messagePrice 后付费消息单价
+                     * 设置<p>后付费消息单价</p>
+                     * @param _messagePrice <p>后付费消息单价</p>
                      * 
                      */
                     void SetMessagePrice(const Price& _messagePrice);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool MessagePriceHasBeenSet() const;
 
                     /**
-                     * 获取用户独占集群信息
-                     * @return ClusterInfo 用户独占集群信息
+                     * 获取<p>用户独占集群信息</p>
+                     * @return ClusterInfo <p>用户独占集群信息</p>
                      * 
                      */
                     std::vector<ClusterInfo> GetClusterInfo() const;
 
                     /**
-                     * 设置用户独占集群信息
-                     * @param _clusterInfo 用户独占集群信息
+                     * 设置<p>用户独占集群信息</p>
+                     * @param _clusterInfo <p>用户独占集群信息</p>
                      * 
                      */
                     void SetClusterInfo(const std::vector<ClusterInfo>& _clusterInfo);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool ClusterInfoHasBeenSet() const;
 
                     /**
-                     * 获取购买标准版配置
-                     * @return Standard 购买标准版配置
+                     * 获取<p>购买标准版配置</p>
+                     * @return Standard <p>购买标准版配置</p>
                      * 
                      */
                     std::string GetStandard() const;
 
                     /**
-                     * 设置购买标准版配置
-                     * @param _standard 购买标准版配置
+                     * 设置<p>购买标准版配置</p>
+                     * @param _standard <p>购买标准版配置</p>
                      * 
                      */
                     void SetStandard(const std::string& _standard);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool StandardHasBeenSet() const;
 
                     /**
-                     * 获取购买标准版S2配置
-                     * @return StandardS2 购买标准版S2配置
+                     * 获取<p>购买标准版S2配置</p>
+                     * @return StandardS2 <p>购买标准版S2配置</p>
                      * 
                      */
                     std::string GetStandardS2() const;
 
                     /**
-                     * 设置购买标准版S2配置
-                     * @param _standardS2 购买标准版S2配置
+                     * 设置<p>购买标准版S2配置</p>
+                     * @param _standardS2 <p>购买标准版S2配置</p>
                      * 
                      */
                     void SetStandardS2(const std::string& _standardS2);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool StandardS2HasBeenSet() const;
 
                     /**
-                     * 获取购买专业版配置
-                     * @return Profession 购买专业版配置
+                     * 获取<p>购买专业版配置</p>
+                     * @return Profession <p>购买专业版配置</p>
                      * 
                      */
                     std::string GetProfession() const;
 
                     /**
-                     * 设置购买专业版配置
-                     * @param _profession 购买专业版配置
+                     * 设置<p>购买专业版配置</p>
+                     * @param _profession <p>购买专业版配置</p>
                      * 
                      */
                     void SetProfession(const std::string& _profession);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool ProfessionHasBeenSet() const;
 
                     /**
-                     * 获取购买物理独占版配置
-                     * @return Physical 购买物理独占版配置
+                     * 获取<p>购买物理独占版配置</p>
+                     * @return Physical <p>购买物理独占版配置</p>
                      * 
                      */
                     std::string GetPhysical() const;
 
                     /**
-                     * 设置购买物理独占版配置
-                     * @param _physical 购买物理独占版配置
+                     * 设置<p>购买物理独占版配置</p>
+                     * @param _physical <p>购买物理独占版配置</p>
                      * 
                      */
                     void SetPhysical(const std::string& _physical);
@@ -260,15 +260,15 @@ namespace TencentCloud
                     bool PhysicalHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
-                     * @return PublicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
+                     * 获取<p>公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义</p>
+                     * @return PublicNetwork <p>公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义</p>
                      * 
                      */
                     std::string GetPublicNetwork() const;
 
                     /**
-                     * 设置公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
-                     * @param _publicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
+                     * 设置<p>公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义</p>
+                     * @param _publicNetwork <p>公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义</p>
                      * 
                      */
                     void SetPublicNetwork(const std::string& _publicNetwork);
@@ -281,15 +281,15 @@ namespace TencentCloud
                     bool PublicNetworkHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽配置
-                     * @return PublicNetworkLimit 公网带宽配置
+                     * 获取<p>公网带宽配置</p>
+                     * @return PublicNetworkLimit <p>公网带宽配置</p>
                      * 
                      */
                     std::string GetPublicNetworkLimit() const;
 
                     /**
-                     * 设置公网带宽配置
-                     * @param _publicNetworkLimit 公网带宽配置
+                     * 设置<p>公网带宽配置</p>
+                     * @param _publicNetworkLimit <p>公网带宽配置</p>
                      * 
                      */
                     void SetPublicNetworkLimit(const std::string& _publicNetworkLimit);
@@ -302,15 +302,15 @@ namespace TencentCloud
                     bool PublicNetworkLimitHasBeenSet() const;
 
                     /**
-                     * 获取请求Id
-                     * @return RequestId 请求Id
+                     * 获取<p>请求Id</p>
+                     * @return RequestId <p>请求Id</p>
                      * 
                      */
                     std::string GetRequestId() const;
 
                     /**
-                     * 设置请求Id
-                     * @param _requestId 请求Id
+                     * 设置<p>请求Id</p>
+                     * @param _requestId <p>请求Id</p>
                      * 
                      */
                     void SetRequestId(const std::string& _requestId);
@@ -323,15 +323,15 @@ namespace TencentCloud
                     bool RequestIdHasBeenSet() const;
 
                     /**
-                     * 获取分页offset
-                     * @return Offset 分页offset
+                     * 获取<p>分页offset</p>
+                     * @return Offset <p>分页offset</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页offset
-                     * @param _offset 分页offset
+                     * 设置<p>分页offset</p>
+                     * @param _offset <p>分页offset</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -344,15 +344,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页limit
-                     * @return Limit 分页limit
+                     * 获取<p>分页limit</p>
+                     * @return Limit <p>分页limit</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页limit
-                     * @param _limit 分页limit
+                     * 设置<p>分页limit</p>
+                     * @param _limit <p>分页limit</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -365,15 +365,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取是否必须录入tag
-                     * @return ForceCheckTag 是否必须录入tag
+                     * 获取<p>是否必须录入tag</p>
+                     * @return ForceCheckTag <p>是否必须录入tag</p>
                      * 
                      */
                     bool GetForceCheckTag() const;
 
                     /**
-                     * 设置是否必须录入tag
-                     * @param _forceCheckTag 是否必须录入tag
+                     * 设置<p>是否必须录入tag</p>
+                     * @param _forceCheckTag <p>是否必须录入tag</p>
                      * 
                      */
                     void SetForceCheckTag(const bool& _forceCheckTag);
@@ -388,97 +388,97 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * zone列表
+                     * <p>zone列表</p>
                      */
                     std::vector<ZoneInfo> m_zoneList;
                     bool m_zoneListHasBeenSet;
 
                     /**
-                     * 最大购买实例个数
+                     * <p>最大购买实例个数</p>
                      */
                     int64_t m_maxBuyInstanceNum;
                     bool m_maxBuyInstanceNumHasBeenSet;
 
                     /**
-                     * 最大购买带宽 单位Mb/s
+                     * <p>最大购买带宽 单位Mb/s</p>
                      */
                     int64_t m_maxBandwidth;
                     bool m_maxBandwidthHasBeenSet;
 
                     /**
-                     * 后付费单位价格
+                     * <p>后付费单位价格</p>
                      */
                     Price m_unitPrice;
                     bool m_unitPriceHasBeenSet;
 
                     /**
-                     * 后付费消息单价
+                     * <p>后付费消息单价</p>
                      */
                     Price m_messagePrice;
                     bool m_messagePriceHasBeenSet;
 
                     /**
-                     * 用户独占集群信息
+                     * <p>用户独占集群信息</p>
                      */
                     std::vector<ClusterInfo> m_clusterInfo;
                     bool m_clusterInfoHasBeenSet;
 
                     /**
-                     * 购买标准版配置
+                     * <p>购买标准版配置</p>
                      */
                     std::string m_standard;
                     bool m_standardHasBeenSet;
 
                     /**
-                     * 购买标准版S2配置
+                     * <p>购买标准版S2配置</p>
                      */
                     std::string m_standardS2;
                     bool m_standardS2HasBeenSet;
 
                     /**
-                     * 购买专业版配置
+                     * <p>购买专业版配置</p>
                      */
                     std::string m_profession;
                     bool m_professionHasBeenSet;
 
                     /**
-                     * 购买物理独占版配置
+                     * <p>购买物理独占版配置</p>
                      */
                     std::string m_physical;
                     bool m_physicalHasBeenSet;
 
                     /**
-                     * 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义
+                     * <p>公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义</p>
                      */
                     std::string m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
 
                     /**
-                     * 公网带宽配置
+                     * <p>公网带宽配置</p>
                      */
                     std::string m_publicNetworkLimit;
                     bool m_publicNetworkLimitHasBeenSet;
 
                     /**
-                     * 请求Id
+                     * <p>请求Id</p>
                      */
                     std::string m_requestId;
                     bool m_requestIdHasBeenSet;
 
                     /**
-                     * 分页offset
+                     * <p>分页offset</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页limit
+                     * <p>分页limit</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 是否必须录入tag
+                     * <p>是否必须录入tag</p>
                      */
                     bool m_forceCheckTag;
                     bool m_forceCheckTagHasBeenSet;

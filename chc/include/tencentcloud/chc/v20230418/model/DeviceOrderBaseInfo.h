@@ -387,6 +387,69 @@ namespace TencentCloud
                      */
                     bool LogisticsReceiptHasBeenSet() const;
 
+                    /**
+                     * 获取涉及物资放行时的楼宇
+                     * @return Building 涉及物资放行时的楼宇
+                     * 
+                     */
+                    std::string GetBuilding() const;
+
+                    /**
+                     * 设置涉及物资放行时的楼宇
+                     * @param _building 涉及物资放行时的楼宇
+                     * 
+                     */
+                    void SetBuilding(const std::string& _building);
+
+                    /**
+                     * 判断参数 Building 是否已赋值
+                     * @return Building 是否已赋值
+                     * 
+                     */
+                    bool BuildingHasBeenSet() const;
+
+                    /**
+                     * 获取物资放行抄送邮箱
+                     * @return EmailSet 物资放行抄送邮箱
+                     * 
+                     */
+                    std::vector<std::string> GetEmailSet() const;
+
+                    /**
+                     * 设置物资放行抄送邮箱
+                     * @param _emailSet 物资放行抄送邮箱
+                     * 
+                     */
+                    void SetEmailSet(const std::vector<std::string>& _emailSet);
+
+                    /**
+                     * 判断参数 EmailSet 是否已赋值
+                     * @return EmailSet 是否已赋值
+                     * 
+                     */
+                    bool EmailSetHasBeenSet() const;
+
+                    /**
+                     * 获取物资放行到访原因
+                     * @return FactorSet 物资放行到访原因
+                     * 
+                     */
+                    std::vector<std::string> GetFactorSet() const;
+
+                    /**
+                     * 设置物资放行到访原因
+                     * @param _factorSet 物资放行到访原因
+                     * 
+                     */
+                    void SetFactorSet(const std::vector<std::string>& _factorSet);
+
+                    /**
+                     * 判断参数 FactorSet 是否已赋值
+                     * @return FactorSet 是否已赋值
+                     * 
+                     */
+                    bool FactorSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -484,6 +547,24 @@ namespace TencentCloud
                      */
                     LogisticsReceipt m_logisticsReceipt;
                     bool m_logisticsReceiptHasBeenSet;
+
+                    /**
+                     * 涉及物资放行时的楼宇
+                     */
+                    std::string m_building;
+                    bool m_buildingHasBeenSet;
+
+                    /**
+                     * 物资放行抄送邮箱
+                     */
+                    std::vector<std::string> m_emailSet;
+                    bool m_emailSetHasBeenSet;
+
+                    /**
+                     * 物资放行到访原因
+                     */
+                    std::vector<std::string> m_factorSet;
+                    bool m_factorSetHasBeenSet;
 
                 };
             }

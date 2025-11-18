@@ -809,6 +809,47 @@ p.s.Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </
                      */
                     bool JumpEventsHasBeenSet() const;
 
+                    /**
+                     * 获取企业证照类型：
+<ul>
+<li> **USCC** :(默认)工商组织营业执照</li>
+<li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li>
+</ul>
+
+                     * @return ProxyOrganizationIdCardType 企业证照类型：
+<ul>
+<li> **USCC** :(默认)工商组织营业执照</li>
+<li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li>
+</ul>
+
+                     * 
+                     */
+                    std::string GetProxyOrganizationIdCardType() const;
+
+                    /**
+                     * 设置企业证照类型：
+<ul>
+<li> **USCC** :(默认)工商组织营业执照</li>
+<li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li>
+</ul>
+
+                     * @param _proxyOrganizationIdCardType 企业证照类型：
+<ul>
+<li> **USCC** :(默认)工商组织营业执照</li>
+<li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li>
+</ul>
+
+                     * 
+                     */
+                    void SetProxyOrganizationIdCardType(const std::string& _proxyOrganizationIdCardType);
+
+                    /**
+                     * 判断参数 ProxyOrganizationIdCardType 是否已赋值
+                     * @return ProxyOrganizationIdCardType 是否已赋值
+                     * 
+                     */
+                    bool ProxyOrganizationIdCardTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1018,6 +1059,17 @@ p.s.Endpoint如果是APP 类型，请传递JumpUrl为<font color="red">"true" </
                      */
                     std::vector<JumpEvent> m_jumpEvents;
                     bool m_jumpEventsHasBeenSet;
+
+                    /**
+                     * 企业证照类型：
+<ul>
+<li> **USCC** :(默认)工商组织营业执照</li>
+<li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li>
+</ul>
+
+                     */
+                    std::string m_proxyOrganizationIdCardType;
+                    bool m_proxyOrganizationIdCardTypeHasBeenSet;
 
                 };
             }

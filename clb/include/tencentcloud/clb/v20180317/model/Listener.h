@@ -440,15 +440,15 @@ namespace TencentCloud
                     bool ToaHasBeenSet() const;
 
                     /**
-                     * 获取解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
-                     * @return DeregisterTargetRst 解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
+                     * 获取重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。
+                     * @return DeregisterTargetRst 重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。
                      * 
                      */
                     bool GetDeregisterTargetRst() const;
 
                     /**
-                     * 设置解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
-                     * @param _deregisterTargetRst 解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
+                     * 设置重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。
+                     * @param _deregisterTargetRst 重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。
                      * 
                      */
                     void SetDeregisterTargetRst(const bool& _deregisterTargetRst);
@@ -749,7 +749,7 @@ namespace TencentCloud
                     bool m_toaHasBeenSet;
 
                     /**
-                     * 解绑后端目标时，是否发RST给客户端，（此参数仅对于TCP监听器有意义）。
+                     * 重新调度功能，解绑后端服务开关，打开此开关，当解绑后端服务时触发重新调度。仅TCP/UDP监听器支持。
                      */
                     bool m_deregisterTargetRst;
                     bool m_deregisterTargetRstHasBeenSet;

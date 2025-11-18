@@ -8769,6 +8769,49 @@ VpcClient::DescribeNatGatewaySourceIpTranslationNatRulesOutcomeCallable VpcClien
     return task->get_future();
 }
 
+VpcClient::DescribeNatGatewayZonesOutcome VpcClient::DescribeNatGatewayZones(const DescribeNatGatewayZonesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatGatewayZones");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatGatewayZonesResponse rsp = DescribeNatGatewayZonesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatGatewayZonesOutcome(rsp);
+        else
+            return DescribeNatGatewayZonesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatGatewayZonesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeNatGatewayZonesAsync(const DescribeNatGatewayZonesRequest& request, const DescribeNatGatewayZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNatGatewayZones(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeNatGatewayZonesOutcomeCallable VpcClient::DescribeNatGatewayZonesCallable(const DescribeNatGatewayZonesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNatGatewayZonesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNatGatewayZones(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeNatGatewaysOutcome VpcClient::DescribeNatGateways(const DescribeNatGatewaysRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatGateways");

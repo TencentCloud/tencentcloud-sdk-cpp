@@ -29,7 +29,8 @@ OutputRisk::OutputRisk() :
     m_riskPresentationHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_positionsHasBeenSet(false),
-    m_riskBasisHasBeenSet(false)
+    m_riskBasisHasBeenSet(false),
+    m_riskLevelIdHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,16 @@ CoreInternalOutcome OutputRisk::Deserialize(const rapidjson::Value &value)
         m_riskBasisHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskLevelId") && !value["RiskLevelId"].IsNull())
+    {
+        if (!value["RiskLevelId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputRisk.RiskLevelId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskLevelId = value["RiskLevelId"].GetInt64();
+        m_riskLevelIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +241,14 @@ void OutputRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "RiskBasis";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_riskBasis.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskLevelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLevelId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskLevelId, allocator);
     }
 
 }
@@ -377,5 +396,21 @@ void OutputRisk::SetRiskBasis(const string& _riskBasis)
 bool OutputRisk::RiskBasisHasBeenSet() const
 {
     return m_riskBasisHasBeenSet;
+}
+
+int64_t OutputRisk::GetRiskLevelId() const
+{
+    return m_riskLevelId;
+}
+
+void OutputRisk::SetRiskLevelId(const int64_t& _riskLevelId)
+{
+    m_riskLevelId = _riskLevelId;
+    m_riskLevelIdHasBeenSet = true;
+}
+
+bool OutputRisk::RiskLevelIdHasBeenSet() const
+{
+    return m_riskLevelIdHasBeenSet;
 }
 

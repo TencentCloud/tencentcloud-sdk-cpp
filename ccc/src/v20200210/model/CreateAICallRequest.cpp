@@ -55,7 +55,10 @@ CreateAICallRequest::CreateAICallRequest() :
     m_topPHasBeenSet(false),
     m_vadLevelHasBeenSet(false),
     m_toneWordHasBeenSet(false),
-    m_enableComplianceAudioHasBeenSet(false)
+    m_enableComplianceAudioHasBeenSet(false),
+    m_enableVoicemailDetectionHasBeenSet(false),
+    m_voicemailActionHasBeenSet(false),
+    m_lLMExtraBodyHasBeenSet(false)
 {
 }
 
@@ -367,6 +370,30 @@ string CreateAICallRequest::ToJsonString() const
         string key = "EnableComplianceAudio";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableComplianceAudio, allocator);
+    }
+
+    if (m_enableVoicemailDetectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableVoicemailDetection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableVoicemailDetection, allocator);
+    }
+
+    if (m_voicemailActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoicemailAction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_voicemailAction, allocator);
+    }
+
+    if (m_lLMExtraBodyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LLMExtraBody";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_lLMExtraBody.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -903,6 +930,54 @@ void CreateAICallRequest::SetEnableComplianceAudio(const bool& _enableCompliance
 bool CreateAICallRequest::EnableComplianceAudioHasBeenSet() const
 {
     return m_enableComplianceAudioHasBeenSet;
+}
+
+bool CreateAICallRequest::GetEnableVoicemailDetection() const
+{
+    return m_enableVoicemailDetection;
+}
+
+void CreateAICallRequest::SetEnableVoicemailDetection(const bool& _enableVoicemailDetection)
+{
+    m_enableVoicemailDetection = _enableVoicemailDetection;
+    m_enableVoicemailDetectionHasBeenSet = true;
+}
+
+bool CreateAICallRequest::EnableVoicemailDetectionHasBeenSet() const
+{
+    return m_enableVoicemailDetectionHasBeenSet;
+}
+
+uint64_t CreateAICallRequest::GetVoicemailAction() const
+{
+    return m_voicemailAction;
+}
+
+void CreateAICallRequest::SetVoicemailAction(const uint64_t& _voicemailAction)
+{
+    m_voicemailAction = _voicemailAction;
+    m_voicemailActionHasBeenSet = true;
+}
+
+bool CreateAICallRequest::VoicemailActionHasBeenSet() const
+{
+    return m_voicemailActionHasBeenSet;
+}
+
+string CreateAICallRequest::GetLLMExtraBody() const
+{
+    return m_lLMExtraBody;
+}
+
+void CreateAICallRequest::SetLLMExtraBody(const string& _lLMExtraBody)
+{
+    m_lLMExtraBody = _lLMExtraBody;
+    m_lLMExtraBodyHasBeenSet = true;
+}
+
+bool CreateAICallRequest::LLMExtraBodyHasBeenSet() const
+{
+    return m_lLMExtraBodyHasBeenSet;
 }
 
 

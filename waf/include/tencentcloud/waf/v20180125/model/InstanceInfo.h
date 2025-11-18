@@ -38,6 +38,7 @@
 #include <tencentcloud/waf/v20180125/model/NetworkConfig.h>
 #include <tencentcloud/waf/v20180125/model/RCEPkg.h>
 #include <tencentcloud/waf/v20180125/model/LLMPkg.h>
+#include <tencentcloud/waf/v20180125/model/LLMMonPkg.h>
 
 
 namespace TencentCloud
@@ -1154,6 +1155,48 @@ namespace TencentCloud
                      */
                     bool ElasticResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取预付费大模型安全信息包
+                     * @return LLMMonPkg 预付费大模型安全信息包
+                     * 
+                     */
+                    LLMMonPkg GetLLMMonPkg() const;
+
+                    /**
+                     * 设置预付费大模型安全信息包
+                     * @param _lLMMonPkg 预付费大模型安全信息包
+                     * 
+                     */
+                    void SetLLMMonPkg(const LLMMonPkg& _lLMMonPkg);
+
+                    /**
+                     * 判断参数 LLMMonPkg 是否已赋值
+                     * @return LLMMonPkg 是否已赋值
+                     * 
+                     */
+                    bool LLMMonPkgHasBeenSet() const;
+
+                    /**
+                     * 获取地域id
+                     * @return RegionId 地域id
+                     * 
+                     */
+                    uint64_t GetRegionId() const;
+
+                    /**
+                     * 设置地域id
+                     * @param _regionId 地域id
+                     * 
+                     */
+                    void SetRegionId(const uint64_t& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     * 
+                     */
+                    bool RegionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1466,6 +1509,18 @@ namespace TencentCloud
                      */
                     std::string m_elasticResourceId;
                     bool m_elasticResourceIdHasBeenSet;
+
+                    /**
+                     * 预付费大模型安全信息包
+                     */
+                    LLMMonPkg m_lLMMonPkg;
+                    bool m_lLMMonPkgHasBeenSet;
+
+                    /**
+                     * 地域id
+                     */
+                    uint64_t m_regionId;
+                    bool m_regionIdHasBeenSet;
 
                 };
             }

@@ -36,7 +36,8 @@ DescribeContractReviewTaskResponse::DescribeContractReviewTaskResponse() :
     m_commentHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_highRiskCountHasBeenSet(false),
-    m_totalRiskCountHasBeenSet(false)
+    m_totalRiskCountHasBeenSet(false),
+    m_approvedListsHasBeenSet(false)
 {
 }
 
@@ -221,6 +222,26 @@ CoreInternalOutcome DescribeContractReviewTaskResponse::Deserialize(const string
         m_totalRiskCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ApprovedLists") && !rsp["ApprovedLists"].IsNull())
+    {
+        if (!rsp["ApprovedLists"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApprovedLists` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ApprovedLists"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OutputReference item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_approvedLists.push_back(item);
+        }
+        m_approvedListsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -341,6 +362,21 @@ string DescribeContractReviewTaskResponse::ToJsonString() const
         string key = "TotalRiskCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalRiskCount, allocator);
+    }
+
+    if (m_approvedListsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApprovedLists";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_approvedLists.begin(); itr != m_approvedLists.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -483,6 +519,16 @@ int64_t DescribeContractReviewTaskResponse::GetTotalRiskCount() const
 bool DescribeContractReviewTaskResponse::TotalRiskCountHasBeenSet() const
 {
     return m_totalRiskCountHasBeenSet;
+}
+
+vector<OutputReference> DescribeContractReviewTaskResponse::GetApprovedLists() const
+{
+    return m_approvedLists;
+}
+
+bool DescribeContractReviewTaskResponse::ApprovedListsHasBeenSet() const
+{
+    return m_approvedListsHasBeenSet;
 }
 
 

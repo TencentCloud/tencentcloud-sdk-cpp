@@ -185,15 +185,15 @@ GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/p
                     bool IsListAuthorizedEndPointServiceHasBeenSet() const;
 
                     /**
-                     * 获取协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
-                     * @return IpAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * 获取协议类型，支持 Ipv4，Ipv6， DualStack，默认 Ipv4。使用DualStack查询双栈的时候，必须要使用MaxResult配合NextToken查询。第1次查询的时候只需要携带MaxResult，如果返回NextToken非空，表示有更多可用数据。第2次查询的时候就需要携带NextToken进行分页查询。
+                     * @return IpAddressType 协议类型，支持 Ipv4，Ipv6， DualStack，默认 Ipv4。使用DualStack查询双栈的时候，必须要使用MaxResult配合NextToken查询。第1次查询的时候只需要携带MaxResult，如果返回NextToken非空，表示有更多可用数据。第2次查询的时候就需要携带NextToken进行分页查询。
                      * 
                      */
                     std::string GetIpAddressType() const;
 
                     /**
-                     * 设置协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
-                     * @param _ipAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * 设置协议类型，支持 Ipv4，Ipv6， DualStack，默认 Ipv4。使用DualStack查询双栈的时候，必须要使用MaxResult配合NextToken查询。第1次查询的时候只需要携带MaxResult，如果返回NextToken非空，表示有更多可用数据。第2次查询的时候就需要携带NextToken进行分页查询。
+                     * @param _ipAddressType 协议类型，支持 Ipv4，Ipv6， DualStack，默认 Ipv4。使用DualStack查询双栈的时候，必须要使用MaxResult配合NextToken查询。第1次查询的时候只需要携带MaxResult，如果返回NextToken非空，表示有更多可用数据。第2次查询的时候就需要携带NextToken进行分页查询。
                      * 
                      */
                     void SetIpAddressType(const std::string& _ipAddressType);
@@ -204,6 +204,48 @@ GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/p
                      * 
                      */
                     bool IpAddressTypeHasBeenSet() const;
+
+                    /**
+                     * 获取每次调用返回的最大结果数。如果查询返回的时候有NextToken返回，您可以使用NextToken值获取更多页结果， 当NextToke返回空或者返回的结果数量小于MaxResults时，表示没有更多数据了。允许的最大页面大小为 100。
+                     * @return MaxResults 每次调用返回的最大结果数。如果查询返回的时候有NextToken返回，您可以使用NextToken值获取更多页结果， 当NextToke返回空或者返回的结果数量小于MaxResults时，表示没有更多数据了。允许的最大页面大小为 100。
+                     * 
+                     */
+                    uint64_t GetMaxResults() const;
+
+                    /**
+                     * 设置每次调用返回的最大结果数。如果查询返回的时候有NextToken返回，您可以使用NextToken值获取更多页结果， 当NextToke返回空或者返回的结果数量小于MaxResults时，表示没有更多数据了。允许的最大页面大小为 100。
+                     * @param _maxResults 每次调用返回的最大结果数。如果查询返回的时候有NextToken返回，您可以使用NextToken值获取更多页结果， 当NextToke返回空或者返回的结果数量小于MaxResults时，表示没有更多数据了。允许的最大页面大小为 100。
+                     * 
+                     */
+                    void SetMaxResults(const uint64_t& _maxResults);
+
+                    /**
+                     * 判断参数 MaxResults 是否已赋值
+                     * @return MaxResults 是否已赋值
+                     * 
+                     */
+                    bool MaxResultsHasBeenSet() const;
+
+                    /**
+                     * 获取如果NextToken返回 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。
+                     * @return NextToken 如果NextToken返回 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。
+                     * 
+                     */
+                    std::string GetNextToken() const;
+
+                    /**
+                     * 设置如果NextToken返回 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。
+                     * @param _nextToken 如果NextToken返回 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。
+                     * 
+                     */
+                    void SetNextToken(const std::string& _nextToken);
+
+                    /**
+                     * 判断参数 NextToken 是否已赋值
+                     * @return NextToken 是否已赋值
+                     * 
+                     */
+                    bool NextTokenHasBeenSet() const;
 
                 private:
 
@@ -247,10 +289,22 @@ GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/p
                     bool m_isListAuthorizedEndPointServiceHasBeenSet;
 
                     /**
-                     * 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * 协议类型，支持 Ipv4，Ipv6， DualStack，默认 Ipv4。使用DualStack查询双栈的时候，必须要使用MaxResult配合NextToken查询。第1次查询的时候只需要携带MaxResult，如果返回NextToken非空，表示有更多可用数据。第2次查询的时候就需要携带NextToken进行分页查询。
                      */
                     std::string m_ipAddressType;
                     bool m_ipAddressTypeHasBeenSet;
+
+                    /**
+                     * 每次调用返回的最大结果数。如果查询返回的时候有NextToken返回，您可以使用NextToken值获取更多页结果， 当NextToke返回空或者返回的结果数量小于MaxResults时，表示没有更多数据了。允许的最大页面大小为 100。
+                     */
+                    uint64_t m_maxResults;
+                    bool m_maxResultsHasBeenSet;
+
+                    /**
+                     * 如果NextToken返回 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。
+                     */
+                    std::string m_nextToken;
+                    bool m_nextTokenHasBeenSet;
 
                 };
             }

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取是否是预刷新；True:是， False:否
-                     * @return DryRun 是否是预刷新；True:是， False:否
+                     * 获取是否是预刷新；true:是， false:否
+                     * @return DryRun 是否是预刷新；true:是， false:否
                      * 
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置是否是预刷新；True:是， False:否
-                     * @param _dryRun 是否是预刷新；True:是， False:否
+                     * 设置是否是预刷新；true:是， false:否
+                     * @param _dryRun 是否是预刷新；true:是， false:否
                      * 
                      */
                     void SetDryRun(const bool& _dryRun);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_natGatewayIdHasBeenSet;
 
                     /**
-                     * 是否是预刷新；True:是， False:否
+                     * 是否是预刷新；true:是， false:否
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;

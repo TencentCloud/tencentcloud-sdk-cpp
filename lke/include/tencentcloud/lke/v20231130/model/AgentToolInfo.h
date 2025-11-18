@@ -420,6 +420,27 @@ namespace TencentCloud
                      */
                     bool FinanceStatusHasBeenSet() const;
 
+                    /**
+                     * 获取工具来源: 0-来自插件，1-来自工作流
+                     * @return ToolSource 工具来源: 0-来自插件，1-来自工作流
+                     * 
+                     */
+                    uint64_t GetToolSource() const;
+
+                    /**
+                     * 设置工具来源: 0-来自插件，1-来自工作流
+                     * @param _toolSource 工具来源: 0-来自插件，1-来自工作流
+                     * 
+                     */
+                    void SetToolSource(const uint64_t& _toolSource);
+
+                    /**
+                     * 判断参数 ToolSource 是否已赋值
+                     * @return ToolSource 是否已赋值
+                     * 
+                     */
+                    bool ToolSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -526,6 +547,12 @@ namespace TencentCloud
                      */
                     int64_t m_financeStatus;
                     bool m_financeStatusHasBeenSet;
+
+                    /**
+                     * 工具来源: 0-来自插件，1-来自工作流
+                     */
+                    uint64_t m_toolSource;
+                    bool m_toolSourceHasBeenSet;
 
                 };
             }

@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取NAT网关的SNAT转换规则。
-                     * @return SourceIpTranslationNatRule NAT网关的SNAT转换规则。
+                     * 获取NAT网关的SNAT转换规则。仅支持根据指定的NatGatewaySnatId修改PublicIpAddresses或Description。
+                     * @return SourceIpTranslationNatRule NAT网关的SNAT转换规则。仅支持根据指定的NatGatewaySnatId修改PublicIpAddresses或Description。
                      * 
                      */
                     SourceIpTranslationNatRule GetSourceIpTranslationNatRule() const;
 
                     /**
-                     * 设置NAT网关的SNAT转换规则。
-                     * @param _sourceIpTranslationNatRule NAT网关的SNAT转换规则。
+                     * 设置NAT网关的SNAT转换规则。仅支持根据指定的NatGatewaySnatId修改PublicIpAddresses或Description。
+                     * @param _sourceIpTranslationNatRule NAT网关的SNAT转换规则。仅支持根据指定的NatGatewaySnatId修改PublicIpAddresses或Description。
                      * 
                      */
                     void SetSourceIpTranslationNatRule(const SourceIpTranslationNatRule& _sourceIpTranslationNatRule);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_natGatewayIdHasBeenSet;
 
                     /**
-                     * NAT网关的SNAT转换规则。
+                     * NAT网关的SNAT转换规则。仅支持根据指定的NatGatewaySnatId修改PublicIpAddresses或Description。
                      */
                     SourceIpTranslationNatRule m_sourceIpTranslationNatRule;
                     bool m_sourceIpTranslationNatRuleHasBeenSet;

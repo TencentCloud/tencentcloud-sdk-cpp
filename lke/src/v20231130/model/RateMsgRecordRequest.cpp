@@ -26,7 +26,8 @@ RateMsgRecordRequest::RateMsgRecordRequest() :
     m_botAppKeyHasBeenSet(false),
     m_recordIdHasBeenSet(false),
     m_scoreHasBeenSet(false),
-    m_reasonsHasBeenSet(false)
+    m_reasonsHasBeenSet(false),
+    m_feedbackContentHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string RateMsgRecordRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_feedbackContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeedbackContent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_feedbackContent.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void RateMsgRecordRequest::SetReasons(const vector<string>& _reasons)
 bool RateMsgRecordRequest::ReasonsHasBeenSet() const
 {
     return m_reasonsHasBeenSet;
+}
+
+string RateMsgRecordRequest::GetFeedbackContent() const
+{
+    return m_feedbackContent;
+}
+
+void RateMsgRecordRequest::SetFeedbackContent(const string& _feedbackContent)
+{
+    m_feedbackContent = _feedbackContent;
+    m_feedbackContentHasBeenSet = true;
+}
+
+bool RateMsgRecordRequest::FeedbackContentHasBeenSet() const
+{
+    return m_feedbackContentHasBeenSet;
 }
 
 

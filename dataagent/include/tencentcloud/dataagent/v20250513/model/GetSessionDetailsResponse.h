@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dataagent/v20250513/model/Record.h>
 
 
 namespace TencentCloud
@@ -42,6 +43,20 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
+
+                    /**
+                     * 获取会话记录详情
+                     * @return RecordList 会话记录详情
+                     * 
+                     */
+                    std::vector<Record> GetRecordList() const;
+
+                    /**
+                     * 判断参数 RecordList 是否已赋值
+                     * @return RecordList 是否已赋值
+                     * 
+                     */
+                    bool RecordListHasBeenSet() const;
 
                     /**
                      * 获取记录总数
@@ -72,6 +87,12 @@ namespace TencentCloud
                     bool RunRecordHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 会话记录详情
+                     */
+                    std::vector<Record> m_recordList;
+                    bool m_recordListHasBeenSet;
 
                     /**
                      * 记录总数

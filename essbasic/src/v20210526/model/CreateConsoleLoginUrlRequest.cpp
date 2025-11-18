@@ -45,7 +45,8 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_organizationAuthorizationOptionsHasBeenSet(false),
     m_bankAccountNumberHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_jumpEventsHasBeenSet(false)
+    m_jumpEventsHasBeenSet(false),
+    m_proxyOrganizationIdCardTypeHasBeenSet(false)
 {
 }
 
@@ -258,6 +259,14 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_proxyOrganizationIdCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyOrganizationIdCardType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyOrganizationIdCardType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -634,6 +643,22 @@ void CreateConsoleLoginUrlRequest::SetJumpEvents(const vector<JumpEvent>& _jumpE
 bool CreateConsoleLoginUrlRequest::JumpEventsHasBeenSet() const
 {
     return m_jumpEventsHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetProxyOrganizationIdCardType() const
+{
+    return m_proxyOrganizationIdCardType;
+}
+
+void CreateConsoleLoginUrlRequest::SetProxyOrganizationIdCardType(const string& _proxyOrganizationIdCardType)
+{
+    m_proxyOrganizationIdCardType = _proxyOrganizationIdCardType;
+    m_proxyOrganizationIdCardTypeHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::ProxyOrganizationIdCardTypeHasBeenSet() const
+{
+    return m_proxyOrganizationIdCardTypeHasBeenSet;
 }
 
 

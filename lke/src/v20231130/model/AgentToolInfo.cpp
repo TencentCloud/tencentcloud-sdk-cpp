@@ -37,7 +37,8 @@ AgentToolInfo::AgentToolInfo() :
     m_headersHasBeenSet(false),
     m_callingMethodHasBeenSet(false),
     m_queryHasBeenSet(false),
-    m_financeStatusHasBeenSet(false)
+    m_financeStatusHasBeenSet(false),
+    m_toolSourceHasBeenSet(false)
 {
 }
 
@@ -263,6 +264,16 @@ CoreInternalOutcome AgentToolInfo::Deserialize(const rapidjson::Value &value)
         m_financeStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ToolSource") && !value["ToolSource"].IsNull())
+    {
+        if (!value["ToolSource"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentToolInfo.ToolSource` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_toolSource = value["ToolSource"].GetUint64();
+        m_toolSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void AgentToolInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "FinanceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_financeStatus, allocator);
+    }
+
+    if (m_toolSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_toolSource, allocator);
     }
 
 }
@@ -708,5 +727,21 @@ void AgentToolInfo::SetFinanceStatus(const int64_t& _financeStatus)
 bool AgentToolInfo::FinanceStatusHasBeenSet() const
 {
     return m_financeStatusHasBeenSet;
+}
+
+uint64_t AgentToolInfo::GetToolSource() const
+{
+    return m_toolSource;
+}
+
+void AgentToolInfo::SetToolSource(const uint64_t& _toolSource)
+{
+    m_toolSource = _toolSource;
+    m_toolSourceHasBeenSet = true;
+}
+
+bool AgentToolInfo::ToolSourceHasBeenSet() const
+{
+    return m_toolSourceHasBeenSet;
 }
 

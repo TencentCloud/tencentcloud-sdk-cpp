@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取	 新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId
-                     * @return AfterChunkId 	 新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId
+                     * 获取新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId
+                     * @return AfterChunkId 新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId
                      * 
                      */
                     std::string GetAfterChunkId() const;
 
                     /**
-                     * 设置	 新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId
-                     * @param _afterChunkId 	 新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId
+                     * 设置新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId
+                     * @param _afterChunkId 新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId
                      * 
                      */
                     void SetAfterChunkId(const std::string& _afterChunkId);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 	 新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId
+                     * 新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId
                      */
                     std::string m_afterChunkId;
                     bool m_afterChunkIdHasBeenSet;

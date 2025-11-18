@@ -32,7 +32,8 @@ OwaspWhiteRule::OwaspWhiteRule() :
     m_jobTypeHasBeenSet(false),
     m_jobDateTimeHasBeenSet(false),
     m_cronTypeHasBeenSet(false),
-    m_validStatusHasBeenSet(false)
+    m_validStatusHasBeenSet(false),
+    m_logicalOpHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,16 @@ CoreInternalOutcome OwaspWhiteRule::Deserialize(const rapidjson::Value &value)
         m_validStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("LogicalOp") && !value["LogicalOp"].IsNull())
+    {
+        if (!value["LogicalOp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OwaspWhiteRule.LogicalOp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logicalOp = string(value["LogicalOp"].GetString());
+        m_logicalOpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -295,6 +306,14 @@ void OwaspWhiteRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ValidStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_validStatus, allocator);
+    }
+
+    if (m_logicalOpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicalOp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -490,5 +509,21 @@ void OwaspWhiteRule::SetValidStatus(const bool& _validStatus)
 bool OwaspWhiteRule::ValidStatusHasBeenSet() const
 {
     return m_validStatusHasBeenSet;
+}
+
+string OwaspWhiteRule::GetLogicalOp() const
+{
+    return m_logicalOp;
+}
+
+void OwaspWhiteRule::SetLogicalOp(const string& _logicalOp)
+{
+    m_logicalOp = _logicalOp;
+    m_logicalOpHasBeenSet = true;
+}
+
+bool OwaspWhiteRule::LogicalOpHasBeenSet() const
+{
+    return m_logicalOpHasBeenSet;
 }
 

@@ -126,6 +126,49 @@ MqttClient::ActivateDeviceCertificateOutcomeCallable MqttClient::ActivateDeviceC
     return task->get_future();
 }
 
+MqttClient::AddClientSubscriptionOutcome MqttClient::AddClientSubscription(const AddClientSubscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddClientSubscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddClientSubscriptionResponse rsp = AddClientSubscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddClientSubscriptionOutcome(rsp);
+        else
+            return AddClientSubscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return AddClientSubscriptionOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::AddClientSubscriptionAsync(const AddClientSubscriptionRequest& request, const AddClientSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddClientSubscription(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::AddClientSubscriptionOutcomeCallable MqttClient::AddClientSubscriptionCallable(const AddClientSubscriptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddClientSubscriptionOutcome()>>(
+        [this, request]()
+        {
+            return this->AddClientSubscription(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::ApplyRegistrationCodeOutcome MqttClient::ApplyRegistrationCode(const ApplyRegistrationCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplyRegistrationCode");
@@ -764,6 +807,49 @@ MqttClient::DeleteCaCertificateOutcomeCallable MqttClient::DeleteCaCertificateCa
         [this, request]()
         {
             return this->DeleteCaCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::DeleteClientSubscriptionOutcome MqttClient::DeleteClientSubscription(const DeleteClientSubscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClientSubscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClientSubscriptionResponse rsp = DeleteClientSubscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClientSubscriptionOutcome(rsp);
+        else
+            return DeleteClientSubscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClientSubscriptionOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DeleteClientSubscriptionAsync(const DeleteClientSubscriptionRequest& request, const DeleteClientSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClientSubscription(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DeleteClientSubscriptionOutcomeCallable MqttClient::DeleteClientSubscriptionCallable(const DeleteClientSubscriptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClientSubscriptionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClientSubscription(request);
         }
     );
 

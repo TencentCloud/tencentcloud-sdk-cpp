@@ -177,7 +177,7 @@ namespace TencentCloud
                 ModifyKnowledgeBaseOutcomeCallable ModifyKnowledgeBaseCallable(const Model::ModifyKnowledgeBaseRequest& request);
 
                 /**
-                 *分配查询
+                 *文档切片查询
                  * @param req QueryChunkListRequest
                  * @return QueryChunkListOutcome
                  */

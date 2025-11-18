@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool MountOptionParameterHasBeenSet() const;
 
+                    /**
+                     * 获取挂载COS存储时支持的挂载工具；当前可选值：COSFS、GooseFS-Lite。
+                     * @return MountType 挂载COS存储时支持的挂载工具；当前可选值：COSFS、GooseFS-Lite。
+                     * 
+                     */
+                    std::string GetMountType() const;
+
+                    /**
+                     * 设置挂载COS存储时支持的挂载工具；当前可选值：COSFS、GooseFS-Lite。
+                     * @param _mountType 挂载COS存储时支持的挂载工具；当前可选值：COSFS、GooseFS-Lite。
+                     * 
+                     */
+                    void SetMountType(const std::string& _mountType);
+
+                    /**
+                     * 判断参数 MountType 是否已赋值
+                     * @return MountType 是否已赋值
+                     * 
+                     */
+                    bool MountTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_mountOptionParameter;
                     bool m_mountOptionParameterHasBeenSet;
+
+                    /**
+                     * 挂载COS存储时支持的挂载工具；当前可选值：COSFS、GooseFS-Lite。
+                     */
+                    std::string m_mountType;
+                    bool m_mountTypeHasBeenSet;
 
                 };
             }

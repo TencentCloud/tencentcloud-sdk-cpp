@@ -33,7 +33,9 @@ WafRuleLimit::WafRuleLimit() :
     m_customWhiteHasBeenSet(false),
     m_apiSecurityHasBeenSet(false),
     m_clientMsgHasBeenSet(false),
-    m_trafficMarkingHasBeenSet(false)
+    m_trafficMarkingHasBeenSet(false),
+    m_batchCCHasBeenSet(false),
+    m_batchSessionHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,26 @@ CoreInternalOutcome WafRuleLimit::Deserialize(const rapidjson::Value &value)
         m_trafficMarkingHasBeenSet = true;
     }
 
+    if (value.HasMember("BatchCC") && !value["BatchCC"].IsNull())
+    {
+        if (!value["BatchCC"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WafRuleLimit.BatchCC` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_batchCC = value["BatchCC"].GetUint64();
+        m_batchCCHasBeenSet = true;
+    }
+
+    if (value.HasMember("BatchSession") && !value["BatchSession"].IsNull())
+    {
+        if (!value["BatchSession"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WafRuleLimit.BatchSession` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_batchSession = value["BatchSession"].GetUint64();
+        m_batchSessionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +303,22 @@ void WafRuleLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TrafficMarking";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trafficMarking, allocator);
+    }
+
+    if (m_batchCCHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchCC";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_batchCC, allocator);
+    }
+
+    if (m_batchSessionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchSession";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_batchSession, allocator);
     }
 
 }
@@ -492,5 +530,37 @@ void WafRuleLimit::SetTrafficMarking(const uint64_t& _trafficMarking)
 bool WafRuleLimit::TrafficMarkingHasBeenSet() const
 {
     return m_trafficMarkingHasBeenSet;
+}
+
+uint64_t WafRuleLimit::GetBatchCC() const
+{
+    return m_batchCC;
+}
+
+void WafRuleLimit::SetBatchCC(const uint64_t& _batchCC)
+{
+    m_batchCC = _batchCC;
+    m_batchCCHasBeenSet = true;
+}
+
+bool WafRuleLimit::BatchCCHasBeenSet() const
+{
+    return m_batchCCHasBeenSet;
+}
+
+uint64_t WafRuleLimit::GetBatchSession() const
+{
+    return m_batchSession;
+}
+
+void WafRuleLimit::SetBatchSession(const uint64_t& _batchSession)
+{
+    m_batchSession = _batchSession;
+    m_batchSessionHasBeenSet = true;
+}
+
+bool WafRuleLimit::BatchSessionHasBeenSet() const
+{
+    return m_batchSessionHasBeenSet;
 }
 

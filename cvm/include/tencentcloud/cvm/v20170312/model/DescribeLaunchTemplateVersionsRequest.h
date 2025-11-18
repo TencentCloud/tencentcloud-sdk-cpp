@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MinVersionHasBeenSet() const;
 
                     /**
-                     * 获取过范围指定版本时的最大版本号，默认为30。
-                     * @return MaxVersion 过范围指定版本时的最大版本号，默认为30。
+                     * 获取通过范围指定版本时的最大版本号，默认为30。
+                     * @return MaxVersion 通过范围指定版本时的最大版本号，默认为30。
                      * 
                      */
                     uint64_t GetMaxVersion() const;
 
                     /**
-                     * 设置过范围指定版本时的最大版本号，默认为30。
-                     * @param _maxVersion 过范围指定版本时的最大版本号，默认为30。
+                     * 设置通过范围指定版本时的最大版本号，默认为30。
+                     * @param _maxVersion 通过范围指定版本时的最大版本号，默认为30。
                      * 
                      */
                     void SetMaxVersion(const uint64_t& _maxVersion);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。
-                     * @return DefaultVersion 是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。
+                     * 获取是否查询默认版本。默认值：false
+                     * @return DefaultVersion 是否查询默认版本。默认值：false
                      * 
                      */
                     bool GetDefaultVersion() const;
 
                     /**
-                     * 设置是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。
-                     * @param _defaultVersion 是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。
+                     * 设置是否查询默认版本。默认值：false
+                     * @param _defaultVersion 是否查询默认版本。默认值：false
                      * 
                      */
                     void SetDefaultVersion(const bool& _defaultVersion);
@@ -210,7 +210,7 @@ namespace TencentCloud
                     bool m_minVersionHasBeenSet;
 
                     /**
-                     * 过范围指定版本时的最大版本号，默认为30。
+                     * 通过范围指定版本时的最大版本号，默认为30。
                      */
                     uint64_t m_maxVersion;
                     bool m_maxVersionHasBeenSet;
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 是否查询默认版本。该参数不可与LaunchTemplateVersions同时指定。
+                     * 是否查询默认版本。默认值：false
                      */
                     bool m_defaultVersion;
                     bool m_defaultVersionHasBeenSet;

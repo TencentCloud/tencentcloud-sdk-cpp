@@ -89,6 +89,48 @@ namespace TencentCloud
                      */
                     bool ResHasBeenSet() const;
 
+                    /**
+                     * 获取规则限制总数
+                     * @return Limit 规则限制总数
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置规则限制总数
+                     * @param _limit 规则限制总数
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取规则剩余多少可用
+                     * @return Available 规则剩余多少可用
+                     * 
+                     */
+                    int64_t GetAvailable() const;
+
+                    /**
+                     * 设置规则剩余多少可用
+                     * @param _available 规则剩余多少可用
+                     * 
+                     */
+                    void SetAvailable(const int64_t& _available);
+
+                    /**
+                     * 判断参数 Available 是否已赋值
+                     * @return Available 是否已赋值
+                     * 
+                     */
+                    bool AvailableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +144,18 @@ namespace TencentCloud
                      */
                     std::vector<CCRuleItems> m_res;
                     bool m_resHasBeenSet;
+
+                    /**
+                     * 规则限制总数
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 规则剩余多少可用
+                     */
+                    int64_t m_available;
+                    bool m_availableHasBeenSet;
 
                 };
             }

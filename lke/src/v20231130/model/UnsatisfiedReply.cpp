@@ -29,7 +29,8 @@ UnsatisfiedReply::UnsatisfiedReply() :
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_feedbackContentHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,16 @@ CoreInternalOutcome UnsatisfiedReply::Deserialize(const rapidjson::Value &value)
         m_operatorHasBeenSet = true;
     }
 
+    if (value.HasMember("FeedbackContent") && !value["FeedbackContent"].IsNull())
+    {
+        if (!value["FeedbackContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnsatisfiedReply.FeedbackContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_feedbackContent = string(value["FeedbackContent"].GetString());
+        m_feedbackContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void UnsatisfiedReply::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_feedbackContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeedbackContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_feedbackContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void UnsatisfiedReply::SetOperator(const string& _operator)
 bool UnsatisfiedReply::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string UnsatisfiedReply::GetFeedbackContent() const
+{
+    return m_feedbackContent;
+}
+
+void UnsatisfiedReply::SetFeedbackContent(const string& _feedbackContent)
+{
+    m_feedbackContent = _feedbackContent;
+    m_feedbackContentHasBeenSet = true;
+}
+
+bool UnsatisfiedReply::FeedbackContentHasBeenSet() const
+{
+    return m_feedbackContentHasBeenSet;
 }
 

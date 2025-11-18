@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dataagent/v20250513/model/Chunk.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取总数
+                     * @return Total 总数
+                     * 
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     * 
+                     */
+                    bool TotalHasBeenSet() const;
+
+                    /**
+                     * 获取分片信息
+                     * @return Chunks 分片信息
+                     * 
+                     */
+                    std::vector<Chunk> GetChunks() const;
+
+                    /**
+                     * 判断参数 Chunks 是否已赋值
+                     * @return Chunks 是否已赋值
+                     * 
+                     */
+                    bool ChunksHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 总数
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
+
+                    /**
+                     * 分片信息
+                     */
+                    std::vector<Chunk> m_chunks;
+                    bool m_chunksHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeVpcEndPointResponse::DescribeVpcEndPointResponse() :
     m_endPointSetHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeVpcEndPointResponse::Deserialize(const string &paylo
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NextToken") && !rsp["NextToken"].IsNull())
+    {
+        if (!rsp["NextToken"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NextToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextToken = string(rsp["NextToken"].GetString());
+        m_nextTokenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeVpcEndPointResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
+    if (m_nextTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nextToken.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ uint64_t DescribeVpcEndPointResponse::GetTotalCount() const
 bool DescribeVpcEndPointResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+string DescribeVpcEndPointResponse::GetNextToken() const
+{
+    return m_nextToken;
+}
+
+bool DescribeVpcEndPointResponse::NextTokenHasBeenSet() const
+{
+    return m_nextTokenHasBeenSet;
 }
 
 

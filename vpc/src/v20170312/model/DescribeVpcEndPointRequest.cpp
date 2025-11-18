@@ -27,7 +27,9 @@ DescribeVpcEndPointRequest::DescribeVpcEndPointRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_endPointIdHasBeenSet(false),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -88,6 +90,22 @@ string DescribeVpcEndPointRequest::ToJsonString() const
         string key = "IpAddressType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ipAddressType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxResults";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxResults, allocator);
+    }
+
+    if (m_nextTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nextToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -176,6 +194,38 @@ void DescribeVpcEndPointRequest::SetIpAddressType(const string& _ipAddressType)
 bool DescribeVpcEndPointRequest::IpAddressTypeHasBeenSet() const
 {
     return m_ipAddressTypeHasBeenSet;
+}
+
+uint64_t DescribeVpcEndPointRequest::GetMaxResults() const
+{
+    return m_maxResults;
+}
+
+void DescribeVpcEndPointRequest::SetMaxResults(const uint64_t& _maxResults)
+{
+    m_maxResults = _maxResults;
+    m_maxResultsHasBeenSet = true;
+}
+
+bool DescribeVpcEndPointRequest::MaxResultsHasBeenSet() const
+{
+    return m_maxResultsHasBeenSet;
+}
+
+string DescribeVpcEndPointRequest::GetNextToken() const
+{
+    return m_nextToken;
+}
+
+void DescribeVpcEndPointRequest::SetNextToken(const string& _nextToken)
+{
+    m_nextToken = _nextToken;
+    m_nextTokenHasBeenSet = true;
+}
+
+bool DescribeVpcEndPointRequest::NextTokenHasBeenSet() const
+{
+    return m_nextTokenHasBeenSet;
 }
 
 

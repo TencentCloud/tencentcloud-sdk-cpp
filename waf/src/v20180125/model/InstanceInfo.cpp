@@ -70,7 +70,9 @@ InstanceInfo::InstanceInfo() :
     m_rCEPkgHasBeenSet(false),
     m_exceedPolicyHasBeenSet(false),
     m_lLMPkgHasBeenSet(false),
-    m_elasticResourceIdHasBeenSet(false)
+    m_elasticResourceIdHasBeenSet(false),
+    m_lLMMonPkgHasBeenSet(false),
+    m_regionIdHasBeenSet(false)
 {
 }
 
@@ -677,6 +679,33 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_elasticResourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("LLMMonPkg") && !value["LLMMonPkg"].IsNull())
+    {
+        if (!value["LLMMonPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.LLMMonPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lLMMonPkg.Deserialize(value["LLMMonPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lLMMonPkgHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
+    {
+        if (!value["RegionId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.RegionId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionId = value["RegionId"].GetUint64();
+        m_regionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1096,6 +1125,23 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ElasticResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_elasticResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lLMMonPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LLMMonPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lLMMonPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_regionId, allocator);
     }
 
 }
@@ -1899,5 +1945,37 @@ void InstanceInfo::SetElasticResourceId(const string& _elasticResourceId)
 bool InstanceInfo::ElasticResourceIdHasBeenSet() const
 {
     return m_elasticResourceIdHasBeenSet;
+}
+
+LLMMonPkg InstanceInfo::GetLLMMonPkg() const
+{
+    return m_lLMMonPkg;
+}
+
+void InstanceInfo::SetLLMMonPkg(const LLMMonPkg& _lLMMonPkg)
+{
+    m_lLMMonPkg = _lLMMonPkg;
+    m_lLMMonPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::LLMMonPkgHasBeenSet() const
+{
+    return m_lLMMonPkgHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void InstanceInfo::SetRegionId(const uint64_t& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool InstanceInfo::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
 }
 

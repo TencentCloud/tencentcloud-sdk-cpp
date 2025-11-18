@@ -277,6 +277,111 @@ namespace TencentCloud
                      */
                     bool CustomerReceiptHasBeenSet() const;
 
+                    /**
+                     * 获取楼宇名
+                     * @return Building 楼宇名
+                     * 
+                     */
+                    std::string GetBuilding() const;
+
+                    /**
+                     * 设置楼宇名
+                     * @param _building 楼宇名
+                     * 
+                     */
+                    void SetBuilding(const std::string& _building);
+
+                    /**
+                     * 判断参数 Building 是否已赋值
+                     * @return Building 是否已赋值
+                     * 
+                     */
+                    bool BuildingHasBeenSet() const;
+
+                    /**
+                     * 获取机房管理单元id
+                     * @return IdcUnitId 机房管理单元id
+                     * 
+                     */
+                    std::string GetIdcUnitId() const;
+
+                    /**
+                     * 设置机房管理单元id
+                     * @param _idcUnitId 机房管理单元id
+                     * 
+                     */
+                    void SetIdcUnitId(const std::string& _idcUnitId);
+
+                    /**
+                     * 判断参数 IdcUnitId 是否已赋值
+                     * @return IdcUnitId 是否已赋值
+                     * 
+                     */
+                    bool IdcUnitIdHasBeenSet() const;
+
+                    /**
+                     * 获取运营商
+                     * @return Isp 运营商
+                     * 
+                     */
+                    std::string GetIsp() const;
+
+                    /**
+                     * 设置运营商
+                     * @param _isp 运营商
+                     * 
+                     */
+                    void SetIsp(const std::string& _isp);
+
+                    /**
+                     * 判断参数 Isp 是否已赋值
+                     * @return Isp 是否已赋值
+                     * 
+                     */
+                    bool IspHasBeenSet() const;
+
+                    /**
+                     * 获取放行邮件目的邮箱
+                     * @return EmailSet 放行邮件目的邮箱
+                     * 
+                     */
+                    std::vector<std::string> GetEmailSet() const;
+
+                    /**
+                     * 设置放行邮件目的邮箱
+                     * @param _emailSet 放行邮件目的邮箱
+                     * 
+                     */
+                    void SetEmailSet(const std::vector<std::string>& _emailSet);
+
+                    /**
+                     * 判断参数 EmailSet 是否已赋值
+                     * @return EmailSet 是否已赋值
+                     * 
+                     */
+                    bool EmailSetHasBeenSet() const;
+
+                    /**
+                     * 获取到访原因
+                     * @return FactorSet 到访原因
+                     * 
+                     */
+                    std::vector<std::string> GetFactorSet() const;
+
+                    /**
+                     * 设置到访原因
+                     * @param _factorSet 到访原因
+                     * 
+                     */
+                    void SetFactorSet(const std::vector<std::string>& _factorSet);
+
+                    /**
+                     * 判断参数 FactorSet 是否已赋值
+                     * @return FactorSet 是否已赋值
+                     * 
+                     */
+                    bool FactorSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +449,36 @@ namespace TencentCloud
                      */
                     CustomerReceipt m_customerReceipt;
                     bool m_customerReceiptHasBeenSet;
+
+                    /**
+                     * 楼宇名
+                     */
+                    std::string m_building;
+                    bool m_buildingHasBeenSet;
+
+                    /**
+                     * 机房管理单元id
+                     */
+                    std::string m_idcUnitId;
+                    bool m_idcUnitIdHasBeenSet;
+
+                    /**
+                     * 运营商
+                     */
+                    std::string m_isp;
+                    bool m_ispHasBeenSet;
+
+                    /**
+                     * 放行邮件目的邮箱
+                     */
+                    std::vector<std::string> m_emailSet;
+                    bool m_emailSetHasBeenSet;
+
+                    /**
+                     * 到访原因
+                     */
+                    std::vector<std::string> m_factorSet;
+                    bool m_factorSetHasBeenSet;
 
                 };
             }

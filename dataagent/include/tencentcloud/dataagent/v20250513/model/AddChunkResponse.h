@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新增的chunkid
-                     * @return ChunkId 新增的chunkid
+                     * 获取新增的ChunkId
+                     * @return ChunkId 新增的ChunkId
                      * 
                      */
                     std::string GetChunkId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新增的chunkid
+                     * 新增的ChunkId
                      */
                     std::string m_chunkId;
                     bool m_chunkIdHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取默认 1 表示第一页
-                     * @return Page 默认 1 表示第一页
+                     * 获取表示第一页
+                     * @return Page 表示第一页
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
-                     * 设置默认 1 表示第一页
-                     * @param _page 默认 1 表示第一页
+                     * 设置表示第一页
+                     * @param _page 表示第一页
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取	 默认 10 一页展示 10 条
-                     * @return PageSize 	 默认 10 一页展示 10 条
+                     * 获取默认一页展示 10 条
+                     * @return PageSize 默认一页展示 10 条
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置	 默认 10 一页展示 10 条
-                     * @param _pageSize 	 默认 10 一页展示 10 条
+                     * 设置默认一页展示 10 条
+                     * @param _pageSize 默认一页展示 10 条
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 默认 1 表示第一页
+                     * 表示第一页
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 	 默认 10 一页展示 10 条
+                     * 默认一页展示 10 条
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

@@ -30,7 +30,8 @@ CreateAlarmNoticeRequest::CreateAlarmNoticeRequest() :
     m_userNoticesHasBeenSet(false),
     m_uRLNoticesHasBeenSet(false),
     m_cLSNoticesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_isLoginFreeHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string CreateAlarmNoticeRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isLoginFreeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLoginFree";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isLoginFree, allocator);
     }
 
 
@@ -267,6 +276,22 @@ void CreateAlarmNoticeRequest::SetTags(const vector<Tag>& _tags)
 bool CreateAlarmNoticeRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t CreateAlarmNoticeRequest::GetIsLoginFree() const
+{
+    return m_isLoginFree;
+}
+
+void CreateAlarmNoticeRequest::SetIsLoginFree(const int64_t& _isLoginFree)
+{
+    m_isLoginFree = _isLoginFree;
+    m_isLoginFreeHasBeenSet = true;
+}
+
+bool CreateAlarmNoticeRequest::IsLoginFreeHasBeenSet() const
+{
+    return m_isLoginFreeHasBeenSet;
 }
 
 

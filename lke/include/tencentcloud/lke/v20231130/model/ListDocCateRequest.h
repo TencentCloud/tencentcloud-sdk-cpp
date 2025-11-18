@@ -63,6 +63,111 @@ namespace TencentCloud
                      */
                     bool BotBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取分类查询类型：0-全量查询整棵标签树，1-根据父节点BizId分页查询子节点，2-关键词检索所有匹配的分类链路
+                     * @return QueryType 分类查询类型：0-全量查询整棵标签树，1-根据父节点BizId分页查询子节点，2-关键词检索所有匹配的分类链路
+                     * 
+                     */
+                    uint64_t GetQueryType() const;
+
+                    /**
+                     * 设置分类查询类型：0-全量查询整棵标签树，1-根据父节点BizId分页查询子节点，2-关键词检索所有匹配的分类链路
+                     * @param _queryType 分类查询类型：0-全量查询整棵标签树，1-根据父节点BizId分页查询子节点，2-关键词检索所有匹配的分类链路
+                     * 
+                     */
+                    void SetQueryType(const uint64_t& _queryType);
+
+                    /**
+                     * 判断参数 QueryType 是否已赋值
+                     * @return QueryType 是否已赋值
+                     * 
+                     */
+                    bool QueryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取QueryType=1时，父节点分类ID
+                     * @return ParentCateBizId QueryType=1时，父节点分类ID
+                     * 
+                     */
+                    std::string GetParentCateBizId() const;
+
+                    /**
+                     * 设置QueryType=1时，父节点分类ID
+                     * @param _parentCateBizId QueryType=1时，父节点分类ID
+                     * 
+                     */
+                    void SetParentCateBizId(const std::string& _parentCateBizId);
+
+                    /**
+                     * 判断参数 ParentCateBizId 是否已赋值
+                     * @return ParentCateBizId 是否已赋值
+                     * 
+                     */
+                    bool ParentCateBizIdHasBeenSet() const;
+
+                    /**
+                     * 获取QueryType=1时，页码（从1开始）
+                     * @return PageNumber QueryType=1时，页码（从1开始）
+                     * 
+                     */
+                    uint64_t GetPageNumber() const;
+
+                    /**
+                     * 设置QueryType=1时，页码（从1开始）
+                     * @param _pageNumber QueryType=1时，页码（从1开始）
+                     * 
+                     */
+                    void SetPageNumber(const uint64_t& _pageNumber);
+
+                    /**
+                     * 判断参数 PageNumber 是否已赋值
+                     * @return PageNumber 是否已赋值
+                     * 
+                     */
+                    bool PageNumberHasBeenSet() const;
+
+                    /**
+                     * 获取每页数量（默认10）
+                     * @return PageSize 每页数量（默认10）
+                     * 
+                     */
+                    uint64_t GetPageSize() const;
+
+                    /**
+                     * 设置每页数量（默认10）
+                     * @param _pageSize 每页数量（默认10）
+                     * 
+                     */
+                    void SetPageSize(const uint64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取QueryType=2时，搜索内容
+                     * @return Query QueryType=2时，搜索内容
+                     * 
+                     */
+                    std::string GetQuery() const;
+
+                    /**
+                     * 设置QueryType=2时，搜索内容
+                     * @param _query QueryType=2时，搜索内容
+                     * 
+                     */
+                    void SetQuery(const std::string& _query);
+
+                    /**
+                     * 判断参数 Query 是否已赋值
+                     * @return Query 是否已赋值
+                     * 
+                     */
+                    bool QueryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +175,36 @@ namespace TencentCloud
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
+
+                    /**
+                     * 分类查询类型：0-全量查询整棵标签树，1-根据父节点BizId分页查询子节点，2-关键词检索所有匹配的分类链路
+                     */
+                    uint64_t m_queryType;
+                    bool m_queryTypeHasBeenSet;
+
+                    /**
+                     * QueryType=1时，父节点分类ID
+                     */
+                    std::string m_parentCateBizId;
+                    bool m_parentCateBizIdHasBeenSet;
+
+                    /**
+                     * QueryType=1时，页码（从1开始）
+                     */
+                    uint64_t m_pageNumber;
+                    bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * 每页数量（默认10）
+                     */
+                    uint64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * QueryType=2时，搜索内容
+                     */
+                    std::string m_query;
+                    bool m_queryHasBeenSet;
 
                 };
             }

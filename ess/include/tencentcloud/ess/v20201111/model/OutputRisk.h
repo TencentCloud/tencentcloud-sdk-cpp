@@ -260,6 +260,27 @@ namespace TencentCloud
                      */
                     bool RiskBasisHasBeenSet() const;
 
+                    /**
+                     * 获取风险等级id
+                     * @return RiskLevelId 风险等级id
+                     * 
+                     */
+                    int64_t GetRiskLevelId() const;
+
+                    /**
+                     * 设置风险等级id
+                     * @param _riskLevelId 风险等级id
+                     * 
+                     */
+                    void SetRiskLevelId(const int64_t& _riskLevelId);
+
+                    /**
+                     * 判断参数 RiskLevelId 是否已赋值
+                     * @return RiskLevelId 是否已赋值
+                     * 
+                     */
+                    bool RiskLevelIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -321,6 +342,12 @@ namespace TencentCloud
                      */
                     std::string m_riskBasis;
                     bool m_riskBasisHasBeenSet;
+
+                    /**
+                     * 风险等级id
+                     */
+                    int64_t m_riskLevelId;
+                    bool m_riskLevelIdHasBeenSet;
 
                 };
             }

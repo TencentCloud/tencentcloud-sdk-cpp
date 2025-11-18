@@ -429,6 +429,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayFlowMonitorDetailResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaySourceIpTranslationNatRulesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaySourceIpTranslationNatRulesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayZonesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayZonesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaysRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaysResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetDetectStatesRequest.h>
@@ -1506,6 +1508,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNatGatewaySourceIpTranslationNatRulesResponse> DescribeNatGatewaySourceIpTranslationNatRulesOutcome;
                 typedef std::future<DescribeNatGatewaySourceIpTranslationNatRulesOutcome> DescribeNatGatewaySourceIpTranslationNatRulesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest&, DescribeNatGatewaySourceIpTranslationNatRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaySourceIpTranslationNatRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNatGatewayZonesResponse> DescribeNatGatewayZonesOutcome;
+                typedef std::future<DescribeNatGatewayZonesOutcome> DescribeNatGatewayZonesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewayZonesRequest&, DescribeNatGatewayZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewayZonesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNatGatewaysResponse> DescribeNatGatewaysOutcome;
                 typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewaysRequest&, DescribeNatGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaysAsyncHandler;
@@ -4205,6 +4210,15 @@ namespace TencentCloud
                 DescribeNatGatewaySourceIpTranslationNatRulesOutcome DescribeNatGatewaySourceIpTranslationNatRules(const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest &request);
                 void DescribeNatGatewaySourceIpTranslationNatRulesAsync(const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest& request, const DescribeNatGatewaySourceIpTranslationNatRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNatGatewaySourceIpTranslationNatRulesOutcomeCallable DescribeNatGatewaySourceIpTranslationNatRulesCallable(const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest& request);
+
+                /**
+                 *本接口(DescribeNatGatewayZones)用于查询NAT网关可售卖的可用区信息
+                 * @param req DescribeNatGatewayZonesRequest
+                 * @return DescribeNatGatewayZonesOutcome
+                 */
+                DescribeNatGatewayZonesOutcome DescribeNatGatewayZones(const Model::DescribeNatGatewayZonesRequest &request);
+                void DescribeNatGatewayZonesAsync(const Model::DescribeNatGatewayZonesRequest& request, const DescribeNatGatewayZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatGatewayZonesOutcomeCallable DescribeNatGatewayZonesCallable(const Model::DescribeNatGatewayZonesRequest& request);
 
                 /**
                  *本接口（DescribeNatGateways）用于查询 NAT 网关。

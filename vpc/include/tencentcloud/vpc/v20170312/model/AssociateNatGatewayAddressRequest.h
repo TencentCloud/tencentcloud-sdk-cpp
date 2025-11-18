@@ -107,14 +107,18 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性IP可用区，自动分配弹性IP时传递。
+其中产品可用区查询接口为[查询产品可用区列表](https://cloud.tencent.com/document/product/1596/77929)
                      * @return Zone 弹性IP可用区，自动分配弹性IP时传递。
+其中产品可用区查询接口为[查询产品可用区列表](https://cloud.tencent.com/document/product/1596/77929)
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置弹性IP可用区，自动分配弹性IP时传递。
+其中产品可用区查询接口为[查询产品可用区列表](https://cloud.tencent.com/document/product/1596/77929)
                      * @param _zone 弹性IP可用区，自动分配弹性IP时传递。
+其中产品可用区查询接口为[查询产品可用区列表](https://cloud.tencent.com/document/product/1596/77929)
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -189,6 +193,27 @@ namespace TencentCloud
                      */
                     bool PublicIpFromSameZoneHasBeenSet() const;
 
+                    /**
+                     * 获取启用或者禁用NAT网关绑定的EIP
+                     * @return IpAddressEnableMode 启用或者禁用NAT网关绑定的EIP
+                     * 
+                     */
+                    bool GetIpAddressEnableMode() const;
+
+                    /**
+                     * 设置启用或者禁用NAT网关绑定的EIP
+                     * @param _ipAddressEnableMode 启用或者禁用NAT网关绑定的EIP
+                     * 
+                     */
+                    void SetIpAddressEnableMode(const bool& _ipAddressEnableMode);
+
+                    /**
+                     * 判断参数 IpAddressEnableMode 是否已赋值
+                     * @return IpAddressEnableMode 是否已赋值
+                     * 
+                     */
+                    bool IpAddressEnableModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +236,7 @@ namespace TencentCloud
 
                     /**
                      * 弹性IP可用区，自动分配弹性IP时传递。
+其中产品可用区查询接口为[查询产品可用区列表](https://cloud.tencent.com/document/product/1596/77929)
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -232,6 +258,12 @@ namespace TencentCloud
                      */
                     bool m_publicIpFromSameZone;
                     bool m_publicIpFromSameZoneHasBeenSet;
+
+                    /**
+                     * 启用或者禁用NAT网关绑定的EIP
+                     */
+                    bool m_ipAddressEnableMode;
+                    bool m_ipAddressEnableModeHasBeenSet;
 
                 };
             }

@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dataagent::V20250513::Model;
 using namespace std;
 
-QueryChunkListResponse::QueryChunkListResponse()
+QueryChunkListResponse::QueryChunkListResponse() :
+    m_totalHasBeenSet(false),
+    m_chunksHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome QueryChunkListResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Chunks") && !rsp["Chunks"].IsNull())
+    {
+        if (!rsp["Chunks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Chunks` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Chunks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Chunk item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_chunks.push_back(item);
+        }
+        m_chunksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string QueryChunkListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
+    if (m_chunksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Chunks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_chunks.begin(); itr != m_chunks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string QueryChunkListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t QueryChunkListResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool QueryChunkListResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
+}
+
+vector<Chunk> QueryChunkListResponse::GetChunks() const
+{
+    return m_chunks;
+}
+
+bool QueryChunkListResponse::ChunksHasBeenSet() const
+{
+    return m_chunksHasBeenSet;
+}
 
 

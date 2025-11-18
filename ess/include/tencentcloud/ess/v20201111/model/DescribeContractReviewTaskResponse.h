@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/OutputRisk.h>
 #include <tencentcloud/ess/v20201111/model/RiskIdentificationRoleInfo.h>
+#include <tencentcloud/ess/v20201111/model/OutputReference.h>
 
 
 namespace TencentCloud
@@ -267,6 +268,22 @@ namespace TencentCloud
                      */
                     bool TotalRiskCountHasBeenSet() const;
 
+                    /**
+                     * 获取通过项信息(详细引文信息)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApprovedLists 通过项信息(详细引文信息)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<OutputReference> GetApprovedLists() const;
+
+                    /**
+                     * 判断参数 ApprovedLists 是否已赋值
+                     * @return ApprovedLists 是否已赋值
+                     * 
+                     */
+                    bool ApprovedListsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -366,6 +383,13 @@ namespace TencentCloud
                      */
                     int64_t m_totalRiskCount;
                     bool m_totalRiskCountHasBeenSet;
+
+                    /**
+                     * 通过项信息(详细引文信息)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OutputReference> m_approvedLists;
+                    bool m_approvedListsHasBeenSet;
 
                 };
             }

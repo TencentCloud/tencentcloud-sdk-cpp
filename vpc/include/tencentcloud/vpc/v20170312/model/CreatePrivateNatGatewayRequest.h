@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私网网关名称
-                     * @return NatGatewayName 私网网关名称
+                     * 获取私网网关名称，限制60个字符
+                     * @return NatGatewayName 私网网关名称，限制60个字符
                      * 
                      */
                     std::string GetNatGatewayName() const;
 
                     /**
-                     * 设置私网网关名称
-                     * @param _natGatewayName 私网网关名称
+                     * 设置私网网关名称，限制60个字符
+                     * @param _natGatewayName 私网网关名称，限制60个字符
                      * 
                      */
                     void SetNatGatewayName(const std::string& _natGatewayName);
@@ -193,7 +193,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私网网关名称
+                     * 私网网关名称，限制60个字符
                      */
                     std::string m_natGatewayName;
                     bool m_natGatewayNameHasBeenSet;

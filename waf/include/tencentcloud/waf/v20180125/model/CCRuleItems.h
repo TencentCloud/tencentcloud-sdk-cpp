@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/JobDateTime.h>
 
 
 namespace TencentCloud
@@ -487,6 +488,174 @@ namespace TencentCloud
                      */
                     bool ActionRatioHasBeenSet() const;
 
+                    /**
+                     * 获取批量cc规则配置的批量域名
+                     * @return Domains 批量cc规则配置的批量域名
+                     * 
+                     */
+                    std::vector<std::string> GetDomains() const;
+
+                    /**
+                     * 设置批量cc规则配置的批量域名
+                     * @param _domains 批量cc规则配置的批量域名
+                     * 
+                     */
+                    void SetDomains(const std::vector<std::string>& _domains);
+
+                    /**
+                     * 判断参数 Domains 是否已赋值
+                     * @return Domains 是否已赋值
+                     * 
+                     */
+                    bool DomainsHasBeenSet() const;
+
+                    /**
+                     * 获取批量cc规则使用的批量防护组
+                     * @return GroupIds 批量cc规则使用的批量防护组
+                     * 
+                     */
+                    std::vector<uint64_t> GetGroupIds() const;
+
+                    /**
+                     * 设置批量cc规则使用的批量防护组
+                     * @param _groupIds 批量cc规则使用的批量防护组
+                     * 
+                     */
+                    void SetGroupIds(const std::vector<uint64_t>& _groupIds);
+
+                    /**
+                     * 判断参数 GroupIds 是否已赋值
+                     * @return GroupIds 是否已赋值
+                     * 
+                     */
+                    bool GroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取定时任务类型
+                     * @return JobType 定时任务类型
+                     * 
+                     */
+                    std::string GetJobType() const;
+
+                    /**
+                     * 设置定时任务类型
+                     * @param _jobType 定时任务类型
+                     * 
+                     */
+                    void SetJobType(const std::string& _jobType);
+
+                    /**
+                     * 判断参数 JobType 是否已赋值
+                     * @return JobType 是否已赋值
+                     * 
+                     */
+                    bool JobTypeHasBeenSet() const;
+
+                    /**
+                     * 获取定时任务配置
+                     * @return JobDateTime 定时任务配置
+                     * 
+                     */
+                    JobDateTime GetJobDateTime() const;
+
+                    /**
+                     * 设置定时任务配置
+                     * @param _jobDateTime 定时任务配置
+                     * 
+                     */
+                    void SetJobDateTime(const JobDateTime& _jobDateTime);
+
+                    /**
+                     * 判断参数 JobDateTime 是否已赋值
+                     * @return JobDateTime 是否已赋值
+                     * 
+                     */
+                    bool JobDateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取定时任务类型：month or week
+                     * @return CronType 定时任务类型：month or week
+                     * 
+                     */
+                    std::string GetCronType() const;
+
+                    /**
+                     * 设置定时任务类型：month or week
+                     * @param _cronType 定时任务类型：month or week
+                     * 
+                     */
+                    void SetCronType(const std::string& _cronType);
+
+                    /**
+                     * 判断参数 CronType 是否已赋值
+                     * @return CronType 是否已赋值
+                     * 
+                     */
+                    bool CronTypeHasBeenSet() const;
+
+                    /**
+                     * 获取过期时间
+                     * @return ExpireTime 过期时间
+                     * 
+                     */
+                    uint64_t GetExpireTime() const;
+
+                    /**
+                     * 设置过期时间
+                     * @param _expireTime 过期时间
+                     * 
+                     */
+                    void SetExpireTime(const uint64_t& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否生效
+                     * @return ValidStatus 是否生效
+                     * 
+                     */
+                    int64_t GetValidStatus() const;
+
+                    /**
+                     * 设置是否生效
+                     * @param _validStatus 是否生效
+                     * 
+                     */
+                    void SetValidStatus(const int64_t& _validStatus);
+
+                    /**
+                     * 判断参数 ValidStatus 是否已赋值
+                     * @return ValidStatus 是否已赋值
+                     * 
+                     */
+                    bool ValidStatusHasBeenSet() const;
+
+                    /**
+                     * 获取来源：批量还是单个规则
+                     * @return Source 来源：批量还是单个规则
+                     * 
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置来源：批量还是单个规则
+                     * @param _source 来源：批量还是单个规则
+                     * 
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -614,6 +783,54 @@ namespace TencentCloud
                      */
                     uint64_t m_actionRatio;
                     bool m_actionRatioHasBeenSet;
+
+                    /**
+                     * 批量cc规则配置的批量域名
+                     */
+                    std::vector<std::string> m_domains;
+                    bool m_domainsHasBeenSet;
+
+                    /**
+                     * 批量cc规则使用的批量防护组
+                     */
+                    std::vector<uint64_t> m_groupIds;
+                    bool m_groupIdsHasBeenSet;
+
+                    /**
+                     * 定时任务类型
+                     */
+                    std::string m_jobType;
+                    bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * 定时任务配置
+                     */
+                    JobDateTime m_jobDateTime;
+                    bool m_jobDateTimeHasBeenSet;
+
+                    /**
+                     * 定时任务类型：month or week
+                     */
+                    std::string m_cronType;
+                    bool m_cronTypeHasBeenSet;
+
+                    /**
+                     * 过期时间
+                     */
+                    uint64_t m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 是否生效
+                     */
+                    int64_t m_validStatus;
+                    bool m_validStatusHasBeenSet;
+
+                    /**
+                     * 来源：批量还是单个规则
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
 
                 };
             }

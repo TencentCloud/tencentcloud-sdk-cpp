@@ -36,7 +36,10 @@ DeviceOrderBaseInfo::DeviceOrderBaseInfo() :
     m_powerOffConfirmInfoHasBeenSet(false),
     m_handoverMethodHasBeenSet(false),
     m_customerReceiptHasBeenSet(false),
-    m_logisticsReceiptHasBeenSet(false)
+    m_logisticsReceiptHasBeenSet(false),
+    m_buildingHasBeenSet(false),
+    m_emailSetHasBeenSet(false),
+    m_factorSetHasBeenSet(false)
 {
 }
 
@@ -240,6 +243,42 @@ CoreInternalOutcome DeviceOrderBaseInfo::Deserialize(const rapidjson::Value &val
         m_logisticsReceiptHasBeenSet = true;
     }
 
+    if (value.HasMember("Building") && !value["Building"].IsNull())
+    {
+        if (!value["Building"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceOrderBaseInfo.Building` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_building = string(value["Building"].GetString());
+        m_buildingHasBeenSet = true;
+    }
+
+    if (value.HasMember("EmailSet") && !value["EmailSet"].IsNull())
+    {
+        if (!value["EmailSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DeviceOrderBaseInfo.EmailSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EmailSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_emailSet.push_back((*itr).GetString());
+        }
+        m_emailSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("FactorSet") && !value["FactorSet"].IsNull())
+    {
+        if (!value["FactorSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DeviceOrderBaseInfo.FactorSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FactorSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_factorSet.push_back((*itr).GetString());
+        }
+        m_factorSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -378,6 +417,40 @@ void DeviceOrderBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logisticsReceipt.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_buildingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Building";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_building.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_emailSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmailSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_emailSet.begin(); itr != m_emailSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_factorSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FactorSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_factorSet.begin(); itr != m_factorSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -637,5 +710,53 @@ void DeviceOrderBaseInfo::SetLogisticsReceipt(const LogisticsReceipt& _logistics
 bool DeviceOrderBaseInfo::LogisticsReceiptHasBeenSet() const
 {
     return m_logisticsReceiptHasBeenSet;
+}
+
+string DeviceOrderBaseInfo::GetBuilding() const
+{
+    return m_building;
+}
+
+void DeviceOrderBaseInfo::SetBuilding(const string& _building)
+{
+    m_building = _building;
+    m_buildingHasBeenSet = true;
+}
+
+bool DeviceOrderBaseInfo::BuildingHasBeenSet() const
+{
+    return m_buildingHasBeenSet;
+}
+
+vector<string> DeviceOrderBaseInfo::GetEmailSet() const
+{
+    return m_emailSet;
+}
+
+void DeviceOrderBaseInfo::SetEmailSet(const vector<string>& _emailSet)
+{
+    m_emailSet = _emailSet;
+    m_emailSetHasBeenSet = true;
+}
+
+bool DeviceOrderBaseInfo::EmailSetHasBeenSet() const
+{
+    return m_emailSetHasBeenSet;
+}
+
+vector<string> DeviceOrderBaseInfo::GetFactorSet() const
+{
+    return m_factorSet;
+}
+
+void DeviceOrderBaseInfo::SetFactorSet(const vector<string>& _factorSet)
+{
+    m_factorSet = _factorSet;
+    m_factorSetHasBeenSet = true;
+}
+
+bool DeviceOrderBaseInfo::FactorSetHasBeenSet() const
+{
+    return m_factorSetHasBeenSet;
 }
 

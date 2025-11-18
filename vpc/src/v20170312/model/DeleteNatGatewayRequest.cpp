@@ -23,7 +23,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 DeleteNatGatewayRequest::DeleteNatGatewayRequest() :
-    m_natGatewayIdHasBeenSet(false)
+    m_natGatewayIdHasBeenSet(false),
+    m_ignoreOperationRiskHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DeleteNatGatewayRequest::ToJsonString() const
         string key = "NatGatewayId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_natGatewayId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ignoreOperationRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreOperationRisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ignoreOperationRisk, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DeleteNatGatewayRequest::SetNatGatewayId(const string& _natGatewayId)
 bool DeleteNatGatewayRequest::NatGatewayIdHasBeenSet() const
 {
     return m_natGatewayIdHasBeenSet;
+}
+
+bool DeleteNatGatewayRequest::GetIgnoreOperationRisk() const
+{
+    return m_ignoreOperationRisk;
+}
+
+void DeleteNatGatewayRequest::SetIgnoreOperationRisk(const bool& _ignoreOperationRisk)
+{
+    m_ignoreOperationRisk = _ignoreOperationRisk;
+    m_ignoreOperationRiskHasBeenSet = true;
+}
+
+bool DeleteNatGatewayRequest::IgnoreOperationRiskHasBeenSet() const
+{
+    return m_ignoreOperationRiskHasBeenSet;
 }
 
 

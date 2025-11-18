@@ -817,6 +817,27 @@ p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，
                      */
                     bool JumpEventsHasBeenSet() const;
 
+                    /**
+                     * 获取企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>
+                     * @return OrganizationIdCardType 企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>
+                     * 
+                     */
+                    std::string GetOrganizationIdCardType() const;
+
+                    /**
+                     * 设置企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>
+                     * @param _organizationIdCardType 企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>
+                     * 
+                     */
+                    void SetOrganizationIdCardType(const std::string& _organizationIdCardType);
+
+                    /**
+                     * 判断参数 OrganizationIdCardType 是否已赋值
+                     * @return OrganizationIdCardType 是否已赋值
+                     * 
+                     */
+                    bool OrganizationIdCardTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1030,6 +1051,12 @@ p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，
                      */
                     std::vector<JumpEvent> m_jumpEvents;
                     bool m_jumpEventsHasBeenSet;
+
+                    /**
+                     * 企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>
+                     */
+                    std::string m_organizationIdCardType;
+                    bool m_organizationIdCardTypeHasBeenSet;
 
                 };
             }
