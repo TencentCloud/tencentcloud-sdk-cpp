@@ -25,7 +25,8 @@ VisionRecognitionResult::VisionRecognitionResult() :
     m_detectedClassificationsHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_alternativeSummaryHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
+    m_errorCodeHasBeenSet(false),
+    m_detectedObjectsHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,26 @@ CoreInternalOutcome VisionRecognitionResult::Deserialize(const rapidjson::Value 
         m_errorCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("DetectedObjects") && !value["DetectedObjects"].IsNull())
+    {
+        if (!value["DetectedObjects"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VisionRecognitionResult.DetectedObjects` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DetectedObjects"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VisionDetectedObject item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_detectedObjects.push_back(item);
+        }
+        m_detectedObjectsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +158,21 @@ void VisionRecognitionResult::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ErrorCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detectedObjectsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetectedObjects";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detectedObjects.begin(); itr != m_detectedObjects.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -220,5 +256,21 @@ void VisionRecognitionResult::SetErrorCode(const string& _errorCode)
 bool VisionRecognitionResult::ErrorCodeHasBeenSet() const
 {
     return m_errorCodeHasBeenSet;
+}
+
+vector<VisionDetectedObject> VisionRecognitionResult::GetDetectedObjects() const
+{
+    return m_detectedObjects;
+}
+
+void VisionRecognitionResult::SetDetectedObjects(const vector<VisionDetectedObject>& _detectedObjects)
+{
+    m_detectedObjects = _detectedObjects;
+    m_detectedObjectsHasBeenSet = true;
+}
+
+bool VisionRecognitionResult::DetectedObjectsHasBeenSet() const
+{
+    return m_detectedObjectsHasBeenSet;
 }
 

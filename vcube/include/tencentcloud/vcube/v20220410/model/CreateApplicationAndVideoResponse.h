@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取license唯一标识
+                     * @return LicenseId license唯一标识
+                     * 
+                     */
+                    uint64_t GetLicenseId() const;
+
+                    /**
+                     * 判断参数 LicenseId 是否已赋值
+                     * @return LicenseId 是否已赋值
+                     * 
+                     */
+                    bool LicenseIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * license唯一标识
+                     */
+                    uint64_t m_licenseId;
+                    bool m_licenseIdHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ DescribeUserInfoRequest::DescribeUserInfoRequest() :
     m_sortByHasBeenSet(false),
     m_sortingHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_accountTypeHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string DescribeUserInfoRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +230,22 @@ void DescribeUserInfoRequest::SetOffset(const int64_t& _offset)
 bool DescribeUserInfoRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeUserInfoRequest::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void DescribeUserInfoRequest::SetAccountType(const string& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool DescribeUserInfoRequest::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 
 

@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool LogoParamHasBeenSet() const;
 
                     /**
-                     * 获取返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
-                     * @return RspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
+                     * 获取返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。
+                     * @return RspImgType 返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。
                      * 
                      */
                     std::string GetRspImgType() const;
 
                     /**
-                     * 设置返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
-                     * @param _rspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
+                     * 设置返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。
+                     * @param _rspImgType 返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。
                      * 
                      */
                     void SetRspImgType(const std::string& _rspImgType);
@@ -497,7 +497,7 @@ namespace TencentCloud
                     bool m_logoParamHasBeenSet;
 
                     /**
-                     * 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
+                     * 返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。
                      */
                     std::string m_rspImgType;
                     bool m_rspImgTypeHasBeenSet;

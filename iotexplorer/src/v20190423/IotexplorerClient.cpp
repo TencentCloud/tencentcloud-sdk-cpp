@@ -83,6 +83,92 @@ IotexplorerClient::ActivateTWeCallLicenseOutcomeCallable IotexplorerClient::Acti
     return task->get_future();
 }
 
+IotexplorerClient::BatchCreateTWeSeeRecognitionTaskOutcome IotexplorerClient::BatchCreateTWeSeeRecognitionTask(const BatchCreateTWeSeeRecognitionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchCreateTWeSeeRecognitionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchCreateTWeSeeRecognitionTaskResponse rsp = BatchCreateTWeSeeRecognitionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchCreateTWeSeeRecognitionTaskOutcome(rsp);
+        else
+            return BatchCreateTWeSeeRecognitionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchCreateTWeSeeRecognitionTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::BatchCreateTWeSeeRecognitionTaskAsync(const BatchCreateTWeSeeRecognitionTaskRequest& request, const BatchCreateTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchCreateTWeSeeRecognitionTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::BatchCreateTWeSeeRecognitionTaskOutcomeCallable IotexplorerClient::BatchCreateTWeSeeRecognitionTaskCallable(const BatchCreateTWeSeeRecognitionTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchCreateTWeSeeRecognitionTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchCreateTWeSeeRecognitionTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::BatchInvokeTWeSeeRecognitionTaskOutcome IotexplorerClient::BatchInvokeTWeSeeRecognitionTask(const BatchInvokeTWeSeeRecognitionTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchInvokeTWeSeeRecognitionTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchInvokeTWeSeeRecognitionTaskResponse rsp = BatchInvokeTWeSeeRecognitionTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchInvokeTWeSeeRecognitionTaskOutcome(rsp);
+        else
+            return BatchInvokeTWeSeeRecognitionTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchInvokeTWeSeeRecognitionTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::BatchInvokeTWeSeeRecognitionTaskAsync(const BatchInvokeTWeSeeRecognitionTaskRequest& request, const BatchInvokeTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchInvokeTWeSeeRecognitionTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::BatchInvokeTWeSeeRecognitionTaskOutcomeCallable IotexplorerClient::BatchInvokeTWeSeeRecognitionTaskCallable(const BatchInvokeTWeSeeRecognitionTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchInvokeTWeSeeRecognitionTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchInvokeTWeSeeRecognitionTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::BatchUpdateFirmwareOutcome IotexplorerClient::BatchUpdateFirmware(const BatchUpdateFirmwareRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchUpdateFirmware");
@@ -1330,6 +1416,49 @@ IotexplorerClient::CreateTWeSeeRecognitionTaskOutcomeCallable IotexplorerClient:
     return task->get_future();
 }
 
+IotexplorerClient::CreateTWeSeeRecognitionTaskWithFileOutcome IotexplorerClient::CreateTWeSeeRecognitionTaskWithFile(const CreateTWeSeeRecognitionTaskWithFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTWeSeeRecognitionTaskWithFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTWeSeeRecognitionTaskWithFileResponse rsp = CreateTWeSeeRecognitionTaskWithFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTWeSeeRecognitionTaskWithFileOutcome(rsp);
+        else
+            return CreateTWeSeeRecognitionTaskWithFileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTWeSeeRecognitionTaskWithFileOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTWeSeeRecognitionTaskWithFileAsync(const CreateTWeSeeRecognitionTaskWithFileRequest& request, const CreateTWeSeeRecognitionTaskWithFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTWeSeeRecognitionTaskWithFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateTWeSeeRecognitionTaskWithFileOutcomeCallable IotexplorerClient::CreateTWeSeeRecognitionTaskWithFileCallable(const CreateTWeSeeRecognitionTaskWithFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTWeSeeRecognitionTaskWithFileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTWeSeeRecognitionTaskWithFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateTWeSeeServiceOutcome IotexplorerClient::CreateTWeSeeService(const CreateTWeSeeServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTWeSeeService");
@@ -2011,6 +2140,49 @@ IotexplorerClient::DeleteStudioProductOutcomeCallable IotexplorerClient::DeleteS
         [this, request]()
         {
             return this->DeleteStudioProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DeleteTWeTalkProductConfigV2Outcome IotexplorerClient::DeleteTWeTalkProductConfigV2(const DeleteTWeTalkProductConfigV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTWeTalkProductConfigV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTWeTalkProductConfigV2Response rsp = DeleteTWeTalkProductConfigV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTWeTalkProductConfigV2Outcome(rsp);
+        else
+            return DeleteTWeTalkProductConfigV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTWeTalkProductConfigV2Outcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteTWeTalkProductConfigV2Async(const DeleteTWeTalkProductConfigV2Request& request, const DeleteTWeTalkProductConfigV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTWeTalkProductConfigV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DeleteTWeTalkProductConfigV2OutcomeCallable IotexplorerClient::DeleteTWeTalkProductConfigV2Callable(const DeleteTWeTalkProductConfigV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTWeTalkProductConfigV2Outcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTWeTalkProductConfigV2(request);
         }
     );
 
@@ -3344,49 +3516,6 @@ IotexplorerClient::DescribeDeviceFirmwaresOutcomeCallable IotexplorerClient::Des
         [this, request]()
         {
             return this->DescribeDeviceFirmwares(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-IotexplorerClient::DescribeDeviceLocationSolveOutcome IotexplorerClient::DescribeDeviceLocationSolve(const DescribeDeviceLocationSolveRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDeviceLocationSolve");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDeviceLocationSolveResponse rsp = DescribeDeviceLocationSolveResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDeviceLocationSolveOutcome(rsp);
-        else
-            return DescribeDeviceLocationSolveOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDeviceLocationSolveOutcome(outcome.GetError());
-    }
-}
-
-void IotexplorerClient::DescribeDeviceLocationSolveAsync(const DescribeDeviceLocationSolveRequest& request, const DescribeDeviceLocationSolveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDeviceLocationSolve(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-IotexplorerClient::DescribeDeviceLocationSolveOutcomeCallable IotexplorerClient::DescribeDeviceLocationSolveCallable(const DescribeDeviceLocationSolveRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeDeviceLocationSolveOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDeviceLocationSolve(request);
         }
     );
 
@@ -6053,6 +6182,49 @@ IotexplorerClient::InvokeTWeSeeRecognitionTaskOutcomeCallable IotexplorerClient:
         [this, request]()
         {
             return this->InvokeTWeSeeRecognitionTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::InvokeTWeSeeRecognitionTaskWithFileOutcome IotexplorerClient::InvokeTWeSeeRecognitionTaskWithFile(const InvokeTWeSeeRecognitionTaskWithFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "InvokeTWeSeeRecognitionTaskWithFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InvokeTWeSeeRecognitionTaskWithFileResponse rsp = InvokeTWeSeeRecognitionTaskWithFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InvokeTWeSeeRecognitionTaskWithFileOutcome(rsp);
+        else
+            return InvokeTWeSeeRecognitionTaskWithFileOutcome(o.GetError());
+    }
+    else
+    {
+        return InvokeTWeSeeRecognitionTaskWithFileOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::InvokeTWeSeeRecognitionTaskWithFileAsync(const InvokeTWeSeeRecognitionTaskWithFileRequest& request, const InvokeTWeSeeRecognitionTaskWithFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InvokeTWeSeeRecognitionTaskWithFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::InvokeTWeSeeRecognitionTaskWithFileOutcomeCallable IotexplorerClient::InvokeTWeSeeRecognitionTaskWithFileCallable(const InvokeTWeSeeRecognitionTaskWithFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InvokeTWeSeeRecognitionTaskWithFileOutcome()>>(
+        [this, request]()
+        {
+            return this->InvokeTWeSeeRecognitionTaskWithFile(request);
         }
     );
 

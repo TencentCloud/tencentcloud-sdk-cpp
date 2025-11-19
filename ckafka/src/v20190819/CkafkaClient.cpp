@@ -1631,49 +1631,6 @@ CkafkaClient::DescribeAclRuleOutcomeCallable CkafkaClient::DescribeAclRuleCallab
     return task->get_future();
 }
 
-CkafkaClient::DescribeAppInfoOutcome CkafkaClient::DescribeAppInfo(const DescribeAppInfoRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAppInfo");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAppInfoResponse rsp = DescribeAppInfoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAppInfoOutcome(rsp);
-        else
-            return DescribeAppInfoOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAppInfoOutcome(outcome.GetError());
-    }
-}
-
-void CkafkaClient::DescribeAppInfoAsync(const DescribeAppInfoRequest& request, const DescribeAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAppInfo(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CkafkaClient::DescribeAppInfoOutcomeCallable CkafkaClient::DescribeAppInfoCallable(const DescribeAppInfoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAppInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAppInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CkafkaClient::DescribeCkafkaZoneOutcome CkafkaClient::DescribeCkafkaZone(const DescribeCkafkaZoneRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCkafkaZone");

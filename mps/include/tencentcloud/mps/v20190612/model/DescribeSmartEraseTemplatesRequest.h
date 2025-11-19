@@ -135,6 +135,39 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
+                     * 获取智能擦除模板擦除类型过滤条件。
+- subtitle 去字幕
+- watermark 去水印
+- privacy 隐私保护
+                     * @return EraseType 智能擦除模板擦除类型过滤条件。
+- subtitle 去字幕
+- watermark 去水印
+- privacy 隐私保护
+                     * 
+                     */
+                    std::string GetEraseType() const;
+
+                    /**
+                     * 设置智能擦除模板擦除类型过滤条件。
+- subtitle 去字幕
+- watermark 去水印
+- privacy 隐私保护
+                     * @param _eraseType 智能擦除模板擦除类型过滤条件。
+- subtitle 去字幕
+- watermark 去水印
+- privacy 隐私保护
+                     * 
+                     */
+                    void SetEraseType(const std::string& _eraseType);
+
+                    /**
+                     * 判断参数 EraseType 是否已赋值
+                     * @return EraseType 是否已赋值
+                     * 
+                     */
+                    bool EraseTypeHasBeenSet() const;
+
+                    /**
                      * 获取智能擦除模板名过滤条件，长度限制：64 个字符。
                      * @return Name 智能擦除模板名过滤条件，长度限制：64 个字符。
                      * 
@@ -182,6 +215,15 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 智能擦除模板擦除类型过滤条件。
+- subtitle 去字幕
+- watermark 去水印
+- privacy 隐私保护
+                     */
+                    std::string m_eraseType;
+                    bool m_eraseTypeHasBeenSet;
 
                     /**
                      * 智能擦除模板名过滤条件，长度限制：64 个字符。

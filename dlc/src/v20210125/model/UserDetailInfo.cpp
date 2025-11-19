@@ -31,7 +31,8 @@ UserDetailInfo::UserDetailInfo() :
     m_userAliasHasBeenSet(false),
     m_rowFilterInfoHasBeenSet(false),
     m_accountTypeHasBeenSet(false),
-    m_catalogPolicyInfoHasBeenSet(false)
+    m_catalogPolicyInfoHasBeenSet(false),
+    m_modelPolicyInfoHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,23 @@ CoreInternalOutcome UserDetailInfo::Deserialize(const rapidjson::Value &value)
         m_catalogPolicyInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelPolicyInfo") && !value["ModelPolicyInfo"].IsNull())
+    {
+        if (!value["ModelPolicyInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDetailInfo.ModelPolicyInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_modelPolicyInfo.Deserialize(value["ModelPolicyInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_modelPolicyInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -283,6 +301,15 @@ void UserDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_catalogPolicyInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_modelPolicyInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelPolicyInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modelPolicyInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -462,5 +489,21 @@ void UserDetailInfo::SetCatalogPolicyInfo(const Policys& _catalogPolicyInfo)
 bool UserDetailInfo::CatalogPolicyInfoHasBeenSet() const
 {
     return m_catalogPolicyInfoHasBeenSet;
+}
+
+Policys UserDetailInfo::GetModelPolicyInfo() const
+{
+    return m_modelPolicyInfo;
+}
+
+void UserDetailInfo::SetModelPolicyInfo(const Policys& _modelPolicyInfo)
+{
+    m_modelPolicyInfo = _modelPolicyInfo;
+    m_modelPolicyInfoHasBeenSet = true;
+}
+
+bool UserDetailInfo::ModelPolicyInfoHasBeenSet() const
+{
+    return m_modelPolicyInfoHasBeenSet;
 }
 

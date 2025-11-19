@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyUserRequest::ModifyUserRequest() :
     m_userIdHasBeenSet(false),
-    m_userDescriptionHasBeenSet(false)
+    m_userDescriptionHasBeenSet(false),
+    m_accountTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyUserRequest::ToJsonString() const
         string key = "UserDescription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyUserRequest::SetUserDescription(const string& _userDescription)
 bool ModifyUserRequest::UserDescriptionHasBeenSet() const
 {
     return m_userDescriptionHasBeenSet;
+}
+
+string ModifyUserRequest::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void ModifyUserRequest::SetAccountType(const string& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool ModifyUserRequest::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 
 

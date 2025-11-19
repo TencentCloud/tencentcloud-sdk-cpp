@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vcube::V20220410::Model;
 using namespace std;
 
-CreateApplicationAndWebPlayerLicenseResponse::CreateApplicationAndWebPlayerLicenseResponse()
+CreateApplicationAndWebPlayerLicenseResponse::CreateApplicationAndWebPlayerLicenseResponse() :
+    m_licenseIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateApplicationAndWebPlayerLicenseResponse::Deserialize(co
     }
 
 
+    if (rsp.HasMember("LicenseId") && !rsp["LicenseId"].IsNull())
+    {
+        if (!rsp["LicenseId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicenseId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseId = rsp["LicenseId"].GetUint64();
+        m_licenseIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateApplicationAndWebPlayerLicenseResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_licenseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_licenseId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateApplicationAndWebPlayerLicenseResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t CreateApplicationAndWebPlayerLicenseResponse::GetLicenseId() const
+{
+    return m_licenseId;
+}
+
+bool CreateApplicationAndWebPlayerLicenseResponse::LicenseIdHasBeenSet() const
+{
+    return m_licenseIdHasBeenSet;
+}
 
 

@@ -24,7 +24,8 @@ KafkaOption::KafkaOption() :
     m_dataTypeHasBeenSet(false),
     m_topicTypeHasBeenSet(false),
     m_dDLTopicNameHasBeenSet(false),
-    m_topicRulesHasBeenSet(false)
+    m_topicRulesHasBeenSet(false),
+    m_dataOptionHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,26 @@ CoreInternalOutcome KafkaOption::Deserialize(const rapidjson::Value &value)
         m_topicRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("DataOption") && !value["DataOption"].IsNull())
+    {
+        if (!value["DataOption"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KafkaOption.DataOption` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DataOption"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KeyValuePairOption item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dataOption.push_back(item);
+        }
+        m_dataOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -123,6 +144,21 @@ void KafkaOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 
         int i=0;
         for (auto itr = m_topicRules.begin(); itr != m_topicRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_dataOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataOption.begin(); itr != m_dataOption.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -194,5 +230,21 @@ void KafkaOption::SetTopicRules(const vector<TopicRule>& _topicRules)
 bool KafkaOption::TopicRulesHasBeenSet() const
 {
     return m_topicRulesHasBeenSet;
+}
+
+vector<KeyValuePairOption> KafkaOption::GetDataOption() const
+{
+    return m_dataOption;
+}
+
+void KafkaOption::SetDataOption(const vector<KeyValuePairOption>& _dataOption)
+{
+    m_dataOption = _dataOption;
+    m_dataOptionHasBeenSet = true;
+}
+
+bool KafkaOption::DataOptionHasBeenSet() const
+{
+    return m_dataOptionHasBeenSet;
 }
 

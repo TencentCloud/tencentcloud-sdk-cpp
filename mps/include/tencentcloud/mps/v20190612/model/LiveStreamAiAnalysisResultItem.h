@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SegmentRecognitionItem.h>
 #include <tencentcloud/mps/v20190612/model/MediaAiAnalysisHighlightItem.h>
+#include <tencentcloud/mps/v20190612/model/LiveAiAnalysisDescriptionItem.h>
 
 
 namespace TencentCloud
@@ -52,9 +53,11 @@ namespace TencentCloud
                      * 获取结果的类型，取值范围：
 <li>SegmentRecognition：拆条。</li>
 <li>Highlight ：集锦。</li>
+<li> Description：摘要。</li>
                      * @return Type 结果的类型，取值范围：
 <li>SegmentRecognition：拆条。</li>
 <li>Highlight ：集锦。</li>
+<li> Description：摘要。</li>
                      * 
                      */
                     std::string GetType() const;
@@ -63,9 +66,11 @@ namespace TencentCloud
                      * 设置结果的类型，取值范围：
 <li>SegmentRecognition：拆条。</li>
 <li>Highlight ：集锦。</li>
+<li> Description：摘要。</li>
                      * @param _type 结果的类型，取值范围：
 <li>SegmentRecognition：拆条。</li>
 <li>Highlight ：集锦。</li>
+<li> Description：摘要。</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -131,12 +136,34 @@ SegmentRecognition 时有效。
                      */
                     bool HighlightResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取摘要结果，当Type 为 Description 时有效。
+                     * @return DescriptionResult 摘要结果，当Type 为 Description 时有效。
+                     * 
+                     */
+                    LiveAiAnalysisDescriptionItem GetDescriptionResult() const;
+
+                    /**
+                     * 设置摘要结果，当Type 为 Description 时有效。
+                     * @param _descriptionResult 摘要结果，当Type 为 Description 时有效。
+                     * 
+                     */
+                    void SetDescriptionResult(const LiveAiAnalysisDescriptionItem& _descriptionResult);
+
+                    /**
+                     * 判断参数 DescriptionResult 是否已赋值
+                     * @return DescriptionResult 是否已赋值
+                     * 
+                     */
+                    bool DescriptionResultHasBeenSet() const;
+
                 private:
 
                     /**
                      * 结果的类型，取值范围：
 <li>SegmentRecognition：拆条。</li>
 <li>Highlight ：集锦。</li>
+<li> Description：摘要。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -155,6 +182,12 @@ SegmentRecognition 时有效。
                      */
                     std::vector<MediaAiAnalysisHighlightItem> m_highlightResultSet;
                     bool m_highlightResultSetHasBeenSet;
+
+                    /**
+                     * 摘要结果，当Type 为 Description 时有效。
+                     */
+                    LiveAiAnalysisDescriptionItem m_descriptionResult;
+                    bool m_descriptionResultHasBeenSet;
 
                 };
             }

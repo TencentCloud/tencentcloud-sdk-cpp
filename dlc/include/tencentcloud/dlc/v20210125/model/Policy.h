@@ -476,6 +476,27 @@ namespace TencentCloud
                      */
                     bool EngineGenerationHasBeenSet() const;
 
+                    /**
+                     * 获取需要授权的Model名，填 * 代表当前Database下所有表。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别、数据库级别时只允许填空，其他类型下可以任意指定数据表。
+                     * @return Model 需要授权的Model名，填 * 代表当前Database下所有表。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别、数据库级别时只允许填空，其他类型下可以任意指定数据表。
+                     * 
+                     */
+                    std::string GetModel() const;
+
+                    /**
+                     * 设置需要授权的Model名，填 * 代表当前Database下所有表。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别、数据库级别时只允许填空，其他类型下可以任意指定数据表。
+                     * @param _model 需要授权的Model名，填 * 代表当前Database下所有表。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别、数据库级别时只允许填空，其他类型下可以任意指定数据表。
+                     * 
+                     */
+                    void SetModel(const std::string& _model);
+
+                    /**
+                     * 判断参数 Model 是否已赋值
+                     * @return Model 是否已赋值
+                     * 
+                     */
+                    bool ModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -598,6 +619,12 @@ namespace TencentCloud
                      */
                     std::string m_engineGeneration;
                     bool m_engineGenerationHasBeenSet;
+
+                    /**
+                     * 需要授权的Model名，填 * 代表当前Database下所有表。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别、数据库级别时只允许填空，其他类型下可以任意指定数据表。
+                     */
+                    std::string m_model;
+                    bool m_modelHasBeenSet;
 
                 };
             }

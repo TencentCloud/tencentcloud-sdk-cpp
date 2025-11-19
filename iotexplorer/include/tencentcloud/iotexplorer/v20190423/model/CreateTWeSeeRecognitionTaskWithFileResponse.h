@@ -14,57 +14,56 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CKAFKA_V20190819_MODEL_DESCRIBEAPPINFORESPONSE_H_
-#define TENCENTCLOUD_CKAFKA_V20190819_MODEL_DESCRIBEAPPINFORESPONSE_H_
+#ifndef TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CREATETWESEERECOGNITIONTASKWITHFILERESPONSE_H_
+#define TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CREATETWESEERECOGNITIONTASKWITHFILERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ckafka/v20190819/model/AppIdResponse.h>
 
 
 namespace TencentCloud
 {
-    namespace Ckafka
+    namespace Iotexplorer
     {
-        namespace V20190819
+        namespace V20190423
         {
             namespace Model
             {
                 /**
-                * DescribeAppInfo返回参数结构体
+                * CreateTWeSeeRecognitionTaskWithFile返回参数结构体
                 */
-                class DescribeAppInfoResponse : public AbstractModel
+                class CreateTWeSeeRecognitionTaskWithFileResponse : public AbstractModel
                 {
                 public:
-                    DescribeAppInfoResponse();
-                    ~DescribeAppInfoResponse() = default;
+                    CreateTWeSeeRecognitionTaskWithFileResponse();
+                    ~CreateTWeSeeRecognitionTaskWithFileResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取返回的符合要求的App Id列表
-                     * @return Result 返回的符合要求的App Id列表
+                     * 获取任务 ID
+                     * @return TaskId 任务 ID
                      * 
                      */
-                    AppIdResponse GetResult() const;
+                    std::string GetTaskId() const;
 
                     /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      * 
                      */
-                    bool ResultHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 返回的符合要求的App Id列表
+                     * 任务 ID
                      */
-                    AppIdResponse m_result;
-                    bool m_resultHasBeenSet;
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -72,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CKAFKA_V20190819_MODEL_DESCRIBEAPPINFORESPONSE_H_
+#endif // !TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_CREATETWESEERECOGNITIONTASKWITHFILERESPONSE_H_

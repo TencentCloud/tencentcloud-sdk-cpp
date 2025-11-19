@@ -101,15 +101,15 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool InputImageHasBeenSet() const;
 
                     /**
-                     * 获取返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。 示例值：url
-                     * @return RspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。 示例值：url
+                     * 获取返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。 示例值：url
+                     * @return RspImgType 返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。 示例值：url
                      * 
                      */
                     std::string GetRspImgType() const;
 
                     /**
-                     * 设置返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。 示例值：url
-                     * @param _rspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。 示例值：url
+                     * 设置返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。 示例值：url
+                     * @param _rspImgType 返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。 示例值：url
                      * 
                      */
                     void SetRspImgType(const std::string& _rspImgType);
@@ -140,7 +140,7 @@ Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool m_inputImageHasBeenSet;
 
                     /**
-                     * 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。 示例值：url
+                     * 返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。 示例值：url
                      */
                     std::string m_rspImgType;
                     bool m_rspImgTypeHasBeenSet;

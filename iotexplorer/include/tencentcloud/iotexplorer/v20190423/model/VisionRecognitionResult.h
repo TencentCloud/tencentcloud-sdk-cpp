@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/VisionDetectedObject.h>
 
 
 namespace TencentCloud
@@ -199,6 +200,27 @@ namespace TencentCloud
                      */
                     bool ErrorCodeHasBeenSet() const;
 
+                    /**
+                     * 获取目标检测算法检测到的目标列表
+                     * @return DetectedObjects 目标检测算法检测到的目标列表
+                     * 
+                     */
+                    std::vector<VisionDetectedObject> GetDetectedObjects() const;
+
+                    /**
+                     * 设置目标检测算法检测到的目标列表
+                     * @param _detectedObjects 目标检测算法检测到的目标列表
+                     * 
+                     */
+                    void SetDetectedObjects(const std::vector<VisionDetectedObject>& _detectedObjects);
+
+                    /**
+                     * 判断参数 DetectedObjects 是否已赋值
+                     * @return DetectedObjects 是否已赋值
+                     * 
+                     */
+                    bool DetectedObjectsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +264,12 @@ namespace TencentCloud
                      */
                     std::string m_errorCode;
                     bool m_errorCodeHasBeenSet;
+
+                    /**
+                     * 目标检测算法检测到的目标列表
+                     */
+                    std::vector<VisionDetectedObject> m_detectedObjects;
+                    bool m_detectedObjectsHasBeenSet;
 
                 };
             }

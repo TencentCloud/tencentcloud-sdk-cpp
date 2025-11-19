@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/VisionCustomDetectQuery.h>
 
 
 namespace TencentCloud
@@ -47,51 +48,43 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主输出语言
-
-支持列表如下：
-zh 中文
-en 英语
-ja 日语
-ko 韩文
-pt-BR 葡萄牙语（巴西）
-th 泰语
-
-                     * @return OutputLang 主输出语言
-
-支持列表如下：
-zh 中文
-en 英语
-ja 日语
-ko 韩文
-pt-BR 葡萄牙语（巴西）
-th 泰语
-
+                     * 获取主输出语言，可选值包括：
+- `zh` 中文（默认值）
+- `en` 英语
+- `ja` 日语
+- `ko` 韩文
+- `pt-BR` 葡萄牙语（巴西）
+- `th` 泰语
+- `ms` 马来语
+                     * @return OutputLang 主输出语言，可选值包括：
+- `zh` 中文（默认值）
+- `en` 英语
+- `ja` 日语
+- `ko` 韩文
+- `pt-BR` 葡萄牙语（巴西）
+- `th` 泰语
+- `ms` 马来语
                      * 
                      */
                     std::string GetOutputLang() const;
 
                     /**
-                     * 设置主输出语言
-
-支持列表如下：
-zh 中文
-en 英语
-ja 日语
-ko 韩文
-pt-BR 葡萄牙语（巴西）
-th 泰语
-
-                     * @param _outputLang 主输出语言
-
-支持列表如下：
-zh 中文
-en 英语
-ja 日语
-ko 韩文
-pt-BR 葡萄牙语（巴西）
-th 泰语
-
+                     * 设置主输出语言，可选值包括：
+- `zh` 中文（默认值）
+- `en` 英语
+- `ja` 日语
+- `ko` 韩文
+- `pt-BR` 葡萄牙语（巴西）
+- `th` 泰语
+- `ms` 马来语
+                     * @param _outputLang 主输出语言，可选值包括：
+- `zh` 中文（默认值）
+- `en` 英语
+- `ja` 日语
+- `ko` 韩文
+- `pt-BR` 葡萄牙语（巴西）
+- `th` 泰语
+- `ms` 马来语
                      * 
                      */
                     void SetOutputLang(const std::string& _outputLang);
@@ -104,50 +97,46 @@ th 泰语
                     bool OutputLangHasBeenSet() const;
 
                     /**
-                     * 获取可选输出语言
+                     * 获取次选输出语言，可选值包括：
+- `zh` 中文
+- `en` 英语
+- `ja` 日语
+- `ko` 韩文
+- `pt-BR` 葡萄牙语（巴西）
+- `th` 泰语
+- `ms` 马来语
 
-支持列表如下：
-zh 中文
-en 英语
-ja 日语
-ko 韩文
-pt-BR 葡萄牙语（巴西）
-th 泰语
-
-                     * @return AlternativeOutputLang 可选输出语言
-
-支持列表如下：
-zh 中文
-en 英语
-ja 日语
-ko 韩文
-pt-BR 葡萄牙语（巴西）
-th 泰语
+                     * @return AlternativeOutputLang 次选输出语言，可选值包括：
+- `zh` 中文
+- `en` 英语
+- `ja` 日语
+- `ko` 韩文
+- `pt-BR` 葡萄牙语（巴西）
+- `th` 泰语
+- `ms` 马来语
 
                      * 
                      */
                     std::string GetAlternativeOutputLang() const;
 
                     /**
-                     * 设置可选输出语言
+                     * 设置次选输出语言，可选值包括：
+- `zh` 中文
+- `en` 英语
+- `ja` 日语
+- `ko` 韩文
+- `pt-BR` 葡萄牙语（巴西）
+- `th` 泰语
+- `ms` 马来语
 
-支持列表如下：
-zh 中文
-en 英语
-ja 日语
-ko 韩文
-pt-BR 葡萄牙语（巴西）
-th 泰语
-
-                     * @param _alternativeOutputLang 可选输出语言
-
-支持列表如下：
-zh 中文
-en 英语
-ja 日语
-ko 韩文
-pt-BR 葡萄牙语（巴西）
-th 泰语
+                     * @param _alternativeOutputLang 次选输出语言，可选值包括：
+- `zh` 中文
+- `en` 英语
+- `ja` 日语
+- `ko` 韩文
+- `pt-BR` 葡萄牙语（巴西）
+- `th` 泰语
+- `ms` 马来语
 
                      * 
                      */
@@ -161,7 +150,7 @@ th 泰语
                     bool AlternativeOutputLangHasBeenSet() const;
 
                     /**
-                     * 获取多摄像头布局定义。可能取值：
+                     * 获取多摄像头布局定义。可选值包括：
 
 - 单摄（默认值）：`Single`
 
@@ -176,7 +165,7 @@ th 泰语
 - 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`
 - 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`
 - 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`
-                     * @return MultiCameraLayout 多摄像头布局定义。可能取值：
+                     * @return MultiCameraLayout 多摄像头布局定义。可选值包括：
 
 - 单摄（默认值）：`Single`
 
@@ -196,7 +185,7 @@ th 泰语
                     std::string GetMultiCameraLayout() const;
 
                     /**
-                     * 设置多摄像头布局定义。可能取值：
+                     * 设置多摄像头布局定义。可选值包括：
 
 - 单摄（默认值）：`Single`
 
@@ -211,7 +200,7 @@ th 泰语
 - 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`
 - 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`
 - 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`
-                     * @param _multiCameraLayout 多摄像头布局定义。可能取值：
+                     * @param _multiCameraLayout 多摄像头布局定义。可选值包括：
 
 - 单摄（默认值）：`Single`
 
@@ -237,40 +226,367 @@ th 泰语
                      */
                     bool MultiCameraLayoutHasBeenSet() const;
 
+                    /**
+                     * 获取拓展的目标及事件检测类别。可选值包括：
+
+**通用事件标签**
+- `person_enter` 有人进入
+- `vehicle_entering` 车辆进入
+- `vehicle_parking` 车辆停靠
+- `pet` 有宠物
+- `no_signal` 视频画面异常（无信号等）
+
+**看家护院**
+- `person_climbing_fence` 有人翻围墙
+- `door_window_open` 门窗被开启
+- `person_carrying_object` 有人搬运物品
+
+**商铺看管**
+- `person_at_cashier` 有人在收银台
+- `person_taking_goods` 有人拿商品
+- `person_night_moving` 夜间有人移动
+
+**公共及防火安全**
+- `person_stealing` 有人偷盗
+- `crowd` 多人聚集
+- `smoking` 有人吸烟
+- `safety_fire` 明火
+- `safety_smoke` 浓烟
+- `fireworks` 有人燃放烟花爆竹
+- `knife` 有人持刀
+- `gun` 有人持枪
+- `fight` 有人打架
+- `hurt` 有人受伤流血
+
+**养殖看护**
+- `person_feeding_animal` 有人投喂牲畜
+- `animal_lying` 有动物躺地上
+- `animal_wild_intrusion` 野生动物入侵
+
+**果园农田**
+- `person_picking_fruit` 有人采摘果实
+- `person_carrying_bag` 有人携带包裹
+
+**鱼塘看管**
+- `fishing` 有人钓鱼
+- `net_fishing` 有人撒网
+- `person_carrying_fishing_gear` 有人携带渔具
+- `loitering_near_water` 有人岸边逗留
+- `throwing_into_water` 有人投掷物品
+
+**婴儿看护**
+- `baby` 有婴儿
+- `baby_dropping` 婴儿跌落床铺
+- `person_holding_baby` 有人抱起婴儿
+- `baby_rolling` 婴儿翻滚
+- `baby_crying` 婴儿哭闹
+
+**儿童看护**
+- `child` 有小孩
+- `child_falling` 小孩摔倒
+- `child_entering_kitchen` 小孩进入厨房
+- `child_climbing_window` 小孩攀爬室内窗户
+- `child_near_water` 小孩靠近水域
+
+**老人看护**
+- `elderly` 有老人
+- `elderly_falling` 老人摔倒
+- `elderly_eating` 老人用餐
+- `elderly_using_stove` 老人使用灶具
+
+**宠物看护**
+- `pet_eating` 宠物进食
+- `pet_damaging` 宠物损坏家具
+- `pet_barking` 宠物吠叫
+- `pet_scratching_door` 宠物挠门
+	
+                     * @return DetectTypes 拓展的目标及事件检测类别。可选值包括：
+
+**通用事件标签**
+- `person_enter` 有人进入
+- `vehicle_entering` 车辆进入
+- `vehicle_parking` 车辆停靠
+- `pet` 有宠物
+- `no_signal` 视频画面异常（无信号等）
+
+**看家护院**
+- `person_climbing_fence` 有人翻围墙
+- `door_window_open` 门窗被开启
+- `person_carrying_object` 有人搬运物品
+
+**商铺看管**
+- `person_at_cashier` 有人在收银台
+- `person_taking_goods` 有人拿商品
+- `person_night_moving` 夜间有人移动
+
+**公共及防火安全**
+- `person_stealing` 有人偷盗
+- `crowd` 多人聚集
+- `smoking` 有人吸烟
+- `safety_fire` 明火
+- `safety_smoke` 浓烟
+- `fireworks` 有人燃放烟花爆竹
+- `knife` 有人持刀
+- `gun` 有人持枪
+- `fight` 有人打架
+- `hurt` 有人受伤流血
+
+**养殖看护**
+- `person_feeding_animal` 有人投喂牲畜
+- `animal_lying` 有动物躺地上
+- `animal_wild_intrusion` 野生动物入侵
+
+**果园农田**
+- `person_picking_fruit` 有人采摘果实
+- `person_carrying_bag` 有人携带包裹
+
+**鱼塘看管**
+- `fishing` 有人钓鱼
+- `net_fishing` 有人撒网
+- `person_carrying_fishing_gear` 有人携带渔具
+- `loitering_near_water` 有人岸边逗留
+- `throwing_into_water` 有人投掷物品
+
+**婴儿看护**
+- `baby` 有婴儿
+- `baby_dropping` 婴儿跌落床铺
+- `person_holding_baby` 有人抱起婴儿
+- `baby_rolling` 婴儿翻滚
+- `baby_crying` 婴儿哭闹
+
+**儿童看护**
+- `child` 有小孩
+- `child_falling` 小孩摔倒
+- `child_entering_kitchen` 小孩进入厨房
+- `child_climbing_window` 小孩攀爬室内窗户
+- `child_near_water` 小孩靠近水域
+
+**老人看护**
+- `elderly` 有老人
+- `elderly_falling` 老人摔倒
+- `elderly_eating` 老人用餐
+- `elderly_using_stove` 老人使用灶具
+
+**宠物看护**
+- `pet_eating` 宠物进食
+- `pet_damaging` 宠物损坏家具
+- `pet_barking` 宠物吠叫
+- `pet_scratching_door` 宠物挠门
+	
+                     * 
+                     */
+                    std::vector<std::string> GetDetectTypes() const;
+
+                    /**
+                     * 设置拓展的目标及事件检测类别。可选值包括：
+
+**通用事件标签**
+- `person_enter` 有人进入
+- `vehicle_entering` 车辆进入
+- `vehicle_parking` 车辆停靠
+- `pet` 有宠物
+- `no_signal` 视频画面异常（无信号等）
+
+**看家护院**
+- `person_climbing_fence` 有人翻围墙
+- `door_window_open` 门窗被开启
+- `person_carrying_object` 有人搬运物品
+
+**商铺看管**
+- `person_at_cashier` 有人在收银台
+- `person_taking_goods` 有人拿商品
+- `person_night_moving` 夜间有人移动
+
+**公共及防火安全**
+- `person_stealing` 有人偷盗
+- `crowd` 多人聚集
+- `smoking` 有人吸烟
+- `safety_fire` 明火
+- `safety_smoke` 浓烟
+- `fireworks` 有人燃放烟花爆竹
+- `knife` 有人持刀
+- `gun` 有人持枪
+- `fight` 有人打架
+- `hurt` 有人受伤流血
+
+**养殖看护**
+- `person_feeding_animal` 有人投喂牲畜
+- `animal_lying` 有动物躺地上
+- `animal_wild_intrusion` 野生动物入侵
+
+**果园农田**
+- `person_picking_fruit` 有人采摘果实
+- `person_carrying_bag` 有人携带包裹
+
+**鱼塘看管**
+- `fishing` 有人钓鱼
+- `net_fishing` 有人撒网
+- `person_carrying_fishing_gear` 有人携带渔具
+- `loitering_near_water` 有人岸边逗留
+- `throwing_into_water` 有人投掷物品
+
+**婴儿看护**
+- `baby` 有婴儿
+- `baby_dropping` 婴儿跌落床铺
+- `person_holding_baby` 有人抱起婴儿
+- `baby_rolling` 婴儿翻滚
+- `baby_crying` 婴儿哭闹
+
+**儿童看护**
+- `child` 有小孩
+- `child_falling` 小孩摔倒
+- `child_entering_kitchen` 小孩进入厨房
+- `child_climbing_window` 小孩攀爬室内窗户
+- `child_near_water` 小孩靠近水域
+
+**老人看护**
+- `elderly` 有老人
+- `elderly_falling` 老人摔倒
+- `elderly_eating` 老人用餐
+- `elderly_using_stove` 老人使用灶具
+
+**宠物看护**
+- `pet_eating` 宠物进食
+- `pet_damaging` 宠物损坏家具
+- `pet_barking` 宠物吠叫
+- `pet_scratching_door` 宠物挠门
+	
+                     * @param _detectTypes 拓展的目标及事件检测类别。可选值包括：
+
+**通用事件标签**
+- `person_enter` 有人进入
+- `vehicle_entering` 车辆进入
+- `vehicle_parking` 车辆停靠
+- `pet` 有宠物
+- `no_signal` 视频画面异常（无信号等）
+
+**看家护院**
+- `person_climbing_fence` 有人翻围墙
+- `door_window_open` 门窗被开启
+- `person_carrying_object` 有人搬运物品
+
+**商铺看管**
+- `person_at_cashier` 有人在收银台
+- `person_taking_goods` 有人拿商品
+- `person_night_moving` 夜间有人移动
+
+**公共及防火安全**
+- `person_stealing` 有人偷盗
+- `crowd` 多人聚集
+- `smoking` 有人吸烟
+- `safety_fire` 明火
+- `safety_smoke` 浓烟
+- `fireworks` 有人燃放烟花爆竹
+- `knife` 有人持刀
+- `gun` 有人持枪
+- `fight` 有人打架
+- `hurt` 有人受伤流血
+
+**养殖看护**
+- `person_feeding_animal` 有人投喂牲畜
+- `animal_lying` 有动物躺地上
+- `animal_wild_intrusion` 野生动物入侵
+
+**果园农田**
+- `person_picking_fruit` 有人采摘果实
+- `person_carrying_bag` 有人携带包裹
+
+**鱼塘看管**
+- `fishing` 有人钓鱼
+- `net_fishing` 有人撒网
+- `person_carrying_fishing_gear` 有人携带渔具
+- `loitering_near_water` 有人岸边逗留
+- `throwing_into_water` 有人投掷物品
+
+**婴儿看护**
+- `baby` 有婴儿
+- `baby_dropping` 婴儿跌落床铺
+- `person_holding_baby` 有人抱起婴儿
+- `baby_rolling` 婴儿翻滚
+- `baby_crying` 婴儿哭闹
+
+**儿童看护**
+- `child` 有小孩
+- `child_falling` 小孩摔倒
+- `child_entering_kitchen` 小孩进入厨房
+- `child_climbing_window` 小孩攀爬室内窗户
+- `child_near_water` 小孩靠近水域
+
+**老人看护**
+- `elderly` 有老人
+- `elderly_falling` 老人摔倒
+- `elderly_eating` 老人用餐
+- `elderly_using_stove` 老人使用灶具
+
+**宠物看护**
+- `pet_eating` 宠物进食
+- `pet_damaging` 宠物损坏家具
+- `pet_barking` 宠物吠叫
+- `pet_scratching_door` 宠物挠门
+	
+                     * 
+                     */
+                    void SetDetectTypes(const std::vector<std::string>& _detectTypes);
+
+                    /**
+                     * 判断参数 DetectTypes 是否已赋值
+                     * @return DetectTypes 是否已赋值
+                     * 
+                     */
+                    bool DetectTypesHasBeenSet() const;
+
+                    /**
+                     * 获取自定义检测标签
+                     * @return CustomDetectQueries 自定义检测标签
+                     * 
+                     */
+                    std::vector<VisionCustomDetectQuery> GetCustomDetectQueries() const;
+
+                    /**
+                     * 设置自定义检测标签
+                     * @param _customDetectQueries 自定义检测标签
+                     * 
+                     */
+                    void SetCustomDetectQueries(const std::vector<VisionCustomDetectQuery>& _customDetectQueries);
+
+                    /**
+                     * 判断参数 CustomDetectQueries 是否已赋值
+                     * @return CustomDetectQueries 是否已赋值
+                     * 
+                     */
+                    bool CustomDetectQueriesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主输出语言
-
-支持列表如下：
-zh 中文
-en 英语
-ja 日语
-ko 韩文
-pt-BR 葡萄牙语（巴西）
-th 泰语
-
+                     * 主输出语言，可选值包括：
+- `zh` 中文（默认值）
+- `en` 英语
+- `ja` 日语
+- `ko` 韩文
+- `pt-BR` 葡萄牙语（巴西）
+- `th` 泰语
+- `ms` 马来语
                      */
                     std::string m_outputLang;
                     bool m_outputLangHasBeenSet;
 
                     /**
-                     * 可选输出语言
-
-支持列表如下：
-zh 中文
-en 英语
-ja 日语
-ko 韩文
-pt-BR 葡萄牙语（巴西）
-th 泰语
+                     * 次选输出语言，可选值包括：
+- `zh` 中文
+- `en` 英语
+- `ja` 日语
+- `ko` 韩文
+- `pt-BR` 葡萄牙语（巴西）
+- `th` 泰语
+- `ms` 马来语
 
                      */
                     std::string m_alternativeOutputLang;
                     bool m_alternativeOutputLangHasBeenSet;
 
                     /**
-                     * 多摄像头布局定义。可能取值：
+                     * 多摄像头布局定义。可选值包括：
 
 - 单摄（默认值）：`Single`
 
@@ -288,6 +604,90 @@ th 泰语
                      */
                     std::string m_multiCameraLayout;
                     bool m_multiCameraLayoutHasBeenSet;
+
+                    /**
+                     * 拓展的目标及事件检测类别。可选值包括：
+
+**通用事件标签**
+- `person_enter` 有人进入
+- `vehicle_entering` 车辆进入
+- `vehicle_parking` 车辆停靠
+- `pet` 有宠物
+- `no_signal` 视频画面异常（无信号等）
+
+**看家护院**
+- `person_climbing_fence` 有人翻围墙
+- `door_window_open` 门窗被开启
+- `person_carrying_object` 有人搬运物品
+
+**商铺看管**
+- `person_at_cashier` 有人在收银台
+- `person_taking_goods` 有人拿商品
+- `person_night_moving` 夜间有人移动
+
+**公共及防火安全**
+- `person_stealing` 有人偷盗
+- `crowd` 多人聚集
+- `smoking` 有人吸烟
+- `safety_fire` 明火
+- `safety_smoke` 浓烟
+- `fireworks` 有人燃放烟花爆竹
+- `knife` 有人持刀
+- `gun` 有人持枪
+- `fight` 有人打架
+- `hurt` 有人受伤流血
+
+**养殖看护**
+- `person_feeding_animal` 有人投喂牲畜
+- `animal_lying` 有动物躺地上
+- `animal_wild_intrusion` 野生动物入侵
+
+**果园农田**
+- `person_picking_fruit` 有人采摘果实
+- `person_carrying_bag` 有人携带包裹
+
+**鱼塘看管**
+- `fishing` 有人钓鱼
+- `net_fishing` 有人撒网
+- `person_carrying_fishing_gear` 有人携带渔具
+- `loitering_near_water` 有人岸边逗留
+- `throwing_into_water` 有人投掷物品
+
+**婴儿看护**
+- `baby` 有婴儿
+- `baby_dropping` 婴儿跌落床铺
+- `person_holding_baby` 有人抱起婴儿
+- `baby_rolling` 婴儿翻滚
+- `baby_crying` 婴儿哭闹
+
+**儿童看护**
+- `child` 有小孩
+- `child_falling` 小孩摔倒
+- `child_entering_kitchen` 小孩进入厨房
+- `child_climbing_window` 小孩攀爬室内窗户
+- `child_near_water` 小孩靠近水域
+
+**老人看护**
+- `elderly` 有老人
+- `elderly_falling` 老人摔倒
+- `elderly_eating` 老人用餐
+- `elderly_using_stove` 老人使用灶具
+
+**宠物看护**
+- `pet_eating` 宠物进食
+- `pet_damaging` 宠物损坏家具
+- `pet_barking` 宠物吠叫
+- `pet_scratching_door` 宠物挠门
+	
+                     */
+                    std::vector<std::string> m_detectTypes;
+                    bool m_detectTypesHasBeenSet;
+
+                    /**
+                     * 自定义检测标签
+                     */
+                    std::vector<VisionCustomDetectQuery> m_customDetectQueries;
+                    bool m_customDetectQueriesHasBeenSet;
 
                 };
             }

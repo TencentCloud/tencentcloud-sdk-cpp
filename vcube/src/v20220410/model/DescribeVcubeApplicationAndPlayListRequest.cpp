@@ -30,7 +30,8 @@ DescribeVcubeApplicationAndPlayListRequest::DescribeVcubeApplicationAndPlayListR
     m_packageNameHasBeenSet(false),
     m_platformHasBeenSet(false),
     m_macBundleIdHasBeenSet(false),
-    m_winProcessNameHasBeenSet(false)
+    m_winProcessNameHasBeenSet(false),
+    m_licenseIdHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string DescribeVcubeApplicationAndPlayListRequest::ToJsonString() const
         string key = "WinProcessName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_winProcessName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_licenseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_licenseId, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void DescribeVcubeApplicationAndPlayListRequest::SetWinProcessName(const string&
 bool DescribeVcubeApplicationAndPlayListRequest::WinProcessNameHasBeenSet() const
 {
     return m_winProcessNameHasBeenSet;
+}
+
+uint64_t DescribeVcubeApplicationAndPlayListRequest::GetLicenseId() const
+{
+    return m_licenseId;
+}
+
+void DescribeVcubeApplicationAndPlayListRequest::SetLicenseId(const uint64_t& _licenseId)
+{
+    m_licenseId = _licenseId;
+    m_licenseIdHasBeenSet = true;
+}
+
+bool DescribeVcubeApplicationAndPlayListRequest::LicenseIdHasBeenSet() const
+{
+    return m_licenseIdHasBeenSet;
 }
 
 

@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool WinProcessNameHasBeenSet() const;
 
+                    /**
+                     * 获取license唯一标识
+                     * @return LicenseId license唯一标识
+                     * 
+                     */
+                    uint64_t GetLicenseId() const;
+
+                    /**
+                     * 设置license唯一标识
+                     * @param _licenseId license唯一标识
+                     * 
+                     */
+                    void SetLicenseId(const uint64_t& _licenseId);
+
+                    /**
+                     * 判断参数 LicenseId 是否已赋值
+                     * @return LicenseId 是否已赋值
+                     * 
+                     */
+                    bool LicenseIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     std::string m_winProcessName;
                     bool m_winProcessNameHasBeenSet;
+
+                    /**
+                     * license唯一标识
+                     */
+                    uint64_t m_licenseId;
+                    bool m_licenseIdHasBeenSet;
 
                 };
             }

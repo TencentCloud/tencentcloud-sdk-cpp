@@ -14,41 +14,39 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ckafka/v20190819/model/DescribeAppInfoRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchCreateTWeSeeRecognitionTaskRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Ckafka::V20190819::Model;
+using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
-DescribeAppInfoRequest::DescribeAppInfoRequest() :
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+BatchCreateTWeSeeRecognitionTaskRequest::BatchCreateTWeSeeRecognitionTaskRequest() :
+    m_inputsHasBeenSet(false)
 {
 }
 
-string DescribeAppInfoRequest::ToJsonString() const
+string BatchCreateTWeSeeRecognitionTaskRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_offsetHasBeenSet)
+    if (m_inputsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
+        string key = "Inputs";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
+        int i=0;
+        for (auto itr = m_inputs.begin(); itr != m_inputs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -59,36 +57,20 @@ string DescribeAppInfoRequest::ToJsonString() const
 }
 
 
-int64_t DescribeAppInfoRequest::GetOffset() const
+vector<CreateVisionRecognitionTaskInput> BatchCreateTWeSeeRecognitionTaskRequest::GetInputs() const
 {
-    return m_offset;
+    return m_inputs;
 }
 
-void DescribeAppInfoRequest::SetOffset(const int64_t& _offset)
+void BatchCreateTWeSeeRecognitionTaskRequest::SetInputs(const vector<CreateVisionRecognitionTaskInput>& _inputs)
 {
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
+    m_inputs = _inputs;
+    m_inputsHasBeenSet = true;
 }
 
-bool DescribeAppInfoRequest::OffsetHasBeenSet() const
+bool BatchCreateTWeSeeRecognitionTaskRequest::InputsHasBeenSet() const
 {
-    return m_offsetHasBeenSet;
-}
-
-int64_t DescribeAppInfoRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void DescribeAppInfoRequest::SetLimit(const int64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool DescribeAppInfoRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
+    return m_inputsHasBeenSet;
 }
 
 

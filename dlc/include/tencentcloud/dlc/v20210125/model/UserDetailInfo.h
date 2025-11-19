@@ -299,6 +299,27 @@ namespace TencentCloud
                      */
                     bool CatalogPolicyInfoHasBeenSet() const;
 
+                    /**
+                     * 获取模型权限集合
+                     * @return ModelPolicyInfo 模型权限集合
+                     * 
+                     */
+                    Policys GetModelPolicyInfo() const;
+
+                    /**
+                     * 设置模型权限集合
+                     * @param _modelPolicyInfo 模型权限集合
+                     * 
+                     */
+                    void SetModelPolicyInfo(const Policys& _modelPolicyInfo);
+
+                    /**
+                     * 判断参数 ModelPolicyInfo 是否已赋值
+                     * @return ModelPolicyInfo 是否已赋值
+                     * 
+                     */
+                    bool ModelPolicyInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +392,12 @@ namespace TencentCloud
                      */
                     Policys m_catalogPolicyInfo;
                     bool m_catalogPolicyInfoHasBeenSet;
+
+                    /**
+                     * 模型权限集合
+                     */
+                    Policys m_modelPolicyInfo;
+                    bool m_modelPolicyInfoHasBeenSet;
 
                 };
             }

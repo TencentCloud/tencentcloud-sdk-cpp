@@ -23,7 +23,9 @@ using namespace std;
 VisionSummaryConfig::VisionSummaryConfig() :
     m_outputLangHasBeenSet(false),
     m_alternativeOutputLangHasBeenSet(false),
-    m_multiCameraLayoutHasBeenSet(false)
+    m_multiCameraLayoutHasBeenSet(false),
+    m_detectTypesHasBeenSet(false),
+    m_customDetectQueriesHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,39 @@ CoreInternalOutcome VisionSummaryConfig::Deserialize(const rapidjson::Value &val
         m_multiCameraLayoutHasBeenSet = true;
     }
 
+    if (value.HasMember("DetectTypes") && !value["DetectTypes"].IsNull())
+    {
+        if (!value["DetectTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VisionSummaryConfig.DetectTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DetectTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_detectTypes.push_back((*itr).GetString());
+        }
+        m_detectTypesHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomDetectQueries") && !value["CustomDetectQueries"].IsNull())
+    {
+        if (!value["CustomDetectQueries"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VisionSummaryConfig.CustomDetectQueries` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomDetectQueries"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VisionCustomDetectQuery item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customDetectQueries.push_back(item);
+        }
+        m_customDetectQueriesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +126,34 @@ void VisionSummaryConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "MultiCameraLayout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_multiCameraLayout.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detectTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetectTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_detectTypes.begin(); itr != m_detectTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_customDetectQueriesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomDetectQueries";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customDetectQueries.begin(); itr != m_customDetectQueries.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -142,5 +205,37 @@ void VisionSummaryConfig::SetMultiCameraLayout(const string& _multiCameraLayout)
 bool VisionSummaryConfig::MultiCameraLayoutHasBeenSet() const
 {
     return m_multiCameraLayoutHasBeenSet;
+}
+
+vector<string> VisionSummaryConfig::GetDetectTypes() const
+{
+    return m_detectTypes;
+}
+
+void VisionSummaryConfig::SetDetectTypes(const vector<string>& _detectTypes)
+{
+    m_detectTypes = _detectTypes;
+    m_detectTypesHasBeenSet = true;
+}
+
+bool VisionSummaryConfig::DetectTypesHasBeenSet() const
+{
+    return m_detectTypesHasBeenSet;
+}
+
+vector<VisionCustomDetectQuery> VisionSummaryConfig::GetCustomDetectQueries() const
+{
+    return m_customDetectQueries;
+}
+
+void VisionSummaryConfig::SetCustomDetectQueries(const vector<VisionCustomDetectQuery>& _customDetectQueries)
+{
+    m_customDetectQueries = _customDetectQueries;
+    m_customDetectQueriesHasBeenSet = true;
+}
+
+bool VisionSummaryConfig::CustomDetectQueriesHasBeenSet() const
+{
+    return m_customDetectQueriesHasBeenSet;
 }
 

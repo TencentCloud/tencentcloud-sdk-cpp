@@ -23,7 +23,8 @@ using namespace std;
 LiveStreamAiAnalysisResultItem::LiveStreamAiAnalysisResultItem() :
     m_typeHasBeenSet(false),
     m_segmentResultSetHasBeenSet(false),
-    m_highlightResultSetHasBeenSet(false)
+    m_highlightResultSetHasBeenSet(false),
+    m_descriptionResultHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,23 @@ CoreInternalOutcome LiveStreamAiAnalysisResultItem::Deserialize(const rapidjson:
         m_highlightResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("DescriptionResult") && !value["DescriptionResult"].IsNull())
+    {
+        if (!value["DescriptionResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiAnalysisResultItem.DescriptionResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_descriptionResult.Deserialize(value["DescriptionResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_descriptionResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -125,6 +143,15 @@ void LiveStreamAiAnalysisResultItem::ToJsonObject(rapidjson::Value &value, rapid
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_descriptionResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DescriptionResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_descriptionResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -176,5 +203,21 @@ void LiveStreamAiAnalysisResultItem::SetHighlightResultSet(const vector<MediaAiA
 bool LiveStreamAiAnalysisResultItem::HighlightResultSetHasBeenSet() const
 {
     return m_highlightResultSetHasBeenSet;
+}
+
+LiveAiAnalysisDescriptionItem LiveStreamAiAnalysisResultItem::GetDescriptionResult() const
+{
+    return m_descriptionResult;
+}
+
+void LiveStreamAiAnalysisResultItem::SetDescriptionResult(const LiveAiAnalysisDescriptionItem& _descriptionResult)
+{
+    m_descriptionResult = _descriptionResult;
+    m_descriptionResultHasBeenSet = true;
+}
+
+bool LiveStreamAiAnalysisResultItem::DescriptionResultHasBeenSet() const
+{
+    return m_descriptionResultHasBeenSet;
 }
 

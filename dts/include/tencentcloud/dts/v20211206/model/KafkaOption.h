@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20211206/model/TopicRule.h>
+#include <tencentcloud/dts/v20211206/model/KeyValuePairOption.h>
 
 
 namespace TencentCloud
@@ -131,6 +132,27 @@ namespace TencentCloud
                      */
                     bool TopicRulesHasBeenSet() const;
 
+                    /**
+                     * 获取其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持："canalOfficialFormat":"on"表示打开Canal兼容功能，默认不带。
+                     * @return DataOption 其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持："canalOfficialFormat":"on"表示打开Canal兼容功能，默认不带。
+                     * 
+                     */
+                    std::vector<KeyValuePairOption> GetDataOption() const;
+
+                    /**
+                     * 设置其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持："canalOfficialFormat":"on"表示打开Canal兼容功能，默认不带。
+                     * @param _dataOption 其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持："canalOfficialFormat":"on"表示打开Canal兼容功能，默认不带。
+                     * 
+                     */
+                    void SetDataOption(const std::vector<KeyValuePairOption>& _dataOption);
+
+                    /**
+                     * 判断参数 DataOption 是否已赋值
+                     * @return DataOption 是否已赋值
+                     * 
+                     */
+                    bool DataOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +178,12 @@ namespace TencentCloud
                      */
                     std::vector<TopicRule> m_topicRules;
                     bool m_topicRulesHasBeenSet;
+
+                    /**
+                     * 其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持："canalOfficialFormat":"on"表示打开Canal兼容功能，默认不带。
+                     */
+                    std::vector<KeyValuePairOption> m_dataOption;
+                    bool m_dataOptionHasBeenSet;
 
                 };
             }

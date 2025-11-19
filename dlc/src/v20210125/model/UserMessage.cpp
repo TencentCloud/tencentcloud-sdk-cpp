@@ -25,7 +25,8 @@ UserMessage::UserMessage() :
     m_userDescriptionHasBeenSet(false),
     m_creatorHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_userAliasHasBeenSet(false)
+    m_userAliasHasBeenSet(false),
+    m_accountTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome UserMessage::Deserialize(const rapidjson::Value &value)
         m_userAliasHasBeenSet = true;
     }
 
+    if (value.HasMember("AccountType") && !value["AccountType"].IsNull())
+    {
+        if (!value["AccountType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserMessage.AccountType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountType = string(value["AccountType"].GetString());
+        m_accountTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void UserMessage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UserAlias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void UserMessage::SetUserAlias(const string& _userAlias)
 bool UserMessage::UserAliasHasBeenSet() const
 {
     return m_userAliasHasBeenSet;
+}
+
+string UserMessage::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void UserMessage::SetAccountType(const string& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool UserMessage::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 

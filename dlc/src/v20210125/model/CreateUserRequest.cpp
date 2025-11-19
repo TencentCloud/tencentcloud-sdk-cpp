@@ -28,7 +28,8 @@ CreateUserRequest::CreateUserRequest() :
     m_policySetHasBeenSet(false),
     m_userTypeHasBeenSet(false),
     m_workGroupIdsHasBeenSet(false),
-    m_userAliasHasBeenSet(false)
+    m_userAliasHasBeenSet(false),
+    m_accountTypeHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string CreateUserRequest::ToJsonString() const
         string key = "UserAlias";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -201,6 +210,22 @@ void CreateUserRequest::SetUserAlias(const string& _userAlias)
 bool CreateUserRequest::UserAliasHasBeenSet() const
 {
     return m_userAliasHasBeenSet;
+}
+
+string CreateUserRequest::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void CreateUserRequest::SetAccountType(const string& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool CreateUserRequest::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 
 

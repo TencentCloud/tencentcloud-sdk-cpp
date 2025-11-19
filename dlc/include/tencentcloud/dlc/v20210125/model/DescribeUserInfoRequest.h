@@ -286,6 +286,27 @@ engine-name：库表的模糊搜索。
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * @return AccountType 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * 
+                     */
+                    std::string GetAccountType() const;
+
+                    /**
+                     * 设置用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * @param _accountType 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * 
+                     */
+                    void SetAccountType(const std::string& _accountType);
+
+                    /**
+                     * 判断参数 AccountType 是否已赋值
+                     * @return AccountType 是否已赋值
+                     * 
+                     */
+                    bool AccountTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -353,6 +374,12 @@ engine-name：库表的模糊搜索。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     */
+                    std::string m_accountType;
+                    bool m_accountTypeHasBeenSet;
 
                 };
             }

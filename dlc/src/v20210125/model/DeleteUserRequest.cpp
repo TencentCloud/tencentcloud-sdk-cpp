@@ -23,7 +23,8 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 DeleteUserRequest::DeleteUserRequest() :
-    m_userIdsHasBeenSet(false)
+    m_userIdsHasBeenSet(false),
+    m_accountTypeHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string DeleteUserRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -69,6 +78,22 @@ void DeleteUserRequest::SetUserIds(const vector<string>& _userIds)
 bool DeleteUserRequest::UserIdsHasBeenSet() const
 {
     return m_userIdsHasBeenSet;
+}
+
+string DeleteUserRequest::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void DeleteUserRequest::SetAccountType(const string& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool DeleteUserRequest::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 
 

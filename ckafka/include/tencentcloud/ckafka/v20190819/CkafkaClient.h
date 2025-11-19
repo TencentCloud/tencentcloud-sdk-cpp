@@ -97,8 +97,6 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeACLResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeAclRuleRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeAclRuleResponse.h>
-#include <tencentcloud/ckafka/v20190819/model/DescribeAppInfoRequest.h>
-#include <tencentcloud/ckafka/v20190819/model/DescribeAppInfoResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeConnectResourceRequest.h>
@@ -328,9 +326,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAclRuleResponse> DescribeAclRuleOutcome;
                 typedef std::future<DescribeAclRuleOutcome> DescribeAclRuleOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeAclRuleRequest&, DescribeAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclRuleAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAppInfoResponse> DescribeAppInfoOutcome;
-                typedef std::future<DescribeAppInfoOutcome> DescribeAppInfoOutcomeCallable;
-                typedef std::function<void(const CkafkaClient*, const Model::DescribeAppInfoRequest&, DescribeAppInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCkafkaZoneResponse> DescribeCkafkaZoneOutcome;
                 typedef std::future<DescribeCkafkaZoneOutcome> DescribeCkafkaZoneOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeCkafkaZoneRequest&, DescribeCkafkaZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCkafkaZoneAsyncHandler;
@@ -822,15 +817,6 @@ namespace TencentCloud
                 DescribeAclRuleOutcome DescribeAclRule(const Model::DescribeAclRuleRequest &request);
                 void DescribeAclRuleAsync(const Model::DescribeAclRuleRequest& request, const DescribeAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAclRuleOutcomeCallable DescribeAclRuleCallable(const Model::DescribeAclRuleRequest& request);
-
-                /**
-                 *查询用户列表
-                 * @param req DescribeAppInfoRequest
-                 * @return DescribeAppInfoOutcome
-                 */
-                DescribeAppInfoOutcome DescribeAppInfo(const Model::DescribeAppInfoRequest &request);
-                void DescribeAppInfoAsync(const Model::DescribeAppInfoRequest& request, const DescribeAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAppInfoOutcomeCallable DescribeAppInfoCallable(const Model::DescribeAppInfoRequest& request);
 
                 /**
                  *用于查看ckafka的可用区列表

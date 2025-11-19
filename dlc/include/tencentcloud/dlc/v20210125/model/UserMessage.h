@@ -155,6 +155,27 @@ namespace TencentCloud
                      */
                     bool UserAliasHasBeenSet() const;
 
+                    /**
+                     * 获取用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * @return AccountType 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * 
+                     */
+                    std::string GetAccountType() const;
+
+                    /**
+                     * 设置用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * @param _accountType 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     * 
+                     */
+                    void SetAccountType(const std::string& _accountType);
+
+                    /**
+                     * 判断参数 AccountType 是否已赋值
+                     * @return AccountType 是否已赋值
+                     * 
+                     */
+                    bool AccountTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +208,12 @@ namespace TencentCloud
                      */
                     std::string m_userAlias;
                     bool m_userAliasHasBeenSet;
+
+                    /**
+                     * 用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）
+                     */
+                    std::string m_accountType;
+                    bool m_accountTypeHasBeenSet;
 
                 };
             }

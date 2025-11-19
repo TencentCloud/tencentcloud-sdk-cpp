@@ -28,7 +28,8 @@ DescribeUsersRequest::DescribeUsersRequest() :
     m_limitHasBeenSet(false),
     m_sortByHasBeenSet(false),
     m_sortingHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_accountTypeHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string DescribeUsersRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +205,22 @@ void DescribeUsersRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeUsersRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeUsersRequest::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void DescribeUsersRequest::SetAccountType(const string& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool DescribeUsersRequest::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 
 

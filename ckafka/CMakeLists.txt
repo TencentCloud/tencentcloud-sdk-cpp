@@ -121,7 +121,6 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/FetchLatestDatahubMessageListRequest.h
   include/tencentcloud/ckafka/v20190819/model/PauseDatahubTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateConnectResourceResponse.h
-  include/tencentcloud/ckafka/v20190819/model/GroupOffsetResponse.h
   include/tencentcloud/ckafka/v20190819/model/InquiryDetailPrice.h
   include/tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceResp.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTasksResponse.h
@@ -152,7 +151,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeRegionRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupInfoResponse.h
   include/tencentcloud/ckafka/v20190819/model/DtsConnectParam.h
-  include/tencentcloud/ckafka/v20190819/model/DescribeAppInfoResponse.h
+  include/tencentcloud/ckafka/v20190819/model/GroupOffsetResponse.h
   include/tencentcloud/ckafka/v20190819/model/AclResponse.h
   include/tencentcloud/ckafka/v20190819/model/MapParam.h
   include/tencentcloud/ckafka/v20190819/model/CtsdbConnectParam.h
@@ -239,7 +238,6 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/BatchAnalyseParam.h
   include/tencentcloud/ckafka/v20190819/model/DeleteInstancePostRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicProduceConnectionRequest.h
-  include/tencentcloud/ckafka/v20190819/model/DescribeAppInfoRequest.h
   include/tencentcloud/ckafka/v20190819/model/MariaDBParam.h
   include/tencentcloud/ckafka/v20190819/model/SubstrParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupRequest.h
@@ -335,7 +333,6 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DatahubTopicResp.h
   include/tencentcloud/ckafka/v20190819/model/DescribeCvmInfoResponse.h
   include/tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeResponse.h
-  include/tencentcloud/ckafka/v20190819/model/AppIdResponse.h
   include/tencentcloud/ckafka/v20190819/model/DealInstanceDTO.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResource.h
   include/tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h
@@ -483,7 +480,6 @@ set(ckafka_src
   src/v20190819/model/FetchLatestDatahubMessageListRequest.cpp
   src/v20190819/model/PauseDatahubTaskResponse.cpp
   src/v20190819/model/CreateConnectResourceResponse.cpp
-  src/v20190819/model/GroupOffsetResponse.cpp
   src/v20190819/model/InquiryDetailPrice.cpp
   src/v20190819/model/InquireCkafkaPriceResp.cpp
   src/v20190819/model/DescribeDatahubTasksResponse.cpp
@@ -514,7 +510,7 @@ set(ckafka_src
   src/v20190819/model/DescribeRegionRequest.cpp
   src/v20190819/model/DescribeGroupInfoResponse.cpp
   src/v20190819/model/DtsConnectParam.cpp
-  src/v20190819/model/DescribeAppInfoResponse.cpp
+  src/v20190819/model/GroupOffsetResponse.cpp
   src/v20190819/model/AclResponse.cpp
   src/v20190819/model/MapParam.cpp
   src/v20190819/model/CtsdbConnectParam.cpp
@@ -601,7 +597,6 @@ set(ckafka_src
   src/v20190819/model/BatchAnalyseParam.cpp
   src/v20190819/model/DeleteInstancePostRequest.cpp
   src/v20190819/model/DescribeTopicProduceConnectionRequest.cpp
-  src/v20190819/model/DescribeAppInfoRequest.cpp
   src/v20190819/model/MariaDBParam.cpp
   src/v20190819/model/SubstrParam.cpp
   src/v20190819/model/DescribeTopicSubscribeGroupRequest.cpp
@@ -697,7 +692,6 @@ set(ckafka_src
   src/v20190819/model/DatahubTopicResp.cpp
   src/v20190819/model/DescribeCvmInfoResponse.cpp
   src/v20190819/model/DeleteRouteTriggerTimeResponse.cpp
-  src/v20190819/model/AppIdResponse.cpp
   src/v20190819/model/DealInstanceDTO.cpp
   src/v20190819/model/DescribeConnectResource.cpp
   src/v20190819/model/DescribeUserRequest.cpp

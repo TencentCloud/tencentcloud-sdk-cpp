@@ -168,15 +168,15 @@ Mask 的 Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool MaskUrlHasBeenSet() const;
 
                     /**
-                     * 获取返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
-                     * @return RspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
+                     * 获取返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。
+                     * @return RspImgType 返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。
                      * 
                      */
                     std::string GetRspImgType() const;
 
                     /**
-                     * 设置返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
-                     * @param _rspImgType 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
+                     * 设置返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。
+                     * @param _rspImgType 返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。
                      * 
                      */
                     void SetRspImgType(const std::string& _rspImgType);
@@ -287,7 +287,7 @@ Mask 的 Base64 和 Url 必须提供一个，如果都提供以 Url 为准。
                     bool m_maskUrlHasBeenSet;
 
                     /**
-                     * 返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。
+                     * 返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。
                      */
                     std::string m_rspImgType;
                     bool m_rspImgTypeHasBeenSet;

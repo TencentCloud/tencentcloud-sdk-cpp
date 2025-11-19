@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool NatGatewayIdHasBeenSet() const;
 
+                    /**
+                     * 获取忽略操作风险
+                     * @return IgnoreOperationRisk 忽略操作风险
+                     * 
+                     */
+                    bool GetIgnoreOperationRisk() const;
+
+                    /**
+                     * 设置忽略操作风险
+                     * @param _ignoreOperationRisk 忽略操作风险
+                     * 
+                     */
+                    void SetIgnoreOperationRisk(const bool& _ignoreOperationRisk);
+
+                    /**
+                     * 判断参数 IgnoreOperationRisk 是否已赋值
+                     * @return IgnoreOperationRisk 是否已赋值
+                     * 
+                     */
+                    bool IgnoreOperationRiskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_natGatewayId;
                     bool m_natGatewayIdHasBeenSet;
+
+                    /**
+                     * 忽略操作风险
+                     */
+                    bool m_ignoreOperationRisk;
+                    bool m_ignoreOperationRiskHasBeenSet;
 
                 };
             }

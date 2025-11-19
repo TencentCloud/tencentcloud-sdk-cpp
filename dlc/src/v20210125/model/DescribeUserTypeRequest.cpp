@@ -23,7 +23,8 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 DescribeUserTypeRequest::DescribeUserTypeRequest() :
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_accountTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeUserTypeRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accountTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeUserTypeRequest::SetUserId(const string& _userId)
 bool DescribeUserTypeRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string DescribeUserTypeRequest::GetAccountType() const
+{
+    return m_accountType;
+}
+
+void DescribeUserTypeRequest::SetAccountType(const string& _accountType)
+{
+    m_accountType = _accountType;
+    m_accountTypeHasBeenSet = true;
+}
+
+bool DescribeUserTypeRequest::AccountTypeHasBeenSet() const
+{
+    return m_accountTypeHasBeenSet;
 }
 
 

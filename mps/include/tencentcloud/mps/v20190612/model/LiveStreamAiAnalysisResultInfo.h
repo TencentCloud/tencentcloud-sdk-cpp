@@ -48,18 +48,30 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取直播分析子任务结果，暂时只支持直播拆条。
+                     * 获取直播分析子任务结果，支持：
+<li>直播拆条</li>
+<li>直播高光集锦</li>
+<li>直播摘要</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResultSet 直播分析子任务结果，暂时只支持直播拆条。
+                     * @return ResultSet 直播分析子任务结果，支持：
+<li>直播拆条</li>
+<li>直播高光集锦</li>
+<li>直播摘要</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LiveStreamAiAnalysisResultItem> GetResultSet() const;
 
                     /**
-                     * 设置直播分析子任务结果，暂时只支持直播拆条。
+                     * 设置直播分析子任务结果，支持：
+<li>直播拆条</li>
+<li>直播高光集锦</li>
+<li>直播摘要</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resultSet 直播分析子任务结果，暂时只支持直播拆条。
+                     * @param _resultSet 直播分析子任务结果，支持：
+<li>直播拆条</li>
+<li>直播高光集锦</li>
+<li>直播摘要</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,7 +87,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 直播分析子任务结果，暂时只支持直播拆条。
+                     * 直播分析子任务结果，支持：
+<li>直播拆条</li>
+<li>直播高光集锦</li>
+<li>直播摘要</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LiveStreamAiAnalysisResultItem> m_resultSet;

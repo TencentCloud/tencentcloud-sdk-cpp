@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool UserAliasHasBeenSet() const;
 
+                    /**
+                     * 获取账号类型，UserAccount：用户账号 RoleAccount：角色账号，默认为用户账号
+                     * @return AccountType 账号类型，UserAccount：用户账号 RoleAccount：角色账号，默认为用户账号
+                     * 
+                     */
+                    std::string GetAccountType() const;
+
+                    /**
+                     * 设置账号类型，UserAccount：用户账号 RoleAccount：角色账号，默认为用户账号
+                     * @param _accountType 账号类型，UserAccount：用户账号 RoleAccount：角色账号，默认为用户账号
+                     * 
+                     */
+                    void SetAccountType(const std::string& _accountType);
+
+                    /**
+                     * 判断参数 AccountType 是否已赋值
+                     * @return AccountType 是否已赋值
+                     * 
+                     */
+                    bool AccountTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::string m_userAlias;
                     bool m_userAliasHasBeenSet;
+
+                    /**
+                     * 账号类型，UserAccount：用户账号 RoleAccount：角色账号，默认为用户账号
+                     */
+                    std::string m_accountType;
+                    bool m_accountTypeHasBeenSet;
 
                 };
             }

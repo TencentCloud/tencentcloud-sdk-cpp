@@ -193,23 +193,31 @@ namespace TencentCloud
                     bool LogoParamHasBeenSet() const;
 
                     /**
-                     * 获取是否开启prompt改写，默认开启，改写预计会增加20s左右耗时。
-
-如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
-                     * @return Revise 是否开启prompt改写，默认开启，改写预计会增加20s左右耗时。
-
-如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
+                     * 获取是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。
+0：关闭改写
+1：开启改写
+建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
+示例值：1
+                     * @return Revise 是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。
+0：关闭改写
+1：开启改写
+建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
+示例值：1
                      * 
                      */
                     int64_t GetRevise() const;
 
                     /**
-                     * 设置是否开启prompt改写，默认开启，改写预计会增加20s左右耗时。
-
-如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
-                     * @param _revise 是否开启prompt改写，默认开启，改写预计会增加20s左右耗时。
-
-如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
+                     * 设置是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。
+0：关闭改写
+1：开启改写
+建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
+示例值：1
+                     * @param _revise 是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。
+0：关闭改写
+1：开启改写
+建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
+示例值：1
                      * 
                      */
                     void SetRevise(const int64_t& _revise);
@@ -265,9 +273,11 @@ namespace TencentCloud
                     bool m_logoParamHasBeenSet;
 
                     /**
-                     * 是否开启prompt改写，默认开启，改写预计会增加20s左右耗时。
-
-如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
+                     * 是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。
+0：关闭改写
+1：开启改写
+建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)
+示例值：1
                      */
                     int64_t m_revise;
                     bool m_reviseHasBeenSet;

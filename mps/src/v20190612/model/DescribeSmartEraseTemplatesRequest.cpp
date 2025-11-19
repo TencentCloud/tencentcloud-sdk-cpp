@@ -27,6 +27,7 @@ DescribeSmartEraseTemplatesRequest::DescribeSmartEraseTemplatesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_eraseTypeHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
 }
@@ -73,6 +74,14 @@ string DescribeSmartEraseTemplatesRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eraseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EraseType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eraseType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -153,6 +162,22 @@ void DescribeSmartEraseTemplatesRequest::SetType(const string& _type)
 bool DescribeSmartEraseTemplatesRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string DescribeSmartEraseTemplatesRequest::GetEraseType() const
+{
+    return m_eraseType;
+}
+
+void DescribeSmartEraseTemplatesRequest::SetEraseType(const string& _eraseType)
+{
+    m_eraseType = _eraseType;
+    m_eraseTypeHasBeenSet = true;
+}
+
+bool DescribeSmartEraseTemplatesRequest::EraseTypeHasBeenSet() const
+{
+    return m_eraseTypeHasBeenSet;
 }
 
 string DescribeSmartEraseTemplatesRequest::GetName() const

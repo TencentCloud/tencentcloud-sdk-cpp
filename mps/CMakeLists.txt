@@ -89,6 +89,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/OverrideTranscodeParameter.h
   include/tencentcloud/mps/v20190612/model/PoliticalOcrReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateRequest.h
+  include/tencentcloud/mps/v20190612/model/SmartErasePrivacyConfig.h
   include/tencentcloud/mps/v20190612/model/MediaSnapshotByTimePicInfoItem.h
   include/tencentcloud/mps/v20190612/model/UserDefineFaceReviewTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/CreateInputHLSPullSettings.h
@@ -286,7 +287,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/LiveStreamTaskNotifyConfig.h
   include/tencentcloud/mps/v20190612/model/VideoTemplateInfo.h
   include/tencentcloud/mps/v20190612/model/ComposeSubtitleStyle.h
-  include/tencentcloud/mps/v20190612/model/SmartErasePrivacyConfig.h
+  include/tencentcloud/mps/v20190612/model/LiveAiAnalysisDescriptionItem.h
   include/tencentcloud/mps/v20190612/model/PornOcrReviewTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/AiReviewTaskPornOcrResult.h
   include/tencentcloud/mps/v20190612/model/DescribeLiveRecordTemplatesRequest.h
@@ -741,6 +742,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ComposeAudioStream.h
   include/tencentcloud/mps/v20190612/model/SmartSubtitleTaskTransTextSegmentItem.h
   include/tencentcloud/mps/v20190612/model/FaceConfigureInfo.h
+  include/tencentcloud/mps/v20190612/model/LiveAiParagraphInfo.h
   include/tencentcloud/mps/v20190612/model/AiRecognitionTaskFaceResultOutput.h
   include/tencentcloud/mps/v20190612/model/PornImgReviewTemplateInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/BatchStartStreamLinkFlowRequest.h
@@ -879,6 +881,7 @@ set(mps_src
   src/v20190612/model/OverrideTranscodeParameter.cpp
   src/v20190612/model/PoliticalOcrReviewTemplateInfo.cpp
   src/v20190612/model/CreateImageSpriteTemplateRequest.cpp
+  src/v20190612/model/SmartErasePrivacyConfig.cpp
   src/v20190612/model/MediaSnapshotByTimePicInfoItem.cpp
   src/v20190612/model/UserDefineFaceReviewTemplateInfo.cpp
   src/v20190612/model/CreateInputHLSPullSettings.cpp
@@ -1076,7 +1079,7 @@ set(mps_src
   src/v20190612/model/LiveStreamTaskNotifyConfig.cpp
   src/v20190612/model/VideoTemplateInfo.cpp
   src/v20190612/model/ComposeSubtitleStyle.cpp
-  src/v20190612/model/SmartErasePrivacyConfig.cpp
+  src/v20190612/model/LiveAiAnalysisDescriptionItem.cpp
   src/v20190612/model/PornOcrReviewTemplateInfoForUpdate.cpp
   src/v20190612/model/AiReviewTaskPornOcrResult.cpp
   src/v20190612/model/DescribeLiveRecordTemplatesRequest.cpp
@@ -1531,6 +1534,7 @@ set(mps_src
   src/v20190612/model/ComposeAudioStream.cpp
   src/v20190612/model/SmartSubtitleTaskTransTextSegmentItem.cpp
   src/v20190612/model/FaceConfigureInfo.cpp
+  src/v20190612/model/LiveAiParagraphInfo.cpp
   src/v20190612/model/AiRecognitionTaskFaceResultOutput.cpp
   src/v20190612/model/PornImgReviewTemplateInfoForUpdate.cpp
   src/v20190612/model/BatchStartStreamLinkFlowRequest.cpp

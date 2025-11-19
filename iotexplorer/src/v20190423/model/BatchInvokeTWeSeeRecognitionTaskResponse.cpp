@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ckafka/v20190819/model/DescribeAppInfoResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchInvokeTWeSeeRecognitionTaskResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ckafka::V20190819::Model;
+using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
-DescribeAppInfoResponse::DescribeAppInfoResponse() :
-    m_resultHasBeenSet(false)
+BatchInvokeTWeSeeRecognitionTaskResponse::BatchInvokeTWeSeeRecognitionTaskResponse() :
+    m_outputsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeAppInfoResponse::Deserialize(const string &payload)
+CoreInternalOutcome BatchInvokeTWeSeeRecognitionTaskResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,49 @@ CoreInternalOutcome DescribeAppInfoResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("Outputs") && !rsp["Outputs"].IsNull())
     {
-        if (!rsp["Result"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
-        }
+        if (!rsp["Outputs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Outputs` is not array type"));
 
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = rsp["Outputs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            InvokeVisionRecognitionTaskOutput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_outputs.push_back(item);
         }
-
-        m_resultHasBeenSet = true;
+        m_outputsHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAppInfoResponse::ToJsonString() const
+string BatchInvokeTWeSeeRecognitionTaskResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_resultHasBeenSet)
+    if (m_outputsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Result";
+        string key = "Outputs";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_result.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_outputs.begin(); itr != m_outputs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +119,14 @@ string DescribeAppInfoResponse::ToJsonString() const
 }
 
 
-AppIdResponse DescribeAppInfoResponse::GetResult() const
+vector<InvokeVisionRecognitionTaskOutput> BatchInvokeTWeSeeRecognitionTaskResponse::GetOutputs() const
 {
-    return m_result;
+    return m_outputs;
 }
 
-bool DescribeAppInfoResponse::ResultHasBeenSet() const
+bool BatchInvokeTWeSeeRecognitionTaskResponse::OutputsHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_outputsHasBeenSet;
 }
 
 
