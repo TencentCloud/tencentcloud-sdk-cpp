@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cfs/v20190719/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -168,6 +169,27 @@ namespace TencentCloud
                      */
                     bool IntervalDaysHasBeenSet() const;
 
+                    /**
+                     * 获取快照策略标签
+                     * @return ResourceTags 快照策略标签
+                     * 
+                     */
+                    std::vector<TagInfo> GetResourceTags() const;
+
+                    /**
+                     * 设置快照策略标签
+                     * @param _resourceTags 快照策略标签
+                     * 
+                     */
+                    void SetResourceTags(const std::vector<TagInfo>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     * 
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +227,12 @@ namespace TencentCloud
                      */
                     uint64_t m_intervalDays;
                     bool m_intervalDaysHasBeenSet;
+
+                    /**
+                     * 快照策略标签
+                     */
+                    std::vector<TagInfo> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

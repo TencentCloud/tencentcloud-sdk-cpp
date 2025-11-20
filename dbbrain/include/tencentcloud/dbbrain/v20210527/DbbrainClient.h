@@ -111,6 +111,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMailProfileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMetricTopProxiesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMetricTopProxiesResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeMongoDBProcessListRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeMongoDBProcessListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeNoPrimaryKeyTablesRequest.h>
@@ -335,6 +337,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMetricTopProxiesResponse> DescribeMetricTopProxiesOutcome;
                 typedef std::future<DescribeMetricTopProxiesOutcome> DescribeMetricTopProxiesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeMetricTopProxiesRequest&, DescribeMetricTopProxiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMetricTopProxiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMongoDBProcessListResponse> DescribeMongoDBProcessListOutcome;
+                typedef std::future<DescribeMongoDBProcessListOutcome> DescribeMongoDBProcessListOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeMongoDBProcessListRequest&, DescribeMongoDBProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMongoDBProcessListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMySqlProcessListResponse> DescribeMySqlProcessListOutcome;
                 typedef std::future<DescribeMySqlProcessListOutcome> DescribeMySqlProcessListOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeMySqlProcessListRequest&, DescribeMySqlProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMySqlProcessListAsyncHandler;
@@ -850,6 +855,15 @@ namespace TencentCloud
                 DescribeMetricTopProxiesOutcome DescribeMetricTopProxies(const Model::DescribeMetricTopProxiesRequest &request);
                 void DescribeMetricTopProxiesAsync(const Model::DescribeMetricTopProxiesRequest& request, const DescribeMetricTopProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMetricTopProxiesOutcomeCallable DescribeMetricTopProxiesCallable(const Model::DescribeMetricTopProxiesRequest& request);
+
+                /**
+                 *查询MongoDB实时会话列表
+                 * @param req DescribeMongoDBProcessListRequest
+                 * @return DescribeMongoDBProcessListOutcome
+                 */
+                DescribeMongoDBProcessListOutcome DescribeMongoDBProcessList(const Model::DescribeMongoDBProcessListRequest &request);
+                void DescribeMongoDBProcessListAsync(const Model::DescribeMongoDBProcessListRequest& request, const DescribeMongoDBProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMongoDBProcessListOutcomeCallable DescribeMongoDBProcessListCallable(const Model::DescribeMongoDBProcessListRequest& request);
 
                 /**
                  *查询关系型数据库的实时线程列表。

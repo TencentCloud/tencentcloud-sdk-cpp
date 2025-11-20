@@ -840,6 +840,56 @@ BhClient::CreateResourceOutcomeCallable BhClient::CreateResourceCallable(const C
     return prom->get_future();
 }
 
+BhClient::CreateSyncUserTaskOutcome BhClient::CreateSyncUserTask(const CreateSyncUserTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSyncUserTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSyncUserTaskResponse rsp = CreateSyncUserTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSyncUserTaskOutcome(rsp);
+        else
+            return CreateSyncUserTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSyncUserTaskOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::CreateSyncUserTaskAsync(const CreateSyncUserTaskRequest& request, const CreateSyncUserTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSyncUserTaskRequest&;
+    using Resp = CreateSyncUserTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSyncUserTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::CreateSyncUserTaskOutcomeCallable BhClient::CreateSyncUserTaskCallable(const CreateSyncUserTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSyncUserTaskOutcome>>();
+    CreateSyncUserTaskAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateSyncUserTaskRequest&,
+        CreateSyncUserTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BhClient::CreateUserOutcome BhClient::CreateUser(const CreateUserRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateUser");
@@ -882,6 +932,56 @@ BhClient::CreateUserOutcomeCallable BhClient::CreateUserCallable(const CreateUse
         const BhClient*,
         const CreateUserRequest&,
         CreateUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BhClient::CreateUserDirectoryOutcome BhClient::CreateUserDirectory(const CreateUserDirectoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserDirectory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserDirectoryResponse rsp = CreateUserDirectoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserDirectoryOutcome(rsp);
+        else
+            return CreateUserDirectoryOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserDirectoryOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::CreateUserDirectoryAsync(const CreateUserDirectoryRequest& request, const CreateUserDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateUserDirectoryRequest&;
+    using Resp = CreateUserDirectoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateUserDirectory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::CreateUserDirectoryOutcomeCallable BhClient::CreateUserDirectoryCallable(const CreateUserDirectoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateUserDirectoryOutcome>>();
+    CreateUserDirectoryAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const CreateUserDirectoryRequest&,
+        CreateUserDirectoryOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1390,6 +1490,56 @@ BhClient::DeleteOperationTasksOutcomeCallable BhClient::DeleteOperationTasksCall
     return prom->get_future();
 }
 
+BhClient::DeleteUserDirectoryOutcome BhClient::DeleteUserDirectory(const DeleteUserDirectoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserDirectory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserDirectoryResponse rsp = DeleteUserDirectoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserDirectoryOutcome(rsp);
+        else
+            return DeleteUserDirectoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserDirectoryOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DeleteUserDirectoryAsync(const DeleteUserDirectoryRequest& request, const DeleteUserDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteUserDirectoryRequest&;
+    using Resp = DeleteUserDirectoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserDirectory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::DeleteUserDirectoryOutcomeCallable BhClient::DeleteUserDirectoryCallable(const DeleteUserDirectoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteUserDirectoryOutcome>>();
+    DeleteUserDirectoryAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DeleteUserDirectoryRequest&,
+        DeleteUserDirectoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BhClient::DeleteUserGroupMembersOutcome BhClient::DeleteUserGroupMembers(const DeleteUserGroupMembersRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteUserGroupMembers");
@@ -1632,6 +1782,56 @@ BhClient::DescribeAccessWhiteListRulesOutcomeCallable BhClient::DescribeAccessWh
         const BhClient*,
         const DescribeAccessWhiteListRulesRequest&,
         DescribeAccessWhiteListRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BhClient::DescribeAccountGroupsOutcome BhClient::DescribeAccountGroups(const DescribeAccountGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountGroupsResponse rsp = DescribeAccountGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountGroupsOutcome(rsp);
+        else
+            return DescribeAccountGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountGroupsOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeAccountGroupsAsync(const DescribeAccountGroupsRequest& request, const DescribeAccountGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAccountGroupsRequest&;
+    using Resp = DescribeAccountGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::DescribeAccountGroupsOutcomeCallable BhClient::DescribeAccountGroupsCallable(const DescribeAccountGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAccountGroupsOutcome>>();
+    DescribeAccountGroupsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeAccountGroupsRequest&,
+        DescribeAccountGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2490,6 +2690,106 @@ BhClient::DescribeSecuritySettingOutcomeCallable BhClient::DescribeSecuritySetti
     return prom->get_future();
 }
 
+BhClient::DescribeSourceTypesOutcome BhClient::DescribeSourceTypes(const DescribeSourceTypesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSourceTypes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSourceTypesResponse rsp = DescribeSourceTypesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSourceTypesOutcome(rsp);
+        else
+            return DescribeSourceTypesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSourceTypesOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeSourceTypesAsync(const DescribeSourceTypesRequest& request, const DescribeSourceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSourceTypesRequest&;
+    using Resp = DescribeSourceTypesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSourceTypes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::DescribeSourceTypesOutcomeCallable BhClient::DescribeSourceTypesCallable(const DescribeSourceTypesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSourceTypesOutcome>>();
+    DescribeSourceTypesAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeSourceTypesRequest&,
+        DescribeSourceTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BhClient::DescribeUserDirectoryOutcome BhClient::DescribeUserDirectory(const DescribeUserDirectoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserDirectory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserDirectoryResponse rsp = DescribeUserDirectoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserDirectoryOutcome(rsp);
+        else
+            return DescribeUserDirectoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserDirectoryOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeUserDirectoryAsync(const DescribeUserDirectoryRequest& request, const DescribeUserDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserDirectoryRequest&;
+    using Resp = DescribeUserDirectoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserDirectory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::DescribeUserDirectoryOutcomeCallable BhClient::DescribeUserDirectoryCallable(const DescribeUserDirectoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserDirectoryOutcome>>();
+    DescribeUserDirectoryAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeUserDirectoryRequest&,
+        DescribeUserDirectoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BhClient::DescribeUserGroupMembersOutcome BhClient::DescribeUserGroupMembers(const DescribeUserGroupMembersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserGroupMembers");
@@ -2582,6 +2882,56 @@ BhClient::DescribeUserGroupsOutcomeCallable BhClient::DescribeUserGroupsCallable
         const BhClient*,
         const DescribeUserGroupsRequest&,
         DescribeUserGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BhClient::DescribeUserSyncStatusOutcome BhClient::DescribeUserSyncStatus(const DescribeUserSyncStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserSyncStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserSyncStatusResponse rsp = DescribeUserSyncStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserSyncStatusOutcome(rsp);
+        else
+            return DescribeUserSyncStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserSyncStatusOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeUserSyncStatusAsync(const DescribeUserSyncStatusRequest& request, const DescribeUserSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserSyncStatusRequest&;
+    using Resp = DescribeUserSyncStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserSyncStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::DescribeUserSyncStatusOutcomeCallable BhClient::DescribeUserSyncStatusCallable(const DescribeUserSyncStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserSyncStatusOutcome>>();
+    DescribeUserSyncStatusAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeUserSyncStatusRequest&,
+        DescribeUserSyncStatusOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3690,6 +4040,56 @@ BhClient::ModifyUserOutcomeCallable BhClient::ModifyUserCallable(const ModifyUse
     return prom->get_future();
 }
 
+BhClient::ModifyUserDirectoryOutcome BhClient::ModifyUserDirectory(const ModifyUserDirectoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserDirectory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserDirectoryResponse rsp = ModifyUserDirectoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserDirectoryOutcome(rsp);
+        else
+            return ModifyUserDirectoryOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserDirectoryOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::ModifyUserDirectoryAsync(const ModifyUserDirectoryRequest& request, const ModifyUserDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyUserDirectoryRequest&;
+    using Resp = ModifyUserDirectoryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserDirectory", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::ModifyUserDirectoryOutcomeCallable BhClient::ModifyUserDirectoryCallable(const ModifyUserDirectoryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyUserDirectoryOutcome>>();
+    ModifyUserDirectoryAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ModifyUserDirectoryRequest&,
+        ModifyUserDirectoryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BhClient::ModifyUserGroupOutcome BhClient::ModifyUserGroup(const ModifyUserGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUserGroup");
@@ -4532,6 +4932,106 @@ BhClient::SetLDAPSyncFlagOutcomeCallable BhClient::SetLDAPSyncFlagCallable(const
         const BhClient*,
         const SetLDAPSyncFlagRequest&,
         SetLDAPSyncFlagOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BhClient::SyncDevicesToIOAOutcome BhClient::SyncDevicesToIOA(const SyncDevicesToIOARequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncDevicesToIOA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncDevicesToIOAResponse rsp = SyncDevicesToIOAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncDevicesToIOAOutcome(rsp);
+        else
+            return SyncDevicesToIOAOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncDevicesToIOAOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::SyncDevicesToIOAAsync(const SyncDevicesToIOARequest& request, const SyncDevicesToIOAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SyncDevicesToIOARequest&;
+    using Resp = SyncDevicesToIOAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SyncDevicesToIOA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::SyncDevicesToIOAOutcomeCallable BhClient::SyncDevicesToIOACallable(const SyncDevicesToIOARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SyncDevicesToIOAOutcome>>();
+    SyncDevicesToIOAAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SyncDevicesToIOARequest&,
+        SyncDevicesToIOAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BhClient::SyncUserToIOAOutcome BhClient::SyncUserToIOA(const SyncUserToIOARequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncUserToIOA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncUserToIOAResponse rsp = SyncUserToIOAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncUserToIOAOutcome(rsp);
+        else
+            return SyncUserToIOAOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncUserToIOAOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::SyncUserToIOAAsync(const SyncUserToIOARequest& request, const SyncUserToIOAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SyncUserToIOARequest&;
+    using Resp = SyncUserToIOAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SyncUserToIOA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::SyncUserToIOAOutcomeCallable BhClient::SyncUserToIOACallable(const SyncUserToIOARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SyncUserToIOAOutcome>>();
+    SyncUserToIOAAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const SyncUserToIOARequest&,
+        SyncUserToIOAOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

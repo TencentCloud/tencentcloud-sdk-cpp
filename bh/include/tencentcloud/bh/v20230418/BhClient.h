@@ -55,8 +55,12 @@
 #include <tencentcloud/bh/v20230418/model/CreateOperationTaskResponse.h>
 #include <tencentcloud/bh/v20230418/model/CreateResourceRequest.h>
 #include <tencentcloud/bh/v20230418/model/CreateResourceResponse.h>
+#include <tencentcloud/bh/v20230418/model/CreateSyncUserTaskRequest.h>
+#include <tencentcloud/bh/v20230418/model/CreateSyncUserTaskResponse.h>
 #include <tencentcloud/bh/v20230418/model/CreateUserRequest.h>
 #include <tencentcloud/bh/v20230418/model/CreateUserResponse.h>
+#include <tencentcloud/bh/v20230418/model/CreateUserDirectoryRequest.h>
+#include <tencentcloud/bh/v20230418/model/CreateUserDirectoryResponse.h>
 #include <tencentcloud/bh/v20230418/model/CreateUserGroupRequest.h>
 #include <tencentcloud/bh/v20230418/model/CreateUserGroupResponse.h>
 #include <tencentcloud/bh/v20230418/model/DeleteAccessWhiteListRulesRequest.h>
@@ -77,6 +81,8 @@
 #include <tencentcloud/bh/v20230418/model/DeleteDevicesResponse.h>
 #include <tencentcloud/bh/v20230418/model/DeleteOperationTasksRequest.h>
 #include <tencentcloud/bh/v20230418/model/DeleteOperationTasksResponse.h>
+#include <tencentcloud/bh/v20230418/model/DeleteUserDirectoryRequest.h>
+#include <tencentcloud/bh/v20230418/model/DeleteUserDirectoryResponse.h>
 #include <tencentcloud/bh/v20230418/model/DeleteUserGroupMembersRequest.h>
 #include <tencentcloud/bh/v20230418/model/DeleteUserGroupMembersResponse.h>
 #include <tencentcloud/bh/v20230418/model/DeleteUserGroupsRequest.h>
@@ -87,6 +93,8 @@
 #include <tencentcloud/bh/v20230418/model/DeployResourceResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAccessWhiteListRulesRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAccessWhiteListRulesResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeAccountGroupsRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeAccountGroupsResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAclsRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAclsResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAssetSyncFlagRequest.h>
@@ -121,10 +129,16 @@
 #include <tencentcloud/bh/v20230418/model/DescribeResourcesResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeSecuritySettingRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeSecuritySettingResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeSourceTypesRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeSourceTypesResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeUserDirectoryRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeUserDirectoryResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserGroupMembersRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserGroupMembersResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserGroupsRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserGroupsResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeUserSyncStatusRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeUserSyncStatusResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUsersRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUsersResponse.h>
 #include <tencentcloud/bh/v20230418/model/DisableExternalAccessRequest.h>
@@ -169,6 +183,8 @@
 #include <tencentcloud/bh/v20230418/model/ModifyResourceResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyUserRequest.h>
 #include <tencentcloud/bh/v20230418/model/ModifyUserResponse.h>
+#include <tencentcloud/bh/v20230418/model/ModifyUserDirectoryRequest.h>
+#include <tencentcloud/bh/v20230418/model/ModifyUserDirectoryResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyUserGroupRequest.h>
 #include <tencentcloud/bh/v20230418/model/ModifyUserGroupResponse.h>
 #include <tencentcloud/bh/v20230418/model/ReplaySessionRequest.h>
@@ -203,6 +219,10 @@
 #include <tencentcloud/bh/v20230418/model/SearchTaskResultResponse.h>
 #include <tencentcloud/bh/v20230418/model/SetLDAPSyncFlagRequest.h>
 #include <tencentcloud/bh/v20230418/model/SetLDAPSyncFlagResponse.h>
+#include <tencentcloud/bh/v20230418/model/SyncDevicesToIOARequest.h>
+#include <tencentcloud/bh/v20230418/model/SyncDevicesToIOAResponse.h>
+#include <tencentcloud/bh/v20230418/model/SyncUserToIOARequest.h>
+#include <tencentcloud/bh/v20230418/model/SyncUserToIOAResponse.h>
 #include <tencentcloud/bh/v20230418/model/UnlockUserRequest.h>
 #include <tencentcloud/bh/v20230418/model/UnlockUserResponse.h>
 
@@ -267,9 +287,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateResourceResponse> CreateResourceOutcome;
                 typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::CreateResourceRequest&, CreateResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSyncUserTaskResponse> CreateSyncUserTaskOutcome;
+                typedef std::future<CreateSyncUserTaskOutcome> CreateSyncUserTaskOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::CreateSyncUserTaskRequest&, CreateSyncUserTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSyncUserTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserDirectoryResponse> CreateUserDirectoryOutcome;
+                typedef std::future<CreateUserDirectoryOutcome> CreateUserDirectoryOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::CreateUserDirectoryRequest&, CreateUserDirectoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserDirectoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserGroupResponse> CreateUserGroupOutcome;
                 typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::CreateUserGroupRequest&, CreateUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
@@ -300,6 +326,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteOperationTasksResponse> DeleteOperationTasksOutcome;
                 typedef std::future<DeleteOperationTasksOutcome> DeleteOperationTasksOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DeleteOperationTasksRequest&, DeleteOperationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOperationTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUserDirectoryResponse> DeleteUserDirectoryOutcome;
+                typedef std::future<DeleteUserDirectoryOutcome> DeleteUserDirectoryOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DeleteUserDirectoryRequest&, DeleteUserDirectoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserDirectoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUserGroupMembersResponse> DeleteUserGroupMembersOutcome;
                 typedef std::future<DeleteUserGroupMembersOutcome> DeleteUserGroupMembersOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DeleteUserGroupMembersRequest&, DeleteUserGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserGroupMembersAsyncHandler;
@@ -315,6 +344,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccessWhiteListRulesResponse> DescribeAccessWhiteListRulesOutcome;
                 typedef std::future<DescribeAccessWhiteListRulesOutcome> DescribeAccessWhiteListRulesOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeAccessWhiteListRulesRequest&, DescribeAccessWhiteListRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessWhiteListRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccountGroupsResponse> DescribeAccountGroupsOutcome;
+                typedef std::future<DescribeAccountGroupsOutcome> DescribeAccountGroupsOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeAccountGroupsRequest&, DescribeAccountGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAclsResponse> DescribeAclsOutcome;
                 typedef std::future<DescribeAclsOutcome> DescribeAclsOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeAclsRequest&, DescribeAclsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclsAsyncHandler;
@@ -366,12 +398,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecuritySettingResponse> DescribeSecuritySettingOutcome;
                 typedef std::future<DescribeSecuritySettingOutcome> DescribeSecuritySettingOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeSecuritySettingRequest&, DescribeSecuritySettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecuritySettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSourceTypesResponse> DescribeSourceTypesOutcome;
+                typedef std::future<DescribeSourceTypesOutcome> DescribeSourceTypesOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeSourceTypesRequest&, DescribeSourceTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserDirectoryResponse> DescribeUserDirectoryOutcome;
+                typedef std::future<DescribeUserDirectoryOutcome> DescribeUserDirectoryOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeUserDirectoryRequest&, DescribeUserDirectoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDirectoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserGroupMembersResponse> DescribeUserGroupMembersOutcome;
                 typedef std::future<DescribeUserGroupMembersOutcome> DescribeUserGroupMembersOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeUserGroupMembersRequest&, DescribeUserGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserGroupMembersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserGroupsResponse> DescribeUserGroupsOutcome;
                 typedef std::future<DescribeUserGroupsOutcome> DescribeUserGroupsOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeUserGroupsRequest&, DescribeUserGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserSyncStatusResponse> DescribeUserSyncStatusOutcome;
+                typedef std::future<DescribeUserSyncStatusOutcome> DescribeUserSyncStatusOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeUserSyncStatusRequest&, DescribeUserSyncStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserSyncStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUsersResponse> DescribeUsersOutcome;
                 typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeUsersRequest&, DescribeUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersAsyncHandler;
@@ -438,6 +479,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserDirectoryResponse> ModifyUserDirectoryOutcome;
+                typedef std::future<ModifyUserDirectoryOutcome> ModifyUserDirectoryOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::ModifyUserDirectoryRequest&, ModifyUserDirectoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserDirectoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserGroupResponse> ModifyUserGroupOutcome;
                 typedef std::future<ModifyUserGroupOutcome> ModifyUserGroupOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ModifyUserGroupRequest&, ModifyUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserGroupAsyncHandler;
@@ -489,6 +533,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetLDAPSyncFlagResponse> SetLDAPSyncFlagOutcome;
                 typedef std::future<SetLDAPSyncFlagOutcome> SetLDAPSyncFlagOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::SetLDAPSyncFlagRequest&, SetLDAPSyncFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetLDAPSyncFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::SyncDevicesToIOAResponse> SyncDevicesToIOAOutcome;
+                typedef std::future<SyncDevicesToIOAOutcome> SyncDevicesToIOAOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::SyncDevicesToIOARequest&, SyncDevicesToIOAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncDevicesToIOAAsyncHandler;
+                typedef Outcome<Core::Error, Model::SyncUserToIOAResponse> SyncUserToIOAOutcome;
+                typedef std::future<SyncUserToIOAOutcome> SyncUserToIOAOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::SyncUserToIOARequest&, SyncUserToIOAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncUserToIOAAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnlockUserResponse> UnlockUserOutcome;
                 typedef std::future<UnlockUserOutcome> UnlockUserOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::UnlockUserRequest&, UnlockUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockUserAsyncHandler;
@@ -640,6 +690,15 @@ namespace TencentCloud
                 CreateResourceOutcomeCallable CreateResourceCallable(const Model::CreateResourceRequest& request);
 
                 /**
+                 *创建用户同步任务
+                 * @param req CreateSyncUserTaskRequest
+                 * @return CreateSyncUserTaskOutcome
+                 */
+                CreateSyncUserTaskOutcome CreateSyncUserTask(const Model::CreateSyncUserTaskRequest &request);
+                void CreateSyncUserTaskAsync(const Model::CreateSyncUserTaskRequest& request, const CreateSyncUserTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSyncUserTaskOutcomeCallable CreateSyncUserTaskCallable(const Model::CreateSyncUserTaskRequest& request);
+
+                /**
                  *新建用户
                  * @param req CreateUserRequest
                  * @return CreateUserOutcome
@@ -647,6 +706,15 @@ namespace TencentCloud
                 CreateUserOutcome CreateUser(const Model::CreateUserRequest &request);
                 void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
+
+                /**
+                 *创建用户目录
+                 * @param req CreateUserDirectoryRequest
+                 * @return CreateUserDirectoryOutcome
+                 */
+                CreateUserDirectoryOutcome CreateUserDirectory(const Model::CreateUserDirectoryRequest &request);
+                void CreateUserDirectoryAsync(const Model::CreateUserDirectoryRequest& request, const CreateUserDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserDirectoryOutcomeCallable CreateUserDirectoryCallable(const Model::CreateUserDirectoryRequest& request);
 
                 /**
                  *新建用户组
@@ -739,6 +807,15 @@ namespace TencentCloud
                 DeleteOperationTasksOutcomeCallable DeleteOperationTasksCallable(const Model::DeleteOperationTasksRequest& request);
 
                 /**
+                 *删除用户目录
+                 * @param req DeleteUserDirectoryRequest
+                 * @return DeleteUserDirectoryOutcome
+                 */
+                DeleteUserDirectoryOutcome DeleteUserDirectory(const Model::DeleteUserDirectoryRequest &request);
+                void DeleteUserDirectoryAsync(const Model::DeleteUserDirectoryRequest& request, const DeleteUserDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserDirectoryOutcomeCallable DeleteUserDirectoryCallable(const Model::DeleteUserDirectoryRequest& request);
+
+                /**
                  *删除用户组成员
                  * @param req DeleteUserGroupMembersRequest
                  * @return DeleteUserGroupMembersOutcome
@@ -782,6 +859,15 @@ namespace TencentCloud
                 DescribeAccessWhiteListRulesOutcome DescribeAccessWhiteListRules(const Model::DescribeAccessWhiteListRulesRequest &request);
                 void DescribeAccessWhiteListRulesAsync(const Model::DescribeAccessWhiteListRulesRequest& request, const DescribeAccessWhiteListRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccessWhiteListRulesOutcomeCallable DescribeAccessWhiteListRulesCallable(const Model::DescribeAccessWhiteListRulesRequest& request);
+
+                /**
+                 *获取账号组信息
+                 * @param req DescribeAccountGroupsRequest
+                 * @return DescribeAccountGroupsOutcome
+                 */
+                DescribeAccountGroupsOutcome DescribeAccountGroups(const Model::DescribeAccountGroupsRequest &request);
+                void DescribeAccountGroupsAsync(const Model::DescribeAccountGroupsRequest& request, const DescribeAccountGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountGroupsOutcomeCallable DescribeAccountGroupsCallable(const Model::DescribeAccountGroupsRequest& request);
 
                 /**
                  *查询访问权限列表
@@ -937,6 +1023,24 @@ namespace TencentCloud
                 DescribeSecuritySettingOutcomeCallable DescribeSecuritySettingCallable(const Model::DescribeSecuritySettingRequest& request);
 
                 /**
+                 *获取认证源信息
+                 * @param req DescribeSourceTypesRequest
+                 * @return DescribeSourceTypesOutcome
+                 */
+                DescribeSourceTypesOutcome DescribeSourceTypes(const Model::DescribeSourceTypesRequest &request);
+                void DescribeSourceTypesAsync(const Model::DescribeSourceTypesRequest& request, const DescribeSourceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSourceTypesOutcomeCallable DescribeSourceTypesCallable(const Model::DescribeSourceTypesRequest& request);
+
+                /**
+                 *获取用户目录
+                 * @param req DescribeUserDirectoryRequest
+                 * @return DescribeUserDirectoryOutcome
+                 */
+                DescribeUserDirectoryOutcome DescribeUserDirectory(const Model::DescribeUserDirectoryRequest &request);
+                void DescribeUserDirectoryAsync(const Model::DescribeUserDirectoryRequest& request, const DescribeUserDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserDirectoryOutcomeCallable DescribeUserDirectoryCallable(const Model::DescribeUserDirectoryRequest& request);
+
+                /**
                  *查询用户组成员列表
                  * @param req DescribeUserGroupMembersRequest
                  * @return DescribeUserGroupMembersOutcome
@@ -953,6 +1057,15 @@ namespace TencentCloud
                 DescribeUserGroupsOutcome DescribeUserGroups(const Model::DescribeUserGroupsRequest &request);
                 void DescribeUserGroupsAsync(const Model::DescribeUserGroupsRequest& request, const DescribeUserGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserGroupsOutcomeCallable DescribeUserGroupsCallable(const Model::DescribeUserGroupsRequest& request);
+
+                /**
+                 *获取用户同步状态
+                 * @param req DescribeUserSyncStatusRequest
+                 * @return DescribeUserSyncStatusOutcome
+                 */
+                DescribeUserSyncStatusOutcome DescribeUserSyncStatus(const Model::DescribeUserSyncStatusRequest &request);
+                void DescribeUserSyncStatusAsync(const Model::DescribeUserSyncStatusRequest& request, const DescribeUserSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserSyncStatusOutcomeCallable DescribeUserSyncStatusCallable(const Model::DescribeUserSyncStatusRequest& request);
 
                 /**
                  *查询用户列表
@@ -1153,6 +1266,15 @@ namespace TencentCloud
                 ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request);
 
                 /**
+                 *修改用户目录信息
+                 * @param req ModifyUserDirectoryRequest
+                 * @return ModifyUserDirectoryOutcome
+                 */
+                ModifyUserDirectoryOutcome ModifyUserDirectory(const Model::ModifyUserDirectoryRequest &request);
+                void ModifyUserDirectoryAsync(const Model::ModifyUserDirectoryRequest& request, const ModifyUserDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserDirectoryOutcomeCallable ModifyUserDirectoryCallable(const Model::ModifyUserDirectoryRequest& request);
+
+                /**
                  *修改用户组
                  * @param req ModifyUserGroupRequest
                  * @return ModifyUserGroupOutcome
@@ -1304,6 +1426,24 @@ namespace TencentCloud
                 SetLDAPSyncFlagOutcome SetLDAPSyncFlag(const Model::SetLDAPSyncFlagRequest &request);
                 void SetLDAPSyncFlagAsync(const Model::SetLDAPSyncFlagRequest& request, const SetLDAPSyncFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetLDAPSyncFlagOutcomeCallable SetLDAPSyncFlagCallable(const Model::SetLDAPSyncFlagRequest& request);
+
+                /**
+                 *同步资产到IOA
+                 * @param req SyncDevicesToIOARequest
+                 * @return SyncDevicesToIOAOutcome
+                 */
+                SyncDevicesToIOAOutcome SyncDevicesToIOA(const Model::SyncDevicesToIOARequest &request);
+                void SyncDevicesToIOAAsync(const Model::SyncDevicesToIOARequest& request, const SyncDevicesToIOAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncDevicesToIOAOutcomeCallable SyncDevicesToIOACallable(const Model::SyncDevicesToIOARequest& request);
+
+                /**
+                 *同步堡垒机本地用户到IOA
+                 * @param req SyncUserToIOARequest
+                 * @return SyncUserToIOAOutcome
+                 */
+                SyncUserToIOAOutcome SyncUserToIOA(const Model::SyncUserToIOARequest &request);
+                void SyncUserToIOAAsync(const Model::SyncUserToIOARequest& request, const SyncUserToIOAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncUserToIOAOutcomeCallable SyncUserToIOACallable(const Model::SyncUserToIOARequest& request);
 
                 /**
                  *解锁用户

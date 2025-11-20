@@ -86,6 +86,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateTopicResponse.h
   include/tencentcloud/ckafka/v20190819/model/KafkaConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/DatahubTaskInfo.h
+  include/tencentcloud/ckafka/v20190819/model/UpgradeBrokerVersionResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePostData.h
   include/tencentcloud/ckafka/v20190819/model/DeleteDatahubTaskResponse.h
@@ -200,6 +201,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTopicsResp.h
   include/tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResourcesResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeCkafkaVersionResponse.h
   include/tencentcloud/ckafka/v20190819/model/TopicDetail.h
   include/tencentcloud/ckafka/v20190819/model/DropCls.h
   include/tencentcloud/ckafka/v20190819/model/DeleteUserRequest.h
@@ -217,6 +219,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/TopicFlowRanking.h
   include/tencentcloud/ckafka/v20190819/model/GroupInfoTopics.h
   include/tencentcloud/ckafka/v20190819/model/TopicResult.h
+  include/tencentcloud/ckafka/v20190819/model/UpgradeBrokerVersionRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePreData.h
   include/tencentcloud/ckafka/v20190819/model/EsConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/CtsdbModifyConnectParam.h
@@ -374,6 +377,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreatePrometheusRequest.h
   include/tencentcloud/ckafka/v20190819/model/AclRuleResp.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeCkafkaVersionRequest.h
   )
 
 set(ckafka_src
@@ -445,6 +449,7 @@ set(ckafka_src
   src/v20190819/model/CreateTopicResponse.cpp
   src/v20190819/model/KafkaConnectParam.cpp
   src/v20190819/model/DatahubTaskInfo.cpp
+  src/v20190819/model/UpgradeBrokerVersionResponse.cpp
   src/v20190819/model/DescribeConsumerGroupResponse.cpp
   src/v20190819/model/CreateInstancePostData.cpp
   src/v20190819/model/DeleteDatahubTaskResponse.cpp
@@ -559,6 +564,7 @@ set(ckafka_src
   src/v20190819/model/DescribeDatahubTopicsResp.cpp
   src/v20190819/model/ModifyDatahubTaskResponse.cpp
   src/v20190819/model/DescribeConnectResourcesResponse.cpp
+  src/v20190819/model/DescribeCkafkaVersionResponse.cpp
   src/v20190819/model/TopicDetail.cpp
   src/v20190819/model/DropCls.cpp
   src/v20190819/model/DeleteUserRequest.cpp
@@ -576,6 +582,7 @@ set(ckafka_src
   src/v20190819/model/TopicFlowRanking.cpp
   src/v20190819/model/GroupInfoTopics.cpp
   src/v20190819/model/TopicResult.cpp
+  src/v20190819/model/UpgradeBrokerVersionRequest.cpp
   src/v20190819/model/CreateInstancePreData.cpp
   src/v20190819/model/EsConnectParam.cpp
   src/v20190819/model/CtsdbModifyConnectParam.cpp
@@ -733,6 +740,7 @@ set(ckafka_src
   src/v20190819/model/ModifyDatahubTaskRequest.cpp
   src/v20190819/model/CreatePrometheusRequest.cpp
   src/v20190819/model/AclRuleResp.cpp
+  src/v20190819/model/DescribeCkafkaVersionRequest.cpp
   )
 
 set(ckafka_include

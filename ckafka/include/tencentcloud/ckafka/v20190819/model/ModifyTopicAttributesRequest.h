@@ -421,6 +421,27 @@ namespace TencentCloud
                      */
                     bool ReplicaNumHasBeenSet() const;
 
+                    /**
+                     * 获取消息保存的时间类型：CreateTime/LogAppendTime
+                     * @return LogMsgTimestampType 消息保存的时间类型：CreateTime/LogAppendTime
+                     * 
+                     */
+                    std::string GetLogMsgTimestampType() const;
+
+                    /**
+                     * 设置消息保存的时间类型：CreateTime/LogAppendTime
+                     * @param _logMsgTimestampType 消息保存的时间类型：CreateTime/LogAppendTime
+                     * 
+                     */
+                    void SetLogMsgTimestampType(const std::string& _logMsgTimestampType);
+
+                    /**
+                     * 判断参数 LogMsgTimestampType 是否已赋值
+                     * @return LogMsgTimestampType 是否已赋值
+                     * 
+                     */
+                    bool LogMsgTimestampTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -530,6 +551,12 @@ namespace TencentCloud
                      */
                     int64_t m_replicaNum;
                     bool m_replicaNumHasBeenSet;
+
+                    /**
+                     * 消息保存的时间类型：CreateTime/LogAppendTime
+                     */
+                    std::string m_logMsgTimestampType;
+                    bool m_logMsgTimestampTypeHasBeenSet;
 
                 };
             }

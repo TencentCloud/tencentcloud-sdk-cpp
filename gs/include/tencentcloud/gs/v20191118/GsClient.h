@@ -39,6 +39,8 @@
 #include <tencentcloud/gs/v20191118/model/CreateAndroidAppVersionResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceADBRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceADBResponse.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceAcceleratorTokenRequest.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceAcceleratorTokenResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceImageRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceImageResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceLabelRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/gs/v20191118/model/DisableAndroidInstancesAppResponse.h>
 #include <tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceRequest.h>
 #include <tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceResponse.h>
+#include <tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceAcceleratorRequest.h>
+#include <tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceAcceleratorResponse.h>
 #include <tencentcloud/gs/v20191118/model/DistributeAndroidInstanceImageToHostsRequest.h>
 #include <tencentcloud/gs/v20191118/model/DistributeAndroidInstanceImageToHostsResponse.h>
 #include <tencentcloud/gs/v20191118/model/DistributeFileToAndroidInstancesRequest.h>
@@ -223,6 +227,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAndroidInstanceADBResponse> CreateAndroidInstanceADBOutcome;
                 typedef std::future<CreateAndroidInstanceADBOutcome> CreateAndroidInstanceADBOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateAndroidInstanceADBRequest&, CreateAndroidInstanceADBOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstanceADBAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAndroidInstanceAcceleratorTokenResponse> CreateAndroidInstanceAcceleratorTokenOutcome;
+                typedef std::future<CreateAndroidInstanceAcceleratorTokenOutcome> CreateAndroidInstanceAcceleratorTokenOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::CreateAndroidInstanceAcceleratorTokenRequest&, CreateAndroidInstanceAcceleratorTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstanceAcceleratorTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAndroidInstanceImageResponse> CreateAndroidInstanceImageOutcome;
                 typedef std::future<CreateAndroidInstanceImageOutcome> CreateAndroidInstanceImageOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateAndroidInstanceImageRequest&, CreateAndroidInstanceImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstanceImageAsyncHandler;
@@ -307,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisconnectAndroidInstanceResponse> DisconnectAndroidInstanceOutcome;
                 typedef std::future<DisconnectAndroidInstanceOutcome> DisconnectAndroidInstanceOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DisconnectAndroidInstanceRequest&, DisconnectAndroidInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisconnectAndroidInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisconnectAndroidInstanceAcceleratorResponse> DisconnectAndroidInstanceAcceleratorOutcome;
+                typedef std::future<DisconnectAndroidInstanceAcceleratorOutcome> DisconnectAndroidInstanceAcceleratorOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DisconnectAndroidInstanceAcceleratorRequest&, DisconnectAndroidInstanceAcceleratorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisconnectAndroidInstanceAcceleratorAsyncHandler;
                 typedef Outcome<Core::Error, Model::DistributeAndroidInstanceImageToHostsResponse> DistributeAndroidInstanceImageToHostsOutcome;
                 typedef std::future<DistributeAndroidInstanceImageToHostsOutcome> DistributeAndroidInstanceImageToHostsOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DistributeAndroidInstanceImageToHostsRequest&, DistributeAndroidInstanceImageToHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DistributeAndroidInstanceImageToHostsAsyncHandler;
@@ -520,6 +530,15 @@ namespace TencentCloud
                 CreateAndroidInstanceADBOutcome CreateAndroidInstanceADB(const Model::CreateAndroidInstanceADBRequest &request);
                 void CreateAndroidInstanceADBAsync(const Model::CreateAndroidInstanceADBRequest& request, const CreateAndroidInstanceADBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAndroidInstanceADBOutcomeCallable CreateAndroidInstanceADBCallable(const Model::CreateAndroidInstanceADBRequest& request);
+
+                /**
+                 *创建安卓实例加速Token
+                 * @param req CreateAndroidInstanceAcceleratorTokenRequest
+                 * @return CreateAndroidInstanceAcceleratorTokenOutcome
+                 */
+                CreateAndroidInstanceAcceleratorTokenOutcome CreateAndroidInstanceAcceleratorToken(const Model::CreateAndroidInstanceAcceleratorTokenRequest &request);
+                void CreateAndroidInstanceAcceleratorTokenAsync(const Model::CreateAndroidInstanceAcceleratorTokenRequest& request, const CreateAndroidInstanceAcceleratorTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAndroidInstanceAcceleratorTokenOutcomeCallable CreateAndroidInstanceAcceleratorTokenCallable(const Model::CreateAndroidInstanceAcceleratorTokenRequest& request);
 
                 /**
                  *使用指定的安卓实例创建镜像，创建镜像时指定的实例会关机，镜像创建完成后实例会自动开机。当镜像的 AndroidInstanceImageState 为 NORMAL 时，镜像创建完成处于可用状态。
@@ -772,6 +791,15 @@ namespace TencentCloud
                 DisconnectAndroidInstanceOutcome DisconnectAndroidInstance(const Model::DisconnectAndroidInstanceRequest &request);
                 void DisconnectAndroidInstanceAsync(const Model::DisconnectAndroidInstanceRequest& request, const DisconnectAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisconnectAndroidInstanceOutcomeCallable DisconnectAndroidInstanceCallable(const Model::DisconnectAndroidInstanceRequest& request);
+
+                /**
+                 *断开安卓实例加速节点
+                 * @param req DisconnectAndroidInstanceAcceleratorRequest
+                 * @return DisconnectAndroidInstanceAcceleratorOutcome
+                 */
+                DisconnectAndroidInstanceAcceleratorOutcome DisconnectAndroidInstanceAccelerator(const Model::DisconnectAndroidInstanceAcceleratorRequest &request);
+                void DisconnectAndroidInstanceAcceleratorAsync(const Model::DisconnectAndroidInstanceAcceleratorRequest& request, const DisconnectAndroidInstanceAcceleratorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisconnectAndroidInstanceAcceleratorOutcomeCallable DisconnectAndroidInstanceAcceleratorCallable(const Model::DisconnectAndroidInstanceAcceleratorRequest& request);
 
                 /**
                  *分发安卓实例镜像至宿主机

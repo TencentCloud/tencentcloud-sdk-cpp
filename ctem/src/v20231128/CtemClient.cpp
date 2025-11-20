@@ -90,6 +90,56 @@ CtemClient::CreateCustomerOutcomeCallable CtemClient::CreateCustomerCallable(con
     return prom->get_future();
 }
 
+CtemClient::CreateEnterpriseOutcome CtemClient::CreateEnterprise(const CreateEnterpriseRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEnterprise");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEnterpriseResponse rsp = CreateEnterpriseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEnterpriseOutcome(rsp);
+        else
+            return CreateEnterpriseOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEnterpriseOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateEnterpriseAsync(const CreateEnterpriseRequest& request, const CreateEnterpriseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateEnterpriseRequest&;
+    using Resp = CreateEnterpriseResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateEnterprise", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateEnterpriseOutcomeCallable CtemClient::CreateEnterpriseCallable(const CreateEnterpriseRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateEnterpriseOutcome>>();
+    CreateEnterpriseAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateEnterpriseRequest&,
+        CreateEnterpriseOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CtemClient::CreateJobRecordOutcome CtemClient::CreateJobRecord(const CreateJobRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateJobRecord");
@@ -132,6 +182,56 @@ CtemClient::CreateJobRecordOutcomeCallable CtemClient::CreateJobRecordCallable(c
         const CtemClient*,
         const CreateJobRecordRequest&,
         CreateJobRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DescribeApiSecsOutcome CtemClient::DescribeApiSecs(const DescribeApiSecsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApiSecs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApiSecsResponse rsp = DescribeApiSecsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApiSecsOutcome(rsp);
+        else
+            return DescribeApiSecsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApiSecsOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeApiSecsAsync(const DescribeApiSecsRequest& request, const DescribeApiSecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeApiSecsRequest&;
+    using Resp = DescribeApiSecsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeApiSecs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DescribeApiSecsOutcomeCallable CtemClient::DescribeApiSecsCallable(const DescribeApiSecsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeApiSecsOutcome>>();
+    DescribeApiSecsAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DescribeApiSecsRequest&,
+        DescribeApiSecsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

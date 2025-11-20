@@ -39,7 +39,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_enableAclRuleHasBeenSet(false),
     m_aclRuleNameHasBeenSet(false),
     m_retentionBytesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_logMsgTimestampTypeHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,14 @@ string CreateTopicRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_logMsgTimestampTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogMsgTimestampType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logMsgTimestampType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -476,6 +485,22 @@ void CreateTopicRequest::SetTags(const vector<Tag>& _tags)
 bool CreateTopicRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateTopicRequest::GetLogMsgTimestampType() const
+{
+    return m_logMsgTimestampType;
+}
+
+void CreateTopicRequest::SetLogMsgTimestampType(const string& _logMsgTimestampType)
+{
+    m_logMsgTimestampType = _logMsgTimestampType;
+    m_logMsgTimestampTypeHasBeenSet = true;
+}
+
+bool CreateTopicRequest::LogMsgTimestampTypeHasBeenSet() const
+{
+    return m_logMsgTimestampTypeHasBeenSet;
 }
 
 

@@ -97,6 +97,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeACLResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeAclRuleRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeAclRuleResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaVersionRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaVersionResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeConnectResourceRequest.h>
@@ -201,6 +203,8 @@
 #include <tencentcloud/ckafka/v20190819/model/ResumeDatahubTaskResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/SendMessageRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/SendMessageResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/UpgradeBrokerVersionRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/UpgradeBrokerVersionResponse.h>
 
 
 namespace TencentCloud
@@ -326,6 +330,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAclRuleResponse> DescribeAclRuleOutcome;
                 typedef std::future<DescribeAclRuleOutcome> DescribeAclRuleOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeAclRuleRequest&, DescribeAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCkafkaVersionResponse> DescribeCkafkaVersionOutcome;
+                typedef std::future<DescribeCkafkaVersionOutcome> DescribeCkafkaVersionOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeCkafkaVersionRequest&, DescribeCkafkaVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCkafkaVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCkafkaZoneResponse> DescribeCkafkaZoneOutcome;
                 typedef std::future<DescribeCkafkaZoneOutcome> DescribeCkafkaZoneOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeCkafkaZoneRequest&, DescribeCkafkaZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCkafkaZoneAsyncHandler;
@@ -482,6 +489,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SendMessageResponse> SendMessageOutcome;
                 typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::SendMessageRequest&, SendMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeBrokerVersionResponse> UpgradeBrokerVersionOutcome;
+                typedef std::future<UpgradeBrokerVersionOutcome> UpgradeBrokerVersionOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::UpgradeBrokerVersionRequest&, UpgradeBrokerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeBrokerVersionAsyncHandler;
 
 
 
@@ -817,6 +827,15 @@ namespace TencentCloud
                 DescribeAclRuleOutcome DescribeAclRule(const Model::DescribeAclRuleRequest &request);
                 void DescribeAclRuleAsync(const Model::DescribeAclRuleRequest& request, const DescribeAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAclRuleOutcomeCallable DescribeAclRuleCallable(const Model::DescribeAclRuleRequest& request);
+
+                /**
+                 *查询实例版本信息
+                 * @param req DescribeCkafkaVersionRequest
+                 * @return DescribeCkafkaVersionOutcome
+                 */
+                DescribeCkafkaVersionOutcome DescribeCkafkaVersion(const Model::DescribeCkafkaVersionRequest &request);
+                void DescribeCkafkaVersionAsync(const Model::DescribeCkafkaVersionRequest& request, const DescribeCkafkaVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCkafkaVersionOutcomeCallable DescribeCkafkaVersionCallable(const Model::DescribeCkafkaVersionRequest& request);
 
                 /**
                  *用于查看ckafka的可用区列表
@@ -1286,6 +1305,15 @@ namespace TencentCloud
                 SendMessageOutcome SendMessage(const Model::SendMessageRequest &request);
                 void SendMessageAsync(const Model::SendMessageRequest& request, const SendMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SendMessageOutcomeCallable SendMessageCallable(const Model::SendMessageRequest& request);
+
+                /**
+                 *broker版本升级
+                 * @param req UpgradeBrokerVersionRequest
+                 * @return UpgradeBrokerVersionOutcome
+                 */
+                UpgradeBrokerVersionOutcome UpgradeBrokerVersion(const Model::UpgradeBrokerVersionRequest &request);
+                void UpgradeBrokerVersionAsync(const Model::UpgradeBrokerVersionRequest& request, const UpgradeBrokerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeBrokerVersionOutcomeCallable UpgradeBrokerVersionCallable(const Model::UpgradeBrokerVersionRequest& request);
 
             };
         }

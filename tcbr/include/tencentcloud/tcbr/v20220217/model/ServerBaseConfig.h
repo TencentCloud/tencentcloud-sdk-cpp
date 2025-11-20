@@ -684,6 +684,27 @@ namespace TencentCloud
                      */
                     bool VolumesConfHasBeenSet() const;
 
+                    /**
+                     * 获取关联镜像密钥
+                     * @return LinkImageRegistry 关联镜像密钥
+                     * 
+                     */
+                    std::string GetLinkImageRegistry() const;
+
+                    /**
+                     * 设置关联镜像密钥
+                     * @param _linkImageRegistry 关联镜像密钥
+                     * 
+                     */
+                    void SetLinkImageRegistry(const std::string& _linkImageRegistry);
+
+                    /**
+                     * 判断参数 LinkImageRegistry 是否已赋值
+                     * @return LinkImageRegistry 是否已赋值
+                     * 
+                     */
+                    bool LinkImageRegistryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -866,6 +887,12 @@ namespace TencentCloud
                      */
                     std::vector<VolumeConf> m_volumesConf;
                     bool m_volumesConfHasBeenSet;
+
+                    /**
+                     * 关联镜像密钥
+                     */
+                    std::string m_linkImageRegistry;
+                    bool m_linkImageRegistryHasBeenSet;
 
                 };
             }

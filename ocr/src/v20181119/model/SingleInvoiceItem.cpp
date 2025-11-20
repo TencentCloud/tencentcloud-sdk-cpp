@@ -57,7 +57,8 @@ SingleInvoiceItem::SingleInvoiceItem() :
     m_shoppingReceiptHasBeenSet(false),
     m_saleInventoryHasBeenSet(false),
     m_motorVehicleSaleInvoiceElectronicHasBeenSet(false),
-    m_usedCarPurchaseInvoiceElectronicHasBeenSet(false)
+    m_usedCarPurchaseInvoiceElectronicHasBeenSet(false),
+    m_electronicTollSummaryHasBeenSet(false)
 {
 }
 
@@ -695,6 +696,23 @@ CoreInternalOutcome SingleInvoiceItem::Deserialize(const rapidjson::Value &value
         m_usedCarPurchaseInvoiceElectronicHasBeenSet = true;
     }
 
+    if (value.HasMember("ElectronicTollSummary") && !value["ElectronicTollSummary"].IsNull())
+    {
+        if (!value["ElectronicTollSummary"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.ElectronicTollSummary` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_electronicTollSummary.Deserialize(value["ElectronicTollSummary"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_electronicTollSummaryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1033,6 +1051,15 @@ void SingleInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_usedCarPurchaseInvoiceElectronic.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_electronicTollSummaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElectronicTollSummary";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_electronicTollSummary.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1628,5 +1655,21 @@ void SingleInvoiceItem::SetUsedCarPurchaseInvoiceElectronic(const UsedCarPurchas
 bool SingleInvoiceItem::UsedCarPurchaseInvoiceElectronicHasBeenSet() const
 {
     return m_usedCarPurchaseInvoiceElectronicHasBeenSet;
+}
+
+ElectronicTollSummary SingleInvoiceItem::GetElectronicTollSummary() const
+{
+    return m_electronicTollSummary;
+}
+
+void SingleInvoiceItem::SetElectronicTollSummary(const ElectronicTollSummary& _electronicTollSummary)
+{
+    m_electronicTollSummary = _electronicTollSummary;
+    m_electronicTollSummaryHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::ElectronicTollSummaryHasBeenSet() const
+{
+    return m_electronicTollSummaryHasBeenSet;
 }
 

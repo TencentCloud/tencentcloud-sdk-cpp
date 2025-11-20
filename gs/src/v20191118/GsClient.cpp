@@ -440,6 +440,56 @@ GsClient::CreateAndroidInstanceADBOutcomeCallable GsClient::CreateAndroidInstanc
     return prom->get_future();
 }
 
+GsClient::CreateAndroidInstanceAcceleratorTokenOutcome GsClient::CreateAndroidInstanceAcceleratorToken(const CreateAndroidInstanceAcceleratorTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidInstanceAcceleratorToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidInstanceAcceleratorTokenResponse rsp = CreateAndroidInstanceAcceleratorTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidInstanceAcceleratorTokenOutcome(rsp);
+        else
+            return CreateAndroidInstanceAcceleratorTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidInstanceAcceleratorTokenOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidInstanceAcceleratorTokenAsync(const CreateAndroidInstanceAcceleratorTokenRequest& request, const CreateAndroidInstanceAcceleratorTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAndroidInstanceAcceleratorTokenRequest&;
+    using Resp = CreateAndroidInstanceAcceleratorTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidInstanceAcceleratorToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GsClient::CreateAndroidInstanceAcceleratorTokenOutcomeCallable GsClient::CreateAndroidInstanceAcceleratorTokenCallable(const CreateAndroidInstanceAcceleratorTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAndroidInstanceAcceleratorTokenOutcome>>();
+    CreateAndroidInstanceAcceleratorTokenAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidInstanceAcceleratorTokenRequest&,
+        CreateAndroidInstanceAcceleratorTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GsClient::CreateAndroidInstanceImageOutcome GsClient::CreateAndroidInstanceImage(const CreateAndroidInstanceImageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAndroidInstanceImage");
@@ -1832,6 +1882,56 @@ GsClient::DisconnectAndroidInstanceOutcomeCallable GsClient::DisconnectAndroidIn
         const GsClient*,
         const DisconnectAndroidInstanceRequest&,
         DisconnectAndroidInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GsClient::DisconnectAndroidInstanceAcceleratorOutcome GsClient::DisconnectAndroidInstanceAccelerator(const DisconnectAndroidInstanceAcceleratorRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisconnectAndroidInstanceAccelerator");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisconnectAndroidInstanceAcceleratorResponse rsp = DisconnectAndroidInstanceAcceleratorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisconnectAndroidInstanceAcceleratorOutcome(rsp);
+        else
+            return DisconnectAndroidInstanceAcceleratorOutcome(o.GetError());
+    }
+    else
+    {
+        return DisconnectAndroidInstanceAcceleratorOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DisconnectAndroidInstanceAcceleratorAsync(const DisconnectAndroidInstanceAcceleratorRequest& request, const DisconnectAndroidInstanceAcceleratorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DisconnectAndroidInstanceAcceleratorRequest&;
+    using Resp = DisconnectAndroidInstanceAcceleratorResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DisconnectAndroidInstanceAccelerator", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GsClient::DisconnectAndroidInstanceAcceleratorOutcomeCallable GsClient::DisconnectAndroidInstanceAcceleratorCallable(const DisconnectAndroidInstanceAcceleratorRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DisconnectAndroidInstanceAcceleratorOutcome>>();
+    DisconnectAndroidInstanceAcceleratorAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DisconnectAndroidInstanceAcceleratorRequest&,
+        DisconnectAndroidInstanceAcceleratorOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

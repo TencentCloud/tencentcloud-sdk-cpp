@@ -49,6 +49,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesResponse.h
   include/tencentcloud/ess/v20201111/model/DetectInfoVideoData.h
+  include/tencentcloud/ess/v20201111/model/ContractReviewWebUrlOption.h
   include/tencentcloud/ess/v20201111/model/ModifySingleSignOnEmployeesResponse.h
   include/tencentcloud/ess/v20201111/model/CreateWebThemeConfigResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h
@@ -434,6 +435,7 @@ set(ess_src
   src/v20201111/model/DeleteSealPoliciesRequest.cpp
   src/v20201111/model/CreateFlowGroupByTemplatesResponse.cpp
   src/v20201111/model/DetectInfoVideoData.cpp
+  src/v20201111/model/ContractReviewWebUrlOption.cpp
   src/v20201111/model/ModifySingleSignOnEmployeesResponse.cpp
   src/v20201111/model/CreateWebThemeConfigResponse.cpp
   src/v20201111/model/DescribeFlowInfoRequest.cpp

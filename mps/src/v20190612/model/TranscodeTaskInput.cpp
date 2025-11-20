@@ -25,6 +25,7 @@ TranscodeTaskInput::TranscodeTaskInput() :
     m_rawParameterHasBeenSet(false),
     m_overrideParameterHasBeenSet(false),
     m_watermarkSetHasBeenSet(false),
+    m_blindWatermarkHasBeenSet(false),
     m_mosaicSetHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false),
@@ -103,6 +104,23 @@ CoreInternalOutcome TranscodeTaskInput::Deserialize(const rapidjson::Value &valu
             m_watermarkSet.push_back(item);
         }
         m_watermarkSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("BlindWatermark") && !value["BlindWatermark"].IsNull())
+    {
+        if (!value["BlindWatermark"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranscodeTaskInput.BlindWatermark` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_blindWatermark.Deserialize(value["BlindWatermark"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_blindWatermarkHasBeenSet = true;
     }
 
     if (value.HasMember("MosaicSet") && !value["MosaicSet"].IsNull())
@@ -264,6 +282,15 @@ void TranscodeTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         }
     }
 
+    if (m_blindWatermarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlindWatermark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_blindWatermark.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_mosaicSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -403,6 +430,22 @@ void TranscodeTaskInput::SetWatermarkSet(const vector<WatermarkInput>& _watermar
 bool TranscodeTaskInput::WatermarkSetHasBeenSet() const
 {
     return m_watermarkSetHasBeenSet;
+}
+
+BlindWatermarkInput TranscodeTaskInput::GetBlindWatermark() const
+{
+    return m_blindWatermark;
+}
+
+void TranscodeTaskInput::SetBlindWatermark(const BlindWatermarkInput& _blindWatermark)
+{
+    m_blindWatermark = _blindWatermark;
+    m_blindWatermarkHasBeenSet = true;
+}
+
+bool TranscodeTaskInput::BlindWatermarkHasBeenSet() const
+{
+    return m_blindWatermarkHasBeenSet;
 }
 
 vector<MosaicInput> TranscodeTaskInput::GetMosaicSet() const

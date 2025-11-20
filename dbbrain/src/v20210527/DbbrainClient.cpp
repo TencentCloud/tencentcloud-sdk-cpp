@@ -2240,6 +2240,56 @@ DbbrainClient::DescribeMetricTopProxiesOutcomeCallable DbbrainClient::DescribeMe
     return prom->get_future();
 }
 
+DbbrainClient::DescribeMongoDBProcessListOutcome DbbrainClient::DescribeMongoDBProcessList(const DescribeMongoDBProcessListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMongoDBProcessList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMongoDBProcessListResponse rsp = DescribeMongoDBProcessListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMongoDBProcessListOutcome(rsp);
+        else
+            return DescribeMongoDBProcessListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMongoDBProcessListOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeMongoDBProcessListAsync(const DescribeMongoDBProcessListRequest& request, const DescribeMongoDBProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMongoDBProcessListRequest&;
+    using Resp = DescribeMongoDBProcessListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMongoDBProcessList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeMongoDBProcessListOutcomeCallable DbbrainClient::DescribeMongoDBProcessListCallable(const DescribeMongoDBProcessListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMongoDBProcessListOutcome>>();
+    DescribeMongoDBProcessListAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeMongoDBProcessListRequest&,
+        DescribeMongoDBProcessListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeMySqlProcessListOutcome DbbrainClient::DescribeMySqlProcessList(const DescribeMySqlProcessListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMySqlProcessList");

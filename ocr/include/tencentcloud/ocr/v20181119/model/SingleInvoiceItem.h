@@ -50,6 +50,7 @@
 #include <tencentcloud/ocr/v20181119/model/OverseasInvoice.h>
 #include <tencentcloud/ocr/v20181119/model/ShoppingReceipt.h>
 #include <tencentcloud/ocr/v20181119/model/SaleInventory.h>
+#include <tencentcloud/ocr/v20181119/model/ElectronicTollSummary.h>
 
 
 namespace TencentCloud
@@ -997,6 +998,31 @@ namespace TencentCloud
                      */
                     bool UsedCarPurchaseInvoiceElectronicHasBeenSet() const;
 
+                    /**
+                     * 获取通行费电子票据汇总单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElectronicTollSummary 通行费电子票据汇总单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ElectronicTollSummary GetElectronicTollSummary() const;
+
+                    /**
+                     * 设置通行费电子票据汇总单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _electronicTollSummary 通行费电子票据汇总单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetElectronicTollSummary(const ElectronicTollSummary& _electronicTollSummary);
+
+                    /**
+                     * 判断参数 ElectronicTollSummary 是否已赋值
+                     * @return ElectronicTollSummary 是否已赋值
+                     * 
+                     */
+                    bool ElectronicTollSummaryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1257,6 +1283,13 @@ namespace TencentCloud
                      */
                     UsedCarPurchaseInvoice m_usedCarPurchaseInvoiceElectronic;
                     bool m_usedCarPurchaseInvoiceElectronicHasBeenSet;
+
+                    /**
+                     * 通行费电子票据汇总单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ElectronicTollSummary m_electronicTollSummary;
+                    bool m_electronicTollSummaryHasBeenSet;
 
                 };
             }

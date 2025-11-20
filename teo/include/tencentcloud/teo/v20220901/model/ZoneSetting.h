@@ -42,6 +42,7 @@
 #include <tencentcloud/teo/v20220901/model/Https.h>
 #include <tencentcloud/teo/v20220901/model/ClientIpCountry.h>
 #include <tencentcloud/teo/v20220901/model/Grpc.h>
+#include <tencentcloud/teo/v20220901/model/NetworkErrorLogging.h>
 #include <tencentcloud/teo/v20220901/model/ImageOptimize.h>
 #include <tencentcloud/teo/v20220901/model/AccelerateMainland.h>
 #include <tencentcloud/teo/v20220901/model/StandardDebug.h>
@@ -569,6 +570,31 @@ namespace TencentCloud
                     bool GrpcHasBeenSet() const;
 
                     /**
+                     * 获取网络错误日志记录配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkErrorLogging 网络错误日志记录配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    NetworkErrorLogging GetNetworkErrorLogging() const;
+
+                    /**
+                     * 设置网络错误日志记录配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _networkErrorLogging 网络错误日志记录配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNetworkErrorLogging(const NetworkErrorLogging& _networkErrorLogging);
+
+                    /**
+                     * 判断参数 NetworkErrorLogging 是否已赋值
+                     * @return NetworkErrorLogging 是否已赋值
+                     * 
+                     */
+                    bool NetworkErrorLoggingHasBeenSet() const;
+
+                    /**
                      * 获取图片优化相关配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageOptimize 图片优化相关配置。
@@ -809,6 +835,13 @@ namespace TencentCloud
                      */
                     Grpc m_grpc;
                     bool m_grpcHasBeenSet;
+
+                    /**
+                     * 网络错误日志记录配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    NetworkErrorLogging m_networkErrorLogging;
+                    bool m_networkErrorLoggingHasBeenSet;
 
                     /**
                      * 图片优化相关配置。

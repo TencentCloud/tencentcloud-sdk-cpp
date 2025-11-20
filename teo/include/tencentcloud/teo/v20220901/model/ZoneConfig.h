@@ -44,6 +44,7 @@
 #include <tencentcloud/teo/v20220901/model/ClientIPHeaderParameters.h>
 #include <tencentcloud/teo/v20220901/model/ClientIPCountryParameters.h>
 #include <tencentcloud/teo/v20220901/model/GrpcParameters.h>
+#include <tencentcloud/teo/v20220901/model/NetworkErrorLoggingParameters.h>
 #include <tencentcloud/teo/v20220901/model/AccelerateMainlandParameters.h>
 #include <tencentcloud/teo/v20220901/model/StandardDebugParameters.h>
 
@@ -569,6 +570,31 @@ namespace TencentCloud
                     bool GrpcHasBeenSet() const;
 
                     /**
+                     * 获取网络错误日志记录配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkErrorLogging 网络错误日志记录配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    NetworkErrorLoggingParameters GetNetworkErrorLogging() const;
+
+                    /**
+                     * 设置网络错误日志记录配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _networkErrorLogging 网络错误日志记录配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNetworkErrorLogging(const NetworkErrorLoggingParameters& _networkErrorLogging);
+
+                    /**
+                     * 判断参数 NetworkErrorLogging 是否已赋值
+                     * @return NetworkErrorLogging 是否已赋值
+                     * 
+                     */
+                    bool NetworkErrorLoggingHasBeenSet() const;
+
+                    /**
                      * 获取中国大陆加速优化配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccelerateMainland 中国大陆加速优化配置。
@@ -759,6 +785,13 @@ namespace TencentCloud
                      */
                     GrpcParameters m_grpc;
                     bool m_grpcHasBeenSet;
+
+                    /**
+                     * 网络错误日志记录配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    NetworkErrorLoggingParameters m_networkErrorLogging;
+                    bool m_networkErrorLoggingHasBeenSet;
 
                     /**
                      * 中国大陆加速优化配置。

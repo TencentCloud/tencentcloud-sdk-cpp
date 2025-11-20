@@ -25,8 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ctem/v20231128/model/CreateCustomerRequest.h>
 #include <tencentcloud/ctem/v20231128/model/CreateCustomerResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateEnterpriseRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateEnterpriseResponse.h>
 #include <tencentcloud/ctem/v20231128/model/CreateJobRecordRequest.h>
 #include <tencentcloud/ctem/v20231128/model/CreateJobRecordResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeApiSecsRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeApiSecsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeAppsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeAppsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeAssetsRequest.h>
@@ -106,9 +110,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCustomerResponse> CreateCustomerOutcome;
                 typedef std::future<CreateCustomerOutcome> CreateCustomerOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::CreateCustomerRequest&, CreateCustomerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEnterpriseResponse> CreateEnterpriseOutcome;
+                typedef std::future<CreateEnterpriseOutcome> CreateEnterpriseOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateEnterpriseRequest&, CreateEnterpriseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnterpriseAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateJobRecordResponse> CreateJobRecordOutcome;
                 typedef std::future<CreateJobRecordOutcome> CreateJobRecordOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::CreateJobRecordRequest&, CreateJobRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApiSecsResponse> DescribeApiSecsOutcome;
+                typedef std::future<DescribeApiSecsOutcome> DescribeApiSecsOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeApiSecsRequest&, DescribeApiSecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiSecsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAppsResponse> DescribeAppsOutcome;
                 typedef std::future<DescribeAppsOutcome> DescribeAppsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeAppsRequest&, DescribeAppsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppsAsyncHandler;
@@ -215,6 +225,15 @@ namespace TencentCloud
                 CreateCustomerOutcomeCallable CreateCustomerCallable(const Model::CreateCustomerRequest& request);
 
                 /**
+                 *添加企业架构数据
+                 * @param req CreateEnterpriseRequest
+                 * @return CreateEnterpriseOutcome
+                 */
+                CreateEnterpriseOutcome CreateEnterprise(const Model::CreateEnterpriseRequest &request);
+                void CreateEnterpriseAsync(const Model::CreateEnterpriseRequest& request, const CreateEnterpriseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEnterpriseOutcomeCallable CreateEnterpriseCallable(const Model::CreateEnterpriseRequest& request);
+
+                /**
                  *启动测绘
                  * @param req CreateJobRecordRequest
                  * @return CreateJobRecordOutcome
@@ -222,6 +241,15 @@ namespace TencentCloud
                 CreateJobRecordOutcome CreateJobRecord(const Model::CreateJobRecordRequest &request);
                 void CreateJobRecordAsync(const Model::CreateJobRecordRequest& request, const CreateJobRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateJobRecordOutcomeCallable CreateJobRecordCallable(const Model::CreateJobRecordRequest& request);
+
+                /**
+                 *查看API安全数据
+                 * @param req DescribeApiSecsRequest
+                 * @return DescribeApiSecsOutcome
+                 */
+                DescribeApiSecsOutcome DescribeApiSecs(const Model::DescribeApiSecsRequest &request);
+                void DescribeApiSecsAsync(const Model::DescribeApiSecsRequest& request, const DescribeApiSecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApiSecsOutcomeCallable DescribeApiSecsCallable(const Model::DescribeApiSecsRequest& request);
 
                 /**
                  *查看移动端资产

@@ -50,7 +50,8 @@ ServerBaseConfig::ServerBaseConfig() :
     m_cmdHasBeenSet(false),
     m_sessionAffinityHasBeenSet(false),
     m_vpcConfHasBeenSet(false),
-    m_volumesConfHasBeenSet(false)
+    m_volumesConfHasBeenSet(false),
+    m_linkImageRegistryHasBeenSet(false)
 {
 }
 
@@ -405,6 +406,16 @@ CoreInternalOutcome ServerBaseConfig::Deserialize(const rapidjson::Value &value)
         m_volumesConfHasBeenSet = true;
     }
 
+    if (value.HasMember("LinkImageRegistry") && !value["LinkImageRegistry"].IsNull())
+    {
+        if (!value["LinkImageRegistry"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseConfig.LinkImageRegistry` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_linkImageRegistry = string(value["LinkImageRegistry"].GetString());
+        m_linkImageRegistryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -687,6 +698,14 @@ void ServerBaseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_linkImageRegistryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LinkImageRegistry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_linkImageRegistry.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1170,5 +1189,21 @@ void ServerBaseConfig::SetVolumesConf(const vector<VolumeConf>& _volumesConf)
 bool ServerBaseConfig::VolumesConfHasBeenSet() const
 {
     return m_volumesConfHasBeenSet;
+}
+
+string ServerBaseConfig::GetLinkImageRegistry() const
+{
+    return m_linkImageRegistry;
+}
+
+void ServerBaseConfig::SetLinkImageRegistry(const string& _linkImageRegistry)
+{
+    m_linkImageRegistry = _linkImageRegistry;
+    m_linkImageRegistryHasBeenSet = true;
+}
+
+bool ServerBaseConfig::LinkImageRegistryHasBeenSet() const
+{
+    return m_linkImageRegistryHasBeenSet;
 }
 

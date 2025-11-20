@@ -218,13 +218,13 @@ namespace TencentCloud
  SMS  - 如果使用这个方式，则会给即将变更的超管发信息。
 注意：
 发送信息的手机号，是用户传递的手机号。
-如果用户同时传递了证件号，手机号会用用户在电子签注册的手机号进行覆盖。
+如果用户同时传递了证件号，手机号会被用户在电子签注册的手机号进行覆盖。
                      * @return NotifyType 通知方式。
  NONE（默认）
  SMS  - 如果使用这个方式，则会给即将变更的超管发信息。
 注意：
 发送信息的手机号，是用户传递的手机号。
-如果用户同时传递了证件号，手机号会用用户在电子签注册的手机号进行覆盖。
+如果用户同时传递了证件号，手机号会被用户在电子签注册的手机号进行覆盖。
                      * 
                      */
                     std::string GetNotifyType() const;
@@ -235,13 +235,13 @@ namespace TencentCloud
  SMS  - 如果使用这个方式，则会给即将变更的超管发信息。
 注意：
 发送信息的手机号，是用户传递的手机号。
-如果用户同时传递了证件号，手机号会用用户在电子签注册的手机号进行覆盖。
+如果用户同时传递了证件号，手机号会被用户在电子签注册的手机号进行覆盖。
                      * @param _notifyType 通知方式。
  NONE（默认）
  SMS  - 如果使用这个方式，则会给即将变更的超管发信息。
 注意：
 发送信息的手机号，是用户传递的手机号。
-如果用户同时传递了证件号，手机号会用用户在电子签注册的手机号进行覆盖。
+如果用户同时传递了证件号，手机号会被用户在电子签注册的手机号进行覆盖。
                      * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
@@ -254,15 +254,31 @@ namespace TencentCloud
                     bool NotifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取要跳转的链接类型<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li><li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式,  可以在页面展示适合此类型</li></ul>
-                     * @return Endpoint 要跳转的链接类型<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li><li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式,  可以在页面展示适合此类型</li></ul>
+                     * 获取要跳转的链接类型
+<ul>
+<li> **HTTP**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型 ，此时返回长链 （默认类型）。</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型，此时返回短链。</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path，APP或者小程序跳转适合此类型。</li>
+<li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式，可以在页面展示适合此类型。</li>
+</ul>
+                     * @return Endpoint 要跳转的链接类型
+<ul>
+<li> **HTTP**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型 ，此时返回长链 （默认类型）。</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型，此时返回短链。</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path，APP或者小程序跳转适合此类型。</li>
+<li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式，可以在页面展示适合此类型。</li>
+</ul>
                      * 
                      */
                     std::string GetEndpoint() const;
 
                     /**
-                     * 设置要跳转的链接类型<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li><li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式,  可以在页面展示适合此类型</li></ul>
-                     * @param _endpoint 要跳转的链接类型<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li><li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式,  可以在页面展示适合此类型</li></ul>
+                     * 设置要跳转的链接类型
+<ul>
+<li> **HTTP**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型 ，此时返回长链 （默认类型）。</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型，此时返回短链。</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path，APP或者小程序跳转适合此类型。</li>
+<li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式，可以在页面展示适合此类型。</li>
+</ul>
+                     * @param _endpoint 要跳转的链接类型
+<ul>
+<li> **HTTP**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型 ，此时返回长链 （默认类型）。</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型，此时返回短链。</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path，APP或者小程序跳转适合此类型。</li>
+<li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式，可以在页面展示适合此类型。</li>
+</ul>
                      * 
                      */
                     void SetEndpoint(const std::string& _endpoint);
@@ -328,13 +344,17 @@ namespace TencentCloud
  SMS  - 如果使用这个方式，则会给即将变更的超管发信息。
 注意：
 发送信息的手机号，是用户传递的手机号。
-如果用户同时传递了证件号，手机号会用用户在电子签注册的手机号进行覆盖。
+如果用户同时传递了证件号，手机号会被用户在电子签注册的手机号进行覆盖。
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;
 
                     /**
-                     * 要跳转的链接类型<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li><li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式,  可以在页面展示适合此类型</li></ul>
+                     * 要跳转的链接类型
+<ul>
+<li> **HTTP**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型 ，此时返回长链 （默认类型）。</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型，此时返回短链。</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path，APP或者小程序跳转适合此类型。</li>
+<li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式，可以在页面展示适合此类型。</li>
+</ul>
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;

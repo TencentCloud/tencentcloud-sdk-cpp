@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool DefaultVoiceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取复刻音色ID，当不为空时，DefaultVoiceType为200000000
+                     * @return FastVoiceType 复刻音色ID，当不为空时，DefaultVoiceType为200000000
+                     * 
+                     */
+                    std::string GetFastVoiceType() const;
+
+                    /**
+                     * 设置复刻音色ID，当不为空时，DefaultVoiceType为200000000
+                     * @param _fastVoiceType 复刻音色ID，当不为空时，DefaultVoiceType为200000000
+                     * 
+                     */
+                    void SetFastVoiceType(const std::string& _fastVoiceType);
+
+                    /**
+                     * 判断参数 FastVoiceType 是否已赋值
+                     * @return FastVoiceType 是否已赋值
+                     * 
+                     */
+                    bool FastVoiceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     int64_t m_defaultVoiceType;
                     bool m_defaultVoiceTypeHasBeenSet;
+
+                    /**
+                     * 复刻音色ID，当不为空时，DefaultVoiceType为200000000
+                     */
+                    std::string m_fastVoiceType;
+                    bool m_fastVoiceTypeHasBeenSet;
 
                 };
             }

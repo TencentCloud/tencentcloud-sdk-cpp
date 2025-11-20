@@ -27,6 +27,7 @@
 #include <tencentcloud/mps/v20190612/model/RawTranscodeParameter.h>
 #include <tencentcloud/mps/v20190612/model/OverrideTranscodeParameter.h>
 #include <tencentcloud/mps/v20190612/model/WatermarkInput.h>
+#include <tencentcloud/mps/v20190612/model/BlindWatermarkInput.h>
 #include <tencentcloud/mps/v20190612/model/MosaicInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/NumberFormat.h>
@@ -152,6 +153,31 @@ namespace TencentCloud
                      * 
                      */
                     bool WatermarkSetHasBeenSet() const;
+
+                    /**
+                     * 获取数字水印参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BlindWatermark 数字水印参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    BlindWatermarkInput GetBlindWatermark() const;
+
+                    /**
+                     * 设置数字水印参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _blindWatermark 数字水印参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBlindWatermark(const BlindWatermarkInput& _blindWatermark);
+
+                    /**
+                     * 判断参数 BlindWatermark 是否已赋值
+                     * @return BlindWatermark 是否已赋值
+                     * 
+                     */
+                    bool BlindWatermarkHasBeenSet() const;
 
                     /**
                      * 获取马赛克列表，最大可支持 10 张。
@@ -418,6 +444,13 @@ namespace TencentCloud
                      */
                     std::vector<WatermarkInput> m_watermarkSet;
                     bool m_watermarkSetHasBeenSet;
+
+                    /**
+                     * 数字水印参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlindWatermarkInput m_blindWatermark;
+                    bool m_blindWatermarkHasBeenSet;
 
                     /**
                      * 马赛克列表，最大可支持 10 张。

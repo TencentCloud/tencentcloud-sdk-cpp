@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/WatermarkInput.h>
+#include <tencentcloud/mps/v20190612/model/BlindWatermarkInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskOutputStorage.h>
 #include <tencentcloud/mps/v20190612/model/AddOnSubtitle.h>
 #include <tencentcloud/mps/v20190612/model/DrmInfo.h>
@@ -92,6 +93,31 @@ namespace TencentCloud
                      * 
                      */
                     bool WatermarkSetHasBeenSet() const;
+
+                    /**
+                     * 获取数字水印参数	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BlindWatermark 数字水印参数	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    BlindWatermarkInput GetBlindWatermark() const;
+
+                    /**
+                     * 设置数字水印参数	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _blindWatermark 数字水印参数	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBlindWatermark(const BlindWatermarkInput& _blindWatermark);
+
+                    /**
+                     * 判断参数 BlindWatermark 是否已赋值
+                     * @return BlindWatermark 是否已赋值
+                     * 
+                     */
+                    bool BlindWatermarkHasBeenSet() const;
 
                     /**
                      * 获取转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。
@@ -372,6 +398,13 @@ PureAudio：纯音频类型
                      */
                     std::vector<WatermarkInput> m_watermarkSet;
                     bool m_watermarkSetHasBeenSet;
+
+                    /**
+                     * 数字水印参数	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlindWatermarkInput m_blindWatermark;
+                    bool m_blindWatermarkHasBeenSet;
 
                     /**
                      * 转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。

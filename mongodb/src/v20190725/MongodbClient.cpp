@@ -1490,6 +1490,56 @@ MongodbClient::DescribeInstanceParamsOutcomeCallable MongodbClient::DescribeInst
     return prom->get_future();
 }
 
+MongodbClient::DescribeInstanceSSLOutcome MongodbClient::DescribeInstanceSSL(const DescribeInstanceSSLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceSSL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceSSLResponse rsp = DescribeInstanceSSLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceSSLOutcome(rsp);
+        else
+            return DescribeInstanceSSLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceSSLOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeInstanceSSLAsync(const DescribeInstanceSSLRequest& request, const DescribeInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstanceSSLRequest&;
+    using Resp = DescribeInstanceSSLResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceSSL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::DescribeInstanceSSLOutcomeCallable MongodbClient::DescribeInstanceSSLCallable(const DescribeInstanceSSLRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstanceSSLOutcome>>();
+    DescribeInstanceSSLAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const DescribeInstanceSSLRequest&,
+        DescribeInstanceSSLOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MongodbClient::DescribeLogDownloadTasksOutcome MongodbClient::DescribeLogDownloadTasks(const DescribeLogDownloadTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLogDownloadTasks");
@@ -2182,6 +2232,56 @@ MongodbClient::InquirePriceRenewDBInstancesOutcomeCallable MongodbClient::Inquir
         const MongodbClient*,
         const InquirePriceRenewDBInstancesRequest&,
         InquirePriceRenewDBInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MongodbClient::InstanceEnableSSLOutcome MongodbClient::InstanceEnableSSL(const InstanceEnableSSLRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstanceEnableSSL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstanceEnableSSLResponse rsp = InstanceEnableSSLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstanceEnableSSLOutcome(rsp);
+        else
+            return InstanceEnableSSLOutcome(o.GetError());
+    }
+    else
+    {
+        return InstanceEnableSSLOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::InstanceEnableSSLAsync(const InstanceEnableSSLRequest& request, const InstanceEnableSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InstanceEnableSSLRequest&;
+    using Resp = InstanceEnableSSLResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InstanceEnableSSL", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MongodbClient::InstanceEnableSSLOutcomeCallable MongodbClient::InstanceEnableSSLCallable(const InstanceEnableSSLRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InstanceEnableSSLOutcome>>();
+    InstanceEnableSSLAsync(
+    request,
+    [prom](
+        const MongodbClient*,
+        const InstanceEnableSSLRequest&,
+        InstanceEnableSSLOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

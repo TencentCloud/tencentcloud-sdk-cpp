@@ -158,6 +158,48 @@ namespace TencentCloud
                     bool OutputPathHasBeenSet() const;
 
                     /**
+                     * 获取图片处理模板唯一标识。
+                     * @return Definition 图片处理模板唯一标识。
+                     * 
+                     */
+                    uint64_t GetDefinition() const;
+
+                    /**
+                     * 设置图片处理模板唯一标识。
+                     * @param _definition 图片处理模板唯一标识。
+                     * 
+                     */
+                    void SetDefinition(const uint64_t& _definition);
+
+                    /**
+                     * 判断参数 Definition 是否已赋值
+                     * @return Definition 是否已赋值
+                     * 
+                     */
+                    bool DefinitionHasBeenSet() const;
+
+                    /**
+                     * 获取资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
+                     * @return ResourceId 资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
+                     * @param _resourceId 资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
+                    /**
                      * 获取图片处理参数。
                      * @return ImageTask 图片处理参数。
                      * 
@@ -210,6 +252,18 @@ namespace TencentCloud
                      */
                     std::string m_outputPath;
                     bool m_outputPathHasBeenSet;
+
+                    /**
+                     * 图片处理模板唯一标识。
+                     */
+                    uint64_t m_definition;
+                    bool m_definitionHasBeenSet;
+
+                    /**
+                     * 资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                     /**
                      * 图片处理参数。

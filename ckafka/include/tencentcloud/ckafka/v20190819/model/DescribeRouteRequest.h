@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool RouteIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否显示主路由，true时会在返回原路由列表的基础上,再额外展示实例创建时的主路由信息(且不被InternalFlag/UsedFor等参数过滤影响)	
+                     * @return MainRouteFlag 是否显示主路由，true时会在返回原路由列表的基础上,再额外展示实例创建时的主路由信息(且不被InternalFlag/UsedFor等参数过滤影响)	
+                     * 
+                     */
+                    bool GetMainRouteFlag() const;
+
+                    /**
+                     * 设置是否显示主路由，true时会在返回原路由列表的基础上,再额外展示实例创建时的主路由信息(且不被InternalFlag/UsedFor等参数过滤影响)	
+                     * @param _mainRouteFlag 是否显示主路由，true时会在返回原路由列表的基础上,再额外展示实例创建时的主路由信息(且不被InternalFlag/UsedFor等参数过滤影响)	
+                     * 
+                     */
+                    void SetMainRouteFlag(const bool& _mainRouteFlag);
+
+                    /**
+                     * 判断参数 MainRouteFlag 是否已赋值
+                     * @return MainRouteFlag 是否已赋值
+                     * 
+                     */
+                    bool MainRouteFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     int64_t m_routeId;
                     bool m_routeIdHasBeenSet;
+
+                    /**
+                     * 是否显示主路由，true时会在返回原路由列表的基础上,再额外展示实例创建时的主路由信息(且不被InternalFlag/UsedFor等参数过滤影响)	
+                     */
+                    bool m_mainRouteFlag;
+                    bool m_mainRouteFlagHasBeenSet;
 
                 };
             }

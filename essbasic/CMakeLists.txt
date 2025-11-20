@@ -195,6 +195,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/FlowDetailInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreatePersonAuthCertificateImageRequest.h
   include/tencentcloud/essbasic/v20210526/model/FlowForwardInfo.h
+  include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/SyncFailReason.h
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportRequest.h
@@ -305,7 +306,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateEmbedWebUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/CcInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeFlowComponentsRequest.h
-  include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
+  include/tencentcloud/essbasic/v20210526/model/CreateResultPageConfig.h
   include/tencentcloud/essbasic/v20201222/model/DescribeFaceIdResultsRequest.h
   include/tencentcloud/essbasic/v20201222/model/CreateSubOrganizationRequest.h
   include/tencentcloud/essbasic/v20201222/model/Component.h
@@ -612,6 +613,7 @@ set(essbasic_src
   src/v20210526/model/FlowDetailInfo.cpp
   src/v20210526/model/CreatePersonAuthCertificateImageRequest.cpp
   src/v20210526/model/FlowForwardInfo.cpp
+  src/v20210526/model/PrepareFlowsRequest.cpp
   src/v20210526/model/CreateFlowsByTemplatesResponse.cpp
   src/v20210526/model/SyncFailReason.cpp
   src/v20210526/model/DescribeChannelFlowEvidenceReportRequest.cpp
@@ -722,7 +724,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateEmbedWebUrlRequest.cpp
   src/v20210526/model/CcInfo.cpp
   src/v20210526/model/ChannelDescribeFlowComponentsRequest.cpp
-  src/v20210526/model/PrepareFlowsRequest.cpp
+  src/v20210526/model/CreateResultPageConfig.cpp
   src/v20201222/model/DescribeFaceIdResultsRequest.cpp
   src/v20201222/model/CreateSubOrganizationRequest.cpp
   src/v20201222/model/Component.cpp

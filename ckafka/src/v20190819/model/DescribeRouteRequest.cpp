@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeRouteRequest::DescribeRouteRequest() :
     m_instanceIdHasBeenSet(false),
-    m_routeIdHasBeenSet(false)
+    m_routeIdHasBeenSet(false),
+    m_mainRouteFlagHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeRouteRequest::ToJsonString() const
         string key = "RouteId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_routeId, allocator);
+    }
+
+    if (m_mainRouteFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MainRouteFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mainRouteFlag, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeRouteRequest::SetRouteId(const int64_t& _routeId)
 bool DescribeRouteRequest::RouteIdHasBeenSet() const
 {
     return m_routeIdHasBeenSet;
+}
+
+bool DescribeRouteRequest::GetMainRouteFlag() const
+{
+    return m_mainRouteFlag;
+}
+
+void DescribeRouteRequest::SetMainRouteFlag(const bool& _mainRouteFlag)
+{
+    m_mainRouteFlag = _mainRouteFlag;
+    m_mainRouteFlagHasBeenSet = true;
+}
+
+bool DescribeRouteRequest::MainRouteFlagHasBeenSet() const
+{
+    return m_mainRouteFlagHasBeenSet;
 }
 
 

@@ -56,6 +56,8 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_remainingPartitionsHasBeenSet(false),
     m_remainingTopicsHasBeenSet(false),
     m_dynamicDiskConfigHasBeenSet(false),
+    m_systemMaintenanceTimeHasBeenSet(false),
+    m_maxMessageByteHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_elasticBandwidthSwitchHasBeenSet(false),
     m_elasticBandwidthOpenStatusHasBeenSet(false),
@@ -470,6 +472,26 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_dynamicDiskConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SystemMaintenanceTime") && !value["SystemMaintenanceTime"].IsNull())
+    {
+        if (!value["SystemMaintenanceTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.SystemMaintenanceTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_systemMaintenanceTime = string(value["SystemMaintenanceTime"].GetString());
+        m_systemMaintenanceTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxMessageByte") && !value["MaxMessageByte"].IsNull())
+    {
+        if (!value["MaxMessageByte"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.MaxMessageByte` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxMessageByte = value["MaxMessageByte"].GetUint64();
+        m_maxMessageByteHasBeenSet = true;
+    }
+
     if (value.HasMember("InstanceChargeType") && !value["InstanceChargeType"].IsNull())
     {
         if (!value["InstanceChargeType"].IsString())
@@ -872,6 +894,22 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dynamicDiskConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_systemMaintenanceTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemMaintenanceTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_systemMaintenanceTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxMessageByteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxMessageByte";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxMessageByte, allocator);
     }
 
     if (m_instanceChargeTypeHasBeenSet)
@@ -1507,6 +1545,38 @@ void InstanceAttributesResponse::SetDynamicDiskConfig(const DynamicDiskConfig& _
 bool InstanceAttributesResponse::DynamicDiskConfigHasBeenSet() const
 {
     return m_dynamicDiskConfigHasBeenSet;
+}
+
+string InstanceAttributesResponse::GetSystemMaintenanceTime() const
+{
+    return m_systemMaintenanceTime;
+}
+
+void InstanceAttributesResponse::SetSystemMaintenanceTime(const string& _systemMaintenanceTime)
+{
+    m_systemMaintenanceTime = _systemMaintenanceTime;
+    m_systemMaintenanceTimeHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::SystemMaintenanceTimeHasBeenSet() const
+{
+    return m_systemMaintenanceTimeHasBeenSet;
+}
+
+uint64_t InstanceAttributesResponse::GetMaxMessageByte() const
+{
+    return m_maxMessageByte;
+}
+
+void InstanceAttributesResponse::SetMaxMessageByte(const uint64_t& _maxMessageByte)
+{
+    m_maxMessageByte = _maxMessageByte;
+    m_maxMessageByteHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::MaxMessageByteHasBeenSet() const
+{
+    return m_maxMessageByteHasBeenSet;
 }
 
 string InstanceAttributesResponse::GetInstanceChargeType() const

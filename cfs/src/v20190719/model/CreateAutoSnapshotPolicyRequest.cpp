@@ -28,7 +28,8 @@ CreateAutoSnapshotPolicyRequest::CreateAutoSnapshotPolicyRequest() :
     m_dayOfWeekHasBeenSet(false),
     m_aliveDaysHasBeenSet(false),
     m_dayOfMonthHasBeenSet(false),
-    m_intervalDaysHasBeenSet(false)
+    m_intervalDaysHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,21 @@ string CreateAutoSnapshotPolicyRequest::ToJsonString() const
         string key = "IntervalDays";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_intervalDays, allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +205,22 @@ void CreateAutoSnapshotPolicyRequest::SetIntervalDays(const uint64_t& _intervalD
 bool CreateAutoSnapshotPolicyRequest::IntervalDaysHasBeenSet() const
 {
     return m_intervalDaysHasBeenSet;
+}
+
+vector<TagInfo> CreateAutoSnapshotPolicyRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateAutoSnapshotPolicyRequest::SetResourceTags(const vector<TagInfo>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateAutoSnapshotPolicyRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 

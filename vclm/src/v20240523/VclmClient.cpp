@@ -90,6 +90,56 @@ VclmClient::CheckAnimateImageJobOutcomeCallable VclmClient::CheckAnimateImageJob
     return prom->get_future();
 }
 
+VclmClient::DescribeHumanActorJobOutcome VclmClient::DescribeHumanActorJob(const DescribeHumanActorJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHumanActorJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHumanActorJobResponse rsp = DescribeHumanActorJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHumanActorJobOutcome(rsp);
+        else
+            return DescribeHumanActorJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHumanActorJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeHumanActorJobAsync(const DescribeHumanActorJobRequest& request, const DescribeHumanActorJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeHumanActorJobRequest&;
+    using Resp = DescribeHumanActorJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeHumanActorJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::DescribeHumanActorJobOutcomeCallable VclmClient::DescribeHumanActorJobCallable(const DescribeHumanActorJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeHumanActorJobOutcome>>();
+    DescribeHumanActorJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const DescribeHumanActorJobRequest&,
+        DescribeHumanActorJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VclmClient::DescribeImageAnimateJobOutcome VclmClient::DescribeImageAnimateJob(const DescribeImageAnimateJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImageAnimateJob");
@@ -332,6 +382,56 @@ VclmClient::DescribeVideoStylizationJobOutcomeCallable VclmClient::DescribeVideo
         const VclmClient*,
         const DescribeVideoStylizationJobRequest&,
         DescribeVideoStylizationJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VclmClient::SubmitHumanActorJobOutcome VclmClient::SubmitHumanActorJob(const SubmitHumanActorJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitHumanActorJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitHumanActorJobResponse rsp = SubmitHumanActorJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitHumanActorJobOutcome(rsp);
+        else
+            return SubmitHumanActorJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitHumanActorJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitHumanActorJobAsync(const SubmitHumanActorJobRequest& request, const SubmitHumanActorJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitHumanActorJobRequest&;
+    using Resp = SubmitHumanActorJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitHumanActorJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VclmClient::SubmitHumanActorJobOutcomeCallable VclmClient::SubmitHumanActorJobCallable(const SubmitHumanActorJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitHumanActorJobOutcome>>();
+    SubmitHumanActorJobAsync(
+    request,
+    [prom](
+        const VclmClient*,
+        const SubmitHumanActorJobRequest&,
+        SubmitHumanActorJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -41,6 +41,7 @@ ZoneSetting::ZoneSetting() :
     m_httpsHasBeenSet(false),
     m_clientIpCountryHasBeenSet(false),
     m_grpcHasBeenSet(false),
+    m_networkErrorLoggingHasBeenSet(false),
     m_imageOptimizeHasBeenSet(false),
     m_accelerateMainlandHasBeenSet(false),
     m_standardDebugHasBeenSet(false),
@@ -379,6 +380,23 @@ CoreInternalOutcome ZoneSetting::Deserialize(const rapidjson::Value &value)
         m_grpcHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkErrorLogging") && !value["NetworkErrorLogging"].IsNull())
+    {
+        if (!value["NetworkErrorLogging"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneSetting.NetworkErrorLogging` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_networkErrorLogging.Deserialize(value["NetworkErrorLogging"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_networkErrorLoggingHasBeenSet = true;
+    }
+
     if (value.HasMember("ImageOptimize") && !value["ImageOptimize"].IsNull())
     {
         if (!value["ImageOptimize"].IsObject())
@@ -630,6 +648,15 @@ void ZoneSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_grpc.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_networkErrorLoggingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkErrorLogging";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_networkErrorLogging.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_imageOptimizeHasBeenSet)
@@ -989,6 +1016,22 @@ void ZoneSetting::SetGrpc(const Grpc& _grpc)
 bool ZoneSetting::GrpcHasBeenSet() const
 {
     return m_grpcHasBeenSet;
+}
+
+NetworkErrorLogging ZoneSetting::GetNetworkErrorLogging() const
+{
+    return m_networkErrorLogging;
+}
+
+void ZoneSetting::SetNetworkErrorLogging(const NetworkErrorLogging& _networkErrorLogging)
+{
+    m_networkErrorLogging = _networkErrorLogging;
+    m_networkErrorLoggingHasBeenSet = true;
+}
+
+bool ZoneSetting::NetworkErrorLoggingHasBeenSet() const
+{
+    return m_networkErrorLoggingHasBeenSet;
 }
 
 ImageOptimize ZoneSetting::GetImageOptimize() const

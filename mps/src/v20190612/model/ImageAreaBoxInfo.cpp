@@ -23,7 +23,8 @@ using namespace std;
 ImageAreaBoxInfo::ImageAreaBoxInfo() :
     m_typeHasBeenSet(false),
     m_areaCoordSetHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false)
+    m_boundingBoxHasBeenSet(false),
+    m_boundingBoxUnitTypeHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,16 @@ CoreInternalOutcome ImageAreaBoxInfo::Deserialize(const rapidjson::Value &value)
         m_boundingBoxHasBeenSet = true;
     }
 
+    if (value.HasMember("BoundingBoxUnitType") && !value["BoundingBoxUnitType"].IsNull())
+    {
+        if (!value["BoundingBoxUnitType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAreaBoxInfo.BoundingBoxUnitType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_boundingBoxUnitType = value["BoundingBoxUnitType"].GetUint64();
+        m_boundingBoxUnitTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ void ImageAreaBoxInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
+    }
+
+    if (m_boundingBoxUnitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BoundingBoxUnitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_boundingBoxUnitType, allocator);
     }
 
 }
@@ -158,5 +177,21 @@ void ImageAreaBoxInfo::SetBoundingBox(const vector<double>& _boundingBox)
 bool ImageAreaBoxInfo::BoundingBoxHasBeenSet() const
 {
     return m_boundingBoxHasBeenSet;
+}
+
+uint64_t ImageAreaBoxInfo::GetBoundingBoxUnitType() const
+{
+    return m_boundingBoxUnitType;
+}
+
+void ImageAreaBoxInfo::SetBoundingBoxUnitType(const uint64_t& _boundingBoxUnitType)
+{
+    m_boundingBoxUnitType = _boundingBoxUnitType;
+    m_boundingBoxUnitTypeHasBeenSet = true;
+}
+
+bool ImageAreaBoxInfo::BoundingBoxUnitTypeHasBeenSet() const
+{
+    return m_boundingBoxUnitTypeHasBeenSet;
 }
 

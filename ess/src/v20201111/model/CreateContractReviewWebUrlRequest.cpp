@@ -25,7 +25,8 @@ using namespace std;
 CreateContractReviewWebUrlRequest::CreateContractReviewWebUrlRequest() :
     m_operatorHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_optionHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,15 @@ string CreateContractReviewWebUrlRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_optionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Option";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_option.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -115,6 +125,22 @@ void CreateContractReviewWebUrlRequest::SetUserData(const string& _userData)
 bool CreateContractReviewWebUrlRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+ContractReviewWebUrlOption CreateContractReviewWebUrlRequest::GetOption() const
+{
+    return m_option;
+}
+
+void CreateContractReviewWebUrlRequest::SetOption(const ContractReviewWebUrlOption& _option)
+{
+    m_option = _option;
+    m_optionHasBeenSet = true;
+}
+
+bool CreateContractReviewWebUrlRequest::OptionHasBeenSet() const
+{
+    return m_optionHasBeenSet;
 }
 
 

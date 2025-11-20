@@ -1890,6 +1890,56 @@ CkafkaClient::DescribeAclRuleOutcomeCallable CkafkaClient::DescribeAclRuleCallab
     return prom->get_future();
 }
 
+CkafkaClient::DescribeCkafkaVersionOutcome CkafkaClient::DescribeCkafkaVersion(const DescribeCkafkaVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCkafkaVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCkafkaVersionResponse rsp = DescribeCkafkaVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCkafkaVersionOutcome(rsp);
+        else
+            return DescribeCkafkaVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCkafkaVersionOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeCkafkaVersionAsync(const DescribeCkafkaVersionRequest& request, const DescribeCkafkaVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCkafkaVersionRequest&;
+    using Resp = DescribeCkafkaVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCkafkaVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::DescribeCkafkaVersionOutcomeCallable CkafkaClient::DescribeCkafkaVersionCallable(const DescribeCkafkaVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCkafkaVersionOutcome>>();
+    DescribeCkafkaVersionAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const DescribeCkafkaVersionRequest&,
+        DescribeCkafkaVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CkafkaClient::DescribeCkafkaZoneOutcome CkafkaClient::DescribeCkafkaZone(const DescribeCkafkaZoneRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCkafkaZone");
@@ -4482,6 +4532,56 @@ CkafkaClient::SendMessageOutcomeCallable CkafkaClient::SendMessageCallable(const
         const CkafkaClient*,
         const SendMessageRequest&,
         SendMessageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CkafkaClient::UpgradeBrokerVersionOutcome CkafkaClient::UpgradeBrokerVersion(const UpgradeBrokerVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeBrokerVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeBrokerVersionResponse rsp = UpgradeBrokerVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeBrokerVersionOutcome(rsp);
+        else
+            return UpgradeBrokerVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeBrokerVersionOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::UpgradeBrokerVersionAsync(const UpgradeBrokerVersionRequest& request, const UpgradeBrokerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpgradeBrokerVersionRequest&;
+    using Resp = UpgradeBrokerVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpgradeBrokerVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CkafkaClient::UpgradeBrokerVersionOutcomeCallable CkafkaClient::UpgradeBrokerVersionCallable(const UpgradeBrokerVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpgradeBrokerVersionOutcome>>();
+    UpgradeBrokerVersionAsync(
+    request,
+    [prom](
+        const CkafkaClient*,
+        const UpgradeBrokerVersionRequest&,
+        UpgradeBrokerVersionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

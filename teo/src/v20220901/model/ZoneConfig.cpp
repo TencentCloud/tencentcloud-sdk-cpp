@@ -41,6 +41,7 @@ ZoneConfig::ZoneConfig() :
     m_clientIPHeaderHasBeenSet(false),
     m_clientIPCountryHasBeenSet(false),
     m_grpcHasBeenSet(false),
+    m_networkErrorLoggingHasBeenSet(false),
     m_accelerateMainlandHasBeenSet(false),
     m_standardDebugHasBeenSet(false)
 {
@@ -391,6 +392,23 @@ CoreInternalOutcome ZoneConfig::Deserialize(const rapidjson::Value &value)
         m_grpcHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkErrorLogging") && !value["NetworkErrorLogging"].IsNull())
+    {
+        if (!value["NetworkErrorLogging"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneConfig.NetworkErrorLogging` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_networkErrorLogging.Deserialize(value["NetworkErrorLogging"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_networkErrorLoggingHasBeenSet = true;
+    }
+
     if (value.HasMember("AccelerateMainland") && !value["AccelerateMainland"].IsNull())
     {
         if (!value["AccelerateMainland"].IsObject())
@@ -610,6 +628,15 @@ void ZoneConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_grpc.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_networkErrorLoggingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkErrorLogging";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_networkErrorLogging.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_accelerateMainlandHasBeenSet)
@@ -951,6 +978,22 @@ void ZoneConfig::SetGrpc(const GrpcParameters& _grpc)
 bool ZoneConfig::GrpcHasBeenSet() const
 {
     return m_grpcHasBeenSet;
+}
+
+NetworkErrorLoggingParameters ZoneConfig::GetNetworkErrorLogging() const
+{
+    return m_networkErrorLogging;
+}
+
+void ZoneConfig::SetNetworkErrorLogging(const NetworkErrorLoggingParameters& _networkErrorLogging)
+{
+    m_networkErrorLogging = _networkErrorLogging;
+    m_networkErrorLoggingHasBeenSet = true;
+}
+
+bool ZoneConfig::NetworkErrorLoggingHasBeenSet() const
+{
+    return m_networkErrorLoggingHasBeenSet;
 }
 
 AccelerateMainlandParameters ZoneConfig::GetAccelerateMainland() const

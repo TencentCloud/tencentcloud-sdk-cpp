@@ -23,7 +23,8 @@ using namespace std;
 TalkBasicConfigInfo::TalkBasicConfigInfo() :
     m_systemPromptHasBeenSet(false),
     m_greetingMessageHasBeenSet(false),
-    m_defaultVoiceTypeHasBeenSet(false)
+    m_defaultVoiceTypeHasBeenSet(false),
+    m_fastVoiceTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome TalkBasicConfigInfo::Deserialize(const rapidjson::Value &val
         m_defaultVoiceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("FastVoiceType") && !value["FastVoiceType"].IsNull())
+    {
+        if (!value["FastVoiceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TalkBasicConfigInfo.FastVoiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fastVoiceType = string(value["FastVoiceType"].GetString());
+        m_fastVoiceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void TalkBasicConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "DefaultVoiceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultVoiceType, allocator);
+    }
+
+    if (m_fastVoiceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FastVoiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fastVoiceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void TalkBasicConfigInfo::SetDefaultVoiceType(const int64_t& _defaultVoiceType)
 bool TalkBasicConfigInfo::DefaultVoiceTypeHasBeenSet() const
 {
     return m_defaultVoiceTypeHasBeenSet;
+}
+
+string TalkBasicConfigInfo::GetFastVoiceType() const
+{
+    return m_fastVoiceType;
+}
+
+void TalkBasicConfigInfo::SetFastVoiceType(const string& _fastVoiceType)
+{
+    m_fastVoiceType = _fastVoiceType;
+    m_fastVoiceTypeHasBeenSet = true;
+}
+
+bool TalkBasicConfigInfo::FastVoiceTypeHasBeenSet() const
+{
+    return m_fastVoiceTypeHasBeenSet;
 }
 

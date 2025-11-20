@@ -28,7 +28,8 @@ SubmitTemplateToVideoJobRequest::SubmitTemplateToVideoJobRequest() :
     m_logoAddHasBeenSet(false),
     m_logoParamHasBeenSet(false),
     m_resolutionHasBeenSet(false),
-    m_bGMHasBeenSet(false)
+    m_bGMHasBeenSet(false),
+    m_extraParamHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,15 @@ string SubmitTemplateToVideoJobRequest::ToJsonString() const
         string key = "BGM";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bGM, allocator);
+    }
+
+    if (m_extraParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extraParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -197,6 +207,22 @@ void SubmitTemplateToVideoJobRequest::SetBGM(const bool& _bGM)
 bool SubmitTemplateToVideoJobRequest::BGMHasBeenSet() const
 {
     return m_bGMHasBeenSet;
+}
+
+ExtraParam SubmitTemplateToVideoJobRequest::GetExtraParam() const
+{
+    return m_extraParam;
+}
+
+void SubmitTemplateToVideoJobRequest::SetExtraParam(const ExtraParam& _extraParam)
+{
+    m_extraParam = _extraParam;
+    m_extraParamHasBeenSet = true;
+}
+
+bool SubmitTemplateToVideoJobRequest::ExtraParamHasBeenSet() const
+{
+    return m_extraParamHasBeenSet;
 }
 
 

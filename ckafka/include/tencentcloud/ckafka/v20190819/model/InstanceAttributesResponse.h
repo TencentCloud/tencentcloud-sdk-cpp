@@ -803,6 +803,48 @@ serverless  :serverless版
                     bool DynamicDiskConfigHasBeenSet() const;
 
                     /**
+                     * 获取系统维护时间
+                     * @return SystemMaintenanceTime 系统维护时间
+                     * 
+                     */
+                    std::string GetSystemMaintenanceTime() const;
+
+                    /**
+                     * 设置系统维护时间
+                     * @param _systemMaintenanceTime 系统维护时间
+                     * 
+                     */
+                    void SetSystemMaintenanceTime(const std::string& _systemMaintenanceTime);
+
+                    /**
+                     * 判断参数 SystemMaintenanceTime 是否已赋值
+                     * @return SystemMaintenanceTime 是否已赋值
+                     * 
+                     */
+                    bool SystemMaintenanceTimeHasBeenSet() const;
+
+                    /**
+                     * 获取实例级别消息最大大小
+                     * @return MaxMessageByte 实例级别消息最大大小
+                     * 
+                     */
+                    uint64_t GetMaxMessageByte() const;
+
+                    /**
+                     * 设置实例级别消息最大大小
+                     * @param _maxMessageByte 实例级别消息最大大小
+                     * 
+                     */
+                    void SetMaxMessageByte(const uint64_t& _maxMessageByte);
+
+                    /**
+                     * 判断参数 MaxMessageByte 是否已赋值
+                     * @return MaxMessageByte 是否已赋值
+                     * 
+                     */
+                    bool MaxMessageByteHasBeenSet() const;
+
+                    /**
                      * 获取实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
                      * @return InstanceChargeType 实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月
                      * 
@@ -1266,6 +1308,18 @@ serverless  :serverless版
                      */
                     DynamicDiskConfig m_dynamicDiskConfig;
                     bool m_dynamicDiskConfigHasBeenSet;
+
+                    /**
+                     * 系统维护时间
+                     */
+                    std::string m_systemMaintenanceTime;
+                    bool m_systemMaintenanceTimeHasBeenSet;
+
+                    /**
+                     * 实例级别消息最大大小
+                     */
+                    uint64_t m_maxMessageByte;
+                    bool m_maxMessageByteHasBeenSet;
 
                     /**
                      * 实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月

@@ -81,6 +81,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeDetailedSlowLogsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeInstanceSSLRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeInstanceSSLResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeLogDownloadTasksRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeLogDownloadTasksResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeMongodbLogsRequest.h>
@@ -109,6 +111,8 @@
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceModifyDBInstanceSpecResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceRenewDBInstancesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceRenewDBInstancesResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/InstanceEnableSSLRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/InstanceEnableSSLResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/IsolateDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/IsolateDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/KillOpsRequest.h>
@@ -252,6 +256,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceSSLResponse> DescribeInstanceSSLOutcome;
+                typedef std::future<DescribeInstanceSSLOutcome> DescribeInstanceSSLOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeInstanceSSLRequest&, DescribeInstanceSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSSLAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogDownloadTasksResponse> DescribeLogDownloadTasksOutcome;
                 typedef std::future<DescribeLogDownloadTasksOutcome> DescribeLogDownloadTasksOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeLogDownloadTasksRequest&, DescribeLogDownloadTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogDownloadTasksAsyncHandler;
@@ -294,6 +301,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceRenewDBInstancesResponse> InquirePriceRenewDBInstancesOutcome;
                 typedef std::future<InquirePriceRenewDBInstancesOutcome> InquirePriceRenewDBInstancesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::InquirePriceRenewDBInstancesRequest&, InquirePriceRenewDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstanceEnableSSLResponse> InstanceEnableSSLOutcome;
+                typedef std::future<InstanceEnableSSLOutcome> InstanceEnableSSLOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::InstanceEnableSSLRequest&, InstanceEnableSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstanceEnableSSLAsyncHandler;
                 typedef Outcome<Core::Error, Model::IsolateDBInstanceResponse> IsolateDBInstanceOutcome;
                 typedef std::future<IsolateDBInstanceOutcome> IsolateDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::IsolateDBInstanceRequest&, IsolateDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDBInstanceAsyncHandler;
@@ -625,6 +635,15 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
 
                 /**
+                 *查看实例SSL开启状态
+                 * @param req DescribeInstanceSSLRequest
+                 * @return DescribeInstanceSSLOutcome
+                 */
+                DescribeInstanceSSLOutcome DescribeInstanceSSL(const Model::DescribeInstanceSSLRequest &request);
+                void DescribeInstanceSSLAsync(const Model::DescribeInstanceSSLRequest& request, const DescribeInstanceSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceSSLOutcomeCallable DescribeInstanceSSLCallable(const Model::DescribeInstanceSSLRequest& request);
+
+                /**
                  *日志下载任务查询
                  * @param req DescribeLogDownloadTasksRequest
                  * @return DescribeLogDownloadTasksOutcome
@@ -751,6 +770,15 @@ namespace TencentCloud
                 InquirePriceRenewDBInstancesOutcome InquirePriceRenewDBInstances(const Model::InquirePriceRenewDBInstancesRequest &request);
                 void InquirePriceRenewDBInstancesAsync(const Model::InquirePriceRenewDBInstancesRequest& request, const InquirePriceRenewDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquirePriceRenewDBInstancesOutcomeCallable InquirePriceRenewDBInstancesCallable(const Model::InquirePriceRenewDBInstancesRequest& request);
+
+                /**
+                 *本接口（InstanceEnableSSL）用于设置实例SSL状态。
+                 * @param req InstanceEnableSSLRequest
+                 * @return InstanceEnableSSLOutcome
+                 */
+                InstanceEnableSSLOutcome InstanceEnableSSL(const Model::InstanceEnableSSLRequest &request);
+                void InstanceEnableSSLAsync(const Model::InstanceEnableSSLRequest& request, const InstanceEnableSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstanceEnableSSLOutcomeCallable InstanceEnableSSLCallable(const Model::InstanceEnableSSLRequest& request);
 
                 /**
                  *本接口（IsolateDBInstance）用于隔离 MongoDB 云数据库按量计费实例。隔离后实例保留在回收站中，不能再写入数据。隔离一定时间后，实例会彻底删除，回收站保存时间请参考按量计费的服务条款。已删除的按量计费实例无法恢复，请谨慎操作。

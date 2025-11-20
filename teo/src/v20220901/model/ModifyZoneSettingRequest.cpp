@@ -42,6 +42,7 @@ ModifyZoneSettingRequest::ModifyZoneSettingRequest() :
     m_ipv6HasBeenSet(false),
     m_clientIpCountryHasBeenSet(false),
     m_grpcHasBeenSet(false),
+    m_networkErrorLoggingHasBeenSet(false),
     m_imageOptimizeHasBeenSet(false),
     m_standardDebugHasBeenSet(false),
     m_jITVideoProcessHasBeenSet(false)
@@ -223,6 +224,15 @@ string ModifyZoneSettingRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_grpc.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_networkErrorLoggingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkErrorLogging";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_networkErrorLogging.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_imageOptimizeHasBeenSet)
@@ -562,6 +572,22 @@ void ModifyZoneSettingRequest::SetGrpc(const Grpc& _grpc)
 bool ModifyZoneSettingRequest::GrpcHasBeenSet() const
 {
     return m_grpcHasBeenSet;
+}
+
+NetworkErrorLogging ModifyZoneSettingRequest::GetNetworkErrorLogging() const
+{
+    return m_networkErrorLogging;
+}
+
+void ModifyZoneSettingRequest::SetNetworkErrorLogging(const NetworkErrorLogging& _networkErrorLogging)
+{
+    m_networkErrorLogging = _networkErrorLogging;
+    m_networkErrorLoggingHasBeenSet = true;
+}
+
+bool ModifyZoneSettingRequest::NetworkErrorLoggingHasBeenSet() const
+{
+    return m_networkErrorLoggingHasBeenSet;
 }
 
 ImageOptimize ModifyZoneSettingRequest::GetImageOptimize() const

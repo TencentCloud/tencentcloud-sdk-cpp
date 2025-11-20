@@ -40,7 +40,8 @@ ModifyTopicAttributesRequest::ModifyTopicAttributesRequest() :
     m_tagsHasBeenSet(false),
     m_quotaProducerByteRateHasBeenSet(false),
     m_quotaConsumerByteRateHasBeenSet(false),
-    m_replicaNumHasBeenSet(false)
+    m_replicaNumHasBeenSet(false),
+    m_logMsgTimestampTypeHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,14 @@ string ModifyTopicAttributesRequest::ToJsonString() const
         string key = "ReplicaNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_replicaNum, allocator);
+    }
+
+    if (m_logMsgTimestampTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogMsgTimestampType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logMsgTimestampType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -501,6 +510,22 @@ void ModifyTopicAttributesRequest::SetReplicaNum(const int64_t& _replicaNum)
 bool ModifyTopicAttributesRequest::ReplicaNumHasBeenSet() const
 {
     return m_replicaNumHasBeenSet;
+}
+
+string ModifyTopicAttributesRequest::GetLogMsgTimestampType() const
+{
+    return m_logMsgTimestampType;
+}
+
+void ModifyTopicAttributesRequest::SetLogMsgTimestampType(const string& _logMsgTimestampType)
+{
+    m_logMsgTimestampType = _logMsgTimestampType;
+    m_logMsgTimestampTypeHasBeenSet = true;
+}
+
+bool ModifyTopicAttributesRequest::LogMsgTimestampTypeHasBeenSet() const
+{
+    return m_logMsgTimestampTypeHasBeenSet;
 }
 
 

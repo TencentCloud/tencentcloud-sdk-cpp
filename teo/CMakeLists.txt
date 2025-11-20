@@ -601,6 +601,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ExportZoneConfigRequest.h
   include/tencentcloud/teo/v20220901/model/OriginGroupHealthStatusDetail.h
   include/tencentcloud/teo/v20220901/model/L4ProxyRule.h
+  include/tencentcloud/teo/v20220901/model/NetworkErrorLoggingParameters.h
   include/tencentcloud/teo/v20220901/model/CacheKeyQueryString.h
   include/tencentcloud/teo/v20220901/model/AdvancedFilter.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataResponse.h
@@ -637,6 +638,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/IncreasePlanQuotaRequest.h
   include/tencentcloud/teo/v20220901/model/FunctionRule.h
   include/tencentcloud/teo/v20220901/model/UpstreamRequestCookie.h
+  include/tencentcloud/teo/v20220901/model/NetworkErrorLogging.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackTopDataRequest.h
   include/tencentcloud/teo/v20220901/model/Quic.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataRequest.h
@@ -1349,6 +1351,7 @@ set(teo_src
   src/v20220901/model/ExportZoneConfigRequest.cpp
   src/v20220901/model/OriginGroupHealthStatusDetail.cpp
   src/v20220901/model/L4ProxyRule.cpp
+  src/v20220901/model/NetworkErrorLoggingParameters.cpp
   src/v20220901/model/CacheKeyQueryString.cpp
   src/v20220901/model/AdvancedFilter.cpp
   src/v20220901/model/DescribeDDoSAttackDataResponse.cpp
@@ -1385,6 +1388,7 @@ set(teo_src
   src/v20220901/model/IncreasePlanQuotaRequest.cpp
   src/v20220901/model/FunctionRule.cpp
   src/v20220901/model/UpstreamRequestCookie.cpp
+  src/v20220901/model/NetworkErrorLogging.cpp
   src/v20220901/model/DescribeDDoSAttackTopDataRequest.cpp
   src/v20220901/model/Quic.cpp
   src/v20220901/model/DescribeDDoSAttackDataRequest.cpp
